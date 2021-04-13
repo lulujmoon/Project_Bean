@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace ="com.bb.bean.board.qna.QnaDAO">
+
+<select id="getList" resultType="QnaDTO">
+select * from qna
+</select>
+
+<select id="getSelect" parameterType="BoardDTO" resultType="QnaDTO">
+select * from qna where num=#{num}
+</select>
+
+<insert id="setInsert" parameterType="BoardDTO">
+insert into faq values(qna_seq.nextval,#{title},#{contents},#{category},#{writer},#{status},sysdate,0,qna_seq.currval,0,0)
+</insert>
+
+<update id="setUpdate" parameterType="BoardDTO">
+update faq set title=#{title},contents=#{contents},category=#{category} where num=#{num}
+</update>
+
+<delete id="setDelete" parameterType="BoardDTO">
+delete faq where num=#{num}
+</delete>
+
+</mapper>
