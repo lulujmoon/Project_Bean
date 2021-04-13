@@ -10,7 +10,7 @@ public class OrdersDTO {
 	private String pg;
 	private String pay_method;
 	private String buyer_name;
-	private long buyer_tel;
+	private String buyer_tel;
 	private long buyer_postcode;
 	private String buyer_addr;
 	private String buyer_addr2;
