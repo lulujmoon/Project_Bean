@@ -14,7 +14,7 @@ public class FaqDAO implements BoardDAO {
 	
 	@Autowired
 	private SqlSession sqlSession;
-	private final String NAMESPACE="com.bb.bean.faq.FaqDAO.";
+	private final String NAMESPACE="com.bb.bean.board.faq.FaqDAO.";
 	
 	@Override
 	public List<BoardDTO> getList() throws Exception {
