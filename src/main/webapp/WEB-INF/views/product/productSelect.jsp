@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +30,28 @@
 					</tr>
 			</tbody>
 		</table>
+		
+		<table>
+			<thead>
+				<th>type</th>
+				<th>grind</th>
+				<th>price</th>
+				<th>discountRate</th>
+				<th>stock</th>
+			</thead>
+			<tbody>
+				<c:forEach items="${dto.options}" var="option">
+					<tr>
+						<td>${option.type}</td>
+						<td>${option.grind}</td>
+						<td>${option.price}</td>
+						<td>${option.discountRate}</td>
+						<td>${option.stock}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+		
 		<a href="./productUpdate?num=${dto.num}">Update</a>
 		<a href="./productDelete?num=${dto.num}">Delete</a>
 	</div>

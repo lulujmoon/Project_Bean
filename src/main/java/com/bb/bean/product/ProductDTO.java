@@ -1,5 +1,9 @@
 package com.bb.bean.product;
 
+import java.util.List;
+
+import com.bb.bean.options.OptionsDTO;
+
 public class ProductDTO {
 
 	private long num;
@@ -8,7 +12,14 @@ public class ProductDTO {
 	private String summary;
 	private String info;
 	private String cartInfo;
+	private List<OptionsDTO> options;
 	
+	public List<OptionsDTO> getOptions() {
+		return options;
+	}
+	public void setOptions(List<OptionsDTO> options) {
+		this.options = options;
+	}
 	public long getNum() {
 		return num;
 	}

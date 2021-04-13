@@ -2,13 +2,27 @@ package com.bb.bean.product;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
-public class ProductDAOTest {
+import com.bb.bean.SampleTest;
+import com.bb.bean.options.OptionsDTO;
 
+public class ProductDAOTest extends SampleTest{
+
+	@Autowired
+	private ProductDAO productDAO;
+	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void test() throws Exception  {
+		ProductDTO productDTO = new ProductDTO();
+		productDTO.setNum(1);
+		productDTO = productDAO.getSelect(productDTO);
+		List<OptionsDTO> ar = productDTO.getOptions();
+		System.out.println(ar.size());
+		assertNotEquals(0, ar.size());
 	}
 
 }

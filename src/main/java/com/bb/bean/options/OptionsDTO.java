@@ -2,7 +2,7 @@ package com.bb.bean.options;
 
 public class OptionsDTO {
 	
-	private long num;
+	private long optionNum;
 	private long productNum;
 	private String type;
 	private String grind;
@@ -10,11 +10,12 @@ public class OptionsDTO {
 	private double discountRate;
 	private long stock;
 	
-	public long getNum() {
-		return num;
+
+	public long getOptionNum() {
+		return optionNum;
 	}
-	public void setNum(long num) {
-		this.num = num;
+	public void setOptionNum(long optionNum) {
+		this.optionNum = optionNum;
 	}
 	public long getProductNum() {
 		return productNum;

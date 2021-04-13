@@ -10,9 +10,29 @@
 		select * from product order by num desc
 	</select>
 	
-	<select id="getSelect" parameterType="ProductDTO" resultType="ProductDTO">
-		select * from product where num = #{num}
+	<select id="getSelect" parameterType="ProductDTO" resultMap="selectResult">
+		select P.*, O.*
+		from product P left join options O
+		on P.num = O.productNum
+		where P.num=#{num}
 	</select>
+	
+	<resultMap type="ProductDTO" id="selectResult">
+		<id property="num" column="num"/>
+		<result property="name" column="name"/>
+		<result property="category" column="category"/>
+		<result property="summary" column="summary"/>
+		<result property="info" column="info"/>
+		<result property="cartInfo" column="cartInfo"/>
+		<collection property="options" javaType="java.util.List" ofType="OptionsDTO">
+			<id property="optionNum" column="optionNum"/>
+			<result property="type" column="type"/>
+			<result property="grind" column="grind"/>
+			<result property="price" column="price"/>
+			<result property="discountRate" column="discountRate"/>
+			<result property="stock" column="stock"/>
+		</collection>
+	</resultMap>
 	
 	<insert id="setInsert" parameterType="ProductDTO">
 		insert into product (num, name, category, summary, info, cartInfo) values
