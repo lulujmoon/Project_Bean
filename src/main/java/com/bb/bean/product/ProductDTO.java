@@ -4,7 +4,7 @@ public class ProductDTO {
 
 	private long num;
 	private String name;
-	private String catagory;
+	private String category;
 	private String summary;
 	private String info;
 	private String cartInfo;
@@ -21,11 +21,17 @@ public class ProductDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getCatagory() {
-		return catagory;
+	public String getCategory() {
+		if(this.category==null) {
+			this.category = "coffee";
+		}
+		return category;
 	}
-	public void setCatagory(String catagory) {
-		this.catagory = catagory;
+	public void setCategory(String category) {
+		if(category==null) {
+			category = "coffee";
+		}
+		this.category = category;
 	}
 	public String getSummary() {
 		return summary;
