@@ -11,7 +11,7 @@ public class MemberDTO {
 	private String nickname;
 	private char gender;	// 1: 남, 2: 여
 	private long point;
-	private long tel;
+	private String tel;
 	private long postcode;
 	private String addr;
 	private String addr2;
@@ -59,10 +59,10 @@ public class MemberDTO {
 	public void setPoint(long point) {
 		this.point = point;
 	}
-	public long getTel() {
+	public String getTel() {
 		return tel;
 	}
-	public void setTel(long tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 	public long getPostcode() {

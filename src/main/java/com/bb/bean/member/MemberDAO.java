@@ -19,5 +19,13 @@ public class MemberDAO {
 		return sqlSession.selectOne(NAMESPACE+"memberLogin", memberDTO);
 	}
 	
+	public int memberUpdate(MemberDTO memberDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"memberUpdate", memberDTO);
+	}
+	
+	public int memberDelete(MemberDTO memberDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"memberDelete", memberDTO);
+	}
+	
 	
 }

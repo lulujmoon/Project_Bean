@@ -16,7 +16,13 @@
 		select * from member where id=#{id} and pw=#{pw}
 	</select>
 	
-	<update id="memberUpdate">
-		update member set
+	<update id="memberUpdate" parameterType="MemberDTO">
+		update member set pw=#{pw}, name=#{name}, birthday=#{birthday}, nickname=#{nickname}, gender=#{gender}, tel=#{tel} where id=#{id}
 	</update>
+	
+	<delete id="memberDelete" parameterType="MemberDTO">
+		delete member where id=#{id}
+	</delete>
+	
+	
 </mapper>

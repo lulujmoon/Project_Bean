@@ -34,18 +34,43 @@ public class MemberDAOTest extends SampleTest {
 	}
 	
 	
-	@Test
-	public void memberLogin()throws Exception {
+	//@Test
+	public void memberLogin() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId("admin");
 		memberDTO.setPw("admin");
 		
 		memberDTO = memberDAO.memberLogin(memberDTO);
 		assertNotNull(memberDTO);
-		
-		
-		
 	}
+	
+	//@Test
+	public void memberUpdate() throws Exception {
+		MemberDTO memberDTO = new MemberDTO();
+		String day = "1999-01-01"; 
+		java.sql.Date d = java.sql.Date.valueOf(day);
+		
+		memberDTO.setId("member01");
+		memberDTO.setPw("member01");
+		memberDTO.setTel("01045678912");
+		memberDTO.setName("member01");
+		memberDTO.setNickname("member01");
+		memberDTO.setBirthday(d);
+		//memberDTO.setGender('2');
+		
+		int result = memberDAO.memberUpdate(memberDTO);
+		assertEquals(1, result);
+	}
+	
+	@Test
+	public void memberDelete() throws Exception {
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setId("id1");
+		
+		int result = memberDAO.memberDelete(memberDTO);
+		assertEquals(1, result);
+	}
+	
 	
 	
 	
