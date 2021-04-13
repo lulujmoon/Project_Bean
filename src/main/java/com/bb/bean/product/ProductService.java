@@ -14,4 +14,12 @@ public class ProductService {
 	public List<ProductDTO> getList(ProductDTO productDTO) throws Exception {
 		return productDAO.getList(productDTO);
 	}
+	
+	public ProductDTO getSelect(ProductDTO productDTO) throws Exception {
+		return productDAO.getSelect(productDTO);
+	}
+	
+	public int setInsert(ProductDTO productDTO) throws Exception {
+		return productDAO.setInsert(productDTO);
+	}
 }

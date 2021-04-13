@@ -6,7 +6,16 @@
     
 
 <mapper namespace ="com.bb.bean.product.ProductDAO">
-	<select id="getList">
-		select * from product where category=#{category}
+	<select id="getList" resultType="ProductDTO">
+		select * from product order by num desc
 	</select>
+	
+	<select id="getSelect" parameterType="ProductDTO" resultType="ProductDTO">
+		select * from product where num = #{num}
+	</select>
+	
+	<insert id="setInsert" parameterType="ProductDTO">
+		insert into product (num, name, category, summary, info, cartInfo) values
+		(product_seq.nextval, #{name}, #{category}, #{summary}, #{info}, #{cartInfo})
+	</insert>
 </mapper>
