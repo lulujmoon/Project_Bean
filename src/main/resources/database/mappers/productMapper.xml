@@ -18,4 +18,12 @@
 		insert into product (num, name, category, summary, info, cartInfo) values
 		(product_seq.nextval, #{name}, #{category}, #{summary}, #{info}, #{cartInfo})
 	</insert>
+	
+	<update id="setUpdate" parameterType="ProductDTO">
+		update product set name=#{name}, category=#{category}, summary=#{summary}, info=#{info}, cartInfo=#{cartInfo} where num=#{num}
+	</update>
+	
+	<delete id="setDelete" parameterType="ProductDTO">
+		delete product where num=#{num}
+	</delete>
 </mapper>

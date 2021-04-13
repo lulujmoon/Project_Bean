@@ -25,4 +25,12 @@ public class ProductDAO {
 	public int setInsert(ProductDTO productDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"setInsert", productDTO);
 	}
+	
+	public int setUpdate(ProductDTO productDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"setUpdate", productDTO);
+	}
+	
+	public int setDelete(ProductDTO productDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setDelete", productDTO);
+	}
 }

@@ -29,7 +29,8 @@
 					</tr>
 			</tbody>
 		</table>
-	
+		<a href="./productUpdate?num=${dto.num}">Update</a>
+		<a href="./productDelete?num=${dto.num}">Delete</a>
 	</div>
 </body>
 </html>

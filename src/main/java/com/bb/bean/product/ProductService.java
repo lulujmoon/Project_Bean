@@ -22,4 +22,12 @@ public class ProductService {
 	public int setInsert(ProductDTO productDTO) throws Exception {
 		return productDAO.setInsert(productDTO);
 	}
+	
+	public int setUpdate(ProductDTO productDTO) throws Exception {
+		return productDAO.setUpdate(productDTO);
+	}
+	
+	public int setDelete(ProductDTO productDTO) throws Exception {
+		return productDAO.setDelete(productDTO);
+	}
 }
