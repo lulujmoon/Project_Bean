@@ -8,15 +8,15 @@ public interface BoardDAO {
 	public List<BoardDTO> getList()throws Exception;
 	
 	//select
-	public BoardDTO getSelect()throws Exception;
+	public BoardDTO getSelect(BoardDTO boardDTO)throws Exception;
 	
 	//insert
-	public int setInsert()throws Exception;
+	public int setInsert(BoardDTO boardDTO)throws Exception;
 	
 	//update
-	public int setUpdate()throws Exception;
+	public int setUpdate(BoardDTO boardDTO)throws Exception;
 	
 	//delete
-	public int setDelete()throws Exception;
+	public int setDelete(BoardDTO boardDTO)throws Exception;
 
 }
