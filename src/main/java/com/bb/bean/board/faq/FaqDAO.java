@@ -18,28 +18,23 @@ public class FaqDAO implements BoardDAO {
 	
 	@Override
 	public List<BoardDTO> getList() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList(NAMESPACE+"getList");
 	}
 	@Override
 	public BoardDTO getSelect(BoardDTO boardDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(NAMESPACE+"getSelect");
 	}
 	@Override
 	public int setInsert(BoardDTO boardDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.insert(NAMESPACE+"setInsert");
 	}
 	@Override
 	public int setUpdate(BoardDTO boardDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update(NAMESPACE+"setUpdate");
 	}
 	@Override
 	public int setDelete(BoardDTO boardDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.delete(NAMESPACE+"setDelete");
 	}
 	
 	
