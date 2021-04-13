@@ -14,7 +14,7 @@ public class LocationDAOTest extends SampleTest{
 	@Autowired
 	private LocationDAO locationDAO;
 	
-	@Test
+	//@Test -OK
 	public void getListTest() throws Exception{
 		List<LocationDTO> ar = locationDAO.getList();
 		assertNotEquals(0, ar.size());
