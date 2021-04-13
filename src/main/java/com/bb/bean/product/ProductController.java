@@ -17,6 +17,7 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+	
 	@GetMapping("productList")
 	public void getList(ProductDTO productDTO, Model model) throws Exception {
 		List<ProductDTO> li = productService.getList(productDTO);
