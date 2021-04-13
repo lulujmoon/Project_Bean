@@ -12,7 +12,7 @@ public class ConnectionTest extends SampleTest{
 	@Autowired
 	private DataSource dataSource;
 
-	@Test
+	//@Test
 	public void connectionTest() throws Exception{
 		dataSource.getConnection();
 		}
