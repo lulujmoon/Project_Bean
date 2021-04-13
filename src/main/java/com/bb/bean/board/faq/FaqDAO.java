@@ -37,7 +37,4 @@ public class FaqDAO implements BoardDAO {
 		return sqlSession.delete(NAMESPACE+"setDelete");
 	}
 	
-	
-	
-
 }
