@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- from "https://mybatis.org/mybatis-3/getting-started.html" -->
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.bb.bean.product.ProductDTO" alias="ProductDTO"/>
+	</typeAliases>
+</configuration>
