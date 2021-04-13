@@ -7,7 +7,6 @@ public class BoardDTO {
 	private String contents;
 	private String category;
 	
-	
 	public long getNum() {
 		return num;
 	}
