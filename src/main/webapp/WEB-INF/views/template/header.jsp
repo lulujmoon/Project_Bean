@@ -8,7 +8,7 @@
 	<!-- Links -->
 	<ul class="navbar-nav">
 		<li class="nav-item"><a class="nav-link"
-			href="${pageContext.request.contextPath}/bankbook/bankbookList">Product</a></li>
-		
+			href="${pageContext.request.contextPath}/location/locationList">Location</a></li>
+
 	</ul>
 </nav>
