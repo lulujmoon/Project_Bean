@@ -26,4 +26,14 @@ public class QnaController {
 		return mv;
 	}
 	
+	@GetMapping("qnaSelect")
+	public ModelAndView getSelect(BoardDTO boardDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		boardDTO =qnaService.getSelect(boardDTO);
+		mv.addObject("dto",boardDTO);
+		mv.setViewName("qna/qnaSelect");
+		return mv;
+		
+	}
+	
 }
