@@ -38,5 +38,8 @@
 		</tbody>
 	
 	</table>
+	
+	<a href="./qnaInsert"><button type="button" class="btn btn-success">글쓰기</button></a>
+	
 </body>
 </html>

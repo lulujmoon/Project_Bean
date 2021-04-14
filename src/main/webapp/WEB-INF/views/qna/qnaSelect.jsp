@@ -18,5 +18,10 @@
 <h3>${dto.writer}</h3>
 <h3>${dto.contents}</h3>
 
+<div>
+<a href="./qnaUpdate"><button type="button" class="btn btn-info">수정</button></a>
+<button type="button" class="btn btn-danger">삭제</button>
+</div>
+
 </body>
 </html>
