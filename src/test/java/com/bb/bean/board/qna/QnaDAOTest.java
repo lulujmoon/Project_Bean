@@ -32,10 +32,12 @@ public class QnaDAOTest extends SampleTest {
 	
 //	@Test
 //	public void setInsertTest()throws Exception{
-//		QnaDTO qnaDTO = new QnaDTO();
-//	
-//		
-//		int result = qnaDAO.setInsert();
+//		BoardDTO boardDTO = new BoardDTO();
+//		boardDTO.setTitle("qnaInsertTest");
+//		boardDTO.setContents("qnaInsertTestCC");
+//		boardDTO.setCategory("배송문의");
+//		boardDTO.setWriter("id1");
+//		int result = qnaDAO.setInsert(boardDTO);
 //		
 //		assertNotEquals(0, result);
 //	}
@@ -47,19 +49,19 @@ public class QnaDAOTest extends SampleTest {
 //		boardDTO.setTitle("update");
 //		boardDTO.setContents("updateTest");
 //		boardDTO.setCategory("주문문의");
-//		int result = faqDAO.setUpdate(boardDTO);
+//		int result = qnaDAO.setUpdate(boardDTO);
 //		assertNotEquals(0, result);
 //		
 //	}
 	
-//	@Test
-//	public void setDeleteTest() throws Exception{
-//		BoardDTO boardDTO = new BoardDTO();
-//		boardDTO.setNum(2);
-//		int result = faqDAO.setDelete(boardDTO);
-//		assertNotEquals(0, result);
-//		
-//	}
+	@Test
+	public void setDeleteTest() throws Exception{
+		BoardDTO boardDTO = new BoardDTO();
+		boardDTO.setNum(2);
+		int result = qnaDAO.setDelete(boardDTO);
+		assertNotEquals(0, result);
+		
+	}
 	
 	
 }

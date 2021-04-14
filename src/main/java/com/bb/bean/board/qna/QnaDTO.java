@@ -6,7 +6,6 @@ import com.bb.bean.board.BoardDTO;
 
 public class QnaDTO extends BoardDTO {
 	
-	private String writer;
 	private String status;
 	private Date regDate;
 	private long hit;
@@ -14,13 +13,7 @@ public class QnaDTO extends BoardDTO {
 	private long step;
 	private long depth;
 	
-	
-	public String getWriter() {
-		return writer;
-	}
-	public void setWriter(String writer) {
-		this.writer = writer;
-	}
+
 	public String getStatus() {
 		return status;
 	}

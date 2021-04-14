@@ -15,7 +15,7 @@ select * from qna where num=#{num}
 </select>
 
 <insert id="setInsert" parameterType="BoardDTO">
-insert into faq values(qna_seq.nextval,#{title},#{contents},#{category},#{writer},"답변대기",sysdate,0,qna_seq.currval,0,0)
+insert into qna (num,title,contents,category,writer,regDate,hit,ref,step,depth) values(qna_seq.nextval,#{title},#{contents},#{category},#{writer},sysdate,0,qna_seq.currval,0,0)
 </insert>
 
 <update id="setUpdate" parameterType="BoardDTO">
