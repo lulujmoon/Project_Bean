@@ -21,8 +21,10 @@
 				class="nav-link dropdown-toggle" href="#" id="navbardrop"
 				data-toggle="dropdown"> BOARD </a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="./notice/noticeList">NOTICE</a> <a
-						class="dropdown-item" href="./qna/qnaList">QNA</a> <a class="dropdown-item"
-				</div></li>
+					<a class="dropdown-item" href="./faq/faqList">FAQ</a>
+					 <a class="dropdown-item" href="./qna/qnaList">QNA</a> 
+
+				</div>
+				</li>
 		</ul>
 	</nav>
