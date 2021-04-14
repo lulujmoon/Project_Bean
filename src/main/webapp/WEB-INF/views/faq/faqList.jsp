@@ -12,6 +12,10 @@
 <c:import url="../template/header.jsp"></c:import>
 
 <h1>FAQ List Page</h1>
+<c:forEach items="${list}" var="dto">
+${dto.title}
+${dto.contents}
+</c:forEach>
 
 </body>
 </html>

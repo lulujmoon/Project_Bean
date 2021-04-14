@@ -4,7 +4,7 @@
 
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 		<!-- Brand -->
-		<a class="navbar-brand" href="./">HOME</a>
+		<a class="navbar-brand" href="${pageContext.request.contextPath}/">HOME</a>
 
 		<!-- Links -->
 		<ul class="navbar-nav">
@@ -21,8 +21,8 @@
 				class="nav-link dropdown-toggle" href="#" id="navbardrop"
 				data-toggle="dropdown"> BOARD </a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="./faq/faqList">FAQ</a>
-					 <a class="dropdown-item" href="./qna/qnaList">QNA</a> 
+					<a class="dropdown-item" href="${pageContext.request.contextPath}/faq/faqList">FAQ</a>
+					 <a class="dropdown-item" href="${pageContext.request.contextPath}/qna/qnaList">QNA</a> 
 
 				</div>
 				</li>

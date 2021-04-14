@@ -17,7 +17,7 @@ public class FaqController {
 	@Autowired
 	private FaqService faqService;
 
-	@GetMapping("faqList")
+	@RequestMapping("faqList")
 	public ModelAndView getList()throws Exception{
 		ModelAndView mv = new ModelAndView();
 		List<BoardDTO> ar=faqService.getList();
