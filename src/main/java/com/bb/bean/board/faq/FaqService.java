@@ -16,27 +16,27 @@ public class FaqService implements BoardService{
 
 	@Override
 	public List<BoardDTO> getList() throws Exception {
-		return null;
+		return FaqDAO.getList();
 	}
 
 	@Override
 	public BoardDTO getSelect(BoardDTO boardDTO) throws Exception {
-		return null;
+		return FaqDAO.getSelect(boardDTO);
 	}
 
 	@Override
 	public int setInsert(BoardDTO boardDTO) throws Exception {
-		return 0;
+		return FaqDAO.setInsert(boardDTO);
 	}
 
 	@Override
 	public int setUpdate(BoardDTO boardDTO) throws Exception {
-		return 0;
+		return FaqDAO.setUpdate(boardDTO);
 	}
 
 	@Override
 	public int setDelete(BoardDTO boardDTO) throws Exception {
-		return 0;
+		return FaqDAO.setDelete(boardDTO);
 	}
 
 }
