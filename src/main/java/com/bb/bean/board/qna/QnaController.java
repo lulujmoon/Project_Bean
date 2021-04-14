@@ -1,12 +1,12 @@
-package com.bb.bean.board.qna;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-
-@Controller
-public class QnaController {
-	
-	@Autowired
-	private QnaController qnaController;
-
-}
+//package com.bb.bean.board.qna;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.stereotype.Controller;
+//
+//@Controller
+//public class QnaController {
+//	
+//	@Autowired
+//	private QnaController qnaController;
+//
+//}
