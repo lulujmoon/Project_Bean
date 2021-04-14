@@ -32,11 +32,10 @@ public class QnaDAOTest extends SampleTest {
 	
 //	@Test
 //	public void setInsertTest()throws Exception{
-//		BoardDTO boardDTO = new BoardDTO();
-//		boardDTO.setTitle("test");
-//		boardDTO.setContents("testcontents");
-//		boardDTO.setCategory("배송문의");
-//		int result = faqDAO.setInsert(boardDTO);
+//		QnaDTO qnaDTO = new QnaDTO();
+//	
+//		
+//		int result = qnaDAO.setInsert();
 //		
 //		assertNotEquals(0, result);
 //	}

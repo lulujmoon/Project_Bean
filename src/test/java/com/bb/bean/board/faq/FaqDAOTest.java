@@ -2,6 +2,7 @@ package com.bb.bean.board.faq;
 
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 
@@ -27,40 +28,41 @@ public class FaqDAOTest extends SampleTest {
 //		BoardDTO boardDTO = new BoardDTO();
 //		boardDTO.setNum(2);
 //		boardDTO = faqDAO.getSelect(boardDTO);
-//		assertNotNull(boardDTO);
+//		assertNull(boardDTO);
 //	}
 	
 //	@Test
 //	public void setInsertTest()throws Exception{
 //		BoardDTO boardDTO = new BoardDTO();
-//		boardDTO.setTitle("test");
-//		boardDTO.setContents("testcontents");
-//		boardDTO.setCategory("배송문의");
+//		boardDTO.setTitle("test2");
+//		boardDTO.setContents("testcontents22");
+//		boardDTO.setCategory("배송");
+//		boardDTO.setWriter("admin");
 //		int result = faqDAO.setInsert(boardDTO);
 //		
 //		assertNotEquals(0, result);
 //	}
 	
-//	@Test
-//	public void setUpdateTest() throws Exception{
-//		BoardDTO boardDTO = new BoardDTO();
-//		boardDTO.setNum(2);
-//		boardDTO.setTitle("update");
-//		boardDTO.setContents("updateTest");
-//		boardDTO.setCategory("주문문의");
-//		int result = faqDAO.setUpdate(boardDTO);
-//		assertNotEquals(0, result);
-//		
-//	}
-	
 	@Test
-	public void setDeleteTest() throws Exception{
+	public void setUpdateTest() throws Exception{
 		BoardDTO boardDTO = new BoardDTO();
-		boardDTO.setNum(2);
-		int result = faqDAO.setDelete(boardDTO);
+		boardDTO.setNum(12);
+		boardDTO.setTitle("update");
+		boardDTO.setContents("updateTest");
+		boardDTO.setCategory("주문문의");
+		int result = faqDAO.setUpdate(boardDTO);
 		assertNotEquals(0, result);
 		
 	}
+	
+//	@Test
+//	public void setDeleteTest() throws Exception{
+//		BoardDTO boardDTO = new BoardDTO();
+//		boardDTO.setNum(2);
+//		int result = faqDAO.setDelete(boardDTO);
+//		assertNotEquals(0, result);
+//		
+//	}
 	
 	
 }

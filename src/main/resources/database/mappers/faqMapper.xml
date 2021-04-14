@@ -15,7 +15,7 @@ select * from faq where num=#{num}
 </select>
 
 <insert id="setInsert" parameterType="BoardDTO">
-insert into faq values(faq_seq.nextval,#{title},#{contents},#{category})
+insert into faq values(faq_seq.nextval,#{title},#{contents},#{category},#{writer})
 </insert>
 
 <update id="setUpdate" parameterType="BoardDTO">

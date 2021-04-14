@@ -6,7 +6,14 @@ public class BoardDTO {
 	private String title;
 	private String contents;
 	private String category;
+	private String writer;
 	
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
 	public long getNum() {
 		return num;
 	}
