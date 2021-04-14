@@ -18,7 +18,7 @@ public class QnaDAOTest extends SampleTest {
 	
 //	@Test
 //	public void getListTest()throws Exception{
-//		List<BoardDTO> ar = faqDAO.getList();
+//		List<BoardDTO> ar = qnaDAO.getList();
 //		assertNotEquals(0, ar.size());
 //	}
 	
@@ -26,7 +26,7 @@ public class QnaDAOTest extends SampleTest {
 //	public void getSelectTest()throws Exception{
 //		BoardDTO boardDTO = new BoardDTO();
 //		boardDTO.setNum(2);
-//		boardDTO = faqDAO.getSelect(boardDTO);
+//		boardDTO = qnaDAO.getSelect(boardDTO);
 //		assertNotNull(boardDTO);
 //	}
 	
