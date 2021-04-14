@@ -9,6 +9,11 @@ public class MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
 	
+	
+	public MemberDTO checkId(MemberDTO memberDTO) throws Exception{
+		return memberDAO.checkId(memberDTO);
+	}
+	
 	public int memberJoin(MemberDTO memberDTO) throws Exception {
 		return memberDAO.memberJoin(memberDTO);
 	}

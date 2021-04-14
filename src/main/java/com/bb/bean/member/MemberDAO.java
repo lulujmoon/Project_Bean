@@ -11,6 +11,10 @@ public class MemberDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "com.bb.bean.member.MemberDAO.";
 		
+	public MemberDTO checkId(MemberDTO memberDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"checkId", memberDTO);
+	}
+	
 	public int memberJoin(MemberDTO memberDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"memberJoin", memberDTO);	
 	}

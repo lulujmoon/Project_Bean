@@ -1,0 +1,117 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<c:import url="../template/bootStrap.jsp"></c:import>
+<style type="text/css">
+.r1 {
+	color: red;
+}
+
+.r2 {
+	color: blue;
+}
+</style>
+</head>
+<body>
+
+	<c:import url="../template/header.jsp"></c:import>
+
+	<div class="container">
+		<h2>Member Join Page</h2>
+
+		<form id="frm" action="./memberJoin" method="post"
+			enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="id">이메일</label> <input type="text" class="form-control"
+					id="id" name="id">
+				<h4 id="idCheckResult"></h4>
+				<!-- ID는 6글자 이상 -->
+			</div>
+
+			<div class="form-group">
+				<label for="pw">비밀번호</label> <input type="password"
+					class="form-control" id="pw" name="pw">
+				<h4 id="pwResult"></h4>
+				<!-- PW는 8글자 이상 -->
+			</div>
+
+			<div class="form-group">
+				<label for="pw">비밀번호 확인</label> <input type="password"
+					class="form-control" id="pw2" name="pw2">
+				<!-- PW 두개는 일치  x: 확인용 지워줌-->
+			</div>
+
+			<div class="form-group">
+				<label for="name">이름</label> <input type="text"
+					class="form-control etc" id="name" name="name">
+				<!-- 비어 있으면 X -->
+			</div>
+
+			<div class="form-group">
+				<label for="phone">닉네임</label> <input type="text"
+					class="form-control etc" id="nickname" name="nickname">
+				<!-- 비어 있으면 X -->
+			</div>
+
+<br>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio"
+					name="inlineRadioOptions" id="inlineRadio1" value="2"> <label
+					class="form-check-label" for="inlineRadio1">여자</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio"
+					name="inlineRadioOptions" id="inlineRadio2" value="1"> <label
+					class="form-check-label" for="inlineRadio2">남자</label>
+			</div>
+
+<br>
+<br>
+
+			<div class="form-group">
+				<label for="email">생년월일</label> <input type="text"
+					class="form-control etc" id="birthday" name="birthday">
+				<!-- 비어 있으면 X -->
+			</div>
+
+			<!-- 이용약관 -->
+			<div class="form-check">
+				<label class="form-check-label"> <input type="checkbox"
+					class="check" value="">동의
+				</label>
+			</div>
+			
+			
+			<div class="jumbotron">
+				<h3>이용약관</h3>
+				<p>Bootstrap is the most popular HTML, CSS...</p>
+			</div>
+
+			<div class="form-check">
+				<label class="form-check-label"> <input type="checkbox"
+					class="check" value="">동의
+				</label>
+			</div>
+			<div class="jumbotron">
+				<h1>Bootstrap Tutorial</h1>
+				<p>Bootstrap is the most popular HTML, CSS...</p>
+			</div>
+
+
+
+			<input type="submit" id="btn" value="JOIN" class="btn btn-primary">
+		</form>
+
+	</div>
+
+	<script type="text/javascript" src="../resources/js/memberJoin.js"></script>
+
+
+</body>
+</html>
