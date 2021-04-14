@@ -10,4 +10,9 @@
 	<select id="getList" resultType="LocationDTO">
 		select * from location order by storeNum asc
 	</select>
+	
+	<select id="getSelect" parameterType="LocationDTO" resultType="LocationDTO">
+		select * from location where storeName=#{storeName}	
+	</select>
+	
 </mapper>

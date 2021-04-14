@@ -16,4 +16,8 @@ public class LocationService {
 	public List<LocationDTO> getList() throws Exception{
 		return locationDAO.getList();
 	}
+	
+	public LocationDTO getSelect(LocationDTO locationDTO) throws Exception{
+		return locationDAO.getSelect(locationDTO);
+	}
 }

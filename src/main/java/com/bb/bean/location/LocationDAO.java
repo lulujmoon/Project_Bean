@@ -17,4 +17,9 @@ public class LocationDAO {
 	public List<LocationDTO> getList() throws Exception{
 		return sqlSession.selectList(NAMESPACE+"getList");
 	}
+	
+	//getSelect 생성
+	public LocationDTO getSelect(LocationDTO locationDTO)throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getSelect", locationDTO);
+	}
 }

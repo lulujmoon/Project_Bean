@@ -10,36 +10,25 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
-	<h2>Location List Page</h2>
 
+	<!-- Table -->
 	<div class="container">
-		<h2>Dark Striped Table</h2>
-		<p>Combine .table-dark and .table-striped to create a dark,
-			striped table:</p>
+		<h2>Location List Page</h2>
 		<table class="table table-dark table-striped">
 			<thead>
 				<tr>
-					<th>Firstname</th>
-					<th>Lastname</th>
-					<th>Email</th>
+					<th>Store Name</th>
 				</tr>
 			</thead>
 			<tbody>
+				<!-- 테이블 반복문 -->
+				<c:forEach items="${list}" var="dto">
+				
 				<tr>
-					<td>John</td>
-					<td>Doe</td>
-					<td>john@example.com</td>
+					<td><a href="./locationSelect?storeName=${dto.storeName}">${dto.storeName}</a></td>
 				</tr>
-				<tr>
-					<td>Mary</td>
-					<td>Moe</td>
-					<td>mary@example.com</td>
-				</tr>
-				<tr>
-					<td>July</td>
-					<td>Dooley</td>
-					<td>july@example.com</td>
-				</tr>
+				</c:forEach>
+				
 			</tbody>
 		</table>
 	</div>

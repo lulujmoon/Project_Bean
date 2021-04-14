@@ -26,5 +26,14 @@ public class LocationController {
 		mv.setViewName("location/locationList"); 
 		return mv;
 	}
+	
+	@RequestMapping("locationSelect")
+	public ModelAndView getSelect(LocationDTO locationDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		locationDTO = locationService.getSelect(locationDTO);
+		mv.addObject("dto", locationDTO);
+		mv.setViewName("location/locationSelect");
+		return mv;
+	}
 		
 }

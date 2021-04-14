@@ -1,6 +1,7 @@
 package com.bb.bean.location;
 
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
@@ -18,6 +19,14 @@ public class LocationDAOTest extends SampleTest{
 	public void getListTest() throws Exception{
 		List<LocationDTO> ar = locationDAO.getList();
 		assertNotEquals(0, ar.size());
+	}
+	
+	//@Test - OK
+	public void getSelectTest()throws Exception{
+		LocationDTO	locationDTO = new LocationDTO();
+		locationDTO.setStoreName("카카오");
+		locationDTO = locationDAO.getSelect(locationDTO);
+		assertNotNull(locationDTO);
 	}
 	
 }
