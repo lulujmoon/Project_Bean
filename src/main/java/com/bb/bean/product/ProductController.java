@@ -50,7 +50,7 @@ public class ProductController {
 	@PostMapping("productUpdate")
 	public String setUpdate(ProductDTO productDTO) throws Exception {
 		int result = productService.setUpdate(productDTO);
-		return "redirect:./productSelect?num="+productDTO.getNum();
+		return "redirect:./productSelect?num="+productDTO.getProductNum();
 	}
 	
 	

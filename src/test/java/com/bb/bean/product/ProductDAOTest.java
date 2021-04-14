@@ -18,7 +18,7 @@ public class ProductDAOTest extends SampleTest{
 	@Test
 	public void test() throws Exception  {
 		ProductDTO productDTO = new ProductDTO();
-		productDTO.setNum(1);
+		productDTO.setProductNum(1);
 		productDTO = productDAO.getSelect(productDTO);
 		List<OptionsDTO> ar = productDTO.getOptions();
 		System.out.println(ar.size());

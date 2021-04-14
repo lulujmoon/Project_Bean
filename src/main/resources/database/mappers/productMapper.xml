@@ -7,18 +7,30 @@
 
 <mapper namespace ="com.bb.bean.product.ProductDAO">
 	<select id="getList" resultType="ProductDTO">
-		select * from product order by num desc
+		select * from product 
+			<choose>
+				<when test="category!=null">
+					where category=#{category}	
+				</when>
+				<otherwise>
+				
+				</otherwise>
+			</choose>
+		order by productNum desc
 	</select>
 	
 	<select id="getSelect" parameterType="ProductDTO" resultMap="selectResult">
-		select P.*, O.*
-		from product P left join options O
-		on P.num = O.productNum
-		where P.num=#{num}
+		select P.*, O.*, PF.*
+		from product P 
+		left join options O
+		on P.productNum = O.productNum
+		left join productFiles PF
+		on P.productNum = PF.productNum
+		where P.productNum=#{productNum}
 	</select>
 	
 	<resultMap type="ProductDTO" id="selectResult">
-		<id property="num" column="num"/>
+		<id property="productNum" column="productNum"/>
 		<result property="name" column="name"/>
 		<result property="category" column="category"/>
 		<result property="summary" column="summary"/>
@@ -32,18 +44,23 @@
 			<result property="discountRate" column="discountRate"/>
 			<result property="stock" column="stock"/>
 		</collection>
+		<collection property="files" javaType="java.util.List" ofType="ProductFileDTO">
+			<id property="fileNum" column="fileNum"/>
+			<result property="fileName" column="fileName"/>
+			<result property="originName" column="originName"/>
+		</collection>
 	</resultMap>
 	
 	<insert id="setInsert" parameterType="ProductDTO">
-		insert into product (num, name, category, summary, info, cartInfo) values
-		(product_seq.nextval, #{name}, #{category}, #{summary}, #{info}, #{cartInfo})
+		insert into product (productNum, name, category, subtitle, includes, contents, details, cartInfo) values
+		(product_seq.nextval, #{name}, #{category}, #{subtitle}, , #{includes}, #{contents}, #{details}, #{cartInfo})
 	</insert>
 	
 	<update id="setUpdate" parameterType="ProductDTO">
-		update product set name=#{name}, category=#{category}, summary=#{summary}, info=#{info}, cartInfo=#{cartInfo} where num=#{num}
+		update product set name=#{name}, category=#{category}, subtitle=#{subtitle}, includes=#{includes}, contents=#{contents}, details=#{details}, cartInfo=#{cartInfo} where productNum=#{productNum}
 	</update>
 	
 	<delete id="setDelete" parameterType="ProductDTO">
-		delete product where num=#{num}
+		delete product where productNum=#{productNum}
 	</delete>
 </mapper>

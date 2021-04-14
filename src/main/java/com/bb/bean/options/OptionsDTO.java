@@ -4,13 +4,13 @@ public class OptionsDTO {
 	
 	private long optionNum;
 	private long productNum;
+	private String optionInfo;
 	private String type;
 	private String grind;
 	private long price;
 	private double discountRate;
 	private long stock;
 	
-
 	public long getOptionNum() {
 		return optionNum;
 	}
@@ -22,6 +22,12 @@ public class OptionsDTO {
 	}
 	public void setProductNum(long productNum) {
 		this.productNum = productNum;
+	}
+	public String getOptionInfo() {
+		return optionInfo;
+	}
+	public void setOptionInfo(String optionInfo) {
+		this.optionInfo = optionInfo;
 	}
 	public String getType() {
 		return type;

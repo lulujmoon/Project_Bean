@@ -6,25 +6,22 @@ import com.bb.bean.options.OptionsDTO;
 
 public class ProductDTO {
 
-	private long num;
+	private long productNum;
 	private String name;
 	private String category;
-	private String summary;
-	private String info;
+	private String subtitle;
+	private String includes;
+	private String contents;
+	private String details;
 	private String cartInfo;
 	private List<OptionsDTO> options;
+	private List<ProductFileDTO> files;
 	
-	public List<OptionsDTO> getOptions() {
-		return options;
+	public long getProductNum() {
+		return productNum;
 	}
-	public void setOptions(List<OptionsDTO> options) {
-		this.options = options;
-	}
-	public long getNum() {
-		return num;
-	}
-	public void setNum(long num) {
-		this.num = num;
+	public void setProductNum(long productNum) {
+		this.productNum = productNum;
 	}
 	public String getName() {
 		return name;
@@ -33,34 +30,52 @@ public class ProductDTO {
 		this.name = name;
 	}
 	public String getCategory() {
-		if(this.category==null) {
-			this.category = "coffee";
-		}
 		return category;
 	}
 	public void setCategory(String category) {
-		if(category==null) {
-			category = "coffee";
-		}
 		this.category = category;
 	}
-	public String getSummary() {
-		return summary;
+	public String getSubtitle() {
+		return subtitle;
 	}
-	public void setSummary(String summary) {
-		this.summary = summary;
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
 	}
-	public String getInfo() {
-		return info;
+	public String getIncludes() {
+		return includes;
 	}
-	public void setInfo(String info) {
-		this.info = info;
+	public void setIncludes(String includes) {
+		this.includes = includes;
+	}
+	public String getContents() {
+		return contents;
+	}
+	public void setContents(String contents) {
+		this.contents = contents;
+	}
+	public String getDetails() {
+		return details;
+	}
+	public void setDetails(String details) {
+		this.details = details;
 	}
 	public String getCartInfo() {
 		return cartInfo;
 	}
 	public void setCartInfo(String cartInfo) {
 		this.cartInfo = cartInfo;
+	}
+	public List<OptionsDTO> getOptions() {
+		return options;
+	}
+	public void setOptions(List<OptionsDTO> options) {
+		this.options = options;
+	}
+	public List<ProductFileDTO> getFiles() {
+		return files;
+	}
+	public void setFiles(List<ProductFileDTO> files) {
+		this.files = files;
 	}
 	
 	
