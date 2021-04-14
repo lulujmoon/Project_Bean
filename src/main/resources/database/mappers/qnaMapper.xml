@@ -15,15 +15,15 @@ select * from qna where num=#{num}
 </select>
 
 <insert id="setInsert" parameterType="BoardDTO">
-insert into faq values(qna_seq.nextval,#{title},#{contents},#{category},#{writer},#{status},sysdate,0,qna_seq.currval,0,0)
+insert into faq values(qna_seq.nextval,#{title},#{contents},#{category},#{writer},"답변대기",sysdate,0,qna_seq.currval,0,0)
 </insert>
 
 <update id="setUpdate" parameterType="BoardDTO">
-update faq set title=#{title},contents=#{contents},category=#{category} where num=#{num}
+update qna set title=#{title},contents=#{contents},category=#{category} where num=#{num}
 </update>
 
 <delete id="setDelete" parameterType="BoardDTO">
-delete faq where num=#{num}
+delete qna where num=#{num}
 </delete>
 
 </mapper>
