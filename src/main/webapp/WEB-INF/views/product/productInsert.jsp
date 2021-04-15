@@ -61,9 +61,14 @@
     		<button>Write</button>
 
 		</form>
+		
+
 	</div>
+	
+
 	
 	<!-- Script -->
 	<script type="text/javascript" src="../resources/jquery/summernote.js"></script>
+
 </body>
 </html>

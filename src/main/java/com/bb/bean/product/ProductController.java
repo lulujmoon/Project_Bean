@@ -84,4 +84,11 @@ public class ProductController {
 		int result = productService.setDelete(productDTO);
 		return "redirect:./productList";
 	}
+	
+	
+	
+	/* Option 설정 */
+	
+	@GetMapping("optionUpdate")
+	public void setOptionUpdate() throws Exception {}
 }
