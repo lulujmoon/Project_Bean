@@ -88,4 +88,10 @@ public class QnaController {
 		mv.setViewName("redirect:./qnaList");
 		return mv;
 	}
+	
+
+	public void setHitUpdate(BoardDTO boardDTO)throws Exception{
+		int result = qnaService.setHitUpdate(boardDTO);
+	}
+	
 }
