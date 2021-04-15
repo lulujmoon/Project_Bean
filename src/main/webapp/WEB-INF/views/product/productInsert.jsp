@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <c:import url="../template/bootstrap.jsp"></c:import>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -31,40 +33,38 @@
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
-				<label for="subject">상단 설명</label>
-				<input type="text" class="form-control myCheck" id="subject" name="subject">
+				<label for="subtitle">상단 설명</label>
+				<input type="text" class="form-control myCheck" id="subtitle" name="subtitle">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
-				<label for="subject">구성품</label>
-				<input type="text" class="form-control myCheck" id="subject" name="subject">
+				<label for="includes">구성품</label>
+				<input type="text" class="form-control myCheck" id="includes" name="includes">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
-   				 <label for="content">상품 정보</label>
-  				 <textarea class="form-control myCheck" id="content" rows="6" name="content"></textarea>
+   				 <label for="contents">상품 정보</label>
+  				 <textarea class="form-control myCheck" id="contents" name="contents"></textarea>
  				<small id="conResult" class="form-text text-muted"></small>
  			</div>
  			<div class="form-group">
-				<label for="subject">상세 정보</label>
-				<input type="text" class="form-control myCheck" id="subject" name="subject">
+				<label for="details">상세 정보</label>
+				<input type="text" class="form-control myCheck" id="details" name="details">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
-				<label for="subject">장바구니 요약</label>
-				<input type="text" class="form-control myCheck" id="subject" name="subject">
+				<label for="cartInfo">장바구니 요약</label>
+				<input type="text" class="form-control myCheck" id="cartInfo" name="cartInfo">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
-			<input type="button" value="Add" id="add" class="btn btn-warning">
-			
-			<div id="files" title="${post.boardFiles.size()}">
-				
-			</div>
+
 			<br>
     		<input type="button" value="Write" id="btn" class="btn btn-info">
 
 		</form>
 	</div>
-
+	
+	<!-- Script -->
+	<script type="text/javascript" src="../resources/jquery/summernote.js"></script>
 </body>
 </html>

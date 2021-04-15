@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -31,6 +32,8 @@ public class ProductController {
 	}
 	
 	
+	/*productInsert*/
+	
 	@GetMapping("productInsert")
 	public void setInsert() throws Exception {}
 	
@@ -40,6 +43,18 @@ public class ProductController {
 		return "redirect:./productList";
 	}
 	
+	@PostMapping("summerFileUpload")
+	public ModelAndView summerFileUpload(MultipartFile file) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		String fileName = productService.summerFileUpload(file);
+		fileName = "../resources/upload/productContents/"+fileName;
+		mv.addObject("result", fileName);
+		mv.setViewName("common/ajaxResult");
+		return mv;
+	}
+	
+	
+	/*productUpdate*/
 	
 	@GetMapping("productUpdate")
 	public void setUpdate(ProductDTO productDTO, Model model) throws Exception {
