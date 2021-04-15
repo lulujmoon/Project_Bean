@@ -44,13 +44,16 @@ public class QnaService implements BoardService {
 		BoardDTO boardDTO = qnaDAO.getSelect(qnaDTO);
 		QnaDTO parent = (QnaDTO)boardDTO;
 		
+		System.out.println(qnaDTO.getNum());
+		System.out.println(parent.getNum());
+		
 		qnaDTO.setRef(parent.getRef());
 		qnaDTO.setStep(parent.getStep()+1);
 		qnaDTO.setDepth(parent.getDepth()+1);
 		
-		System.out.println(parent.getRef());
-		System.out.println(parent.getStep());
-		System.out.println(parent.getDepth());
+		System.out.println(qnaDTO.getRef());
+		System.out.println(qnaDTO.getStep());
+		System.out.println(qnaDTO.getDepth());
 		
 		int result = qnaDAO.setReplyUpdate(parent);
 		result = qnaDAO.setReply(qnaDTO);

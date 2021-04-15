@@ -17,6 +17,7 @@
   <form id="frm" action="./qnaReply" method="post">
   
   	<input type="hidden" name="num" value="${param.num}">
+  	
     <div class="form-group">
       <label for="writer">Writer:</label>
       <input type="text" class="form-control" id="writer" name="writer">
