@@ -22,12 +22,12 @@ ${dto.contents}
  <c:forEach items="${list}" var="dto">
   <div class="card">
     <div class="card-header">
-      <a class="collapsed card-link" data-toggle="collapse" href="#collapseOne">
+      <a class="collapsed card-link" data-toggle="collapse" href="#col${dto.num}">
         ${dto.title}
       </a>
     </div>
     
-    <div id="collapseOne" class="collapse" data-parent="#accordion">
+    <div id="col${dto.num}" class="collapse" data-parent="#accordion">
       <div class="card-body">
         ${dto.contents}
       </div>
@@ -62,6 +62,11 @@ ${dto.contents}
   </div>
 
 </div>
+
+<a href="./qnaInsert"><button type="button" class="btn btn-success">글쓰기</button></a>
+
+
+
 
 </body>
 </html>
