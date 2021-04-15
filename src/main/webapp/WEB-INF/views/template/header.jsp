@@ -13,6 +13,7 @@
 		    <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#login">Login</a></li>
 		    <%--  href="${pageContext.request.contextPath}/member/memberLogin" --%>
 		    <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#join">Join</a></li>
+		    <!-- data-toggle="modal" data-target="#join" -->
 		   <%--  href="${pageContext.request.contextPath}/member/memberJoin" --%>
 		</c:if>
 		
