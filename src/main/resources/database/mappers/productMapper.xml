@@ -53,7 +53,7 @@
 	
 	<insert id="setInsert" parameterType="ProductDTO">
 		insert into product (productNum, name, category, subtitle, includes, contents, details, cartInfo) values
-		(product_seq.nextval, #{name}, #{category}, #{subtitle}, , #{includes}, #{contents}, #{details}, #{cartInfo})
+		(product_seq.nextval, #{name}, #{category}, #{subtitle} , #{includes}, #{contents}, #{details}, #{cartInfo})
 	</insert>
 	
 	<update id="setUpdate" parameterType="ProductDTO">

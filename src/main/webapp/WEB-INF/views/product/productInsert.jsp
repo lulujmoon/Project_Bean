@@ -39,7 +39,7 @@
 			</div>
 			<div class="form-group">
 				<label for="includes">구성품</label>
-				<input type="text" class="form-control myCheck" id="includes" name="includes">
+				<input type="text" class="form-control myCheck" id="includes" name="includes" placeholder="/로 구분해주세요.">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
@@ -49,7 +49,7 @@
  			</div>
  			<div class="form-group">
 				<label for="details">상세 정보</label>
-				<input type="text" class="form-control myCheck" id="details" name="details">
+				<input type="text" class="form-control myCheck" id="details" name="details" placeholder="/로 구분해주세요."">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
@@ -57,9 +57,8 @@
 				<input type="text" class="form-control myCheck" id="cartInfo" name="cartInfo">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
-
 			<br>
-    		<input type="button" value="Write" id="btn" class="btn btn-info">
+    		<button>Write</button>
 
 		</form>
 	</div>

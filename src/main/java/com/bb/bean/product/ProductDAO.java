@@ -23,6 +23,7 @@ public class ProductDAO {
 	}
 	
 	public int setInsert(ProductDTO productDTO) throws Exception {
+		System.out.println(productDTO.getCategory());
 		return sqlSession.insert(NAMESPACE+"setInsert", productDTO);
 	}
 	
