@@ -21,6 +21,7 @@ public class QnaService implements BoardService {
 
 	@Override
 	public BoardDTO getSelect(BoardDTO boardDTO) throws Exception {
+		int result = qnaDAO.setHitUpdate(boardDTO);
 		return qnaDAO.getSelect(boardDTO);
 	}
 
@@ -39,30 +40,20 @@ public class QnaService implements BoardService {
 		return qnaDAO.setDelete(boardDTO);
 	}
 	
-	public int setHitUpdate(BoardDTO boardDTO) throws Exception{
-		return qnaDAO.setHitUpdate(boardDTO);
-	}
-	
 	public int setReply(QnaDTO qnaDTO) throws Exception{
 		//부모글의 ref, step, depth 값 조회해야함
 		BoardDTO boardDTO = qnaDAO.getSelect(qnaDTO);
 		QnaDTO parent = (QnaDTO)boardDTO;
 		
-		System.out.println(qnaDTO.getNum());
-		System.out.println(parent.getNum());
-		
 		qnaDTO.setRef(parent.getRef());
 		qnaDTO.setStep(parent.getStep()+1);
 		qnaDTO.setDepth(parent.getDepth()+1);
 		qnaDTO.setCon(parent.getCon()+1);
-		
-		System.out.println(qnaDTO.getRef());
-		System.out.println(qnaDTO.getStep());
-		System.out.println(qnaDTO.getDepth());
-		System.out.println(qnaDTO.getCon());
+		qnaDTO.setStatus("답변완료");
 		
 		int result = qnaDAO.setReplyUpdate(parent);
 		result = qnaDAO.setReply(qnaDTO);
+		result = qnaDAO.setStatusUpdate(qnaDTO);
 		
 		return result;
 	}

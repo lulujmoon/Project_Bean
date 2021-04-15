@@ -36,11 +36,13 @@ insert into qna (num,title,contents,category,writer,regDate,hit,ref,step,depth,c
 </insert>
 
 <update id="setReplyUpdate" parameterType="QnaDTO">
-update qna set step=step+1 where ref=#{ref} and step > #{step}
+update qna set step=step+1, where ref=#{ref} and step > #{step}
 </update>
 
+
+
 <update id="setStatusUpdate" parameterType="QnaDTO">
-update qna set status= '답변완료' where con > 0
+update qna set status=#{status} where(select ref from qna group by ref having count(ref) >1)
 </update>
 
 </mapper>
