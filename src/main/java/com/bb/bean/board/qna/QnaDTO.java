@@ -12,8 +12,15 @@ public class QnaDTO extends BoardDTO {
 	private long ref;
 	private long step;
 	private long depth;
+	private long con;
 	
 
+	public long getCon() {
+		return con;
+	}
+	public void setCon(long con) {
+		this.con = con;
+	}
 	public String getStatus() {
 		return status;
 	}

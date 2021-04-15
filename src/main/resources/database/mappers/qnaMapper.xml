@@ -34,4 +34,8 @@ insert into qna (num,title,contents,category,writer,regDate,hit,ref,step,depth) 
 update qna set step=step+1 where ref=#{ref} and step > #{step}
 </update>
 
+<update id="setStatusUpdate" parameterType="QnaDTO">
+update qna set status= '답변완료' where 
+</update>
+
 </mapper>
