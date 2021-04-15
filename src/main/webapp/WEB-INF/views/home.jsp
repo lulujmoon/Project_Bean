@@ -12,31 +12,15 @@
 
 <title>Home</title>
 
-
-<!-- ajax 시작 -->
-<script type="text/javascript">
-
-
-</script>	
-
 </head>
 <body>
 <c:import url="./template/header.jsp"></c:import>
 	<h1>Project_Bean!</h1>
 
 	<P>The time on the server is ${serverTime}.</P>
-	
-	<div class="container">
-		<form method="post" action="./memberJoin">
-		
-		
-		</form>
-	
-	</div>
-	
-	
-	
-	
+
+<c:import url="./member/memberLogin.jsp"></c:import>
+<c:import url="./member/memberJoin.jsp"></c:import>
 	
 	
 	

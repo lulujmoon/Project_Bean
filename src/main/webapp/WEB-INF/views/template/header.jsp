@@ -7,11 +7,13 @@
 	
 	  <!-- Links -->
 	  <ul class="navbar-nav">
-	    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/bankbook/bankbookList">Product</a></li>
+	    <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
 	    
 	    <c:if test="${empty member}">
-		    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/memberLogin">Login</a></li>
-		    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/memberJoin">Join</a></li>
+		    <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#login">Login</a></li>
+		    <%--  href="${pageContext.request.contextPath}/member/memberLogin" --%>
+		    <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#join">Join</a></li>
+		   <%--  href="${pageContext.request.contextPath}/member/memberJoin" --%>
 		</c:if>
 		
 		<c:if test="${not empty member}">
