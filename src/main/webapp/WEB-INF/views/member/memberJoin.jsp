@@ -41,7 +41,7 @@
 			<div class="form-group">
 				<label for="pw">비밀번호 확인</label> <input type="password"
 					class="form-control" id="pw2" name="pw2">
-			</div>
+			</div> 
 
 			<div class="form-group">
 				<label for="name">이름</label> <input type="text"
@@ -69,14 +69,14 @@
 <br>
 
 			<div class="form-group">
-				<label for="email">생년월일</label> <input type="text"
+				<label for="birthday">생년월일</label> <input type="date"
 					class="form-control etc" id="birthday" name="birthday">
 			</div>
 
 
 			<input type="hidden" name="point" value="0" >
 
-				이용약관
+				<!-- 이용약관 -->
 			<div class="form-check">
 				<label class="form-check-label"> <input type="checkbox"
 					class="check" value="">동의
