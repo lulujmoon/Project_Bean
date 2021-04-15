@@ -65,7 +65,7 @@
 				</c:forEach>
 		</table>
 			
-		<a href="./optionUpdate?productNum=${dto.productNum}" class="btn btn-secondary btn-sm">Update</a>
+		<a href="./optionUpdate?productNum=${dto.productNum}" class="btn btn-secondary btn-sm">옵션관리</a>
 		
 		<h4>파일</h4>
 		<table>
@@ -83,42 +83,13 @@
 	
 	<script type="text/javascript">
 		let txt = '${dto.includes}';
-		let start = 0;
-	 	let check = txt.indexOf('/', start)!=-1;
-	 	
-	 	while(check){
-			let end = txt.indexOf('/', start);
-			let opt = txt.substring(start, end);
-			$("#inc").append("<li>"+opt+"</li>");
-			
-			start = end+1;
-			
-			if(txt.indexOf('/', end+1)==-1){
-				opt = txt.substring(end+1);
-				$("#inc").append("<li>"+opt+"</li>");
-				check=false;
-			}
-		}
-	 	
+		txt = txt.replace(/~/g,"</li><li>");
+	 	$("#inc").append('<li>'+txt+'</li>');
+		
 		txt = '${dto.details}';
-		start = 0;
-	 	check = txt.indexOf('/', start)!=-1;
-	 	
-	 	while(check){
-			let end = txt.indexOf('/', start);
-			let opt = txt.substring(start, end);
-			$("#dtl").append("<li>"+opt+"</li>");
-			
-			start = end+1;
-			
-			if(txt.indexOf('/', end+1)==-1){
-				opt = txt.substring(end+1);
-				$("#inc").append("<li>"+opt+"</li>");
-				check=false;
-			}
-		}
+		txt = txt.replace(/~/g, "</li><li>");
+		$("#dtl").append('<li>'+txt+'</li>');
 	</script>
-	
-	<!-- <script type="text/javascript" src="../resources/jquery/productSelect.js"></script> -->
+
 </body>
 </html>
