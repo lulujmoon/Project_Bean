@@ -13,8 +13,8 @@
 	</select>
 
 	<insert id="memberJoin" parameterType="MemberDTO"> 
-		insert into member (id, pw, name, birthday, nickname, gender, point) 
-		values (#{id},#{pw},#{name},#{birthday},#{nickname},#{gender},0)
+		insert into member (id, pw, name, birthday, nickname, gender, point, tel, postcode, addr, addr2) 
+		values (#{id},#{pw},#{name},#{birthday},#{nickname},#{gender},0,null,0,null,null)
 	</insert>
 	
 	<select id="memberLogin" parameterType="MemberDTO" resultType="MemberDTO">
