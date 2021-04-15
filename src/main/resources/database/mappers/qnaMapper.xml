@@ -26,4 +26,12 @@ update qna set title=#{title},contents=#{contents},category=#{category} where nu
 delete qna where num=#{num}
 </delete>
 
+<insert id="setReply" parameterType="QnaDTO">
+insert into qna (num,title,contents,category,writer,regDate,hit,ref,step,depth) values(qna_seq.nextval,#{title},#{contents},#{category},#{writer},sysdate,0,#{ref},#{step},#{depth})
+</insert>
+
+<update id="setReplyUpdate" parameterType="QnaDTO">
+update qna set step=step+1 where ref=#{ref} and step > #{step}
+</update>
+
 </mapper>

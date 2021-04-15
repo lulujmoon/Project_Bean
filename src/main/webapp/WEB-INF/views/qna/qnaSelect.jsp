@@ -21,7 +21,9 @@
 <div>
 <a href="./qnaUpdate?num=${dto.num}"><button type="button" class="btn btn-info">수정</button></a>
 
-<a href="./qnaDelete?num=${dto.num}" id="del" class="btn btn-info">Delete</a>
+<a href="./qnaDelete?num=${dto.num}" id="del" class="btn btn-info">삭제</a>
+
+<a href="./qnaReply?num=${dto.num}" class="btn btn-primary">답글</a>
 </div>
 
 </body>

@@ -44,5 +44,9 @@ public class QnaDAO implements BoardDAO{
 	public int setReply(QnaDTO qnaDTO) throws Exception{
 		return sqlSession.insert(NAMESPACE+"setReply",qnaDTO);
 	}
+	
+	public int setReplyUpdate(QnaDTO qnaDTO) throws Exception{
+		return sqlSession.update(NAMESPACE+"setReplyUpdate",qnaDTO);
+	}
 
 }

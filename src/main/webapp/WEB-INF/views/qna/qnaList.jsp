@@ -22,6 +22,7 @@
 				<th>WRITER</th>
 				<th>DATE</th>
 				<th>HIT</th>
+				<th>status</th>
 			</tr>
 		</thead>
 		
@@ -33,6 +34,7 @@
 				<td>${dto.writer}</td>
 				<td>${dto.regDate}</td>
 				<td>${dto.hit}</td>
+				<td>${dto.status}</td>
 			</tr>
 		</c:forEach>
 		</tbody>
