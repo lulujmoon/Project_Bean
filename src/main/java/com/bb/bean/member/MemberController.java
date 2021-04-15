@@ -34,7 +34,7 @@ public class MemberController {
 	}
 	
 	@PostMapping("memberJoin")
-	public int memberJoin(MemberDTO memberDTO) throws Exception {
+	public String memberJoin(MemberDTO memberDTO) throws Exception {
 		System.out.println(memberDTO.getId());
 		System.out.println(memberDTO.getPw());
 		System.out.println(memberDTO.getName());
@@ -46,7 +46,9 @@ public class MemberController {
 		System.out.println(memberDTO.getTel());
 		System.out.println(memberDTO.getAddr());
 		System.out.println(memberDTO.getAddr2());
-		return memberService.memberJoin(memberDTO);
+		int result = memberService.memberJoin(memberDTO);
+		 
+		return "redirect:../";
 	}
 	
 	@GetMapping("memberLogin")
