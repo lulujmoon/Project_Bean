@@ -1,4 +1,4 @@
-package com.bb.bean.ordersDTO;
+package com.bb.bean.orders;
 
 public class OrdersDTO {
 	private long num;
