@@ -35,6 +35,17 @@ public class MemberController {
 	
 	@PostMapping("memberJoin")
 	public int memberJoin(MemberDTO memberDTO) throws Exception {
+		System.out.println(memberDTO.getId());
+		System.out.println(memberDTO.getPw());
+		System.out.println(memberDTO.getName());
+		System.out.println(memberDTO.getNickname());
+		System.out.println(memberDTO.getGender());
+		System.out.println(memberDTO.getBirthday());
+		System.out.println(memberDTO.getPoint());
+		System.out.println(memberDTO.getPostcode());
+		System.out.println(memberDTO.getTel());
+		System.out.println(memberDTO.getAddr());
+		System.out.println(memberDTO.getAddr2());
 		return memberService.memberJoin(memberDTO);
 	}
 	

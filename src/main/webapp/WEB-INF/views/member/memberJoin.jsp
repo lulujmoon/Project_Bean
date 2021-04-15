@@ -22,7 +22,7 @@
           	<div class="container">
 		<h2>Member Join Page</h2>
           <form id="frm" action="./member/memberJoin" method="post"
-			enctype="multipart/form-data">
+			>
 			<div class="form-group">
 				<label for="id">이메일</label> <input type="text" class="form-control"
 					id="id" name="id" value="">
@@ -75,16 +75,13 @@
 
 			<input type="hidden" name="point" value="0" >
 
-			이용약관
+				<!-- 이용약관 -->
 			<div class="form-check">
 				<label class="form-check-label"> <input type="checkbox"
 					class="check" value="">동의
 				</label>
 			</div>
-			
 
-			
-			
 			<div class="jumbotron">
 				<h3>이용약관</h3>
 				<p>Bootstrap is the most popular HTML, CSS...</p>
