@@ -22,7 +22,7 @@
           	<div class="container">
 		<h2>Member Join Page</h2>
           <form id="frm" action="./member/memberJoin" method="post"
-			>
+			enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="id">이메일</label> <input type="text" class="form-control"
 					id="id" name="id" value="">

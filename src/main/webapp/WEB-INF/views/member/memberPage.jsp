@@ -12,13 +12,12 @@
 	<h3>Name : ${member.name}</h3>
 	<h3>Phone : ${member.phone}</h3>
 	<h3>Email : ${member.email}</h3>
-	<h3><img alt="" src="../resources/upload/member/${member.memberFileDTO.fileName}"></h3> <!-- session에 "member"라는 이름으로 memberDTO를 넘겨줬음 -->
-	<!-- memberDTO에 있는 memberFileDTO의 파일이름을 꺼내와 -->
+
 	
 	
 	<a href="./memberUpdate">수정</a>
 	<a href="./memberDelete">탈퇴</a>
-	<a href="../account/accountList">계좌관리</a>
+
 
 </body>
 </html>
