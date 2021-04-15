@@ -33,9 +33,16 @@
 		<id property="productNum" column="productNum"/>
 		<result property="name" column="name"/>
 		<result property="category" column="category"/>
-		<result property="summary" column="summary"/>
-		<result property="info" column="info"/>
+		<result property="subtitle" column="subtitle"/>
+		<result property="includes" column="includes"/>
+		<result property="contents" column="contents"/>
+		<result property="details" column="details"/>
 		<result property="cartInfo" column="cartInfo"/>
+		<association property="file" javaType="ProductFileDTO">
+			<id property="fileNum" column="fileNum"/>
+			<result property="fileName" column="fileName"/>
+			<result property="originName" column="originName"/>
+		</association>
 		<collection property="options" javaType="java.util.List" ofType="OptionsDTO">
 			<id property="optionNum" column="optionNum"/>
 			<result property="type" column="type"/>
@@ -43,11 +50,6 @@
 			<result property="price" column="price"/>
 			<result property="discountRate" column="discountRate"/>
 			<result property="stock" column="stock"/>
-		</collection>
-		<collection property="files" javaType="java.util.List" ofType="ProductFileDTO">
-			<id property="fileNum" column="fileNum"/>
-			<result property="fileName" column="fileName"/>
-			<result property="originName" column="originName"/>
 		</collection>
 	</resultMap>
 	

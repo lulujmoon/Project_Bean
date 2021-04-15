@@ -58,12 +58,13 @@
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<br>
-    		<button>Write</button>
+    		<input type="button" value="Write" id="btn" class="btn btn-info">
 
 		</form>
 	</div>
 	
 	<!-- Script -->
 	<script type="text/javascript" src="../resources/jquery/summernote.js"></script>
+	<script type="text/javascript" src="../resources/jquery/productInsert.js"></script>
 </body>
 </html>

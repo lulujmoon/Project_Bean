@@ -10,31 +10,41 @@
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
-	<div class="container">
+	<div class="container" style="margin-bottom: 200px;margin-top: 100px">
 		<h2>Product Select</h2>
 		<table class="table table-hover">
-			<thead>
-				<th>No</th>
-				<th>Name</th>
-				<th>Category</th>
-				<th>Subtitle</th>
-				<th>Includes</th>
-				<th>Contents</th>
-				<th>Details</th>
-				<th>CartInfo</th>
-			</thead>
-			<tbody>
 					<tr>
+						<td>No</td>
 						<td>${dto.productNum}</td>
+					</tr>
+					<tr>
+						<td>Name</td>	
 						<td>${dto.name}</td>
+					</tr>
+					<tr>
+						<td>Category</td>
 						<td>${dto.category}</td>
+					</tr>
+					<tr>
+						<td>Subtitle</td>
 						<td>${dto.subtitle}</td>
+					</tr>
+					<tr>
+						<td>Includes</td>
 						<td>${dto.includes}</td>
+					</tr>
+					<tr>
+						<td>Contents</td>
 						<td>${dto.contents}</td>
+					</tr>
+					<tr>
+						<td>Details</td>
 						<td>${dto.details}</td>
+					</tr>
+					<tr>
+						<td>CartInfo</td>
 						<td>${dto.cartInfo}</td>
 					</tr>
-			</tbody>
 		</table>
 		<h4>옵션</h4>
 		<table>
@@ -51,20 +61,18 @@
 					</tr>
 				</c:forEach>
 		</table>
-		<h4>파일</h4>
+		<a href="./optionUpdate" class="btn btn-warning btn-sm">옵션 관리</a>
+		<h4>썸네일</h4>
 		<table>
-				<c:forEach items="${dto.files}" var="file">
 					<tr>
-						<td>${file.fileNum}</td>
-						<td>${file.fileName}</td>
-						<td>${file.originName}</td>
-
+						<td>${dto.file.fileNum}</td>
+						<td>${dto.file.fileName}</td>
+						<td>${dto.file.originName}</td>
 					</tr>
-				</c:forEach>
 		</table>
 		
-		<a href="./productUpdate?num=${dto.productNum}">Update</a>
-		<a href="./productDelete?num=${dto.productNum}">Delete</a>
+		<a href="./productUpdate?productNum=${dto.productNum}" class="btn btn-primary btn-sm">Update</a>
+		<a href="./productDelete?productNum=${dto.productNum}" class="btn btn-danger btn-sm">Delete</a>
 	</div>
 </body>
 </html>
