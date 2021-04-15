@@ -38,5 +38,9 @@ public class QnaService implements BoardService {
 	public int setDelete(BoardDTO boardDTO) throws Exception {
 		return qnaDAO.setDelete(boardDTO);
 	}
+	
+	public int setReply(QnaDTO qnaDTO) throws Exception{
+		return qnaDAO.setReply(qnaDTO);
+	}
 
 }

@@ -72,4 +72,20 @@ public class QnaController {
 	
 		return "redirect:./qnaList";
 	}
+	
+	@GetMapping("qnaReply")
+	public ModelAndView setReply()throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("qna/qnaReply");
+	
+		return mv;
+	}
+	
+	@PostMapping("qnaReply")
+	public ModelAndView setReply(QnaDTO qnaDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = qnaService.setReply(qnaDTO);
+		mv.setViewName("redirect:./qnaList");
+		return mv;
+	}
 }
