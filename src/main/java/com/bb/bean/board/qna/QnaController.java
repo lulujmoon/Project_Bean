@@ -51,7 +51,18 @@ public class QnaController {
 	}
 	
 	@GetMapping("qnaUpdate")
-	public void setUpdate()throws Exception{
-		
+	public ModelAndView setUpdate(ModelAndView mv,BoardDTO boardDTO)throws Exception{
+		boardDTO=qnaService.getSelect(boardDTO);
+		mv.addObject("dto",boardDTO);
+		mv.setViewName("qna/qnaUpdate");
+		return mv;
+	}
+	
+	@PostMapping("qnaUpdate")
+	public ModelAndView setUpdate(BoardDTO boardDTO)throws Exception{
+		ModelAndView mv = new ModelAndView(); 
+		int result = qnaService.setUpdate(boardDTO);
+		mv.setViewName("redirect:./qnaList");
+		return mv;
 	}
 }

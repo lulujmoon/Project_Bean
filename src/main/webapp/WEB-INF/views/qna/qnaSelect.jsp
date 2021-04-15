@@ -19,7 +19,7 @@
 <h3>${dto.contents}</h3>
 
 <div>
-<a href="./qnaUpdate"><button type="button" class="btn btn-info">수정</button></a>
+<a href="./qnaUpdate?num=${dto.num}"><button type="button" class="btn btn-info">수정</button></a>
 <button type="button" class="btn btn-danger">삭제</button>
 </div>
 
