@@ -8,11 +8,11 @@
 </head>
 <body>
 	<h1>My Page</h1>
-	<h3>ID : ${member.id}</h3> <!-- session에 있는(login할때 담아둠) -->
-	<h3>Name : ${member.name}</h3>
-	<h3>Phone : ${member.phone}</h3>
+ 	<h3>ID : ${member.id}</h3> <!-- session에 있는(login할때 담아둠) -->
+	<h3>Name : ${member.name}</h3> 
+<%-- 	<h3>Phone : ${member.phone}</h3>
 	<h3>Email : ${member.email}</h3>
-
+ --%>
 	
 	
 	<a href="./memberUpdate">수정</a>
