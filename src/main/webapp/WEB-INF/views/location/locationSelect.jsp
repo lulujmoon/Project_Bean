@@ -1,3 +1,4 @@
+<%@page import="java.util.function.Function"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -13,14 +14,17 @@
 	<h2>Location Select Page</h2>
 	
 	<!-- Select 된 데이터 내용 -->
-	<h3>Store: ${dto.storeName}</h3>
-	<h3>Location: ${dto.storeLoc}</h3>
+	<h5>Store: ${dto.storeName}</h5>
+	<h5>Location: ${dto.storeLoc}</h5>
 	
+
 	<!-- 지도 -->
 	<div id="map" style="width:500px;height:400px;"></div>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=29d592b09c4a7ae1856b2630da60b871&libraries=services"></script>
 	
 	<script>
+
+		
 		var container = document.getElementById('map');
 		var options = {
 			center: new kakao.maps.LatLng(33.450701, 126.570667),

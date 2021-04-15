@@ -2,6 +2,7 @@ package com.bb.bean.location;
 
 public class LocationDTO {
 
+	
 	private String storeName;
 	private double storeLat;
 	private double storeLan;
