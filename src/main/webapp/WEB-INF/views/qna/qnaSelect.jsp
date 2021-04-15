@@ -20,7 +20,8 @@
 
 <div>
 <a href="./qnaUpdate?num=${dto.num}"><button type="button" class="btn btn-info">수정</button></a>
-<button type="button" class="btn btn-danger">삭제</button>
+
+<a href="./qnaDelete?num=${dto.num}" id="del" class="btn btn-info">Delete</a>
 </div>
 
 </body>

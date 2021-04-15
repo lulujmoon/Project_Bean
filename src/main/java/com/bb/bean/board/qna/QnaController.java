@@ -65,4 +65,11 @@ public class QnaController {
 		mv.setViewName("redirect:./qnaList");
 		return mv;
 	}
+	
+	@GetMapping("qnaDelete")
+	public String setDelete(BoardDTO boardDTO)throws Exception{
+		int result = qnaService.setDelete(boardDTO);
+	
+		return "redirect:./qnaList";
+	}
 }
