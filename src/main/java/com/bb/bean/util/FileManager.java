@@ -12,7 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Component
 public class FileManager {
 
-	//파일 저장
 	public String save(String name, MultipartFile multipartFile, HttpSession session) throws Exception {
 		
 		String path = session.getServletContext().getRealPath("resources/upload/"+name);
@@ -33,7 +32,6 @@ public class FileManager {
 	}
 	
 	
-	//파일 삭제
 	public boolean delete(String name, String fileName, HttpSession session) throws Exception {
 		
 		String path = session.getServletContext().getRealPath("resources/upload/"+name);
