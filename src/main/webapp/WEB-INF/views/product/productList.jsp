@@ -16,12 +16,24 @@
 			<thead>
 				<th>No</th>
 				<th>Name</th>
+				<th>Category</th>
+				<th>Subtitle</th>
+				<th>Includes</th>
+				<th>Contents</th>
+				<th>Details</th>
+				<th>CartInfo</th>
 			</thead>
 			<tbody>
 				<c:forEach items="${list}" var="dto">
 					<tr>
 						<td><a href="./productSelect?productNum=${dto.productNum}">${dto.productNum}</a></td>
 						<td>${dto.name}</td>
+						<td>${dto.category}</td>
+						<td>${dto.subtitle}</td>
+						<td>${dto.includes}</td>
+						<td>${dto.contents}</td>
+						<td>${dto.details}</td>
+						<td>${dto.cartInfo}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

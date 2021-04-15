@@ -15,7 +15,7 @@ public class ProductDTO {
 	private String details;
 	private String cartInfo;
 	private List<OptionsDTO> options;
-	private ProductFileDTO file;
+	private List<ProductFileDTO> files;
 	
 	public long getProductNum() {
 		return productNum;
@@ -71,13 +71,12 @@ public class ProductDTO {
 	public void setOptions(List<OptionsDTO> options) {
 		this.options = options;
 	}
-	public ProductFileDTO getFile() {
-		return file;
+	public List<ProductFileDTO> getFiles() {
+		return files;
 	}
-	public void setFile(ProductFileDTO file) {
-		this.file = file;
+	public void setFiles(List<ProductFileDTO> files) {
+		this.files = files;
 	}
-
 	
 	
 }
