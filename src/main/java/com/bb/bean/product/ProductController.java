@@ -53,6 +53,15 @@ public class ProductController {
 		return mv;
 	}
 	
+	@PostMapping("summerFileDelete")
+	public ModelAndView summerFileDelete(String fileName) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		boolean result = productService.summerFileDelete(fileName);
+		mv.addObject("result", result);
+		mv.setViewName("common/ajaxResult");
+		return mv;
+	}
+	
 	
 	/*productUpdate*/
 	

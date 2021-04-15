@@ -12,6 +12,9 @@ $('#contents').summernote({
    {
 	onImageUpload : function(files){
 		summerUpload(files);
+	}, 
+	onMediaDelete: function(files){
+		summerDelete(files);
 	}
  	}
  });
@@ -35,4 +38,13 @@ function summerUpload(files){
 			$("#contents").summernote('insertImage', fileName);
 		}
 	});
+};
+
+function summerDelete(files){
+	let fileName = $(files[0]).attr("src");
+	fileName = fileName.substring(fileName.lastIndexOf('/')+1);
+	
+	$.post("./summerFileDelete", {fileName:fileName}, function(result){
+		console.log(result);
+	})
 }
