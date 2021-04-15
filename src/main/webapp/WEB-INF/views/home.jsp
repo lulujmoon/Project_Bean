@@ -13,12 +13,16 @@
 <c:import url="./template/header.jsp"></c:import>
 <div class="container">
 	
-	<h1>
-	Hello world!  
-	</h1>
+	<h1>Option Test</h1>
+	
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="add">
+	<select id="sel">
+	
+	</select>
+	
 
-	<P>  The time on the server is ${serverTime}. </P>
 </div>
-
+<script type="text/javascript" src="./resources/jquery/optionTest.js"></script>
 </body>
 </html>
