@@ -17,5 +17,51 @@ ${dto.title}
 ${dto.contents}
 </c:forEach>
 
+<div id="accordion">
+
+ <c:forEach items="${list}" var="dto">
+  <div class="card">
+    <div class="card-header">
+      <a class="collapsed card-link" data-toggle="collapse" href="#collapseOne">
+        ${dto.title}
+      </a>
+    </div>
+    
+    <div id="collapseOne" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        ${dto.contents}
+      </div>
+    </div>
+  </div>
+ </c:forEach>
+
+  <div class="card">
+    <div class="card-header">
+      <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+        Collapsible Group Item #2
+      </a>
+    </div>
+    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        Lorem ipsum..
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+        Collapsible Group Item #3
+      </a>
+    </div>
+    <div id="collapseThree" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        Lorem ipsum..
+      </div>
+    </div>
+  </div>
+
+</div>
+
 </body>
 </html>
