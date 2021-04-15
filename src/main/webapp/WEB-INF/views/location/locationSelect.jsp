@@ -53,8 +53,9 @@
 		// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
 		// marker.setMap(null); 
 		
-	</script>
-	<p> woejfoiwef </p>
+	</script>	
+	
+	
 	
 
 </body>
