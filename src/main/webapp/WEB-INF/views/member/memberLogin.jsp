@@ -19,7 +19,7 @@
 
 					<!-- Modal body -->
 					<div class="modal-body">
-						<form action="./memberLogin" method="post">
+						<form action="./member/memberLogin" method="post">
 							<div class="form-group">
 								<label for="id">이메일</label> <input type="text"
 									class="form-control" id="id" name="id"

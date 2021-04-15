@@ -21,38 +21,35 @@
           
           	<div class="container">
 		<h2>Member Join Page</h2>
-          <form id="frm" action="./memberJoin" method="post"
+          <form id="frm" action="./member/memberJoin" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="id">이메일</label> <input type="text" class="form-control"
 					id="id" name="id" value="">
 				<h4 id="idCheckResult"></h4>
-				<!-- ID는 6글자 이상 -->
+				<!-- ID는 이메일형식 -->
 			</div>
 
 			<div class="form-group">
 				<label for="pw">비밀번호</label> <input type="password"
 					class="form-control" id="pw" name="pw">
 				<h4 id="pwResult"></h4>
-				<!-- PW는 8글자 이상 -->
+				<!-- PW는 6글자 이상 -->
 			</div>
 
 			<div class="form-group">
 				<label for="pw">비밀번호 확인</label> <input type="password"
 					class="form-control" id="pw2" name="pw2">
-				<!-- PW 두개는 일치  x: 확인용 지워줌-->
 			</div>
 
 			<div class="form-group">
 				<label for="name">이름</label> <input type="text"
 					class="form-control etc" id="name" name="name">
-				<!-- 비어 있으면 X -->
 			</div>
 
 			<div class="form-group">
 				<label for="phone">닉네임</label> <input type="text"
 					class="form-control etc" id="nickname" name="nickname">
-				<!-- 비어 있으면 X -->
 			</div>
 
 <br>
@@ -73,11 +70,12 @@
 			<div class="form-group">
 				<label for="email">생년월일</label> <input type="text"
 					class="form-control etc" id="birthday" name="birthday">
-				<!-- 비어 있으면 X -->
 			</div>
 
 
-			<!-- 이용약관 -->
+			<input type="hidden" name="point" value="0" >
+
+			이용약관
 			<div class="form-check">
 				<label class="form-check-label"> <input type="checkbox"
 					class="check" value="">동의
@@ -100,7 +98,7 @@
 			<div class="jumbotron">
 				<h1>Bootstrap Tutorial</h1>
 				<p>Bootstrap is the most popular HTML, CSS...</p>
-			</div>
+			</div> 
 
 
 
@@ -109,7 +107,7 @@
 
 	</div>
 
-	<script type="text/javascript" src="../resources/jquery/memberJoin.js"></script>
+	<script type="text/javascript" src="./resources/jquery/memberJoin.js"></script>
           
           
         </div>
