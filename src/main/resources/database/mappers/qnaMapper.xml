@@ -79,8 +79,10 @@ update qna set step=step+1 where ref=#{ref} and step > #{step}
 insert into qnaFiles values(qnafile_seq.nextval,#{num},#{fileName},#{origineName})
 </insert>
 
-<!-- <update id="setStatusUpdate" parameterType="QnaDTO">
-update qna set status=#{status} where ref=(select ref from qna group by ref having count(ref) >1)
-</update> -->
+<update id="setStatusUpdate" parameterType="QnaDTO">
+update qna set status=#{status} where ref in(select ref from qna group by ref having count(ref)>1)
+</update>
+
+
 
 </mapper>
