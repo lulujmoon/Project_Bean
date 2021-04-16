@@ -6,8 +6,41 @@
     
 <mapper namespace ="com.bb.bean.board.qna.QnaDAO">
 
-<select id="getList" resultType="QnaDTO">
-select * from qna
+<select id="getList" resultType="QnaDTO" parameterType="Pager">
+select * from
+(select rownum R, Q.* from
+(select * from qna where
+<choose>
+	<when test="kind == 'Writer'">
+		writer
+	</when>
+	<when test="kind == Contents'">
+		contents
+	</when>
+	<otherwise>
+		title
+	</otherwise>
+</choose>
+like '%' || #{search} || '%' and num > 0
+			order by ref desc, step asc) Q)
+		where R between #{startRow} and #{lastRow}
+</select>
+
+<select id="getTotalCount" resultType="long" parameterType="Pager">
+select count(num) from qna
+where
+<choose>
+	<when test="kind == 'Writer'">
+		writer
+	</when>
+	<when test="kind == Contents'">
+		contents
+	</when>
+	<otherwise>
+		title
+	</otherwise>
+</choose>
+like '%'||#{search}||'%' and num >0
 </select>
 
 <select id="getSelect" parameterType="BoardDTO" resultType="QnaDTO">

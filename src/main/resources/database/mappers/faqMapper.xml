@@ -6,7 +6,7 @@
     
 <mapper namespace ="com.bb.bean.board.faq.FaqDAO">
 
-<select id="getList" resultType="FaqDTO">
+<select id="getList" resultType="FaqDTO" parameterType="Pager">
 select * from
 	(select rownum R, N.* from
 		(select * from faq where

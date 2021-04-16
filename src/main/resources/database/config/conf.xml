@@ -9,6 +9,7 @@
 		<typeAlias type="com.bb.bean.board.BoardDTO" alias="BoardDTO"/>
 		<typeAlias type="com.bb.bean.board.faq.FaqDTO" alias="FaqDTO"/>
 		<typeAlias type="com.bb.bean.board.qna.QnaDTO" alias="QnaDTO"/>
+		<typeAlias type="com.bb.bean.util.Pager" alias="Pager"/>
 	
 	</typeAliases>
 
