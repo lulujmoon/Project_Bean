@@ -7,8 +7,30 @@ public class LocationDTO {
 	private double storeLat;
 	private double storeLan;
 	private String storeLoc;
-	private String StoreTel;
+	private String storeTel;
+	private String storeImg;
+	private String storeInfo;
 	
+	
+	
+	public String getStoreInfo() {
+		return storeInfo;
+	}
+	public void setStoreInfo(String storeInfo) {
+		this.storeInfo = storeInfo;
+	}
+	public String getStoreTel() {
+		return storeTel;
+	}
+	public void setStoreTel(String storeTel) {
+		this.storeTel = storeTel;
+	}
+	public String getStoreImg() {
+		return storeImg;
+	}
+	public void setStoreImg(String storeImg) {
+		this.storeImg = storeImg;
+	}
 	public String getStoreName() {
 		return storeName;
 	}
@@ -33,12 +55,7 @@ public class LocationDTO {
 	public void setStoreLoc(String storeLoc) {
 		this.storeLoc = storeLoc;
 	}
-	public String getStoreTel() {
-		return StoreTel;
-	}
-	public void setStoreTel(String storeTel) {
-		StoreTel = storeTel;
-	}
+
 	
 	
 }
