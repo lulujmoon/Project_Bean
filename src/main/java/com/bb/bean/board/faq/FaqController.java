@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bb.bean.board.BoardDTO;
+import com.bb.bean.util.Pager;
 
 @Controller
 @RequestMapping("/faq/**")
@@ -19,11 +20,12 @@ public class FaqController {
 	private FaqService faqService;
 
 	@RequestMapping("faqList")
-	public ModelAndView getList()throws Exception{
+	public ModelAndView getList(Pager pager)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		List<BoardDTO> ar=faqService.getList();
+		List<BoardDTO> ar=faqService.getList(pager);
 		mv.addObject("list",ar);
 		mv.setViewName("faq/faqList");
+		mv.addObject("pager",pager);
 		return mv;
 	}
 	

@@ -2,10 +2,12 @@ package com.bb.bean.board;
 
 import java.util.List;
 
+import com.bb.bean.util.Pager;
+
 public interface BoardService {
 	
 	//list
-	public List<BoardDTO> getList()throws Exception;
+	public List<BoardDTO> getList(Pager pager)throws Exception;
 	
 	//select
 	public BoardDTO getSelect(BoardDTO boardDTO)throws Exception;

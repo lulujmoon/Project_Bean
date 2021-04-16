@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.bb.bean.board.BoardDTO;
 import com.bb.bean.board.BoardService;
+import com.bb.bean.util.Pager;
 
 @Service
 public class FaqService implements BoardService{
@@ -15,8 +16,12 @@ public class FaqService implements BoardService{
 	private FaqDAO FaqDAO;
 
 	@Override
-	public List<BoardDTO> getList() throws Exception {
-		return FaqDAO.getList();
+	public List<BoardDTO> getList(Pager pager) throws Exception {
+		pager.makeRow();
+		
+		long totalCount = FaqDAO.getTotalCount(pager);
+		pager.makeNum(totalCount);
+		return FaqDAO.getList(pager);
 	}
 
 	@Override
