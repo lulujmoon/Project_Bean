@@ -1,8 +1,10 @@
 package com.bb.bean.board.qna;
 
 import java.sql.Date;
+import java.util.List;
 
 import com.bb.bean.board.BoardDTO;
+import com.bb.bean.board.BoardFileDTO;
 
 public class QnaDTO extends BoardDTO {
 	
@@ -14,7 +16,14 @@ public class QnaDTO extends BoardDTO {
 	private long depth;
 	private long con;
 	
-
+	private List<BoardFileDTO> boardFiles;
+	
+	public List<BoardFileDTO> getBoardFiles() {
+		return boardFiles;
+	}
+	public void setBoardFiles(List<BoardFileDTO> boardFiles) {
+		this.boardFiles = boardFiles;
+	}
 	public long getCon() {
 		return con;
 	}

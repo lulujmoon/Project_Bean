@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bb.bean.board.BoardDAO;
 import com.bb.bean.board.BoardDTO;
+import com.bb.bean.board.BoardFileDTO;
 import com.bb.bean.util.Pager;
 
 @Repository
@@ -62,5 +63,9 @@ public class QnaDAO implements BoardDAO{
 		return sqlSession.update(NAMESPACE+"setStatusUpdate",qnaDTO);
 	}
 
+	public int setFileInsert(BoardFileDTO boardFileDTO)throws Exception{
+			return sqlSession.insert(NAMESPACE+"setFileInsert", boardFileDTO);
+	}
+	
 
 }

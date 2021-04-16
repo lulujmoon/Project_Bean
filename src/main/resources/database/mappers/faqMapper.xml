@@ -58,4 +58,5 @@ update faq set title=#{title},contents=#{contents},category=#{category} where nu
 delete faq where num=#{num}
 </delete>
 
+
 </mapper>
