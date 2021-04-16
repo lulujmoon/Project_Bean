@@ -74,7 +74,6 @@
 						<td>${option.productNum}</td>
 						<td>${option.optionInfo}</td>
 						<td>${option.type}</td>
-						<td>${option.grind}</td>
 						<td>${option.price}</td>
 						<td>${option.discountRate}</td>
 						<td>${option.stock}</td>
@@ -97,16 +96,17 @@
 		
 	</div>
 	<div style="margin-bottom:100px"></div>
-	
+
 	<script type="text/javascript">
 		let txt = '${dto.includes}';
 		txt = txt.replace(/~/g,"</li><li>");
-	 	$("#inc").append('<li>'+txt+'</li>');
-		
+ 		$("#inc").append('<li>'+txt+'</li>');
+	
 		txt = '${dto.details}';
 		txt = txt.replace(/~/g, "</li><li>");
 		$("#dtl").append('<li>'+txt+'</li>');
 	</script>
+
 
 </body>
 </html>

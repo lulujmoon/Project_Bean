@@ -12,42 +12,71 @@
 <c:import url="../template/header.jsp"></c:import>
 	<br>
 	<div class="container">
-	<h2>h</h2>
+	<h3 style="display:inline-block;">${product.name}</h3>
+	<input type="button" value="추가" id="add" class="btn btn-sm btn-secondary" style="float:right;margin-right:13px">
+	<!-- Options List -->
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<td>옵션명</td>
+				<td>옵션 설명</td>
+				<td>정가</td>
+				<td>할인율</td>
+				<td>재고</td>
+				<td></td>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${list}" var="option">
+				<tr>
+					<td>${option.type}</td>
+					<td>${option.optionInfo}</td>
+					<td>${option.price}</td>
+					<td>${option.discountRate}</td>
+					<td>${option.stock}</td>
+					<td style="width:5%" class="edit"><input type="button" value="수정" class="btn btn-sm btn-secondary" title="${option.optionNum}"></td>
+					<td style="width:5%"><input type="button" value="삭제" class="del btn btn-sm btn-danger" title="${option.optionNum}"></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 	
 	
-		<form action="./optionUpdate" method="post" id="frm">
-				<div name="options" id="options">
-					<h4>Option </h4>
-					<input type="hidden" name="productNum" value="${dto.productNum}">
-					<div class="form-group">
-						<label for="type">옵션명</label>
-						<input type="text" class="form-control myCheck" id="type" name="type" placeholder="용량 또는 커피명을 적어주세요.">
-						<small id="subResult" class="form-text text-muted"></small>
-					</div>
-					<div class="form-group">
-						<label for="optionInfo">옵션 설명</label>
-						<input type="text" class="form-control myCheck" id="optionInfo" name="optionInfo">
-						<small id="subResult" class="form-text text-muted"></small>
-					</div>	
-					<div class="form-group">
-						<label for="price">가격</label>
-						<input type="text" class="form-control myCheck" id="price" name="price">
-						<small id="subResult" class="form-text text-muted"></small>
-					</div>					
-					<div class="form-group">
-						<label for="discountRate">할인율</label>
-						<input type="text" class="form-control myCheck" id="discountRate" name="discountRate" placeholder="소수점으로 적어주세요. 예) 10% 할인: 0.1">
-						<small id="subResult" class="form-text text-muted"></small>
-					</div>	
-					<div class="form-group">
-						<label for="stock">재고</label>
-						<input type="text" class="form-control myCheck" id="stock" name="stock">
-						<small id="subResult" class="form-text text-muted"></small>
-					</div>
-				</div>	
-			<input type="button" id="add" value="add">						
+	<div id="sample" style="display:none">
+		<h5 id="tit">Option</h5><br>
+		<form action="./optionInsert" method="post" id="frm">
+			<input type="hidden" name="productNum" value="${product.productNum}">
+			<div class="form-group">
+				<label for="type">옵션명</label>
+				<input type="text" class="form-control myCheck" id="opt1" name="type" placeholder="용량 또는 커피명을 적어주세요." value="">
+				<small id="subResult" class="form-text text-muted"></small>
+			</div>
+			<div class="form-group">
+				<label for="optionInfo">옵션 설명</label>
+				<input type="text" class="form-control myCheck" id="opt2" name="optionInfo">
+				<small id="subResult" class="form-text text-muted"></small>
+			</div>	
+			<div class="form-group">
+				<label for="price">정가</label>
+				<input type="text" class="form-control myCheck" id="opt3" name="price">
+				<small id="subResult" class="form-text text-muted"></small>
+			</div>					
+			<div class="form-group">
+				<label for="discountRate">할인율</label>
+				<input type="text" class="form-control myCheck" id="opt4" name="discountRate" placeholder="소수점으로 적어주세요. 예) 10% 할인: 0.1">
+				<small id="subResult" class="form-text text-muted"></small>
+			</div>	
+			<div class="form-group">
+				<label for="stock">재고</label>
+				<input type="text" class="form-control myCheck" id="opt5" name="stock">
+				<small id="subResult" class="form-text text-muted"></small>
+			</div>
+			<button class="btn btn-sm btn-secondary">추가</button>				
 		</form>
+		</div>
 	</div>
-	
+	<script type="text/javascript" src="../resources/jquery/optionManage.js"></script>
+
 </body>
 </html>

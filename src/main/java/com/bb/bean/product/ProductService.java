@@ -47,4 +47,26 @@ public class ProductService {
 	public boolean summerFileDelete(String fileName) throws Exception {
 		return fileManager.delete("productContents", fileName, session);
 	}
+	
+	
+	/* Options */
+	public List<OptionsDTO> getOptionsList(ProductDTO productDTO) throws Exception {
+		return productDAO.getOptionsList(productDTO);
+	}
+	
+	public OptionsDTO getOptionsSelect(OptionsDTO optionsDTO) throws Exception {
+		return productDAO.getOptionsSelect(optionsDTO);
+	}
+	
+	public int setOptionsInsert(OptionsDTO optionsDTO) throws Exception {
+		return productDAO.setOptionsInsert(optionsDTO);
+	}
+	
+	public int setOptionsUpdate(OptionsDTO optionsDTO) throws Exception {
+		return productDAO.setOptionsUpdate(optionsDTO);
+	}
+	
+	public int setOptionsDelete(OptionsDTO optionsDTO) throws Exception {
+		return productDAO.setOptionsDelete(optionsDTO);
+	}
 }

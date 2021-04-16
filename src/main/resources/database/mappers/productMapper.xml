@@ -78,4 +78,21 @@
 		select * from options where productNum=#{productNum}
 	</select>
 	
+	<select id="getOptionsSelect" parameterType="OptionsDTO" resultType="OptionsDTO">
+		select * from options where optionNum=#{optionNum}
+	</select>
+	
+	<insert id="setOptionsInsert" parameterType="OptionsDTO">
+		insert into options (optionNum, productNum, type, optionInfo, price, discountRate, stock)
+		values (options_seq.nextval, #{productNum}, #{type}, #{optionInfo}, #{price}, #{discountRate}, #{stock})
+	</insert>
+	
+	<update id="setOptionsUpdate" parameterType="OptionsDTO">
+		update options set type=#{type}, optionInfo=#{optionInfo}, price=#{price}, discountRate=#{discountRate}, stock=#{stock} where optionNum=#{optionNum}
+	</update>
+	
+	<delete id="setOptionsDelete" parameterType="OptionsDTO">
+		delete options where optionNum=#{optionNum}
+	</delete>
+	
 </mapper>

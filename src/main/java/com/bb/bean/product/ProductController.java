@@ -87,13 +87,24 @@ public class ProductController {
 	
 	
 	
-	/* Option 설정 */
+	/* Options */
 	
 	@GetMapping("optionManage")
-	public void setOptionManage() throws Exception {}
+	public void setOptionsManage(ProductDTO productDTO, Model model) throws Exception {
+		List<OptionsDTO> li = productService.getOptionsList(productDTO);
+		productDTO = productService.getSelect(productDTO);
+		model.addAttribute("list", li);
+		model.addAttribute("product", productDTO);
+	}
 	
-	@PostMapping("optionManage")
-	public void setOptionManage(OptionsDTO [] list) throws Exception {
-		System.out.println(list.length);
+	@PostMapping("optionInsert")
+	public String setOptionsInsert(OptionsDTO optionsDTO) throws Exception {
+		int result = productService.setOptionsInsert(optionsDTO);
+		return "redirect:./optionManage?productNum="+optionsDTO.getProductNum();
+	}
+	
+	@PostMapping("optionUpdate")
+	public void setOptionsUpdate(OptionsDTO optionsDTO) throws Exception {
+		System.out.println(optionsDTO.getOptionInfo());
 	}
 }
