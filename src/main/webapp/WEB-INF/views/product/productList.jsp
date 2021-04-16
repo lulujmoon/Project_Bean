@@ -22,6 +22,7 @@
 				<th>Contents</th>
 				<th>Details</th>
 				<th>CartInfo</th>
+				<th>Grinds</th>
 			</thead>
 			<tbody>
 				<c:forEach items="${list}" var="dto">
@@ -34,6 +35,7 @@
 						<td>${dto.contents}</td>
 						<td>${dto.details}</td>
 						<td>${dto.cartInfo}</td>
+						<td>${dto.grinds}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

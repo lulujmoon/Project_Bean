@@ -1,4 +1,4 @@
-package com.bb.bean.options;
+package com.bb.bean.product;
 
 public class OptionsDTO {
 	
@@ -6,7 +6,6 @@ public class OptionsDTO {
 	private long productNum;
 	private String optionInfo;
 	private String type;
-	private String grind;
 	private long price;
 	private double discountRate;
 	private long stock;
@@ -34,12 +33,6 @@ public class OptionsDTO {
 	}
 	public void setType(String type) {
 		this.type = type;
-	}
-	public String getGrind() {
-		return grind;
-	}
-	public void setGrind(String grind) {
-		this.grind = grind;
 	}
 	public long getPrice() {
 		return price;

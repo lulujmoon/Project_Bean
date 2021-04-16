@@ -9,6 +9,6 @@
 	<typeAliases>
 		<typeAlias type="com.bb.bean.product.ProductDTO" alias="ProductDTO"/>
 		<typeAlias type="com.bb.bean.product.ProductFileDTO" alias="ProductFileDTO"/>
-		<typeAlias type="com.bb.bean.options.OptionsDTO" alias="OptionsDTO"/>
+		<typeAlias type="com.bb.bean.product.OptionsDTO" alias="OptionsDTO"/>
 	</typeAliases>
 </configuration>

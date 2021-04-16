@@ -8,7 +8,6 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.bb.bean.SampleTest;
-import com.bb.bean.options.OptionsDTO;
 
 public class ProductDAOTest extends SampleTest{
 

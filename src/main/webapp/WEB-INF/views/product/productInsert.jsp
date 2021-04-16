@@ -57,6 +57,12 @@
 				<input type="text" class="form-control myCheck" id="cartInfo" name="cartInfo">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
+				<div class="form-group">
+				<label for="grinds">분쇄도 옵션</label>
+				<input type="radio" name="grinds" value="O"> 네
+				<input type="radio" name="grinds" value="X"> 아니오
+				<small id="subResult" class="form-text text-muted"></small>
+			</div>
 			<br>
     		<button>Write</button>
 

@@ -6,6 +6,9 @@
     
 
 <mapper namespace ="com.bb.bean.product.ProductDAO">
+
+	<!-- Vanilla Product -->
+
 	<select id="getList" resultType="ProductDTO">
 		select * from product 
 			<choose>
@@ -38,6 +41,7 @@
 		<result property="contents" column="contents"/>
 		<result property="details" column="details"/>
 		<result property="cartInfo" column="cartInfo"/>
+		<result property="grinds" column="grinds"/>
 		<association property="file" javaType="ProductFileDTO">
 			<id property="fileNum" column="fileNum"/>
 			<result property="fileName" column="fileName"/>
@@ -54,15 +58,24 @@
 	</resultMap>
 	
 	<insert id="setInsert" parameterType="ProductDTO">
-		insert into product (productNum, name, category, subtitle, includes, contents, details, cartInfo) values
-		(product_seq.nextval, #{name}, #{category}, #{subtitle} , #{includes}, #{contents}, #{details}, #{cartInfo})
+		insert into product (productNum, name, category, subtitle, includes, contents, details, cartInfo, grinds) values
+		(product_seq.nextval, #{name}, #{category}, #{subtitle} , #{includes}, #{contents}, #{details}, #{cartInfo}, #{grinds})
 	</insert>
 	
 	<update id="setUpdate" parameterType="ProductDTO">
-		update product set name=#{name}, category=#{category}, subtitle=#{subtitle}, includes=#{includes}, contents=#{contents}, details=#{details}, cartInfo=#{cartInfo} where productNum=#{productNum}
+		update product set name=#{name}, category=#{category}, subtitle=#{subtitle}, includes=#{includes}, contents=#{contents}, details=#{details}, cartInfo=#{cartInfo}, grinds=#{grinds} where productNum=#{productNum}
 	</update>
 	
 	<delete id="setDelete" parameterType="ProductDTO">
 		delete product where productNum=#{productNum}
 	</delete>
+	
+
+
+	<!-- Options -->
+	
+	<select id="getOptionsList" parameterType="ProductDTO" resultType="OptionsDTO">
+		select * from options where productNum=#{productNum}
+	</select>
+	
 </mapper>

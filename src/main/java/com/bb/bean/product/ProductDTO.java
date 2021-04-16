@@ -2,8 +2,6 @@ package com.bb.bean.product;
 
 import java.util.List;
 
-import com.bb.bean.options.OptionsDTO;
-
 public class ProductDTO {
 
 	private long productNum;
@@ -14,6 +12,7 @@ public class ProductDTO {
 	private String contents;
 	private String details;
 	private String cartInfo;
+	private String grinds;
 	private List<OptionsDTO> options;
 	private ProductFileDTO file;
 	
@@ -64,6 +63,12 @@ public class ProductDTO {
 	}
 	public void setCartInfo(String cartInfo) {
 		this.cartInfo = cartInfo;
+	}
+	public String getGrinds() {
+		return grinds;
+	}
+	public void setGrinds(String grinds) {
+		this.grinds = grinds;
 	}
 	public List<OptionsDTO> getOptions() {
 		return options;

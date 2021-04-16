@@ -89,6 +89,11 @@ public class ProductController {
 	
 	/* Option 설정 */
 	
-	@GetMapping("optionUpdate")
-	public void setOptionUpdate() throws Exception {}
+	@GetMapping("optionManage")
+	public void setOptionManage() throws Exception {}
+	
+	@PostMapping("optionManage")
+	public void setOptionManage(OptionsDTO [] list) throws Exception {
+		System.out.println(list.length);
+	}
 }

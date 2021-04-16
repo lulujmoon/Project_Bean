@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <c:import url="../template/bootstrap.jsp"></c:import>
 <title>Insert title here</title>
+
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
@@ -34,7 +35,7 @@
 			</tr>
 			<tr>
 				<td>Includes</td>
-				<td><ul  id="inc"></ul></td>
+				<td><ul id="inc"></ul></td>
 			</tr>			
 			<tr>
 				<td>Contents</td>
@@ -48,6 +49,22 @@
 				<td>CartInfo</td>
 				<td>${dto.cartInfo}</td>
 			</tr>
+			<c:if test="${dto.grinds eq 'O'}">
+				<tr>
+					<td>갈아드릴까요?</td>
+					<td>
+						<select>
+							<option>홀빈(갈지 않음)</option>
+							<option>핸드드립/클레버용</option>
+							<option>커피메이커용</option>
+							<option>프렌치프레스용</option>
+							<option>모카포트/에어로프레스용</option>
+							<option>에스프레소 머신용</option>
+							<option>더치/콜드브루용</option>
+						</select>
+					</td>
+				</tr>
+			</c:if>
 		</table>
 		<h4>옵션</h4>
 		<table>
@@ -65,7 +82,7 @@
 				</c:forEach>
 		</table>
 			
-		<a href="./optionUpdate?productNum=${dto.productNum}" class="btn btn-secondary btn-sm">옵션관리</a>
+		<a href="./optionManage?productNum=${dto.productNum}" class="btn btn-secondary btn-sm">옵션관리</a>
 		
 		<h4>파일</h4>
 		<table>
