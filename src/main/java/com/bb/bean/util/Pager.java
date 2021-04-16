@@ -4,9 +4,6 @@ public class Pager {
 	
 	private long perPage;
 	private long perBlock;
-	private long curPage;
-	private long startRow;
-	private long lastRow;
 	
 	public Pager() {
 		
@@ -14,7 +11,9 @@ public class Pager {
 		this.perBlock=5;
 		this.curPage=1;
 	}
-
+	private long curPage;
+	private long startRow;
+	private long lastRow;
 
 	//rownum 계산
 	public void makeRow() {

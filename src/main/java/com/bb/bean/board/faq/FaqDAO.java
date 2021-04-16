@@ -19,7 +19,7 @@ public class FaqDAO implements BoardDAO {
 	
 	@Override
 	public List<BoardDTO> getList(Pager pager) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"getList");
+		return sqlSession.selectList(NAMESPACE+"getList",pager);
 	}
 	@Override
 	public long getTotalCount(Pager pager) throws Exception {

@@ -12,6 +12,8 @@
 <body>
 <c:import url="../template/header.jsp"></c:import>
 
+<div class="container">
+
 <h1>QNA List Page</h1>
 
 <table class="table">
@@ -30,7 +32,11 @@
 		<c:forEach items="${list}" var="dto" >
 			<tr>
 				<td>${dto.num}</td>
-				<td><a href="./qnaSelect?num=${dto.num}">${dto.title}</a></td>
+				<td><a href="./qnaSelect?num=${dto.num}">
+				<c:catch>
+				<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
+				</c:catch>
+				${dto.title}</a></td>
 				<td>${dto.writer}</td>
 				<td>${dto.regDate}</td>
 				<td>${dto.hit}</td>
@@ -40,8 +46,43 @@
 		</tbody>
 	
 	</table>
+	</div>
+	
+	<div class="container">
+	  <ul class="pagination">
+	  
+	  <c:if test="${pager.pre}">	
+	    <li class="page-item"><a class="page-link p" href="#" title="${pager.startNum-1}">Previous</a></li>
+	   </c:if>
+	   
+	   <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
+	   
+	    <li class="page-item"><a class="page-link p" href="#" title="${i}">${i}</a></li>
+	   </c:forEach>
+	   
+	    <c:if test="${pager.next}">
+	    <li class="page-item"><a class="page-link p" href="#" title="${pager.lastNum+1}">Next</a></li>
+	    </c:if>
+	  </ul>
+	  
+	<div class="input-group mt-3 mb-3">
+	<form id="frm" action="./qnaList" class="form-inline">
+		<input type="hidden" name="curPage" value="1" id="curPage">
+	  <div class="input-group-prepend">
+	   <select class="form-control" name="kind" id="kind" >
+	    <option class="sel">Writer</option>
+	    <option class="sel">Contents</option>
+	    <option class="sel">Title</option>
+	  </select>
+	  </div>
+	  <input type="text" class="form-control" name="search" id="search" value="${pager.search}" placeholder="">
+	    <div class="input-group-append">
+	    <button class="btn btn-success" type="submit">Search</button>
+	  </div>
+	 </form> 
+	</div> 
 	
 	<a href="./qnaInsert"><button type="button" class="btn btn-success">글쓰기</button></a>
-	
+	</div>
 </body>
 </html>

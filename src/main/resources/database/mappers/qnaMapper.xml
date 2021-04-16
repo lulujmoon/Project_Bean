@@ -14,7 +14,7 @@ select * from
 	<when test="kind == 'Writer'">
 		writer
 	</when>
-	<when test="kind == Contents'">
+	<when test="kind == 'Contents'">
 		contents
 	</when>
 	<otherwise>
@@ -33,7 +33,7 @@ where
 	<when test="kind == 'Writer'">
 		writer
 	</when>
-	<when test="kind == Contents'">
+	<when test="kind == 'Contents'">
 		contents
 	</when>
 	<otherwise>
