@@ -30,7 +30,7 @@ $(".edit").click(function(){
 
 
 
-$(".del").click(function(){
+$(".don").click(function(){
 	$.ajax({
 		type: "POST",
 		url: "./optionUpdate",
@@ -41,5 +41,5 @@ $(".del").click(function(){
 		success:function(result){
 			alert(result);
 		}
-	})
+	});
 })
