@@ -34,14 +34,8 @@
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=29d592b09c4a7ae1856b2630da60b871&libraries=services"></script>
 	<script>
 		// DB 에서 위도와 경도를 가져오기
-		var storeLat = $
-		{
-			dto.storeLat
-		};
-		var storeLan = $
-		{
-			dto.storeLan
-		};
+		var storeLat = ${dto.storeLat};
+		var storeLan = ${dto.storeLan};
 
 		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 		var options = { //지도를 생성할 때 필요한 기본 옵션
