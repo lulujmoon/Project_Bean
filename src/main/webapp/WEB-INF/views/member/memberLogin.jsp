@@ -22,13 +22,13 @@
 					<form action="./member/memberLogin" method="post">
 						<div class="form-group">
 							<label for="id">이메일</label> <input type="text"
-								class="form-control" id="id" name="id" aria-describedby="idHelp">
+								class="form-control" id="idL" name="id" aria-describedby="idHelp">
 							<small id="idHelp" class="form-text text-muted"> We'll
 								never share your id with anyone else. </small>
 						</div>
 						<div class="form-group">
 							<label for="pw">패스워드</label> <input type="password"
-								class="form-control" id="pw" name="pw">
+								class="form-control" id="pwL" name="pw">
 						</div>
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input"
