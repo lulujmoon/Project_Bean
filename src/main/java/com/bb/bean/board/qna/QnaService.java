@@ -41,7 +41,7 @@ public class QnaService implements BoardService {
 	}
 	
 	public int setReply(QnaDTO qnaDTO) throws Exception{
-		//부모글의 ref, step, depth 값 조회해야함
+		
 		BoardDTO boardDTO = qnaDAO.getSelect(qnaDTO);
 		QnaDTO parent = (QnaDTO)boardDTO;
 		
@@ -49,11 +49,11 @@ public class QnaService implements BoardService {
 		qnaDTO.setStep(parent.getStep()+1);
 		qnaDTO.setDepth(parent.getDepth()+1);
 		qnaDTO.setCon(parent.getCon()+1);
-		qnaDTO.setStatus("답변완료");
+		/* qnaDTO.setStatus("답변완료"); */
 		
 		int result = qnaDAO.setReplyUpdate(parent);
 		result = qnaDAO.setReply(qnaDTO);
-		result = qnaDAO.setStatusUpdate(qnaDTO);
+		/* result = qnaDAO.setStatusUpdate(qnaDTO); */
 		
 		return result;
 	}

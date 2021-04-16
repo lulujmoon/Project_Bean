@@ -19,10 +19,11 @@ public class QnaController {
 	private QnaService qnaService;
 	
 	@GetMapping("qnaList")
-	public ModelAndView getList()throws Exception{
+	public ModelAndView getList(Pager pager)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		List<BoardDTO> ar= qnaService.getList();
 		mv.addObject("list",ar);
+		mv.addObject("pager",pager);
 		mv.setViewName("qna/qnaList");
 		return mv;
 	}
