@@ -59,11 +59,14 @@
 
 <br>
 
+					
 			<div class="form-check form-check-inline">
 				<input class="form-check-input" type="radio"
 					name="gender" id="inlineRadio1" value="2"> <label
 					class="form-check-label" for="inlineRadio1">여자</label>
 			</div>
+
+			
 			<div class="form-check form-check-inline">
 				<input class="form-check-input" type="radio"
 					name="gender" id="inlineRadio2" value="1"> <label
@@ -110,13 +113,14 @@
 		</div>
 	</div>
 
-<!-- <script>
-let gender = $('input[name="gender"]:checked').attr('gender');
 
-$(document).ready(function(){
-	$('#radio')
-	
-})
-</script> -->
+
+<script>
+if(${member.gender}=='2') {
+	$("#inlineRadio1").prop("checked","checked");
+} else {
+	$("#inlineRadio2").prop("checked","checked");
+}
+</script>
 </body>
 </html>
