@@ -12,9 +12,10 @@
 <c:import url="../template/header.jsp"></c:import>
 	<br>
 	<div class="container">
-	<h3 style="display:inline-block;">${product.name}</h3>
-	<input type="button" value="추가" id="add" class="btn btn-sm btn-secondary" style="float:right;margin-right:13px">
+	<h3 id="h" title="${product.productNum}" style="display:inline-block;">${product.name}</h3>
+	
 	<!-- Options List -->
+	<input type="button" value="추가" id="add" class="btn btn-sm btn-secondary" style="float:right;margin-right:13px">
 	<table class="table table-hover">
 		<thead>
 			<tr>
@@ -35,7 +36,7 @@
 					<td>${option.price}</td>
 					<td>${option.discountRate}</td>
 					<td>${option.stock}</td>
-					<td style="width:5%" class="edit"><input type="button" value="수정" class="btn btn-sm btn-secondary" title="${option.optionNum}"></td>
+					<td style="width:5%" class="edit" title="${option.optionNum}"><input type="button" value="수정" class="btn btn-sm btn-secondary"></td>
 					<td style="width:5%"><input type="button" value="삭제" class="del btn btn-sm btn-danger" title="${option.optionNum}"></td>
 				</tr>
 			</c:forEach>
@@ -77,6 +78,5 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="../resources/jquery/optionManage.js"></script>
-
 </body>
 </html>

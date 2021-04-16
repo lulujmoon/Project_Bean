@@ -104,7 +104,12 @@ public class ProductController {
 	}
 	
 	@PostMapping("optionUpdate")
-	public void setOptionsUpdate(OptionsDTO optionsDTO) throws Exception {
-		System.out.println(optionsDTO.getOptionInfo());
+	public ModelAndView setOptionsUpdate(OptionsDTO optionsDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = productService.setOptionsUpdate(optionsDTO);
+		
+		mv.addObject("result", result);
+		mv.setViewName("common/ajaxResult");
+		return mv;
 	}
 }

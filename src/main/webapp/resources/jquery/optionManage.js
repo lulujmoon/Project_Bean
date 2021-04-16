@@ -9,29 +9,41 @@ $("#add").click(function(){
 	$("#tit").text("옵션 추가");
 });
 
+
+
 const formData = new FormData();
+let pdNum = $("#h").attr("title");
+
 
 $(".edit").click(function(){
 	let count = 1;
 	
 	for(opt of $(this).siblings()){
 		if(count!=6){
-		let value = $(opt).text();
+		let value = $(opt).html();
+		alert(value);
 		let index = 'opt'+count; 
 		let name = $("#"+index).attr("name");
-		$(opt).html('<input type="text" name='+name+' value='+value+'>') ;
+		$(opt).html('<input type="text" id='+name+' name='+name+' value='+value+'>') ;
 		count++;
-		formData.append(name, value);
 		}
 	}
-		
-	$(this).attr("class", "don");
+	
+	let opNum = $(this).attr("title");
+	formData.append('optionNum', opNum);
+	
+	
+	$(this).html('<input type="button" value="완료" class="btn btn-sm btn-secondary don" title="${option.optionNum}">');
 });
 
-
-
-$(".don").click(function(){
-	$.ajax({
+$(".edit").on("click", ".don", (function(){
+	formData.append('optionInfo', $("#optionInfo").val());
+	formData.append('type', $("#type").val());
+	formData.append('price', $("#price").val());
+	formData.append('discountRate', $("#discountRate").val());
+	formData.append('stock', $("#stock").val());
+	
+		$.ajax({
 		type: "POST",
 		url: "./optionUpdate",
 		data: formData,
@@ -39,7 +51,8 @@ $(".don").click(function(){
 		processData:false,
 		contentType:false,
 		success:function(result){
-			alert(result);
-		}
-	});
-})
+			location.href="./optionManage?productNum="+pdNum;
+			}
+		})
+	})
+);
