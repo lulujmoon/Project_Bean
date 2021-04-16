@@ -26,8 +26,9 @@
 			>
 			<div class="form-group">
 				<label for="id">이메일</label> <input type="text" class="form-control"
-					id="id" name="id" value="">
-				<h4 id="idCheckResult"></h4>
+					id="id" name="id" placeholder="이메일" value="">
+					<div id="errorEmail" class="resultEmail resultCheck"></div>
+				<!-- <h6 id="idCheckResult"></h6> -->
 				<!-- ID는 이메일형식 -->
 			</div>
 
@@ -105,7 +106,6 @@
 
 	</div>
 
-	<!-- <script type="text/javascript" src="./resources/jquery/memberJoin.js"></script> -->
           
           
         </div>
@@ -120,3 +120,5 @@
   </div>
   
 </div>
+
+		<!--  <script type="text/javascript" src="./resources/jquery/memberJoin.js"></script> -->

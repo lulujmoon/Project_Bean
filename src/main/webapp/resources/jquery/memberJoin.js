@@ -8,6 +8,50 @@ let pw2 = document.getElementById("pw2");
 
 // ID Check -----------------
 
+
+$("#id").click(function(){
+	alert("ehlsek");
+})
+
+
+
+/*
+function emailCheck(email) {
+	let regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	return (email != ''&& email != 'undefined' && regex.test(eamil));
+}
+
+
+$("input[type=email]").blur(function(){
+	let email = $(this).val();
+	if(email == ''|| email == 'undefined') return;
+	if(! emailCheck(email)) {
+		$(".resultEmail").text('이메일 형식으로 적어주세요');
+		$(this).focus();
+		return false;
+	} else {
+		$(".resultEmail").text('');
+	}
+})
+
+*/s
+
+
+/*$("#idResult").addEventListener("blur",function () {
+	alert(document.getElementById("id").value);
+	let id = document.getElementById("id").value;
+	let exptext =  /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+		if(exptext.text(id)==false) {
+			//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐 경우
+			alert("메일 형식이 올바르지 않습니다");
+			document.frm.id.focus();
+		}
+	
+})
+*/
+
+
+/*
 function valiFormEmail(obj) {
 	if(validEmail == false ){
 		alert("이메일 형식에 맞춰 적어주세요.");
@@ -43,8 +87,7 @@ $("#id").blur(function(){
 	let c1 = false;
 
 })
-
-
+*/
 
 
 // PW EQUAL CHECK **********************************

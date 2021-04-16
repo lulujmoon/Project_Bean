@@ -16,17 +16,20 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
-	public String checkID(MemberDTO memberDTO, Model model) throws Exception {
-		memberDTO = memberService.checkId(memberDTO);
-		
-		String result = "0"; //0:사용불가 , 1:사용가능
-		if(memberDTO==null) {
-			result = "1";
-		}
-		model.addAttribute("result", result);
-		
-		return "common/ajaxResult";
+	@RequestMapping("memberPage")
+	public void memberPage() throws Exception {
 	}
+	
+	
+	/*
+	 * @GetMapping("") public String checkID(MemberDTO memberDTO, Model model)
+	 * throws Exception { memberDTO = memberService.checkId(memberDTO);
+	 * 
+	 * String result = "0"; //0:사용불가 , 1:사용가능 if(memberDTO==null) { result = "1"; }
+	 * model.addAttribute("result", result);
+	 * 
+	 * return "common/ajaxResult"; }
+	 */
 	
 	
 	@GetMapping("memberJoin")
@@ -35,17 +38,7 @@ public class MemberController {
 	
 	@PostMapping("memberJoin")
 	public String memberJoin(MemberDTO memberDTO) throws Exception {
-		System.out.println(memberDTO.getId());
-		System.out.println(memberDTO.getPw());
-		System.out.println(memberDTO.getName());
-		System.out.println(memberDTO.getNickname());
-		System.out.println(memberDTO.getGender());
-		System.out.println(memberDTO.getBirthday());
-		System.out.println(memberDTO.getPoint());
-		System.out.println(memberDTO.getPostcode());
-		System.out.println(memberDTO.getTel());
-		System.out.println(memberDTO.getAddr());
-		System.out.println(memberDTO.getAddr2());
+
 		int result = memberService.memberJoin(memberDTO);
 		 
 		return "redirect:../";
@@ -74,12 +67,25 @@ public class MemberController {
 	}
 	
 	@PostMapping("memberUpdate")
-	public int memberUpdate(MemberDTO memberDTO) throws Exception {
-		return memberService.memberUpdate(memberDTO);
+	public String memberUpdate(MemberDTO memberDTO, HttpSession session) throws Exception {
+		int result = memberService.memberUpdate(memberDTO);
+		
+		if(result>0) {
+			session.setAttribute("member", memberDTO);
+		}
+		
+		return "redirect:../../";
 	}
 	
-	public int memberDelete(MemberDTO memberDTO) throws Exception {
-		return memberService.memberDelete(memberDTO);
+	@GetMapping("memberDelete")
+	public String memberDelete(HttpSession session) throws Exception {
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member"); //object니까 형변환 필요
+		//DB에서 삭제 session에서는 DTO가지고 있음
+		int result = memberService.memberDelete(memberDTO, session);
+		//session에서도 로그아웃 시켜줘야 안뜸
+		session.invalidate();
+		
+		return "redirect:../";
 	}
 	
 	
