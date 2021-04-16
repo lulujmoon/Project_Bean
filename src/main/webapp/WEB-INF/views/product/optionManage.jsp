@@ -50,7 +50,7 @@
 			<input type="hidden" name="productNum" value="${product.productNum}">
 			<div class="form-group">
 				<label for="type">옵션명</label>
-				<input type="text" class="form-control myCheck" id="opt1" name="type" placeholder="용량 또는 커피명을 적어주세요." value="">
+				<input type="text" class="form-control myCheck" id="opt1" name="type" placeholder="용량 또는 커피명을 적어주세요.">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">

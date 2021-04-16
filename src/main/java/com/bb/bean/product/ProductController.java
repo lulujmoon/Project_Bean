@@ -110,6 +110,20 @@ public class ProductController {
 		
 		mv.addObject("result", result);
 		mv.setViewName("common/ajaxResult");
+		
 		return mv;
 	}
+	
+	@PostMapping("optionDelete")
+	public ModelAndView setOptionDelete(OptionsDTO optionsDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = productService.setOptionsDelete(optionsDTO);
+		
+		mv.addObject("result", result);
+		mv.setViewName("common/ajaxResult");
+		
+		return mv;
+	}
+	
+	
 }

@@ -10,6 +10,7 @@ $("#add").click(function(){
 });
 
 
+/*옵션 수정*/
 
 const formData = new FormData();
 let pdNum = $("#h").attr("title");
@@ -21,10 +22,9 @@ $(".edit").click(function(){
 	for(opt of $(this).siblings()){
 		if(count!=6){
 		let value = $(opt).html();
-		alert(value);
 		let index = 'opt'+count; 
 		let name = $("#"+index).attr("name");
-		$(opt).html('<input type="text" id='+name+' name='+name+' value='+value+'>') ;
+		$(opt).html('<input type="text" id="'+name+'" name="'+name+'" value="'+value+'">') ;
 		count++;
 		}
 	}
@@ -56,3 +56,12 @@ $(".edit").on("click", ".don", (function(){
 		})
 	})
 );
+
+
+/* 옵션 삭제 */
+$(".del").click(function(){
+	let opNum = $(this).attr("title");
+	$.post("./optionDelete", {optionNum:opNum}, function(result){
+		location.href="./optionManage?productNum="+pdNum;
+	})
+})

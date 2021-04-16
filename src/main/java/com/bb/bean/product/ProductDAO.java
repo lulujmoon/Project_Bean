@@ -42,10 +42,6 @@ public class ProductDAO {
 		return sqlSession.selectList(NAMESPACE+"getOptionsList", productDTO);
 	}
 	
-	public OptionsDTO getOptionsSelect(OptionsDTO optionsDTO) throws Exception {
-		return sqlSession.selectOne(NAMESPACE+"getOptionsSelect", optionsDTO);
-	}
-	
 	public int setOptionsInsert(OptionsDTO optionsDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"setOptionsInsert", optionsDTO);
 	}

@@ -78,10 +78,6 @@
 		select * from options where productNum=#{productNum}
 	</select>
 	
-	<select id="getOptionsSelect" parameterType="OptionsDTO" resultType="OptionsDTO">
-		select * from options where optionNum=#{optionNum}
-	</select>
-	
 	<insert id="setOptionsInsert" parameterType="OptionsDTO">
 		insert into options (optionNum, productNum, type, optionInfo, price, discountRate, stock)
 		values (options_seq.nextval, #{productNum}, #{type}, #{optionInfo}, #{price}, #{discountRate}, #{stock})
