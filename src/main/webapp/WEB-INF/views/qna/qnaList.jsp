@@ -52,16 +52,16 @@
 	  <ul class="pagination">
 	  
 	  <c:if test="${pager.pre}">	
-	    <li class="page-item"><a class="page-link p" href="#" title="${pager.startNum-1}">Previous</a></li>
+	    <li class="page-item"><a class="page-link p" href="./qnaList?curPage=${pager.startNum-1}&kind=${pager.kind}&search=${pager.search}" title="${pager.startNum-1}">Previous</a></li>
 	   </c:if>
 	   
 	   <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
 	   
-	    <li class="page-item"><a class="page-link p" href="#" title="${i}">${i}</a></li>
+	    <li class="page-item"><a class="page-link p" href="./qnaList?curPage=${i}&kind=${pager.kind}&search=${pager.search}" title="${i}">${i}</a></li>
 	   </c:forEach>
 	   
 	    <c:if test="${pager.next}">
-	    <li class="page-item"><a class="page-link p" href="#" title="${pager.lastNum+1}">Next</a></li>
+	    <li class="page-item"><a class="page-link p" href="./qnaList?curPage=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}" title="${pager.lastNum+1}">Next</a></li>
 	    </c:if>
 	  </ul>
 	  
