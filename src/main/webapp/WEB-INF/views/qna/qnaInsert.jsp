@@ -40,15 +40,7 @@
 					class="form-control myCheck" id="category" name="category">
 			</div>
 			
-			<div class="form-group">
-				<label for="avatar">file</label> 
-				<input type="file" class="form-control etc"	id="files" name="files">
-				<!-- 비어 있으면 X -->
-			</div>	
-			
-			<input type="button" id="add" value="ADD" class="btn btn-danger">
-			<input type="button" id="del" value="DELETE" class="btn btn-info">
-			<div id="files"></div>
+	
 
 			<input type="submit" id="btn" value="WRITE" class="btn btn-primary">
 		</form>

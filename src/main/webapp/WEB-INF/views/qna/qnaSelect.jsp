@@ -18,13 +18,6 @@
 <h3>${dto.writer}</h3>
 <h3>${dto.contents}</h3>
 
-<div>
-<c:forEach items="${dto.boardFiles}" var="file">
-	<a href="../resources/upload/qna/${file.fileName}">
-	${file.origineName}</a>
-</c:forEach>
-
-</div>
 
 <div>
 <a href="./qnaUpdate?num=${dto.num}"><button type="button" class="btn btn-info">수정</button></a>
