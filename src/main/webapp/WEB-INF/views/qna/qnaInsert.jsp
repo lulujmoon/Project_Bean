@@ -7,6 +7,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../template/bootStrap.jsp"></c:import>
+<!-- summernote  -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+<!-- ------------ -->
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
@@ -36,6 +40,12 @@
 					class="form-control myCheck" id="category" name="category">
 			</div>
 			
+			<div class="form-group">
+				<label for="avatar">file</label> 
+				<input type="file" class="form-control etc"	id="files" name="files">
+				<!-- 비어 있으면 X -->
+			</div>	
+			
 			<input type="button" id="add" value="ADD" class="btn btn-danger">
 			<input type="button" id="del" value="DELETE" class="btn btn-info">
 			<div id="files"></div>
@@ -43,22 +53,8 @@
 			<input type="submit" id="btn" value="WRITE" class="btn btn-primary">
 		</form>
 </div>
-
-	<div id="sample">
-		<div class="input-group">
-			<div class="custom-file">
-				<input type="file"  id="inputGroupFile04"
-					class="form-control-file border" name="files">
-			</div>
-			<div class="input-group-append delete">
-				<input class="btn btn-outline-secondary" type="button"
-					id="inputGroupFileAddon04" value="Delete">
-			</div>
-		</div>
-
-
-	</div>
-
+<script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
+	
 
 </body>
 </html>

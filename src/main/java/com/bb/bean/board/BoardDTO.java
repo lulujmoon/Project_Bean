@@ -1,5 +1,7 @@
 package com.bb.bean.board;
 
+import java.util.List;
+
 public class BoardDTO {
 	
 	private long num;
@@ -8,6 +10,14 @@ public class BoardDTO {
 	private String category;
 	private String writer;
 	
+	private List<BoardFileDTO> boardFiles;
+	
+	public List<BoardFileDTO> getBoardFiles() {
+		return boardFiles;
+	}
+	public void setBoardFiles(List<BoardFileDTO> boardFiles) {
+		this.boardFiles = boardFiles;
+	}
 	public String getWriter() {
 		return writer;
 	}

@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bb.bean.board.BoardDTO;
+import com.bb.bean.board.BoardFileDTO;
 import com.bb.bean.util.Pager;
 
 @Controller
@@ -91,6 +92,7 @@ public class QnaController {
 		mv.setViewName("redirect:./qnaList");
 		return mv;
 	}
+	
 			
 	}
 	
