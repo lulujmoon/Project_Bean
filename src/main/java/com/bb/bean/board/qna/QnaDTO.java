@@ -16,13 +16,13 @@ public class QnaDTO extends BoardDTO {
 	private long depth;
 	private long con;
 	
-	private List<BoardFileDTO> boardFiles;
+	private BoardFileDTO boardfiles;
 	
-	public List<BoardFileDTO> getBoardFiles() {
-		return boardFiles;
+	public BoardFileDTO getBoardfiles() {
+		return boardfiles;
 	}
-	public void setBoardFiles(List<BoardFileDTO> boardFiles) {
-		this.boardFiles = boardFiles;
+	public void setBoardfiles(BoardFileDTO boardfiles) {
+		this.boardfiles = boardfiles;
 	}
 	public long getCon() {
 		return con;

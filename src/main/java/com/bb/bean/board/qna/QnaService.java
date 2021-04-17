@@ -86,5 +86,13 @@ public class QnaService implements BoardService {
 		return result;
 	}
 	
+	public String summerFileUpload(MultipartFile multipartFile) throws Exception {
+		return fileManager.save("qna", multipartFile, session);
+	}
+	
+	public boolean summerFileDelete(String fileName) throws Exception {
+		return fileManager.delete("qna", fileName, session);
+	}
+	
 
 }

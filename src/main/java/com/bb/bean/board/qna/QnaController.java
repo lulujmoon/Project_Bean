@@ -93,6 +93,24 @@ public class QnaController {
 		return mv;
 	}
 	
+	@PostMapping("summerFileUpload")
+	public ModelAndView summerFileUpload(MultipartFile file) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		String fileName = qnaService.summerFileUpload(file);
+		fileName = "../resources/upload/qna/"+fileName;
+		mv.addObject("result", fileName);
+		mv.setViewName("common/ajaxResult");
+		return mv;
+	}
+	
+	@PostMapping("summerFileDelete")
+	public ModelAndView summerFileDelete(String fileName) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		boolean result = qnaService.summerFileDelete(fileName);
+		mv.addObject("result", result);
+		mv.setViewName("common/ajaxResult");
+		return mv;
+	}
 			
 	}
 	
