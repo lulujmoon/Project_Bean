@@ -26,16 +26,16 @@
     <div id="col${dto.num}" class="collapse" data-parent="#accordion">
       <div class="card-body">
         ${dto.contents}
-        <a href="#" onclick="${dto.num}">수정</a>
-        <a href="#">삭제</a>
       </div>
+       <button type="button" class="btn btn-outline-light text-dark upd" >수정</button>
+       <button type="button" class="btn btn-outline-light text-dark del" value="${dto.num}" >삭제</button>
     </div>
   </div>
  </c:forEach>
 
 </div>
 
-<div class="container">
+	<div class="container">
 	  <ul class="pagination">
 	  
 	  <c:if test="${pager.pre}">	
@@ -70,6 +70,7 @@
 	</div> 
 
 <a href="./faqInsert"><button type="button" class="btn btn-success">글쓰기</button></a>
+<script type="text/javascript" src="../resources/jquery/faqUpdate.js"></script>
 
 </div>
 

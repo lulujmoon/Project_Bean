@@ -10,7 +10,10 @@
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
-
+<!-- summernote  -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+<!-- ------------ -->
 
  <div class="container">
  <h2>QNA Reply form</h2>
@@ -44,6 +47,6 @@
 </div>
 
 
-
+<script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
 </body>
 </html>
