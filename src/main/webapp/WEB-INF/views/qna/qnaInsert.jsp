@@ -43,7 +43,7 @@
 				<option value="로그인문의">로그인문의</option>
 				<option value="결제문의">결제문의<option>
 			</select>
-</div>
+		</div>
 			
 	
 
@@ -51,6 +51,7 @@
 		</form>
 </div>
 <script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
+<script type="text/javascript" src="../resources/jquery/qnaInsert.js"></script>
 	
 
 </body>

@@ -32,7 +32,7 @@
 			
 			<div class="form-group">
 			<label for="category">category:</label> 
-			<select name="category" id="category">
+			<select name="category" id="category" class="myCheck">
 				<option value="배송문의">배송문의</option>
 				<option value="상품문의">상품문의</option>
 				<option value="결제문의">결제문의<option>
