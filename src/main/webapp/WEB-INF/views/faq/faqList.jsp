@@ -12,7 +12,15 @@
 <c:import url="../template/header.jsp"></c:import>
 
 <h1>FAQ List Page</h1>
-
+<br>
+<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
+<ul class="list-group list-group-horizontal">
+  <a href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=배송"><li class="list-group-item  list-group-item-info">배송문의</li></a>
+ <a href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=주문"> <li class="list-group-item list-group-item-warning">주문문의</li></a>
+  <a href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=결제"><li class="list-group-item  list-group-item-info">결제문의</li></a>
+ <a href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=로그인"> <li class="list-group-item list-group-item-warning">로그인문의</li></a>
+</ul>
+</c:forEach>
 <div id="accordion">
 
  <c:forEach items="${list}" var="dto">
@@ -27,8 +35,37 @@
       <div class="card-body">
         ${dto.contents}
       </div>
-       <button type="button" class="btn btn-outline-light text-dark upd" >수정</button>
-       <button type="button" class="btn btn-outline-light text-dark del" value="${dto.num}" >삭제</button>
+      
+      <!-- Modal Button -->
+       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal${dto.num}">
+   			 상세보기
+   		</button>
+   	 <!-- Modal -->	
+ 	 <div class="modal fade" id="myModal${dto.num}">
+  	  <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">${dto.title}</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          ${dto.contents}
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+		<button type="button" class="btn upd" value="${dto.num}">수정</button>
+       <a href="./faqDelete?num=${dto.num}" id="del" class="btn btn-outline-light text-dark">삭제</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
     </div>
   </div>
  </c:forEach>
@@ -51,6 +88,7 @@
 	    <li class="page-item"><a class="page-link p" href="./faqList?curPage=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}" title="${pager.lastNum+1}">Next</a></li>
 	    </c:if>
 	  </ul>
+	  
 	  
 	<div class="input-group mt-3 mb-3">
 	<form id="frm" action="./faqList" class="form-inline">

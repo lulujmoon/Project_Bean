@@ -59,4 +59,10 @@ public class FaqController {
 		return mv;
 	}
 	
+	@GetMapping("faqDelete")
+	public String setDelete(BoardDTO boardDTO)throws Exception{
+		int result = faqService.setDelete(boardDTO);
+		return "redirect:./faqList";
+	}
+	
 }
