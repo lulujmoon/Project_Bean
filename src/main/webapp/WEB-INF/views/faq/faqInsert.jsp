@@ -31,7 +31,8 @@
 			</div>
 			
 			<div class="form-group">
-				<label for="category">category:</label> <input type="text"
+				<label for="category">category:</label> 
+				<input type="text"
 					class="form-control myCheck" id="category" name="category">
 			</div>
 

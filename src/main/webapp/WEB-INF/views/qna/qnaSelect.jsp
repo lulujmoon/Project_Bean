@@ -17,6 +17,7 @@
 <h3>${dto.title}</h3>
 <h3>${dto.writer}</h3>
 <h3>${dto.contents}</h3>
+<h3>${dto.category}</h3>
 
 
 <div>
