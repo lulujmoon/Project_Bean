@@ -2,27 +2,37 @@
  * 
  */
 
-$(".upd").click(function(){
+$(".upd").on("click",function(){
 	
-	let title =$("#writer").val()
-	let contents=$("#contents").val()
-	let category=$("#category").val()
+	//선택자
+	var faq = $(this).parent().parent();
+	//번호
+	var num=faq.find("#num").val();
 	
-	$ajax({
-		type:"POST",
+	var title=faq.find("#title").val();
+	
+	var contents=faq.find("#contents").val();
+	
+	var category=faq.find("#category").val();
+	
+	
+	$.ajax({
+		type:"put",
+		url:"../faqUpdate"+faqNum,
 		data:{
-		"title":title,
-		"contents":contents,
-		"category":category
-		},
-		url:"../faq/faqUpdate",
-		success:function(data){
-			alert(data)
+			title:title,
+			contents:contents,
+			category:category
+			},
+		success:function(result){
+			console.log("result:"+result);
 		}
 		
+	});
+	
 		
 	});
+	
 
-});
 
 
