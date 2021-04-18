@@ -48,7 +48,7 @@
 						data-target="#myModal${dto.num}">수정</button>
 
 									<a href="./faqDelete?num=${dto.num}" id="del"
-										class="btn btn-outline-light text-dark">삭제</a>
+										class="btn btn-outline-light text-dark del">삭제</a>
 					<!-- Modal -->
 					<div class="modal fade" id="myModal${dto.num}">
 						<div class="modal-dialog">
@@ -97,9 +97,11 @@
 						</div>
 					</div>
 				</div>
-			</div>
+				</div>
+				</div>
+				
+			
 		</c:forEach>
-
 	</div>
 
 	<div class="container">
