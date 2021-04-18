@@ -143,9 +143,12 @@
 				</div>
 			</form>
 		</div>
-
+		
+		<%-- <c:if test="${member.id} eq admin*"> --%>
 		<a href="./faqInsert"><button type="button"
 				class="btn btn-success">글쓰기</button></a>
+		<%-- </c:if> --%>
+				
 		<script type="text/javascript" src="../resources/jquery/faqUpdate.js"></script>
 
 	</div>

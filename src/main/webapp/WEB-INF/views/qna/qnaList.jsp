@@ -82,7 +82,9 @@
 	 </form> 
 	</div> 
 	
+	<%-- <c:if test="${member.id} eq admin*"> --%>
 	<a href="./qnaInsert"><button type="button" class="btn btn-success">글쓰기</button></a>
+	<%-- </c:if> --%>
 	</div>
 </body>
 </html>
