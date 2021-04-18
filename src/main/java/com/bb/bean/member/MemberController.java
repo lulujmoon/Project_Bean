@@ -30,6 +30,11 @@ public class MemberController {
 	 * 
 	 * return "common/ajaxResult"; }
 	 */
+	@GetMapping("kakaoRedirectForm")
+	public void kakaoLogin() throws Exception {
+		
+	}
+	
 	
 	
 	@GetMapping("memberJoin")

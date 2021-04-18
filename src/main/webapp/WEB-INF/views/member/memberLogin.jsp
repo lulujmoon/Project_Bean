@@ -60,7 +60,7 @@
 <script type='text/javascript'>
         //<![CDATA[
         // 사용할 앱의 JavaScript 키를 설정해 주세요.
-        Kakao.init('Your KEY');
+        Kakao.init('969c954537bd868d510e8f40a4ce5a09');
         // 카카오 로그인 버튼을 생성합니다.
         Kakao.Auth.createLoginButton({
             container: '#kakao-login-btn',
@@ -71,35 +71,27 @@
                 alert(JSON.stringify(err));
             }
         });
+        
+/*         Kakao.API.request({
+            url: '/v1/user/update_profile',
+            data: {
+                properties: {
+                    nickname: '',
+                    age: '22',
+                },
+            },
+            success: function(response) {
+                console.log(response);
+            },
+            fail: function(error) {
+                console.log(error);
+            }
+        });
+         */
+        
+        
+        
       //]]>
     </script>
 
     
-<!-- 	
-
-	<div class="container">
-		<h2>Member Login Page</h2>
-
-		<form action="./memberLogin" method="post">
-			<div class="form-group">
-				<label for="id">ID</label> 
-				<input type="text" class="form-control" id="id" name="id"
-					aria-describedby="idHelp"> 
-					<small id="idHelp" class="form-text text-muted">
-					We'll never share your id with anyone else.
-					</small>
-			</div>
-			<div class="form-group">
-				<label for="pw">Password</label> 
-				<input type="password" class="form-control" id="pw" name="pw">
-			</div>
-			<div class="form-group form-check">
-				<input type="checkbox" class="form-check-input" id="exampleCheck1">
-				<label class="form-check-label" for="exampleCheck1">Check me
-					out</label>
-			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
-
-	</div>
- -->
