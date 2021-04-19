@@ -6,9 +6,12 @@
 <head>
 
 <title>Bean Brothers Coffee</title>
+<!-- Setting import -->
+<c:import url="./template/setting.jsp"></c:import>
 
 </head>
 <body>
+
 <!-- header 부분 -->
 <c:import url="./template/header.jsp"></c:import>
 
@@ -19,7 +22,7 @@
      </div>
 </div> -->
 
-
+<!-- 잘 들어 왔는가~ -->
 <!-- Home Section -->
 <section id="home">
      <div class="container">
