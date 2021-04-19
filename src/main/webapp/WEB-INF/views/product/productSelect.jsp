@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<c:import url="../template/bootstrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
 <title>Insert title here</title>
 </head>
@@ -83,7 +84,7 @@
 							<option value="${i}" class="quantity">${i}개</option>
 						</c:forEach>
 					</select><br><br>
-				<input type="button" class="btn btn-info" id="btn" value="장바구니">
+				<input type="button" class="btn btn-info" id="toCart" value="장바구니">
 			<!-- Cart로 보낼 정보 끝 -->
 			
 			<table>

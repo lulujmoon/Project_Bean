@@ -13,7 +13,7 @@ if($("#optDiv").attr("title")=='1'){
 
  let re = 0;
  
- $("#btn").click(function(){
+ $("#toCart").click(function(){
 	
 	if(re==0){
 		let optionNum;
@@ -48,7 +48,7 @@ if($("#optDiv").attr("title")=='1'){
 			quantity:quantity
 		},
 		function(result){
-			$("#btn").val("장바구니 보러가기");
+			$("#toCart").val("장바구니 보러가기");
 			re = 1;
 		});
 	}else if(re==1){

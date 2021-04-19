@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<c:import url="../template/bootstrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
 <title>Product List</title>
 </head>
