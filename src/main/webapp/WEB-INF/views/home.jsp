@@ -7,8 +7,11 @@
 
 <title>Bean Brothers Coffee</title>
 
+<!-- setting 부분 import -->
+<c:import url="./template/setting.jsp"></c:import>
 </head>
 <body>
+
 <!-- header 부분 -->
 <c:import url="./template/header.jsp"></c:import>
 
@@ -26,7 +29,7 @@
           <div class="row">
 
                <div class="col-md-12 col-sm-12">
-                    <h2>어쩌구 저쩌구 큰 내용 :)</h2>
+                    <h2>Home 소개</h2>
                     <hr>
                </div>
           </div>
