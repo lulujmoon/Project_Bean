@@ -8,9 +8,20 @@ let pw2 = document.getElementById("pw2");
 
 // ID Check -----------------
 
+$("#join_id").blur(function(){
+	/*ajax*/
+	$.ajax({
+		url:"./memberIdCheck",
+		type: "post",
+		data:{"id":$("#join_id").val()},
+		success: function(result){}		
+	});
+});
 
 
 
+
+/*
 
 function emailCheck(email) {
 	let regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
@@ -29,7 +40,7 @@ $("input[type=email]").blur(function(){
 		$(".resultEmail").text('');
 	}
 })
-
+*/
 
 
 /*$("#idResult").addEventListener("blur",function () {

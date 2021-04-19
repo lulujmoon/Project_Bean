@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+
+.msg1 {
+	color: green;
+	display: none;
+	}
+	
+	
+.msg2 {
+	color: red;
+	display: none;
+}
