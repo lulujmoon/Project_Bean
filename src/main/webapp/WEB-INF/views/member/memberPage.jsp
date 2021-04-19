@@ -24,7 +24,8 @@
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 
-
+<c:import url="./memberLogin.jsp"></c:import>
+<c:import url="./memberJoin.jsp"></c:import>
 	<div id="title">
 		<div id="titleContainer">
 			<div class="textTitle">
