@@ -7,32 +7,31 @@ let pw = document.getElementById("pw");
 let pw2 = document.getElementById("pw2");
 
 
-// ID Check -----------------
+
+//function emailCheck(email) {
+//	let regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+//	return (email != ''&& email != 'undefined' && regex.test(eamil));
+//}
 
 
-
-
-
-function emailCheck(email) {
-	let regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-	return (email != ''&& email != 'undefined' && regex.test(eamil));
-}
-
-
-$("input[type=email]").blur(function(){
-	let email = $(this).val();
-	if(email == ''|| email == 'undefined') return;
-	if(! emailCheck(email)) {
-		$(".resultEmail").text('이메일 형식으로 적어주세요');
-		$(this).focus();
-		return false;
-	} else {
-		$(".resultEmail").text('');
+// ID Check *********************************
+id.addEventListener("blur", function(){
+	let message = "6글자 미만입니다";
+	let c = "r1"
+	if(id.value.length>5){
+		message = "6글자 이상 입니다";
+		c = "r2";
+		idCheckResult=true;
+	}else {
+		idCheckResult=false;
 	}
-})
-
-
-
+	
+	let idResult = document.getElementById("idResult");
+	idResult.innerHTML=message;
+	idResult.setAttribute("class", c);
+	
+});
+// ***************************************************
 
 btn.addEventListener("click", function(){
 	for(let e of etc){
@@ -67,7 +66,6 @@ $("#id").blur(function(){
 		
 	});
 });
-
 
 
 

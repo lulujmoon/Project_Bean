@@ -22,13 +22,12 @@
           
           	<div class="container">
 		<h2>Member Join Page</h2>
-          <form id="frm" action="./member/memberJoin" method="post"
-			>
+          <form id="frm" action="./member/memberJoin" method="post">
 			<div class="form-group">
 				<label for="id">이메일</label> <input type="text" class="form-control"
 					id="id" name="id" placeholder="이메일" value="">
 					<div id="errorEmail" class="resultEmail resultCheck"></div>
-				<!-- <h6 id="idCheckResult"></h6> -->
+				<h6 id="idCheckResult"></h6>
 				<!-- ID는 이메일형식 -->
 			</div>
 
