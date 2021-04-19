@@ -4,23 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- 일단 카피해서 복붙 -->
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="author" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<c:import url="../template/bootStrap.jsp"></c:import>
 
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="../resources/css/font-awesome.min.css">
-
-<!-- Main css -->
-<link rel="stylesheet" href="../resources/css/style.css">
-<!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet"> -->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
-<!-- 여기까지 -->
+<c:import url="../template/setting.jsp"></c:import>
 
 <title>Bean Brothers Coffee</title>
 
@@ -28,12 +14,6 @@
 <body>
 <!-- header 부분 -->
 <c:import url="../template/header.jsp"></c:import>
-
-<!-- SCRIPTS -->
-<script src="../resources/js/jquery.js"></script>
-<script src="../resources/js/bootstrap.min.js"></script>
-<script src="../resources/js/custom.js"></script>
-
 
 	<!-- Table -->
 	<div class="container">
@@ -56,6 +36,8 @@
 			</tbody>
 		</table>
 	</div>
+	
 <c:import url="../template/footer.jsp"></c:import>
+
 </body>
 </html>
