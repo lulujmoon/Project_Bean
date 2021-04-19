@@ -18,7 +18,7 @@
 <!-- Main css -->
 <link rel="stylesheet" href="./resources/css/style.css">
 
-<!-- 기존 템플릿 폰트 링크 ㅁ<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet"> -->
+<!-- 기존 템플릿 폰트 링크<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet"> -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap"
