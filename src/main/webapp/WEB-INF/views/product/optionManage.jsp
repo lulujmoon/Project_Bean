@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<c:import url="../template/bootstrap.jsp"></c:import>
+<c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
@@ -78,6 +78,8 @@
 		</form>
 		</div>
 	</div>
+	
+	<c:import url="../template/footer.jsp"></c:import>
 	<script type="text/javascript" src="../resources/jquery/optionManage.js"></script>
 </body>
 </html>

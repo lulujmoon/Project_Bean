@@ -36,7 +36,7 @@
 		<!-- 여기에 링크 연결해서 넣어주세요! -->
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Shop</a></li>
+				<li><a href="./product/productList">Shop</a></li>
 				<li><a href="#">Location</a></li>
 				<li><a href="#">Service</a></li>
 			</ul>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<c:import url="../template/bootstrap.jsp"></c:import>
+<c:import url="../template/setting.jsp"></c:import>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <title>Insert title here</title>
@@ -73,7 +73,7 @@
 
 		</form>
 	</div>
-	
+	<c:import url="../template/footer.jsp"></c:import>
 	
 	<!-- Script -->
 	<script type="text/javascript" src="../resources/jquery/summernote.js"></script>

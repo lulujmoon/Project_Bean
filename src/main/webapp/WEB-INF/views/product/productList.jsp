@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<c:import url="../template/bootstrap.jsp"></c:import>
+<c:import url="../template/setting.jsp"></c:import>
 <title>Product List</title>
 </head>
 <body>
@@ -35,6 +35,6 @@
 		</table>
 		<a href="./productInsert" class="btn btn-warning" style="float:right">Add</a>
 	</div>
-
+<c:import url="../template/footer.jsp"></c:import>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<c:import url="../template/bootstrap.jsp"></c:import>
+<c:import url="../template/setting.jsp"></c:import>
 <title>Insert title here</title>
 </head>
 <body>
@@ -65,7 +65,7 @@
 		</div>
 	</div>
 	
-	
+<c:import url="../template/footer.jsp"></c:import>
 	<script type="text/javascript" src="../resources/jquery/cartList.js"></script>
 </body>
 </html>

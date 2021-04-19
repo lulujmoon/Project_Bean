@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<c:import url="../template/bootstrap.jsp"></c:import>
+<c:import url="../template/setting.jsp"></c:import>
 <title>Insert title here</title>
 </head>
 <body>
@@ -103,6 +103,7 @@
 			
 	</div>
 	<div style="margin-bottom:100px"></div>
+	<c:import url="../template/footer.jsp"></c:import>
 
 	<script type="text/javascript">
 		let txt = '${product.includes}';
