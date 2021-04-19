@@ -27,9 +27,14 @@
 	rel="stylesheet">
 
 <title>Bean Brothers Coffee</title>
+
+<!-- Setting import -->
+<c:import url="./template/setting.jsp"></c:import>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 </head>
 <body>
+
 <!-- header 부분 -->
 <c:import url="./template/header.jsp"></c:import>
 
