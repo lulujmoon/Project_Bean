@@ -39,8 +39,7 @@ public class FaqController {
 	public ModelAndView setInsert(BoardDTO boardDTO,MultipartFile [] files)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result =faqService.setInsert(boardDTO,files);
-		mv.addObject("result",result);
-		mv.setViewName("common/ajaxResult");
+		mv.setViewName("redirect:./faqList");
 		return mv;
 	}
 	
