@@ -6,83 +6,60 @@
 let pw = document.getElementById("pw");
 let pw2 = document.getElementById("pw2");
 
-// ID Check -----------------
-
-
-
-
-
-function emailCheck(email) {
-	let regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-	return (email != ''&& email != 'undefined' && regex.test(eamil));
-}
-
-
-$("input[type=email]").blur(function(){
-	let email = $(this).val();
-	if(email == ''|| email == 'undefined') return;
-	if(! emailCheck(email)) {
-		$(".resultEmail").text('이메일 형식으로 적어주세요');
-		$(this).focus();
-		return false;
-	} else {
-		$(".resultEmail").text('');
+// ID Check *********************************
+id.addEventListener("blur", function(){
+	let message = "6글자 미만입니다";
+	let c = "r1"
+	if(id.value.length>5){
+		message = "6글자 이상 입니다";
+		c = "r2";
+		idCheckResult=true;
+	}else {
+		idCheckResult=false;
 	}
-})
-
-
-
-/*$("#idResult").addEventListener("blur",function () {
-	alert(document.getElementById("id").value);
-	let id = document.getElementById("id").value;
-	let exptext =  /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-		if(exptext.text(id)==false) {
-			//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐 경우
-			alert("메일 형식이 올바르지 않습니다");
-			document.frm.id.focus();
-		}
 	
-})
-*/
+	let idResult = document.getElementById("idResult");
+	idResult.innerHTML=message;
+	idResult.setAttribute("class", c);
+	
+});
+// ***************************************************
 
-
-/*
-function valiFormEmail(obj) {
-	if(validEmail == false ){
-		alert("이메일 형식에 맞춰 적어주세요.");
-		obj.value='';
-		obj.focus();
-		return false;
+btn.addEventListener("click", function(){
+	for(let e of etc){
+		if(e.value == ""){
+			etcResult=false;
+			break;
+		}
 	}
-}
+	
+	//조건이 만족하면
+	if(idCheckResult && pwCheckResult && pwEqualResult && etcResult){
+		let frm = document.getElementById("frm");
+		//frm.submit();
+		alert("회원가입 진행");
+	}else {
+		alert("필수 항목을 입력하세요");
+	}
+});
 
-
-const input_email = document.getElementById('emailchange');
-
-input_email.addEventListener('change', updateValue);
-function updateValue(e) {
-	valiFormEmail(e.target);
-}
-
-
-function validEmail(obj) {
-	let pattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-	return (obj.value.match(pattern) != null);
-}
-
-function chkEmail(str) {
-    var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-    if (regExp.test(str)) return true;
-    else return false;
-}
-
-
+// Id 중복 확인
 $("#id").blur(function(){
-	let message = "이메일 형식에 맞춰 적어주세요.";
-	let c1 = false;
+	let id = $("#id").val();
+	$.get("./memberIdCheck?id="+id, function(result){
+		result = result.trim();
+		let str ="사용가능한 ID 입니다";
+		
+		if(result=='0'){
+			str ="중복 ID 입니다";
+		}
+		
+		$("#idCheckResult").html(str);
+		
+	});
+});
 
-})
-*/
+
 
 
 // PW EQUAL CHECK **********************************
