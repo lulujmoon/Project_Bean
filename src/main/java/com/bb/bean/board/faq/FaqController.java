@@ -55,7 +55,8 @@ public class FaqController {
 	public ModelAndView setUpdate(BoardDTO boardDTO)throws Exception{
 		ModelAndView mv = new ModelAndView(); 
 		int result = faqService.setUpdate(boardDTO);
-		mv.setViewName("redirect:./faqList");
+		mv.addObject("result",result);
+		mv.setViewName("common/ajaxResult");
 		return mv;
 	}
 	

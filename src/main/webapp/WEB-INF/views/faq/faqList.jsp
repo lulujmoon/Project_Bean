@@ -16,18 +16,18 @@
 	<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
 		<ul class="list-group list-group-horizontal">
 			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=배송"><li
+				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=배송문의"><li
 				class="list-group-item  list-group-item-info">배송문의</li></a>
 			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=주문">
-				<li class="list-group-item list-group-item-warning">주문문의</li>
+				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=상품문의">
+				<li class="list-group-item list-group-item-warning">상품문의</li>
 			</a>
 			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=결제"><li
-				class="list-group-item  list-group-item-info">결제문의</li></a>
+				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=주문문의"><li
+				class="list-group-item  list-group-item-info">주문문의</li></a>
 			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=로그인">
-				<li class="list-group-item list-group-item-warning">로그인문의</li>
+				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=결제문의">
+				<li class="list-group-item list-group-item-warning">결제문의</li>
 			</a>
 		</ul>
 	</c:forEach>
@@ -57,7 +57,7 @@
 								<!-- Modal Header -->
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal">×</button>
-									<h4 class="modal-title">댓글수정창</h4>
+									<h4 class="modal-title">faq수정창</h4>
 								</div>
 
 								<!-- Modal body -->

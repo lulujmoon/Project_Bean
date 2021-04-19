@@ -3,28 +3,25 @@
  */
 
 $("#btn").click(function(){
-	alert("click");
-/*	let writer = $("#writer").val() != "";
-	let title = $("#title").val().length != 0;
-	let contents = $("#contents").val().length !=0 ;*/
 	
-	let result = true;
+	var title = document.getElementById("title")
+	var contents = document.getElementById("contents")
+	var category = document.getElementById("category")
 	
-	$(".myCheck").each(function(s1, s2, s3){
-		console.log(s1);
-		console.log($(s2).val());
-		console.log($(s3).val());
-		console.log($(this).val());
-		if($(this).val()==""){
-			result = false;
-		}
-		
-	});
-	
-	if(result){
-		$("#frm").submit();
-	}else {
-		alert("필수 요소를 입력하세요");
+	if(title.value==""){
+		alert("제목을 입력하세요")
+		title.focus()
+		return false
+	}
+		if(contents.value==""){
+		alert("내용을 입력하세요")
+		contents.focus()
+		return false
+	}
+		if(category.value==""){
+		alert("카테고리를 선택하세요")
+		category.focus()
+		return false
 	}
 	
 });

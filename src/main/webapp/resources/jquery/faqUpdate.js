@@ -17,15 +17,17 @@ $(".upd").on("click",function(){
 	
 	
 	$.ajax({
-		type:"put",
-		url:"../faqUpdate"+faqNum,
+		type:"post",
+		url:"./faqUpdate",
 		data:{
+			num:num,
 			title:title,
 			contents:contents,
 			category:category
 			},
 		success:function(result){
-			console.log("result:"+result);
+			location.reload("./faqList");
+			
 		}
 		
 	});

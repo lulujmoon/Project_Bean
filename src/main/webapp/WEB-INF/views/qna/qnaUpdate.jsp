@@ -40,10 +40,15 @@
 					name="contents">${dto.contents}</textarea>
 			</div>
 			
-			<div class="form-group">
-				<label for="category">category:</label> <input type="text"
-					class="form-control myCheck" id="category" name="category" value="${dto.category}">
-			</div>
+	<div class="form-group">
+			<label for="category">category:</label> 
+			<select name="category" id="category">
+				<option value="배송문의">배송문의</option>
+				<option value="상품문의">상품문의</option>
+				<option value="주문문의">주문문의</option>
+				<option value="결제문의">결제문의<option>
+			</select>
+		</div>
 			
 			<input type="submit" id="btn" value="UPDATE" class="btn btn-primary">
 		</form>
