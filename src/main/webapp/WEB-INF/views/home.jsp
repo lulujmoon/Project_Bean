@@ -149,7 +149,7 @@
 </section>
 
 
-<!-- footer 영역 -->
+<!-- footer 영역 d-->
 <c:import url="./template/footer.jsp"></c:import>
 
 <!-- SCRIPTS -->
