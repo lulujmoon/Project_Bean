@@ -28,12 +28,48 @@ public class ProductService {
 		return productDAO.getSelect(productDTO);
 	}
 
-	public int setInsert(ProductDTO productDTO) throws Exception {
-		return productDAO.setInsert(productDTO);
+	public int setInsert(ProductDTO productDTO, MultipartFile file) throws Exception {
+		
+		String fileName = fileManager.save("product", file, session);
+		long productNum = productDAO.getProductNum();
+		
+		productDTO.setProductNum(productNum);
+		
+		ProductFileDTO productFileDTO = new ProductFileDTO();
+		productFileDTO.setProductNum(productNum);
+		productFileDTO.setFileName(fileName);
+		productFileDTO.setOriginName(file.getOriginalFilename());
+		
+		int result = productDAO.setInsert(productDTO);
+		result = productDAO.setFileInsert(productFileDTO);
+		return result;
 	}
 
-	public int setUpdate(ProductDTO productDTO) throws Exception {
-		return productDAO.setUpdate(productDTO);
+	public int setUpdate(ProductDTO productDTO, MultipartFile file) throws Exception {
+		//존재하는 이미지파일 삭제
+		ProductDTO productDTO2 = productDAO.getSelect(productDTO);
+		
+		if(productDTO2.getThumbnail()!=null) {
+			String delFileName = productDTO2.getThumbnail().getFileName();
+			boolean check = fileManager.delete("product", delFileName, session);
+
+			ProductFileDTO productFileDTO = new ProductFileDTO();
+			productFileDTO.setFileNum(productDTO2.getThumbnail().getFileNum());
+			productDAO.setFileDelete(productFileDTO);		
+		}
+		
+		//새로운 이미지 삽입
+		String fileName = fileManager.save("product", file, session);
+		
+		ProductFileDTO productFileDTO = new ProductFileDTO();
+		productFileDTO.setProductNum(productDTO.getProductNum());
+		productFileDTO.setFileName(fileName);
+		productFileDTO.setOriginName(file.getOriginalFilename());
+		
+		int result = productDAO.setUpdate(productDTO);
+		result = productDAO.setFileInsert(productFileDTO);
+		
+		return result;
 	}
 
 	public int setDelete(ProductDTO productDTO) throws Exception {

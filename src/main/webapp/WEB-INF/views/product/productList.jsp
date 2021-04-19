@@ -18,10 +18,17 @@
 				<th>Name</th>
 			</thead>
 			<tbody>
-				<c:forEach items="${list}" var="dto">
+				<c:forEach items="${list}" var="product">
 					<tr>
-						<td><a href="./productSelect?productNum=${dto.productNum}">${dto.productNum}</a></td>
-						<td>${dto.name}</td>
+						<td><a href="./productSelect?productNum=${product.productNum}">${product.productNum}</a></td>
+						<td>${product.name}</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="width:300px;height:300px;overflow:hidden">
+								<img alt="thumbnail" src="../resources/upload/product/${product.thumbnail.fileName}" style="width:100%;height:100%">
+							</div>
+						</td>
 					</tr>
 				</c:forEach>
 			</tbody>

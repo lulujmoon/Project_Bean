@@ -22,8 +22,11 @@ public class ProductDAO {
 		return sqlSession.selectOne(NAMESPACE+"getSelect", productDTO);
 	}
 	
+	public long getProductNum() throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getProductNum", NAMESPACE);
+	}
+	
 	public int setInsert(ProductDTO productDTO) throws Exception {
-		System.out.println(productDTO.getCategory());
 		return sqlSession.insert(NAMESPACE+"setInsert", productDTO);
 	}
 	
@@ -36,10 +39,24 @@ public class ProductDAO {
 	}
 	
 	
+	/* Thumbnail*/
+	
+	public int setFileInsert(ProductFileDTO productFileDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"setFileInsert", productFileDTO);
+	}
+	
+	public int setFileDelete(ProductFileDTO productFileDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setFileDelete", productFileDTO);
+	}
+	
 	/* Options */
 	
 	public List<OptionsDTO> getOptionsList(ProductDTO productDTO) throws Exception {
 		return sqlSession.selectList(NAMESPACE+"getOptionsList", productDTO);
+	}
+	
+	public OptionsDTO getOptionsSelect(OptionsDTO optionsDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getOptionsSelect", optionsDTO);
 	}
 	
 	public int setOptionsInsert(OptionsDTO optionsDTO) throws Exception {

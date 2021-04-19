@@ -17,6 +17,11 @@
 
 		<form action="./productInsert" method="post" id="frm" enctype="multipart/form-data">
 			<div class="form-group">
+				<label for="thumbnail">썸네일</label>
+				<input type="file" name="file">
+			</div>
+		
+			<div class="form-group">
 				<label for="name">상품명</label>
 				<input type="text" class="form-control" id="name" name="name" >
 				<small id="subResult" class="form-text text-muted"></small>

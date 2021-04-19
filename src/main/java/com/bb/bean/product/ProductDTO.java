@@ -14,8 +14,14 @@ public class ProductDTO {
 	private String cartInfo;
 	private String grinds;
 	private List<OptionsDTO> options;
-	private ProductFileDTO file;
+	private ProductFileDTO thumbnail;
 	
+	public ProductFileDTO getThumbnail() {
+		return thumbnail;
+	}
+	public void setThumbnail(ProductFileDTO thumbnail) {
+		this.thumbnail = thumbnail;
+	}
 	public long getProductNum() {
 		return productNum;
 	}
@@ -75,12 +81,6 @@ public class ProductDTO {
 	}
 	public void setOptions(List<OptionsDTO> options) {
 		this.options = options;
-	}
-	public ProductFileDTO getFile() {
-		return file;
-	}
-	public void setFile(ProductFileDTO file) {
-		this.file = file;
 	}
 
 	

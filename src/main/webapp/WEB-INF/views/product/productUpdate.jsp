@@ -13,13 +13,17 @@
 <body>
 <c:import url="../template/header.jsp"></c:import>
 	<div class="container">
-		<h2>Product Insert Page</h2>
+		<h2>Product Update Page</h2>
 
 		<form action="./productUpdate" method="post" id="frm" enctype="multipart/form-data">
-			<input type="hidden" name="productNum" value="${dto.productNum}">
+			<input type="hidden" name="productNum" value="${product.productNum}">
+			<div class="form-group">
+				<label for="thumbnail">썸네일</label>
+				<input type="file" name="file" value="${product.thumbnail.originName}">
+			</div>
 			<div class="form-group">
 				<label for="name">상품명</label>
-				<input type="text" class="form-control" id="name" name="name" value="${dto.name}">
+				<input type="text" class="form-control" id="name" name="name" value="${product.name}">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
@@ -35,33 +39,33 @@
 			</div>
 			<div class="form-group">
 				<label for="subtitle">상단 설명</label>
-				<input type="text" class="form-control myCheck" id="subtitle" name="subtitle" value="${dto.subtitle}">
+				<input type="text" class="form-control myCheck" id="subtitle" name="subtitle" value="${product.subtitle}">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
 				<label for="includes">구성품</label>
-				<input type="text" class="form-control myCheck" id="includes" name="includes" placeholder="/로 구분해주세요." value="${dto.includes}">
+				<input type="text" class="form-control myCheck" id="includes" name="includes" placeholder="~로 구분해주세요." value="${product.includes}">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
    				 <label for="contents">상품 정보</label>
-  				 <textarea class="form-control myCheck" id="contents" name="contents" value="${dto.contents}"></textarea>
+  				 <textarea class="form-control myCheck" id="contents" name="contents" value="${product.contents}"></textarea>
  				<small id="conResult" class="form-text text-muted"></small>
  			</div>
  			<div class="form-group">
 				<label for="details">상세 정보</label>
-				<input type="text" class="form-control myCheck" id="details" name="details" placeholder="/로 구분해주세요." value="${dto.details}">
+				<input type="text" class="form-control myCheck" id="details" name="details" placeholder="~로 구분해주세요." value="${product.details}">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
 				<label for="cartInfo">장바구니 요약</label>
-				<input type="text" class="form-control myCheck" id="cartInfo" name="cartInfo" value="${dto.cartInfo}">
+				<input type="text" class="form-control myCheck" id="cartInfo" name="cartInfo" value="${product.cartInfo}">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
 				<label for="grinds">분쇄도 옵션</label>
-				<input type="radio" name="grinds" value="O"> 네
-				<input type="radio" name="grinds" value="X"> 아니오
+					<input type="radio" name="grinds" value="O" class="grinds"> 네
+					<input type="radio" name="grinds" value="X" class="grinds"> 아니오		
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>			
 			<br>
@@ -70,7 +74,15 @@
 		</form>
 	</div>
 	
+	
 	<!-- Script -->
 	<script type="text/javascript" src="../resources/jquery/summernote.js"></script>
+	<script type="text/javascript">
+		for(gr of $(".grinds")){
+			if($(gr).val()=='${product.grinds}'){
+				$(gr).prop("checked", true);
+			}
+		}
+	</script>
 </body>
 </html>

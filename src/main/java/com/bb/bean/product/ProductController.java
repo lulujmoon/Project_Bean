@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bb.bean.util.FileManager;
+
 @Controller
 @RequestMapping("/product/**")
 public class ProductController {
 
 	@Autowired
 	private ProductService productService;
+	
 	
 	
 	@GetMapping("productList")
@@ -28,7 +31,7 @@ public class ProductController {
 	@GetMapping("productSelect")
 	public void getSelect(ProductDTO productDTO, Model model) throws Exception {
 		productDTO = productService.getSelect(productDTO);
-		model.addAttribute("dto", productDTO);
+		model.addAttribute("product", productDTO);
 	}
 	
 	
@@ -38,8 +41,8 @@ public class ProductController {
 	public void setInsert() throws Exception {}
 	
 	@PostMapping("productInsert")
-	public String setInsert(ProductDTO productDTO) throws Exception {
-		int result = productService.setInsert(productDTO);
+	public String setInsert(ProductDTO productDTO, MultipartFile file) throws Exception {
+		productService.setInsert(productDTO, file);
 		return "redirect:./productList";
 	}
 	
@@ -68,12 +71,12 @@ public class ProductController {
 	@GetMapping("productUpdate")
 	public void setUpdate(ProductDTO productDTO, Model model) throws Exception {
 		productDTO = productService.getSelect(productDTO);
-		model.addAttribute("dto", productDTO);
+		model.addAttribute("product", productDTO);
 	}
 	
 	@PostMapping("productUpdate")
-	public String setUpdate(ProductDTO productDTO) throws Exception {
-		int result = productService.setUpdate(productDTO);
+	public String setUpdate(ProductDTO productDTO, MultipartFile file) throws Exception {
+		productService.setUpdate(productDTO, file);
 		productDTO = productService.getSelect(productDTO);
 		return "redirect:./productSelect?productNum="+productDTO.getProductNum();
 	}
@@ -81,7 +84,7 @@ public class ProductController {
 	
 	@GetMapping("productDelete")
 	public String setDelete(ProductDTO productDTO) throws Exception {
-		int result = productService.setDelete(productDTO);
+		productService.setDelete(productDTO);
 		return "redirect:./productList";
 	}
 	
@@ -99,7 +102,7 @@ public class ProductController {
 	
 	@PostMapping("optionInsert")
 	public String setOptionsInsert(OptionsDTO optionsDTO) throws Exception {
-		int result = productService.setOptionsInsert(optionsDTO);
+		productService.setOptionsInsert(optionsDTO);
 		return "redirect:./optionManage?productNum="+optionsDTO.getProductNum();
 	}
 	

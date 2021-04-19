@@ -9,17 +9,18 @@
 
 	<!-- Vanilla Product -->
 
-	<select id="getList" resultType="ProductDTO">
-		select * from product 
+	<select id="getList" resultMap="selectResult">
+		select P.*, PF.* 
+		from product P left join productFiles PF
+		on P.productNum=PF.productNum
 			<choose>
 				<when test="category!=null">
-					where category=#{category}	
+					where P.category=#{category}	
 				</when>
 				<otherwise>
-				
 				</otherwise>
 			</choose>
-		order by productNum desc
+		order by P.productNum desc
 	</select>
 	
 	<select id="getSelect" parameterType="ProductDTO" resultMap="selectResult">
@@ -42,7 +43,7 @@
 		<result property="details" column="details"/>
 		<result property="cartInfo" column="cartInfo"/>
 		<result property="grinds" column="grinds"/>
-		<association property="file" javaType="ProductFileDTO">
+		<association property="thumbnail" javaType="ProductFileDTO">
 			<id property="fileNum" column="fileNum"/>
 			<result property="fileName" column="fileName"/>
 			<result property="originName" column="originName"/>
@@ -50,16 +51,20 @@
 		<collection property="options" javaType="java.util.List" ofType="OptionsDTO">
 			<id property="optionNum" column="optionNum"/>
 			<result property="type" column="type"/>
-			<result property="grind" column="grind"/>
+			<result property="optionInfo" column="optionInfo"/>
 			<result property="price" column="price"/>
 			<result property="discountRate" column="discountRate"/>
 			<result property="stock" column="stock"/>
 		</collection>
 	</resultMap>
 	
+	<select id="getProductNum" resultType="java.lang.Long">
+		select product_seq.nextval from dual
+	</select>
+	
 	<insert id="setInsert" parameterType="ProductDTO">
 		insert into product (productNum, name, category, subtitle, includes, contents, details, cartInfo, grinds) values
-		(product_seq.nextval, #{name}, #{category}, #{subtitle} , #{includes}, #{contents}, #{details}, #{cartInfo}, #{grinds})
+		(#{productNum}, #{name}, #{category}, #{subtitle} , #{includes}, #{contents}, #{details}, #{cartInfo}, #{grinds})
 	</insert>
 	
 	<update id="setUpdate" parameterType="ProductDTO">
@@ -70,12 +75,23 @@
 		delete product where productNum=#{productNum}
 	</delete>
 	
+	<insert id="setFileInsert" parameterType="ProductFileDTO">
+		insert into productFiles (fileNum, productNum, fileName, originName) values (productFiles_seq.nextval, #{productNum}, #{fileName}, #{originName})
+	</insert>
 
+	<delete id="setFileDelete" parameterType="ProductFileDTO">
+		delete productFiles where fileNum=#{fileNum}
+	</delete>
 
 	<!-- Options -->
 	
 	<select id="getOptionsList" parameterType="ProductDTO" resultType="OptionsDTO">
 		select * from options where productNum=#{productNum}
+		order by optionNum asc
+	</select>
+	
+	<select id="getOptionsSelect" parameterType="OptionsDTO" resultType="OptionsDTO">
+		select * from options where optionNum=#{optionNum}
 	</select>
 	
 	<insert id="setOptionsInsert" parameterType="OptionsDTO">

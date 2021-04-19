@@ -16,6 +16,7 @@
 	
 	<!-- Options List -->
 	<input type="button" value="추가" id="add" class="btn btn-sm btn-secondary" style="float:right;margin-right:13px">
+	<p>최소 하나의 옵션이 필요하며, 옵션이 하나일 때는 옵션명과 옵션 설명이 노출되지 않으므로 적지 않아도 됩니다.</p>
 	<table class="table table-hover">
 		<thead>
 			<tr>

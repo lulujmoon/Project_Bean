@@ -23,7 +23,7 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="${pageContext.request.contextPath}/product/productList">로스터리</a>
+      <a class="nav-link" href="${pageContext.request.contextPath}/cart/cartList">장바구니</a>
     </li>
     <!-- Dropdown -->
     <li class="nav-item dropdown">
