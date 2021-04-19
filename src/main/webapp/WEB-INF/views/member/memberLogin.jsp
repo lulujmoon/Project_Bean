@@ -56,6 +56,11 @@
 
 
 
+<a href = "https://kauth.kakao.com/oauth/authorize?client_id="3764e317ada450c0e2799aab5377c09f"&redirect_uri="http://localhost/bean/member/memberLogin.jsp"&response_type=code">
+        로그인
+    </a>
+
+
 
 <script type='text/javascript'>
         //<![CDATA[
@@ -66,6 +71,7 @@
             container: '#kakao-login-btn',
             success: function (authObj) {
                 alert(JSON.stringify(authObj));
+                console.log(JSON.stringify(authObj))
             },
             fail: function (err) {
                 alert(JSON.stringify(err));
