@@ -41,8 +41,19 @@
 				<!-- 아직 작업중입니다! 일단 링크만 넣어서 연결해주세요! -->
 					<span>Welcome</span>
 					<a href="#">관리자 메뉴</a>
-					<a href="#">Join</a>
-					<a href="#">Login</a>
+	    <c:if test="${empty member}">
+		    <a data-toggle="modal" data-target="#login">Login</a>
+		    <%--  href="${pageContext.request.contextPath}/member/memberLogin" --%>
+		    <a data-toggle="modal" data-target="#join">Join</a>
+		    <!-- data-toggle="modal" data-target="#join" -->
+		   <%--  href="${pageContext.request.contextPath}/member/memberJoin" --%>
+		</c:if>
+
+		
+		<c:if test="${not empty member}">
+		    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/memberPage">MyPage</a></li>
+		    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/memberLogout">Logout</a></li>
+		</c:if>
 					<a href="#">Cart</a>
 				</div>
 			</div>
