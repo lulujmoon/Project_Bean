@@ -6,9 +6,12 @@
 <head>
 
 <title>Bean Brothers Coffee</title>
+<!-- Setting import -->
+<c:import url="./template/setting.jsp"></c:import>
 
 </head>
 <body>
+
 <!-- header 부분 -->
 <c:import url="./template/header.jsp"></c:import>
 
