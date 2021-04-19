@@ -74,4 +74,10 @@ public class CartController {
 		
 		return mv;
 	}
+	
+	
+	/* Test */
+	
+	@GetMapping("orderTest")
+	public void orderTest() throws Exception {}
 }
