@@ -1,46 +1,75 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="${pageContext.request.contextPath}/">BEAN BROTHERS</a>
+<!-- meta Data -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- Links -->
-  <ul class="navbar-nav">
+<!-- Link -->
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="./resources/css/font-awesome.min.css">
 
-    <!-- Dropdown -->
- 	<li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        SHOP
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="${pageContext.request.contextPath}/product/productList?category=coffee">커피</a>
-        <a class="dropdown-item" href="${pageContext.request.contextPath}/product/productList?category=brewingTool">브루잉 도구</a>
-        <a class="dropdown-item" href="${pageContext.request.contextPath}/product/productList?category=gift">선물</a>
-        <a class="dropdown-item" href="${pageContext.request.contextPath}/product/productList?category=dripbag">드립백</a>
-        <a class="dropdown-item" href="${pageContext.request.contextPath}/product/productList?category=coldbrew">콜드브루</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="${pageContext.request.contextPath}/cart/cartList">장바구니</a>
-    </li>
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Member
-      </a>
-      <div class="dropdown-menu">
-      	<c:if test="${empty member}">
-        <a class="dropdown-item" href="${pageContext.request.contextPath}/member/memberLogin">Login</a>
-        <a class="dropdown-item" href="${pageContext.request.contextPath}/member/memberJoinCheck">Join</a>
-       	</c:if>
-       	<c:if test="${not empty member}">
-        <a class="dropdown-item" href="${pageContext.request.contextPath}/member/memberPage">My Page</a>
-        <a class="dropdown-item" href="${pageContext.request.contextPath}/account/accountList">Manage Account</a>
-        <a class="dropdown-item" href="${pageContext.request.contextPath}/member/memberLogout">Logout</a>
-      	</c:if>
-      </div>
-    </li>
-  </ul>
-</nav>
+<!-- Main css -->
+<link rel="stylesheet" href="./resources/css/style.css">
+
+<!-- 기존 템플릿 폰트 링크 ㅁ<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet"> -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap"
+	rel="stylesheet">
+
+
+<!-- SCRIPTS -->
+<script src="./resources/js/jquery.js"></script>
+<script src="./resources/js/bootstrap.min.js"></script>
+<script src="./resources/js/custom.js"></script>
+
+
+<!-- Header -->
+<div class="sub-header">
+	<div class="container">
+		<div class="navbar-header navbar-default navbar-static-top"
+			role="navigation">
+			<div class="row">
+				<div class="col-lg-12"> 
+				<!-- 아직 작업중입니다! 일단 링크만 넣어서 연결해주세요! -->
+					<span>Welcome</span>
+					<a href="#">관리자 메뉴</a>
+					<a href="#">Join</a>
+					<a href="#">Login</a>
+					<a href="#">Cart</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+	<!-- Navigation 부분 -->
+	<!-- Logo 부분 -->
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse"></button>
+			<a href="${pageContext.request.contextPath}/" class="navbar-brand">
+				<i class="fa fa-magnet"></i>
+			</a>
+		</div>
+		
+		<!-- Nav Links -->
+		<!-- 여기에 링크 연결해서 넣어주세요! -->
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Shop</a></li>
+				<li><a href="#">Location</a></li>
+				<li><a href="#">Service</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
