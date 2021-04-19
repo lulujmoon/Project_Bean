@@ -6,7 +6,7 @@
 <footer>
      <div class="container">
           <div class="row">
-
+			<!-- logo -->
                <div class="col-md-3 col-sm-3">
                     <i class="fa fa-magnet"></i>
                </div>
@@ -23,7 +23,8 @@
                <div class="clearfix col-md-12 col-sm-12">
                     <hr>
                </div>
-
+				
+			<!-- footer의 맨 밑 -->
                <div class="col-md-6 col-sm-6">
                     <div class="footer-copyright">
                          <p>© 2016 Magnet Studio | All Rights Reserved.</p>

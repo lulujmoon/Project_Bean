@@ -119,7 +119,7 @@ a:hover, a:active, a:focus {
 /*---------------------------------------
     Preloader section              
 -----------------------------------------*/
-
+/* 
 .preloader {
   position: fixed;
   top: 0;
@@ -174,16 +174,16 @@ a:hover, a:active, a:focus {
             transform: rotate(360deg); } }
 
 
-
+ */
 /*---------------------------------------
     Main Navigation             
 -----------------------------------------*/
 
 .navbar-default {
-    background: #ffffff;
+    background: #f2f2f2; /* #ffffff; */
     padding: 18px 0;
     border: none;
-    margin-top: 62px;
+    margin-top: 20px;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -606,6 +606,7 @@ a:hover, a:active, a:focus {
 -----------------------------------------*/
 
 footer {
+	background-color: #f2f2f2;
     border-top: 1px solid #f0f0f0;
     padding: 100px 0px;
     position: relative;
@@ -620,7 +621,8 @@ footer a {
 }
 
 footer hr {
-  border-color: #ffffff;
+	
+  border-color: #f2f2f2;/* #ffffff; */
   margin-top: 42px;
   margin-bottom: 22px;
 }
@@ -705,6 +707,7 @@ footer .footer-copyright {
   }
 
   footer {
+  	
     text-align: center;
   }
 

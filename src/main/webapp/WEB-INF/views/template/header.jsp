@@ -1,6 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	<div class="sub-header">
+	<div class="container">
+		<div class="navbar-header navbar-default navbar-static-top" role="navigation">
+			<div class="row">
+			<div class="col-lg-12">
+			<span>Welcome</span>
+			<a href="#">Login</a>
+			<a href="#">Join</a>
+		</div>
+		</div>
+		</div>
+	</div>
+	</div>
 <div class="navbar navbar-default navbar-static-top" role="navigation">
 	<!-- Navigation 부분 -->
 	<!-- Logo -->
