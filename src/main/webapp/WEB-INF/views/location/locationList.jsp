@@ -5,9 +5,7 @@
 <html>
 <head>
 <c:import url="../template/bootStrap.jsp"></c:import>
-
 <c:import url="../template/setting.jsp"></c:import>
-
 <title>Bean Brothers Coffee</title>
 
 </head>

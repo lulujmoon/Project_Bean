@@ -20,7 +20,6 @@ public class LocationController {
 	public ModelAndView getList()throws Exception{
 	
 		List<LocationDTO> ar = locationService.getList();
-		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("list", ar); 
 		mv.setViewName("location/locationList"); 

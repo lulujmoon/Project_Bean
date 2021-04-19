@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- Header -->
 <div class="sub-header">
@@ -32,7 +33,7 @@
 		<div class="collapse navbar-collapse flex-grow-0 ml-auto">
 			<ul class="navbar-nav text-right">
 				<li class="nav-item" style="font-size: large;"><a class="nav-link" href="#">Shop</a></li>
-				<li class="nav-item" style="font-size: large;"><a class="nav-link" href="./location/locationList.jsp">Location</a></li>
+				<li class="nav-item" style="font-size: large;"><a class="nav-link" href="${pageContext.request.contextPath}/location/locationList.jsp">Location</a></li>
 				<li class="nav-item" style="font-size: large;"><a class="nav-link" href="#">Service</a></li>
 			</ul>
 		</div>

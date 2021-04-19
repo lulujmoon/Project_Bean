@@ -13,10 +13,10 @@
 
 <!-- Link -->
 
-<link rel="stylesheet" href="./resources/css/font-awesome.min.css">
+<link rel="stylesheet" href="../resources/css/font-awesome.min.css">
 
 <!-- Main css -->
-<link rel="stylesheet" href="./resources/css/style.css">
+<link rel="stylesheet" href="../resources/css/style.css">
 
 <!-- 기존 템플릿 폰트 링크 ㅁ<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet"> -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -26,4 +26,4 @@
 
 
 <!-- SCRIPTS -->
-<script src="./resources/js/custom.js"></script>
+<script src="../resources/js/custom.js"></script>

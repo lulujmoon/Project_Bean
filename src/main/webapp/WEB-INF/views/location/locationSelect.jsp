@@ -5,22 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="author" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="../resources/css/font-awesome.min.css">
-
-<!-- Main css -->
-<link rel="stylesheet" href="../resources/css/style.css">
-<!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet"> -->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
-
+<c:import url="../template/bootStrap.jsp"></c:import>
+<c:import url="../template/setting.jsp"></c:import>
 <title>Bean Brothers Coffee</title>
 
 </head>
@@ -90,9 +76,5 @@
 	<button onclick="history.back()">Store List</button>
 	
 	<c:import url="../template/footer.jsp"></c:import>
-	
-	<script src="../resources/js/jquery.js"></script>
-<script src="../resources/js/bootstrap.min.js"></script>
-<script src="../resources/js/custom.js"></script>
 </body>
 </html>
