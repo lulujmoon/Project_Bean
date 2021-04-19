@@ -25,7 +25,7 @@
           <form id="frm" action="./member/memberJoin" method="post">
 			<div class="form-group">
 				<label for="id">이메일</label> <input type="text" class="form-control"
-					id="id" name="id" placeholder="이메일" value="">
+					id="join-id" name="id" placeholder="이메일" value="">
 					<div id="errorEmail" class="resultEmail resultCheck"></div>
 				<h6 id="idCheckResult"></h6>
 				<!-- ID는 이메일형식 -->
@@ -33,24 +33,24 @@
 
 			<div class="form-group">
 				<label for="pw">비밀번호</label> <input type="password"
-					class="form-control" id="pw" name="pw">
+					class="form-control" id="join-pw" name="pw">
 				<h4 id="pwResult"></h4>
 				<!-- PW는 6글자 이상 -->
 			</div>
 
 			<div class="form-group">
 				<label for="pw">비밀번호 확인</label> <input type="password"
-					class="form-control" id="pw2" name="pw2">
+					class="form-control" id="join-pw2" name="pw2">
 			</div> 
 
 			<div class="form-group">
 				<label for="name">이름</label> <input type="text"
-					class="form-control etc" id="name" name="name">
+					class="form-control etc" id="join-name" name="name">
 			</div>
 
 			<div class="form-group">
 				<label for="phone">닉네임</label> <input type="text"
-					class="form-control etc" id="nickname" name="nickname">
+					class="form-control etc" id="join-nickname" name="nickname">
 			</div>
 
 <br>
@@ -70,7 +70,7 @@
 
 			<div class="form-group">
 				<label for="birthday">생년월일</label> <input type="date"
-					class="form-control etc" id="birthday" name="birthday">
+					class="form-control etc" id="join-birthday" name="birthday">
 			</div>
 
 
@@ -100,7 +100,7 @@
 
 
 
-			<input type="submit" id="bt" value="JOIN" class="btn btn-primary">
+			<input type="submit" id="join-bt" value="JOIN" class="btn btn-primary">
 		</form>
 
 	</div>

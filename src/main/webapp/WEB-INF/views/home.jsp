@@ -4,42 +4,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- meta Data -->
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="author" content="">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<!-- Link -->
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="./resources/css/font-awesome.min.css">
-
-<!-- Main css -->
-<link rel="stylesheet" href="./resources/css/style.css">
-
-<!-- 기존 템플릿 폰트 링크<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet"> -->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link
-	href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap"
-	rel="stylesheet">
-
 <title>Bean Brothers Coffee</title>
 
 <!-- Setting import -->
+<c:import url="./template/bootStrap.jsp"></c:import>
 <c:import url="./template/setting.jsp"></c:import>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 </head>
 <body>
+<c:import url="./member/memberLogin.jsp"></c:import>
+<c:import url="./member/memberJoin.jsp"></c:import>
 
 <!-- header 부분 -->
 <c:import url="./template/header.jsp"></c:import>
 
-<c:import url="./member/memberLogin.jsp"></c:import>
-<c:import url="./member/memberJoin.jsp"></c:import>
 
 
 <!-- PRE LOADER : 시작 전 spin이 도는 부분! -->

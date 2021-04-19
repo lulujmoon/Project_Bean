@@ -27,8 +27,8 @@
 
    <!-- Navigation 부분 -->
 
-   <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <div class="container">
             <button class="btn" data-toggle="collapse"
                data-target=".navbar-collapse"></button>
             <a href="${pageContext.request.contextPath}/" class="navbar-brand">
@@ -36,10 +36,10 @@
             </a>
          <div class="collapse navbar-collapse flex-grow-0 ml-auto">
             <ul class="navbar-nav text-right">
-               <li class="nav-item"><a class="nav-link" href="./product/productList">Shop</a></li>
-               <li class="nav-item"><a class="nav-link" href="#">Location</a></li>
-               <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+               <li class="nav-item" style="font-size:large;"><a class="nav-link" href="./product/productList">Shop</a></li>
+               <li class="nav-item" style="font-size:large;"><a class="nav-link" href="#">Location</a></li>
+               <li class="nav-item" style="font-size:large;"><a class="nav-link" href="#">Service</a></li>
             </ul>
          </div>
-      </nav>
    </div>
+      </nav>

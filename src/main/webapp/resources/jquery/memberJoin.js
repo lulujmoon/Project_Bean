@@ -3,8 +3,16 @@
  */
 
 
-let pw = document.getElementById("pw");
-let pw2 = document.getElementById("pw2");
+let id = document.getElementById("join-id");
+let pw = document.getElementById("join-pw");
+let pw2 = document.getElementById("join-pw2");
+let btn = document.getElementById("join-bt");
+let etc = document.getElementsByClassName("etc");
+
+let idCheckResult = false; // id check 결과
+let pwCheckResult = false; // pw check 결과
+let pwEqualResult = false; // pw equal 결과
+let etcResult=true		   // name, email, phone 결과
 
 
 
@@ -15,7 +23,7 @@ let pw2 = document.getElementById("pw2");
 
 
 // ID Check *********************************
-id.addEventListener("blur", function(){
+join-id.addEventListener("blur", function(){
 	let message = "6글자 미만입니다";
 	let c = "r1"
 	if(id.value.length>5){
@@ -26,14 +34,14 @@ id.addEventListener("blur", function(){
 		idCheckResult=false;
 	}
 	
-	let idResult = document.getElementById("idResult");
+	let idResult = document.getElementById("idCheckResult");
 	idResult.innerHTML=message;
 	idResult.setAttribute("class", c);
 	
 });
 // ***************************************************
 
-btn.addEventListener("click", function(){
+join-bt.addEventListener("click", function(){
 	for(let e of etc){
 		if(e.value == ""){
 			etcResult=false;
@@ -52,8 +60,8 @@ btn.addEventListener("click", function(){
 });
 
 // Id 중복 확인
-$("#id").blur(function(){
-	let id = $("#id").val();
+$("#join-id").blur(function(){
+	let id = $("#join-id").val();
 	$.get("./memberIdCheck?id="+id, function(result){
 		result = result.trim();
 		let str ="사용가능한 ID 입니다";
@@ -70,7 +78,7 @@ $("#id").blur(function(){
 
 
 // PW EQUAL CHECK **********************************
-pw2.addEventListener("blur", function(){
+join-pw2.addEventListener("blur", function(){
 	if(pw.value != pw2.value){
 		pw2.value="";
 	}else {
@@ -79,18 +87,18 @@ pw2.addEventListener("blur", function(){
 });
 
 
-$("#btn").click(function(){
+$("#join-bt").click(function(){
 		alert("두 비밀번호가 다릅니다. 다시 확인해 주세요.")
 });
 
-pw.addEventListener("change", function(){
+join-pw.addEventListener("change", function(){
 	pw2.value="";
 });
 
 
 // **** PW CHECK *********************************
 
-pw.addEventListener("blur", function(){
+join-pw.addEventListener("blur", function(){
 	pwCheckResult=false;
 	let message = "6글자 미만입니다";
 	let c = "r1";

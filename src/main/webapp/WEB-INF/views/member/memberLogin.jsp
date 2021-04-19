@@ -42,7 +42,7 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  -->
 				</div>
 				<a id="kakao-login-btn"></a> 
 				<a href="http://developers.kakao.com/logout">Logout</a>
