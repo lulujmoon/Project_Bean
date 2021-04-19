@@ -4,16 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<c:import url="../template/bootStrap.jsp"></c:import>
 
-<c:import url="../template/setting.jsp"></c:import>
 
-<title>Bean Brothers Coffee</title>
-
+<%-- <c:import url="../template/bootStrap.jsp"></c:import>
+<title>Insert title here</title> --%>
 </head>
 <body>
-<!-- header 부분 -->
-<c:import url="../template/header.jsp"></c:import>
+
 
 	<!-- Table -->
 	<div class="container">
@@ -36,8 +33,6 @@
 			</tbody>
 		</table>
 	</div>
-	
-<c:import url="../template/footer.jsp"></c:import>
 
 </body>
 </html>
