@@ -55,17 +55,17 @@
 
 
 
-<!-- 
+
 <a href = "https://kauth.kakao.com/oauth/authorize?client_id="3764e317ada450c0e2799aab5377c09f"&redirect_uri="http://localhost/bean/member/memberLogin.jsp"&response_type=code">
         로그인
     </a>
- -->
+
 
 
 <script type='text/javascript'>
         //<![CDATA[
         // 사용할 앱의 JavaScript 키를 설정해 주세요.
-        Kakao.init('969c954537bd868d510e8f40a4ce5a09');
+        Kakao.init('Your KEY');
         // 카카오 로그인 버튼을 생성합니다.
         Kakao.Auth.createLoginButton({
             container: '#kakao-login-btn',
