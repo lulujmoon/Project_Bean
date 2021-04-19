@@ -32,5 +32,7 @@
 </div>
 </div>
 
+
+<script type="text/javascript" src="../resources/jquery/qnaInsert.js"></script>
 </body>
 </html>
