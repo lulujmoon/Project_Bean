@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+
+<mapper namespace ="com.bb.bean.cart.CartDAO">
+	
+	
+	<select id="getList" parameterType="CartDTO" resultMap="listResult">
+		select C.*, P.*, O.*
+		from cart C 
+		left join options O
+		on C.optionNum = O.optionNum
+		left join product P
+		on O.productNum = P.productNum
+		where cartID = #{cartID}
+		order by C.itemNum desc
+	</select>
+	
+	<resultMap type="CartDTO" id="listResult">
+		<id property="itemNum" column="itemNum"/>
+		<result property="cartID" column="cartID"/>
+		<result property="id" column="id"/>
+		<result property="optionNum" column="optionNum"/>
+		<result property="quantity" column="quantity"/>
+		<result property="fPrice" column="fPrice"/>
+		<result property="grind" column="grind"/>
+		<association property="option" javaType="OptionsDTO">
+			<id property="optionNum" column="optionNum"/>
+			<result property="productNum" column="productNum"/>
+			<result property="type" column="type"/>
+			<result property="stock" column="stock"/>
+		</association>
+		<association property="product" javaType="ProductDTO">
+			<id property="productNum" column="productNum"/>
+			<result property="name" column="name"/>
+			<result property="cartInfo" column="cartInfo"/>
+		</association>
+	</resultMap>
+	
+	<select id="getSelect" parameterType="CartDTO" resultType="CartDTO">
+		select * from cart where itemNum=#{itemNum}
+	</select>
+
+	<select id="getTotalPrice" parameterType="CartDTO" resultType="java.lang.Long">
+		select sum(fPrice) from cart where cartID = #{cartID}
+	</select>
+
+	<insert id="setInsert" parameterType="CartDTO">
+		insert into cart (itemNum, cartID, id, optionNum, quantity, fPrice, grind)
+		values (cart_seq.nextval, #{id}, #{id}, #{optionNum}, #{quantity}, #{fPrice}, #{grind})
+	</insert>
+		
+	<update id="setUpdate" parameterType="CartDTO">
+		update cart set grind=#{grind}, quantity=#{quantity}, fPrice=#{fPrice} where itemNum=#{itemNum}
+	</update>
+	
+	<delete id="setDelete" parameterType="CartDTO">
+		delete cart where itemNum=#{itemNum}
+	</delete>
+	
+</mapper>
