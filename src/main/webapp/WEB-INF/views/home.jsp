@@ -23,45 +23,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
 
+
 </head>
 <body>
+<!-- header 부분 -->
+<c:import url="./template/header.jsp"></c:import>
 
-<!-- PRE LOADER -->
-<!-- 시작 전 spin이 도는 부분 -->
+<!-- PRE LOADER : 시작 전 spin이 도는 부분! -->
 <!-- <div class="preloader">
      <div class="sk-spinner sk-spinner-wordpress">
           <span class="sk-inner-circle"></span>
      </div>
 </div> -->
 
-<!-- Navigation 부분 -->
-
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-
-     <div class="container">
-
-          <div class="navbar-header">
-               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon icon-bar"></span>
-                    <span class="icon icon-bar"></span>
-                    <span class="icon icon-bar"></span>
-               </button>
-               <a href="index.html" class="navbar-brand"><i class="fa fa-magnet"></i></a>
-          </div>
-          <div class="collapse navbar-collapse">
-               <li class="nav-item"><a class="nav-link"
-			href="${pageContext.request.contextPath}/location/locationList">Location</a></li>
-                    <li><a href="#">Location</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-               </ul>
-          </div>
-
-  </div>
-</div>
 
 <!-- Home Section -->
-
 <section id="home">
      <div class="container">
           <div class="row">
@@ -70,13 +46,12 @@
                     <h2>어쩌구 저쩌구 큰 내용 :)</h2>
                     <hr>
                </div>
-
           </div>
      </div>
 </section>
 
-<!-- Portfolio Section -->
 
+<!-- Portfolio Section -->
 <section id="portfolio">
      <div class="container">
           <div class="row">
@@ -173,47 +148,9 @@
      </div>
 </section>
 
-<!-- Footer Section -->
 
-<footer>
-     <div class="container">
-          <div class="row">
-
-               <div class="col-md-3 col-sm-3">
-                    <i class="fa fa-magnet"></i>
-               </div>
-
-               <div class="col-md-4 col-sm-4">
-                    <p>124 Market Street, Suite 3570 San Francisco, CA 3042 United States</p>
-               </div>
-
-               <div class="col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-3">
-                    <p><a href="mailto:youremail@gmail.com">hello@yourstudio.co</a></p>
-                    <p>(+01) 2048937 / 02 203403</p>
-               </div>
-
-               <div class="clearfix col-md-12 col-sm-12">
-                    <hr>
-               </div>
-
-               <div class="col-md-6 col-sm-6">
-                    <div class="footer-copyright">
-                         <p>© 2016 Magnet Studio | All Rights Reserved.</p>
-                    </div>
-               </div>
-
-               <div class="col-md-6 col-sm-6">
-                    <ul class="social-icon">
-                         <li><a href="#" class="fa fa-facebook"></a></li>
-                         <li><a href="#" class="fa fa-twitter"></a></li>
-                         <li><a href="#" class="fa fa-linkedin"></a></li>
-                    </ul>
-               </div>
-               
-          </div>
-     </div>
-</footer>
-
+<!-- footer 영역 -->
+<c:import url="./template/footer.jsp"></c:import>
 
 <!-- SCRIPTS -->
 
