@@ -63,7 +63,7 @@ public class MemberController {
 	 * 
 	 * return "common/ajaxResult"; }
 	 */
-<<<<<<< HEAD
+
 	@GetMapping("kakaoRedirectForm")
 	public void kakaoLogin() throws Exception {
 
@@ -71,10 +71,6 @@ public class MemberController {
 
 
 
-=======
-	
-	
->>>>>>> parent of b8d3778 (kakao)
 	@GetMapping("memberJoin")
 	public void memberJoin() throws Exception {
 	}
