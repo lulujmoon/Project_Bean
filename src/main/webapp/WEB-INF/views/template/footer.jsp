@@ -6,7 +6,7 @@
 <footer>
      <div class="container">
           <div class="row">
-			<!-- logo~ -->
+			<!-- logo -->
                <div class="col-md-3 col-sm-3">
                     <i class="fa fa-magnet"></i>
                </div>
