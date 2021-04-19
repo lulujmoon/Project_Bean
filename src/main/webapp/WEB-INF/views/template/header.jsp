@@ -15,7 +15,7 @@
 	</div>
 	</div>
 <div class="navbar navbar-default navbar-static-top" role="navigation">
-	<!-- Navigation 부분 -->
+	<!-- Navigation 부분d -->
 	<!-- Logo -->
      <div class="container">
           <div class="navbar-header">
