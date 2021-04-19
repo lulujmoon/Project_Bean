@@ -19,8 +19,24 @@ public class MemberController {
 		@RequestMapping("memberPage")
 	public void memberPage() throws Exception {
 	}
+<<<<<<< HEAD
 
 
+=======
+	
+	
+	/*
+	 * @GetMapping("") public String checkID(MemberDTO memberDTO, Model model)
+	 * throws Exception { memberDTO = memberService.checkId(memberDTO);
+	 * 
+	 * String result = "0"; //0:사용불가 , 1:사용가능 if(memberDTO==null) { result = "1"; }
+	 * model.addAttribute("result", result);
+	 * 
+	 * return "common/ajaxResult"; }
+	 */
+	
+	
+>>>>>>> parent of b8d3778 (kakao)
 	@GetMapping("memberJoin")
 	public void memberJoin() throws Exception {
 	}
