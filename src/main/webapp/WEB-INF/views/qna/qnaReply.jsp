@@ -52,6 +52,7 @@
 </div>
 
 
+<script type="text/javascript" src="../resources/jquery/qnaInsert.js"></script>
 <script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
 </body>
 </html>

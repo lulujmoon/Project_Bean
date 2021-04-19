@@ -13,24 +13,22 @@
 
 	<h1>FAQ List Page</h1>
 	<br>
-	<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
 		<ul class="list-group list-group-horizontal">
 			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=배송문의"><li
+				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=배송문의"><li
 				class="list-group-item  list-group-item-info">배송문의</li></a>
 			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=상품문의">
+				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=상품문의">
 				<li class="list-group-item list-group-item-warning">상품문의</li>
 			</a>
 			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=주문문의"><li
+				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=주문문의"><li
 				class="list-group-item  list-group-item-info">주문문의</li></a>
 			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=${i}&kind=Category&search=결제문의">
+				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=결제문의">
 				<li class="list-group-item list-group-item-warning">결제문의</li>
 			</a>
 		</ul>
-	</c:forEach>
 	<div id="accordion">
 
 		<c:forEach items="${list}" var="dto">
@@ -146,14 +144,57 @@
 			</form>
 		</div>
 		
-		<%-- <c:if test="${member.id} eq admin*"> --%>
-		<a href="./faqInsert"><button type="button"
-				class="btn btn-success">글쓰기</button></a>
-		<%-- </c:if> --%>
+	
 				
-		<script type="text/javascript" src="../resources/jquery/faqUpdate.js"></script>
+		<%-- <c:if test="${member.id} eq admin*"> --%>
+			<button type="button" class="btn btn-primary" data-toggle="modal"
+						data-target="#myModalW">글쓰기</button>
+		<%-- </c:if> --%>
+		
+		<div class="modal fade" id="myModalW">
+						<div class="modal-dialog">
+							<div class="modal-content">
+		
+		<div class="modal-body">
+								
+						
+									<div class="form-group">
+										<label for="writer">작성자</label> <input class="form-control"
+											id="writer" name="writer" value="admin" readonly>
+									</div>
+									<div class="form-group">
+										<label for="writer">제목</label> <input class="form-control"
+											id="title" name="title" >
+									</div>
+									<div class="form-group">
+										<label for="writer">내용</label> <input class="form-control"
+											id="contents" name="contents">
+									</div>
+									<div class="form-group">
+										<label for="writer">카테고리</label> <input class="form-control"
+											id="category" name="category">
+									</div>
+									
+								</div>
 
-	</div>
+								<!-- Modal footer -->
+								<div class="modal-footer">
+									<button type="button" class="btn wri" id="wri">확인</button>
+									<button type="button" class="btn btn-danger"
+										data-dismiss="modal">닫기</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+		
+		
+		
+				
+		<script type="text/javascript" src="../resources/jquery/faqInsert.js"></script>
+		<script type="text/javascript" src="../resources/jquery/faqUpdate.js"></script>
 
 
 </body>
