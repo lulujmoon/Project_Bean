@@ -19,12 +19,7 @@ public class MemberController {
 		@RequestMapping("memberPage")
 	public void memberPage() throws Exception {
 	}
-<<<<<<< HEAD
 
-
-=======
-	
-	
 	/*
 	 * @GetMapping("") public String checkID(MemberDTO memberDTO, Model model)
 	 * throws Exception { memberDTO = memberService.checkId(memberDTO);
@@ -34,9 +29,7 @@ public class MemberController {
 	 * 
 	 * return "common/ajaxResult"; }
 	 */
-	
-	
->>>>>>> parent of b8d3778 (kakao)
+
 	@GetMapping("memberJoin")
 	public void memberJoin() throws Exception {
 	}
