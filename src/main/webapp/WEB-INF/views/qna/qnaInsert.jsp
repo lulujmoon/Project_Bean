@@ -15,8 +15,9 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
+	
 <div class="container">
-<h1>Qna Insert Page</h1>
+<h1>Insert</h1>
 <form id="frm" action="./qnaInsert" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="writer">Writer:</label> <input type="text"
@@ -37,7 +38,7 @@
 			</div>
 			
 		<div class="form-group">
-			<label for="category">category:</label> 
+			<label for="category">Category:</label> 
 			<select name="category" id="category">
 				<option value="배송문의">배송문의</option>
 				<option value="상품문의">상품문의</option>
@@ -48,9 +49,10 @@
 			
 	
 
-			<input type="submit" id="btn" value="WRITE" class="btn btn-primary">
+			<input type="submit" id="btnConfirm" value="write" class="btnn">
 		</form>
 </div>
+<br>
 <c:import url="../template/footer.jsp"></c:import>		
 <script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
 <script type="text/javascript" src="../resources/jquery/qnaInsert.js"></script>

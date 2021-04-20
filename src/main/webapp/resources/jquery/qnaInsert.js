@@ -2,7 +2,7 @@
  * 
  */
 
-$("#btn").click(function(){
+$("#btnConfirm").click(function(){
 	
 	var title = document.getElementById("title")
 	var contents = document.getElementById("contents")

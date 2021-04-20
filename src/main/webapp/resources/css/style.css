@@ -58,6 +58,58 @@ strong {
   border-color: transparent;
 }
 
+#ttitle{
+	width:700px;
+	text-align: center;
+	
+}
+
+td{
+	text-align: center;
+}
+
+th{
+	text-align: center;
+}
+
+#search{
+	height:34px;
+	width:500px;
+	
+}
+
+#SB{
+	background: white;
+    border-radius: 200px;
+    border: none;
+    color: #ffffff;
+    font-weight: 400;
+    transition: all 0.4s ease-in-out;
+	
+}
+
+#writeBlack{
+	background: #222;
+    border-radius: 200px;
+    border: none;
+    color: #ffffff;
+    font-weight: 400;
+    transition: all 0.4s ease-in-out;
+}
+
+.btnn{
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+td{
+	color:#555;
+}
+
+#qna{
+	margin:0auto;
+}
 
 /*---------------------------------------
     General               

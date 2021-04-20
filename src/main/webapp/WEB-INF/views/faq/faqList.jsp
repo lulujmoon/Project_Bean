@@ -13,7 +13,7 @@
 	<c:import url="../template/header.jsp"></c:import>
 	
 <div class="container">
-	<h1>FAQ List Page</h1>
+	<h2>FAQ</h2>
 	<br>
 		<ul class="list-group list-group-horizontal">
 			<a
@@ -43,12 +43,13 @@
 				<div id="col${dto.num}" class="collapse" data-parent="#accordion">
 					<div class="card-body">${dto.contents}</div>
 
+					<br>
 					<!-- Modal Button -->
-					<button type="button" class="btn btn-primary" data-toggle="modal"
+					<button type="button" class="btn btn-outline-dark" data-toggle="modal" id="GrayButton"
 						data-target="#myModal${dto.num}">수정</button>
 
-									<a href="./faqDelete?num=${dto.num}" id="del"
-										class="btn btn-outline-light text-dark del">삭제</a>
+									<a href="./faqDelete?num=${dto.num}" 
+										class="btn btn-outline-dark text-dark del" id="del">삭제</a>
 					<!-- Modal -->
 					<div class="modal" id="myModal${dto.num}">
 						<div class="modal-dialog">
@@ -104,7 +105,6 @@
 		</c:forEach>
 	</div>
 
-	<div class="container">
 		<ul class="pagination">
 
 			<c:if test="${pager.pre}">
@@ -141,7 +141,7 @@
 				<input type="text" class="form-control" name="search" id="search"
 					value="${pager.search}" placeholder="">
 				<div class="input-group-append">
-					<button class="btn btn-success" type="submit">Search</button>
+					<button class="btn btn-success" type="submit" id=SB>Search</button>
 				</div>
 			</form>
 		</div>
@@ -149,10 +149,11 @@
 	
 				
 		<%-- <c:if test="${member.id} eq admin*"> --%>
-			<button type="button" class="btn btn-primary" data-toggle="modal"
-						data-target="#myModalW">글쓰기</button>
+			<button type="button" class="writeBlack" data-toggle="modal" id="wri"
+						data-target="#myModalW">write</button>
 		<%-- </c:if> --%>
 		
+		<br>
 		<div class="modal" id="myModalW">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -190,10 +191,10 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		
-		
 	
+		<br>
+		
+
 		<c:import url="../template/footer.jsp"></c:import>		
 		<script type="text/javascript" src="../resources/jquery/faqInsert.js"></script>
 		<script type="text/javascript" src="../resources/jquery/faqUpdate.js"></script>
