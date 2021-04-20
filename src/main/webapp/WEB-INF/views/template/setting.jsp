@@ -17,11 +17,6 @@
 
 <!-- Main css -->
 <link rel="stylesheet" href="../resources/css/style.css">
-
-<!-- 기존 템플릿 폰트 링크 ㅁ<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet"> -->
-
-<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
-
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
 
 <!-- SCRIPTS -->

@@ -13,15 +13,11 @@
 <meta name="author" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<!-- Link -->
-<!-- <link rel="stylesheet" href="./resources/css/font-awesome.min.css"> -->
-
 <!-- Main css -->
 <link rel="stylesheet" href="./resources/css/style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+<!-- 본문과 전체에 적용되는 기본 한글 폰트 링크 -->
+<!-- 이 폰트의 스타일은 style.css 파일에 적혀있음 -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
-
 <!-- SCRIPTS -->
 <script src="./resources/js/custom.js"></script>
 
@@ -31,14 +27,6 @@
 <body>
 <!-- header 부분 -->
 <c:import url="./template/header.jsp"></c:import>
-
-<!-- PRE LOADER : 시작 전 spin이 도는 부분! -->
-<!-- <div class="preloader">
-     <div class="sk-spinner sk-spinner-wordpress">
-          <span class="sk-inner-circle"></span>
-     </div>
-</div> -->
-
 
 <!-- Home Section -->
 <section id="home">
