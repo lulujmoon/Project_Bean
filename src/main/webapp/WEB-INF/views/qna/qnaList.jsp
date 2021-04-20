@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<c:import url="../template/bootStrap.jsp"></c:import>
+<c:import url="../template/bootstrap.jsp"></c:import>
+<c:import url="../template/setting.jsp"></c:import>
 </head>
 
 <body>
@@ -86,5 +87,6 @@
 	<a href="./qnaInsert"><button type="button" class="btn btn-success">글쓰기</button></a>
 	<%-- </c:if> --%>
 	</div>
+	<c:import url="../template/footer.jsp"></c:import>		
 </body>
 </html>

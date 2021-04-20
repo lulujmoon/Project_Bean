@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../template/bootstrap.jsp"></c:import>
+<c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
@@ -48,7 +49,7 @@
 									<a href="./faqDelete?num=${dto.num}" id="del"
 										class="btn btn-outline-light text-dark del">삭제</a>
 					<!-- Modal -->
-					<div class="modal fade" id="myModal${dto.num}">
+					<div class="modal" id="myModal${dto.num}">
 						<div class="modal-dialog">
 							<div class="modal-content">
 
@@ -151,7 +152,7 @@
 						data-target="#myModalW">글쓰기</button>
 		<%-- </c:if> --%>
 		
-		<div class="modal fade" id="myModalW">
+		<div class="modal" id="myModalW">
 						<div class="modal-dialog">
 							<div class="modal-content">
 		
@@ -192,7 +193,7 @@
 		
 		
 		
-				
+		<c:import url="../template/footer.jsp"></c:import>		
 		<script type="text/javascript" src="../resources/jquery/faqInsert.js"></script>
 		<script type="text/javascript" src="../resources/jquery/faqUpdate.js"></script>
 
