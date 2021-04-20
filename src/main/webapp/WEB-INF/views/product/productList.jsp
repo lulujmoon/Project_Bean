@@ -67,11 +67,11 @@
 	      	<div class="preContentsHere">
 		      	<div class="titleAgainHere"></div>
 		      	<div class="subtitleHere"></div>
-		      	<div class="includesHere"></div><br><br>
+		      	<div class="includesHere"></div>
 		      	<div class="optionsHere"></div>
 		      	<div class="grinds">
 					갈아드릴까요?<br>
-					<select name="grind" title="${product.grinds}" id="selGr">
+					<select name="grind">
 						<option class="grind">홀빈(갈지 않음)</option>
 						<option class="grind">핸드드립/클레버용</option>
 						<option class="grind">커피메이커용</option>
@@ -141,9 +141,10 @@
 			</tr>
 		<c:forEach items="${product.options}" var="option">
 			<td class="optionDiv">
+				<span class="optionNum">${option.optionNum}</span>
 				<span class="optionInfo">${option.optionInfo}</span>
 				<span class="type">${option.type}</span>
-				<span class="price">${option.price }</span>
+				<span class="price">${option.price}</span>
 				<span class="discountRate">${option.discountRate}</span>
 			</td>
 		</c:forEach>

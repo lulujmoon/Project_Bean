@@ -37,20 +37,23 @@
   /* 옵션 불러오기 */
   let options = "";
 
-  for(opt of $(productDiv).find('.optionDiv')){
-	options = options + '<input type="radio" name="optionNum" value="'+$(opt).find('.optionNum').text()+'"> ';
-	options = options + $(opt).find('.type').text();
-	options = options + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₩'+$(opt).find('.price').text();
-	options = options + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+$(opt).find('.optionInfo').text()+'<br>';
-	console.log(options);	
+  let optionsSize = $(productDiv).find('.optionDiv').text();
+  if(optionsSize!=""){
+	  for(opt of $(productDiv).find('.optionDiv')){
+		options = options + '<input type="radio" class="optionNum" name="optionNum" value="'+$(opt).find('.optionNum').text()+'"> ';
+		options = options + $(opt).find('.type').text();
+		options = options + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₩'+$(opt).find('.price').text();
+		options = options + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+$(opt).find('.optionInfo').text()+'<br>';
+	  }	
+  }else{
+	options = '<p style="color:red">현재 상품에 등록된 옵션이 없습니다.<br>옵션이 없으면 구매를 진행할 수 없습니다. 옵션을 추가해주세요.</p>';
   }
   
   /* grinds 여부에 따라 보여주기 */
   if(grinds=='X'){
-	$(".grind").attr("style","display:none");
+	$(".grinds").html('<br><br>');
   }
   
-
   /* 모달에 넣기 */
   modal.find('.modal-title').text(name);
   modal.find('.thumbnailHere').html(thumbnail);
@@ -61,6 +64,7 @@
   modal.find('.optionsHere').html(options);
   modal.find('.contentsHere').html(contents);
   modal.find('.detailsHere').html(details);
+  
   
   /* 수정, 삭제, 옵션관리 버튼 설정 */
   $("#edit").click(function(){
@@ -76,9 +80,48 @@
   });
   
   /* 장바구니 버튼 */
+  let count = 0;
+  
   $("#cart-btn").click(function(){
-	
-})
+	if(count==0){
+		let optionNum;
+		let grind;
+		let quantity;
+		
+		for(opt of $(".optionNum")){
+			if($(opt).prop("checked")){
+				optionNum = $(opt).val();
+			}
+		}
+		
+		if(grinds=='X'){
+			grind=null;
+		}else{
+			for(gr of $(".grind")){
+				if($(gr).prop("selected")){
+					grind = $(gr).val();
+				}
+			}
+		}
+		
+		for(qu of $(".quantity")){
+			if($(qu).prop("selected")){
+				quantity = $(qu).val();
+			}
+		}
+		
+		$.post("../cart/cartInsert", {
+			optionNum:optionNum,
+			grind:grind,
+			quantity:quantity
+		}, function(result){
+			$("#cart-btn").text("장바구니 보러가기");
+			count=1;
+		});
+	}else if(count==1){
+		location.href="../cart/cartList";
+	}
+  });
   
 });
 /*모달 끝 */

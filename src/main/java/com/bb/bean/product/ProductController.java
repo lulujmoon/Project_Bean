@@ -78,7 +78,7 @@ public class ProductController {
 	public String setUpdate(ProductDTO productDTO, MultipartFile file) throws Exception {
 		productService.setUpdate(productDTO, file);
 		productDTO = productService.getSelect(productDTO);
-		return "redirect:./productSelect?productNum="+productDTO.getProductNum();
+		return "redirect:./productList";
 	}
 	
 	

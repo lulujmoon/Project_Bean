@@ -26,16 +26,19 @@
 
 .thumbnailHere{
 	width:40%;
-	display:inline-block;
+	height:300px;
+	overflow:hidden;
+	float:left;
 	margin-left:5%;
 	margin-top:5%;
 }
 
 .preContentsHere{
 	display:inline-block;
-	margin:2%;
+	margin-left:2%;
+	margin-top:5%;
 	width:500px;
-	height:100%;
+	height:330px;
 }
 
 .titleAgainHere{
@@ -101,15 +104,22 @@
 }
 
 #cart-btn{
+	cursor:pointer;
 	width:170px;
 	height:50px;
 	background-color:lavender;
+	border: 2px solid lavender;
 	display: inline-block;
+	text-align:center;
+	line-height: 50px;
 }
 
 #order-btn{
+	cursor:pointer;
 	width:170px;
 	height:50px;
-	border: 1px solid lavender;
+	border: 2px solid lavender;
 	display: inline-block;
+	text-align:center;
+	line-height: 50px;
 }
