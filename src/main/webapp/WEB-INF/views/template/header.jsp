@@ -33,7 +33,7 @@
 				<ul class="navbar-nav text-right">
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/product/productList" style="font-size:large;">Shop</a></li>
 					<li class="nav-item"><a class="nav-link" href="#" style="font-size:large;">Location</a></li>
-					<li class="nav-item"><a class="nav-link" href="#" style="font-size:large;">Service</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList" style="font-size:large;">Service</a></li>
 				</ul>
 				</div>
 			</div>
