@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 <c:import url="../template/bootstrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
-
 <!-- summernote  -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
@@ -17,8 +16,8 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
+<div class="container">
 <h1>Qna Update Page</h1>
-
 <form id="frm" action="./qnaUpdate" method="post">
 			<div class="form-group">
 			<input type="hidden" name="num" value="${dto.num}">
@@ -50,6 +49,7 @@
 			
 			<input type="submit" id="btn" value="UPDATE" class="btn btn-primary">
 		</form>
+		</div>
 <c:import url="../template/footer.jsp"></c:import>	
 <script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
 </body>

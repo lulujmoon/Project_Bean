@@ -11,7 +11,8 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
-
+	
+<div class="container">
 	<h1>FAQ List Page</h1>
 	<br>
 		<ul class="list-group list-group-horizontal">
@@ -189,10 +190,10 @@
 						</div>
 					</div>
 				</div>
-				</div>
+			</div>
 		
 		
-		
+	
 		<c:import url="../template/footer.jsp"></c:import>		
 		<script type="text/javascript" src="../resources/jquery/faqInsert.js"></script>
 		<script type="text/javascript" src="../resources/jquery/faqUpdate.js"></script>
