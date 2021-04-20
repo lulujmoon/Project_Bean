@@ -111,7 +111,7 @@ $("#join-bt").click(function(){
 		}
 /*		alert(radioResult);*/
 	
-	for(let e of etc) {
+/*	for(let e of etc) {
 		console.log(e.value);
 		if(e.value == "") {
 			etcResult=false;
@@ -127,6 +127,7 @@ $("#join-bt").click(function(){
 	}else {
 		alert("필수 항목을 입력하세요");
 	}
+*/
 
 
 
