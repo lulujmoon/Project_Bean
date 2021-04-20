@@ -14,24 +14,45 @@
 <!-- header 부분 -->
 <c:import url="../template/header.jsp"></c:import>
 
-	<div style="margin: 0 auto; text-align: center">
-		<h2>Location Select Page</h2>
-		<!-- 이미지 파일 불러오기 -->
-		<div>
-			<img alt="${dto.storeName}" src="../resources/images/${dto.storeImg}">
-		</div>
+<!-- Blog Section -->
 
-		<!-- Select 된 데이터 내용 -->
-		<h5>Store: ${dto.storeName}</h5>
-		<h5>Location: ${dto.storeLoc}</h5>
-		<!-- 소개글 -->
-		<div>
-			<p>${dto.storeInfo}</p>
-		</div>
+<section id="blog">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12 col-md-10 col-sm-12">
+                    <div class="section-title">
+                         <h2>${dto.storeName}</h2>
+                    </div>
+
+                         <div class="blog-post-image col-lg-10">
+                              <a href="single-post.html">
+                                   <img src="${pageContext.request.contextPath}/resources/images/${dto.storeImg}" width="120%" class="img-responsive center-block">
+                              </a>
+                         </div>
+                         <div class="col-lg-10">
+	                         <div class="blog-post-title">
+	                              <h3><a href="single-post.html">${dto.storeName}</a></h3>
+	                         </div>
+	                         <div class="blog-post-format">
+	                              <span><i class="fa fa-date"></i>${dto.storeLoc}</span>
+	                         </div>
+	                         <div class="blog-post-des">
+	                              <p>${dto.storeInfo}</p>
+	                         </div>
+                         </div>
+                    </div>
+               </div>
+
+          </div>
+</section>
+	
+	<div class="container">
+	<h5>LOCATION</h5>
 	</div>
 	<!-- 지도 key : 29d592b09c4a7ae1856b2630da60b871&libraries=services -->
 	<div id="map"
-		style="width: 1000px; height: 400px; margin: 0 auto; text-align: center"></div>
+		style="width: 60%; height: 400px; margin: 30px auto; text-align: center"></div>
 
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=29d592b09c4a7ae1856b2630da60b871&libraries=services"></script>
@@ -73,7 +94,7 @@
 		// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
 		// marker.setMap(null);
 	</script>
-	<button onclick="history.back()">Store List</button>
+
 	
 	<c:import url="../template/footer.jsp"></c:import>
 </body>
