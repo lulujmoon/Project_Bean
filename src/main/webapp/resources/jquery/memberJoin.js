@@ -15,6 +15,7 @@ let pwEqualResult = false; // pw equal 결과
 let etcResult=true		   // name, email, phone 결과
 
 
+  
 
 //function emailCheck(email) {
 //	let regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
@@ -23,11 +24,13 @@ let etcResult=true		   // name, email, phone 결과
 
 
 // ID Check *********************************
+
+
 join-id.addEventListener("blur", function(){
-	let message = "6글자 미만입니다";
+	let message = "이메일 형식에 맞게 입력해주세요";
 	let c = "r1"
 	if(id.value.length>5){
-		message = "6글자 이상 입니다";
+		message = "";
 		c = "r2";
 		idCheckResult=true;
 	}else {
@@ -61,6 +64,7 @@ join-bt.addEventListener("click", function(){
 
 // Id 중복 확인
 $("#join-id").blur(function(){
+	alert("중복확인");
 	let id = $("#join-id").val();
 	$.get("./memberIdCheck?id="+id, function(result){
 		result = result.trim();
@@ -69,7 +73,6 @@ $("#join-id").blur(function(){
 		if(result=='0'){
 			str ="중복 ID 입니다";
 		}
-		
 		$("#idCheckResult").html(str);
 		
 	});
@@ -87,12 +90,9 @@ join-pw2.addEventListener("blur", function(){
 });
 
 
-$("#join-bt").click(function(){
-		alert("두 비밀번호가 다릅니다. 다시 확인해 주세요.")
-});
-
 join-pw.addEventListener("change", function(){
 	pw2.value="";
+
 });
 
 

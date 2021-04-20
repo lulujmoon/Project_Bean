@@ -23,6 +23,7 @@
           	<div class="container">
 		<h2>Member Join Page</h2>
           <form id="frm" action="./member/memberJoin" method="post">
+          
 			<div class="form-group">
 				<label for="id">이메일</label> <input type="text" class="form-control"
 					id="join-id" name="id" placeholder="이메일" value="">
@@ -34,13 +35,14 @@
 			<div class="form-group">
 				<label for="pw">비밀번호</label> <input type="password"
 					class="form-control" id="join-pw" name="pw">
-				<h4 id="pwResult"></h4>
+				<h6 id="pwResult"></h6>
 				<!-- PW는 6글자 이상 -->
 			</div>
 
 			<div class="form-group">
 				<label for="pw">비밀번호 확인</label> <input type="password"
 					class="form-control" id="join-pw2" name="pw2">
+					<h5 id="pw2Result"></h5>
 			</div> 
 
 			<div class="form-group">
@@ -56,15 +58,15 @@
 <br>
 			<div class="form-check form-check-inline">
 				<input class="form-check-input" type="radio"
-					name="gender" id="inlineRadio1" value="2"> <label
+					name="gender" id="womanRadio" value="2"> <label
 					class="form-check-label" for="inlineRadio1">여자</label>
 			</div>
 			<div class="form-check form-check-inline">
 				<input class="form-check-input" type="radio"
-					name="gender" id="inlineRadio2" value="1"> <label
+					name="gender" id="manRadio" value="1"> <label
 					class="form-check-label" for="inlineRadio2">남자</label>
 			</div>
-
+			
 <br>
 <br>
 
@@ -79,7 +81,7 @@
 				<!-- 이용약관 -->
 			<div class="form-check">
 				<label class="form-check-label"> <input type="checkbox"
-					class="check" value="">동의
+					class="check" value="" required>동의
 				</label>
 			</div>
 
@@ -90,7 +92,7 @@
 
 			<div class="form-check">
 				<label class="form-check-label"> <input type="checkbox"
-					class="check" value="">동의
+					class="check" value="" required>동의
 				</label>
 			</div>
 			<div class="jumbotron">
@@ -104,8 +106,6 @@
 		</form>
 
 	</div>
-
-          
           
         </div>
         
@@ -120,4 +120,4 @@
   
 </div>
 
-		  <script type="text/javascript" src="./resources/jquery/memberJoin.js"></script>
+<script type="text/javascript" src="./resources/js/memberJoin.js"></script>

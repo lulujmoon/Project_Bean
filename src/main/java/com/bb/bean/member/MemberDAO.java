@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+
 @Repository
 public class MemberDAO {
 	
@@ -11,8 +12,8 @@ public class MemberDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "com.bb.bean.member.MemberDAO.";
 		
-	public MemberDTO checkId(MemberDTO memberDTO) throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"checkId", memberDTO);
+	public MemberDTO memberIdCheck(MemberDTO memberDTO)throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"memberIdCheck", memberDTO);
 	}
 	
 	public int memberJoin(MemberDTO memberDTO) throws Exception {
