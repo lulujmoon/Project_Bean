@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <c:import url="../template/bootstrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
+<link rel="stylesheet" href="../resources/css/qnaInsert.css">
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
@@ -17,7 +18,7 @@
 <!-- ------------ -->
 
  <div class="container">
- <h2>QNA Reply form</h2>
+ <h2>QnA</h2>
   <form id="frm" action="./qnaReply" method="post">
   
   	<input type="hidden" name="num" value="${param.num}">
@@ -48,10 +49,10 @@
 			</select>
 		</div>
     
-    <input type="submit" id="btn" value="WRITE" class="btn btn-primary">
+    <input type="submit" id="btn" value="WRITE" class="btn btn-success">
   </form>
 </div>
-
+<br>
 <c:import url="../template/footer.jsp"></c:import>	
 <script type="text/javascript" src="../resources/jquery/qnaInsert.js"></script>
 <script type="text/javascript" src="../resources/jquery/summerFile.js"></script>

@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <c:import url="../template/bootstrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
+<link rel="stylesheet" href="../resources/css/qnaInsert.css">
 <!-- summernote  -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
@@ -16,7 +17,7 @@
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 <div class="container">
-<h1>Qna Insert Page</h1>
+<h2>QnA</h2>
 <form id="frm" action="./qnaInsert" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="writer">Writer:</label> <input type="text"
@@ -48,9 +49,11 @@
 			
 	
 
-			<input type="submit" id="btn" value="WRITE" class="btn btn-primary">
+			<input type="submit" id="btn" value="Write" class="btn btn-success">
 		</form>
 </div>
+<br>
+
 <c:import url="../template/footer.jsp"></c:import>		
 <script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
 <script type="text/javascript" src="../resources/jquery/qnaInsert.js"></script>

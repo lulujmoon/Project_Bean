@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+h2{
+	text-align: center;
+}
+
+.contents{
+	
+	height:350px;
+	
+}
+
+#short{
+	
+	width:200px;
+}
+
+#right{
+	text-align: right;
+}
+
+.btn-success{
+	 background-color: white;
+ 	 color: black;
+ 	 border: 2px solid #e7e7e7;
+}

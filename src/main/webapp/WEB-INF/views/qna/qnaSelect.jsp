@@ -8,30 +8,75 @@
 <title>Insert title here</title>
 <c:import url="../template/bootstrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
+<link rel="stylesheet" href="../resources/css/qnaSelect.css">
  
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
+	
 <div class="container">
-<h1>Qna select Page</h1>
 
-<h3>${dto.title}</h3>
-<h3>${dto.writer}</h3>
-<h3>${dto.contents}</h3>
-<h3>${dto.category}</h3>
+<h2>QnA</h2>
+<br> 
+  <table class="table">
+
+    <tbody>
+      <tr>
+        <td id="short">Title</td>
+        <td>${dto.title}</td>
+        <td id="right"></td>
+      </tr>
+       <tr>
+        <td id="short">Writer</td>
+        <td>${dto.writer}</td>
+        <td id="right">${dto.category}</td>
+      </tr>
+       <tr>
+        <td id="short"> </td>
+        <td></td>
+        <td id="right">${dto.regDate}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+ 	<div class="contents">
+ 	<h5>${dto.contents}</h5>
+ 	</div>
+ 	
+ 	<table class="table">
+    <tbody>
+      <tr>
+        <td id="short">이전글</td>
+        <td></td>
+        <td></td>
+      </tr>
+       <tr>
+        <td id="short">다음글</td>
+        <td></td>
+        <td></td>
+      </tr>
+       <tr>
+        <td> </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
 
 
-<div>
+
 <%-- <c:if test="${member.id} eq ${member.id}"> --%>
-<a href="./qnaUpdate?num=${dto.num}"><button type="button" class="btn btn-info">수정</button></a>
+<a href="./qnaUpdate?num=${dto.num}"><button type="button" class="btn btn-success">수정</button></a>
 
-<a href="./qnaDelete?num=${dto.num}" id="del" class="btn btn-info">삭제</a>
+<a href="./qnaDelete?num=${dto.num}" id="del" class="btn btn-success">삭제</a>
 <%-- </c:if> --%>
 <%-- <c:if test="${member.id} eq admin*"> --%>
-<a href="./qnaReply?num=${dto.num}" class="btn btn-primary">답글</a>
+<a href="./qnaReply?num=${dto.num}" class="btn btn-success">답글</a>
 <%-- </c:if> --%>
+
 </div>
-</div>
+<br>
 
 <c:import url="../template/footer.jsp"></c:import>	
 <script type="text/javascript" src="../resources/jquery/qnaInsert.js"></script>

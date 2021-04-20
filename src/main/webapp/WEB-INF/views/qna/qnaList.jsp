@@ -4,21 +4,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../template/bootstrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
+<link rel="stylesheet" href="../resources/css/qnaList.css">
 </head>
 
 <body>
 <c:import url="../template/header.jsp"></c:import>
-
 <div class="container">
 
-<h1>QNA List Page</h1>
+<h2>QnA</h2>
 
 <table class="table">
-		<thead class="thead-dark">
+		<thead class="thead-light">
 			<tr>
 				<th>NUM</th>
 				<th>TITLE</th>
@@ -33,7 +34,7 @@
 		<c:forEach items="${list}" var="dto" >
 			<tr>
 				<td>${dto.num}</td>
-				<td><a href="./qnaSelect?num=${dto.num}">
+				<td id="tdTitle"><a href="./qnaSelect?num=${dto.num}">
 				<c:catch>
 				<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
 				</c:catch>
@@ -84,9 +85,11 @@
 	</div> 
 	
 	<%-- <c:if test="${member.id} eq admin*"> --%>
-	<a href="./qnaInsert"><button type="button" class="btn btn-success">글쓰기</button></a>
+	<a href="./qnaInsert"><button type="button" class="btn btn-success">Write</button></a>
 	<%-- </c:if> --%>
 	</div>
+	<br>
+	
 	<c:import url="../template/footer.jsp"></c:import>		
 </body>
 </html>
