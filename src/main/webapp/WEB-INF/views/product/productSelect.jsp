@@ -12,6 +12,7 @@
 <body>
 <c:import url="../template/header.jsp"></c:import>
 	<div class="container">
+	<div id="hi">${product.name}</div>
 		<h2 style="display: inline-block;margin:10px">Product Select</h2>
 		<a href="./productDelete?productNum=${product.productNum}" class="btn btn-danger btn-sm" style="float:right;margin-top:15px;margin-left:5px">Delete</a>
 		<a href="./productUpdate?productNum=${product.productNum}" class="btn btn-secondary btn-sm" style="float:right;margin-top:15px;margin-left:5px">Update</a>

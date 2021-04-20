@@ -10,8 +10,11 @@
 	<!-- Vanilla Product -->
 
 	<select id="getList" resultMap="selectResult">
-		select P.*, PF.* 
-		from product P left join productFiles PF
+		select P.*, O.*, PF.* 
+		from product P
+		left join options O
+		on P.productNum = O.productNum
+		left join productFiles PF
 		on P.productNum=PF.productNum
 			<choose>
 				<when test="category!=null">

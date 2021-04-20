@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+
+/* Modal */
+
+.modal-title{
+	line-height: 1.2em; 
+	width:100%;
+	padding-bottom: 20px; 
+	display: block; 
+	color: rgb(0, 0, 0); 
+	font-family: 본고딕, "Source Han Sans K", "Noto Sans CJK KR", notokr; 
+	font-size: 22.5px; 
+	font-weight: 700; 
+	letter-spacing: normal; 
+	text-align: center;
+	margin:3%;
+}
+
+.modal-dialog{
+	 width:60%;
+}
+
+
+/* select page */
+
+.thumbnailHere{
+	width:40%;
+	display:inline-block;
+	margin-left:5%;
+	margin-top:5%;
+}
+
+.preContentsHere{
+	display:inline-block;
+	margin:2%;
+	width:500px;
+	height:100%;
+}
+
+.titleAgainHere{
+	font-size: 17px; 
+	font-weight: 700;
+	margin-bottom:1%;
+}
+
+
+.includesHere{
+	font-size: 15px;
+}
+
+.noticeHere{
+	border:1px dotted lightgrey;
+	padding:3%;
+	margin:5%;
+}
+
+.contentsHere{
+	margin:5%;
+}
+
+
+
+.item-section{
+	padding: 20px 30px; 
+	position: relative; 
+	border-top: 1px solid rgb(194, 194, 194);
+}
+
+.row{
+	margin-left: -4px; 
+	margin-right: -4px;
+}
+
+.det-title{
+	padding-left: 4px; 
+	padding-right: 4px;
+	width: 138px; 
+	font-weight: 700; 
+	padding-bottom: 10px;
+}
+
+.det-contents{
+	padding-left: 4px; 
+	padding-right: 4px; 
+	width: 689.984px;
+}
+
+.det-ul1{
+	padding: 0px; 
+	margin-right: 0px; 
+	margin-left: 0px; 
+	list-style: none;
+}
+
+.det-li{
+	list-style: none; 
+	position: relative; 
+	padding-left: 10px; 
+	padding-bottom: 5px;
+}
+
+#cart-btn{
+	width:170px;
+	height:50px;
+	background-color:lavender;
+	display: inline-block;
+}
+
+#order-btn{
+	width:170px;
+	height:50px;
+	border: 1px solid lavender;
+	display: inline-block;
+}
