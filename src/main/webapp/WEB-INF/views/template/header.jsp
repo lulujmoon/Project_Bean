@@ -32,9 +32,12 @@
 		</a>
 		<div class="collapse navbar-collapse flex-grow-0 ml-auto">
 			<ul class="navbar-nav text-right">
-				<li class="nav-item" style="font-size: large;"><a class="nav-link" href="#">Shop</a></li>
-				<li class="nav-item" style="font-size: large;"><a class="nav-link" href="${pageContext.request.contextPath}/location/locationList.jsp">Location</a></li>
-				<li class="nav-item" style="font-size: large;"><a class="nav-link" href="#">Service</a></li>
+				<li class="nav-item" style="font-size: large;">
+				<a class="nav-link" href="#">Shop</a></li>
+				<li class="nav-item" style="font-size: large;">
+				<a class="nav-link" href="${pageContext.request.contextPath}/location/locationList">Location</a></li>
+				<li class="nav-item" style="font-size: large;">
+				<a class="nav-link" href="#">Service</a></li>
 			</ul>
 		</div>
 	</div>
