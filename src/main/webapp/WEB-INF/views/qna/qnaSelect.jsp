@@ -23,16 +23,16 @@
 
 <div>
 <%-- <c:if test="${member.id} eq ${member.id}"> --%>
-<a href="./qnaUpdate?num=${dto.num}"><button type="button" class="btn btn-info">update</button></a>
+<a href="./qnaUpdate?num=${dto.num}"><button type="button" class="btn btn-info">수정</button></a>
 
-<a href="./qnaDelete?num=${dto.num}" id="del" class="btn btn-info">delete</a>
+<a href="./qnaDelete?num=${dto.num}" id="del" class="btn btn-info">삭제</a>
 <%-- </c:if> --%>
 <%-- <c:if test="${member.id} eq admin*"> --%>
-<a href="./qnaReply?num=${dto.num}" class="btn btn-primary">reply</a>
+<a href="./qnaReply?num=${dto.num}" class="btn btn-primary">답글</a>
 <%-- </c:if> --%>
 </div>
 </div>
-<br>
+
 <c:import url="../template/footer.jsp"></c:import>	
 <script type="text/javascript" src="../resources/jquery/qnaInsert.js"></script>
 </body>

@@ -47,10 +47,9 @@
 			</select>
 		</div>
 			
-			<input type="submit" id="btn" value="update" class="btn btn-primary">
+			<input type="submit" id="btn" value="UPDATE" class="btn btn-primary">
 		</form>
 		</div>
-		<br>
 <c:import url="../template/footer.jsp"></c:import>	
 <script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
 </body>
