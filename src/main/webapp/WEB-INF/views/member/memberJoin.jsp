@@ -20,7 +20,7 @@
        <!--  Modal body -->
         <div class="modal-body">
           
-          	<div class="container">
+          	
 		<h2>Member Join Page</h2>
           <form id="frm" action="./member/memberJoin" method="post">
           
@@ -98,15 +98,14 @@
 			<div class="jumbotron">
 				<h1>Bootstrap Tutorial</h1>
 				<p>Bootstrap is the most popular HTML, CSS...</p>
-			</div> 
+			 </div>
 
 
 
-			<input type="submit" id="join-bt" value="JOIN" class="btn btn-primary">
+			<input type="button" id="join-bt" value="JOIN" class="btn btn-primary">
 		</form>
 
-	</div>
-          
+	
         </div>
         
        <!--  Modal footer -->

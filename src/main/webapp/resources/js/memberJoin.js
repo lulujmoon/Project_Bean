@@ -9,9 +9,9 @@ let pwEqualResult = false; // pw equal 결과
 let etcResult=true		   // name, email, phone 결과
 
 // Id 중복 확인
-/*$("#join-id").blur(function(){
+$("#join-id").blur(function(){
  
-	$.get("./memberCheckId?id="+$("#join-id").val(), function(result){
+	$.get("./member/memberIdCheck?id="+$("#join-id").val(), function(result){
 		result = result.trim();
 		let str ="사용가능한 ID 입니다";
 		
@@ -22,9 +22,10 @@ let etcResult=true		   // name, email, phone 결과
 		$("#idCheckResult").html(str);
 	});
 });
-*/
+
 
 // ******** 이메일 유효성 검사 ********
+
 $("#join-id").blur(function(){
 let email = $("#join-id").val();
 let regex=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;   
@@ -88,7 +89,6 @@ function test1() {
 	console.log(pwEqualResult);
 	console.log(etcResult);
 	console.log(radioResult);
-	
 }
 
 
@@ -112,6 +112,7 @@ $("#join-bt").click(function(){
 /*		alert(radioResult);*/
 	
 	for(let e of etc) {
+		console.log(e.value);
 		if(e.value == "") {
 			etcResult=false;
 			break;
@@ -128,6 +129,6 @@ $("#join-bt").click(function(){
 	}
 
 
-	test1();
+
 });
 
