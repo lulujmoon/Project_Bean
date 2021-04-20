@@ -1,41 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <c:import url="../template/bootstrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
-<title>Product List</title>
+<title>Insert title here</title>
 </head>
 <body>
+<!-- Portfolio Section -->
 <c:import url="../template/header.jsp"></c:import>
-	<div class="container">
-		<h2 style="text-align: center">Product List</h2>
-		<table class="table table-hover">
-			<thead>
-				<th>No</th>
-				<th>Name</th>
-			</thead>
-			<tbody>
-				<c:forEach items="${list}" var="product">
-					<tr>
-						<td><a href="./productSelect?productNum=${product.productNum}">${product.productNum}</a></td>
-						<td>${product.name}</td>
-					</tr>
-					<tr>
-						<td>
-							<div style="width:300px;height:300px;overflow:hidden">
-								<img alt="thumbnail" src="../resources/upload/product/${product.thumbnail.fileName}" style="width:100%;height:100%">
-							</div>
-						</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-		<a href="./productInsert" class="btn btn-warning" style="float:right">Add</a>
+
+<div class="container">
+<h2 style="margin:10px;text-align:center">Products</h2>
+
+	<div style="text-align: center">
+		<a href="./productList?category=coffee">Coffee</a> | 
+		<a href="./productList?category=brewingTool">Brewing Tool</a> | 
+		<a href="./productList?category=gift">Gift</a> | 
+		<a href="./productList?category=dripbag">Dripbag</a> | 
+		<a href="./productList?category=Coldbrew">Coldbrew</a>
 	</div>
-<c:import url="../template/footer.jsp"></c:import>
+
+</div>
+<section id="portfolio">
+     <div class="container">
+          <div class="row">
+			<c:forEach items="${list}" var="product">
+               <div class="col-md-4 col-sm-6" style="width:90%;height:80%;overflow:hidden">
+                    <a href="./productSelect?productNum=${product.productNum}">
+                         <div class="portfolio-thumb">
+                              <img src="../resources/upload/product/${product.thumbnail.fileName}" class="img-responsive" alt="Portfolio" style="width:100%;height:100%">
+                                   <div class="portfolio-overlay">
+                                        <div class="portfolio-item">
+                                             <h3>${product.name}</h3>
+                                             <small>${product.subtitle} </small>
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
+			</c:forEach>
+               <div class="col-md-12 col-sm-12 text-center">
+                    <h3>hello, if you interest working together. just send message <a href="#">contact page</a></h3>
+               </div>
+
+          </div>
+     </div>
+</section>
 </body>
 </html>

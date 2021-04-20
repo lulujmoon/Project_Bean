@@ -20,7 +20,7 @@
 			<input type="hidden" name="productNum" value="${product.productNum}">
 			<div class="form-group">
 				<label for="thumbnail">썸네일</label>
-				<input type="file" name="file" value="${product.thumbnail.originName}">
+				<input type="file" name="file">
 			</div>
 			<div class="form-group">
 				<label for="name">상품명</label>
@@ -30,11 +30,11 @@
 			<div class="form-group">
 				<label for="category">카테고리</label>
 				<select name="category">
-					<option value="coffee">커피</option>
-					<option value="brewingTool">브루잉 도구</option>
-					<option value="gift">선물</option>
-					<option value="dripbag">드립백</option>
-					<option value="coldbrew">콜드브루</option>
+					<option value="coffee" class="category">커피</option>
+					<option value="brewingTool" class="category">브루잉 도구</option>
+					<option value="gift" class="category">선물</option>
+					<option value="dripbag" class="category">드립백</option>
+					<option value="coldbrew" class="category">콜드브루</option>
 				</select>
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
@@ -82,6 +82,11 @@
 		for(gr of $(".grinds")){
 			if($(gr).val()=='${product.grinds}'){
 				$(gr).prop("checked", true);
+			}
+		}
+		for(ct of $(".category")){
+			if($(ct).val()=='${product.category}'){
+				$(ct).prop("selected", true);
 			}
 		}
 	</script>

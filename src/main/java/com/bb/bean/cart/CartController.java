@@ -43,6 +43,7 @@ public class CartController {
 		int result = cartService.setInsert(cartDTO);
 		
 		mv.addObject("result", result);
+		
 		mv.setViewName("common/ajaxResult");
 		return mv;
 	}
