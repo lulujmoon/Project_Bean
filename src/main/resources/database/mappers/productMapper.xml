@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+
+<mapper namespace ="com.bb.bean.product.ProductDAO">
+
+	<!-- Vanilla Product -->
+
+	<select id="getList" resultMap="selectResult">
+		select P.*, O.*, PF.* 
+		from product P
+		left join options O
+		on P.productNum = O.productNum
+		left join productFiles PF
+		on P.productNum=PF.productNum
+			<choose>
+				<when test="category!=null">
+					where P.category=#{category}	
+				</when>
+				<otherwise>
+				</otherwise>
+			</choose>
+		order by P.productNum desc
+	</select>
+	
+	<select id="getSelect" parameterType="ProductDTO" resultMap="selectResult">
+		select P.*, O.*, PF.*
+		from product P 
+		left join options O
+		on P.productNum = O.productNum
+		left join productFiles PF
+		on P.productNum = PF.productNum
+		where P.productNum=#{productNum}
+	</select>
+	
+	<resultMap type="ProductDTO" id="selectResult">
+		<id property="productNum" column="productNum"/>
+		<result property="name" column="name"/>
+		<result property="category" column="category"/>
+		<result property="subtitle" column="subtitle"/>
+		<result property="includes" column="includes"/>
+		<result property="contents" column="contents"/>
+		<result property="details" column="details"/>
+		<result property="cartInfo" column="cartInfo"/>
+		<result property="grinds" column="grinds"/>
+		<association property="thumbnail" javaType="ProductFileDTO">
+			<id property="fileNum" column="fileNum"/>
+			<result property="fileName" column="fileName"/>
+			<result property="originName" column="originName"/>
+		</association>
+		<collection property="options" javaType="java.util.List" ofType="OptionsDTO">
+			<id property="optionNum" column="optionNum"/>
+			<result property="type" column="type"/>
+			<result property="optionInfo" column="optionInfo"/>
+			<result property="price" column="price"/>
+			<result property="discountRate" column="discountRate"/>
+			<result property="stock" column="stock"/>
+		</collection>
+	</resultMap>
+	
+	<select id="getProductNum" resultType="java.lang.Long">
+		select product_seq.nextval from dual
+	</select>
+	
+	<insert id="setInsert" parameterType="ProductDTO">
+		insert into product (productNum, name, category, subtitle, includes, contents, details, cartInfo, grinds) values
+		(#{productNum}, #{name}, #{category}, #{subtitle} , #{includes}, #{contents}, #{details}, #{cartInfo}, #{grinds})
+	</insert>
+	
+	<update id="setUpdate" parameterType="ProductDTO">
+		update product set name=#{name}, category=#{category}, subtitle=#{subtitle}, includes=#{includes}, contents=#{contents}, details=#{details}, cartInfo=#{cartInfo}, grinds=#{grinds} where productNum=#{productNum}
+	</update>
+	
+	<delete id="setDelete" parameterType="ProductDTO">
+		delete product where productNum=#{productNum}
+	</delete>
+	
+	<insert id="setFileInsert" parameterType="ProductFileDTO">
+		insert into productFiles (fileNum, productNum, fileName, originName) values (productFiles_seq.nextval, #{productNum}, #{fileName}, #{originName})
+	</insert>
+
+	<delete id="setFileDelete" parameterType="ProductFileDTO">
+		delete productFiles where fileNum=#{fileNum}
+	</delete>
+
+	<!-- Options -->
+	
+	<select id="getOptionsList" parameterType="ProductDTO" resultType="OptionsDTO">
+		select * from options where productNum=#{productNum}
+		order by optionNum asc
+	</select>
+	
+	<select id="getOptionsSelect" parameterType="OptionsDTO" resultType="OptionsDTO">
+		select * from options where optionNum=#{optionNum}
+	</select>
+	
+	<insert id="setOptionsInsert" parameterType="OptionsDTO">
+		insert into options (optionNum, productNum, type, optionInfo, price, discountRate, stock)
+		values (options_seq.nextval, #{productNum}, #{type}, #{optionInfo}, #{price}, #{discountRate}, #{stock})
+	</insert>
+	
+	<update id="setOptionsUpdate" parameterType="OptionsDTO">
+		update options set type=#{type}, optionInfo=#{optionInfo}, price=#{price}, discountRate=#{discountRate}, stock=#{stock} where optionNum=#{optionNum}
+	</update>
+	
+	<delete id="setOptionsDelete" parameterType="OptionsDTO">
+		delete options where optionNum=#{optionNum}
+	</delete>
+	
+</mapper>

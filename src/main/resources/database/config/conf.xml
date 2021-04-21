@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- from "https://mybatis.org/mybatis-3/getting-started.html" -->
+
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
   
 <configuration>
 	<typeAliases>
+
 		<typeAlias type="com.bb.bean.location.LocationDTO" alias="LocationDTO"/>
+
+		<typeAlias type="com.bb.bean.product.ProductDTO" alias="ProductDTO"/>
+		<typeAlias type="com.bb.bean.product.ProductFileDTO" alias="ProductFileDTO"/>
+		<typeAlias type="com.bb.bean.product.OptionsDTO" alias="OptionsDTO"/>
+		<typeAlias type="com.bb.bean.cart.CartDTO" alias="CartDTO"/>
+
 	</typeAliases>
 </configuration>
