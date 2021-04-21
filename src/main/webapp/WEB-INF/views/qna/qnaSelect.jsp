@@ -46,20 +46,11 @@
  	<table class="table">
     <tbody>
       <tr>
-        <td id="short">이전글</td>
+        <td id="short"></td>
         <td></td>
         <td></td>
       </tr>
-       <tr>
-        <td id="short">다음글</td>
-        <td></td>
-        <td></td>
-      </tr>
-       <tr>
-        <td> </td>
-        <td></td>
-        <td></td>
-      </tr>
+      
     </tbody>
   </table>
   

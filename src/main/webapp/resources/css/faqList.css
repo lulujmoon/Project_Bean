@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.list-group-item-warning{
+	background-color: white;
+ 	 color: black;
+ 	 border: 2px solid #FFEEBA;
+}
+
 #search{
 	width:500px;
 }

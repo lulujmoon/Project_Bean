@@ -19,19 +19,20 @@
 		<ul class="list-group list-group-horizontal">
 			<a
 				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=배송문의"><li
-				class="list-group-item  list-group-item-info">배송문의</li></a>
+				class="list-group-item list-group-item-warning">배송문의</li></a>
 			<a
 				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=상품문의">
 				<li class="list-group-item list-group-item-warning">상품문의</li>
 			</a>
 			<a
 				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=주문문의"><li
-				class="list-group-item  list-group-item-info">주문문의</li></a>
+				class="list-group-item list-group-item-warning">주문문의</li></a>
 			<a
 				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=결제문의">
 				<li class="list-group-item list-group-item-warning">결제문의</li>
 			</a>
 		</ul>
+		
 		<div id="accordion">
 
 			<c:forEach items="${list}" var="dto">
@@ -58,16 +59,16 @@
 
 									<!-- Modal Header -->
 									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">×</button>
-										<h4 class="modal-title">faq수정창</h4>
+									
+										<h4 class="modal-title">faq수정</h4>
 									</div>
 
 									<!-- Modal body -->
 									<div class="modal-body">
 
 										<div class="form-group">
-											<label for="writer">번호</label> <input class="form-control"
-												id="num" name="num" value="${dto.num}" readonly>
+											<label for="writer" hidden>번호</label> <input class="form-control"
+												id="num" name="num" value="${dto.num}" readonly hidden>
 
 											<div class="form-group">
 												<label for="writer">작성자</label> <input class="form-control"
@@ -90,8 +91,8 @@
 
 										<!-- Modal footer -->
 										<div class="modal-footer">
-											<button type="button" class="btn upd" value="${dto.num}">수정</button>
-											<button type="button" class="btn btn-danger"
+											<button type="button" class="btn btn-success" id="upd" value="${dto.num}">수정</button>
+											<button type="button" class="btn btn-success"
 												data-dismiss="modal">닫기</button>
 										</div>
 
@@ -148,7 +149,7 @@
 		<%-- <c:if test="${member.id} eq admin*"> --%>
 		<button type="button" class="btn btn-success" data-toggle="modal"
 			data-target="#myModalW">Write</button>
-		<%-- </c:if> --%>
+		<%--  </c:if> --%>
 
 		<div class="modal" id="myModalW">
 			<div class="modal-dialog">

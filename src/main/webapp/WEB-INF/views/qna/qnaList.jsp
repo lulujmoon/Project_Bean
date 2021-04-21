@@ -17,7 +17,7 @@
 <div class="container">
 <br>
 <h2>QnA</h2>
-
+<br>
 <table class="table">
 		<thead class="thead-light">
 			<tr>
