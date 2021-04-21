@@ -9,7 +9,6 @@ public class CartDTO {
 	
 	private long itemNum;
 	private String cartID;
-	private String id;
 	private long optionNum;
 	private long quantity;
 	private long fPrice;
@@ -42,12 +41,6 @@ public class CartDTO {
 	}
 	public void setCartID(String cartID) {
 		this.cartID = cartID;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
 	}
 	public long getOptionNum() {
 		return optionNum;
