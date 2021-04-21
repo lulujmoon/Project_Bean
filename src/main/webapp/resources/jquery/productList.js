@@ -81,11 +81,14 @@
 	location.href="./optionManage?productNum="+productNum;
   });
   
-  /* 장바구니 버튼 */
-  let count = 0;
   
+  
+  
+  /* 장바구니 버튼 */
+  $("#goCart-btn").attr("style","display:none");
+ 
   $("#cart-btn").click(function(){
-	if(count==0){
+
 		let optionNum;
 		let grind;
 		let quantity;
@@ -117,16 +120,15 @@
 			grind:grind,
 			quantity:quantity
 		}, function(result){
-			$("#cart-btn").text("장바구니 보러가기");
-			count=1;
+			$("#goCart-btn").slideDown(500);
 		});
-	}else if(count==1){
-		location.href="../cart/cartList";
-	}
-  });
+	});
   
 
-  
-  
+  /* 장바구니 보러가기 버튼 */
+  $("#goCart-btn").click(function(){
+	location.href="../cart/cartList";
+  });
+  	
 });
 /*모달 끝 */

@@ -38,7 +38,7 @@
 	margin-left:2%;
 	margin-top:5%;
 	width:500px;
-	height:330px;
+	height:420px;
 }
 
 .titleAgainHere{
@@ -105,7 +105,7 @@
 
 #cart-btn{
 	cursor:pointer;
-	width:170px;
+	width:150px;
 	height:50px;
 	background-color:lavender;
 	border: 2px solid lavender;
@@ -116,10 +116,20 @@
 
 #order-btn{
 	cursor:pointer;
-	width:170px;
+	width:150px;
 	height:50px;
 	border: 2px solid lavender;
 	display: inline-block;
 	text-align:center;
 	line-height: 50px;
+}
+
+#goCart-btn{
+	cursor:pointer;
+	width:150px;
+	height:40px;
+	background-color:white;
+	border: 2px solid lavender;
+	text-align:center;
+	line-height: 40px;
 }

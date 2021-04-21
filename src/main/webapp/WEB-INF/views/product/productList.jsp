@@ -52,7 +52,7 @@
 </section>
 
 <!-- Modal -->
-<div class="modal" id="productSelect" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="productSelect" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -92,6 +92,7 @@
 		   		<div class="buttonsHere">
 		   			<div id="cart-btn">장바구니</div>
 		   			<div id="order-btn">바로결제</div>
+		   			<div id="goCart-btn">장바구니 보러가기</div>
 		   		</div>
 	   		</div>
    		</div>
