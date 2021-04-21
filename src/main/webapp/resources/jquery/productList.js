@@ -51,7 +51,7 @@
   
   /* grinds 여부에 따라 보여주기 */
   if(grinds=='X'){
-	$(".grindsHere").html('<br><br>');
+	modal.find('.grindsHere').html('<br><br>');
   }
   
   /* 모달에 넣기 */
