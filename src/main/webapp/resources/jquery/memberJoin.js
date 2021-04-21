@@ -16,6 +16,25 @@ let etcResult=true		   // name, email, phone 결과
 
 
   
+  // Id 중복 확인
+/*$("#join-id").blur(function(){
+ 
+	$.get("./member/memberIdCheck?id="+$("#join-id").val(), function(result){
+		result = result.trim();
+		let str ="사용가능한 ID 입니다";
+		
+		if(result=='0'){
+			str ="중복 ID 입니다";
+		}
+		
+		$("#idCheckResult").html(str);
+	});
+});
+
+
+*/
+  
+  
 
 //function emailCheck(email) {
 //	let regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;

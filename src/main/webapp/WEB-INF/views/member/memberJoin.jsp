@@ -22,7 +22,7 @@
           
           	
 		<h2>Member Join Page</h2>
-          <form id="frm" action="./member/memberJoin" method="post">
+          <form id="frm" action="./member/memberJoin" method="post" onsubmit="return submitCheck();">
           
 			<div class="form-group">
 				<label for="id">이메일</label> <input type="text" class="form-control"
@@ -30,6 +30,7 @@
 					<div id="errorEmail" class="resultEmail resultCheck"></div>
 				<h6 id="idCheckResult"></h6>
 				<!-- ID는 이메일형식 -->
+				<button type="button" class="btn btn-secondary" id="emailCheck"> 중복확인 </button>
 			</div>
 
 			<div class="form-group">
@@ -42,7 +43,7 @@
 			<div class="form-group">
 				<label for="pw">비밀번호 확인</label> <input type="password"
 					class="form-control" id="join-pw2" required name="pw2">
-					<h5 id="pw2Result"></h5>
+					<h6 id="pw2Result"></h6>
 			</div> 
 
 			<div class="form-group">
@@ -53,6 +54,7 @@
 			<div class="form-group">
 				<label for="phone">닉네임</label> <input type="text"
 					class="form-control etc" id="join-nickname" required name="nickname">
+					<h6 id="nicknameResult"></h6>
 			</div>
 
 <br>

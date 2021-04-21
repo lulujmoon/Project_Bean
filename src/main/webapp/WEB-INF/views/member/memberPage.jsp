@@ -8,24 +8,14 @@
 <title>Insert title here</title>
 <c:import url="../template/bootStrap.jsp"></c:import>
 <!-- <link rel="stylesheet" href="../css/myPage.css">-->
-<!-- <style type="text/css">
-#title {
-	width: 1140px;
-	height: 113px;
-	padding: 50px 0 60px 0;
-	margine: 0 auto;
-}
-.myPage {
-	font-family: BebasNeue,본고딕,Source Han Sans K,Noto Sans CJK KR,notokr;
-	font-weight: 700;
-}
-</style> -->
+<c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
-
+<!-- 
 <c:import url="./memberLogin.jsp"></c:import>
 <c:import url="./memberJoin.jsp"></c:import>
+ -->
 	<div id="title">
 		<div id="titleContainer">
 			<div class="textTitle">

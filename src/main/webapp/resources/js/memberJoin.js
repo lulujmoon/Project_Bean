@@ -2,29 +2,18 @@
  * 
  */
 
-let idCheckResult = false; // id check 결과
+let idCheckResult = false; // id 유효성 결과
+let emailCheckResult = false; //id 중복확인 결과
 let pwCheckResult = false; // pw check 결과
 let pwEqualResult = false; // pw equal 결과
+let radioResult=false; // 성별
+let nickResult=false; // 닉네임 중복확인
 
-let etcResult=true		   // name, email, phone 결과
-
-// Id 중복 확인
-$("#join-id").blur(function(){
- 
-	$.get("./member/memberIdCheck?id="+$("#join-id").val(), function(result){
-		result = result.trim();
-		let str ="사용가능한 ID 입니다";
-		
-		if(result=='0'){
-			str ="중복 ID 입니다";
-		}
-		
-		$("#idCheckResult").html(str);
-	});
-});
+// ******* nickname 중복 ********
 
 
-// ******** 이메일 유효성 검사 ********
+// ******** ID (email) ********
+// 이메일 유효성 검사
 
 $("#join-id").blur(function(){
 let email = $("#join-id").val();
@@ -34,16 +23,37 @@ if(regex.test(email) === false) {
 	let str = "잘못된 이메일 형식입니다.";
 	let c = "r1"
     $("#idCheckResult").html(str);
-    $("#idCheckResult").attr("class", c);	
+    $("#idCheckResult").attr("class", c);
+		
     return false;  
 } else {  
-    str = "사용할 수 있는 이메일입니다";
+    str = "";
 	c = "r2";
     $("#idCheckResult").html(str);
-	$("#idCheckResult").attr("class", c);	
+	$("#idCheckResult").attr("class", c);
+	emailCheckResult = true;
 }  
 
 });
+
+
+// id 중복확인
+
+$("#emailCheck").click(function(){
+	
+	$.get("./member/memberIdCheck?id="+$("#join-id").val(), function(result){
+		result = result.trim();
+		
+		if(result=='0'){
+			alert("이미 가입된 이메일입니다");
+		} else {
+			alert("사용가능한 이메일 입니다");			
+			idCheckResult=true;
+		}
+	})
+})
+
+
 
 // ******** password ********
 	let pw = document.getElementById("join-pw");
@@ -84,6 +94,8 @@ pw.addEventListener("change", function(){
 	pw2.value="";
 });
 
+
+// ***** test *****
 function test1() {
 	console.log(pwCheckResult);
 	console.log(pwEqualResult);
@@ -93,43 +105,41 @@ function test1() {
 
 
 
-// ******** 필수항목 ********
 
 
-let radioResult=false;
-let etc = document.getElementsByClassName("etc");
 
-$("#join-bt").click(function(){
-		
+
+// ******** submit ********
+function submitCheck() {
 		let radio2 = $("#womanRadio").prop("checked");
 		let radio1 = $("#manRadio").prop("checked");
 	
 		if(radio1 || radio2) {
 			radioResult = true;
-/*			alert(radio1);
-			alert(radio2);*/
 		}
-/*		alert(radioResult);*/
+
+
+	if(emailCheckResult && pwCheckResult && pwEqualResult && idCheckResult && radioResult) {
+		return true;
+	} 
 	
-/*	for(let e of etc) {
-		console.log(e.value);
-		if(e.value == "") {
-			etcResult=false;
-			break;
-		}
+	if(!idCheckResult) {
+		alert("이메일 중복확인을 해주세요!")
 	}
-
+	
+	if(!radioResult) {
+		alert("필수항목을 입력하세요")
+	}
+	
+	return false;
+	
 	
 
-	if(pwCheckResult && pwEqualResult && etcResult && radioResult) {
-		let frm = document.getElementById("frm");
-		frm.submit();
-	}else {
-		alert("필수 항목을 입력하세요");
-	}
-*/
+
+}
 
 
 
-});
+
+
 
