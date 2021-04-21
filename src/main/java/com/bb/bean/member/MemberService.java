@@ -13,7 +13,10 @@ public class MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
 	
-
+	public MemberDTO nickCheck(MemberDTO memberDTO) throws Exception {
+		return memberDAO.nickCheck(memberDTO);
+	}
+	
 	public MemberDTO memberIdCheck(MemberDTO memberDTO)throws Exception{
 		return memberDAO.memberIdCheck(memberDTO);
 	}

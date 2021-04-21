@@ -17,6 +17,20 @@ public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
+	
+	@GetMapping("nickCheck")
+	public String nickCheck(MemberDTO memberDTO, Model model) throws Exception{
+		memberDTO = memberService.nickCheck(memberDTO);
+		String result = "0";
+		if(memberDTO==null) {
+			result = "1";
+		}
+		model.addAttribute("result", result);
+
+		return "common/ajaxResult";
+	}
+	
+	
 
 	@RequestMapping("memberPage")
 	public void memberPage() throws Exception {

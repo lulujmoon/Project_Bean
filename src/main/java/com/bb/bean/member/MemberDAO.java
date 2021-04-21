@@ -12,7 +12,9 @@ public class MemberDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "com.bb.bean.member.MemberDAO.";
 		
-	
+	public MemberDTO nickCheck(MemberDTO memberDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"nickCheck", memberDTO);
+	}
 	
 	public MemberDTO memberIdCheck(MemberDTO memberDTO)throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"memberIdCheck", memberDTO);

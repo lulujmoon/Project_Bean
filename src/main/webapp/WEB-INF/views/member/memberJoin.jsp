@@ -54,7 +54,7 @@
 			<div class="form-group">
 				<label for="phone">닉네임</label> <input type="text"
 					class="form-control etc" id="join-nickname" required name="nickname">
-					<h6 id="nicknameResult"></h6>
+					<h6 id="nickResult"></h6>
 			</div>
 
 <br>
