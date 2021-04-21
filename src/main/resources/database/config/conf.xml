@@ -15,6 +15,12 @@
 		<typeAlias type="com.bb.bean.product.ProductFileDTO" alias="ProductFileDTO"/>
 		<typeAlias type="com.bb.bean.product.OptionsDTO" alias="OptionsDTO"/>
 		<typeAlias type="com.bb.bean.cart.CartDTO" alias="CartDTO"/>
+		<typeAlias type="com.bb.bean.board.BoardDTO" alias="BoardDTO"/>
+		<typeAlias type="com.bb.bean.board.BoardFileDTO" alias="BoardFileDTO"/>
+		<typeAlias type="com.bb.bean.board.faq.FaqDTO" alias="FaqDTO"/>
+		<typeAlias type="com.bb.bean.board.qna.QnaDTO" alias="QnaDTO"/>
+		<typeAlias type="com.bb.bean.util.Pager" alias="Pager"/>
+		<typeAlias type="java.lang.Long" alias="Long"/>
 
 	</typeAliases>
 </configuration>

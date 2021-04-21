@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+#search{
+	width:500px;
+}
+
+.btn-success{
+	background-color: white;
+ 	 color: black;
+ 	 border: 2px solid #e7e7e7;
+}
+
+h2{
+
+	text-align: center;
+}
+
+.page-link{
+	border: 0px;
+	
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}

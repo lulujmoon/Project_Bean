@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+h2{
+
+	text-align: center;
+}
+
+#tdTitle{
+	
+	width:600px;
+}
+
+td{
+	text-align: center;
+	height:40px;
+	padding:10px;
+	margine:0auto;
+}
+
+th{
+	text-align: center;
+}
+
+#search{
+	width:500px;
+}
+
+.btn-success{
+	 background-color: white;
+ 	 color: black;
+ 	 border: 2px solid #e7e7e7;
+}
+
+.page-link{
+	border: 0px;
+	
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
