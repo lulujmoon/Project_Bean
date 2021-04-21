@@ -7,7 +7,6 @@
 
 
  <div class="navbar-header navbar-default navbar-static-top"role="navigation">
-
    <!-- header에만 적용하는 폰트 스타일 -->
    <div class="container" style="font-family: 'Orelega One';">
          <div class="row" style="height: 30px;">
@@ -23,14 +22,14 @@
                       <span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Admin </span>
                       </a>
 
-					  <c:if test="${empty member}">
+                      <c:if test="${empty member}">
                       <a  data-toggle="modal" data-target="#login">
-                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Login </span>
+                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px; cursor:pointer;"> Login </span>
                       </a>
                       <a  data-toggle="modal" data-target="#join">
-                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Join </span>
+                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px; cursor:pointer;"> Join </span>
                       </a>
-                      </c:if>
+                    </c:if>
 
                       <c:if test="${not empty member}">
                       <a  href="${pageContext.request.contextPath}/member/memberPage">
@@ -72,5 +71,5 @@
 			</ul>
 		</div>
 	</div>
-
 </nav>
+
