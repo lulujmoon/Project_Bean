@@ -13,19 +13,24 @@
             <div class="col-lg-12" style="float:left;"> 
                <!-- 오른쪽 로그인, 회원가입-->
                 <div class="col-xs-3">
-                	  <button type="button" class="btn btn-default">
+                	 
                 	  <a href="${pageContext.request.contextPath}/">
                 	  <span>Welcome</span> <!-- 로고 넣기 전 홈으로 가는 임시링크 -->
                 	  </a>
-                	  </button>
-                      <button type="button" class="btn btn-default" style="float:right; font-size: 13px;">
-
-                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Admin </span>
-                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Login </span>
-                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Join </span>
-                      <span class="glyphicon glyphicon-user" href="#"> Cart </span>
-
-                      </button>
+                    <div class="col-xs-9" style="float:right;">
+					  <a href="${pageContext.request.contextPath}/">
+                      <span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Admin </span>
+                      </a>
+                      <a href="${pageContext.request.contextPath}/">
+                      <span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Login </span>
+                      </a>
+                      <a href="${pageContext.request.contextPath}/">
+                      <span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Join </span>
+                      </a>
+                      <a href="${pageContext.request.contextPath}/">
+                      <span class="glyphicon glyphicon-user"> Cart </span>
+						</a>
+					</div>            
                 </div>
             </div>
          </div>
