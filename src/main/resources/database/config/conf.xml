@@ -21,6 +21,8 @@
 		<typeAlias type="com.bb.bean.board.qna.QnaDTO" alias="QnaDTO"/>
 		<typeAlias type="com.bb.bean.util.Pager" alias="Pager"/>
 		<typeAlias type="java.lang.Long" alias="Long"/>
+		<typeAlias type="com.bb.bean.member.MemberDTO" alias="MemberDTO" />
 
 	</typeAliases>
 </configuration>
+

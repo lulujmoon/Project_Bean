@@ -7,30 +7,45 @@
 
 
  <div class="navbar-header navbar-default navbar-static-top"role="navigation">
-	<!-- header에만 적용하는 폰트 스타일 -->
+
+   <!-- header에만 적용하는 폰트 스타일 -->
    <div class="container" style="font-family: 'Orelega One';">
          <div class="row" style="height: 30px;">
-            <div class="col-lg-12" style="float:left;"> 
+            <div class="col-lg-12" style="float:left;">
                <!-- 오른쪽 로그인, 회원가입-->
                 <div class="col-xs-3">
-                	 
-                	  <a href="${pageContext.request.contextPath}/">
-                	  <span>Welcome</span> <!-- 로고 넣기 전 홈으로 가는 임시링크 -->
-                	  </a>
+
+                     <a href="${pageContext.request.contextPath}/">
+                     <span>Welcome</span> <!-- 로고 넣기 전 홈으로 가는 임시링크 -->
+                     </a>
                     <div class="col-xs-9" style="float:right;">
-					  <a href="${pageContext.request.contextPath}/">
+                 <a href="${pageContext.request.contextPath}/location/locationList">
                       <span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Admin </span>
                       </a>
-                      <a href="${pageContext.request.contextPath}/">
-                      <span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Login </span>
+
+					  <c:if test="${empty member}">
+                      <a  data-toggle="modal" data-target="#login">
+                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Login </span>
                       </a>
-                      <a href="${pageContext.request.contextPath}/">
-                      <span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Join </span>
+                      <a  data-toggle="modal" data-target="#join">
+                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Join </span>
                       </a>
-                      <a href="${pageContext.request.contextPath}/">
-                      <span class="glyphicon glyphicon-user"> Cart </span>
-						</a>
-					</div>            
+                      </c:if>
+
+                      <c:if test="${not empty member}">
+                      <a  href="${pageContext.request.contextPath}/member/memberPage">
+                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> MyPage </span>
+                      </a>
+                      <a  href="${pageContext.request.contextPath}/member/memberLogout">
+                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Logout </span>
+                      </a>
+                      </c:if>
+
+
+                      <a  href="${pageContext.request.contextPath}/location/locationList">
+                      <span class="glyphicon glyphicon-user" href="#"> Cart </span>
+                  </a>
+               </div>
                 </div>
             </div>
          </div>
@@ -57,4 +72,5 @@
 			</ul>
 		</div>
 	</div>
+
 </nav>
