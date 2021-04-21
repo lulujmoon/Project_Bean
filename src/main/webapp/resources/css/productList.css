@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 
+
 /* Modal */
 
 .modal-title{
@@ -9,7 +10,6 @@
 	padding-bottom: 20px; 
 	display: block; 
 	color: rgb(0, 0, 0); 
-	font-family: 본고딕, "Source Han Sans K", "Noto Sans CJK KR", notokr; 
 	font-size: 22.5px; 
 	font-weight: 700; 
 	letter-spacing: normal; 

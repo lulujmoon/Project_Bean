@@ -14,7 +14,7 @@
 <c:import url="../template/header.jsp"></c:import>
 
 <div class="container">
-<h2 style="margin:10px;text-align:center">Products</h2>
+<h2 style="margin:10px;text-align:center;">Products</h2>
 
 	<div style="text-align: center">
 		<a href="./productList?category=coffee">Coffee</a> | 
@@ -69,9 +69,9 @@
 		      	<div class="subtitleHere"></div>
 		      	<div class="includesHere"></div>
 		      	<div class="optionsHere"></div>
-		      	<div class="grinds">
-					갈아드릴까요?<br>
-					<select name="grind">
+		      	<div class="grindsHere">
+					갈아드릴까요?&nbsp;
+					<select name="grind" class="selectpicker">
 						<option class="grind">홀빈(갈지 않음)</option>
 						<option class="grind">핸드드립/클레버용</option>
 						<option class="grind">커피메이커용</option>
@@ -83,7 +83,7 @@
 				</div>
 				<div class="quantities">
 					수량&nbsp;
-					<select name="quantity">
+					<select name="quantity" class="selectpicker" data-width="65px">
 						<c:forEach begin="1" end="20" var="i" step="1">
 							<option value="${i}" class="quantity">${i}개</option>
 						</c:forEach>
