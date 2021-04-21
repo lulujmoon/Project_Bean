@@ -45,11 +45,12 @@
 						<div class="card-body">${dto.contents}</div>
 
 						<!-- Modal Button -->
-						<button type="button" class="btn btn-primary" data-toggle="modal"
+						<button type="button" class="btn btn-success" data-toggle="modal"
 							data-target="#myModal${dto.num}">수정</button>
 
 						<a href="./faqDelete?num=${dto.num}" id="del"
-							class="btn btn-outline-light text-dark del">삭제</a>
+							class="btn btn-success">삭제</a>
+							
 						<!-- Modal -->
 						<div class="modal" id="myModal${dto.num}">
 							<div class="modal-dialog">
