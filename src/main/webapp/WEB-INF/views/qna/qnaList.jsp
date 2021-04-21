@@ -15,7 +15,7 @@
 <body>
 <c:import url="../template/header.jsp"></c:import>
 <div class="container">
-
+<br>
 <h2>QnA</h2>
 
 <table class="table">
@@ -51,21 +51,22 @@
 	</div>
 	
 	<div class="container">
-	  <ul class="pagination">
+	  <div class="pagination">
 	  
-	  <c:if test="${pager.pre}">	
-	    <li class="page-item"><a class="page-link p" href="./qnaList?curPage=${pager.startNum-1}&kind=${pager.kind}&search=${pager.search}" title="${pager.startNum-1}">Previous</a></li>
+	   <c:if test="${pager.pre}">	
+	  <a href="./qnaList?curPage=${pager.startNum-1}&kind=${pager.kind}&search=${pager.search}">&laquo;</a>
 	   </c:if>
 	   
 	   <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
 	   
-	    <li class="page-item"><a class="page-link p" href="./qnaList?curPage=${i}&kind=${pager.kind}&search=${pager.search}" title="${i}">${i}</a></li>
+	   <a class="page-link p" href="./qnaList?curPage=${i}&kind=${pager.kind}&search=${pager.search}" title="${i}">${i}</a>
 	   </c:forEach>
-	   
+	    
 	    <c:if test="${pager.next}">
-	    <li class="page-item"><a class="page-link p" href="./qnaList?curPage=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}" title="${pager.lastNum+1}">Next</a></li>
+	    <a href="./qnaList?curPage=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}" title="${pager.lastNum+1}">&raquo;</a>
 	    </c:if>
-	  </ul>
+	    
+	  </div>
 	  
 	<div class="input-group mt-3 mb-3">
 	<form id="frm" action="./qnaList" class="form-inline">
