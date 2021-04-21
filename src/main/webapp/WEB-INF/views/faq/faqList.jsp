@@ -19,17 +19,17 @@
 		<ul class="list-group list-group-horizontal">
 			<a
 				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=배송문의"><li
-				class="list-group-item list-group-item-warning">배송문의</li></a>
+				class="list-group-item">배송문의</li></a>
 			<a
 				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=상품문의">
-				<li class="list-group-item list-group-item-warning">상품문의</li>
+				<li class="list-group-item">상품문의</li>
 			</a>
 			<a
 				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=주문문의"><li
-				class="list-group-item list-group-item-warning">주문문의</li></a>
+				class="list-group-item">주문문의</li></a>
 			<a
 				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=결제문의">
-				<li class="list-group-item list-group-item-warning">결제문의</li>
+				<li class="list-group-item">결제문의</li>
 			</a>
 		</ul>
 		
