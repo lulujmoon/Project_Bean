@@ -41,7 +41,7 @@
                       </c:if>
 
 
-                      <a  href="${pageContext.request.contextPath}/location/locationList">
+                      <a  href="${pageContext.request.contextPath}/cart/cartList">
                       <span class="glyphicon glyphicon-user" href="#"> Cart </span>
                   </a>
                </div>
@@ -63,7 +63,7 @@
 		<div class="collapse navbar-collapse flex-grow-0">
 			<ul class="navbar-nav text-right">
 				<li class="nav-item" style="font-size: large;">
-				<a class="nav-link" href="#">Shop</a></li>
+				<a class="nav-link" href="${pageContext.request.contextPath}/product/productList">Shop</a></li>
 				<li class="nav-item" style="font-size: large;">
 				<a class="nav-link" href="${pageContext.request.contextPath}/location/locationList">Location</a></li>
 				<li class="nav-item" style="font-size: large;">

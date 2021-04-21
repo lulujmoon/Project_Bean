@@ -51,7 +51,9 @@
   
   /* grinds 여부에 따라 보여주기 */
   if(grinds=='X'){
-	modal.find('.grindsHere').html('<br><br>');
+	modal.find('.grindsHere').attr("style","display:none");
+  }else if(grinds=='O'){
+	modal.find('.grindsHere').attr("style","");
   }
   
   /* 모달에 넣기 */
@@ -122,6 +124,9 @@
 		location.href="../cart/cartList";
 	}
   });
+  
+
+  
   
 });
 /*모달 끝 */
