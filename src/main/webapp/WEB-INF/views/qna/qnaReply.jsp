@@ -49,7 +49,7 @@
 			</select>
 		</div>
     
-    <input type="submit" id="btn" value="WRITE" class="btn btn-success">
+    <input type="submit" id="btn" value="Write" class="btn btn-success">
   </form>
 </div>
 <br>

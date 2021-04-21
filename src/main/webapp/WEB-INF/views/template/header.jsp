@@ -20,9 +20,9 @@
                 	  </button>
                       <button type="button" class="btn btn-default" style="float:right; font-size: 13px;">
 
-                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Admin </span>
-                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Login </span>
-                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Join </span>
+                     <a  href="#" ><span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Admin </span></a>
+                     <a  href="#"><span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Login </span></a>
+                      <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> Join </span></a>
                       <span class="glyphicon glyphicon-user" href="#"> Cart </span>
 
                       </button>
@@ -48,13 +48,10 @@
 				<li class="nav-item" style="font-size: large;">
 				<a class="nav-link" href="${pageContext.request.contextPath}/location/locationList">Location</a></li>
 				<li class="nav-item" style="font-size: large;">
-				<a class="nav-link" href="#">Service</a></li>
-				<li class="dropdown"><a href="javascript:void(0)"
-					class="dropbtn" style="font-size: large;">Service</a>
-					<div class="dropdown-content">
-						<a href="${pageContext.request.contextPath}/faq/faqList">FAQ</a>
-						<a href="${pageContext.request.contextPath}/qna/qnaList">QNA</a>
-					</div></li>
+				<a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList">FaQ</a></li>
+				<li class="nav-item" style="font-size: large;">
+				<a class="nav-link" href="${pageContext.request.contextPath}/qna/qnaList">QnA</a></li>
+				
 				
 			</ul>
 		</div>
