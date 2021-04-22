@@ -8,6 +8,14 @@ public class MagazineDTO {
 	private String subTitle;
 	private String contents;
 	
+	private MagazineFileDTO ListImage;
+	
+	public MagazineFileDTO getListImage() {
+		return ListImage;
+	}
+	public void setListImage(MagazineFileDTO listImage) {
+		ListImage = listImage;
+	}
 	public long getNum() {
 		return num;
 	}
