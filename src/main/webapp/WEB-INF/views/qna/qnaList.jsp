@@ -31,14 +31,15 @@
 				<th>WRITER</th>
 				<th>DATE</th>
 				<th>HIT</th>
-				<th>status</th>
+				<th>STATUS</th>
 			</tr>
 		</thead>
 		
 		<tbody>
 		<c:forEach items="${list}" var="dto" >
 			<tr>
-				<td>${dto.num}</td>
+				<td class="smallSize">${dto.num}</td>
+				
 				<td id="tdTitle"><a href="./qnaSelect?num=${dto.num}">
 				<c:catch>
 				<c:forEach begin="1" end="${dto.depth}">--</c:forEach>

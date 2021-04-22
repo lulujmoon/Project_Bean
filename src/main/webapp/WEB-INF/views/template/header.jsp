@@ -18,7 +18,7 @@
                      <span>Welcome</span> <!-- 로고 넣기 전 홈으로 가는 임시링크 -->
                      </a>
                     <div class="col-xs-9" style="float:right;">
-                 <a href="${pageContext.request.contextPath}/location/locationList">
+                 <a href="${pageContext.request.contextPath}/admin/adminList">
                       <span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Admin </span>
                       </a>
 

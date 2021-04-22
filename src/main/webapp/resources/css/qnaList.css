@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.smallSize{
+	font-size: 13px;
+}
+
 .select{
 	text-align: right;
 	list-style: off;
