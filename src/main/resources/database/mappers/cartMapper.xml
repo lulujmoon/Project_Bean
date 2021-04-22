@@ -56,12 +56,16 @@
 		update cart set grind=#{grind}, quantity=#{quantity}, fPrice=#{fPrice} where itemNum=#{itemNum}
 	</update>
 	
+	<delete id="setDelete" parameterType="CartDTO">
+		delete cart where itemNum=#{itemNum}
+	</delete>
+	
 	<update id="setCartIDUpdate" parameterType="CartDTO">
 		update cart set cartID=#{cartID} where itemNum=#{itemNum}
 	</update>
 	
-	<delete id="setDelete" parameterType="CartDTO">
-		delete cart where itemNum=#{itemNum}
+	<delete id="setCartIDDelete" parameterType="CartDTO">
+		delete cart where cartID=#{cartID}
 	</delete>
 	
 </mapper>

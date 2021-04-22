@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionListener;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,13 +30,7 @@ public class CartController {
 		String id="";
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
 		if(memberDTO==null) {
-			if((String)session.getAttribute("tempId")!=null) {
 				id = (String)session.getAttribute("tempId");
-			}else {
-				id = UUID.randomUUID().toString();
-				id = id.substring(10);
-				session.setAttribute("tempId", id);				
-			}
 		}else {
 			id = memberDTO.getId();
 			//비회원 상태에서 장바구니에 넣은 상품이 있다면 로그인 후 넣어주기
@@ -65,13 +60,7 @@ public class CartController {
 		String id="";
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
 		if(memberDTO==null) {
-			if((String)session.getAttribute("tempId")!=null) {
 				id = (String)session.getAttribute("tempId");
-			}else {
-				id = UUID.randomUUID().toString();
-				id = id.substring(10);
-				session.setAttribute("tempId", id);				
-			}
 		}else {
 			id = memberDTO.getId();
 		}
@@ -95,9 +84,7 @@ public class CartController {
 		String id="";
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
 		if(memberDTO==null) {
-			if((String)session.getAttribute("tempId")!=null) {
 				id = (String)session.getAttribute("tempId");
-			}
 		}else {
 			id = memberDTO.getId();
 		}
@@ -126,8 +113,5 @@ public class CartController {
 	}
 	
 	
-	/* Test */
 	
-	@GetMapping("orderTest")
-	public void orderTest() throws Exception {}
 }

@@ -40,11 +40,15 @@ public class CartDAO {
 		return sqlSession.update(NAMESPACE+"setUpdate", cartDTO);
 	}
 	
+	public int setDelete(CartDTO cartDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setDelete", cartDTO);
+	}
+	
 	public int setCartIDUpdate(CartDTO cartDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"setCartIDUpdate", cartDTO);
 	}
 	
-	public int setDelete(CartDTO cartDTO) throws Exception {
-		return sqlSession.delete(NAMESPACE+"setDelete", cartDTO);
+	public int setCartIDDelete(CartDTO cartDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setCartIDDelete", cartDTO);
 	}
 }

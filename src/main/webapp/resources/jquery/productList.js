@@ -120,7 +120,7 @@
 			grind:grind,
 			quantity:quantity
 		}, function(result){
-			$("#goCart-btn").slideDown(500);
+			$("#goCart-btn").slideDown(800);
 		});
 	});
   

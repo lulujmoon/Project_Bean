@@ -73,4 +73,9 @@ public class CartService {
 		cartDAO.setDelete(cartDTO);
 		return cartDTO;
 	}
+	
+	public int setCartIDDelete(CartDTO cartDTO) throws Exception {
+		return cartDAO.setCartIDDelete(cartDTO);
+	}
+	
 }
