@@ -17,7 +17,7 @@
 <h2 style="margin:10px;text-align:center;">Products</h2>
 
 	<div style="text-align: center">
-		<a href="./productList?category=coffee">Coffee</a> | 
+		<a href="./productList?category=coffee" style="margin-right: 90px;">Coffee</a> | 
 		<a href="./productList?category=brewingTool">Brewing Tool</a> | 
 		<a href="./productList?category=gift">Gift</a> | 
 		<a href="./productList?category=dripbag">Dripbag</a> | 

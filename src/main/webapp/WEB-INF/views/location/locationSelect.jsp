@@ -8,37 +8,40 @@
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
 <title>Bean Brothers Coffee</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- header 부분 -->
 <c:import url="../template/header.jsp"></c:import>
 
 <!-- Blog Section -->
+<<div class="container">
+	<h4 style="color: black; font-familiy: 'Orelega One'; text-align:center; font-size: 2.7rem; font-color: black; margin-bottom: 20px; font-weight:650;"> Location </h4>
+<div style="background-color: #f2f2f2; width: 100px; height: 2px; margin: 0 auto;"></div>
+</div>
 
 <section id="blog">
      <div class="container">
           <div class="row">
-
                <div class="col-md-12 col-md-10 col-sm-12">
                     <div class="section-title">
-                         <h2>${dto.storeName}</h2>
+                         <h2  style="font-size: 20px;">${dto.storeName}</h2>
                     </div>
 
-                         <div class="blog-post-image col-lg-10">
-                              <a href="single-post.html">
+                         <div class="blog-post-image col-lg-10">                   
                                    <img src="${pageContext.request.contextPath}/resources/images/${dto.storeImg}" width="120%" class="img-responsive center-block">
-                              </a>
                          </div>
                          <div class="col-lg-10">
 	                         <div class="blog-post-title">
-	                              <h3><a href="single-post.html">${dto.storeName}</a></h3>
+	                              <h3>${dto.storeName}</h3>
 	                         </div>
 	                         <div class="blog-post-format">
 	                              <span><i class="fa fa-date"></i>${dto.storeLoc}</span>
 	                         </div>
 	                         <div class="blog-post-des">
+	                     
 	                              <p>${dto.storeInfo}</p>
+	            
 	                         </div>
                          </div>
                     </div>
@@ -48,7 +51,7 @@
 </section>
 	
 	<div class="container">
-	<h5>LOCATION</h5>
+	<h5>CAFE LOCATION</h5>
 	</div>
 	<!-- 지도 key : 29d592b09c4a7ae1856b2630da60b871&libraries=services -->
 	<div id="map"
@@ -64,7 +67,7 @@
 		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 		var options = { //지도를 생성할 때 필요한 기본 옵션
 			center : new kakao.maps.LatLng(storeLat, storeLan), //지도의 중심좌표.
-			level : 3
+			level : 2
 		//지도의 레벨(확대, 축소 정도)
 		};
 

@@ -4,7 +4,7 @@
 
 
  
-<div class="container mt-3">
+<div class="container">
 
 <!--   The Modal -->
   <div class="modal fade" id="join">
