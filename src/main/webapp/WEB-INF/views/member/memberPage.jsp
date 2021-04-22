@@ -12,10 +12,7 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
-<!-- 
-<c:import url="./memberLogin.jsp"></c:import>
-<c:import url="./memberJoin.jsp"></c:import>
- -->
+
 	<div id="title">
 		<div id="titleContainer">
 			<div class="textTitle">
@@ -24,11 +21,11 @@
 					class="myPage nav justify-content-center">
 					<div class="text-line"></div>
 					<nav class="titleNav">
-						<a href="./memberUpdate"><span class="ko">회원정보</span></a> <a
-							href="./order"><span class="ko">주문내역</span></a> <a
-							href="./subscription"><span class="ko">정기/간편주문</span></a> <a
-							href="./point"><span class="ko">포인트</span></a> <a
-							href="./qna"><span class="ko">문의</span></a>
+						<a href="./memberUpdate"><span class="ko">회원정보</span></a> | 
+						<a href="./order"><span class="ko">주문내역</span></a> | 
+						<a href="./subscription"><span class="ko">정기/간편주문</span></a> | 
+						<a href="./point"><span class="ko">포인트</span></a> | 
+						<a href="./qna"><span class="ko">문의</span></a> | 
 
 
 

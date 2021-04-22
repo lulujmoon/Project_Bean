@@ -52,7 +52,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="phone">닉네임</label> <input type="text"
+				<label for="nickname">닉네임</label> <input type="text"
 					class="form-control etc" id="join-nickname" required name="nickname">
 					<h6 id="nickResult"></h6>
 			</div>
@@ -120,4 +120,4 @@
   
 </div>
 
-<script type="text/javascript" src="./resources/js/memberJoin.js"></script>
+<script type="text/javascript" src="./resources/jquery/memberJoin.js"></script>
