@@ -6,6 +6,22 @@
  	 border: 2px solid #FFEEBA;
 } */
 
+.select{
+	text-align: right;
+	list-style: off;
+	font-size: 15px;
+}
+::marker {
+	list-style: off;
+	color:white;
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+}
+
 #search{
 	width:500px;
 }

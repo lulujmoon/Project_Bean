@@ -66,14 +66,8 @@
 				<a class="nav-link" href="${pageContext.request.contextPath}/product/productList">Shop</a></li>
 				<li class="nav-item" style="font-size: large;">
 				<a class="nav-link" href="${pageContext.request.contextPath}/location/locationList">Location</a></li>
-				
 				<li class="nav-item" style="font-size: large;">
-				<a class="nav-link" href="#" data-toggle="dropdown">Service</a>
-				<div class="dropdown-menu" id="dropdown">
-      			<a class="dropdown-item" href="${pageContext.request.contextPath}/faq/faqList">FaQ</a>
-     			 <a class="dropdown-item" href="${pageContext.request.contextPath}/qna/qnaList">QnA</a>
-    			</div>
-    			</li>
+				<a class="nav-link" href="${pageContext.request.contextPath}/qna/qnaList">Service</a></li>
 			</ul>
 		</div>
 	</div>

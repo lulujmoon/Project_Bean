@@ -15,7 +15,12 @@
 <body>
 <c:import url="../template/header.jsp"></c:import>
 <div class="container">
-<br>
+<li class="select">
+<a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a>
+<a href="${pageContext.request.contextPath}/faq/faqList">FaQ</a>
+</li>
+
+
 <h2>QnA</h2>
 <br>
 <table class="table">

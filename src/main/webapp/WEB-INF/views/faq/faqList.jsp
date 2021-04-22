@@ -12,8 +12,11 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
-	<br>
+
 	<div class="container">
+		<li class="select"><a
+			href="${pageContext.request.contextPath}/qna/qnaList">QnA</a> <a
+			href="${pageContext.request.contextPath}/faq/faqList">FaQ</a></li>
 		<h2>FaQ</h2>
 		<br>
 		<ul class="list-group list-group-horizontal">
@@ -32,7 +35,7 @@
 				<li class="list-group-item">결제문의</li>
 			</a>
 		</ul>
-		
+
 		<div id="accordion">
 
 			<c:forEach items="${list}" var="dto">
@@ -51,7 +54,7 @@
 
 						<a href="./faqDelete?num=${dto.num}" id="del"
 							class="btn btn-success">삭제</a>
-							
+
 						<!-- Modal -->
 						<div class="modal" id="myModal${dto.num}">
 							<div class="modal-dialog">
@@ -59,7 +62,7 @@
 
 									<!-- Modal Header -->
 									<div class="modal-header">
-									
+
 										<h4 class="modal-title">faq수정</h4>
 									</div>
 
@@ -67,8 +70,9 @@
 									<div class="modal-body">
 
 										<div class="form-group">
-											<label for="writer" hidden>번호</label> <input class="form-control"
-												id="num" name="num" value="${dto.num}" readonly hidden>
+											<label for="writer" hidden>번호</label> <input
+												class="form-control" id="num" name="num" value="${dto.num}"
+												readonly hidden>
 
 											<div class="form-group">
 												<label for="writer">작성자</label> <input class="form-control"
@@ -83,15 +87,22 @@
 													id="contents" name="contents" value="${dto.contents}">
 											</div>
 											<div class="form-group">
-												<label for="writer">카테고리</label> <input class="form-control"
-													id="category" name="category" value="${dto.category}">
+												<label for="category">category:</label> <select
+													name="category" id="category" value="${dto.category}">
+													<option value="배송문의">배송문의</option>
+													<option value="상품문의">상품문의</option>
+													<option value="주문문의">주문문의</option>
+													<option value="결제문의">결제문의
+													<option>
+												</select>
 											</div>
 
 										</div>
 
 										<!-- Modal footer -->
 										<div class="modal-footer">
-											<button type="button" class="btn btn-success" id="upd" value="${dto.num}">수정</button>
+											<button type="button" class="btn btn-success" id="upd"
+												value="${dto.num}">수정</button>
 											<button type="button" class="btn btn-success"
 												data-dismiss="modal">닫기</button>
 										</div>
@@ -110,7 +121,9 @@
 		<ul class="pagination">
 
 			<c:if test="${pager.pre}">
-				<a href="./faqList?curPage=${pager.startNum-1}&kind=${pager.kind}&search=${pager.search}" title="${pager.startNum-1}">&laquo;</a>
+				<a
+					href="./faqList?curPage=${pager.startNum-1}&kind=${pager.kind}&search=${pager.search}"
+					title="${pager.startNum-1}">&laquo;</a>
 			</c:if>
 
 			<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
@@ -119,10 +132,12 @@
 					title="${i}">${i}</a>
 			</c:forEach>
 
-			  <c:if test="${pager.next}">
-	    <a href="./faqList?curPage=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}" title="${pager.lastNum+1}">&raquo;</a>
-	    	</c:if>
-			
+			<c:if test="${pager.next}">
+				<a
+					href="./faqList?curPage=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}"
+					title="${pager.lastNum+1}">&raquo;</a>
+			</c:if>
+
 		</ul>
 
 
@@ -171,16 +186,24 @@
 								id="contents" name="contents">
 						</div>
 						<div class="form-group">
-							<label for="writer">카테고리</label> <input class="form-control"
-								id="category" name="category">
+							<label for="category">category:</label> <select name="category"
+								id="category">
+								<option value="배송문의">배송문의</option>
+								<option value="상품문의">상품문의</option>
+								<option value="주문문의">주문문의</option>
+								<option value="결제문의">결제문의
+								<option>
+							</select>
 						</div>
+
+
 
 					</div>
 
 					<!-- Modal footer -->
 					<div class="modal-footer">
-						<button type="button" class="btn wri" id="wri">확인</button>
-						<button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+						<button type="button" class="btn btn-success" id="wri">확인</button>
+						<button type="button" class="btn btn-success" data-dismiss="modal">닫기</button>
 					</div>
 
 				</div>
