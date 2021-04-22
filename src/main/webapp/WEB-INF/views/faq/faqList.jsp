@@ -16,25 +16,19 @@
 	<div class="container">
 		<li class="select"><a
 			href="${pageContext.request.contextPath}/qna/qnaList">QnA</a> <a
-			href="${pageContext.request.contextPath}/faq/faqList">FaQ</a></li>
+			href="${pageContext.request.contextPath}/faq/faqList">FaQ</a>
+			</li>
 		<h2>FaQ</h2>
 		<br>
-		<ul class="list-group list-group-horizontal">
-			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=배송문의"><li
-				class="list-group-item">배송문의</li></a>
-			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=상품문의">
-				<li class="list-group-item">상품문의</li>
-			</a>
-			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=주문문의"><li
-				class="list-group-item">주문문의</li></a>
-			<a
-				href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=결제문의">
-				<li class="list-group-item">결제문의</li>
-			</a>
-		</ul>
+		
+		<ul class="nav nav-tabs">
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=배송문의">배송문의</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=상품문의">상품문의</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=주문문의">주문문의</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=결제문의">결제문의</a></li>
+			
+
+			</ul>
 
 		<div id="accordion">
 

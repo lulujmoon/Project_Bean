@@ -35,3 +35,5 @@ $("#wri").on("click",function(){
 		
 	});
 	
+
+	

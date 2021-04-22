@@ -43,6 +43,13 @@ $("#upd").on("click",function(){
 		}
 	});
 	
+	
+	
+	$(".nav-link").click(function(){
+	this().style.borderColor ="#dee2e6 #dee2e6 #fff"
+	this().style.border = "1px solid"
+	});
+	
 
 
 
