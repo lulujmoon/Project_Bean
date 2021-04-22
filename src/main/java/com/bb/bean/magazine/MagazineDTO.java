@@ -1,12 +1,13 @@
 package com.bb.bean.magazine;
 
-public class magazineDTO {
+public class MagazineDTO {
 	
 	private long num;
 	private String category;
 	private String title;
 	private String subTitle;
 	private String contents;
+	
 	public long getNum() {
 		return num;
 	}

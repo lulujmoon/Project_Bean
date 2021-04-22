@@ -67,7 +67,7 @@
 				<li class="nav-item" style="font-size: large;">
 				<a class="nav-link" href="${pageContext.request.contextPath}/location/locationList">Location</a></li>
 				<li class="nav-item" style="font-size: large;">
-				<a class="nav-link" href="${pageContext.request.contextPath}/location/locationList">Magazine</a></li>
+				<a class="nav-link" href="${pageContext.request.contextPath}/magazine/magazineList">Magazine</a></li>
 				<li class="nav-item" style="font-size: large;">
 				<a class="nav-link" href="${pageContext.request.contextPath}/qna/qnaList">Service</a></li>
 			</ul>
