@@ -90,9 +90,8 @@
 	 </form> 
 	</div> 
 	
-	<%-- <c:if test="${member.id} eq admin*"> --%>
 	<a href="./qnaInsert"><button type="button" class="btn btn-success">Write</button></a>
-	<%-- </c:if> --%>
+
 	</div>
 	<br>
 	

@@ -49,12 +49,13 @@
 						<div class="card-body">${dto.contents}</div>
 
 						<!-- Modal Button -->
+						<c:if test="${member.id eq 'admin'}">
 						<button type="button" class="btn btn-success" data-toggle="modal"
 							data-target="#myModal${dto.num}">수정</button>
 
 						<a href="./faqDelete?num=${dto.num}" id="del"
 							class="btn btn-success">삭제</a>
-
+						</c:if>
 						<!-- Modal -->
 						<div class="modal" id="myModal${dto.num}">
 							<div class="modal-dialog">
@@ -102,9 +103,9 @@
 										<!-- Modal footer -->
 										<div class="modal-footer">
 											<button type="button" class="btn btn-success" id="upd"
-												value="${dto.num}">수정</button>
+												value="${dto.num}">Update</button>
 											<button type="button" class="btn btn-success"
-												data-dismiss="modal">닫기</button>
+												data-dismiss="modal">Close</button>
 										</div>
 
 									</div>
@@ -161,10 +162,10 @@
 
 
 
-		<%-- <c:if test="${member.id} eq admin*"> --%>
+		<c:if test="${member.id eq 'admin'}">
 		<button type="button" class="btn btn-success" data-toggle="modal"
 			data-target="#myModalW">Write</button>
-		<%--  </c:if> --%>
+		</c:if>
 
 		<div class="modal" id="myModalW">
 			<div class="modal-dialog">

@@ -57,14 +57,15 @@
 
 
 
-<%-- <c:if test="${member.id} eq ${member.id}"> --%>
+<c:if test="${dto.writer eq member.id||member.id eq 'admin'}">
 <a href="./qnaUpdate?num=${dto.num}"><button type="button" class="btn btn-success">수정</button></a>
 
 <a href="./qnaDelete?num=${dto.num}" id="del" class="btn btn-success">삭제</a>
-<%-- </c:if> --%>
-<%-- <c:if test="${member.id} eq admin*"> --%>
+</c:if>
+
+<c:if test="${member.id eq 'admin'}">
 <a href="./qnaReply?num=${dto.num}" class="btn btn-success">답글</a>
-<%-- </c:if> --%>
+</c:if>
 
 </div>
 <br>

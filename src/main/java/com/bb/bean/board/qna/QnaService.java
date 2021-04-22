@@ -76,7 +76,6 @@ public class QnaService implements BoardService {
 		qnaDTO.setRef(parent.getRef());
 		qnaDTO.setStep(parent.getStep()+1);
 		qnaDTO.setDepth(parent.getDepth()+1);
-		qnaDTO.setCon(parent.getCon()+1);
 		qnaDTO.setStatus("답변완료"); 
 	
 		int result = qnaDAO.setReplyUpdate(parent);
