@@ -23,7 +23,7 @@
 				<otherwise>
 				</otherwise>
 			</choose>
-		order by P.productNum desc
+		order by P.productNum desc, O.optionNum asc
 	</select>
 	
 	<select id="getSelect" parameterType="ProductDTO" resultMap="selectResult">
