@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+h2{
+	text-align: center;
+	margin-top: 30px;
+	color: black;
+}
+
+hr{
+	width:170px;
+	border-top : 3px solid black;
+}
+
+h6{
+	text-align: center;
+	font-size: 14px;
+	color:gray;
+}
+
+.brick-section-container{
+	margin-top:50px;
+	text-align: center;
+}
