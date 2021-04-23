@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bb.bean.product.ProductFileDTO;
+
 @Repository
 public class MagazineDAO {
 	
@@ -23,5 +25,17 @@ public class MagazineDAO {
 	
 	public List<MagazineDTO> magazineList()throws Exception{
 		return sqlSession.selectList(NAMESPACE+"magazineList");
+	}
+	
+	public long getNum() throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getNum");
+	}
+	
+	public int setFileInsert(MagazineFileDTO magazineFileDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"setFileInsert", magazineFileDTO);
+	}
+	
+	public int setFileDelete(MagazineFileDTO magazineFileDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setFileDelete", magazineFileDTO);
 	}
 }

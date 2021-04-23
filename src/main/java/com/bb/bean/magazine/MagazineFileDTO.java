@@ -5,7 +5,7 @@ public class MagazineFileDTO {
 	private long fileNum;
 	private long num;
 	private String fileName;
-	private String originName;
+	private String origineName;
 	
 	public long getFileNum() {
 		return fileNum;
@@ -25,12 +25,13 @@ public class MagazineFileDTO {
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
-	public String getOriginName() {
-		return originName;
+	public String getOrigineName() {
+		return origineName;
 	}
-	public void setOriginName(String originName) {
-		this.originName = originName;
+	public void setOrigineName(String origineName) {
+		this.origineName = origineName;
 	}
-
+	
+	
 	
 }

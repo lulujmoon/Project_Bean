@@ -7,18 +7,47 @@
 <mapper namespace ="com.bb.bean.magazine.MagazineDAO">
 
 <insert id="magazineInsert" parameterType="MagazineDTO">
-insert into magazine(num,title,subtitle,contents)values(magazine_seq.nextval,#{title},#{subTitle},#{contents})
+insert into magazine(num,title,subtitle,contents)values(#{num},#{title},#{subTitle},#{contents})
 </insert>
 
-<select id= "magazineSelect" parameterType="MagazineDTO" resultType="MagazineDTO">
-select * from magazine where num=#{num}
+<select id= "magazineSelect" parameterType="MagazineDTO" resultMap="selectResult">
+select M.*,MF.*
+from magazine M left join magazineFiles MF
+on M.num = MF.num
+where M.num=#{num}
 </select>
+
+<resultMap type="MagazineDTO" id="selectResult">
+<id property="num" column="num"/>
+	<result property="category" column="category"/>
+	<result property="title" column="title"/>
+	<result property="subTitle" column="subTitle"/>
+	<result property="contents" column="contents"/>
+<collection property="ListImage" javaType="java.util.List" ofType="MagazineFileDTO">
+	<id property="fileNum" column="fileNum"/>
+	<result property="fileName" column="fileName"/>
+	<result property="origineName" column="origineName"/>
+</collection>
+
+
+</resultMap>
 
 <select id= "magazineList" resultType="MagazineDTO">
 select * from magazine
 </select>
 
+<!-- 썸네일 파일 인서트/딜리트 (썸머노트아님) -->
 
+<insert id="setFileInsert" parameterType="MagazineFileDTO">
+insert into magazineFiles values (magazine_seq.nextval, #{num}, #{fileName}, #{origineName})
+</insert>
 
+<delete id="setFileDelete" parameterType="MagazineFileDTO">
+delete magazineFiles where fileNum=#{fileNum}
+</delete>
+
+<select id="getNum" resultType="java.lang.Long">
+select magazine_seq.nextval from dual
+</select>
 
 </mapper>
