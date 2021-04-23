@@ -1,5 +1,7 @@
 package com.bb.bean.magazine;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +17,12 @@ public class MagazineController {
 	private MagazineService magazineService;
 	
 	@GetMapping("magazineList")
-	public void MagazineList()throws Exception{		
+	public ModelAndView MagazineList()throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<MagazineDTO> ar =magazineService.magazineList();
+		mv.addObject("list",ar);
+		mv.setViewName("magazine/magazineList");
+		return mv;
 	}
 	
 	@GetMapping("magazineInsert")
@@ -32,6 +39,15 @@ public class MagazineController {
 		
 		return mv;
 		
+	}
+	
+	@GetMapping("magazineSelect")
+	public ModelAndView magazineSelect(MagazineDTO magazineDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		magazineDTO =magazineService.magazineSelect(magazineDTO);
+		mv.addObject("dto",magazineDTO);
+		mv.setViewName("magazine/magazineSelect");
+		return mv;
 	}
 
 }

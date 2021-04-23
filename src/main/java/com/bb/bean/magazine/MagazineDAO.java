@@ -1,5 +1,7 @@
 package com.bb.bean.magazine;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,4 +17,11 @@ public class MagazineDAO {
 		return sqlSession.insert(NAMESPACE+"magazineInsert",magazineDTO);		
 	}
 
+	public MagazineDTO magazineSelect(MagazineDTO magazineDTO)throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"magazineSelect",magazineDTO);
+	}
+	
+	public List<MagazineDTO> magazineList()throws Exception{
+		return sqlSession.selectList(NAMESPACE+"magazineList");
+	}
 }

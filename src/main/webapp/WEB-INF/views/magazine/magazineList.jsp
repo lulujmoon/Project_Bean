@@ -15,6 +15,13 @@
 	
 <h1>매거진</h1>
 
+<c:forEach items="${list}" var="dto">
+${dto.num}
+<a href="./magazineSelect?num=${dto.num}">${dto.title}</a>
+${dto.subTitle}
+${dto.contents}
+</c:forEach>
+
 
 
 <a href="./magazineInsert">인서트</a>

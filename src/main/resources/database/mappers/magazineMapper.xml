@@ -10,6 +10,14 @@
 insert into magazine(num,title,subtitle,contents)values(magazine_seq.nextval,#{title},#{subTitle},#{contents})
 </insert>
 
+<select id= "magazineSelect" parameterType="MagazineDTO" resultType="MagazineDTO">
+select * from magazine where num=#{num}
+</select>
+
+<select id= "magazineList" resultType="MagazineDTO">
+select * from magazine
+</select>
+
 
 
 
