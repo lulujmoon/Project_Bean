@@ -35,9 +35,12 @@
 
 							<!-- Modal Header -->
 							<div class="modal-header">
-								<h4 class="modal-category" id="modal-category">${dto.category}</h4>
-								<h2 class="modal-title" id="modal-title">${dto.title}</h2>
-								
+								<div class="col-md-12">
+								<h5 class="col-md-12" id="modal-category">${dto.category}</h5>
+								</div>
+								<div class="col-md-12">
+								<h5 class="col-md-12" id="modal-title">${dto.title}</h5>
+								</div>
 							</div>
 
 							<!-- Modal body -->
