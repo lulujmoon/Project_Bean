@@ -21,3 +21,17 @@ h6{
 	margin-top:50px;
 	text-align: center;
 }
+
+.modal-dialog .modal-xl{
+	width:70%;
+	text-align: center;
+	
+}
+
+.modal-category{
+	text-align: center;
+}
+
+.modal-content{
+	text-align: center;
+}

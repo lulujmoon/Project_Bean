@@ -18,21 +18,81 @@
 			<div class="col-md-12 col-sm-12">
 				<h2>MAGAZINE</h2>
 				<hr>
-			<h6>스토리</h6>
+				<h6>스토리</h6>
 			</div>
 		</div>
-		
-		<div class ="brick-section-container">
-		<c:forEach items="${list}" var="dto">
-			<a href="./magazineSelect?num=${dto.num}"> 
-			<img src="../resources/upload/magazineT/${dto.listImage.fileName}" width="500" height="300"></a>
-		</c:forEach>
+
+		<div class="brick-section-container">
+			<c:forEach items="${list}" var="dto">
+				<a href="#" data-toggle="modal" data-target="#myModal${dto.num}"> <img
+					src="../resources/upload/magazineT/${dto.listImage.fileName}"
+					width="500" height="300"></a>
+
+				<!-- The Modal -->
+				<div class="modal fade" id="myModal${dto.num}">
+					<div class="modal-dialog modal-xl">
+						<div class="modal-content">
+
+							<!-- Modal Header -->
+							<div class="modal-header">
+								<h4 class="modal-category" id="modal-category">${dto.category}</h4>
+								<h2 class="modal-title" id="modal-title">${dto.title}</h2>
+								
+							</div>
+
+							<!-- Modal body -->
+							<div class="modal-body">${dto.contents}</div>
+
+							<!-- Modal footer -->
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger"
+									data-dismiss="modal">Close</button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</c:forEach>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		</div>
-			
+
+
+
+
 		<div>
 			<a href="./magazineInsert">인서트</a>
 		</div>
-		
+
 	</div>
 	<c:import url="../template/footer.jsp"></c:import>
 </body>
