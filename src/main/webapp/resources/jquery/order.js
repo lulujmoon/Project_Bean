@@ -101,7 +101,10 @@ $("#order-btn").click(function(){
 						imp_uid: rsp.imp_uid
 					},
 					success: function(result){
-						//여기에 alert나 location.href를 써도 반응이 없어요
+						alert('성공');
+					},
+					error: function(){
+						alert('에러');
 					}
 				})
 		    } else {
