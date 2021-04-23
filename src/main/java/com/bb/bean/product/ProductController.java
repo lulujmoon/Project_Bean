@@ -26,6 +26,13 @@ public class ProductController {
 	public void getList(ProductDTO productDTO, Model model) throws Exception {
 		List<ProductDTO> li = productService.getList(productDTO);
 		model.addAttribute("list", li);
+		
+		for(ProductDTO pro:li) {
+			System.out.println("--------------------------");
+			for(int i=0;i<pro.getOptions().size();i++) {
+				System.out.println(pro.getOptions().get(i).getOptionNum());				
+			}
+		}
 	}
 	
 	@GetMapping("productSelect")

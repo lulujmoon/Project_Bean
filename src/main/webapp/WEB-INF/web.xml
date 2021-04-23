@@ -49,9 +49,13 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
-	<!-- 비회원 장바구니 관리를 위한 Listener 등록 -->
+	<!-- 비회원 장바구니 관리를 위한 Listener 등록과 세션 유지기간 설정 -->
 	<listener>
 		<listener-class>com.bb.bean.cart.TempCartListener</listener-class>
 	</listener>
+	
+	<session-config>
+		<session-timeout>1</session-timeout>
+	</session-config>
 	
 </web-app>
