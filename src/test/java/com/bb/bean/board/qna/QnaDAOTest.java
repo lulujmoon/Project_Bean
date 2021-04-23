@@ -57,7 +57,7 @@ public class QnaDAOTest extends SampleTest {
 	@Test
 	public void setDeleteTest() throws Exception{
 		BoardDTO boardDTO = new BoardDTO();
-		boardDTO.setNum(2);
+		boardDTO.setNum(7);
 		int result = qnaDAO.setDelete(boardDTO);
 		assertNotEquals(0, result);
 		
