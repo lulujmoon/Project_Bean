@@ -10,20 +10,17 @@
 	<!-- Vanilla Product -->
 
 	<select id="getList" resultMap="selectResult">
-		select P.*, O.*, PF.* 
+		select * from 
+		(select P.*, O.optionNum, O.optionInfo, O.type, O.price, O.discountRate, O.stock, PF.fileNum, PF.fileName, PF.originName
 		from product P
 		left join options O
 		on P.productNum = O.productNum
 		left join productFiles PF
-		on P.productNum=PF.productNum
-			<choose>
-				<when test="category!=null">
-					where P.category=#{category}	
-				</when>
-				<otherwise>
-				</otherwise>
-			</choose>
-		order by P.productNum desc, O.optionNum asc
+		on P.productNum=PF.productNum)
+		<if test="category!=null">
+			where category=#{category}	
+		</if>
+		order by productNum desc, optionNum asc
 	</select>
 	
 	<select id="getSelect" parameterType="ProductDTO" resultMap="selectResult">
