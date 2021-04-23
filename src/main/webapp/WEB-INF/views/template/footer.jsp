@@ -20,11 +20,7 @@
                </div>
 
                <div class="clearfix col-md-12 col-sm-12">
-               
-              
                     <p>서울특별시 마포구 서교동 447-5 풍성빌딩 2,3,4층</p>
-            
-               
                     <hr>
                </div>
 				
