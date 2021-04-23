@@ -79,7 +79,7 @@ public class OrdersService {
 			e.printStackTrace();
 		}
 		
-		String imp_uid_cancelled = "imp_109958102507";
+		String imp_uid_cancelled = imp_uid;
 		try {
 			IamportResponse<Payment> cancelled_response = client.paymentByImpUid(imp_uid_cancelled);
 			
@@ -87,7 +87,9 @@ public class OrdersService {
 			PaymentCancelDetail[] cancelDetail = cancelled.getCancelHistory();
 			
 			System.out.println(cancelDetail.length);
-			System.out.println(cancelDetail[0].getPgTid());
+			if(cancelDetail.length!=0) {
+				System.out.println(cancelDetail[0].getPgTid());				
+			}
 		} catch (IamportResponseException e) {
 			System.out.println(e.getMessage());
 			
