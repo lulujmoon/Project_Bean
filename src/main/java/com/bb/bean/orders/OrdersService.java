@@ -88,7 +88,8 @@ public class OrdersService {
 			
 			System.out.println(cancelDetail.length);
 			if(cancelDetail.length!=0) {
-				System.out.println(cancelDetail[0].getPgTid());				
+				System.out.println(cancelDetail[0].getPgTid());
+				result = "결제 취소";
 			}
 		} catch (IamportResponseException e) {
 			System.out.println(e.getMessage());

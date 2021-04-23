@@ -101,16 +101,14 @@ $("#order-btn").click(function(){
 						imp_uid: rsp.imp_uid
 					},
 					success: function(result){
-						alert('성공');
-					},
-					error: function(){
-						alert('에러');
+						alert(result.trim());
+						location.href="./order/orderResult";
 					}
-				})
+				});
 		    } else {
 		        var msg = '결제에 실패하였습니다.';
 		        msg += '에러내용 : ' + rsp.error_msg;
+		        alert(msg);
 	    }
-	    alert(msg);
 	});
 })

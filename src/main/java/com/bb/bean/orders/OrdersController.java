@@ -18,8 +18,9 @@ public class OrdersController {
 		ordersService.getToken();
 		String result = ordersService.paymentByImpUid(amount, imp_uid);
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("result", "test");
+		mv.addObject("result", result);
 		mv.setViewName("common/ajaxResult");
+
 		return mv;
 	}
 }
