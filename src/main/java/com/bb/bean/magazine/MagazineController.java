@@ -18,9 +18,9 @@ public class MagazineController {
 	private MagazineService magazineService;
 	
 	@GetMapping("magazineList")
-	public ModelAndView MagazineList()throws Exception{
+	public ModelAndView MagazineList(MagazineDTO magazineDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		List<MagazineDTO> ar =magazineService.magazineList();
+		List<MagazineDTO> ar =magazineService.magazineList(magazineDTO);
 		mv.addObject("list",ar);
 		mv.setViewName("magazine/magazineList");
 		return mv;

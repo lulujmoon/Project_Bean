@@ -41,8 +41,8 @@ public class MagazineService {
 		return magazineDAO.magazineSelect(magazineDTO);
 	}
 	
-	public List<MagazineDTO> magazineList()throws Exception{
-		return magazineDAO.magazineList();
+	public List<MagazineDTO> magazineList(MagazineDTO magazineDTO)throws Exception{
+		return magazineDAO.magazineList(magazineDTO);
 	}
 	
 	public String summerFileUpload(MultipartFile multipartFile) throws Exception {

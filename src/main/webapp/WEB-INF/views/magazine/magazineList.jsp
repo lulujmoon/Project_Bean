@@ -16,11 +16,8 @@
 <h1>매거진</h1>
 
 <c:forEach items="${list}" var="dto">
-${dto.num}
-<a href="./magazineSelect?num=${dto.num}">${dto.title}</a>
-${dto.subTitle}
-${dto.contents}
-<img src="../resources/upload/magazineT/${dto.ListImage.fileName}">
+<a href="./magazineSelect?num=${dto.num}"><img src="../resources/upload/magazineT/${dto.listImage.fileName}">
+</a>
 </c:forEach>
 
 

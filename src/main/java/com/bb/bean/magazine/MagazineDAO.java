@@ -23,8 +23,8 @@ public class MagazineDAO {
 		return sqlSession.selectOne(NAMESPACE+"magazineSelect",magazineDTO);
 	}
 	
-	public List<MagazineDTO> magazineList()throws Exception{
-		return sqlSession.selectList(NAMESPACE+"magazineList");
+	public List<MagazineDTO> magazineList(MagazineDTO magazineDTO)throws Exception{
+		return sqlSession.selectList(NAMESPACE+"magazineList",magazineDTO);
 	}
 	
 	public long getNum() throws Exception {

@@ -17,13 +17,19 @@ on M.num = MF.num
 where M.num=#{num}
 </select>
 
+<select id= "magazineList" parameterType="MagazineDTO" resultMap="selectResult">
+select M.*,MF.*
+from magazine M left join magazineFiles MF
+on M.num = MF.num
+</select>
+
 <resultMap type="MagazineDTO" id="selectResult">
 <id property="num" column="num"/>
 	<result property="category" column="category"/>
 	<result property="title" column="title"/>
 	<result property="subTitle" column="subTitle"/>
 	<result property="contents" column="contents"/>
-<collection property="ListImage" javaType="java.util.List" ofType="MagazineFileDTO">
+<collection property="ListImage" javaType="MagazineFileDTO">
 	<id property="fileNum" column="fileNum"/>
 	<result property="fileName" column="fileName"/>
 	<result property="origineName" column="origineName"/>
@@ -31,10 +37,6 @@ where M.num=#{num}
 
 
 </resultMap>
-
-<select id= "magazineList" resultType="MagazineDTO">
-select * from magazine
-</select>
 
 <!-- 썸네일 파일 인서트/딜리트 (썸머노트아님) -->
 
