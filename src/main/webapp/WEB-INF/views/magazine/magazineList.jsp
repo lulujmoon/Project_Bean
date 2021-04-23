@@ -34,13 +34,11 @@
 						<div class="modal-content">
 
 							<!-- Modal Header -->
-							<div class="modal-header">
-								<div class="col-md-12">
+							<div class="modal-header" style="flex-direction: column">
+								
 								<h5 class="col-md-12" id="modal-category">${dto.category}</h5>
-								</div>
-								<div class="col-md-12">
 								<h5 class="col-md-12" id="modal-title">${dto.title}</h5>
-								</div>
+								
 							</div>
 
 							<!-- Modal body -->

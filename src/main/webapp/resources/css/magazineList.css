@@ -45,3 +45,9 @@ h5{
 .modal-header{
 	text-align:center;
 }
+
+#modal-category{
+	margin-top: 20px;
+	font-size: 12px;
+	color: red;
+}
