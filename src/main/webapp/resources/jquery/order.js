@@ -97,9 +97,8 @@ $("#order-btn").click(function(){
 				amount:20,
 				imp_uid:rsp.imp_uid
 			}, function(result){
-				alert(result);
-				loacation.href="../";
-			})
+				msg = result;
+			});
 	    } else {
 	        var msg = '결제에 실패하였습니다.';
 	        msg += '에러내용 : ' + rsp.error_msg;

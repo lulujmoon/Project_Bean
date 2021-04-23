@@ -79,27 +79,27 @@ public class OrdersService {
 			e.printStackTrace();
 		}
 		
-//		String imp_uid_cancelled = "imp_109958102507";
-//		try {
-//			IamportResponse<Payment> cancelled_response = client.paymentByImpUid(imp_uid_cancelled);
-//			
-//			Payment cancelled = cancelled_response.getResponse();
-//			PaymentCancelDetail[] cancelDetail = cancelled.getCancelHistory();
-//			
-//			System.out.println(cancelDetail.length);
-//			System.out.println(cancelDetail[0].getPgTid());
-//		} catch (IamportResponseException e) {
-//			System.out.println(e.getMessage());
-//			
-//			switch(e.getHttpStatusCode()) {
-//			case 401 :
-//				break;
-//			case 500 :
-//				break;
-//			}
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
+		String imp_uid_cancelled = "imp_109958102507";
+		try {
+			IamportResponse<Payment> cancelled_response = client.paymentByImpUid(imp_uid_cancelled);
+			
+			Payment cancelled = cancelled_response.getResponse();
+			PaymentCancelDetail[] cancelDetail = cancelled.getCancelHistory();
+			
+			System.out.println(cancelDetail.length);
+			System.out.println(cancelDetail[0].getPgTid());
+		} catch (IamportResponseException e) {
+			System.out.println(e.getMessage());
+			
+			switch(e.getHttpStatusCode()) {
+			case 401 :
+				break;
+			case 500 :
+				break;
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		return result;
 	}
