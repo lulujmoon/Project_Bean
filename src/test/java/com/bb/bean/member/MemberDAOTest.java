@@ -65,7 +65,7 @@ public class MemberDAOTest extends SampleTest {
 	@Test
 	public void memberDelete() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
-		memberDTO.setId("id1");
+		memberDTO.setId("dgfhj");
 		
 		int result = memberDAO.memberDelete(memberDTO);
 		assertEquals(1, result);

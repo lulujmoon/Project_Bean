@@ -46,7 +46,7 @@
 				<div class="modal-footer">
 
 				<a href="${pageContext.request.contextPath}/member/findPw">비밀번호 분실 &gt;</a>
-				<a data-toggle="modal" data-target="#join">회원가입 &gt;</a>
+				<a data-toggle="modal" data-target="#join" style="cursor:pointer;">회원가입 &gt;</a>
 					<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  -->
 				</div>
 				<a id="kakao-login-btn"></a> 
@@ -67,7 +67,7 @@
 <script type="text/javascript" src="./resources/jquery/memberLogin.js"></script>
 
 
-</script>
+
 
 <!-- 
 <a href = "https://kauth.kakao.com/oauth/authorize?client_id="3764e317ada450c0e2799aab5377c09f"&redirect_uri="http://localhost/bean/member/memberLogin.jsp"&response_type=code">

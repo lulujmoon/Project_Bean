@@ -85,9 +85,7 @@ function loginCheck() {
 	if(!loginId) {
 		alert("입력하신 아이디가 존재하지 않거나 사용할 수 없는 아이디입니다.");
 		$("#IdL").focus();
-	}
-	
-	if(!loginPw) {
+	} else if(!loginPw) {
 		alert("비밀번호를 확인해주세요");
 		$("#pwL").focus();
 	}		

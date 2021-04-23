@@ -21,6 +21,23 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
+	@GetMapping("memberQna")
+	public void memberQna() throws Exception {
+	}
+	
+	@GetMapping("memberPoint")
+	public void memberPoint() throws Exception {
+	}
+	
+	@GetMapping("memberSubscrip")
+	public void memberSubscrip() throws Exception{ 
+	}
+	
+	@GetMapping("memberOrder")
+	public void  memberOrder() throws Exception {	
+	}
+	
+	
 	@GetMapping("nameCheck")
 	public String nameCheck(MemberDTO memberDTO, Model model) throws Exception {
 		memberDTO = memberService.nameCheck(memberDTO);
