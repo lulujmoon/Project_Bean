@@ -20,7 +20,9 @@ ${dto.num}
 <a href="./magazineSelect?num=${dto.num}">${dto.title}</a>
 ${dto.subTitle}
 ${dto.contents}
+<img src="../resources/upload/magazineT/${dto.ListImage.fileName}">
 </c:forEach>
+
 
 
 
