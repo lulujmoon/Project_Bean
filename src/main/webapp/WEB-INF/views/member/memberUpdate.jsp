@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../template/bootStrap.jsp"></c:import>
-<link rel="stylesheet" href="../resources/css/mypage.css">
+<link rel="stylesheet" href="../resources/css/memberUpdate.css">
 <c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
@@ -46,7 +46,7 @@
 
 			<div class="mypage-section-title">회원정보</div>
 
-			<form id="frm" action="./member/memberUpdate" method="post">
+			<form id="frm" action="./member/memberUpdate" method="post" onsubmit="return check();">
 				<div class="form-group">
 					<label for="id">이메일</label> <input type="text" class="form-control"
 						id="id" name="id" readonly="readonly" value="${member.id}">
@@ -98,19 +98,21 @@
 			
 			<br>
 				<div class="form-group">
+						<div id="comment">*비밀번호를 변경하고 싶으시다면 입력해주세요</div>
 					<label for="pw">현재 비밀번호</label> <input type="password"
 						class="form-control" id="pw" name="pw" title="${member.pw}">
-						<div> </div>
-					<h4 id="pwResult"></h4>
+					<h6 id="pwResult"></h6>
 					<!-- PW는 6글자 이상 -->
 				</div>
 				<div class="form-group">
 					<label for="pw">새로운 비밀번호</label> <input type="password"
 						class="form-control" id="pw1" name="pw1" >
+						<h6 id="pw1Result"></h6>
 				</div>
 				<div class="form-group">
 					<label for="pw">새로운 비밀번호 확인</label> <input type="password"
 						class="form-control" id="pw2" name="pw2">
+						<h6 id="pw2Result"></h6>
 				</div>
 
 				<button type="submit" id="edit" class="btn btn-danger">저장하기</button>
