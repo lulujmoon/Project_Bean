@@ -7,21 +7,28 @@
 
 <footer>
 	<!-- footer에만 적용하는 폰트스타일 -->
-     <div class="container"">
+     <div class="container">
           <div class="row">
 			<!-- logo -->
-               <div class="col-md-3 col-sm-3">
+               <div class="col-md-2 col-sm-3">
                     <img id="coffee" src="${pageContext.request.contextPath}/resources/images/coffee.png" width="100" height="100">
                </div>
 
-               <div class="col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-3" style="font-family: 'Orelega One';">
-                    <p><a href="mailto:youremail@gmail.com">beanbean@bean.com</a></p>
-                    <p>070-1234-5678</p>
+               <div class="col-md-offset-1 col-md-5 col-sm-offset-1 col-sm-3">
+              	    <p style="margin-top:1rem; font-size: 0.7rem;">
+              	    서울특별시 마포구 서교동 447-5 풍성빌딩 2,3,4층 | 02-1234-5678
+              	    <br>
+                    <a href="mailto:youremail@gmail.com">beanbean@bean.com</a>
+                    <br>
+                    070-1234-5678
+                    <br>
+                    Github: <a href="https://github.com/lulujmoon/Project_Bean">https://github.com/lulujmoon/Project_Bean</a>
+                    </p>
                </div>
 
-               <div class="clearfix col-md-12 col-sm-12">
-                    <p>서울특별시 마포구 서교동 447-5 풍성빌딩 2,3,4층</p>
-                    <hr>
+               <div class="col-md-5 col-sm-12">
+					<h4> 뉴스레터 받기 </h4>
+
                </div>
 				
 			<!-- footer의 맨 밑 -->
