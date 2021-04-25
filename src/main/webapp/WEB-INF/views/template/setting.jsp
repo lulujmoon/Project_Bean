@@ -18,7 +18,3 @@
 <!-- Main css -->
 <link rel="stylesheet" href="../resources/css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
-
-<!-- SCRIPTS -->
-<script src="../resources/js/custom.js"></script>
-

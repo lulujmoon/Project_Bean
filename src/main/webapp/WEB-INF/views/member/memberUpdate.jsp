@@ -7,11 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../template/bootStrap.jsp"></c:import>
+<link rel="stylesheet" href="../resources/css/mypage.css">
 <link rel="stylesheet" href="../resources/css/memberUpdate.css">
 <c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
+
 
 
 	<div class="wrapper container" style="display: block;">
@@ -40,11 +42,20 @@
 				</nav>
 			</div>
 		</div>
-			<!-- </div> 1개 -->
+		<!-- </div> 1개 -->
 
+
+		<div id="content" class="cafe-content">
+			<div id="write-order-info-wrapper" class="bb-form"
+				style="padding-bottom: 40px;">
 
 
 			<div class="mypage-section-title">회원정보</div>
+			
+							<div class="bb-form mypage-mobile-wrapper mainpage-desktop"
+					style="padding-bottom: 40px;">
+					<ul id="mobileOrderList" class="my-subscribe"
+						style="border-top: 1px solid #ccc;"></ul>
 
 			<form id="frm" action="./member/memberUpdate" method="post" onsubmit="return check();">
 				<div class="form-group">
@@ -87,6 +98,8 @@
 						id="inlineRadio2" value="1"> <label
 						class="form-check-label" for="inlineRadio2">남자</label>
 				</div>
+				
+				<input type="hidden" id="radioResult" value="${member.gender}"></input>
 
 				<br> <br>
 
@@ -119,6 +132,7 @@
 				
 			<!-- <button type="button" class="btn btn-danger">비밀번호 변경하기</button>  -->	
 			</form>
+			</div>
 
 <br>
 			<div class="mypage-info">
@@ -130,10 +144,11 @@
 			
 			<a href="./memberDelete" id="delete" style="float: right; color: red;">탈퇴하기</a>
 			
-			
 			<br>
 			<br>
 
+		</div>
+		</div>
 		</div>
 
 
@@ -141,12 +156,6 @@
 
 <c:import url="../template/footer.jsp"></c:import>
 <script type="text/javascript" src="../resources/jquery/memberUpdate.js"></script>
-<script>
-if(${member.gender}=='2') {
-	$("#inlineRadio1").prop("checked","checked");
-} else {
-	$("#inlineRadio2").prop("checked","checked");
-}
-</script>
+
 </body>
 </html>

@@ -2,12 +2,16 @@
  * 
  */
 
-/*
 
+// gender setting
 $(document).ready(function(){
-	$("#pw").val(pw);
+if($("#radioResult").val()=='2') {
+	$("#inlineRadio1").prop("checked","checked");
+} else {
+	$("#inlineRadio2").prop("checked","checked");
+}
 })
-*/
+
 
 //탈퇴하기 confirm
 $("#delete").click(function(){
@@ -22,8 +26,8 @@ let editPw = false;
 $("#pw").blur(function(){
 	$.get("./member/pwCheck?id="+$("#id").val(), function(result){
 		result=result.trim();
-		console.log(result);	
-		console.log($("#pw").val());
+//		console.log(result);	
+//		console.log($("#pw").val());
 		if($("#pw").val() == result) {
 			$("#pwResult").html("");
 			editPw = true;
@@ -33,7 +37,7 @@ $("#pw").blur(function(){
 		}
 
 	});
-	console.log("pw : " + loginPw);
+//	console.log("pw : " + loginPw);
 	
 });
 
@@ -47,9 +51,9 @@ $("#edit").click(function(){
 	if(password=="") {
 	let pw = $("#pw").attr("title");
 	$("#pw").val(pw);
-//	let pw2 = $("#pw").val();
+	//	let pw2 = $("#pw").val();
 	
-//	alert(pw2);
+	//	alert(pw2);
 	} else if($("#pw1").val()!=""){
 		let newpw = $("#pw1").val();
 		$("#pw").val(newpw);
@@ -73,7 +77,7 @@ $("#pw1").blur(function(){
 	$("#pw1Result").html("6글자 미만입니다.");
 	$("#pw1Result").attr("class", "r1");
 	}
-	console.log($("#pw1").val());
+//	console.log($("#pw1").val());
 });
 
 
@@ -81,14 +85,14 @@ $("#pw1").blur(function(){
 pw2.addEventListener("blur", function(){
 	let pw2Result = document.getElementById("pw2Result");
 	if(pw1.value != pw2.value){
-			console.log($("#pw2").val());
+//			console.log($("#pw2").val());
 			
 		$("#pw2Result").html("두 비밀번호가 다릅니다. 다시 확인해주세요");
 		$("#pw2Result").attr("class","r1");
 		let str = "두 비밀번호가 다릅니다. 다시 확인해주세요.";
 		pw2.value="";
 	}else {
-			console.log($("#pw2").val());
+//			console.log($("#pw2").val());
 		$("#pw2Result").html("");
 		pwEqualResult=true;
 		
