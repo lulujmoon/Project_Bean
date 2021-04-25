@@ -28,7 +28,7 @@ public class ProductService {
 		return productDAO.getSelect(productDTO);
 	}
 
-	public int setInsert(ProductDTO productDTO, MultipartFile file) throws Exception {
+	public ProductDTO setInsert(ProductDTO productDTO, MultipartFile file) throws Exception {
 
 		String fileName = fileManager.save("product", file, session);
 		long productNum = productDAO.getProductNum();
@@ -42,7 +42,7 @@ public class ProductService {
 
 		int result = productDAO.setInsert(productDTO);
 		result = productDAO.setFileInsert(productFileDTO);
-		return result;
+		return productDTO;
 	}
 
 	public int setUpdate(ProductDTO productDTO, MultipartFile file) throws Exception {

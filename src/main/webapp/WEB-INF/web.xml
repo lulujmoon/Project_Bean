@@ -54,8 +54,8 @@
 		<listener-class>com.bb.bean.cart.TempCartListener</listener-class>
 	</listener>
 	
-	<session-config>
+<!-- 	<session-config>
 		<session-timeout>1</session-timeout>
-	</session-config>
+	</session-config> -->
 	
 </web-app>

@@ -42,18 +42,73 @@
 }
 
 .titleAgainHere{
-	font-size: 17px; 
+	font-size: 20px; 
 	font-weight: 700;
 	margin-bottom:1%;
+	border-bottom: #dfdfdf 1px solid;
+	padding-bottom: 1%;
+	display:inline-block;
+	width: 70%;
+}
+
+.subtitleHere{
+	margin-top:1%;
+	color:#737373;
+}
+
+.includesInfo{
+	font-size: 12px;
+	margin-top:1%;
+	margin-left:1%;
+	color:#737373;
 }
 
 
 .includesHere{
-	font-size: 15px;
+	font-size: 12px;
+	margin-top: 1%;
+	list-style: none;
+	color:#737373;
+}
+
+.optionsHere{
+	margin-top: 2%;
+	margin-bottom: 2%;
+	font-size: 14px;
+}
+
+.optionTable{
+	border-collapse: separate;
+	border-spacing: 15px 0;
+}
+
+.optPrice{
+	font-weight:bold;
+	padding-right:5%;
+}
+
+.optInfo{
+	color:#737373;
+}
+
+.grindsHere{
+	font-size: 14px;
+}
+
+.grindOpt{
+	font-size: 14px;
+}
+
+.quantitiesHere{
+	font-size: 14px;
+}
+
+.quantityOpt{
+	font-size: 14px;
 }
 
 .noticeHere{
-	border:1px dotted lightgrey;
+	border:1px dotted #dfdfdf;
 	padding:3%;
 	margin:5%;
 }
@@ -132,4 +187,14 @@
 	border: 2px solid lavender;
 	text-align:center;
 	line-height: 40px;
+}
+
+#toTop-btn{
+	cursor:pointer;
+	width:80px;
+	height:30px;
+	border: 2px solid lavender;
+	display: inline-block;
+	text-align:center;
+	line-height: 30px;
 }

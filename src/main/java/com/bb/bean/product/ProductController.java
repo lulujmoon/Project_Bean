@@ -42,8 +42,9 @@ public class ProductController {
 	
 	@PostMapping("productInsert")
 	public String setInsert(ProductDTO productDTO, MultipartFile file) throws Exception {
-		productService.setInsert(productDTO, file);
-		return "redirect:./productList";
+		productDTO = productService.setInsert(productDTO, file);
+		
+		return "redirect:./optionManage?productNum="+productDTO.getProductNum();
 	}
 	
 	@PostMapping("summerFileUpload")
