@@ -26,7 +26,7 @@ public class CartService {
 		OptionsDTO optionsDTO = new OptionsDTO();
 		optionsDTO.setOptionNum(cartDTO.getOptionNum());
 		optionsDTO = productDAO.getOptionsSelect(optionsDTO);
-		long finalPrice = (long)(optionsDTO.getPrice()*(1-optionsDTO.getDiscountRate()));
+		long finalPrice = optionsDTO.getAfterPrice();
 		
 		cartDTO.setfPrice(finalPrice*cartDTO.getQuantity());
 		return cartDTO;

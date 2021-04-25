@@ -17,15 +17,16 @@
 	
 	<!-- Options List -->
 	<input type="button" value="추가" id="add" class="btn btn-sm btn-secondary" style="float:right;margin-right:13px">
-	<p>최소 하나의 옵션이 필요하며, 옵션이 하나일 때는 옵션명과 옵션 설명이 노출되지 않으므로 적지 않아도 됩니다.</p>
+	<p>최소 하나의 옵션이 필요합니다.</p>
 	<table class="table table-hover">
 		<thead>
 			<tr>
 				<td>옵션명</td>
 				<td>옵션 설명</td>
+				<td>재고</td>
 				<td>정가</td>
 				<td>할인율</td>
-				<td>재고</td>
+				<td>할인가</td>
 				<td></td>
 				<td></td>
 			</tr>
@@ -35,9 +36,10 @@
 				<tr>
 					<td>${option.type}</td>
 					<td>${option.optionInfo}</td>
+					<td>${option.stock}</td>
 					<td>${option.price}</td>
 					<td>${option.discountRate}</td>
-					<td>${option.stock}</td>
+					<td>${option.afterPrice}</td>
 					<td style="width:5%" class="edit" title="${option.optionNum}"><input type="button" value="수정" class="btn btn-sm btn-secondary"></td>
 					<td style="width:5%"><input type="button" value="삭제" class="del btn btn-sm btn-danger" title="${option.optionNum}"></td>
 				</tr>
@@ -61,20 +63,25 @@
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>	
 			<div class="form-group">
+				<label for="stock">재고</label>
+				<input type="text" class="form-control myCheck" id="opt3" name="stock">
+				<small id="subResult" class="form-text text-muted"></small>
+			</div>
+			<div class="form-group">
 				<label for="price">정가</label>
-				<input type="text" class="form-control myCheck" id="opt3" name="price">
+				<input type="text" class="form-control myCheck" id="opt4" name="price">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>					
 			<div class="form-group">
 				<label for="discountRate">할인율</label>
-				<input type="text" class="form-control myCheck" id="opt4" name="discountRate" placeholder="소수점으로 적어주세요. 예) 10% 할인: 0.1">
+				<input type="text" class="form-control myCheck" id="opt5" name="discountRate" placeholder="소수점으로 적어주세요. 예) 10% 할인: 0.1">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>	
 			<div class="form-group">
-				<label for="stock">재고</label>
-				<input type="text" class="form-control myCheck" id="opt5" name="stock">
+				<label for="afterPrice">할인가</label>
+				<input type="text" class="form-control myCheck" id="opt6" name="afterPrice" readonly="readonly">
 				<small id="subResult" class="form-text text-muted"></small>
-			</div>
+			</div>	
 			<button class="btn btn-sm btn-secondary">추가</button>				
 		</form>
 		</div>

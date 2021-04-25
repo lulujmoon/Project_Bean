@@ -38,18 +38,25 @@
   let options = "";
 
   let optionsSize = $(productDiv).find('.optionsSize').text();
-  if(optionsSize>1){
+  if(optionsSize>0){
 		options = '<table class="optionTable">';
 	  for(opt of $(productDiv).find('.optionDiv')){
 		options = options + '<tr><td><input type="radio" class="optionNum" name="optionNum" value="'+$(opt).find('.optionNum').text()+'"></td>';
 		options = options + '<td><span class="optType">'+$(opt).find('.type').text()+'</span></td>';
-		options = options + '<td><span class="optPrice">₩'+''+$(opt).find('.price').text()+'</span></td>';
+		if($(opt).find('.afterPrice').text()!=$(opt).find('.price').text()){
+			options = options + '<td><span class="optPrice"><strike>₩'+''+$(opt).find('.price').text()+'</strike>&nbsp;&nbsp;₩';
+			options = options + $(opt).find('.afterPrice').text()+'</span></td>';
+	  	}else{
+			options = options + '<td><span class="optPrice">₩'+''+$(opt).find('.price').text()+'</span></td>';		
+		}
 		options = options + '<td class="optInfo">'+$(opt).find('.optionInfo').text()+'</td></tr>';
 	  }	
 	  	options = options + '</table>';
-  }else if(optionsSize==1){
-	let optionDiv = $(productDiv).find('.optionDiv');
-	options = '<div style="display:none"><input type="text" name="optionNum" value="'+$(optionDiv).find('.optionNum').text()+'"></div>';
+	  	
+	  if(optionsSize==1){
+		let optionDiv = $(productDiv).find('.optionDiv');
+		$(optionDiv).find(".optionNum").attr("style", "display:none");
+	  }
   }else if(optionsSize==0){
 	options = '<p style="color:red">현재 상품에 등록된 옵션이 없습니다.<br>옵션이 없으면 구매를 진행할 수 없습니다. 옵션을 추가해주세요.</p>';
   }

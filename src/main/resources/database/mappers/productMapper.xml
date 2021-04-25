@@ -11,7 +11,7 @@
 
 	<select id="getList" resultMap="selectResult">
 		select * from 
-		(select P.*, O.optionNum, O.optionInfo, O.type, O.price, O.discountRate, O.stock, PF.fileNum, PF.fileName, PF.originName
+		(select P.*, O.optionNum, O.optionInfo, O.type, O.stock, O.price, O.discountRate, O.afterPrice, PF.fileNum, PF.fileName, PF.originName
 		from product P
 		left join options O
 		on P.productNum = O.productNum
@@ -52,9 +52,10 @@
 			<id property="optionNum" column="optionNum"/>
 			<result property="type" column="type"/>
 			<result property="optionInfo" column="optionInfo"/>
+			<result property="stock" column="stock"/>
 			<result property="price" column="price"/>
 			<result property="discountRate" column="discountRate"/>
-			<result property="stock" column="stock"/>
+			<result property="afterPrice" column="afterPrice"/>
 		</collection>
 	</resultMap>
 	
@@ -95,12 +96,12 @@
 	</select>
 	
 	<insert id="setOptionsInsert" parameterType="OptionsDTO">
-		insert into options (optionNum, productNum, type, optionInfo, price, discountRate, stock)
-		values (options_seq.nextval, #{productNum}, #{type}, #{optionInfo}, #{price}, #{discountRate}, #{stock})
+		insert into options (optionNum, productNum, type, optionInfo, stock, price, discountRate, afterPrice)
+		values (options_seq.nextval, #{productNum}, #{type}, #{optionInfo}, #{stock}, #{price}, #{discountRate}, #{afterPrice})
 	</insert>
 	
 	<update id="setOptionsUpdate" parameterType="OptionsDTO">
-		update options set type=#{type}, optionInfo=#{optionInfo}, price=#{price}, discountRate=#{discountRate}, stock=#{stock} where optionNum=#{optionNum}
+		update options set type=#{type}, optionInfo=#{optionInfo}, stock=#{stock}, price=#{price}, discountRate=#{discountRate}, afterPrice=#{afterPrice} where optionNum=#{optionNum}
 	</update>
 	
 	<delete id="setOptionsDelete" parameterType="OptionsDTO">

@@ -67,11 +67,6 @@
 	      	<div class="preContentsHere">
 		      	<div>
 		      		<div class="titleAgainHere"></div>
-		      		<div style="display:inline-block;float:right">
-		      			<input type="button" id="optManage" class="btn btn-sm btn-success" value="옵션">
-	    				<input type="button" id="edit" class="btn btn-sm btn-success" value="수정">
-	    				<input type="button" id="delete" class="btn btn-sm btn-success" value="삭제">
-	    			</div>
 		      	</div>
 		      	<div class="subtitleHere"></div>
 		      	<div class="row"><div class="includesInfo">구성품</div><div class="includesHere"></div></div>
@@ -100,6 +95,11 @@
 		   			<div id="cart-btn">장바구니</div>
 		   			<div id="order-btn">바로결제</div>
 		   			<div id="goCart-btn">장바구니 보러가기</div>
+		   			<div style="display:inline-block;float:right">
+		      			<input type="button" id="optManage" class="btn btn-sm btn-success" value="옵션">
+	    				<input type="button" id="edit" class="btn btn-sm btn-success" value="수정">
+	    				<input type="button" id="delete" class="btn btn-sm btn-success" value="삭제">
+	    			</div>
 		   		</div>
 	   		</div>
    		</div>
