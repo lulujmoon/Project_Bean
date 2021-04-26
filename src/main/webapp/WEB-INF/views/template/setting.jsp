@@ -12,9 +12,9 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- Link -->
-<!-- 
-<link rel="stylesheet" href="../resources/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="../resources/css/font-awesome.min.css">
 
 <!-- Main css -->
 <link rel="stylesheet" href="../resources/css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
+
