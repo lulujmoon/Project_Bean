@@ -17,7 +17,7 @@
 <c:import url="../member/memberJoin.jsp"></c:import>
 <!-- list -->
 <div class="container">
-	<h4> Location </h4>
+	<h4>Location </h4>
 <div class="bar"></div>
 </div>
 <div style="text-align: center; margin: 20px 0 20px 0;">

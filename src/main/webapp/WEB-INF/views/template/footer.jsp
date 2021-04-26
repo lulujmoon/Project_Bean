@@ -2,11 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Footer Section -->
-<!-- footer에만 적용하는 폰트의 링크 -->
-<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
-
 <footer>
-	<!-- footer에만 적용하는 폰트스타일 -->
      <div class="container">
           <div class="row">
 			<!-- logo -->
