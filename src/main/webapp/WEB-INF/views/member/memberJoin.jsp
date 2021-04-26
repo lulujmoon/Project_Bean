@@ -20,8 +20,7 @@
 
 
 					<h2>Member Join Page</h2>
-					<form id="frm" action="./member/memberJoin" method="post"
-						onsubmit="return submitCheck();">
+					<form id="frm" action="./member/memberJoin" method="post" onsubmit="return submitCheck();">
 
 						<div class="form-group">
 							<label for="id">이메일</label> <input type="text"

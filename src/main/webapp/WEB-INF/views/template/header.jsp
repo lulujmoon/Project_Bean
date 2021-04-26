@@ -18,7 +18,7 @@
                      </a>
                     <div class="col-xs-9" style="float:right;">
 
-                 <a href="${pageContext.request.contextPath}/admin/adminList">
+            	      <a href="${pageContext.request.contextPath}/admin/adminList">
                       <span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Admin </span>
                       </a>
 
@@ -50,6 +50,7 @@
          </div>
       </div>
    </div>
+ 
 
    <!-- Navigation 부분 -->
 
