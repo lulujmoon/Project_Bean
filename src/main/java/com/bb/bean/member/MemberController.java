@@ -1,5 +1,7 @@
 package com.bb.bean.member;
 
+import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 
@@ -17,6 +20,95 @@ public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
+	
+	@GetMapping("memberQna")
+	public void memberQna() throws Exception {
+	}
+	
+	@GetMapping("memberPoint")
+	public void memberPoint() throws Exception {
+	}
+	
+	@GetMapping("memberSubscrip")
+	public void memberSubscrip() throws Exception{ 
+	}
+	
+	@GetMapping("memberOrder")
+	public void  memberOrder() throws Exception {	
+	}
+	
+	
+	@GetMapping("nameCheck")
+	public String nameCheck(MemberDTO memberDTO, Model model) throws Exception {
+		memberDTO = memberService.nameCheck(memberDTO);
+		String result = memberDTO.getName();
+		model.addAttribute("result", result);
+		
+		return "common/ajaxResult";
+	}
+	
+	
+
+	@GetMapping("findPw")
+	public void findPw() throws Exception {
+		
+	}
+	
+	@PostMapping("findPw")
+	public String findPw(MemberDTO memberDTO, Model model) throws Exception {
+		memberDTO = memberService.findPw(memberDTO);
+
+		System.out.println("login 확인 : " + memberDTO);
+		
+		if(memberDTO != null) {
+			String tempPw = UUID.randomUUID().toString().replace("-", "");
+			tempPw = tempPw.substring(0, 10);
+			
+			System.out.println("임시비밀번호 확인 : " + tempPw);
+			
+			memberDTO.setPw(tempPw);
+			memberService.update(memberDTO);
+			model.addAttribute("memberFind", memberDTO);
+		}
+		
+		return "member/issuePw";
+	}
+	
+	
+	@GetMapping("pwCheck")
+	public String pwCheck(MemberDTO memberDTO, Model model) throws Exception {
+		memberDTO = memberService.pwCheck(memberDTO);
+		String result = memberDTO.getPw();
+		model.addAttribute("result", result);
+		
+		return "common/ajaxResult";
+	}
+	
+	
+	@GetMapping("idCheck")
+	public String idCheck(MemberDTO memberDTO, Model model) throws Exception {
+		memberDTO = memberService.memberIdCheck(memberDTO);
+		String result = memberDTO.getId();
+		model.addAttribute("result", result);
+		
+		return "common/ajaxResult";
+	}
+	
+	
+	
+	@GetMapping("nickCheck")
+	public String nickCheck(MemberDTO memberDTO, Model model) throws Exception{
+		memberDTO = memberService.nickCheck(memberDTO);
+		String result = "0";
+		if(memberDTO==null) {
+			result = "1";
+		}
+		model.addAttribute("result", result);
+
+		return "common/ajaxResult";
+	}
+	
+	
 
 	@RequestMapping("memberPage")
 	public void memberPage() throws Exception {
@@ -26,7 +118,7 @@ public class MemberController {
 	@GetMapping("memberIdCheck")
 	public String memberIdCheck(MemberDTO memberDTO, Model model)throws Exception{
 		memberDTO = memberService.memberIdCheck(memberDTO);
-		String result = "0";//0 사용 불가 1:사용가능
+		String result = "0";//0: 사용불가 1:사용가능
 		if(memberDTO==null) {
 			result="1";
 		}
@@ -65,9 +157,17 @@ public class MemberController {
 	}
 
 	@PostMapping("memberLogin")
-	public String memberLogin(MemberDTO memberDTO, HttpSession session) throws Exception {
-		memberDTO = memberService.memberLogin(memberDTO);
-		session.setAttribute("member", memberDTO);
+	public String memberLogin(MemberDTO memberDTO, HttpSession session) {
+		try {
+			memberDTO = memberService.memberLogin(memberDTO);
+		} catch (Exception e) {
+			MemberDTO memberDTO2 = new MemberDTO();
+			memberDTO2.setId("notExist");
+			memberDTO = memberDTO2;
+			e.printStackTrace();
+		}
+		session.setAttribute("member", memberDTO);			
+		
 		return "redirect:../";
 	}
 

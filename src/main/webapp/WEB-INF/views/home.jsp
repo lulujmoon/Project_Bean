@@ -15,6 +15,10 @@
 
 <!-- Main css -->
 <link rel="stylesheet" href="./resources/css/style.css">
+<!-- Join css 
+<link rel="stylesheet" href="./resources/css/join.css">
+-->
+
 <!-- 본문과 전체에 적용되는 기본 한글 폰트 링크 -->
 <!-- 이 폰트의 스타일은 style.css 파일에 적혀있음 -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
@@ -26,10 +30,10 @@
 
 </head>
 <body>
-<c:import url="./member/memberLogin.jsp"></c:import>
-<c:import url="./member/memberJoin.jsp"></c:import>
 <!-- header 부분 -->
 <c:import url="./template/header.jsp"></c:import>
+<c:import url="./member/memberLogin.jsp"></c:import>
+<c:import url="./member/memberJoin.jsp"></c:import>
 
 <!-- Home Section -->
 <section id="home">

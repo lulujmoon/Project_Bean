@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+#title {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 50px 0 60px;
+}
+
+
+#hole, #page-loading, #title-container, #title-nav, .bulletin .text h2, .bulletin .text-wrapper, .news .text h2, .news .text-wrapper {
+    text-align: center;
+}
+
+
+#title-container .text-title {
+    height: 65px;
+    width: 100%;
+    overflow: visible;
+    margin: -17px auto 0;
+    font-size: 3.1em;
+}
+*, .mdl-data-table td, .mdl-data-table th, .mdl-radio, .mdl-textfield, :after, :before {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+.text-line {
+	width: 230px;
+	height: 3px;
+	background-color: black;
+	margin: 0 auto;
+
+}
+
+

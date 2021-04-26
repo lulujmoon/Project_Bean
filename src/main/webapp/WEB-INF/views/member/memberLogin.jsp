@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
 <div class="container mt-3">
 
 
@@ -19,33 +18,40 @@
 
 				<!-- Modal body -->
 				<div class="modal-body">
-					<form action="./member/memberLogin" method="post">
+					<form action="./member/memberLogin" method="post" onsubmit="return loginCheck();">
 						<div class="form-group">
 							<label for="id">이메일</label> <input type="text"
-								class="form-control" id="idL" name="id" aria-describedby="idHelp">
-							<small id="idHelp" class="form-text text-muted"> We'll
-								never share your id with anyone else. </small>
+								class="form-control" id="idL" name="id" aria-describedby="idHelp" required>
+						<h6 id="idLResult"></h6>
 						</div>
 						<div class="form-group">
 							<label for="pw">패스워드</label> <input type="password"
-								class="form-control" id="pwL" name="pw">
+								class="form-control" id="pwL" name="pw" required>
 						</div>
+						
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input"
 								id="exampleCheck1"> <label class="form-check-label"
 								for="exampleCheck1">Check me out</label>
 						</div>
+
+						
 						<button type="submit" class="btn btn-primary">로그인</button>
+						
 					</form>
 
 				</div>
 
 				<!-- Modal footer -->
 				<div class="modal-footer">
+
+				<a href="${pageContext.request.contextPath}/member/findPw">비밀번호 분실 &gt;</a>
+				<a data-toggle="modal" data-target="#join" style="cursor:pointer;">회원가입 &gt;</a>
 					<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  -->
 				</div>
 				<a id="kakao-login-btn"></a> 
 				<a href="http://developers.kakao.com/logout">Logout</a>
+			
 
 			</div>
 		</div>
@@ -55,12 +61,19 @@
 
 
 
+
+
+
+<script type="text/javascript" src="./resources/jquery/memberLogin.js"></script>
+
+
+
+
 <!-- 
 <a href = "https://kauth.kakao.com/oauth/authorize?client_id="3764e317ada450c0e2799aab5377c09f"&redirect_uri="http://localhost/bean/member/memberLogin.jsp"&response_type=code">
         로그인
     </a>
  -->
-
 
 <script type='text/javascript'>
         //<![CDATA[
@@ -78,34 +91,4 @@
             }
         });
       //]]>
-    </script>
-
-    
-<!-- 	
-
-	<div class="container">
-		<h2>Member Login Page</h2>
-
-		<form action="./memberLogin" method="post">
-			<div class="form-group">
-				<label for="id">ID</label> 
-				<input type="text" class="form-control" id="id" name="id"
-					aria-describedby="idHelp"> 
-					<small id="idHelp" class="form-text text-muted">
-					We'll never share your id with anyone else.
-					</small>
-			</div>
-			<div class="form-group">
-				<label for="pw">Password</label> 
-				<input type="password" class="form-control" id="pw" name="pw">
-			</div>
-			<div class="form-group form-check">
-				<input type="checkbox" class="form-check-input" id="exampleCheck1">
-				<label class="form-check-label" for="exampleCheck1">Check me
-					out</label>
-			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
-
-	</div>
- -->
+</script>

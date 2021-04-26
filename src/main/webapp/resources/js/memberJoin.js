@@ -10,6 +10,26 @@ let radioResult=false; // 성별
 let nickResult=false; // 닉네임 중복확인
 
 // ******* nickname 중복 ********
+$("#join-nickname").blur(function(){
+	
+	$.get("./member/nickCheck?nickname="+$(this).val(), function(result){
+		result = result.trim();
+		
+		if(result=='0'){
+			let str = "이미 사용중입니다. 다른 닉네임을 입력해주세요.";
+			let c = "r1"
+		    $("#nickResult").html(str);
+		    $("#nickResult").attr("class", c);
+		} else {
+			str = "사용 가능한 닉네임입니다";
+			nickResult=true;
+		    $("#nickResult").html(str);
+		    $("#nickResult").attr("class", c);
+		}
+	})
+})
+
+
 
 
 // ******** ID (email) ********

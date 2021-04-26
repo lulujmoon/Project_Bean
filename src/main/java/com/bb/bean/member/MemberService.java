@@ -13,7 +13,26 @@ public class MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
 	
-
+	public MemberDTO nameCheck(MemberDTO memberDTO) throws Exception {
+		return memberDAO.nameCheck(memberDTO);
+	}
+	
+	public int update(MemberDTO memberDTO) throws Exception {
+		return memberDAO.updatePw(memberDTO);
+	}
+	
+	public MemberDTO findPw(MemberDTO memberDTO) throws Exception {
+		return memberDAO.findPw(memberDTO);
+	}
+	
+	public MemberDTO pwCheck(MemberDTO memberDTO) throws Exception {
+		return memberDAO.pwCheck(memberDTO);
+	}
+	
+	public MemberDTO nickCheck(MemberDTO memberDTO) throws Exception {
+		return memberDAO.nickCheck(memberDTO);
+	}
+	
 	public MemberDTO memberIdCheck(MemberDTO memberDTO)throws Exception{
 		return memberDAO.memberIdCheck(memberDTO);
 	}
