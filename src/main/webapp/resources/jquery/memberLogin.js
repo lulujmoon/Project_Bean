@@ -2,27 +2,12 @@
  * 
  */
 
-/*
-
-// 현재페이지 유지
-function init() {
-	alert(location.pathname + location.search);
-	document.getElementById("path").value = location.pathname + location.search;
-}
-
-
-
-*/
 
 // ******** login ********
 
 
+//ID DB확인
 let loginId = false;
-
-function idcheck(result) {
-	
-}
-	
 $("#idL").blur(function(){
 	$.get("/bean/member/idCheck?id="+$("#idL").val(), function(result){
 		result=result.trim();
@@ -42,6 +27,12 @@ $("#idL").blur(function(){
 
 	});
 
+
+
+
+
+
+//Password DB확인
 let loginPw = false;
 
 $("#pwL").blur(function(){
@@ -55,12 +46,33 @@ $("#pwL").blur(function(){
 //		console.log("비밀번호가 일치하지 않습니다")	
 	});
 //	console.log("pw : " + loginPw);
-	
 });
 
+/*
+let loginPw = false;
+document.querySelector('#pwL').addEventListener('keyup', (e)=>{
+    if (e.keyCode === 13) {
+       	$.get("/bean/member/pwCheck?id="+$("#idL").val(), function(result){
+		result=result.trim();
+		if($("#pwL").val() == result) {
+			loginPw = true;
+		}
+	});
+  }  
+});
+*/
 
 
 
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+  };
+}, true);
+
+
+
+//submit 조건 확인
 function loginCheck() {
 	
 	if(loginId && loginPw) {
@@ -76,9 +88,4 @@ function loginCheck() {
 	}		
 		return false;
 }
-
-
-
-
-
 

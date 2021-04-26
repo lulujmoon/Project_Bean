@@ -15,6 +15,7 @@ public class MemberDTO {
 	private long postcode;
 	private String addr;
 	private String addr2;
+	private char authority; // 1: 관리자, 2: 일반회원
 	
 	
 	public String getId() {
@@ -82,6 +83,12 @@ public class MemberDTO {
 	}
 	public void setAddr2(String addr2) {
 		this.addr2 = addr2;
+	}
+	public char getAuthority() {
+		return authority;
+	}
+	public void setAuthority(char authority) {
+		this.authority = authority;
 	}
 	
 	

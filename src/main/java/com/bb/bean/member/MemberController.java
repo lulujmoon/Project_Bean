@@ -2,6 +2,7 @@ package com.bb.bean.member;
 
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -157,12 +158,20 @@ public class MemberController {
 	}
 
 	@PostMapping("memberLogin")
-	public String memberLogin(MemberDTO memberDTO, HttpSession session) throws Exception {
+	public String memberLogin(MemberDTO memberDTO, HttpSession session, HttpServletRequest request) throws Exception {
 
 		memberDTO = memberService.memberLogin(memberDTO);
-		session.setAttribute("member", memberDTO);			
+		session.setAttribute("member", memberDTO);		
 		
-		return "redirect:../";
+		String referer = request.getHeader("Referer");
+		System.out.println(referer);
+		int idx = referer.indexOf("/", 16);
+		referer = referer.substring(idx);
+		System.out.println(referer);
+		request.getSession().setAttribute("redirectURI", referer);
+
+		
+		return "common/pathResult";
 	}
 
 	@GetMapping("memberLogout")

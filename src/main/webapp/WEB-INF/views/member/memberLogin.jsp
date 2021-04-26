@@ -26,7 +26,7 @@
 						</div>
 						<div class="form-group">
 							<label for="pw">패스워드</label> <input type="password"
-								class="form-control" id="pwL" name="pw" required>
+								class="form-control" id="pwL" name="pw" required >
 						</div>
 						
 						<div class="form-group form-check">
@@ -35,8 +35,9 @@
 								for="exampleCheck1">Check me out</label>
 						</div>
 
+					<!-- <input type="hidden" name="next_url" id="uri" value="${RedirectURI.referer}"> -->	
 						
-						<button type="submit" class="btn btn-primary">로그인</button>
+						<button type="submit" id="loginResult" class="btn btn-primary">로그인</button>
 						
 					</form>
 

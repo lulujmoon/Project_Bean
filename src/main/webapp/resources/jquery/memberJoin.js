@@ -59,16 +59,22 @@ if(regex.test(email) === false) {
 
 $("#emailCheck").click(function(){
 	
-	$.get("/bean/member/memberIdCheck?id="+$("#join-id").val(), function(result){
-		result = result.trim();
-		
-		if(result=='0'){
-			alert("이미 가입된 이메일입니다");
-		} else {
-			alert("사용가능한 아이디 입니다");			
-			idCheckResult=true;
-		}
-	})
+	if(emailCheckResult) {
+	
+		$.get("/bean/member/memberIdCheck?id="+$("#join-id").val(), function(result){
+			result = result.trim();
+			
+			if(result=='0'){
+				alert("이미 가입된 이메일입니다");
+			} else {
+				alert("사용가능한 아이디 입니다");			
+				idCheckResult=true;
+			}
+		})
+	
+	} else {
+		alert("이메일 형식을 확인해주세요");
+	}
 })
 
 
@@ -135,7 +141,6 @@ function submitCheck() {
 		if(radio1 || radio2) {
 			radioResult = true;
 		}
-
 
 	if(emailCheckResult && pwCheckResult && pwEqualResult && idCheckResult && radioResult) {
 		return true;
