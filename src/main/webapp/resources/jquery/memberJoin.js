@@ -12,7 +12,7 @@ let nickResult=false; 		   // 닉네임 중복확인
 // ******* nickname 중복 ********
 $("#join-nickname").blur(function(){
 	
-	$.get("./member/nickCheck?nickname="+$(this).val(), function(result){
+	$.get("/bean/member/nickCheck?nickname="+$(this).val(), function(result){
 		result = result.trim();
 		
 		if(result=='0'){
@@ -59,7 +59,7 @@ if(regex.test(email) === false) {
 
 $("#emailCheck").click(function(){
 	
-	$.get("./member/memberIdCheck?id="+$("#join-id").val(), function(result){
+	$.get("/bean/member/memberIdCheck?id="+$("#join-id").val(), function(result){
 		result = result.trim();
 		
 		if(result=='0'){

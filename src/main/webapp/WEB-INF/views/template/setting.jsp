@@ -17,4 +17,6 @@
 <!-- Main css -->
 <link rel="stylesheet" href="../resources/css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
 
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>

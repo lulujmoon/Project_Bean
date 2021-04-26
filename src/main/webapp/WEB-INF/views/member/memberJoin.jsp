@@ -20,7 +20,7 @@
 
 
 					<h2>Member Join Page</h2>
-					<form id="frm" action="./member/memberJoin" method="post" onsubmit="return submitCheck();">
+					<form id="frm" action="/bean/member/memberJoin" method="post" onsubmit="return submitCheck();">
 
 						<div class="form-group">
 							<label for="id">이메일</label> <input type="text"
@@ -135,4 +135,4 @@
 
 </div>
 
-<script type="text/javascript" src="./resources/jquery/memberJoin.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery/memberJoin.js"></script>

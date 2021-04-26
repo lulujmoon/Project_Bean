@@ -2,44 +2,29 @@
  * 
  */
 
+/*
+
+// 현재페이지 유지
+function init() {
+	alert(location.pathname + location.search);
+	document.getElementById("path").value = location.pathname + location.search;
+}
 
 
 
+*/
 
 // ******** login ********
 
 
 let loginId = false;
 
-/*$("#idL").blur(function(){
-	
-	let id = $("#idL").val();
-	
-	$.ajax({
-		url: "/.member/idcheck",
-		type: "get",
-		data: {id:id},
-		success: function(result){
-			result = result.trim();
-			if(id!=result) {
-				console.log("존재하지 않는 아이디");
-			} else{
-				loginId = true;
-			}
-			
-		}
-			});
-
-	
-	});*/
-	
-	
 function idcheck(result) {
 	
 }
 	
 $("#idL").blur(function(){
-	$.get("./member/idCheck?id="+$("#idL").val(), function(result){
+	$.get("/bean/member/idCheck?id="+$("#idL").val(), function(result){
 		result=result.trim();
 		
 		let id = $("#idL").val();
@@ -60,7 +45,7 @@ $("#idL").blur(function(){
 let loginPw = false;
 
 $("#pwL").blur(function(){
-	$.get("./member/pwCheck?id="+$("#idL").val(), function(result){
+	$.get("/bean/member/pwCheck?id="+$("#idL").val(), function(result){
 		result=result.trim();
 //		console.log(result);	
 //		console.log($("#pwL").val());
@@ -91,3 +76,9 @@ function loginCheck() {
 	}		
 		return false;
 }
+
+
+
+
+
+

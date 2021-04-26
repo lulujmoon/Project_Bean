@@ -157,15 +157,9 @@ public class MemberController {
 	}
 
 	@PostMapping("memberLogin")
-	public String memberLogin(MemberDTO memberDTO, HttpSession session) {
-		try {
-			memberDTO = memberService.memberLogin(memberDTO);
-		} catch (Exception e) {
-			MemberDTO memberDTO2 = new MemberDTO();
-			memberDTO2.setId("notExist");
-			memberDTO = memberDTO2;
-			e.printStackTrace();
-		}
+	public String memberLogin(MemberDTO memberDTO, HttpSession session) throws Exception {
+
+		memberDTO = memberService.memberLogin(memberDTO);
 		session.setAttribute("member", memberDTO);			
 		
 		return "redirect:../";

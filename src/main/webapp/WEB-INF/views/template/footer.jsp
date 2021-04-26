@@ -2,11 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Footer Section -->
-<!-- footer에만 적용하는 폰트의 링크 -->
-<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
-
 <footer>
-	<!-- footer에만 적용하는 폰트스타일 -->
      <div class="container">
           <div class="row">
 			<!-- logo -->
@@ -18,7 +14,7 @@
               	    <p style="margin-top:1rem; font-size: 0.7rem;">
               	    서울특별시 마포구 서교동 447-5 풍성빌딩 2,3,4층 | 02-1234-5678
               	    <br>
-                    <a href="mailto:youremail@gmail.com">beanbean6@gmail.com</a>
+                    <a href="mailto:youremail@gmail.com">06beanbean@gmail.com</a>
                     <br>
                     070-1234-5678
                     <br>

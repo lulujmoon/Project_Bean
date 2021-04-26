@@ -64,7 +64,7 @@
 
 
 
-<script type="text/javascript" src="./resources/jquery/memberLogin.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery/memberLogin.js"></script>
 
 
 
@@ -76,6 +76,7 @@
  -->
 
 <script type='text/javascript'>
+
         //<![CDATA[
         // 사용할 앱의 JavaScript 키를 설정해 주세요.
         Kakao.init('969c954537bd868d510e8f40a4ce5a09');
