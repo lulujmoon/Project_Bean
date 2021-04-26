@@ -62,11 +62,43 @@
 		</c:forEach>
 		
 		<div style="border:1px solid lightgrey;padding:15px;background-color:lightgrey;text-align: right;"> 
-			합계 : <span id="totalPrice">${totalPrice}</span> + 배송비 : <span id="shipping"></span> = <span id="final"></span> 
+			합계 : <span id="totalPrice">${totalPrice}</span> + 배송비 : <span class="shipping" id="shipping"></span> = <span class="final"></span> 
 		</div>
 	</div>
 	
+	
+	
+	<div id="orderDiv" class="container" style="margin-top:50px">
+		
+			<h3>배송정보</h3>
+			<p>
+			받는 분 성함 <input type="text" name="buyerName" id="buyerName" required><br>
+			전화번호 <input type="text" name="buyerTel" id="buyerTel" required><br>
+			우편번호<input type="text" name="buyerPostcode" id="postcode" readonly="readonly" required>
+			<input type="button" id="popup" value="찾기"><br>
+			주소<input type="text" name="buyerAddr" id="addr" readonly="readonly" required><br>
+			상세주소<input type="text" name="buyerAddr2" required><br>
+			</p>
+			<h3>결제정보</h3>
+			<p>
+			상품합계 : ${totalPrice}<br>
+			배송비 : <span class="shipping"></span><br>
+			<span id="point">포인트 : </span>
+			결제금액 : <span class="final" id="final"></span><br>
+			</p>
+			<p>
+			포인트 : <input type="text"> <input type="button" value="모두 사용" id="point-btn">
+			<small>보유 포인트 : </small>
+			</p>
+			<input type="button" value="결제하기" id="order-btn">
+	</div>
+	
+	
+	
 <c:import url="../template/footer.jsp"></c:import>
-	<script type="text/javascript" src="../resources/jquery/cartList.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="../resources/jquery/cartList.js"></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript" src="../resources/jquery/order.js"></script>
 </body>
 </html>

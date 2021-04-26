@@ -18,12 +18,12 @@
 		<form action="./productInsert" method="post" id="frm" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="thumbnail">썸네일</label>
-				<input type="file" name="file">
+				<input type="file" name="file" required>
 			</div>
 		
 			<div class="form-group">
 				<label for="name">상품명</label>
-				<input type="text" class="form-control" id="name" name="name" >
+				<input type="text" class="form-control" id="name" name="name" required>
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
@@ -39,33 +39,33 @@
 			</div>
 			<div class="form-group">
 				<label for="subtitle">상단 설명</label>
-				<input type="text" class="form-control myCheck" id="subtitle" name="subtitle">
+				<input type="text" class="form-control myCheck" id="subtitle" name="subtitle" required>
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
 				<label for="includes">구성품</label>
-				<input type="text" class="form-control myCheck" id="includes" name="includes" placeholder="~로 구분해주세요.">
+				<input type="text" class="form-control myCheck" id="includes" name="includes" placeholder="~로 구분해주세요." required>
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
    				 <label for="contents">상품 정보</label>
-  				 <textarea class="form-control myCheck" id="contents" name="contents"></textarea>
+  				 <textarea class="form-control myCheck" id="contents" name="contents" required></textarea>
  				<small id="conResult" class="form-text text-muted"></small>
  			</div>
  			<div class="form-group">
 				<label for="details">상세 정보</label>
-				<input type="text" class="form-control myCheck" id="details" name="details" placeholder="~로 구분해주세요.">
+				<input type="text" class="form-control myCheck" id="details" name="details" placeholder="~로 구분해주세요." required>
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
 				<label for="cartInfo">장바구니 요약</label>
-				<input type="text" class="form-control myCheck" id="cartInfo" name="cartInfo">
+				<input type="text" class="form-control myCheck" id="cartInfo" name="cartInfo" required>
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 				<div class="form-group">
 				<label for="grinds">분쇄도 옵션</label>
-				<input type="radio" name="grinds" value="O"> 네
-				<input type="radio" name="grinds" value="X"> 아니오
+				<input type="radio" name="grinds" value="O" required> 네
+				<input type="radio" name="grinds" value="X" required> 아니오
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<br>

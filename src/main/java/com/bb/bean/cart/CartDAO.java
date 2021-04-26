@@ -1,12 +1,13 @@
 package com.bb.bean.cart;
 
+import java.beans.JavaBean;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository("CartDAO")
 public class CartDAO {
 	
 	@Autowired
@@ -42,5 +43,13 @@ public class CartDAO {
 	
 	public int setDelete(CartDTO cartDTO) throws Exception {
 		return sqlSession.delete(NAMESPACE+"setDelete", cartDTO);
+	}
+	
+	public int setCartIDUpdate(CartDTO cartDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"setCartIDUpdate", cartDTO);
+	}
+	
+	public int setCartIDDelete(CartDTO cartDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setCartIDDelete", cartDTO);
 	}
 }

@@ -8,6 +8,7 @@ public class OptionsDTO {
 	private String type;
 	private long price;
 	private double discountRate;
+	private long afterPrice;
 	private long stock;
 	
 	public long getOptionNum() {
@@ -45,6 +46,12 @@ public class OptionsDTO {
 	}
 	public void setDiscountRate(double discountRate) {
 		this.discountRate = discountRate;
+	}
+	public long getAfterPrice() {
+		return afterPrice;
+	}
+	public void setAfterPrice(long afterPrice) {
+		this.afterPrice = afterPrice;
 	}
 	public long getStock() {
 		return stock;

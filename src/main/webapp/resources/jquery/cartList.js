@@ -23,18 +23,16 @@ function load(){
 /* 합계, 배송비, 총가격을 계산한다. */
 
 function calculate(){
-	if($("#totalPrice").text()>=25000){
-		$("#shipping").text("0");
-	}else if($("#totalPrice").text()==0){
-		$("#shipping").text("0");
+	if($("#totalPrice").text()>=25000||$("#totalPrice").text()==0){
+		$(".shipping").text("0");
 	}else{	
-		$("#shipping").text("3000");
+		$(".shipping").text("3000");
 	}
 	
 	let totalPrice = parseInt($("#totalPrice").text());
 	let shipping = parseInt($("#shipping").text());
 	
-	$("#final").text(totalPrice+shipping);
+	$(".final").text(totalPrice+shipping);
 }
 
 /* 페이지 로딩 시 실행 */
@@ -110,4 +108,5 @@ $(".del-btn").click(function(){
 		load();
 		calculate();
 	})
-})
+});
+

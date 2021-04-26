@@ -22,7 +22,6 @@
 	<resultMap type="CartDTO" id="listResult">
 		<id property="itemNum" column="itemNum"/>
 		<result property="cartID" column="cartID"/>
-		<result property="id" column="id"/>
 		<result property="optionNum" column="optionNum"/>
 		<result property="quantity" column="quantity"/>
 		<result property="fPrice" column="fPrice"/>
@@ -49,8 +48,8 @@
 	</select>
 
 	<insert id="setInsert" parameterType="CartDTO">
-		insert into cart (itemNum, cartID, id, optionNum, quantity, fPrice, grind)
-		values (cart_seq.nextval, #{id}, #{id}, #{optionNum}, #{quantity}, #{fPrice}, #{grind})
+		insert into cart (itemNum, cartID, optionNum, quantity, fPrice, grind)
+		values (cart_seq.nextval, #{cartID}, #{optionNum}, #{quantity}, #{fPrice}, #{grind})
 	</insert>
 		
 	<update id="setUpdate" parameterType="CartDTO">
@@ -59,6 +58,14 @@
 	
 	<delete id="setDelete" parameterType="CartDTO">
 		delete cart where itemNum=#{itemNum}
+	</delete>
+	
+	<update id="setCartIDUpdate" parameterType="CartDTO">
+		update cart set cartID=#{cartID} where itemNum=#{itemNum}
+	</update>
+	
+	<delete id="setCartIDDelete" parameterType="CartDTO">
+		delete cart where cartID=#{cartID}
 	</delete>
 	
 </mapper>

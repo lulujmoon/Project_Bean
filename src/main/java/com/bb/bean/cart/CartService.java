@@ -26,7 +26,7 @@ public class CartService {
 		OptionsDTO optionsDTO = new OptionsDTO();
 		optionsDTO.setOptionNum(cartDTO.getOptionNum());
 		optionsDTO = productDAO.getOptionsSelect(optionsDTO);
-		long finalPrice = (long)(optionsDTO.getPrice()*(1-optionsDTO.getDiscountRate()));
+		long finalPrice = optionsDTO.getAfterPrice();
 		
 		cartDTO.setfPrice(finalPrice*cartDTO.getQuantity());
 		return cartDTO;
@@ -52,10 +52,30 @@ public class CartService {
 		return cartDAO.setUpdate(cartDTO);
 	}
 	
+	public int setCartIDUpdate(String ex, String id) throws Exception {
+		//비회원 상태에서 담아둔 리스트 불러오기
+		int result = 0;
+		CartDTO exDTO = new CartDTO();
+		exDTO.setCartID(ex);
+		List<CartDTO> exs = cartDAO.getList(exDTO);
+		
+		for(CartDTO dto:exs) {
+			dto.setCartID(id);
+			result = cartDAO.setCartIDUpdate(dto);
+		}
+		
+		return result;
+	}
+	
 	//CartDTO를 삭제하고 반환
 	public CartDTO setDelete(CartDTO cartDTO) throws Exception {
 		cartDTO = cartDAO.getSelect(cartDTO);
 		cartDAO.setDelete(cartDTO);
 		return cartDTO;
 	}
+	
+	public int setCartIDDelete(CartDTO cartDTO) throws Exception {
+		return cartDAO.setCartIDDelete(cartDTO);
+	}
+	
 }

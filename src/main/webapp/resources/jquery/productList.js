@@ -37,15 +37,31 @@
   /* 옵션 불러오기 */
   let options = "";
 
-  let optionsSize = $(productDiv).find('.optionDiv').text();
-  if(optionsSize!=""){
-	  for(opt of $(productDiv).find('.optionDiv')){
-		options = options + '<input type="radio" class="optionNum" name="optionNum" value="'+$(opt).find('.optionNum').text()+'"> ';
-		options = options + $(opt).find('.type').text();
-		options = options + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₩'+$(opt).find('.price').text();
-		options = options + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+$(opt).find('.optionInfo').text()+'<br>';
+  let optionsSize = $(productDiv).find('.optionsSize').text();
+  if(optionsSize>0){
+		options = '<table class="optionTable">';
+	  	let count=1;
+	  for(opt of $(productDiv).find('.optionDiv')){	
+		options = options + '<tr><td><input type="radio" class="optionNum" name="optionNum" value="'+$(opt).find('.optionNum').text()+'" title="'+count+'"></td>';
+		options = options + '<td><span class="optType">'+$(opt).find('.type').text()+'</span></td>';
+		if($(opt).find('.afterPrice').text()!=$(opt).find('.price').text()){
+			options = options + '<td><span class="optPrice"><strike>₩'+''+$(opt).find('.price').text()+'</strike>&nbsp;&nbsp;₩';
+			options = options + $(opt).find('.afterPrice').text()+'</span></td>';
+	  	}else{
+			options = options + '<td><span class="optPrice">₩'+''+$(opt).find('.price').text()+'</span></td>';		
+		}
+		options = options + '<td class="optInfo">'+$(opt).find('.optionInfo').text()+'</td></tr>';
+		
+		count++;
 	  }	
-  }else{
+	  	options = options + '</table>';
+	  
+	  if(optionsSize==1){
+		let optionDiv = $(productDiv).find('.optionDiv');
+		$(optionDiv).find(".optionNum").attr("style", "display:none");
+	  }
+	  
+  }else if(optionsSize==0){
 	options = '<p style="color:red">현재 상품에 등록된 옵션이 없습니다.<br>옵션이 없으면 구매를 진행할 수 없습니다. 옵션을 추가해주세요.</p>';
   }
   
@@ -68,6 +84,13 @@
   modal.find('.detailsHere').html(details);
   
   
+  for(option of $('.optionsHere').find(".optionNum")){
+	  if($(option).attr("title")=='1'){
+		$(option).prop("checked", true);
+	  }	
+  }
+ 
+  
   /* 수정, 삭제, 옵션관리 버튼 설정 */
   $("#edit").click(function(){
 	location.href="./productUpdate?productNum="+productNum;
@@ -81,11 +104,17 @@
 	location.href="./optionManage?productNum="+productNum;
   });
   
-  /* 장바구니 버튼 */
-  let count = 0;
   
+  /* 맨위로 버튼 */
+  $("#toTop-btn").click(function(){
+	$(".modal").scrollTop(0);
+  });
+  
+  /* 장바구니 버튼 */  
+  $("#goCart-btn").attr("style","display:none");
+ 
   $("#cart-btn").click(function(){
-	if(count==0){
+
 		let optionNum;
 		let grind;
 		let quantity;
@@ -117,16 +146,53 @@
 			grind:grind,
 			quantity:quantity
 		}, function(result){
-			$("#cart-btn").text("장바구니 보러가기");
-			count=1;
+			$("#goCart-btn").slideDown(800);
 		});
-	}else if(count==1){
-		location.href="../cart/cartList";
-	}
-  });
+	});
   
 
+  /* 장바구니 보러가기 버튼 */
+  $("#goCart-btn").click(function(){
+	location.href="../cart/cartList";
+  });
   
-  
+  /* 구매하기 버튼 */
+    $("#order-btn").click(function(){
+
+		let optionNum;
+		let grind;
+		let quantity;
+		
+		for(opt of $(".optionNum")){
+			if($(opt).prop("checked")){
+				optionNum = $(opt).val();
+			}
+		}
+		
+		if(grinds=='X'){
+			grind=null;
+		}else{
+			for(gr of $(".grind")){
+				if($(gr).prop("selected")){
+					grind = $(gr).val();
+				}
+			}
+		}
+		
+		for(qu of $(".quantity")){
+			if($(qu).prop("selected")){
+				quantity = $(qu).val();
+			}
+		}
+		
+		$.post("../cart/cartInsert", {
+			optionNum:optionNum,
+			grind:grind,
+			quantity:quantity
+		}, function(result){
+			location.href="../cart/cartList";
+		});
+	});
+  	
 });
 /*모달 끝 */
