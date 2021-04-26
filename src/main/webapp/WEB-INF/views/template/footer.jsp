@@ -14,7 +14,7 @@
               	    <p style="margin-top:1rem; font-size: 0.7rem;">
               	    서울특별시 마포구 서교동 447-5 풍성빌딩 2,3,4층 | 02-1234-5678
               	    <br>
-                    <a href="mailto:youremail@gmail.com">beanbean6@gmail.com</a>
+                    <a href="mailto:youremail@gmail.com">06beanbean@gmail.com</a>
                     <br>
                     070-1234-5678
                     <br>
