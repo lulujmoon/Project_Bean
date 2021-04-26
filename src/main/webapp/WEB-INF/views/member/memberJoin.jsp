@@ -2,8 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-<div class="container mt-3">
+<div class="container">
 
 	<!--   The Modal -->
 	<div class="modal fade" id="join">
@@ -136,6 +135,5 @@
 	</div>
 
 </div>
-
 
 <script type="text/javascript" src="./resources/jquery/memberJoin.js"></script>
