@@ -64,33 +64,38 @@
 		<div style="border:1px solid lightgrey;padding:15px;background-color:lightgrey;text-align: right;"> 
 			합계 : <span id="totalPrice">${totalPrice}</span> + 배송비 : <span class="shipping" id="shipping"></span> = <span class="final"></span> 
 		</div>
+		
+		<input type="button" class="btn btn-warning" value="결제하기" id="orderShow-btn">
 	</div>
 	
 	
 	
-	<div id="orderDiv" class="container" style="margin-top:50px">
+	<div id="orderDiv" class="container" style="display:none">
 		
-			<h3>배송정보</h3>
-			<p>
+		<h3>배송정보</h3>
+		<p>
 			받는 분 성함 <input type="text" name="buyerName" id="buyerName" required><br>
 			전화번호 <input type="text" name="buyerTel" id="buyerTel" required><br>
 			우편번호<input type="text" name="buyerPostcode" id="postcode" readonly="readonly" required>
 			<input type="button" id="popup" value="찾기"><br>
 			주소<input type="text" name="buyerAddr" id="addr" readonly="readonly" required><br>
 			상세주소<input type="text" name="buyerAddr2" required><br>
-			</p>
+		</p>
 			<h3>결제정보</h3>
-			<p>
+		<p>
 			상품합계 : ${totalPrice}<br>
 			배송비 : <span class="shipping"></span><br>
 			<span id="point">포인트 : </span>
 			결제금액 : <span class="final" id="final"></span><br>
-			</p>
-			<p>
+		</p>
+		<p>
 			포인트 : <input type="text"> <input type="button" value="모두 사용" id="point-btn">
 			<small>보유 포인트 : </small>
-			</p>
-			<input type="button" value="결제하기" id="order-btn">
+		</p>
+		<p style="display:none">
+			<span id="id">${member.id}</span>
+		</p>
+		<input type="button" value="결제하기" id="order-btn">
 	</div>
 	
 	

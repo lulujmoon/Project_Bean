@@ -10,9 +10,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- Portfolio Section -->
 <c:import url="../template/header.jsp"></c:import>
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 
+<!-- Portfolio Section -->
 <div class="container">
 <h2 style="margin:10px;text-align:center;font-family: 'Orelega One';">Products</h2>
 

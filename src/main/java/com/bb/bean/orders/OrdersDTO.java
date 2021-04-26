@@ -5,7 +5,6 @@ import java.sql.Date;
 public class OrdersDTO {
 	
 	private long orderNum;
-	private long cartNum;
 	private String id;
 	private String orderName;
 	private Date orderDate;
@@ -24,12 +23,6 @@ public class OrdersDTO {
 	}
 	public void setOrderNum(long orderNum) {
 		this.orderNum = orderNum;
-	}
-	public long getCartNum() {
-		return cartNum;
-	}
-	public void setCartNum(long cartNum) {
-		this.cartNum = cartNum;
 	}
 	public String getId() {
 		return id;

@@ -2,7 +2,12 @@
  * 
  */
  
- 
+/* 결제 버튼 누르면 영역 보여주기 */
+$("#orderShow-btn").click(function(){
+	$("#orderDiv").slideDown(800);
+})
+
+
 
 /* 우편번호 API */
 
@@ -66,16 +71,21 @@ $("#order-btn").click(function(){
 
 		var IMP = window.IMP;
 		IMP.init('imp36227628');
-	
+		
+		let id = $("#id").text();
+		let orderName = "";
 		let amount = parseInt($("#final").text());
+		let payMethod = 'card';
 		let buyer_name = $("#buyerName").val();
 		let buyer_tel = $("#buyerTel").val();
-		let buyer_addr = $("#addr").val();
 		let buyer_postcode = $("#postcode").val();
+		let buyer_addr = $("#addr").val();
+		let buyer_addr2 = $("#addr2").val();
+		let message;
 
 		IMP.request_pay({
 		    pg : 'inicis',
-		    pay_method : 'card',
+		    pay_method : payMethod,
 		    merchant_uid : 'merchant_' + new Date().getTime(),
 		    name : '주문명:결제테스트',
 		    amount : 20,
@@ -98,7 +108,14 @@ $("#order-btn").click(function(){
 					url: "../order/orderCheck",
 					data: {
 						amount: 20,
-						imp_uid: rsp.imp_uid
+						imp_uid: rsp.imp_uid,
+						pay_method : 'card',
+					    merchant_uid : 'merchant_' + new Date().getTime(),
+					    name : '주문명:결제테스트',
+					    buyer_name : buyer_name,
+					    buyer_tel : buyer_tel,
+					    buyer_postcode : buyer_postcode,
+					    buyer_addr : buyer_addr,
 					},
 					success: function(result){
 						alert(result.trim());
