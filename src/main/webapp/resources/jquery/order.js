@@ -63,13 +63,34 @@ $("#popup").click(function(){
 
 /* 포인트 조회 및 사용 */
 
+/* 배송메세지 직접 입력 선택 시 */
+$("#msg-sel").change(function(){
+	let count = 0;
+	for(opt of $(this).children()){
+		if($(opt).prop("selected") && $(opt).text()=='직접 입력'){
+			$("#message").removeAttr("style");
+			$("#message").attr("name", "message");
+			$(this).removeAttr("name");
+			count=1;
+		}
+	}
+	
+	/* 직접 입력이 아니면 다시 사라지게 한다 */
+	if(count==0){
+		$("#message").attr("style", "display:none");
+		$("#message").removeAttr("name");
+		$(this).attr("name", "message");
+	}
+})
 
 
 /* 결제하기 */
 
+
+
+
 /* 결제 시도 시 DB에 결제 전 상태로 저장 */
 $("#order-btn").click(function(){
-	
 	let id = $("#id").val();
 	let amount = parseInt($("#final").text());
 	let payMethod = 'card';
@@ -82,6 +103,12 @@ $("#order-btn").click(function(){
 
 	let merchant_uid="";
 	let name="";
+
+	/* 비회원이면 로그인 불가 */
+	if(id==null){
+		//모달 띄우기
+	}
+	
 
 	$.ajax({
 		url: "../order/orderInsert",
@@ -111,7 +138,7 @@ $("#order-btn").click(function(){
 	    pay_method : payMethod,
 	    merchant_uid : merchant_uid,
 	    name : name,
-	    amount : 10,
+	    amount : amount,
 	    buyer_email : '',
 	    buyer_name : buyer_name,
 	    buyer_tel : buyer_tel,
@@ -141,8 +168,19 @@ $("#order-btn").click(function(){
 	    } else {
 	        var msg = '결제에 실패하였습니다.';
 	        msg += '에러내용 : ' + rsp.error_msg;
-	        alert(msg);
+
 	        //사용자가 결제를 취소하였습니다면 결제취소로 payState 바꾸는 메서드 실행
+	        $.ajax({
+				url:"../order/orderCancelled",
+				type: "POST",
+				data: {
+					orderUid: merchant_uid
+				},
+				success: function(){
+					alert(msg);
+					location.href="./cartList";
+				}
+			})
    		}
 	});
 	

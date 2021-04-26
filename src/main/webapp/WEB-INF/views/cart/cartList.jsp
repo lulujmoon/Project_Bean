@@ -10,6 +10,8 @@
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 	<div class="container">
 		<h1>Cart</h1>
 		
@@ -82,13 +84,13 @@
 			주소 <input type="text" name="buyerAddr" id="addr" readonly="readonly" required><br>
 			상세주소 <input type="text" name="buyerAddr2" id="addr2" required><br>
 			배송 메세지 
-			<select>
-				<option>배송 전에 연락 주세요.</option>
-				<option>부재 시 경비실에 맡겨주세요.</option>
-				<option>부재 시 문앞에 놔주세요.</option>
+			<select name="message" id="msg-sel">
+				<option value="배송 전에 연락 주세요.">배송 전에 연락 주세요.</option>
+				<option value="부재 시 경비실에 맡겨주세요.">부재 시 경비실에 맡겨주세요.</option>
+				<option value="부재 시 문앞에 놔주세요.">부재 시 문앞에 놔주세요.</option>
 				<option>직접 입력</option>
 			</select>
-			<input type="text" name="message" id="message"required>
+			<input type="text" id="message" style="display:none">
 		<h3>결제정보</h3>
 		<p>
 			상품합계 : ${totalPrice}<br>

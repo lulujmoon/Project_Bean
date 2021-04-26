@@ -61,4 +61,11 @@ public class OrdersController {
 
 		return mv;
 	}
+	
+	@PostMapping("orderCancelled")
+	public void orderCancelled(OrdersDTO ordersDTO) throws Exception {
+		ordersDTO.setPayState("결제취소");
+		ordersService.setPayStateUpdate(ordersDTO);
+	}
+	
 }
