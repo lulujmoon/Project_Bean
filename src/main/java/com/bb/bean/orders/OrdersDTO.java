@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class OrdersDTO {
 	
-	private long orderNum;
+	private String orderUid;
 	private String id;
 	private String orderName;
 	private Date orderDate;
@@ -18,11 +18,11 @@ public class OrdersDTO {
 	private String buyerAddr2;
 	private String message;
 	
-	public long getOrderNum() {
-		return orderNum;
+	public String getOrderUid() {
+		return orderUid;
 	}
-	public void setOrderNum(long orderNum) {
-		this.orderNum = orderNum;
+	public void setOrderUid(String orderUid) {
+		this.orderUid = orderUid;
 	}
 	public String getId() {
 		return id;

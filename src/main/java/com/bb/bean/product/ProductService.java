@@ -96,6 +96,10 @@ public class ProductService {
 		return productDAO.getOptionsList(productDTO);
 	}
 
+	public OptionsDTO getOptionsSelect(OptionsDTO optionsDTO) throws Exception {
+		return productDAO.getOptionsSelect(optionsDTO);
+	}
+	
 	public int setOptionsInsert(OptionsDTO optionsDTO) throws Exception {
 		return productDAO.setOptionsInsert(optionsDTO);
 	}
