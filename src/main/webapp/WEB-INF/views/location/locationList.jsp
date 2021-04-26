@@ -9,7 +9,6 @@
 <title>Bean Brothers Coffee</title>
 
 <link rel="stylesheet" href="../resources/css/locationList.css">
-<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- header 부분 -->
@@ -18,9 +17,8 @@
 <c:import url="../member/memberJoin.jsp"></c:import>
 <!-- list -->
 <div class="container">
-	<h4 style="color: black; font-familiy: 'Orelega One'; 
-	text-align:center; font-size: 2.7rem; font-color: black; margin-top:23px; margin-bottom: 20px; font-weight:650;"> Location </h4>
-<div style="background-color: #f2f2f2; width: 100px; height: 2px; margin: 0 auto;"></div>
+	<h4> Location </h4>
+<div class="bar"></div>
 </div>
 <div style="text-align: center; margin: 20px 0 20px 0;">
 		<a href="./locationSelect?storeName=빈브라더스 합정점">합정</a> | 

@@ -3,6 +3,21 @@
   /*  LocationList  */          
 
 
+h4 {
+	text-align: center;
+	font-size: 2.7rem;
+	color: black;
+	margin-top: 23px;
+	margin-bottom: 20px;
+}
+
+.bar{
+	 background-color: #f2f2f2;
+	 width: 100px;
+	 height: 2px;
+	 margin: 0 auto;
+}
+
 #portfolio_list small {
   color: #f0f0f0;
   font-size: 12px;
