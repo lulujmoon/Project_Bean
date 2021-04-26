@@ -18,7 +18,7 @@
 
 				<!-- Modal body -->
 				<div class="modal-body">
-					<form action="./member/memberLogin" method="post" onsubmit="return loginCheck();">
+					<form action="/bean/member/memberLogin" method="post" onsubmit="return loginCheck();">
 						<div class="form-group">
 							<label for="id">이메일</label> <input type="text"
 								class="form-control" id="idL" name="id" aria-describedby="idHelp" required>
@@ -64,7 +64,7 @@
 
 
 
-<script type="text/javascript" src="./resources/jquery/memberLogin.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery/memberLogin.js"></script>
 
 
 

@@ -39,7 +39,7 @@ function idcheck(result) {
 }
 	
 $("#idL").blur(function(){
-	$.get("./member/idCheck?id="+$("#idL").val(), function(result){
+	$.get("/bean/member/idCheck?id="+$("#idL").val(), function(result){
 		result=result.trim();
 		
 		let id = $("#idL").val();
@@ -60,7 +60,7 @@ $("#idL").blur(function(){
 let loginPw = false;
 
 $("#pwL").blur(function(){
-	$.get("./member/pwCheck?id="+$("#idL").val(), function(result){
+	$.get("/bean/member/pwCheck?id="+$("#idL").val(), function(result){
 		result=result.trim();
 //		console.log(result);	
 //		console.log($("#pwL").val());
