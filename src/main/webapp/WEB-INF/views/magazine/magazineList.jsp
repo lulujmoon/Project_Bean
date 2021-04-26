@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
 				<h2>MAGAZINE</h2>
-				<hr>
+				<hr class="hrList">
 				<h6>스토리</h6>
 			</div>
 		</div>
@@ -38,12 +38,19 @@
 								
 								<h5 class="col-md-12" id="modal-category">${dto.category}</h5>
 								<h5 class="col-md-12" id="modal-title">${dto.title}</h5>
+								<hr class="hrShort">
 								
 							</div>
 
 							<!-- Modal body -->
-							<div class="modal-body">${dto.contents}</div>
+							<div class="subTitle">${dto.subTitle}
+							
+							</div>
 
+							<div class="modal-body">
+							<hr>
+							${dto.contents}</div>
+							
 							<!-- Modal footer -->
 							<div class="modal-footer">
 								<button type="button" class="btn btn-danger"
