@@ -2,9 +2,6 @@
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Header -->
-<!-- header에만 적용하는 폰트 링크 -->
-<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
-
  <div class="navbar-header navbar-default navbar-static-top"role="navigation">
    <!-- header에만 적용하는 폰트 스타일 -->
    <div class="container" style="font-family: 'Orelega One';">
