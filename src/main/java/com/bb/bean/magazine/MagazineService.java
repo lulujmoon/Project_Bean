@@ -22,17 +22,31 @@ public class MagazineService {
 	
 	public int magazineInsert(MagazineDTO magazineDTO,MultipartFile file)throws Exception{
 		
+		long num = magazineDAO.getNum();
+		String fileName = fileManager.save("magazineT", file, session);
+		magazineDTO.setNum(num);
+		MagazineFileDTO magazineFileDTO = new MagazineFileDTO();
+		magazineFileDTO.setNum(num);
+		magazineFileDTO.setOrigineName(file.getOriginalFilename());
+		magazineFileDTO.setFileName(fileName);
+		
+		int result=magazineDAO.magazineInsert(magazineDTO);
+		result = magazineDAO.setFileInsert(magazineFileDTO);
+				
+		return result;
+	}
+	
+	public int magazineUpdate(MagazineDTO magazineDTO,MultipartFile file)throws Exception{
 		String fileName = fileManager.save("magazineT", file, session);
 		long num = magazineDAO.getNum();
 		magazineDTO.setNum(num);
 		MagazineFileDTO magazineFileDTO = new MagazineFileDTO();
 		magazineFileDTO.setNum(num);
-		magazineFileDTO.setFileName(fileName);
 		magazineFileDTO.setOrigineName(file.getOriginalFilename());
+		magazineFileDTO.setFileName(fileName);
 		
-		int result=magazineDAO.magazineInsert(magazineDTO);
-		result = magazineDAO.setFileInsert(magazineFileDTO);
-		
+		int result=magazineDAO.magazineUpdate(magazineDTO);
+		result=magazineDAO.setFileInsert(magazineFileDTO);
 		
 		return result;
 	}

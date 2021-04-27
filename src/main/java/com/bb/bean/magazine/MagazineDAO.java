@@ -18,6 +18,10 @@ public class MagazineDAO {
 	public int magazineInsert(MagazineDTO magazineDTO)throws Exception{
 		return sqlSession.insert(NAMESPACE+"magazineInsert",magazineDTO);		
 	}
+	
+	public int magazineUpdate(MagazineDTO magazineDTO)throws Exception{
+		return sqlSession.update(NAMESPACE+"magazineUpdate",magazineDTO);
+	}
 
 	public MagazineDTO magazineSelect(MagazineDTO magazineDTO)throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"magazineSelect",magazineDTO);

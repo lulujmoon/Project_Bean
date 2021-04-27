@@ -42,6 +42,23 @@ public class MagazineController {
 		
 	}
 	
+	@GetMapping("magazineUpdate")
+	public ModelAndView magazineUpdate(MagazineDTO magazineDTO)throws Exception{
+		magazineDTO=magazineService.magazineSelect(magazineDTO);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("dto",magazineDTO);
+		mv.setViewName("magazine/magazineUpdate");
+		return mv;
+	}
+	
+	@PostMapping("magazineUpdate")
+	public ModelAndView magazineUpdate(MagazineDTO magazineDTO,MultipartFile file)throws Exception{
+		ModelAndView mv = new ModelAndView();	
+		magazineService.magazineUpdate(magazineDTO, file);
+		mv.setViewName("redirect:./magazineList");
+		return mv;
+	}
+	
 	@GetMapping("magazineSelect")
 	public ModelAndView magazineSelect(MagazineDTO magazineDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();

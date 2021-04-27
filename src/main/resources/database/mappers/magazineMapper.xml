@@ -10,6 +10,10 @@
 insert into magazine(num,title,subtitle,contents)values(#{num},#{title},#{subTitle},#{contents})
 </insert>
 
+<update id="magazineUpdate" parameterType="MagazineDTO">
+update magazine set title=#{title},subTitle=#{subTitle},contents=#{contents} where num=#{num}
+</update>
+
 <select id= "magazineSelect" parameterType="MagazineDTO" resultMap="selectResult">
 select M.*,MF.*
 from magazine M left join magazineFiles MF
@@ -41,7 +45,7 @@ on M.num = MF.num
 <!-- 썸네일 파일 인서트/딜리트 (썸머노트아님) -->
 
 <insert id="setFileInsert" parameterType="MagazineFileDTO">
-insert into magazineFiles values (magazine_seq.nextval, #{num}, #{fileName}, #{origineName})
+insert into magazineFiles values (MAGAZINEFILE_seq.nextval, #{num}, #{fileName}, #{origineName})
 </insert>
 
 <delete id="setFileDelete" parameterType="MagazineFileDTO">

@@ -53,6 +53,7 @@
 							
 							<!-- Modal footer -->
 							<div class="modal-footer">
+								<a href="./magazineUpdate?num=${dto.num}"><button type="button" class="btn btn-danger">Update</button></a>
 								<button type="button" class="btn btn-danger"
 									data-dismiss="modal">Close</button>
 							</div>
