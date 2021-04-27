@@ -15,6 +15,10 @@ public class MagazineDAO {
 	private SqlSession sqlSession;	
 	private final String NAMESPACE = "com.bb.bean.magazine.MagazineDAO.";
 	
+	public int magazineUpdate(MagazineDTO magazineDTO)throws Exception{
+		return sqlSession.update(NAMESPACE+"magazineUpdate",magazineDTO);
+	}
+	
 	public int magazineInsert(MagazineDTO magazineDTO)throws Exception{
 		return sqlSession.insert(NAMESPACE+"magazineInsert",magazineDTO);		
 	}

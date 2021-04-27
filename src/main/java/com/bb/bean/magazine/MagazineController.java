@@ -17,6 +17,23 @@ public class MagazineController {
 	@Autowired
 	private MagazineService magazineService;
 	
+	@GetMapping("magazineUpdate")
+	public ModelAndView magazineUpdate(MagazineDTO magazineDTO, ModelAndView mv)throws Exception{
+		magazineDTO = magazineService.magazineSelect(magazineDTO);
+		mv.addObject("dto",magazineDTO);
+		mv.setViewName("magazine/magazineUpdate");
+		return mv;
+	}
+	
+	@PostMapping("magazineUpdate")
+	public ModelAndView magazineUpdate(MagazineDTO magazineDTO)throws Exception{
+		ModelAndView mv = new ModelAndView(); 
+		int result =magazineService.magazineUpdate(magazineDTO);
+		mv.setViewName("redirect:./magazineList");
+		return mv;
+		
+	}
+	
 	@GetMapping("magazineList")
 	public ModelAndView MagazineList(MagazineDTO magazineDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
