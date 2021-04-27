@@ -63,7 +63,7 @@ document.querySelector('#pwL').addEventListener('keyup', (e)=>{
 */
 
 
-
+//enter키 submit방지
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
