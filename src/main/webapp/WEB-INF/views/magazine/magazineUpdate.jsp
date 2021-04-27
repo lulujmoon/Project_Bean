@@ -36,7 +36,7 @@
 					name="contents" value="${dto.contents}"></textarea>
 			</div>
 
-			<input type="submit" id="btn" value="Write" class="btn btn-success">
+			<input type="submit" id="btn" value="Update" class="btn btn-success">
 		</form>
 
 </div>

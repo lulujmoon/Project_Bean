@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.bb.bean.product.ProductDTO;
+import com.bb.bean.product.ProductFileDTO;
 import com.bb.bean.util.FileManager;
 
 @Service
@@ -36,21 +38,6 @@ public class MagazineService {
 		return result;
 	}
 	
-	public int magazineUpdate(MagazineDTO magazineDTO,MultipartFile file)throws Exception{
-		String fileName = fileManager.save("magazineT", file, session);
-		long num = magazineDAO.getNum();
-		magazineDTO.setNum(num);
-		MagazineFileDTO magazineFileDTO = new MagazineFileDTO();
-		magazineFileDTO.setNum(num);
-		magazineFileDTO.setOrigineName(file.getOriginalFilename());
-		magazineFileDTO.setFileName(fileName);
-		
-		int result=magazineDAO.magazineUpdate(magazineDTO);
-		result=magazineDAO.setFileInsert(magazineFileDTO);
-		
-		return result;
-	}
-
 	public MagazineDTO magazineSelect(MagazineDTO magazineDTO)throws Exception{
 		return magazineDAO.magazineSelect(magazineDTO);
 	}
