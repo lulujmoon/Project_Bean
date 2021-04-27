@@ -10,6 +10,8 @@
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 	<div class="container">
 		<h1>Cart</h1>
 		
@@ -64,33 +66,47 @@
 		<div style="border:1px solid lightgrey;padding:15px;background-color:lightgrey;text-align: right;"> 
 			합계 : <span id="totalPrice">${totalPrice}</span> + 배송비 : <span class="shipping" id="shipping"></span> = <span class="final"></span> 
 		</div>
+		
+		<input type="button" class="btn btn-warning" value="결제하기" id="orderShow-btn">
 	</div>
 	
 	
 	
-	<div id="orderDiv" class="container" style="margin-top:50px">
+	<div id="orderDiv" class="container" style="display:none">
 		
+		<form action="../order/orderInsert" method="post" id="frm">
 			<h3>배송정보</h3>
-			<p>
+			<input type="radio" id="load-addr" name="addr-btn"> 회원정보에서 불러오기
+			<input type="radio" id="new-addr" name="addr-btn"> 직접 입력 <br>		
+			<span style="display:none"><input type="text" name="id" value="${member.id}" id="id"></span>
 			받는 분 성함 <input type="text" name="buyerName" id="buyerName" required><br>
 			전화번호 <input type="text" name="buyerTel" id="buyerTel" required><br>
-			우편번호<input type="text" name="buyerPostcode" id="postcode" readonly="readonly" required>
+			우편번호 <input type="text" name="buyerPostcode" id="postcode" readonly="readonly" required>
 			<input type="button" id="popup" value="찾기"><br>
-			주소<input type="text" name="buyerAddr" id="addr" readonly="readonly" required><br>
-			상세주소<input type="text" name="buyerAddr2" required><br>
-			</p>
-			<h3>결제정보</h3>
-			<p>
+			주소 <input type="text" name="buyerAddr" id="addr" readonly="readonly" required><br>
+			상세주소 <input type="text" name="buyerAddr2" id="addr2" required><br>
+			<input type="checkbox" id="save-addr"> 회원정보에 저장 <br>
+			배송 메세지 
+			<select name="message" id="msg-sel">
+				<option value="배송 전에 연락 주세요." class="msg-opt">배송 전에 연락 주세요.</option>
+				<option class="msg-opt">부재 시 경비실에 맡겨주세요.</option>
+				<option class="msg-opt">부재 시 문앞에 놔주세요.</option>
+				<option>직접 입력</option>
+			</select>
+			<input type="text" id="message" style="display:none">
+		<h3>결제정보</h3>
+		<p>
 			상품합계 : ${totalPrice}<br>
 			배송비 : <span class="shipping"></span><br>
 			<span id="point">포인트 : </span>
 			결제금액 : <span class="final" id="final"></span><br>
-			</p>
-			<p>
-			포인트 : <input type="text"> <input type="button" value="모두 사용" id="point-btn">
-			<small>보유 포인트 : </small>
-			</p>
-			<input type="button" value="결제하기" id="order-btn">
+			결제방식 : 
+			<select name="payMethod">
+				<option value="card">신용카드</option>
+			</select>
+		</p>
+		<input type="button" value="결제하기" id="order-btn">
+		</form>
 	</div>
 	
 	
@@ -99,6 +115,24 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="../resources/jquery/cartList.js"></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript">
+	/* 주소 입력 선택 */
+	$("#new-addr").click(function(){
+		$("#buyerName").val("");
+		$("#buyerTel").val("");
+		$("#postcode").val("");
+		$("#addr").val("");
+		$("#addr2").val("");
+	});
+	
+	$("#load-addr").click(function(){
+		$("#buyerName").val("${member.name}");
+		$("#buyerTel").val("${member.tel}");
+		$("#postcode").val("${member.postcode}");
+		$("#addr").val("${member.addr}");
+		$("#addr2").val("${member.addr2}");
+	});
+</script>
 <script type="text/javascript" src="../resources/jquery/order.js"></script>
 </body>
 </html>

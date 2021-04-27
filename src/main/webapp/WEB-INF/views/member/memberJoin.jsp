@@ -100,7 +100,7 @@
 								class="check" value="" required>동의
 							</label>
 						</div>
-						<div class="jumbotron">
+						<div class="jumbotron" style="overflow-y:scroll;height:50px">
 							<div>
 								<h1 class="display-4">개인정보수집 및 이용에 대한 안내</h1>
 								<p class="lead">This is a simple hero unit, a simple

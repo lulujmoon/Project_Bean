@@ -2,7 +2,20 @@
  * 
  */
  
- 
+/* 결제 버튼 누르면 영역 보여주기 */
+$("#orderShow-btn").click(function(){
+	let id=$("#id").val();
+	/* 비회원이면 구매 불가 */
+	if(id==""){
+		//모달 띄우기
+		$("#login").modal();
+	}else{
+		$("#orderDiv").slideDown(800);		
+	}
+	
+});
+
+
 
 /* 우편번호 API */
 
@@ -58,57 +71,128 @@ $("#popup").click(function(){
 
 /* 포인트 조회 및 사용 */
 
+/* 배송메세지 직접 입력 선택 시 */
 
-
-/* 결제하기 */
-
-$("#order-btn").click(function(){
-
-		var IMP = window.IMP;
-		IMP.init('imp36227628');
+$("#msg-sel").change(function(){
+	let count = 0;
+	for(opt of $(this).children()){
+		if($(opt).prop("selected") && $(opt).text()=='직접 입력'){
+			$("#message").removeAttr("style");
+			$("#message").attr("name", "message");
+			$(this).removeAttr("name");
+			count=1;
+		}
+	}
 	
-		let amount = parseInt($("#final").text());
-		let buyer_name = $("#buyerName").val();
-		let buyer_tel = $("#buyerTel").val();
-		let buyer_addr = $("#addr").val();
-		let buyer_postcode = $("#postcode").val();
+	/* 직접 입력이 아니면 다시 사라지게 한다 */
+	if(count==0){
+		$("#message").attr("style", "display:none");
+		$("#message").removeAttr("name");
+		$(this).attr("name", "message");
+	}
+})
 
-		IMP.request_pay({
-		    pg : 'inicis',
-		    pay_method : 'card',
-		    merchant_uid : 'merchant_' + new Date().getTime(),
-		    name : '주문명:결제테스트',
-		    amount : 20,
-		    buyer_email : '',
-		    buyer_name : buyer_name,
-		    buyer_tel : buyer_tel,
-		    buyer_addr : buyer_addr,
-		    buyer_postcode : buyer_postcode,
-		    m_redirect_url : 'http://localhost/bean/'
-		}, function(rsp) {
-		    if ( rsp.success ) {
-		        var msg = '결제가 완료되었습니다.';
-		        msg += '고유ID : ' + rsp.imp_uid;
-		        msg += '상점 거래ID : ' + rsp.merchant_uid;
-		        msg += '결제 금액 : ' + rsp.paid_amount;
-		        msg += '카드 승인번호 : ' + rsp.apply_num;
-		        
-		        $.ajax({
-					type: "post",
-					url: "../order/orderCheck",
-					data: {
-						amount: 20,
-						imp_uid: rsp.imp_uid
-					},
-					success: function(result){
-						alert(result.trim());
-						location.href="./order/orderResult";
-					}
-				});
-		    } else {
-		        var msg = '결제에 실패하였습니다.';
-		        msg += '에러내용 : ' + rsp.error_msg;
-		        alert(msg);
-	    }
+
+/************* 결제하기 **************/
+
+
+/* 결제 시도 시 DB에 결제 전 상태로 저장 */
+$("#order-btn").click(function(){
+	let id = $("#id").val();
+	let amount = parseInt($("#final").text());
+	let payMethod = 'card';
+	let buyer_name = $("#buyerName").val();
+	let buyer_tel = $("#buyerTel").val();
+	let buyer_postcode = $("#postcode").val();
+	let buyer_addr = $("#addr").val();
+	let buyer_addr2 = $("#addr2").val();
+	let message = $("#message").val();
+	if(message==""){
+		for(msg of $(".msg-opt")){
+			if($(msg).prop("selected")){
+				message = $(msg).val();				
+			}			
+		}
+	}
+
+	let merchant_uid="";
+	let name="";
+
+	let save_addr = $("#save-addr").prop("checked");
+
+	$.ajax({
+		url: "../order/orderInsert",
+		type: 'POST',
+		data: {			
+		 id:id,
+		 payMethod:payMethod,
+		 buyerName:buyer_name,
+		 buyerTel:buyer_tel,
+		 buyerPostcode:buyer_postcode,
+		 buyerAddr:buyer_addr,
+		 buyerAddr2:buyer_addr2,
+		 message:message,
+		 save_addr:save_addr
+		},
+		async: false,
+		success: function(result){
+			resultArr = result.trim().split('-');
+			merchant_uid = resultArr[0];
+			name = resultArr[1];
+		}
 	});
+
+	var IMP = window.IMP;	
+	IMP.init('imp36227628');
+	IMP.request_pay({
+	    pg : 'inicis',
+	    pay_method : payMethod,
+	    merchant_uid : merchant_uid,
+	    name : name,
+	    amount : amount,
+	    buyer_email : '',
+	    buyer_name : buyer_name,
+	    buyer_tel : buyer_tel,
+	    buyer_addr : buyer_addr,
+	    buyer_postcode : buyer_postcode,
+	    m_redirect_url : 'http://localhost/bean/'
+	}, function(rsp) {
+	    if ( rsp.success ) {
+	        var msg = '결제가 완료되었습니다.';
+	        msg += '고유ID : ' + rsp.imp_uid;
+	        msg += '상점 거래ID : ' + rsp.merchant_uid;
+	        msg += '결제 금액 : ' + rsp.paid_amount;
+	        msg += '카드 승인번호 : ' + rsp.apply_num;
+	        
+	        $.ajax({
+				url:"../order/orderCheck",
+				type:"POST",
+				data: {
+					orderUid: merchant_uid,
+					imp_uid: rsp.imp_uid
+				},
+				success: function(result){
+					alert(result.trim());
+					location.href="../";
+				}
+			})
+	    } else {
+	        var msg = '결제에 실패하였습니다.';
+	        msg += '에러내용 : ' + rsp.error_msg;
+
+	        //사용자가 결제를 취소하였습니다면 결제취소로 payState 바꾸는 메서드 실행
+	        $.ajax({
+				url:"../order/orderCancelled",
+				type: "POST",
+				data: {
+					orderUid: merchant_uid
+				},
+				success: function(){
+					alert(msg);
+					location.href="./cartList";
+				}
+			})
+   		}
+	});
+	
 })
