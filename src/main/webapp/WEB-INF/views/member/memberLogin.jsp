@@ -50,9 +50,13 @@
 				<a data-toggle="modal" data-target="#join" style="cursor:pointer;">회원가입 &gt;</a>
 					<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  -->
 				</div>
-				<a id="kakao-login-btn"></a> 
+				
+				<a href="https://kauth.kakao.com/oauth/authorize?client_id=8ff76055d95974b4011e5f3f9ce21531&redirect_uri=http://localhost/bean/member/auth/kakao/callback&response_type=code&scope=account_email"><img src="${pageContext.request.contextPath}/resources/images/kakao_login_button.png"></a>
+	
+<!-- 	
+ 				<a id="kakao-login-btn"></a> 
 				<a href="http://developers.kakao.com/logout">Logout</a>
-			
+			 -->
 
 			</div>
 		</div>
@@ -71,13 +75,13 @@
 
 
 <!-- 
-<a href = "https://kauth.kakao.com/oauth/authorize?client_id="3764e317ada450c0e2799aab5377c09f"&redirect_uri="http://localhost/bean/member/memberLogin.jsp"&response_type=code">
+<a href = "https://kauth.kakao.com/oauth/authorize?client_id="969c954537bd868d510e8f40a4ce5a09"&redirect_uri="http://localhost/bean/member/memberLogin.jsp"&response_type=code">
         로그인
     </a>
  -->
 
 <script type='text/javascript'>
-
+<!--
         //<![CDATA[
         // 사용할 앱의 JavaScript 키를 설정해 주세요.
         Kakao.init('969c954537bd868d510e8f40a4ce5a09');
@@ -93,4 +97,5 @@
             }
         });
       //]]>
+  -->
 </script>
