@@ -265,6 +265,7 @@
 							</div>
 						</div>
 
+
 						<!-- <div class="form-check"> -->
 						<label class="form-check-label"> 
 							<span>개인정보수집 및 이용에 대한 안내&nbsp;&nbsp;&nbsp;&nbsp;</span> <input type="checkbox"
@@ -326,6 +327,7 @@
 5) 웹사이트 방문기록<br>
 - 보존근거:통신비밀보호법-보존기간:3개월<br>
 다. 기타 회원님의 개별적인 동의가 있는 경우에는 개별 동의에 따른 기간까지 보관합니다.</p>
+
 								<p class="lead">
 									<a class="btn btn-primary btn" href="#" role="button">Learn
 										more</a>
