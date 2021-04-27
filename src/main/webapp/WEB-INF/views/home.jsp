@@ -34,127 +34,57 @@
 	<c:import url="./member/memberLogin.jsp"></c:import>
 	<c:import url="./member/memberJoin.jsp"></c:import>
 
-	<div class="container">
-		<!-- Home Section -->
-		<section id="home">
-			<div class="container">
-				<div class="row">
 
-					<div class="col-md-12 col-sm-12">
-						<h2>어쩌구 저쩌구 큰 내용 :)</h2>
-						<hr>
-					</div>
-				</div>
-			</div>
-		</section>
+		<!-- Single Project Section -->
+
+<div>
+	<img src="./resources/images/인천.jpg" style="width: 100%; object-fit: cover;">
+</div>
+<section id="single-project">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12 col-sm-12">
+                    <h1>Bean Bean Coffee</h1>
+                    <p>
+                    <h3>Your personal coffee guide</h3>
+                    </p>             
 
 
-		<!-- Portfolio Section -->
-		<section id="portfolio">
-			<div class="container">
-				<div class="row">
+                    <div class="col-md-6 col-sm-6">
+                         <img src="./resources/images/product_img.jpg" class="img-responsive">
+                    </div>
 
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img1.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Brand Identity</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+                    <div class="col-md-6 col-sm-6">
+                         <img src="./resources/images/portfolio-img3.jpg" class="img-responsive">
+                    </div>
 
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img2.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Web Development</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+                    <div class="clearfix"></div>
 
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img3.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Mobile App</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+                    <div class="col-md-4 col-sm-4">
+                         <h3>Role</h3>
+                         <p>Brand Identity</p>
+                    </div>
 
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img4.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Logo Design</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+                    <div class="col-md-4 col-sm-4">
+                         <h3>Date</h3>
+                         <p>December, 2015</p>
+                    </div>
 
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img5.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Social marketing</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+                    <div class="col-md-4 col-sm-4">
+                         <h3>Agency</h3>
+                         <p>Client Name here</p>
+                    </div>
 
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img6.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Fyler Design</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+                    <div class="col-md-12 col-sm-12 text-center">
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                         <strong>James Otto ( Project Manager )..</strong>
+                    </div>
+               </div>
 
-					<div class="col-md-12 col-sm-12 text-center">
-						<h3>
-							hello, if you interest working together. just send message <a
-								href="#">contact page</a>
-						</h3>
-					</div>
-
-				</div>
-			</div>
-		</section>
-	</div>
+          </div>
+     </div>
+</section>
 
 	<!-- footer 영역 -->
 	<c:import url="./template/footer.jsp"></c:import>
