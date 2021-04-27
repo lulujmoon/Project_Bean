@@ -52,5 +52,8 @@ public class MemberDAO {
 		return sqlSession.delete(NAMESPACE+"memberDelete", memberDTO);
 	}
 	
-	
+	/* 배송정보 관련 */
+	public int addrUpdate(MemberDTO memberDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"addrUpdate", memberDTO);
+	}
 }
