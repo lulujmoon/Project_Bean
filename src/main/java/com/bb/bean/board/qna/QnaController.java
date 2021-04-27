@@ -36,7 +36,7 @@ public class QnaController {
 		ModelAndView mv = new ModelAndView();
 		List<BoardDTO> ar= qnaService.memberQna(boardDTO);
 		mv.addObject("list",ar);
-		mv.setViewName("member/memberQna");
+		mv.setViewName("/member/memberQna");
 		return mv;
 	}
 	
