@@ -15,7 +15,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- Main css -->
-<link rel="stylesheet" href="./resources/css/style.css">
+<link rel="stylesheet" href="./resources/css/home.css">
 
 <!-- Join css 
 <link rel="stylesheet" href="./resources/css/join.css">
@@ -35,56 +35,107 @@
 	<c:import url="./member/memberJoin.jsp"></c:import>
 
 
-		<!-- Single Project Section -->
+	<!-- Home -->
 
-<div>
-	<img src="./resources/images/인천.jpg" style="width: 100%; object-fit: cover;">
-</div>
-<section id="single-project">
+	<div>
+		<img src="./resources/images/인천.jpg"
+			style="width: 100%; object-fit: cover;">
+	</div>
+<section id="home">
      <div class="container">
           <div class="row">
 
                <div class="col-md-12 col-sm-12">
-                    <h1>Bean Bean Coffee</h1>
-                    <p>
-                    <h3>Your personal coffee guide</h3>
-                    </p>             
+                    <h2>Bean Brothers Coffee</h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+<div class="col-md-12">
+	<h3>취향에 맞는 다양한 원두를 경험해보세요</h3>
+</div>
+          </div>
+     </div>
+</section>
+
+<!-- Portfolio Section -->
+
+<section id="portfolio">
+     <div class="container">
+          <div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="subtitle" style="text-align: right;">
+                        <h2> 5월의 커피 </h2>
+                        <hr>
+                        <normal>따뜻한 봄을 맞이하기 좋은 커피</normal> 
+					</div>
+               </div>
+
+               <div class="col-md-offset-1 col-md-7 col-sm-offset-1 col-sm-5">
+                    <a href="${pageContext.request.contextPath}/magazine/magazineList">
+                         <div class="portfolio-thumb">
+                              <img src="./resources/images/a하남.jpg" class="img-responsive" alt="Portfolio" style="width: 100%;">
+                                   <div class="portfolio-overlay">     
+                                        <div class="portfolio-item">
+                                             <h2> Magazine </h2>
+                                             <normal>새로운 소식</normal>
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
+               <div class="col-md-offset-1 col-md-7 col-sm-offset-1 col-sm-5">
+                    <a href="${pageContext.request.contextPath}/product/productList">
+                         <div class="portfolio-thumb">
+                              <img src="./resources/images/product_img.jpg" class="img-responsive" alt="Portfolio" style="width: 100%;">
+                                   <div class="portfolio-overlay">
+                                        <div class="portfolio-item">
+                                             <h2>Shop</h2>
+                                             <normal>원두 구매</normal>
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+					<div class="subtitle">
+                        <h2> Shop </h2>
+                        <hr>
+                        <normal>나만을 위한 맞춤 원두</normal> 
+					</div>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+					<div class="subtitle" style="text-align:right;">
+                        <h2> 매장 안내 </h2>
+                        <hr>
+                        <normal>원두를 직접 맛보고 구매하실 수 있습니다</normal> 
+					</div>
+               </div>
+
+               <div class="col-md-offset-1 col-md-7 col-sm-offset-1 col-sm-5">
+                    <a href="${pageContext.request.contextPath}/location/locationList">
+                         <div class="portfolio-thumb">
+                              <img src="./resources/images/b합정.jpg" class="img-responsive" alt="Portfolio" style="width: 100%;">
+                                   <div class="portfolio-overlay">                     
+                                        <div class="portfolio-item">
+                                             <h2>Location</h2>
+                                             <normal>찾아오시는 길</normal>   
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
 
 
-                    <div class="col-md-6 col-sm-6">
-                         <img src="./resources/images/product_img.jpg" class="img-responsive">
-                    </div>
-
-                    <div class="col-md-6 col-sm-6">
-                         <img src="./resources/images/portfolio-img3.jpg" class="img-responsive">
-                    </div>
-
-                    <div class="clearfix"></div>
-
-                    <div class="col-md-4 col-sm-4">
-                         <h3>Role</h3>
-                         <p>Brand Identity</p>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                         <h3>Date</h3>
-                         <p>December, 2015</p>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                         <h3>Agency</h3>
-                         <p>Client Name here</p>
-                    </div>
-
-                    <div class="col-md-12 col-sm-12 text-center">
-                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                         <strong>James Otto ( Project Manager )..</strong>
-                    </div>
+               <div class="col-md-12 col-sm-12 text-center">
+                    <h3>커피에 대한 인식, 바리스타에 대한 인식을 바꿉니다.</h3>
                </div>
 
           </div>
      </div>
 </section>
+
 
 	<!-- footer 영역 -->
 	<c:import url="./template/footer.jsp"></c:import>
