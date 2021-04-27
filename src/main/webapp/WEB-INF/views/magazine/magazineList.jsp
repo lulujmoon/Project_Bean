@@ -23,6 +23,7 @@
 		</div>
 
 		<div class="brick-section-container">
+		
 			<c:forEach items="${list}" var="dto">
 				<a href="#" data-toggle="modal" data-target="#myModal${dto.num}"> <img
 					src="../resources/upload/magazineT/${dto.listImage.fileName}"
