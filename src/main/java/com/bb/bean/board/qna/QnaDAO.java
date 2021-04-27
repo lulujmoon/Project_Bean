@@ -22,6 +22,11 @@ public class QnaDAO implements BoardDAO{
 	public List<BoardDTO> getList(Pager pager) throws Exception {
 		return sqlSession.selectList(NAMESPACE+"getList",pager);
 	}
+	
+	public List<BoardDTO> memberQnaList(BoardDTO boardDTO)throws Exception{
+		return sqlSession.selectList(NAMESPACE+"memberQna",boardDTO);
+	}
+	
 	@Override
 	public long getTotalCount(Pager pager) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"getTotalCount",pager);

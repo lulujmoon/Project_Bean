@@ -25,6 +25,10 @@
 		order by ref desc, step asc) Q)
 		where R between #{startRow} and #{lastRow}
 	</select>
+	
+	<select id="memberQna" resultType="QnaDTO" parameterType="BoardDTO">
+	select * from qna where writer=#{writer}
+	</select>
 
 	<select id="getTotalCount" resultType="long"
 		parameterType="Pager">

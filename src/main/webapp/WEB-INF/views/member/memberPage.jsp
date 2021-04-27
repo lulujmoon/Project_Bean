@@ -39,7 +39,7 @@
 						class="ko">정기/간편주문</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberPoint"><span
 						class="ko">포인트</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberQna"><span
+						href="${pageContext.request.contextPath}/qna/qnaList?curPage=1&kind=Writer&search=id1"><span
 						class="ko">문의</span></a>
 				</nav>
 			</div>

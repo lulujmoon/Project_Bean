@@ -31,6 +31,15 @@ public class QnaController {
 		return mv;
 	}
 	
+	@GetMapping("memberQna")
+	public ModelAndView memberQnaList(BoardDTO boardDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<BoardDTO> ar= qnaService.memberQna(boardDTO);
+		mv.addObject("list",ar);
+		mv.setViewName("member/memberQna");
+		return mv;
+	}
+	
 	@GetMapping("qnaSelect")
 	public ModelAndView getSelect(BoardDTO boardDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -111,6 +120,8 @@ public class QnaController {
 		mv.setViewName("common/ajaxResult");
 		return mv;
 	}
+	
+	
 			
 	}
 	
