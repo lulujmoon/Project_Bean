@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import com.bb.bean.cart.CartDAO;
 import com.bb.bean.cart.CartDTO;
+import com.bb.bean.member.MemberDAO;
+import com.bb.bean.member.MemberDTO;
 import com.bb.bean.product.OptionsDTO;
 import com.bb.bean.product.ProductDAO;
 import com.bb.bean.product.ProductDTO;
@@ -34,6 +36,9 @@ public class OrdersService {
 	CartDAO cartDAO;
 	@Autowired
 	ProductDAO productDAO;
+	@Autowired
+	MemberDAO memberDAO;
+
 	
 	IamportClient client;
 
@@ -77,10 +82,22 @@ public class OrdersService {
 		
 		return ordersDTO.getOrderUid()+"-"+ordersDTO.getOrderName();
 	}
+
+	public int addrUpdate(OrdersDTO ordersDTO) throws Exception {
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setId(ordersDTO.getId());
+		memberDTO.setTel(ordersDTO.getBuyerTel());
+		memberDTO.setPostcode(ordersDTO.getBuyerPostcode());
+		memberDTO.setAddr(ordersDTO.getBuyerAddr());
+		memberDTO.setAddr2(ordersDTO.getBuyerAddr2());
+		
+		return memberDAO.addrUpdate(memberDTO);
+	}
 	
 	public OrdersDTO getSelect(OrdersDTO ordersDTO) throws Exception {
 		return ordersDAO.getSelect(ordersDTO);
 	}
+	
 	
 	public int setPayStateUpdate(OrdersDTO ordersDTO) throws Exception {
 		return ordersDAO.setPayStateUpdate(ordersDTO);
@@ -176,6 +193,24 @@ public class OrdersService {
 		
 		return result;
 	}
+	
+	/* 결제 성공 시 재고 감소 */
+	public void setUpdateStock(OrdersDTO ordersDTO) throws Exception {
+		CartDTO cartDTO = new CartDTO();
+		cartDTO.setCartID(ordersDTO.getId());
+		List<CartDTO> caList = cartDAO.getList(cartDTO);
+		for(CartDTO ca:caList) {
+			OptionsDTO optionsDTO = new OptionsDTO();
+			optionsDTO.setOptionNum(ca.getOptionNum());
+			optionsDTO = productDAO.getOptionsSelect(optionsDTO);
+			
+			long quantity = optionsDTO.getStock()-ca.getQuantity();
+			optionsDTO.setStock(quantity);
+			
+			productDAO.setOptionsUpdate(optionsDTO);
+		}
+	}
+	
 	
 	public void cancelPaymentChecksumByImpUid(String imp_uid) {
 		CancelData cancel_data = new CancelData(imp_uid, true); //imp_uid를 통한 전액취소

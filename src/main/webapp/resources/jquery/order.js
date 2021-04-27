@@ -4,8 +4,16 @@
  
 /* 결제 버튼 누르면 영역 보여주기 */
 $("#orderShow-btn").click(function(){
-	$("#orderDiv").slideDown(800);
-})
+	let id=$("#id").val();
+	/* 비회원이면 구매 불가 */
+	if(id==""){
+		//모달 띄우기
+		$("#login").modal();
+	}else{
+		$("#orderDiv").slideDown(800);		
+	}
+	
+});
 
 
 
@@ -64,6 +72,7 @@ $("#popup").click(function(){
 /* 포인트 조회 및 사용 */
 
 /* 배송메세지 직접 입력 선택 시 */
+
 $("#msg-sel").change(function(){
 	let count = 0;
 	for(opt of $(this).children()){
@@ -84,9 +93,7 @@ $("#msg-sel").change(function(){
 })
 
 
-/* 결제하기 */
-
-
+/************* 결제하기 **************/
 
 
 /* 결제 시도 시 DB에 결제 전 상태로 저장 */
@@ -100,15 +107,18 @@ $("#order-btn").click(function(){
 	let buyer_addr = $("#addr").val();
 	let buyer_addr2 = $("#addr2").val();
 	let message = $("#message").val();
+	if(message==""){
+		for(msg of $(".msg-opt")){
+			if($(msg).prop("selected")){
+				message = $(msg).val();				
+			}			
+		}
+	}
 
 	let merchant_uid="";
 	let name="";
 
-	/* 비회원이면 로그인 불가 */
-	if(id==null){
-		//모달 띄우기
-	}
-	
+	let save_addr = $("#save-addr").prop("checked");
 
 	$.ajax({
 		url: "../order/orderInsert",
@@ -121,7 +131,8 @@ $("#order-btn").click(function(){
 		 buyerPostcode:buyer_postcode,
 		 buyerAddr:buyer_addr,
 		 buyerAddr2:buyer_addr2,
-		 message:message
+		 message:message,
+		 save_addr:save_addr
 		},
 		async: false,
 		success: function(result){
