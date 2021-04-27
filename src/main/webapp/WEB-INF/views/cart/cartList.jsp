@@ -64,7 +64,7 @@
 		</c:forEach>
 		
 		<div style="border:1px solid lightgrey;padding:15px;background-color:lightgrey;text-align: right;"> 
-			합계 : <span id="totalPrice">${totalPrice}</span> + 배송비 : <span class="shipping" id="shipping"></span> = <span class="final"></span> 
+			합계 : <span id="totalPrice">${totalPrice}</span> + 배송비 : <span class="shipping" id="shipping"></span> = <span id="finalPrice"></span> 
 		</div>
 		
 		<input type="button" class="btn btn-warning" value="결제하기" id="orderShow-btn">
@@ -98,8 +98,9 @@
 		<p>
 			상품합계 : ${totalPrice}<br>
 			배송비 : <span class="shipping"></span><br>
-			<span id="point">포인트 : </span>
-			결제금액 : <span class="final" id="final"></span><br>
+			<span><input type="text" id="point-use"></span><input type="button" value="모두 사용" id="point-btn"><br>
+			<small>보유 포인트 : <span id="max-point">${member.point}</span></small><br>
+			결제금액 : <span id="amount"></span><br>
 			결제방식 : 
 			<select name="payMethod">
 				<option value="card">신용카드</option>

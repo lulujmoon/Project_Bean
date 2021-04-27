@@ -56,4 +56,9 @@ public class MemberDAO {
 	public int setAddrUpdate(MemberDTO memberDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"addrUpdate", memberDTO);
 	}
+	
+	/* 포인트 적립 관련 */
+	public int setPointUpdate(MemberDTO memberDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"setPointUpdate", memberDTO);
+	}
 }

@@ -13,8 +13,9 @@ $("#orderShow-btn").click(function(){
 		$("#orderDiv").slideDown(800);		
 	}
 	
+	$("#amount").text($("#finalPrice").text());
+	
 });
-
 
 
 /* 우편번호 API */
@@ -70,6 +71,32 @@ $("#popup").click(function(){
 
 
 /* 포인트 조회 및 사용 */
+$("#point-btn").click(function(){
+	$("#point-use").val($("#max-point").text());
+	
+	let amount = parseInt($("#finalPrice").text()) - parseInt($("#point-use").val());
+	if(amount<0){
+		amount=0;
+		$("#point-use").val(parseInt($("#finalPrice").text()));
+	}
+	$("#amount").text(amount);
+});
+
+$("#point-use").change(function(){
+	if(parseInt($(this).val())>parseInt($("#max-point").text())){
+		$(this).val($("#max-point").text());
+	}
+	
+	let amount = parseInt($("#finalPrice").text()) - parseInt($(this).val());
+	if(amount<0){
+		amount=0;
+		$("#point-use").val(parseInt($("#finalPrice").text()));
+	}
+	$("#amount").text(amount);
+});
+
+
+
 
 /* 배송메세지 직접 입력 선택 시 */
 
@@ -99,7 +126,7 @@ $("#msg-sel").change(function(){
 /* 결제 시도 시 DB에 결제 전 상태로 저장 */
 $("#order-btn").click(function(){
 	let id = $("#id").val();
-	let amount = parseInt($("#final").text());
+	let amount = parseInt($("#amount").text());
 	let payMethod = 'card';
 	let buyer_name = $("#buyerName").val();
 	let buyer_tel = $("#buyerTel").val();
@@ -113,6 +140,10 @@ $("#order-btn").click(function(){
 				message = $(msg).val();				
 			}			
 		}
+	}
+	let usePoint = $("#point-use").val();
+	if(usePoint==""){
+		usePoint = 0;
 	}
 
 	let merchant_uid="";
@@ -141,58 +172,64 @@ $("#order-btn").click(function(){
 			name = resultArr[1];
 		}
 	});
-
-	var IMP = window.IMP;	
-	IMP.init('imp36227628');
-	IMP.request_pay({
-	    pg : 'inicis',
-	    pay_method : payMethod,
-	    merchant_uid : merchant_uid,
-	    name : name,
-	    amount : amount,
-	    buyer_email : '',
-	    buyer_name : buyer_name,
-	    buyer_tel : buyer_tel,
-	    buyer_addr : buyer_addr,
-	    buyer_postcode : buyer_postcode,
-	    m_redirect_url : 'http://localhost/bean/'
-	}, function(rsp) {
-	    if ( rsp.success ) {
-	        var msg = '결제가 완료되었습니다.';
-	        msg += '고유ID : ' + rsp.imp_uid;
-	        msg += '상점 거래ID : ' + rsp.merchant_uid;
-	        msg += '결제 금액 : ' + rsp.paid_amount;
-	        msg += '카드 승인번호 : ' + rsp.apply_num;
-	        
-	        $.ajax({
-				url:"../order/orderCheck",
-				type:"POST",
-				data: {
-					orderUid: merchant_uid,
-					imp_uid: rsp.imp_uid
-				},
-				success: function(result){
-					alert(result.trim());
-					location.href="../";
-				}
-			})
-	    } else {
-	        var msg = '결제에 실패하였습니다.';
-	        msg += '에러내용 : ' + rsp.error_msg;
-
-	        //사용자가 결제를 취소하였습니다면 결제취소로 payState 바꾸는 메서드 실행
-	        $.ajax({
-				url:"../order/orderCancelled",
-				type: "POST",
-				data: {
-					orderUid: merchant_uid
-				},
-				success: function(){
-					alert(msg);
-					location.href="./cartList";
-				}
-			})
-   		}
-	});
 	
+	
+	if(amount!=0){
+		
+		var IMP = window.IMP;	
+		IMP.init('imp36227628');
+		IMP.request_pay({
+		    pg : 'inicis',
+		    pay_method : payMethod,
+		    merchant_uid : merchant_uid,
+		    name : name,
+		    amount : amount,
+		    buyer_email : '',
+		    buyer_name : buyer_name,
+		    buyer_tel : buyer_tel,
+		    buyer_addr : buyer_addr,
+		    buyer_postcode : buyer_postcode,
+		    m_redirect_url : 'http://localhost/bean/'
+		}, function(rsp) {
+		    if ( rsp.success ) {
+		        var msg = '결제가 완료되었습니다.';
+		        msg += '고유ID : ' + rsp.imp_uid;
+		        msg += '상점 거래ID : ' + rsp.merchant_uid;
+		        msg += '결제 금액 : ' + rsp.paid_amount;
+		        msg += '카드 승인번호 : ' + rsp.apply_num;
+		        
+		        $.ajax({
+					url:"../order/orderCheck",
+					type:"POST",
+					data: {
+						orderUid: merchant_uid,
+						imp_uid: rsp.imp_uid,
+						usePoint: usePoint
+					},
+					success: function(result){
+						alert(result.trim());
+						location.href="../";
+					}
+				})
+		    } else {
+		        var msg = '결제에 실패하였습니다.';
+		        msg += '에러내용 : ' + rsp.error_msg;
+	
+		        //사용자가 결제를 취소하였습니다면 결제취소로 payState 바꾸는 메서드 실행
+		        $.ajax({
+					url:"../order/orderCancelled",
+					type: "POST",
+					data: {
+						orderUid: merchant_uid
+					},
+					success: function(){
+						alert(msg);
+						location.href="./cartList";
+					}
+				})
+	   		}
+		});
+	}else{
+
+	}
 })

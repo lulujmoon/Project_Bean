@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+<mapper namespace ="com.bb.bean.point.PointDAO">
+
+	<select id="getList" parameterType="PointDTO" resultType="PointDTO">
+		select * from point where id=#{id}
+	</select>
+
+	<insert id="setInsert" parameterType="PointDTO">
+		insert into point (pointNum, id, regDate, sort, detail, savePoint, usePoint, restPoint)
+		values (point_seq.nextval, #{id}, sysdate, #{sort}, #{detail}, #{savePoint,jdbcType=INTEGER}, #{usePoint,jdbcType=INTEGER}, #{restPoint})
+	</insert>
+
+</mapper>

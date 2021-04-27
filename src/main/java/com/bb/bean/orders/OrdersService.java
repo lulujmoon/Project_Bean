@@ -16,6 +16,8 @@ import com.bb.bean.member.MemberDAO;
 import com.bb.bean.member.MemberDTO;
 import com.bb.bean.orderDetails.OrderDetailsDAO;
 import com.bb.bean.orderDetails.OrderDetailsDTO;
+import com.bb.bean.point.PointDAO;
+import com.bb.bean.point.PointDTO;
 import com.bb.bean.product.OptionsDTO;
 import com.bb.bean.product.ProductDAO;
 import com.bb.bean.product.ProductDTO;
@@ -42,6 +44,8 @@ public class OrdersService {
 	MemberDAO memberDAO;
 	@Autowired
 	OrderDetailsDAO orderDetailsDAO;
+	@Autowired
+	PointDAO pointDAO;
 	
 	IamportClient client;
 
@@ -86,15 +90,14 @@ public class OrdersService {
 		return ordersDTO.getOrderUid()+"-"+ordersDTO.getOrderName();
 	}
 
-	public int setAddrUpdate(OrdersDTO ordersDTO) throws Exception {
-		MemberDTO memberDTO = new MemberDTO();
-		memberDTO.setId(ordersDTO.getId());
+	public MemberDTO setAddrUpdate(OrdersDTO ordersDTO, MemberDTO memberDTO) throws Exception {
 		memberDTO.setTel(ordersDTO.getBuyerTel());
 		memberDTO.setPostcode(ordersDTO.getBuyerPostcode());
 		memberDTO.setAddr(ordersDTO.getBuyerAddr());
 		memberDTO.setAddr2(ordersDTO.getBuyerAddr2());
 		
-		return memberDAO.setAddrUpdate(memberDTO);
+		memberDAO.setAddrUpdate(memberDTO);
+		return memberDTO;
 	}
 	
 	public OrdersDTO getSelect(OrdersDTO ordersDTO) throws Exception {
@@ -143,6 +146,43 @@ public class OrdersService {
 		cartDAO.setCartIDDelete(cartDTO);		
 	}
 	
+	/* 결제 성공 시 포인트 적립과 차감 및 회원정보에 반영, 최종적으로 변경된 포인트를 반환 */
+	public long setPointInsert(OrdersDTO ordersDTO, long usePoint, long restPoint) throws Exception {
+		
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setId(ordersDTO.getId());
+		memberDTO.setPoint(restPoint);	//적립할 때 쓴다. 지우지 말 것
+		
+		/* 포인트 차감 */
+		if(usePoint!=0) {
+			PointDTO pointDTO = new PointDTO();
+			pointDTO.setId(ordersDTO.getId());
+			pointDTO.setSort("구매 차감");
+			pointDTO.setDetail("["+ordersDTO.getOrderUid()+"] 구매에 사용");
+			pointDTO.setUsePoint(usePoint);
+			pointDTO.setRestPoint(restPoint-pointDTO.getUsePoint());
+			pointDAO.setInsert(pointDTO);
+
+			memberDTO.setPoint(pointDTO.getRestPoint());
+			memberDAO.setPointUpdate(memberDTO);
+		}
+
+
+		/* 포인트 적립 */
+		PointDTO pointDTO = new PointDTO();
+		pointDTO.setId(ordersDTO.getId());
+		pointDTO.setSort("구매 적립");
+		pointDTO.setDetail("["+ordersDTO.getOrderUid()+"] 구매로 적립");
+		pointDTO.setSavePoint((long)(ordersDTO.getAmount()*0.3));
+		pointDTO.setRestPoint(memberDTO.getPoint()+pointDTO.getSavePoint());
+		pointDAO.setInsert(pointDTO);
+		
+		memberDTO.setPoint(pointDTO.getRestPoint());
+		memberDAO.setPointUpdate(memberDTO);
+		
+		return pointDTO.getRestPoint();		
+	}
+	
 	public void getToken() {	
 		
 		try {
@@ -168,21 +208,21 @@ public class OrdersService {
 	}
 	
 	
-	public String paymentByImpUid(String imp_uid, OrdersDTO ordersDTO){
+	public String paymentByImpUid(String imp_uid, long usePoint, OrdersDTO ordersDTO){
 		
 		String result = "";
 		
 		try {
 			IamportResponse<Payment> payment_response = client.paymentByImpUid(imp_uid);
 
-			System.out.println("보낸 가격 : "+ordersDTO.getAmount());
+			System.out.println("보낸 가격 : "+(ordersDTO.getAmount()-usePoint));
 			System.out.println("받은 가격 : "+payment_response.getResponse().getAmount());
 			System.out.println("결제 상태 : "+payment_response.getResponse().getStatus());
 			
 			
 			if(payment_response.getResponse().getStatus().equals("paid")) {
 				long resAmount = payment_response.getResponse().getAmount().longValue();
-				if(ordersDTO.getAmount()==resAmount) {
+				if((ordersDTO.getAmount()-usePoint)==resAmount) {
 					result = "결제 성공";
 				}else {
 					result = "결제 금액 불일치";

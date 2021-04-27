@@ -32,7 +32,7 @@ function calculate(){
 	let totalPrice = parseInt($("#totalPrice").text());
 	let shipping = parseInt($("#shipping").text());
 	
-	$(".final").text(totalPrice+shipping);
+	$("#finalPrice").text(totalPrice+shipping);
 }
 
 /* 페이지 로딩 시 실행 */
