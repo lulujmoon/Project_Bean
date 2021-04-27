@@ -36,9 +36,12 @@ public class QnaService implements BoardService {
 	}
 	
 	public List<BoardDTO> memberQna(BoardDTO boardDTO) throws Exception{	
-		boardDTO.setWriter((String) session.getAttribute("member"));
+		MemberDTO memberDTO = new MemberDTO();
 		
-		return qnaDAO.memberQnaList(boardDTO);
+		memberDTO=(MemberDTO)session.getAttribute("member");
+		boardDTO.setWriter(memberDTO.getId());
+	
+		return qnaDAO.memberQna(boardDTO);
 	}
 
 	@Override

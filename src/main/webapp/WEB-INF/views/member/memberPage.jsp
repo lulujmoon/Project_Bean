@@ -39,7 +39,7 @@
 						class="ko">정기/간편주문</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberPoint"><span
 						class="ko">포인트</span></a> | <a
-						href="${pageContext.request.contextPath}/qna/qnaList?curPage=1&kind=Writer&search=id1"><span
+						href="${pageContext.request.contextPath}/member/memberQna"><span
 						class="ko">문의</span></a>
 				</nav>
 			</div>
@@ -77,7 +77,7 @@
 				<a href="${pageContext.request.contextPath}/member/memberPoint" class="mainpage-mobile-menu"> 내 포인트
 					<div class="mainpage-mobile-menu-right arrow"></div>
 				</a> 
-				<a href="${pageContext.request.contextPath}/member/memberQna" class="mainpage-mobile-menu"> 문의내역 조회
+				<a href="${pageContext.request.contextPath}/qna/memberQna" class="mainpage-mobile-menu"> 문의내역 조회
 					<div class="mainpage-mobile-menu-right arrow"></div>
 				</a>
 			</div>

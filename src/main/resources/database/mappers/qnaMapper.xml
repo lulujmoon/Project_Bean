@@ -27,7 +27,7 @@
 	</select>
 	
 	<select id="memberQna" resultType="QnaDTO" parameterType="BoardDTO">
-	select * from qna where writer=#{writer}
+	select * from qna where ref in(select ref from qna where writer=#{writer}) order by ref desc, step asc
 	</select>
 
 	<select id="getTotalCount" resultType="long"

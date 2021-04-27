@@ -32,11 +32,11 @@ public class QnaController {
 	}
 	
 	@GetMapping("memberQna")
-	public ModelAndView memberQnaList(BoardDTO boardDTO)throws Exception{
+	public ModelAndView memberQna(BoardDTO boardDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		List<BoardDTO> ar= qnaService.memberQna(boardDTO);
 		mv.addObject("list",ar);
-		mv.setViewName("/member/memberQna");
+		mv.setViewName("member/memberQna");
 		return mv;
 	}
 	

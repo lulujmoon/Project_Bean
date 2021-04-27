@@ -23,7 +23,7 @@ public class QnaDAO implements BoardDAO{
 		return sqlSession.selectList(NAMESPACE+"getList",pager);
 	}
 	
-	public List<BoardDTO> memberQnaList(BoardDTO boardDTO)throws Exception{
+	public List<BoardDTO> memberQna(BoardDTO boardDTO)throws Exception{
 		return sqlSession.selectList(NAMESPACE+"memberQna",boardDTO);
 	}
 	
