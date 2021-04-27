@@ -51,7 +51,7 @@
 	
 	
 	<!-- 배송정보 관련 쿼리문 추가 -->
-	<update id="addrUpdate" parameterType="MemberDTO">
+	<update id="setAddrUpdate" parameterType="MemberDTO">
 		update member set tel=#{tel}, postcode=#{postcode}, addr=#{addr}, addr2=#{addr2} where id=#{id}
 	</update>
 	

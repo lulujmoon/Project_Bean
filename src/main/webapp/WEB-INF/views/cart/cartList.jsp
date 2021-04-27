@@ -58,7 +58,7 @@
 				</select>
 			</span>
 			<div>
-			상품가격 : ${item.fPrice}				
+			상품가격 : ${item.finalPrice}				
 			</div>
 		</div>
 		</c:forEach>

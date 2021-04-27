@@ -23,6 +23,8 @@
 		<typeAlias type="java.lang.Long" alias="Long"/>
 		<typeAlias type="com.bb.bean.member.MemberDTO" alias="MemberDTO" />
 		<typeAlias type="com.bb.bean.orders.OrdersDTO" alias="OrdersDTO"/>
+		<typeAlias type="com.bb.bean.orderDetails.OrderDetailsDTO" alias="OrderDetailsDTO"/>
+		
 	</typeAliases>
 </configuration>
 

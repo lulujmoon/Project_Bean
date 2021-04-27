@@ -86,25 +86,25 @@
 
 	<!-- Options -->
 	
-	<select id="getOptionsList" parameterType="ProductDTO" resultType="OptionsDTO">
+	<select id="getOptionList" parameterType="ProductDTO" resultType="OptionsDTO">
 		select * from options where productNum=#{productNum}
 		order by optionNum asc
 	</select>
 	
-	<select id="getOptionsSelect" parameterType="OptionsDTO" resultType="OptionsDTO">
+	<select id="getOptionSelect" parameterType="OptionsDTO" resultType="OptionsDTO">
 		select * from options where optionNum=#{optionNum}
 	</select>
 	
-	<insert id="setOptionsInsert" parameterType="OptionsDTO">
+	<insert id="setOptionInsert" parameterType="OptionsDTO">
 		insert into options (optionNum, productNum, type, optionInfo, stock, price, discountRate, afterPrice)
 		values (options_seq.nextval, #{productNum}, #{type}, #{optionInfo}, #{stock}, #{price}, #{discountRate}, #{afterPrice})
 	</insert>
 	
-	<update id="setOptionsUpdate" parameterType="OptionsDTO">
+	<update id="setOptionUpdate" parameterType="OptionsDTO">
 		update options set type=#{type}, optionInfo=#{optionInfo}, stock=#{stock}, price=#{price}, discountRate=#{discountRate}, afterPrice=#{afterPrice} where optionNum=#{optionNum}
 	</update>
 	
-	<delete id="setOptionsDelete" parameterType="OptionsDTO">
+	<delete id="setOptionDelete" parameterType="OptionsDTO">
 		delete options where optionNum=#{optionNum}
 	</delete>
 	

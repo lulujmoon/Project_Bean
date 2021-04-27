@@ -53,7 +53,7 @@ public class MemberDAO {
 	}
 	
 	/* 배송정보 관련 */
-	public int addrUpdate(MemberDTO memberDTO) throws Exception {
+	public int setAddrUpdate(MemberDTO memberDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"addrUpdate", memberDTO);
 	}
 }

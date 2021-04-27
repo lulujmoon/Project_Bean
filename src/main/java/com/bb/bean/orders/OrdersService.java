@@ -14,6 +14,8 @@ import com.bb.bean.cart.CartDAO;
 import com.bb.bean.cart.CartDTO;
 import com.bb.bean.member.MemberDAO;
 import com.bb.bean.member.MemberDTO;
+import com.bb.bean.orderDetails.OrderDetailsDAO;
+import com.bb.bean.orderDetails.OrderDetailsDTO;
 import com.bb.bean.product.OptionsDTO;
 import com.bb.bean.product.ProductDAO;
 import com.bb.bean.product.ProductDTO;
@@ -38,7 +40,8 @@ public class OrdersService {
 	ProductDAO productDAO;
 	@Autowired
 	MemberDAO memberDAO;
-
+	@Autowired
+	OrderDetailsDAO orderDetailsDAO;
 	
 	IamportClient client;
 
@@ -64,7 +67,7 @@ public class OrdersService {
 		
 		OptionsDTO optionsDTO = new OptionsDTO();
 		optionsDTO.setOptionNum(optionNum);
-		optionsDTO = productDAO.getOptionsSelect(optionsDTO);
+		optionsDTO = productDAO.getOptionSelect(optionsDTO);
 		ProductDTO productDTO = new ProductDTO();
 		productDTO.setProductNum(optionsDTO.getProductNum());
 		productDTO = productDAO.getSelect(productDTO);
@@ -83,7 +86,7 @@ public class OrdersService {
 		return ordersDTO.getOrderUid()+"-"+ordersDTO.getOrderName();
 	}
 
-	public int addrUpdate(OrdersDTO ordersDTO) throws Exception {
+	public int setAddrUpdate(OrdersDTO ordersDTO) throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId(ordersDTO.getId());
 		memberDTO.setTel(ordersDTO.getBuyerTel());
@@ -91,7 +94,7 @@ public class OrdersService {
 		memberDTO.setAddr(ordersDTO.getBuyerAddr());
 		memberDTO.setAddr2(ordersDTO.getBuyerAddr2());
 		
-		return memberDAO.addrUpdate(memberDTO);
+		return memberDAO.setAddrUpdate(memberDTO);
 	}
 	
 	public OrdersDTO getSelect(OrdersDTO ordersDTO) throws Exception {
@@ -104,6 +107,42 @@ public class OrdersService {
 		
 	}
 
+	/* 결제 성공 시 재고 감소 */
+	public void setStockUpdate(OrdersDTO ordersDTO) throws Exception {
+		CartDTO cartDTO = new CartDTO();
+		cartDTO.setCartID(ordersDTO.getId());
+		List<CartDTO> caList = cartDAO.getList(cartDTO);
+		for(CartDTO ca:caList) {
+			OptionsDTO optionsDTO = new OptionsDTO();
+			optionsDTO.setOptionNum(ca.getOptionNum());
+			optionsDTO = productDAO.getOptionSelect(optionsDTO);
+			
+			long quantity = optionsDTO.getStock()-ca.getQuantity();
+			optionsDTO.setStock(quantity);
+			
+			productDAO.setOptionUpdate(optionsDTO);
+		}
+	}
+	
+	/* 결제 성공 시 장바구니 리스트 오더디테일로 복사하고 삭제 */
+	public void shiftCartList(OrdersDTO ordersDTO) throws Exception {
+		CartDTO cartDTO = new CartDTO();
+		cartDTO.setCartID(ordersDTO.getId());
+		List<CartDTO> caList = cartDAO.getList(cartDTO);
+		for(CartDTO ca:caList) {
+			OrderDetailsDTO orderDetailsDTO = new OrderDetailsDTO();
+			orderDetailsDTO.setOrderUid(ordersDTO.getOrderUid());
+			orderDetailsDTO.setOptionNum(ca.getOptionNum());
+			orderDetailsDTO.setQuantity(ca.getQuantity());
+			orderDetailsDTO.setFinalPrice(ca.getFinalPrice());
+			orderDetailsDTO.setGrind(ca.getGrind());
+			orderDetailsDTO.setShippingState("배송전");
+			
+			orderDetailsDAO.setInsert(orderDetailsDTO);			
+		}
+		cartDAO.setCartIDDelete(cartDTO);		
+	}
+	
 	public void getToken() {	
 		
 		try {
@@ -194,22 +233,6 @@ public class OrdersService {
 		return result;
 	}
 	
-	/* 결제 성공 시 재고 감소 */
-	public void setUpdateStock(OrdersDTO ordersDTO) throws Exception {
-		CartDTO cartDTO = new CartDTO();
-		cartDTO.setCartID(ordersDTO.getId());
-		List<CartDTO> caList = cartDAO.getList(cartDTO);
-		for(CartDTO ca:caList) {
-			OptionsDTO optionsDTO = new OptionsDTO();
-			optionsDTO.setOptionNum(ca.getOptionNum());
-			optionsDTO = productDAO.getOptionsSelect(optionsDTO);
-			
-			long quantity = optionsDTO.getStock()-ca.getQuantity();
-			optionsDTO.setStock(quantity);
-			
-			productDAO.setOptionsUpdate(optionsDTO);
-		}
-	}
 	
 	
 	public void cancelPaymentChecksumByImpUid(String imp_uid) {

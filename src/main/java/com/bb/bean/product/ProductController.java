@@ -95,7 +95,7 @@ public class ProductController {
 	
 	@GetMapping("optionManage")
 	public void setOptionsManage(ProductDTO productDTO, Model model) throws Exception {
-		List<OptionsDTO> li = productService.getOptionsList(productDTO);
+		List<OptionsDTO> li = productService.getOptionList(productDTO);
 		productDTO = productService.getSelect(productDTO);
 		model.addAttribute("list", li);
 		model.addAttribute("product", productDTO);
@@ -103,14 +103,14 @@ public class ProductController {
 	
 	@PostMapping("optionInsert")
 	public String setOptionsInsert(OptionsDTO optionsDTO) throws Exception {
-		productService.setOptionsInsert(optionsDTO);
+		productService.setOptionInsert(optionsDTO);
 		return "redirect:./optionManage?productNum="+optionsDTO.getProductNum();
 	}
 	
 	@PostMapping("optionUpdate")
 	public ModelAndView setOptionsUpdate(OptionsDTO optionsDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		int result = productService.setOptionsUpdate(optionsDTO);
+		int result = productService.setOptionUpdate(optionsDTO);
 		
 		mv.addObject("result", result);
 		mv.setViewName("common/ajaxResult");
@@ -121,7 +121,7 @@ public class ProductController {
 	@PostMapping("optionDelete")
 	public ModelAndView setOptionDelete(OptionsDTO optionsDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		int result = productService.setOptionsDelete(optionsDTO);
+		int result = productService.setOptionDelete(optionsDTO);
 		
 		mv.addObject("result", result);
 		mv.setViewName("common/ajaxResult");

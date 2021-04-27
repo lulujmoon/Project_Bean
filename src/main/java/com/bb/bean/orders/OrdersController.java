@@ -22,12 +22,12 @@ public class OrdersController {
 	CartService cartService;
 	
 	@PostMapping("orderInsert")
-	public ModelAndView orderInsert(OrdersDTO ordersDTO, boolean save_addr) throws Exception {
+	public ModelAndView setInsert(OrdersDTO ordersDTO, boolean save_addr) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		String result = ordersService.setInsert(ordersDTO);
 		
 		if(save_addr) {
-			ordersService.addrUpdate(ordersDTO);
+			ordersService.setAddrUpdate(ordersDTO);
 		}
 		
 		mv.addObject("result", result);
@@ -38,7 +38,7 @@ public class OrdersController {
 	
 	
 	@PostMapping("orderCheck")
-	public ModelAndView orderCheck(String imp_uid, String orderUid) throws Exception {
+	public ModelAndView getCheck(String imp_uid, String orderUid) throws Exception {
 		OrdersDTO ordersDTO = new OrdersDTO();
 		ordersDTO.setOrderUid(orderUid);
 		ordersDTO = ordersService.getSelect(ordersDTO);
@@ -52,11 +52,8 @@ public class OrdersController {
 			ordersService.setPayStateUpdate(ordersDTO);
 			result = "결제가 완료되었습니다.";
 			
-			ordersService.setUpdateStock(ordersDTO);
-			
-			CartDTO cartDTO = new CartDTO();
-			cartDTO.setCartID(ordersDTO.getId());
-			cartService.setCartIDDelete(cartDTO);
+			ordersService.setStockUpdate(ordersDTO);
+			ordersService.shiftCartList(ordersDTO);
 			
 		}else {
 			ordersService.cancelPaymentChecksumByImpUid(imp_uid);
