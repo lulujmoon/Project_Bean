@@ -23,7 +23,9 @@ public class MagazineService {
 	private FileManager fileManager;
 	
 	public int magazineUpdate(MagazineDTO magazineDTO)throws Exception{
-		return magazineDAO.magazineUpdate(magazineDTO);
+		
+		int result= magazineDAO.magazineUpdate(magazineDTO);
+		return result;
 	}
 	
 	public int magazineInsert(MagazineDTO magazineDTO,MultipartFile file)throws Exception{

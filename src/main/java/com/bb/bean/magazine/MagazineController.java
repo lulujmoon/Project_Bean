@@ -29,6 +29,7 @@ public class MagazineController {
 	public ModelAndView magazineUpdate(MagazineDTO magazineDTO)throws Exception{
 		ModelAndView mv = new ModelAndView(); 
 		int result =magazineService.magazineUpdate(magazineDTO);
+		System.out.println(result);
 		mv.setViewName("redirect:./magazineList");
 		return mv;
 		

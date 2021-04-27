@@ -16,7 +16,16 @@ public class MagazineDAO {
 	private final String NAMESPACE = "com.bb.bean.magazine.MagazineDAO.";
 	
 	public int magazineUpdate(MagazineDTO magazineDTO)throws Exception{
-		return sqlSession.update(NAMESPACE+"magazineUpdate",magazineDTO);
+		int result= sqlSession.update(NAMESPACE+"magazineUpdate",magazineDTO);
+		System.out.println(result);	
+		String title = magazineDTO.getTitle();
+		String contents = magazineDTO.getContents();
+		String subtitle= magazineDTO.getSubTitle();
+		System.out.println(title);
+		System.out.println(contents);
+		System.out.println(subtitle);
+		
+		return result;
 	}
 	
 	public int magazineInsert(MagazineDTO magazineDTO)throws Exception{

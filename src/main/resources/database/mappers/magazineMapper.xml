@@ -25,6 +25,7 @@ where M.num=#{num}
 select M.*,MF.*
 from magazine M left join magazineFiles MF
 on M.num = MF.num
+order by M.num asc
 </select>
 
 <resultMap type="MagazineDTO" id="selectResult">

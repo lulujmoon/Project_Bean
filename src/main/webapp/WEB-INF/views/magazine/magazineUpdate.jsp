@@ -16,7 +16,9 @@
 
 <div class="container">
 <form id="frm" action="./magazineUpdate" method="post" enctype="multipart/form-data">
-			
+			<div class="form-group">
+			<input type="hidden" name="num" value="${dto.num}">
+			</div>
 			<div class="form-group">
 				<label for="title">Title:</label> <input type="text"
 					class="form-control myCheck" id="title" name="title" value="${dto.title}">
