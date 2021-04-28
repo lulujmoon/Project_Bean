@@ -30,7 +30,9 @@
 					src="../resources/upload/magazineT/${dto.listImage.fileName}"
 					width="555" height="300"></a>
 					<div class="subText">
-					<p>${dto.subTitle}</p>
+					<p class="titleText">${dto.title}</p>
+					<p class="titleSub">${dto.subTitle}</p>
+					
 					</div>
 					
 					
