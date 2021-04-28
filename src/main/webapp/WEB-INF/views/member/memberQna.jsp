@@ -31,7 +31,7 @@
 						class="ko">주문내역</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberSubscrip"><span
 						class="ko">정기/간편주문</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberPoint"><span
+						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberQna"><span
 						class="ko">문의</span></a>

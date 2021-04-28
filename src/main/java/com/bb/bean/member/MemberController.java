@@ -20,9 +20,9 @@ public class MemberController {
 	private MemberService memberService;
 	
 	
-	
-
-
+	@GetMapping("memberOrderDetail")
+	public void memberOrderDetail() throws Exception {
+	}
 
 	@GetMapping("memberQna")
 	public void memberQna() throws Exception {
@@ -39,6 +39,7 @@ public class MemberController {
 	@GetMapping("memberOrder")
 	public void memberOrder() throws Exception {
 	}
+
 
 	@GetMapping("nameCheck")
 	public String nameCheck(MemberDTO memberDTO, Model model) throws Exception {
