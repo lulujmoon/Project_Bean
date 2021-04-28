@@ -204,7 +204,7 @@
 														${order.orderUid} ]
 													</td>
 													<td scope="col"><a
-														href="${pageContext.request.contextPath}/product/productList/">
+														href="${pageContext.request.contextPath}/product/productList/">${order.product.name}
 													</a></td>
 													<td scope="col">${order.quantity}</td>
 													<td scope="col">${order.finalPrice}</td>

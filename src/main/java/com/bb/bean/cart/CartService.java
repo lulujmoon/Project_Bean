@@ -32,15 +32,15 @@ public class CartService {
 		return cartDTO;
 	}
 	
-	public boolean getSold(CartDTO cartDTO) throws Exception {
-		OptionsDTO optionsDTO = new OptionsDTO();
-		optionsDTO.setOptionNum(cartDTO.getOptionNum());
-		optionsDTO = productDAO.getOptionSelect(optionsDTO);
-		boolean sold = false;
-		if(optionsDTO.getStock()==0) {
-			
-		}
-	}
+//	public boolean getSold(CartDTO cartDTO) throws Exception {
+//		OptionsDTO optionsDTO = new OptionsDTO();
+//		optionsDTO.setOptionNum(cartDTO.getOptionNum());
+//		optionsDTO = productDAO.getOptionSelect(optionsDTO);
+//		boolean sold = false;
+//		if(optionsDTO.getStock()==0) {
+//			
+//		}
+//	}
 	
 	public boolean getBuyable(CartDTO cartDTO) throws Exception {
 		OptionsDTO optionsDTO = new OptionsDTO();

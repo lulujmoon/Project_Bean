@@ -67,6 +67,18 @@ public class OrderDetailsDTO {
 	public void setShippingState(String shippingState) {
 		this.shippingState = shippingState;
 	}
+	public ProductDTO getProduct() {
+		return product;
+	}
+	public void setProduct(ProductDTO product) {
+		this.product = product;
+	}
+	public OptionsDTO getOption() {
+		return option;
+	}
+	public void setOption(OptionsDTO option) {
+		this.option = option;
+	}
 	
 	
 }
