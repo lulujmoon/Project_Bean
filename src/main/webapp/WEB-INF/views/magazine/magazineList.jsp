@@ -87,10 +87,13 @@
 
 
 		<div>
-			<a href="./magazineInsert">인서트</a>
+		<c:if test="${member.id eq 'admin'}">
+			<a href="./magazineInsert"><button type="button" class="btn btn-success">Write</button></a>
+			</c:if>
 		</div>
 
 	</div>
+	<br>
 	<c:import url="../template/footer.jsp"></c:import>
 </body>
 </html>
