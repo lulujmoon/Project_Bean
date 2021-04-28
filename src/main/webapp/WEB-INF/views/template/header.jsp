@@ -13,7 +13,7 @@
                      <a href="${pageContext.request.contextPath}/">
                      <span>Bean Bean</span>
                      </a>
-                    <div class="col-xs-9" style="float:right;">
+                    <div class="col-xs-9" style="float:right; padding-right: 8px;">
 
             	      <a href="${pageContext.request.contextPath}/admin/adminList">
                       <span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Admin </span>
