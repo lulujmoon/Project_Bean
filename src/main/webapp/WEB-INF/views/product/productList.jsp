@@ -80,6 +80,8 @@
 			      			<tr>
 			      				<td><input type="radio" class="optionNum" name="optionNum" value="${option.optionNum}"><span class="optStock" style="display:none">${ption.stock}</span></td>
 			      				<td><span class="optType">${option.type}</span></td>
+			      				<td><span class="optPrice"><del>₩${option.price}</del>&nbsp;&nbsp;₩${option.afterPrice}</span></td>
+			      				<td><span class="optInfo">${option.optionInfo}</span>
 			      			</tr>
 			      			</c:forEach>
 			      		</table>
