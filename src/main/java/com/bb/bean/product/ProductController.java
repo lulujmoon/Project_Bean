@@ -94,7 +94,7 @@ public class ProductController {
 	/* Options */
 	
 	@GetMapping("optionManage")
-	public void setOptionsManage(ProductDTO productDTO, Model model) throws Exception {
+	public void setOptionManage(ProductDTO productDTO, Model model) throws Exception {
 		List<OptionsDTO> li = productService.getOptionList(productDTO);
 		productDTO = productService.getSelect(productDTO);
 		model.addAttribute("list", li);
@@ -102,13 +102,13 @@ public class ProductController {
 	}
 	
 	@PostMapping("optionInsert")
-	public String setOptionsInsert(OptionsDTO optionsDTO) throws Exception {
+	public String setOptionInsert(OptionsDTO optionsDTO) throws Exception {
 		productService.setOptionInsert(optionsDTO);
 		return "redirect:./optionManage?productNum="+optionsDTO.getProductNum();
 	}
 	
 	@PostMapping("optionUpdate")
-	public ModelAndView setOptionsUpdate(OptionsDTO optionsDTO) throws Exception {
+	public ModelAndView setOptionUpdate(OptionsDTO optionsDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		int result = productService.setOptionUpdate(optionsDTO);
 		

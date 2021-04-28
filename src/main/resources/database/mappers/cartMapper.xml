@@ -68,4 +68,12 @@
 		delete cart where cartID=#{cartID}
 	</delete>
 	
+	<select id="getListbyOptionNum" parameterType="CartDTO" resultType="CartDTO">
+		select * from cart where optionNum=#{optionNum}
+	</select>
+	
+	<update id="setFinalPriceUpdate" parameterType="CartDTO">
+		update cart set finalPrice=#{finalPrice} where itemNum=#{itemNum}
+	</update>
+	
 </mapper>

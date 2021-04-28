@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.bb.bean.cart.CartDAO;
+import com.bb.bean.cart.CartDTO;
+import com.bb.bean.cart.CartService;
 import com.bb.bean.util.FileManager;
 
 @Service
@@ -19,6 +22,8 @@ public class ProductService {
 	private HttpSession session;
 	@Autowired
 	private FileManager fileManager;
+	@Autowired
+	private CartService cartService;
 
 	public List<ProductDTO> getList(ProductDTO productDTO) throws Exception {
 		return productDAO.getList(productDTO);
@@ -105,7 +110,15 @@ public class ProductService {
 	}
 
 	public int setOptionUpdate(OptionsDTO optionsDTO) throws Exception {
-		return productDAO.setOptionUpdate(optionsDTO);
+		int result = productDAO.setOptionUpdate(optionsDTO);
+		//장바구니 업데이트하기
+		CartDTO cartDTO = new CartDTO();
+		cartDTO.setOptionNum(optionsDTO.getOptionNum());
+		System.out.println("옵션번호 "+optionsDTO.getOptionNum());
+		System.out.println("옵션번호 "+cartDTO.getOptionNum());
+		result = cartService.setFinalPriceUpdate(cartDTO);
+		
+		return result;
 	}
 
 	public int setOptionDelete(OptionsDTO optionsDTO) throws Exception {

@@ -27,7 +27,6 @@ public class CartService {
 		optionsDTO.setOptionNum(cartDTO.getOptionNum());
 		optionsDTO = productDAO.getOptionSelect(optionsDTO);
 		long finalPrice = optionsDTO.getAfterPrice();
-		
 		cartDTO.setFinalPrice(finalPrice*cartDTO.getQuantity());
 		return cartDTO;
 	}
@@ -76,6 +75,17 @@ public class CartService {
 	
 	public int setCartIDDelete(CartDTO cartDTO) throws Exception {
 		return cartDAO.setCartIDDelete(cartDTO);
+	}
+	
+	public int setFinalPriceUpdate(CartDTO cartDTO) throws Exception {
+		int result=0;
+		List<CartDTO> caList = cartDAO.getListbyOptionNum(cartDTO);
+		for(CartDTO ca : caList) {
+			ca = cartService.setFinalPrice(ca);
+			result = cartDAO.setFinalPriceUpdate(ca);
+		}
+		
+		return result;
 	}
 	
 }

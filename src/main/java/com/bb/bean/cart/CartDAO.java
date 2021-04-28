@@ -52,4 +52,12 @@ public class CartDAO {
 	public int setCartIDDelete(CartDTO cartDTO) throws Exception {
 		return sqlSession.delete(NAMESPACE+"setCartIDDelete", cartDTO);
 	}
+	
+	public List<CartDTO> getListbyOptionNum(CartDTO cartDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getListbyOptionNum", cartDTO);
+	}
+	
+	public int setFinalPriceUpdate(CartDTO cartDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"setFinalPriceUpdate", cartDTO);
+	}
 }
