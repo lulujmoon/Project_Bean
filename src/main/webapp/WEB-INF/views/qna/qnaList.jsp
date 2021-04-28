@@ -42,7 +42,7 @@
 				<td class="smallSize">${dto.num}</td>
 				<td class="smallSize"><img src="../resources/upload/qna/neo_lock.gif"></td>
 				
-				<td id="tdTitle"><a href="./qnaSelect?num=${dto.num}">
+				<td id="tdTitle"><a href="./qnaPassword?num=${dto.num}">
 				<c:catch>
 				<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
 				</c:catch>

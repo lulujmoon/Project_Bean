@@ -9,5 +9,11 @@
 <body>
 
 <h1>passwordpage</h1>
+<form id="frm" action="./qnaPassword" method="post">
+<input type="password" id="pw" name="pw">
+
+
+<input type="submit" id="btn" value="submit" class="btn btn-success">
+</form>
 </body>
 </html>
