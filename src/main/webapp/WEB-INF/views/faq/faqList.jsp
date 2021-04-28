@@ -23,9 +23,9 @@
 		
 		<ul class="nav nav-tabs">
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=배송문의">배송문의</a></li>
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=상품문의">상품문의</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=교환/반품문의">교환/반품문의</a></li>
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=주문문의">주문문의</a></li>
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=결제문의">결제문의</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=기타문의">기타문의</a></li>
 			
 
 			</ul>
@@ -87,9 +87,9 @@
 												<label for="category">category:</label> <select
 													name="category" id="category" value="${dto.category}">
 													<option value="배송문의">배송문의</option>
-													<option value="상품문의">상품문의</option>
+													<option value="교환/반품문의">교환/반품문의</option>
 													<option value="주문문의">주문문의</option>
-													<option value="결제문의">결제문의
+													<option value="기타문의">기타문의
 													<option>
 												</select>
 											</div>
@@ -186,9 +186,9 @@
 							<label for="category">category:</label> <select name="category"
 								id="category">
 								<option value="배송문의">배송문의</option>
-								<option value="상품문의">상품문의</option>
+								<option value="교환/반품문의">교환/반품문의</option>
 								<option value="주문문의">주문문의</option>
-								<option value="결제문의">결제문의
+								<option value="기타문의">기타문의
 								<option>
 							</select>
 						</div>
