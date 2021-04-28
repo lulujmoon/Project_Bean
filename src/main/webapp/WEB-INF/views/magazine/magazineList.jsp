@@ -63,9 +63,11 @@
 							
 							<!-- Modal footer -->
 							<div class="modal-footer">
+								<div class="col-md-12 text-center">
 								<a href="./magazineUpdate?num=${dto.num}"><button type="button" class="btn btn-danger">Update</button></a>
 								<button type="button" class="btn btn-danger"
 									data-dismiss="modal">Close</button>
+									</div>
 							</div>
 
 						</div>
@@ -73,35 +75,8 @@
 				</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 			</c:forEach>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 		</div>
 

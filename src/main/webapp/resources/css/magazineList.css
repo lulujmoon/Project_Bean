@@ -78,8 +78,8 @@ h5{
 }
 
 #imgList{
-	padding-right: 0px;
-	padding-left: 0px;
+/* 	padding-right: 0px;
+	padding-left: 0px; */
 	padding-bottom: 15px;
 	position:relative;
 }
@@ -92,18 +92,29 @@ h5{
 	top:75%;
 	right:5%;
 	
+	
 }
 
-p{
-	color: white;
-	margin:1px;
-	text-align: right;
-}
 
 .titleText{
-	font-weight: bold;
+	font-size: 16px;
+	padding-left: 8px;
+	padding-right: 8px;
+	color: white;
+	margin:0px;
+	text-align: right;
+	
 }
 
 .titleSub{
 	font-size: 11px;
+	padding-left: 8px;
+	padding-right: 8px;
+		color: white;
+	margin:0px;
+	text-align: right;
+}
+
+.modal-footer{
+	text-align: center;
 }
