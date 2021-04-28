@@ -42,10 +42,12 @@ public class CartController {
 		
 		cartDTO.setCartID(id);
 		
+		String before = cartService.beforeGetList(cartDTO);
 		List<CartDTO> li = cartService.getList(cartDTO);
 		
 		long totalPrice = cartService.getTotalPrice(cartDTO);
 		
+		mv.addObject("before", before);
 		mv.addObject("list", li);
 		mv.addObject("totalPrice", totalPrice);
 		mv.setViewName("cart/cartList");

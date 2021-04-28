@@ -53,7 +53,7 @@
 	</insert>
 		
 	<update id="setUpdate" parameterType="CartDTO">
-		update cart set grind=#{grind}, quantity=#{quantity}, finalPrice=#{finalPrice} where itemNum=#{itemNum}
+		update cart set grind=#{grind, jdbcType=VARCHAR}, quantity=#{quantity}, finalPrice=#{finalPrice} where itemNum=#{itemNum}
 	</update>
 	
 	<delete id="setDelete" parameterType="CartDTO">
