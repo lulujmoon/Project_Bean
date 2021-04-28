@@ -24,7 +24,7 @@
 		<result property="cartID" column="cartID"/>
 		<result property="optionNum" column="optionNum"/>
 		<result property="quantity" column="quantity"/>
-		<result property="fPrice" column="fPrice"/>
+		<result property="finalPrice" column="finalPrice"/>
 		<result property="grind" column="grind"/>
 		<association property="option" javaType="OptionsDTO">
 			<id property="optionNum" column="optionNum"/>
@@ -44,16 +44,16 @@
 	</select>
 
 	<select id="getTotalPrice" parameterType="CartDTO" resultType="java.lang.Long">
-		select sum(fPrice) from cart where cartID = #{cartID}
+		select sum(finalPrice) from cart where cartID = #{cartID}
 	</select>
 
 	<insert id="setInsert" parameterType="CartDTO">
-		insert into cart (itemNum, cartID, optionNum, quantity, fPrice, grind)
-		values (cart_seq.nextval, #{cartID}, #{optionNum}, #{quantity}, #{fPrice}, #{grind})
+		insert into cart (itemNum, cartID, optionNum, quantity, finalPrice, grind)
+		values (cart_seq.nextval, #{cartID}, #{optionNum}, #{quantity}, #{finalPrice}, #{grind})
 	</insert>
 		
 	<update id="setUpdate" parameterType="CartDTO">
-		update cart set grind=#{grind}, quantity=#{quantity}, fPrice=#{fPrice} where itemNum=#{itemNum}
+		update cart set grind=#{grind}, quantity=#{quantity}, finalPrice=#{finalPrice} where itemNum=#{itemNum}
 	</update>
 	
 	<delete id="setDelete" parameterType="CartDTO">

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace ="com.bb.bean.orderDetails.OrderDetailsDAO">
+
+	<insert id="setInsert" parameterType="OrderDetailsDTO">
+		insert into orderDetails (detailNum, orderUid, orderDate, optionNum, quantity, finalPrice, grind, shippingState)
+		values (orderDetails_seq.nextval, #{orderUid}, sysdate, #{optionNum}, #{quantity}, #{finalPrice}, #{grind,jdbcType=VARCHAR}, #{shippingState})
+	</insert>
+	
+	<select id="getListbyOrderUid" parameterType="OrderDetailsDTO" resultMap="listResult">
+		select OD.*, P.*, OP.*
+		from OrderDetails OD
+		left join Options OP
+		on OD.optionNum = OP.optionNum
+		left join Product P
+		on OP.productNum = P.productNum
+		where orderUid=#{orderUid}
+	</select>
+	
+	<resultMap type="OrderDetailsDTO" id="listResult">
+		<id property="detailNum" column="detailNum"/>
+		<result property="orderUid" column="orderUid"/>
+		<result property="orderDate" column="orderDate"/>
+		<result property="quantity" column="quantity"/>
+		<result property="finalPrice" column="finalPrice"/>
+		<result property="grind" column="grind"/>
+		<result property="shippingState" column="shippingState"/>
+		<association property="product" javaType="ProductDTO" resultMap="productResult"/>
+		<association property="option" javaType="OptionsDTO" resultMap="optionResult"/>
+	</resultMap>
+	
+	<resultMap type="ProductDTO" id="productResult">
+		<id property="productNum" column="productNum"/>
+		<result property="name" column="name"/>
+		<result property="subtitle" column="subtitle"/>
+	</resultMap>
+	
+	<resultMap type="OptionsDTO" id="optionResult">
+		<id property="optionNum" column="optionNum"/>
+		<result property="type" column="type"/>
+	</resultMap>
+
+</mapper>
