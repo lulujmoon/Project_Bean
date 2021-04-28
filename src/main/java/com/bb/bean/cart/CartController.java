@@ -68,7 +68,7 @@ public class CartController {
 		cartDTO.setCartID(id);
 		System.out.println(id);
 
-		int result = cartService.setInsert(cartDTO);
+		String result = cartService.setInsert(cartDTO);
 		
 		mv.addObject("result", result);
 		
@@ -90,11 +90,10 @@ public class CartController {
 		}
 		
 		cartDTO.setCartID(id);
-		
-		cartService.setUpdate(cartDTO);
+		String result = cartService.setUpdate(cartDTO);
 		long totalPrice = cartService.getTotalPrice(cartDTO);
 		
-		mv.addObject("result", totalPrice);
+		mv.addObject("result", result+"-"+totalPrice);
 		mv.setViewName("common/ajaxResult");
 		return mv;
 	}

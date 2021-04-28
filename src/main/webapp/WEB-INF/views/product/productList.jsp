@@ -154,6 +154,7 @@
 				<span class="price">${option.price}</span>
 				<span class="afterPrice">${option.afterPrice}</span>
 				<span class="discountRate">${option.discountRate}</span>
+				<span class="stock">${option.stock}</span>
 			</td>
 		</c:forEach>
 		</table>

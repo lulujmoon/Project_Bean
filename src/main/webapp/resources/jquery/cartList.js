@@ -85,10 +85,17 @@ $(".update").change(function(){
 		grind: grind,
 		quantity: quantity
 	}, function(result){
-		location.reload();
-		$("#totalPrice").text(result);
-		load();
-		calculate();
+		result = result.trim();
+		resultArr = result.split('-');
+		if(resultArr[0]!=""){
+			alert(resultArr[0]);
+			load();
+		}else{
+			location.reload();
+			$("#totalPrice").text(resultArr[1]);
+			load();
+			calculate();			
+		}
 	});
 	
 });

@@ -39,10 +39,12 @@
 
   let optionsSize = $(productDiv).find('.optionsSize').text();
   if(optionsSize>0){
-		options = '<table class="optionTable">';
-	  	let count=1;
-	  for(opt of $(productDiv).find('.optionDiv')){	
-		options = options + '<tr><td><input type="radio" class="optionNum" name="optionNum" value="'+$(opt).find('.optionNum').text()+'" title="'+count+'"></td>';
+	  options = '<table class="optionTable">';
+	  let count=1;
+	  
+	  for(opt of $(productDiv).find('.optionDiv')){
+		options = options + '<tr><td><input type="radio" class="optionNum" name="optionNum" value="'+$(opt).find('.optionNum').text()+'" title="'+count+'">';
+		options = options + '<span class="optStock" style="display:none">'+$(opt).find('.stock').text()+'</span></td>';
 		options = options + '<td><span class="optType">'+$(opt).find('.type').text()+'</span></td>';
 		if($(opt).find('.afterPrice').text()!=$(opt).find('.price').text()){
 			options = options + '<td><span class="optPrice"><strike>₩'+''+$(opt).find('.price').text()+'</strike>&nbsp;&nbsp;₩';
@@ -53,6 +55,7 @@
 		options = options + '<td class="optInfo">'+$(opt).find('.optionInfo').text()+'</td></tr>';
 		
 		count++;
+		
 	  }	
 	  	options = options + '</table>';
 	  
@@ -60,7 +63,7 @@
 		let optionDiv = $(productDiv).find('.optionDiv');
 		$(optionDiv).find(".optionNum").attr("style", "display:none");
 	  }
-	  
+
   }else if(optionsSize==0){
 	options = '<p style="color:red">현재 상품에 등록된 옵션이 없습니다.<br>옵션이 없으면 구매를 진행할 수 없습니다. 옵션을 추가해주세요.</p>';
   }
@@ -105,6 +108,15 @@
   });
   
   
+  /* 재고가 0이면 구매할 수 없게 설정 */
+  for(optStock of $(".optStock")){
+	if($(optStock).text()=='0'){
+		$(optStock).prev().attr("disabled", true);
+		$(optStock).parent().siblings().attr("style", "color:lightgrey");
+	}
+  }
+  
+  
   /* 맨위로 버튼 */
   $("#toTop-btn").click(function(){
 	$(".modal").scrollTop(0);
@@ -146,7 +158,11 @@
 			grind:grind,
 			quantity:quantity
 		}, function(result){
-			$("#goCart-btn").slideDown(800);
+			if(result.trim()!=""){
+				alert(result.trim());
+			}else{
+				$("#goCart-btn").slideDown(800);				
+			}
 		});
 	});
   
@@ -190,9 +206,14 @@
 			grind:grind,
 			quantity:quantity
 		}, function(result){
+			if(result.trim()!=""){
+				alert(result.trim());
+			}else{
 			location.href="../cart/cartList";
+			}
 		});
 	});
+
   	
 });
 /*모달 끝 */

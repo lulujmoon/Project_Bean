@@ -19,6 +19,7 @@ public class CartService {
 	private CartService cartService;
 	
 	public List<CartDTO> getList(CartDTO cartDTO) throws Exception {
+		
 		return cartDAO.getList(cartDTO);
 	}
 	
@@ -31,24 +32,63 @@ public class CartService {
 		return cartDTO;
 	}
 	
+	public boolean getSold(CartDTO cartDTO) throws Exception {
+		OptionsDTO optionsDTO = new OptionsDTO();
+		optionsDTO.setOptionNum(cartDTO.getOptionNum());
+		optionsDTO = productDAO.getOptionSelect(optionsDTO);
+		boolean sold = false;
+		if(optionsDTO.getStock()==0) {
+			
+		}
+	}
+	
+	public boolean getBuyable(CartDTO cartDTO) throws Exception {
+		OptionsDTO optionsDTO = new OptionsDTO();
+		optionsDTO.setOptionNum(cartDTO.getOptionNum());
+		optionsDTO = productDAO.getOptionSelect(optionsDTO);
+		long stock = optionsDTO.getStock();
+		
+		boolean buyable = false;
+		if(stock>=cartDTO.getQuantity()) {
+			buyable = true;
+		}
+		
+		return buyable;
+	}
+	
 	public long getTotalPrice(CartDTO cartDTO) throws Exception {
 		return cartDAO.getTotalPrice(cartDTO);
 	}
 
-	public int setInsert(CartDTO cartDTO) throws Exception {
-		cartDTO = cartService.setFinalPrice(cartDTO);
-		return cartDAO.setInsert(cartDTO);
+	public String setInsert(CartDTO cartDTO) throws Exception {
+		boolean buyable = this.getBuyable(cartDTO);
+		String result = "";
+		if(buyable) {
+			cartDTO = cartService.setFinalPrice(cartDTO);	
+			cartDAO.setInsert(cartDTO);
+		}else {
+			result = "구매 가능 개수를 초과했습니다.";
+		}
+		return result;
 	}
 	
-	public int setUpdate(CartDTO cartDTO) throws Exception {
+	public String setUpdate(CartDTO cartDTO) throws Exception {
+		
 		CartDTO cartDTO2 = new CartDTO();
 		cartDTO2.setItemNum(cartDTO.getItemNum());
 		cartDTO2 = cartDAO.getSelect(cartDTO2);
 		cartDTO2.setQuantity(cartDTO.getQuantity());
 		
-		cartDTO2 = cartService.setFinalPrice(cartDTO2);
-		cartDTO.setFinalPrice(cartDTO2.getFinalPrice());
-		return cartDAO.setUpdate(cartDTO);
+		boolean buyable = this.getBuyable(cartDTO2);
+		String result = "";
+		if(buyable) {
+			cartDTO2 = cartService.setFinalPrice(cartDTO2);
+			cartDTO.setFinalPrice(cartDTO2.getFinalPrice());
+			cartDAO.setUpdate(cartDTO);
+		}else {
+			result = "구매 가능 개수를 초과했습니다.";
+		}
+		return result;
 	}
 	
 	public int setCartIDUpdate(String ex, String id) throws Exception {
