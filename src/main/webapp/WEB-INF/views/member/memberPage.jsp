@@ -37,7 +37,7 @@
 						class="ko">주문내역</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberSubscrip"><span
 						class="ko">정기/간편주문</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberPoint"><span
+						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberQna"><span
 						class="ko">문의</span></a>
@@ -53,7 +53,7 @@
 
 		<div id="content" class="cafe-content">
 			<div class="bb-form mainpage-mobile" style="padding-bottom: 40px;">
-				<a href="/account/point" class="mainpage-mobile-point mainpage-mobile-menu">
+				<a href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}" class="mainpage-mobile-point mainpage-mobile-menu">
 					
 					<div style="float: left; padding-top: 5px">
 						<b>내 포인트</b>
@@ -74,7 +74,7 @@
 				<a href="${pageContext.request.contextPath}/member/memberUpdate" class="mainpage-mobile-menu"> 회원정보 수정
 					<div class="mainpage-mobile-menu-right arrow"></div>
 				</a> 
-				<a href="${pageContext.request.contextPath}/member/memberPoint" class="mainpage-mobile-menu"> 내 포인트
+				<a href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}" class="mainpage-mobile-menu"> 내 포인트
 					<div class="mainpage-mobile-menu-right arrow"></div>
 				</a> 
 				<a href="${pageContext.request.contextPath}/member/memberQna" class="mainpage-mobile-menu"> 문의내역 조회

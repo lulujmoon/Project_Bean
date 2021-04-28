@@ -33,7 +33,7 @@
 						class="ko">주문내역</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberSubscrip"><span
 						class="ko">정기/간편주문</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberPoint"><span
+						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberQna"><span
 						class="ko">문의</span></a>
@@ -70,24 +70,31 @@
 					<th>잔여포인트</th>
 				</tr>
 			</thead>
+			<c:forEach items="${point}" var="point">
 			<tbody>				
 				<tr>
-					<td>2021.4.13</td>
-					<td>포인트차감</td>
-					<td>결제취소로 인한 포인트 차감</td>
-					<td></td>
-					<td>-350 BP</td>
-					<td>0</td>
+					<td>${point.regDate}</td>
+					<td>${point.sort}</td>
+					<td>${point.detail}</td>
+					<td>
+					<c:if test="${point.savePoint == 0}">
+					</c:if>
+					<c:if test="${point.savePoint != 0}">
+					${point.savePoint} BP
+					</c:if>
+					</td>
+					<td>
+					<c:if test="${point.usePoint == 0}">
+					</c:if>
+					<c:if test="${point.usePoint != 0}">
+					${point.usePoint} BP
+					</c:if>
+					<td>${point.restPoint} BP</td>
+					</td>
 				</tr>
-				<tr>
-					<td>2021.4.13</td>
-					<td>구매 포인트</td>
-					<td>[20210413122023058] 구매</td>
-					<td>350 BP</td>
-					<td></td>
-					<td>350</td>
-				</tr>
+
 			</tbody>
+			</c:forEach>
 		</table>
 	</div>
 
