@@ -16,7 +16,7 @@ public class OrderDetailsController {
 		ModelAndView mv = new ModelAndView();
 		List<OrderDetailsDTO> list = orderDetailsService.getListbyOrderUid(orderDetailsDTO);
 		mv.addObject("list", list);
-		mv.setViewName("위치정해주세요");
+		mv.setViewName("common/ajaxResult");
 		return mv;
 	}
 }

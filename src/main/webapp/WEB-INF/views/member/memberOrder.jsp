@@ -61,12 +61,11 @@
 
 							<div
 								class="xans-element- xans-myshop xans-myshop-orderhistorylistitem ec-base-table typeList">
-								<!--
-        $login_url = /member/login.html
-    -->
+
+								<div class="title" style="width: 1170px; height: 359px;">
 											
-											<table border="1" summary="">
-									<colgroup>
+											<table class="table border border-0">
+	<%-- 								<colgroup>
 										<col style="width: 135px; height: 75px;">
 										<col style="width: 93px;">
 										<col style="width: auto;">
@@ -74,11 +73,10 @@
 										<col style="width: 111px;">
 										<col style="width: 111px;">
 										<col style="width: 111px;">
-									</colgroup>
+									</colgroup> --%>
 									<thead>
 										<tr>
-											<th scope="col">주문일자<br>[주문번호]
-											</th>
+											<th scope="col">주문일자<br>[주문번호]</th>
 											<th scope="col">이미지</th>
 											<th scope="col">상품정보</th>
 											<th scope="col">수량</th>
@@ -87,22 +85,23 @@
 											<th scope="col">취소/교환/반품</th>
 										</tr>
 									</thead>
+									<c:forEach items="${list}" var="order">
 									<tbody>
 										<tr>
-											<td scope="col">주문번호<br>[주문번호]
+											<td scope="col">${order.orderDate}<br>
+											[ ${order.orderUid} ]
 											</td>
 											<td scope="col">이미지</td>
-											<td scope="col">상품정보</td>
-											<td scope="col">수량</td>
-											<td scope="col">상품구매금액</td>
-											<td scope="col">주문처리상태</td>
-											<td scope="col">취소/교환/반품</td>
+											<td scope="col"><a href="${pageContext.request.contextPath}/product/productList/${order.product.productNum}">${order.product.name}</a></td>
+											<td scope="col">${order.quantity}</td>
+											<td scope="col">${order.finalPrice}</td>
+											<td scope="col">${order.shippingState}</td>
+											<td scope="col"> </td>
 										</tr>
-
-
 									</tbody>
+									</c:forEach>
 								</table>
-
+							</div>
 									
 								</div>
 
