@@ -51,8 +51,12 @@
 	
 	
 	<!-- 배송정보 관련 쿼리문 추가 -->
-	<update id="addrUpdate" parameterType="MemberDTO">
+	<update id="setAddrUpdate" parameterType="MemberDTO">
 		update member set tel=#{tel}, postcode=#{postcode}, addr=#{addr}, addr2=#{addr2} where id=#{id}
 	</update>
 	
+	<!-- 포인트 업데이트 쿼리문 추가 -->
+	<update id="setPointUpdate" parameterType="MemberDTO">
+		update member set point=#{point} where id=#{id}
+	</update>
 </mapper>
