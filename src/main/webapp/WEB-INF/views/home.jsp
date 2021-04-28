@@ -26,21 +26,43 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <title>Bean Brothers Coffee</title>
-
 </head>
 <body>
 	<!-- header 부분 -->
 	<c:import url="./template/header.jsp"></c:import>
 	<c:import url="./member/memberLogin.jsp"></c:import>
 	<c:import url="./member/memberJoin.jsp"></c:import>
-
+	
 
 	<!-- Home -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" style="width: 100%;height: 700px !important;">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="./resources/images/1.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./resources/images/2.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./resources/images/3.jpg" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./resources/images/4.jpg" alt="Fourth slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./resources/images/5.jpg" alt="Fifth slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
-	<div>
-		<img src="./resources/images/인천.jpg"
-			style="width: 100%; object-fit: cover;">
-	</div>
 <section id="home">
      <div class="container">
           <div class="row">
