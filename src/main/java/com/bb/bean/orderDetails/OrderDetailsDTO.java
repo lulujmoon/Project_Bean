@@ -1,5 +1,7 @@
 package com.bb.bean.orderDetails;
 
+import java.sql.Date;
+
 import com.bb.bean.product.OptionsDTO;
 import com.bb.bean.product.ProductDTO;
 
@@ -7,6 +9,8 @@ public class OrderDetailsDTO {
 	
 	private long detailNum;
 	private String orderUid;
+	private Date orderDate;
+
 	private long optionNum;
 	private long quantity;
 	private long finalPrice;
@@ -26,6 +30,12 @@ public class OrderDetailsDTO {
 	}
 	public void setOrderUid(String orderUid) {
 		this.orderUid = orderUid;
+	}
+	public Date getOrderDate() {
+		return orderDate;
+	}
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
 	}
 	public long getOptionNum() {
 		return optionNum;
