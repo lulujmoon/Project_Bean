@@ -1,46 +1,31 @@
-package com.bb.bean.cart;
-
-import java.util.List;
+package com.bb.bean.orderDetails;
 
 import com.bb.bean.product.OptionsDTO;
 import com.bb.bean.product.ProductDTO;
 
-public class CartDTO {
+public class OrderDetailsDTO {
 	
-	private long itemNum;
-	private String cartID;
+	private long detailNum;
+	private String orderUid;
 	private long optionNum;
 	private long quantity;
 	private long finalPrice;
 	private String grind;
-	private OptionsDTO option;
+	private String shippingState;
 	private ProductDTO product;
+	private OptionsDTO option;
 	
-	
-
-	public OptionsDTO getOption() {
-		return option;
+	public long getDetailNum() {
+		return detailNum;
 	}
-	public void setOption(OptionsDTO option) {
-		this.option = option;
+	public void setDetailNum(long detailNum) {
+		this.detailNum = detailNum;
 	}
-	public ProductDTO getProduct() {
-		return product;
+	public String getOrderUid() {
+		return orderUid;
 	}
-	public void setProduct(ProductDTO product) {
-		this.product = product;
-	}
-	public long getItemNum() {
-		return itemNum;
-	}
-	public void setItemNum(long itemNum) {
-		this.itemNum = itemNum;
-	}
-	public String getCartID() {
-		return cartID;
-	}
-	public void setCartID(String cartID) {
-		this.cartID = cartID;
+	public void setOrderUid(String orderUid) {
+		this.orderUid = orderUid;
 	}
 	public long getOptionNum() {
 		return optionNum;
@@ -66,6 +51,12 @@ public class CartDTO {
 	public void setGrind(String grind) {
 		this.grind = grind;
 	}
-
+	public String getShippingState() {
+		return shippingState;
+	}
+	public void setShippingState(String shippingState) {
+		this.shippingState = shippingState;
+	}
+	
 	
 }

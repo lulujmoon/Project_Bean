@@ -1,7 +1,13 @@
 package com.bb.bean.orders;
 
+import java.net.http.HttpHeaders;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,14 +28,15 @@ public class OrdersController {
 	CartService cartService;
 	
 	@PostMapping("orderInsert")
-	public ModelAndView orderInsert(OrdersDTO ordersDTO, boolean save_addr) throws Exception {
+	public ModelAndView setInsert(OrdersDTO ordersDTO, boolean save_addr, HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		String result = ordersService.setInsert(ordersDTO);
 		
 		if(save_addr) {
-			ordersService.addrUpdate(ordersDTO);
+			MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+			memberDTO = ordersService.setAddrUpdate(ordersDTO, memberDTO);
+			session.setAttribute("member", memberDTO);
 		}
-		
 		mv.addObject("result", result);
 		mv.setViewName("common/ajaxResult");
 		return mv;
@@ -38,25 +45,29 @@ public class OrdersController {
 	
 	
 	@PostMapping("orderCheck")
-	public ModelAndView orderCheck(String imp_uid, String orderUid) throws Exception {
+	public ModelAndView getCheck(String imp_uid, String orderUid, long usePoint, HttpSession session) throws Exception {
 		OrdersDTO ordersDTO = new OrdersDTO();
 		ordersDTO.setOrderUid(orderUid);
 		ordersDTO = ordersService.getSelect(ordersDTO);
 		
 		ordersService.getToken();
 
-		String result = ordersService.paymentByImpUid(imp_uid, ordersDTO);
+		String result = ordersService.paymentByImpUid(imp_uid, usePoint, ordersDTO);
 		
 		if(result.equals("결제 성공")) {
 			ordersDTO.setPayState("결제완료");
 			ordersService.setPayStateUpdate(ordersDTO);
 			result = "결제가 완료되었습니다.";
 			
-			ordersService.setUpdateStock(ordersDTO);
+			ordersService.setStockUpdate(ordersDTO);
+			ordersService.shiftCartList(ordersDTO);
 			
-			CartDTO cartDTO = new CartDTO();
-			cartDTO.setCartID(ordersDTO.getId());
-			cartService.setCartIDDelete(cartDTO);
+			MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+			long restPoint = memberDTO.getPoint();
+			restPoint = ordersService.setPointInsert(ordersDTO, usePoint, restPoint);
+			
+			memberDTO.setPoint(restPoint);
+			session.setAttribute("member", memberDTO);
 			
 		}else {
 			ordersService.cancelPaymentChecksumByImpUid(imp_uid);

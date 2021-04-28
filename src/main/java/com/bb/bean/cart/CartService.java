@@ -25,10 +25,10 @@ public class CartService {
 	public CartDTO setFinalPrice(CartDTO cartDTO) throws Exception {
 		OptionsDTO optionsDTO = new OptionsDTO();
 		optionsDTO.setOptionNum(cartDTO.getOptionNum());
-		optionsDTO = productDAO.getOptionsSelect(optionsDTO);
+		optionsDTO = productDAO.getOptionSelect(optionsDTO);
 		long finalPrice = optionsDTO.getAfterPrice();
 		
-		cartDTO.setfPrice(finalPrice*cartDTO.getQuantity());
+		cartDTO.setFinalPrice(finalPrice*cartDTO.getQuantity());
 		return cartDTO;
 	}
 	
@@ -48,7 +48,7 @@ public class CartService {
 		cartDTO2.setQuantity(cartDTO.getQuantity());
 		
 		cartDTO2 = cartService.setFinalPrice(cartDTO2);
-		cartDTO.setfPrice(cartDTO2.getfPrice());
+		cartDTO.setFinalPrice(cartDTO2.getFinalPrice());
 		return cartDAO.setUpdate(cartDTO);
 	}
 	

@@ -92,23 +92,23 @@ public class ProductService {
 
 
 	/* Options */
-	public List<OptionsDTO> getOptionsList(ProductDTO productDTO) throws Exception {
-		return productDAO.getOptionsList(productDTO);
+	public List<OptionsDTO> getOptionList(ProductDTO productDTO) throws Exception {
+		return productDAO.getOptionList(productDTO);
 	}
 
-	public OptionsDTO getOptionsSelect(OptionsDTO optionsDTO) throws Exception {
-		return productDAO.getOptionsSelect(optionsDTO);
+	public OptionsDTO getOptionSelect(OptionsDTO optionsDTO) throws Exception {
+		return productDAO.getOptionSelect(optionsDTO);
 	}
 	
-	public int setOptionsInsert(OptionsDTO optionsDTO) throws Exception {
-		return productDAO.setOptionsInsert(optionsDTO);
+	public int setOptionInsert(OptionsDTO optionsDTO) throws Exception {
+		return productDAO.setOptionInsert(optionsDTO);
 	}
 
-	public int setOptionsUpdate(OptionsDTO optionsDTO) throws Exception {
-		return productDAO.setOptionsUpdate(optionsDTO);
+	public int setOptionUpdate(OptionsDTO optionsDTO) throws Exception {
+		return productDAO.setOptionUpdate(optionsDTO);
 	}
 
-	public int setOptionsDelete(OptionsDTO optionsDTO) throws Exception {
-		return productDAO.setOptionsDelete(optionsDTO);
+	public int setOptionDelete(OptionsDTO optionsDTO) throws Exception {
+		return productDAO.setOptionDelete(optionsDTO);
 	}
 }
