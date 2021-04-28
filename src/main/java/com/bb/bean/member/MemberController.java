@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,7 +30,12 @@ public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
+	
+	
+	
 
+	
+	/*
 	@GetMapping("auth/kakao/callback")
 	public @ResponseBody String kakaoCallback(String code) throws Exception { // Data를 리턴해주는 컨트롤러 함수
 
@@ -87,18 +90,18 @@ public class MemberController {
 		 HttpEntity<MultiValueMap<String, String>> kakaoProfileRequest = 
 		 new HttpEntity<>(headers2);
 
-
-		
+		 
 		 // Http 요청하기 - Post방식으로 - 그리고 response 변수의 응답 받음 
 		 ResponseEntity<String> response2 = rt2.exchange( 
 				 "http://kapi.kakao.com/v2/user/me",
-				 HttpMethod.POST, 
+				 HttpMethod.POST,
 				 kakaoProfileRequest, 
 				 String.class 
 				 );	
 
 		return response2.getBody();
 	}
+	*/
 
 	@GetMapping("memberQna")
 	public void memberQna() throws Exception {
