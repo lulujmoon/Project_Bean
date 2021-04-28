@@ -28,7 +28,13 @@
 			<c:forEach items="${list}" var="dto">
 				<div class="col-md-6" id="imgList"><a href="#" data-toggle="modal" data-target="#myModal${dto.num}"><img
 					src="../resources/upload/magazineT/${dto.listImage.fileName}"
-					width="555" height="300"></a></div>
+					width="555" height="300"></a>
+					<div class="subText">
+					<p>${dto.subTitle}</p>
+					</div>
+					
+					
+					</div>
 
 				<!-- The Modal -->
 				<div class="modal fade" id="myModal${dto.num}">
