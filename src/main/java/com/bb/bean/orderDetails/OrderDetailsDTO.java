@@ -10,6 +10,7 @@ public class OrderDetailsDTO {
 	private long detailNum;
 	private String orderUid;
 	private Date orderDate;
+
 	private long optionNum;
 	private long quantity;
 	private long finalPrice;
@@ -35,18 +36,6 @@ public class OrderDetailsDTO {
 	}
 	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
-	}
-	public ProductDTO getProduct() {
-		return product;
-	}
-	public void setProduct(ProductDTO product) {
-		this.product = product;
-	}
-	public OptionsDTO getOption() {
-		return option;
-	}
-	public void setOption(OptionsDTO option) {
-		this.option = option;
 	}
 	public long getOptionNum() {
 		return optionNum;

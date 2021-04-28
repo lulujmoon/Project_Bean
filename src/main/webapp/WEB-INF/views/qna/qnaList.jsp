@@ -14,6 +14,8 @@
 
 <body>
 <c:import url="../template/header.jsp"></c:import>
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 <div class="container">
 <li class="select">
 <a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a>
