@@ -40,7 +40,7 @@
 					</div>
 
 					<div id="col${dto.num}" class="collapse" data-parent="#accordion">
-						<div class="card-body">${dto.contents}</div>
+						<div class="card-body" style="white-space:pre;">${dto.contents}</div>
 
 						<!-- Modal Button -->
 						<c:if test="${member.id eq 'admin'}">
@@ -65,7 +65,7 @@
 									<div class="modal-body">
 
 										<div class="form-group">
-											<label for="writer" hidden>번호</label> <input
+											<label for="num" hidden>번호</label> <input
 												class="form-control" id="num" name="num" value="${dto.num}"
 												readonly hidden>
 
@@ -74,12 +74,14 @@
 													id="writer" name="writer" value="${dto.writer}" readonly>
 											</div>
 											<div class="form-group">
-												<label for="writer">제목</label> <input class="form-control"
+												<label for="title">제목</label> <input class="form-control"
 													id="title" name="title" value="${dto.title}">
 											</div>
 											<div class="form-group">
-												<label for="writer">내용</label> <input class="form-control"
-													id="contents" name="contents" value="${dto.contents}">
+												<label for="contents">내용</label>
+												<textarea class="form-control" id="contents" cols="30" rows="5" 
+												>${dto.contents}</textarea>
+										
 											</div>
 											<div class="form-group">
 												<label for="category">category:</label> <select
@@ -177,8 +179,8 @@
 								id="title" name="title">
 						</div>
 						<div class="form-group">
-							<label for="writer">내용</label> <input class="form-control"
-								id="contents" name="contents">
+							<label for="contents">내용</label>
+							<textarea class="form-control" id="contents" cols="30" rows="5"></textarea>
 						</div>
 						<div class="form-group">
 							<label for="category">category:</label> <select name="category"
