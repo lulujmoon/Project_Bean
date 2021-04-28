@@ -29,15 +29,17 @@ public class QnaController {
 	@GetMapping("qnaPassword") public void setPassword()throws Exception{ 
 	}
 	
-	@PostMapping("qnaPassword") public ModelAndView setPassword(ModelAndView mv,String pw) throws Exception{
+	@PostMapping("qnaPassword") public ModelAndView setPassword(ModelAndView mv,String pw,long num) throws Exception{
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO = (MemberDTO)session.getAttribute("member");
+		boolean result = false;
 		String mpw = memberDTO.getPw();
-		System.out.println(mpw);
-		System.out.println(pw);
-		
-		System.out.println(mpw==pw);
-		
+		if(pw.equals(mpw)) {
+			result=true;
+			mv.addObject("result",result);
+			mv.setViewName("common/ajaxResult");
+		}else {	
+		}	
 		return mv;
 	}
 			
