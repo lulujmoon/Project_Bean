@@ -23,10 +23,10 @@
 				<label for="title">Title:</label> <input type="text"
 					class="form-control myCheck" id="title" name="title" value="${dto.title}">
 			</div>
-			<div class="form-group">
+		<!-- 	<div class="form-group">
 				<label for="thumbnail">썸네일</label>
 				<input type="file" name="file">
-			</div>
+			</div> -->
 			<div class="form-group">
 				<label for="subTitle">Subtitle:</label> <input type="text"
 					class="form-control myCheck" id="subTitle" name="subTitle" value="${dto.subTitle}">
