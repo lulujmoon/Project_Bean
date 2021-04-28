@@ -24,10 +24,11 @@
 
 		<div class="brick-section-container">
 		
+			<div class="row">
 			<c:forEach items="${list}" var="dto">
-				<a href="#" data-toggle="modal" data-target="#myModal${dto.num}"> <img
+				<div class="col-md-6" id="imgList"><a href="#" data-toggle="modal" data-target="#myModal${dto.num}"><img
 					src="../resources/upload/magazineT/${dto.listImage.fileName}"
-					width="500" height="300"></a>
+					width="555" height="300"></a></div>
 
 				<!-- The Modal -->
 				<div class="modal fade" id="myModal${dto.num}">
@@ -77,8 +78,8 @@
 
 
 
-
 			</c:forEach>
+</div>
 
 
 

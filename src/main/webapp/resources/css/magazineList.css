@@ -72,3 +72,13 @@ h5{
 	font-size: 22px;
 	color: black;
 }
+
+.brick-section{
+	width:510px;
+}
+
+#imgList{
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 15px;
+}
