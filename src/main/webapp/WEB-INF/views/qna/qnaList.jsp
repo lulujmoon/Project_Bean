@@ -27,6 +27,7 @@
 		<thead class="thead-light">
 			<tr>
 				<th>NUM</th>
+				<th></th>
 				<th>TITLE</th>
 				<th>WRITER</th>
 				<th>DATE</th>
@@ -39,6 +40,7 @@
 		<c:forEach items="${list}" var="dto" >
 			<tr>
 				<td class="smallSize">${dto.num}</td>
+				<td class="smallSize"><img src="../resources/upload/qna/neo_lock.gif"></td>
 				
 				<td id="tdTitle"><a href="./qnaSelect?num=${dto.num}">
 				<c:catch>

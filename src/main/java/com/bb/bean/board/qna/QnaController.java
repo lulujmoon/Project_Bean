@@ -21,6 +21,11 @@ public class QnaController {
 	@Autowired
 	private QnaService qnaService;
 	
+	@GetMapping("qnaPassword")
+	public void setPassword()throws Exception{
+		
+	}
+	
 	@GetMapping("qnaList")
 	public ModelAndView getList(Pager pager)throws Exception{
 		ModelAndView mv = new ModelAndView();
