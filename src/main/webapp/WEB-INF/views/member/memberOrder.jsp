@@ -65,14 +65,6 @@
 								<div class="title" style="width: 1170px; height: 359px;">
 											
 											<table class="table border border-0">
-	<%-- 								<colgroup>
-										<col style="width: 135px; height: 75px;">
-										<col style="width: auto;">
-										<col style="width: 61px;">
-										<col style="width: 111px;">
-										<col style="width: 111px;">
-										<col style="width: 111px;">
-									</colgroup> --%>
 									<thead>
 										<tr>
 											<th scope="col">주문일자<br>[주문번호]</th>

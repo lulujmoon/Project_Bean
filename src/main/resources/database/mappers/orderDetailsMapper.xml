@@ -12,13 +12,15 @@
 	</insert>
 	
 	<select id="getListbyOrderUid" parameterType="OrderDetailsDTO" resultMap="listResult">
-		select OD.*, P.*, OP.*
+		select OD.*, P.*, OP.*, O.*
 		from OrderDetails OD
 		left join Options OP
 		on OD.optionNum = OP.optionNum
 		left join Product P
 		on OP.productNum = P.productNum
-		where orderUid=#{orderUid}
+		left join Orders O
+		on O.orderUid = OD.orderUid
+		where OD.orderUid=#{orderUid}
 	</select>
 	
 	<resultMap type="OrderDetailsDTO" id="listResult">
@@ -42,6 +44,15 @@
 	<resultMap type="OptionsDTO" id="optionResult">
 		<id property="optionNum" column="optionNum"/>
 		<result property="type" column="type"/>
+	</resultMap>
+	
+	<resultMap type="OrdersDTO" id="orderResult">
+		<id property="buyerName" column="buyerName"/>
+		<id property="buyerTel" column="buyerTel"/>
+		<id property="buyerPostcode" column="buyerPostcode"/>
+		<id property="buyerAddr" column="buyerAddr"/>
+		<id property="buyerAddr2" column="buyerAddr2"/>
+		<id property="message" column="message"/>
 	</resultMap>
 
 </mapper>
