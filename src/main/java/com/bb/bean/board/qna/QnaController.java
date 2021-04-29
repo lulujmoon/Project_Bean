@@ -56,16 +56,16 @@ public class QnaController {
 //
 //		return mv;
 //	}
-//			
-//	@GetMapping("qnaList")
-//	public ModelAndView getList(Pager pager) throws Exception {
-//		ModelAndView mv = new ModelAndView();
-//		List<BoardDTO> ar = qnaService.getList(pager);
-//		mv.addObject("list", ar);
-//		mv.setViewName("qna/qnaList");
-//		mv.addObject("pager", pager);
-//		return mv;
-//	}
+			
+	@GetMapping("qnaList")
+		public ModelAndView getList(Pager pager) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		List<BoardDTO> ar = qnaService.getList(pager);
+		mv.addObject("list", ar);
+		mv.setViewName("qna/qnaList");
+		mv.addObject("pager", pager);
+		return mv;
+	}
 
 	@GetMapping("memberQna")
 	public ModelAndView memberQna(BoardDTO boardDTO) throws Exception {

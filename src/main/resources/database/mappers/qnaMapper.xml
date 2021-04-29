@@ -59,8 +59,8 @@
 			select qna_seq.nextval from dual
 		</selectKey>
 		insert into qna
-		(num,title,contents,category,writer,regDate,hit,ref,step,depth,con)
-		values(#{num},#{title},#{contents},#{category},#{writer},sysdate,0,#{num},0,0,0)
+		(num,title,contents,category,writer,con,regDate,hit,ref,step,depth)
+		values(#{num},#{title},#{contents},#{category},#{writer},#{con},sysdate,0,#{num},0,0)
 	</insert>
 
 	<update id="setUpdate" parameterType="BoardDTO">
@@ -79,8 +79,8 @@
 
 	<insert id="setReply" parameterType="QnaDTO">
 		insert into qna
-		(num,title,contents,category,writer,regDate,hit,ref,step,depth,con)
-		values(qna_seq.nextval,#{title},#{contents},#{category},#{writer},sysdate,0,#{ref},#{step},#{depth},#{con})
+		(num,title,contents,category,writer,con,regDate,hit,ref,step,depth)
+		values(qna_seq.nextval,#{title},#{contents},#{category},#{writer},#{con},sysdate,0,#{ref},#{step},#{depth})
 	</insert>
 
 	<update id="setReplyUpdate" parameterType="QnaDTO">
