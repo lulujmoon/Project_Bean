@@ -19,4 +19,8 @@ public class OrderDetailsService {
 		return orderDetailsDAO.getListbyOrderUid(orderDetailsDTO);
 	}
 	
+	public List<OrderDetailsDTO> getMemberAddr(OrderDetailsDTO orderDetailsDTO) throws Exception {
+		return orderDetailsDAO.getMemberAddr(orderDetailsDTO);
+	}
+	
 }

@@ -2,8 +2,6 @@ package com.bb.bean.member;
 
 import java.sql.Date;
 
-import com.bb.bean.orders.OrdersDTO;
-
 public class MemberDTO {
 	
 	private String id;

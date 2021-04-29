@@ -6,6 +6,39 @@
     
 <mapper namespace ="com.bb.bean.orderDetails.OrderDetailsDAO">
 
+	<select id="getMemberAddr" parameterType="OrderDetailsDTO" resultMap="addrResult">
+		select OD.*, O.*, M.* 
+		from  OrderDetails OD left join Orders O
+		on OD.orderUid = O.orderUid
+		left join Member M
+		on O.id = M.id
+		where OD.orderUid=#{orderUid}
+	</select>
+	
+	<resultMap type="OrderDetailsDTO" id="addrResult">
+		<id property="orderUid" column="orderUid"/>
+		<association property="order" javaType="OrdersDTO" resultMap="orderResult"></association>
+		<association property="member" javaType="MemberDTO" resultMap="memberResult"></association>	
+	</resultMap>
+	
+	<resultMap type="OrdersDTO" id="orderResult">
+		<id property="buyerName" column="buyerName"/>
+		<id property="buyerTel" column="buyerTel"/>
+		<id property="buyerPostcode" column="buyerPostcode"/>
+		<id property="buyerAddr" column="buyerAddr"/>
+		<id property="buyerAddr2" column="buyerAddr2"/>
+		<id property="message" column="message"/>
+	</resultMap>
+	
+	<resultMap type="MemberDTO" id="memberResult">
+		<id property="id" column="id"/>
+		<result property="postcode" column="postcode"/>
+		<result property="tel" column="tel"/>
+		<result property="addr" column="addr"/>
+		<result property="addr2" column="addr2"/>
+	</resultMap>
+
+
 	<insert id="setInsert" parameterType="OrderDetailsDTO">
 		insert into orderDetails (detailNum, orderUid, orderDate, optionNum, quantity, finalPrice, grind, shippingState)
 		values (orderDetails_seq.nextval, #{orderUid}, sysdate, #{optionNum}, #{quantity}, #{finalPrice}, #{grind,jdbcType=VARCHAR}, #{shippingState})
