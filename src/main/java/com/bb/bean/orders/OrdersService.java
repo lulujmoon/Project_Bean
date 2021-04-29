@@ -279,6 +279,10 @@ public class OrdersService {
 		return result;
 	}
 	
+	public OrdersDTO getSelectByImpUid(OrdersDTO ordersDTO) throws Exception {
+		return ordersDAO.getSelectByImpUid(ordersDTO);	
+	}
+	
 	
 	/* 결제 취소 */
 	public void cancelPaymentChecksumByImpUid(String imp_uid) {

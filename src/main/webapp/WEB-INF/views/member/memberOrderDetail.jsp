@@ -85,10 +85,9 @@
 												</tr>
 												<tr>
 													<th scope="row">주문처리상태</th>
-													<td>${list[0].shippingState}<a></a><input type="image"
-														src="//img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_cancel.gif"
-														alt="주문취소" class="displaynone"></ &nbsp;<span
-														class="displaynone"> <a href="#none"></a></span>
+													<td>
+														<span id="shippingState">${list[0].shippingState}</span>
+														<input type="image" src="//img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_cancel.gif" alt="주문취소" class="displaynone" id="cancel-btn" value="${list[0].order.impUid}">
 													</td>
 												</tr>
 											</tbody>
@@ -273,5 +272,7 @@
 
 
 	<c:import url="../template/footer.jsp"></c:import>
+	
+	<script type="text/javascript" src="../resources/jquery/memberOrderDetail.js"></script>
 </body>
 </html>

@@ -91,4 +91,14 @@ public class OrdersController {
 		ordersService.setPayStateUpdate(ordersDTO);
 	}
 	
+	@PostMapping("orderCancel")
+	public void orderCancel(OrdersDTO ordersDTO) throws Exception {
+		ordersDTO = ordersService.getSelectByImpUid(ordersDTO);
+		String imp_uid = ordersDTO.getImpUid();
+		ordersService.getToken();
+		ordersService.cancelPaymentChecksumByImpUid(imp_uid);
+		ordersDTO.setPayState("주문취소");
+		ordersService.setPayStateUpdate(ordersDTO);
+	}
+	
 }
