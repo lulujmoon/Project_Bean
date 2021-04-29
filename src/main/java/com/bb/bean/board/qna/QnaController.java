@@ -26,20 +26,35 @@ public class QnaController {
 	@Autowired
 	private HttpSession session;
 
-	@GetMapping("qnaPassword") public void setPassword()throws Exception{ 
+	@GetMapping("qnaPassword") 
+	public ModelAndView setPassword(BoardDTO boardDTO)throws Exception{ 
+		ModelAndView mv = new ModelAndView();
+		boardDTO = qnaService.getSelect(boardDTO);
+		mv.addObject("dto",boardDTO);
+		mv.setViewName("qna/qnaPassword");
+		return mv;
 	}
 	
-	@PostMapping("qnaPassword") public ModelAndView setPassword(ModelAndView mv,String pw,long num) throws Exception{
+	@PostMapping("qnaPassword") public ModelAndView setPassword(ModelAndView mv,String pw,BoardDTO boardDTO,long num,String writer) throws Exception{
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO = (MemberDTO)session.getAttribute("member");
-		boolean result = false;
 		String mpw = memberDTO.getPw();
-		if(pw.equals(mpw)) {
-			result=true;
-			mv.addObject("result",result);
-			mv.setViewName("common/ajaxResult");
+		String mid = memberDTO.getId();
+		System.out.println(mpw);
+		System.out.println(mid);
+		System.out.println(writer);
+		System.out.println(pw);
+		if(pw.equals(mpw)&&mid.equals(writer)) {
+			mv.addObject("num",num);
+			
+			mv.setViewName("redirect:./qnaSelect?num={num}");
+			/*
+			 * result=true; mv.addObject("result",result);
+			 * mv.setViewName("common/ajaxResult");
+			 */
 		}else {	
 		}	
+
 		return mv;
 	}
 			

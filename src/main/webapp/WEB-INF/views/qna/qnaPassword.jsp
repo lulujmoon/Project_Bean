@@ -10,10 +10,13 @@
 
 <h1>passwordpage</h1>
 <form id="frm" action="./qnaPassword" method="post">
-
+	<input type="hidden" name="num" value="${param.num}">
+	
+<input type="text" name="writer" value="${dto.writer}" readonly="readonly">
+	
 <input type="password" id="pw" name="pw">
 
-<input type="submit" id="btn" value="submit" class="btn btn-success">
+<input type="submit" id="btnPass" value="submit" class="btn btn-success">
 </form>
 </body>
 </html>
