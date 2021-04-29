@@ -96,6 +96,10 @@
 		update qna set status=#{status} where ref in(select ref from qna group by
 		ref having count(ref)>1)
 	</update>
+	
+	<update id="setConUpdate" parameterType="QnaDTO">
+		update qna set con=#{con} where ref=#{ref}
+	</update>
 
 
 
