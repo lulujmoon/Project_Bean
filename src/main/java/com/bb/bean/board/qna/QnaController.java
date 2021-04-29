@@ -26,45 +26,46 @@ public class QnaController {
 	@Autowired
 	private HttpSession session;
 
-	@GetMapping("qnaPassword") 
-	public ModelAndView setPassword(BoardDTO boardDTO)throws Exception{ 
-		ModelAndView mv = new ModelAndView();
-		boardDTO = qnaService.getSelect(boardDTO);
-		mv.addObject("dto",boardDTO);
-		mv.setViewName("qna/qnaPassword");
-		return mv;
-	}
-	
-	@PostMapping("qnaPassword") public ModelAndView setPassword(ModelAndView mv,String pw,BoardDTO boardDTO,long num,String writer,long ref) throws Exception{
-		MemberDTO memberDTO = new MemberDTO();
-		memberDTO = (MemberDTO)session.getAttribute("member");
-		String mpw = memberDTO.getPw();
-		String mid = memberDTO.getId();
-		if((pw.equals(mpw)&&mid.equals(writer))||mid.equals("admin")||) {
-			mv.addObject("num",num);
-			
-			mv.setViewName("redirect:./qnaSelect?num={num}");
-			/*
-			 * result=true; mv.addObject("result",result);
-			 * mv.setViewName("common/ajaxResult");
-			 */
-		}else {
-			mv.addObject("num",num);
-			mv.setViewName("redirect:./qnaPassword?num={num}");
-		}	
-
-		return mv;
-	}
-			
-	@GetMapping("qnaList")
-	public ModelAndView getList(Pager pager) throws Exception {
-		ModelAndView mv = new ModelAndView();
-		List<BoardDTO> ar = qnaService.getList(pager);
-		mv.addObject("list", ar);
-		mv.setViewName("qna/qnaList");
-		mv.addObject("pager", pager);
-		return mv;
-	}
+//	@GetMapping("qnaPassword") 
+//	public ModelAndView setPassword(BoardDTO boardDTO)throws Exception{ 
+//		ModelAndView mv = new ModelAndView();
+//		boardDTO = qnaService.getSelect(boardDTO);
+//		mv.addObject("dto",boardDTO);
+//		mv.setViewName("qna/qnaPassword");
+//		return mv;
+//	}
+//	
+//	@PostMapping("qnaPassword") public ModelAndView setPassword(ModelAndView mv,String pw,BoardDTO boardDTO,long num,String writer,long ref) throws Exception{
+//		MemberDTO memberDTO = new MemberDTO();
+//		memberDTO = (MemberDTO)session.getAttribute("member");
+//		String mpw = memberDTO.getPw();
+//		String mid = memberDTO.getId();
+//		
+//		if((pw.equals(mpw)&&mid.equals(writer))||mid.equals("admin")){
+//			mv.addObject("num",num);
+//			
+//			mv.setViewName("redirect:./qnaSelect?num={num}");
+//			/*
+//			 * result=true; mv.addObject("result",result);
+//			 * mv.setViewName("common/ajaxResult");
+//			 */
+//		}else {
+//			mv.addObject("num",num);
+//			mv.setViewName("redirect:./qnaPassword?num={num}");
+//		}	
+//
+//		return mv;
+//	}
+//			
+//	@GetMapping("qnaList")
+//	public ModelAndView getList(Pager pager) throws Exception {
+//		ModelAndView mv = new ModelAndView();
+//		List<BoardDTO> ar = qnaService.getList(pager);
+//		mv.addObject("list", ar);
+//		mv.setViewName("qna/qnaList");
+//		mv.addObject("pager", pager);
+//		return mv;
+//	}
 
 	@GetMapping("memberQna")
 	public ModelAndView memberQna(BoardDTO boardDTO) throws Exception {
