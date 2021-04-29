@@ -101,9 +101,4 @@
 		update qna set con=#{con} where ref=#{ref}
 	</update>
 
-
-
-
-
-
 </mapper>

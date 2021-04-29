@@ -11,9 +11,7 @@
 <h1>passwordpage</h1>
 <form id="frm" action="./qnaPassword" method="post">
 	<input type="hidden" name="num" value="${param.num}">
-	
-<input type="text" name="writer" value="${dto.writer}" readonly="readonly">
-<input type="text" name="ref" value="${dto.ref}" readonly="readonly">
+
 
 <input type="password" id="pw" name="pw">
 
