@@ -309,10 +309,44 @@ public class OrdersService {
 		}
 	}
 	
+	/* 결제 취소 시 배송상태 변경 */
 	public void setShippingStateCancelled(OrdersDTO ordersDTO) throws Exception {
 		OrderDetailsDTO orderDetailsDTO = new OrderDetailsDTO();
 		orderDetailsDTO.setOrderUid(ordersDTO.getOrderUid());
 		orderDetailsDTO.setShippingState("주문취소");
 		orderDetailsDAO.setShippingStateUpdate(orderDetailsDTO);
+	}
+	
+	/* 결제 취소 시 포인트 롤백 */
+	public long setPointRollBack(OrdersDTO ordersDTO, long restPoint) throws Exception {
+		List<PointDTO> poList = pointDAO.getListbyorderUid(ordersDTO);
+		
+		for(PointDTO po:poList) {
+			/* 포인트 차감 취소 */
+			if(po.getUsePoint()>0) {
+				PointDTO pointDTO = new PointDTO();
+				pointDTO.setId(ordersDTO.getId());
+				pointDTO.setSort("차감 취소");
+				pointDTO.setDetail("["+ordersDTO.getOrderUid()+"] 주문 취소");
+				pointDTO.setUsePoint(-po.getUsePoint());
+				pointDTO.setRestPoint(restPoint+po.getUsePoint());
+				pointDAO.setInsert(pointDTO);
+				restPoint = pointDTO.getRestPoint();
+			}
+
+			/* 포인트 적립 취소 */
+			if(po.getSavePoint()>0) {
+				PointDTO pointDTO = new PointDTO();
+				pointDTO.setId(ordersDTO.getId());
+				pointDTO.setSort("적립 취소");
+				pointDTO.setDetail("["+ordersDTO.getOrderUid()+"] 주문 취소");
+				pointDTO.setSavePoint(-po.getSavePoint());
+				pointDTO.setRestPoint(restPoint-po.getSavePoint());
+				pointDAO.setInsert(pointDTO);
+				restPoint = pointDTO.getRestPoint();
+			}			
+		}
+		
+		return restPoint;
 	}
 }

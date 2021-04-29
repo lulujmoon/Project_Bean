@@ -8,7 +8,7 @@
 <mapper namespace ="com.bb.bean.point.PointDAO">
 
 	<select id="getList" parameterType="PointDTO" resultType="PointDTO">
-		select * from point where id=#{id}
+		select * from point where id=#{id} order by pointNum desc
 	</select>
 
 	<insert id="setInsert" parameterType="PointDTO">
@@ -16,4 +16,7 @@
 		values (point_seq.nextval, #{id}, sysdate, #{sort}, #{detail}, #{savePoint,jdbcType=INTEGER}, #{usePoint,jdbcType=INTEGER}, #{restPoint})
 	</insert>
 
+	<select id="getListbyorderUid" parameterType="OrdersDTO" resultType="PointDTO">
+		select * from point where detail like '%'||#{orderUid}||'%' order by pointNum asc
+	</select>
 </mapper>
