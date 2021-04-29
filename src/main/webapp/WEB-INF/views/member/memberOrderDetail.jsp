@@ -28,7 +28,7 @@
 				<nav id="title-nav">
 					<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
 						class="ko">회원정보</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberOrder"><span
+						href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}"><span
 						class="ko">주문내역</span></a> |  <a
 						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
@@ -256,10 +256,11 @@
 										</tbody>
 									</table>
 									
+									<a href="${pageContext.request.contextPath}/member/memberAddrUpdate?orderUid=${list[0].orderUid}">배송지 변경</a>
 								</div>
 							</div>
 
-
+						
 
 
 						</div>

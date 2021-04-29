@@ -18,5 +18,5 @@ public class OrderDetailsService {
 	public List<OrderDetailsDTO> getListbyOrderUid(OrderDetailsDTO orderDetailsDTO) throws Exception {
 		return orderDetailsDAO.getListbyOrderUid(orderDetailsDTO);
 	}
-	
+
 }

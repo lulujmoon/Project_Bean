@@ -1,5 +1,7 @@
 package com.bb.bean.member;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -11,6 +13,10 @@ public class MemberDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "com.bb.bean.member.MemberDAO.";
+	
+	public List<MemberDTO> memberOrder(MemberDTO memberDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"memberOrder", memberDTO);
+	}
 
 	public MemberDTO nameCheck(MemberDTO memberDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"nameCheck", memberDTO);

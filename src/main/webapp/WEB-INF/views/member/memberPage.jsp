@@ -33,7 +33,7 @@
 				<nav id="title-nav">
 					<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
 						class="ko">회원정보</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberOrder"><span
+						href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}"><span
 						class="ko">주문내역</span></a> |  <a
 						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
@@ -62,11 +62,7 @@
 					</div>
 					</a> 
 					
-				<a href="${pageContext.request.contextPath}/member/memberOrder" class="mainpage-mobile-menu"> 주문내역 조회
-					<div class="mainpage-mobile-menu-right arrow"></div>
-				</a> 
-				
-				<a href="${pageContext.request.contextPath}/member/memberSubscrip" class="mainpage-mobile-menu"> 정기배송 관리
+				<a href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}" class="mainpage-mobile-menu"> 주문내역 조회
 					<div class="mainpage-mobile-menu-right arrow"></div>
 				</a> 
 				<a href="${pageContext.request.contextPath}/member/memberUpdate" class="mainpage-mobile-menu"> 회원정보 수정
@@ -123,7 +119,7 @@
 							<div class="mainpage-label">
 								<span>내 포인트</span>
 								<div class="mainpage-labellink">
-									<a href="${pageContext.request.contextPath}/member/memberPoint">자세히 보기 &gt;</a>
+									<a href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}">자세히 보기 &gt;</a>
 								</div>
 							</div>
 						</div>
@@ -157,7 +153,7 @@
 							<div class="mainpage-label">
 								<span>최근 주문내역</span>
 								<div class="mainpage-labellink">
-									<a href="${pageContext.request.contextPath}/member/memberOrder">자세히 보기 &gt;</a>
+									<a href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}">자세히 보기 &gt;</a>
 								</div>
 							</div>
 						</div>
@@ -176,30 +172,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="sub-item mainpage-row">
-						<div class="sub-item-column-product">
-							<div class="mainpage-label">
-								<span>나의 정기배송</span>
-								<div class="mainpage-labellink">
-									<a href="${pageContext.request.contextPath}/member/memberSubsrip">정기배송 관리 &gt;</a>
-								</div>
-							</div>
-						</div>
-						<div class="sub-item-column-infowrapper">
-							<div>
-								<div class="sub-item-column-info">
-									<div class="sub-item-option">
-										<div class="sub-item-option-content">
-											정기배송 신청내역이 없습니다.
-											<div>
-												<a href="#">정기배송 구경해보기 &gt;</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+
 				</ul>
 			</div>
 		</div>

@@ -18,4 +18,5 @@ public class OrderDetailsController {
 		List<OrderDetailsDTO> list = orderDetailsService.getListbyOrderUid(orderDetailsDTO);
 		model.addAttribute("list", list);
 	}
+	
 }

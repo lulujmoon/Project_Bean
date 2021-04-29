@@ -27,4 +27,5 @@
 	<update id="setPayStateUpdate" parameterType="OrdersDTO">
 		update orders set payState=#{payState} where orderUid=#{orderUid}
 	</update>
+	
 </mapper>

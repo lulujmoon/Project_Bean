@@ -8,6 +8,36 @@
 
 <mapper namespace="com.bb.bean.member.MemberDAO">
 
+	<select id="memberOrder" parameterType="MemberDTO" resultMap="orderResult">
+		select M.*, O.*, OD.*
+		from member M left join Orders O
+		on M.id = O.id
+		right join OrderDetails OD
+		on OD.orderUid = O.orderUid
+		where M.id=#{id}
+	</select>
+
+	<resultMap type="MemberDTO" id="orderResult">
+		<id property="id" column="id"/>
+		<association property="order" javaType="OrdersDTO" resultMap="ordersResult"/>
+		<association property="detail" javaType="OrderDetailsDTO" resultMap="detailResult"/>
+	</resultMap>
+	
+	<resultMap type="OrdersDTO" id="ordersResult">
+		<id property="orderUid" column="orderUid"/>
+		<result property="orderDate" column="orderDate"/>
+		<result property="orderName" column="orderName"/>
+	</resultMap>
+	
+	<resultMap type="OrderDetailsDTO" id="detailResult">
+		<id property="orderUid" column="orderUid"/>
+		<result property="quantity" column="quantity"/>
+		<result property="finalPrice" column="finalPrice"/>
+		<result property="grind" column="grind"/>
+		<result property="shippingState" column="shippingState"/>
+	</resultMap>
+	
+	
 	<select id="nameCheck" parameterType="MemberDTO"
 		resultType="MemberDTO">
 		select name from member where id=#{id}
@@ -73,4 +103,5 @@
 		update member set
 		point=#{point} where id=#{id}
 	</update>
+	
 </mapper>
