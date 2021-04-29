@@ -68,7 +68,6 @@ public class CartController {
 		}
 		
 		cartDTO.setCartID(id);
-		System.out.println(id);
 
 		String result = cartService.setInsert(cartDTO);
 		
@@ -108,6 +107,22 @@ public class CartController {
 		long totalPrice = cartService.getTotalPrice(cartDTO);
 		
 		mv.addObject("result", totalPrice);
+		mv.setViewName("common/ajaxResult");
+		
+		return mv;
+	}
+	
+	
+	@PostMapping("cartDeleteAll")
+	public ModelAndView setDeleteAll(CartDTO cartDTO, HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		if(cartDTO.getCartID()=="") {
+			String tempId = (String)session.getAttribute("tempId");
+			cartDTO.setCartID(tempId);
+		}
+		int result = cartService.setCartIDDelete(cartDTO);
+		
+		mv.addObject("result", result);
 		mv.setViewName("common/ajaxResult");
 		
 		return mv;

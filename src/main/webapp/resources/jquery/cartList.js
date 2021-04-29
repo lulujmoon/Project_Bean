@@ -123,4 +123,15 @@ $(".del-btn").click(function(){
 });
 
 
-
+/* 전체삭제 버튼 */
+$("#delAll-btn").click(function(){
+	let cartID = $(this).attr("title");
+	$.post("./cartDeleteAll", {
+		cartID:cartID
+	}, function(result){
+		location.reload();
+		$("#totalPrice").text(result);
+		load();
+		calculate();
+	})
+})

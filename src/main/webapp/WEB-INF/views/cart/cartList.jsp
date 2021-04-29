@@ -13,8 +13,10 @@
 <c:import url="../member/memberLogin.jsp"></c:import>
 <c:import url="../member/memberJoin.jsp"></c:import>
 	<div class="container">
+		
+		<input type="button" value="전체 삭제" id="delAll-btn" title="${member.id}" style="float:right">
 		<h1>Cart</h1>
-		<input type="button" value="전체 삭제" class="del-btn" title="${member.id}" style="float:right">
+		
 		<span style="display:none" id="before">${before}</span>
 		<!-- 비었을 때 옵션 -->
 		<c:if test="${totalPrice==0}">
