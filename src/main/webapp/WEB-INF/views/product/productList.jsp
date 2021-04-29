@@ -73,43 +73,63 @@
 			      		<div class="titleAgainHere">${product.name}</div>
 			      	</div>
 			      	<div class="subtitleHere">${product.subtitle}</div>
-			      	<div class="row"><div class="includesInfo">구성품</div><div class="includesHere"></div></div>
+			      	<div class="row">
+			      		<div class="includesInfo">구성품</div>
+			      		<div class="includesHere">
+			      			<span class="includes">${product.includes}</span>
+			      			<ul class="includesList"></ul>
+			      		</div></div>
 			      	<div class="optionsHere">
 			      		<table class="optionTable">
+			      			<c:if test="${product.options.size()==0}">
+			      				<div style="color:red">
+			      					현재 상품에 등록된 옵션이 없습니다.<br>옵션이 없으면 구매를 진행할 수 없습니다. 옵션을 추가해주세요.
+			      				</div>
+			      			</c:if>
 			      			<c:forEach items="${product.options}" var="option">
-			      			<tr>
-			      				<td><input type="radio" class="optionNum" name="optionNum" value="${option.optionNum}"><span class="optStock" style="display:none">${ption.stock}</span></td>
-			      				<td><span class="optType">${option.type}</span></td>
-			      				<td><span class="optPrice"><del>₩${option.price}</del>&nbsp;&nbsp;₩${option.afterPrice}</span></td>
-			      				<td><span class="optInfo">${option.optionInfo}</span>
-			      			</tr>
+			      							<tr>
+			      					<c:choose>
+			      						<c:when test="${option.stock eq 0}">
+			      								<td><input type="radio" class="optionNum" name="optionNum" value="${option.optionNum}" disabled="disabled"></td>	      				
+			      						</c:when>
+			      						<c:otherwise>
+							      				<td><input type="radio" class="optionNum" name="optionNum" value="${option.optionNum}"></td>
+			      						</c:otherwise>
+			      					</c:choose>
+							      				<td>${option.type}</td>
+								      			<td><del>₩${option.price}</del>&nbsp;&nbsp;₩${option.afterPrice}</td>
+								      			<td>${option.optionInfo}</td>
+							      			</tr>	
+
 			      			</c:forEach>
 			      		</table>
 			      	</div>
-			      	<div class="grindsHere">
-						갈아드릴까요?&nbsp;&nbsp;
-						<select name="grind" class="selectpicker" style="font-size:14px">
-							<option class="grind grindOpt">홀빈(갈지 않음)</option>
-							<option class="grind grindOpt">핸드드립/클레버용</option>
-							<option class="grind grindOpt">커피메이커용</option>
-							<option class="grind grindOpt">프렌치프레스용</option>
-							<option class="grind grindOpt">모카포트/에어로프레스용</option>
-							<option class="grind grindOpt">에스프레소 머신용</option>
-							<option class="grind grindOpt">더치/콜드브루용</option>
-						</select>
-					</div>
+			      	<c:if test="${product.grinds eq 'O'}">
+				      	<div class="grindsHere">
+							갈아드릴까요?&nbsp;&nbsp;
+							<select name="grind" class="selectpicker grinds" style="font-size:14px">
+								<option>홀빈(갈지 않음)</option>
+								<option>핸드드립/클레버용</option>
+								<option>커피메이커용</option>
+								<option>프렌치프레스용</option>
+								<option>모카포트/에어로프레스용</option>
+								<option>에스프레소 머신용</option>
+								<option>더치/콜드브루용</option>
+							</select>
+						</div>
+			      	</c:if>
 					<div class="quantitiesHere">
 						수량&nbsp;&nbsp;
-						<select name="quantity" class="selectpicker" data-width="65px" data-size="5" style="font-size:14px">
+						<select name="quantity" class="selectpicker quantities" data-width="65px" data-size="5" style="font-size:14px">
 							<c:forEach begin="1" end="20" var="i" step="1">
 								<option value="${i}" class="quantity quantityOpt">${i}개</option>
 							</c:forEach>
 						</select><br><br>
 					</div>
 			   		<div class="buttonsHere">
-			   			<div id="cart-btn">장바구니</div>
-			   			<div id="order-btn">바로결제</div>
-			   			<div id="goCart-btn">장바구니 보러가기</div>
+			   			<div class="cart-btn">장바구니</div>
+			   			<div class="order-btn">바로결제</div>
+			   			<div class="goCart-btn">장바구니 보러가기</div>
 			   			<div style="display:inline-block;float:right">
 			   				<a href="./optionManage?productNum=${product.productNum}" class="btn btn-sm btn-success">옵션</a>
 		    				<a href="./productUpdate?productNum=${product.productNum}" class="btn btn-sm btn-success">수정</a>
@@ -127,14 +147,15 @@
 						상세 정보
 						</div>
 						<div class="col-sm-10 det-contents">
-							<ul class="det-ul1 detailsHere"></ul>
+							<span class="details" style="display:none">${product.details}</span>
+							<ul class="detailsList"></ul>
 						</div>
 					</div>
 				</section>
 	       	</div>
 	       	<div class="commonInfoHere"><c:import url="./commonInfo.jsp"></c:import></div>
 		    <div class="modal-footer">
-		        <div id="toTop-btn">맨 위로</div>
+		        <div class="toTop-btn">맨 위로</div>
 		    </div>
 	   	 </div>
 	  	</div>
@@ -147,15 +168,112 @@
 
 <!-- <script type="text/javascript" src="../resources/jquery/productList.js"></script> -->
 <script type="text/javascript">
-$('#productSelect').on('show.bs.modal', function (event) {
+<c:forEach items="${list}" var="product">
+$('#select_${product.productNum}').on('show.bs.modal', function (event) {
 	
 	  let button = $(event.relatedTarget)
 	  let productNum = button.data('whatever') // Extract info from data-* attributes
 	  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 	  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 	  let modal = $(this);
-	  	  
-})
+	  
+	  <!-- 구성품 리스트 생성 -->
+	  let includes = $(modal).find(".includes");
+	  let inTxt = $(includes).text();
+	  let includesArr = inTxt.split('~');
+	  
+	  txt = "";
+	  for(inc of includesArr){
+		  inTxt = inTxt + "<li>"+inc+"</li>";
+	  }
+	  $(includes).text("");
+	  $(".includesList").html(inTxt);
+	  
+	  
+	  <!-- 상세정보 리스트 생성 -->
+	  let details = $(modal).find(".details");
+	  let deTxt = $(details).text();
+	  let detailsArr = deTxt.split('~');
+	 
+	  deTxt = "";
+	  for(de of detailsArr){
+		  deTxt = deTxt+"<li>"+de+"</li>";
+	  }
+	  $(details).text("");
+	  $(".detailsList").html(deTxt);
+	 
+	  <!-- 초기 세팅 -->
+	  $(".goCart-btn").attr("style", "display:none");
+	  let optNums = $(modal).find(".optionNum");
+	  $(optNums[0]).prop("checked", true);
+	  
+	  
+	  <!-- 장바구니 추가 함수 -->
+	  function cartInsert(){
+		  let res = true;
+		  let optionNum="";
+		  for(opt of $(modal).find(".optionNum")){
+			  if($(opt).prop("checked")){
+				 optionNum=$(opt).val(); 
+			  }
+		  }
+	  	  let grind = "";
+		  if('${product.grinds}'=="O"){
+			grind = $(modal).find(".grinds option:selected").val();	
+		  }
+		  let quantity = $(modal).find(".quantities option:selected").val();
+			  $.ajax({
+				  url:"../cart/cartInsert",
+				  type:"POST",
+				  data:{
+					  optionNum:optionNum,
+					  grind:grind,
+					  quantity:quantity
+				  },
+				  async: false,
+				  success: function(result){
+							if(result.trim()!=""){
+							alert(result.trim());
+							}
+						},
+				  error: function(){
+					  alert("등록된 옵션이 없습니다. 고객센터에 문의해주세요.");
+					  res = false;
+				  }
+			  });			
+			
+		  return res;
+	  }
+	  
+	  <!-- 버튼 설정 -->
+	  $(".cart-btn").click(function(){
+		let res = cartInsert();
+		if(res){
+			$(".goCart-btn").slideDown(800);
+		}
+
+	  });
+	  
+	  $(".order-btn").click(function(){
+		  let res = cartInsert();
+		  if(res){
+			  setTimeout(function(){
+				  location.href="../cart/cartList";		  				  
+			  }, 300);
+		  }
+	  });
+	  
+	  $(".goCart-btn").click(function(){
+		  location.href="../cart/cartList";
+	  });
+	  
+	  $(".toTop-btn").click(function(){
+			$(".modal").scrollTop(0);
+		  });
+	  <!-- -->
+});
+
+</c:forEach>
 </script>
 </body>
 </html>
