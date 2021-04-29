@@ -213,7 +213,7 @@ public class OrdersService {
 		}
 	}
 	
-	
+	/* 결제 검증 */
 	public String paymentByImpUid(String imp_uid, long usePoint, OrdersDTO ordersDTO){
 		
 		String result = "";
@@ -280,7 +280,7 @@ public class OrdersService {
 	}
 	
 	
-	
+	/* 결제 취소 */
 	public void cancelPaymentChecksumByImpUid(String imp_uid) {
 		CancelData cancel_data = new CancelData(imp_uid, true); //imp_uid를 통한 전액취소
 		//cancel_data.setChecksum(BigDecimal.valueOf(500)); // checksum 으로 검증 추가
