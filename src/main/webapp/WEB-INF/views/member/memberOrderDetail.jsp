@@ -85,9 +85,9 @@
 												</tr>
 												<tr>
 													<th scope="row">주문처리상태</th>
-													<td>${order.shippingState}<input type="image"
+													<td>${list[0].shippingState}<a></a><input type="image"
 														src="//img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_cancel.gif"
-														alt="주문취소" class="displaynone"> &nbsp;<span
+														alt="주문취소" class="displaynone"></ &nbsp;<span
 														class="displaynone"> <a href="#none"></a></span>
 													</td>
 												</tr>
