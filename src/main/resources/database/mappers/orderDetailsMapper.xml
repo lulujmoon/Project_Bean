@@ -48,12 +48,17 @@
 	</resultMap>
 	
 	<resultMap type="OrdersDTO" id="orderResult">
-		<id property="buyerName" column="buyerName"/>
-		<id property="buyerTel" column="buyerTel"/>
-		<id property="buyerPostcode" column="buyerPostcode"/>
-		<id property="buyerAddr" column="buyerAddr"/>
-		<id property="buyerAddr2" column="buyerAddr2"/>
-		<id property="message" column="message"/>
+		<id property="orderUid" column="orderUid"/>
+		<result property="impUid" column="impUid"/>
+		<result property="buyerName" column="buyerName"/>
+		<result property="buyerTel" column="buyerTel"/>
+		<result property="buyerPostcode" column="buyerPostcode"/>
+		<result property="buyerAddr" column="buyerAddr"/>
+		<result property="buyerAddr2" column="buyerAddr2"/>
+		<result property="message" column="message"/>
 	</resultMap>
 
+	<update id="setShippingStateUpdate" parameterType="OrderDetailsDTO">
+		update orderDetails set shippingState=#{shippingState} where orderUid=#{orderUid}
+	</update>
 </mapper>

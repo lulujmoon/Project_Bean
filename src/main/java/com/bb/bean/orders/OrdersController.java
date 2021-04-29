@@ -91,4 +91,26 @@ public class OrdersController {
 		ordersService.setPayStateUpdate(ordersDTO);
 	}
 	
+	@PostMapping("orderCancel")
+	public ModelAndView orderCancel(OrdersDTO ordersDTO, HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		ordersDTO = ordersService.getSelectByImpUid(ordersDTO);
+		String imp_uid = ordersDTO.getImpUid();
+		ordersService.getToken();
+		ordersService.cancelPaymentChecksumByImpUid(imp_uid);
+		ordersDTO.setPayState("주문취소");
+		ordersService.setPayStateUpdate(ordersDTO);
+		ordersService.setShippingStateCancelled(ordersDTO);
+		
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+		long restPoint = memberDTO.getPoint();
+		restPoint = ordersService.setPointRollBack(ordersDTO, restPoint);
+		memberDTO.setPoint(restPoint);
+		session.setAttribute("member", memberDTO);
+		
+		mv.addObject("result", "주문이 취소되었습니다.");
+		mv.setViewName("common/ajaxResult");
+		return mv;
+	}
+	
 }

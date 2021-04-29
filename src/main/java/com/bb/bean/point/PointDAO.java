@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bb.bean.orders.OrdersDTO;
+
 @Repository
 public class PointDAO {
 
@@ -20,5 +22,9 @@ public class PointDAO {
 	
 	public int setInsert(PointDTO pointDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"setInsert", pointDTO);
+	}
+	
+	public List<PointDTO> getListbyorderUid(OrdersDTO ordersDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getListbyorderUid", ordersDTO);
 	}
 }

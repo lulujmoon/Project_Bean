@@ -28,6 +28,10 @@ public class OrdersDAO {
 		return sqlSession.selectOne(NAMESPACE+"getSelect", ordersDTO);
 	}
 	
+	public OrdersDTO getSelectByImpUid(OrdersDTO ordersDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getSelectByImpUid", ordersDTO);
+	}
+	
 	public int setPayStateUpdate(OrdersDTO ordersDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"setPayStateUpdate", ordersDTO);
 	}

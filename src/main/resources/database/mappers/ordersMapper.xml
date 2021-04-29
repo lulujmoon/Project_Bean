@@ -24,6 +24,10 @@
 		select * from orders where orderUid=#{orderUid}
 	</select>
 	
+	<select id="getSelectByImpUid" parameterType="OrdersDTO" resultType="OrdersDTO">
+		select * from orders where impUid=#{impUid}
+	</select>
+	
 	<update id="setPayStateUpdate" parameterType="OrdersDTO">
 		update orders set payState=#{payState} where orderUid=#{orderUid}
 	</update>
