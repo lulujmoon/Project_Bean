@@ -37,6 +37,7 @@
   /* 옵션 불러오기 */
   let options = "";
 
+
   let optionsSize = $(productDiv).find('.optionsSize').text();
   if(optionsSize>0){
 	  options = '<table class="optionTable">';

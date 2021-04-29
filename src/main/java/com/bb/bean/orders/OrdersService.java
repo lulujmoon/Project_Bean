@@ -109,6 +109,12 @@ public class OrdersService {
 		return ordersDAO.setPayStateUpdate(ordersDTO);
 		
 	}
+	
+	/* 결제 성공 시 imp_uid 저장 */
+	public void setImpUidUpdate(OrdersDTO ordersDTO, String imp_uid) throws Exception {
+		ordersDTO.setImpUid(imp_uid);
+		ordersDAO.setImpUidUpdate(ordersDTO);
+	}
 
 	/* 결제 성공 시 재고 감소 */
 	public void setStockUpdate(OrdersDTO ordersDTO) throws Exception {
@@ -207,7 +213,7 @@ public class OrdersService {
 		}
 	}
 	
-	
+	/* 결제 검증 */
 	public String paymentByImpUid(String imp_uid, long usePoint, OrdersDTO ordersDTO){
 		
 		String result = "";
@@ -274,14 +280,14 @@ public class OrdersService {
 	}
 	
 	
-	
+	/* 결제 취소 */
 	public void cancelPaymentChecksumByImpUid(String imp_uid) {
 		CancelData cancel_data = new CancelData(imp_uid, true); //imp_uid를 통한 전액취소
 		//cancel_data.setChecksum(BigDecimal.valueOf(500)); // checksum 으로 검증 추가
 
 		try {
 			IamportResponse<Payment> payment_response = client.cancelPaymentByImpUid(cancel_data);
-
+			
 			if(payment_response.getResponse()==null) {
 				System.out.println("취소 완료");
 			};

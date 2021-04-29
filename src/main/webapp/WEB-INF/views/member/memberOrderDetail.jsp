@@ -63,7 +63,6 @@
 								</div>
 
 								<div class="ec-base-table">
-									<c:forEach items="${list}" var="order">
 										<table class="table border border-0">
 											<colgroup>
 												<col style="width: 160px">
@@ -73,12 +72,12 @@
 											<tbody>
 												<tr>
 													<th scope="row">주문번호</th>
-													<td>${order.orderUid}<span></span>
+													<td>${list[0].orderUid}<span></span>
 													</td>
 												</tr>
 												<tr>
 													<th scope="row">주문일자</th>
-													<td>${order.orderDate}</td>
+													<td>${list[0].orderDate}</td>
 												</tr>
 												<tr>
 													<th scope="row">주문자</th>
@@ -86,15 +85,14 @@
 												</tr>
 												<tr>
 													<th scope="row">주문처리상태</th>
-													<td>${order.shippingState}<input type="image"
+													<td>${list[0].shippingState}<a></a><input type="image"
 														src="//img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_cancel.gif"
-														alt="주문취소" class="displaynone"> &nbsp;<span
+														alt="주문취소" class="displaynone"></ &nbsp;<span
 														class="displaynone"> <a href="#none"></a></span>
 													</td>
 												</tr>
 											</tbody>
 										</table>
-									</c:forEach>
 								</div>
 							</div>
 <br>
@@ -232,32 +230,30 @@
 											<col style="width: 160px">
 											<col style="width: auto">
 										</colgroup>
-										<c:forEach items="${list}" var="list">
 										<tbody>
 											<tr class="displaynone">
 									
 											<tr>
 												<th scope="row">받으시는분</th>
-												<td><span>${list.order.buyerName}</span></td>
+												<td><span>${list[0].order.buyerName}</span></td>
 											</tr>
-											<tr class="">
+											<tr>
 												<th scope="row">우편번호</th>
-												<td><span>${list.order.buyerPostcode}</span></td>
+												<td><span>${list[0].order.buyerPostcode}</span></td>
 											</tr>
-											<tr class="">
+											<tr>
 												<th scope="row">주소</th>
-												<td><span>${list.order.buyerAddr} ${list.order.buyerAddr2}</span></td>
+												<td><span>${list[0].order.buyerAddr} ${list[0].order.buyerAddr2}</span></td>
 											</tr>
 											<tr>
 												<th scope="row">휴대전화</th>
-												<td><span>${list.order.buyerTel}</span></td>
+												<td><span>${list[0].order.buyerTel}</span></td>
 											</tr>
 											<tr>
 												<th scope="row">배송메시지</th>
-												<td><span>${list.order.message}</span></td>
+												<td><span>${list[0].order.message}</span></td>
 											</tr>
 										</tbody>
-										</c:forEach>
 									</table>
 									
 								</div>

@@ -82,6 +82,7 @@
 	border-spacing: 15px 0;
 }
 
+
 .optPrice{
 	font-weight:bold;
 	padding-right:5%;
@@ -158,7 +159,7 @@
 	padding-bottom: 5px;
 }
 
-#cart-btn{
+.cart-btn{
 	cursor:pointer;
 	width:150px;
 	height:50px;
@@ -169,7 +170,7 @@
 	line-height: 50px;
 }
 
-#order-btn{
+.order-btn{
 	cursor:pointer;
 	width:150px;
 	height:50px;
@@ -179,7 +180,7 @@
 	line-height: 50px;
 }
 
-#goCart-btn{
+.goCart-btn{
 	cursor:pointer;
 	width:150px;
 	height:40px;
@@ -189,7 +190,7 @@
 	line-height: 40px;
 }
 
-#toTop-btn{
+.toTop-btn{
 	cursor:pointer;
 	width:80px;
 	height:30px;

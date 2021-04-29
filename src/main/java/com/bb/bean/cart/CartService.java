@@ -18,8 +18,32 @@ public class CartService {
 	@Autowired
 	private CartService cartService;
 	
-	public List<CartDTO> getList(CartDTO cartDTO) throws Exception {
+	
+	public String beforeGetList(CartDTO cartDTO) throws Exception {
+		List<CartDTO> caList = cartDAO.getList(cartDTO);
+		String result = "";
+		for(CartDTO ca:caList) {
+			boolean notSold = this.getSold(ca);
+			if(!notSold) {
+				this.setDelete(ca);
+				result = "품절된 상품이 삭제되었습니다.";
+			}
+			
+			boolean buyable = this.getBuyable(ca);
+			if(notSold&&!buyable) {
+				OptionsDTO optionsDTO = new OptionsDTO();
+				optionsDTO.setOptionNum(ca.getOptionNum());
+				optionsDTO = productDAO.getOptionSelect(optionsDTO);
+				
+				ca.setQuantity(optionsDTO.getStock());
+				this.setUpdate(ca);
+			}
+		}
 		
+		return result;
+	}
+	
+	public List<CartDTO> getList(CartDTO cartDTO) throws Exception {
 		return cartDAO.getList(cartDTO);
 	}
 	
@@ -32,15 +56,17 @@ public class CartService {
 		return cartDTO;
 	}
 	
-//	public boolean getSold(CartDTO cartDTO) throws Exception {
-//		OptionsDTO optionsDTO = new OptionsDTO();
-//		optionsDTO.setOptionNum(cartDTO.getOptionNum());
-//		optionsDTO = productDAO.getOptionSelect(optionsDTO);
-//		boolean sold = false;
-//		if(optionsDTO.getStock()==0) {
-//			
-//		}
-//	}
+	public boolean getSold(CartDTO cartDTO) throws Exception {
+		OptionsDTO optionsDTO = new OptionsDTO();
+		optionsDTO.setOptionNum(cartDTO.getOptionNum());
+		optionsDTO = productDAO.getOptionSelect(optionsDTO);
+		boolean notSold = false;
+		if(optionsDTO.getStock()!=0) {
+			notSold = true;
+		}
+		
+		return notSold;
+	}
 	
 	public boolean getBuyable(CartDTO cartDTO) throws Exception {
 		OptionsDTO optionsDTO = new OptionsDTO();

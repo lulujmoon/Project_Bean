@@ -59,6 +59,7 @@ public class OrdersController {
 			ordersService.setPayStateUpdate(ordersDTO);
 			result = "결제가 완료되었습니다.";
 			
+			ordersService.setImpUidUpdate(ordersDTO, imp_uid);
 			ordersService.setStockUpdate(ordersDTO);
 			ordersService.shiftCartList(ordersDTO);
 			
@@ -83,6 +84,7 @@ public class OrdersController {
 		return mv;
 	}
 	
+	/* 결제 취소된 건 업데이트 */
 	@PostMapping("orderCancelled")
 	public void orderCancelled(OrdersDTO ordersDTO) throws Exception {
 		ordersDTO.setPayState("결제취소");

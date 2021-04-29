@@ -2,6 +2,11 @@
  * 
  */
 
+/* 품절된 상품 삭제 알림 */
+if($("#before").text().trim()!=""){
+	alert($("#before").text().trim());
+}
+
 /* 분쇄도와 수량의 value를 저장한 값으로 설정해준다. */
 
 function load(){

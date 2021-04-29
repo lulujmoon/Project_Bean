@@ -14,7 +14,7 @@
 <c:import url="../member/memberJoin.jsp"></c:import>
 	<div class="container">
 		<h1>Cart</h1>
-		
+		<span style="display:none" id="before">${before}</span>
 		<!-- 비었을 때 옵션 -->
 		<c:if test="${totalPrice==0}">
 		<div style="border:1px solid lightgrey;padding:20px;">
