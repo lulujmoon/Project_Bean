@@ -2,6 +2,7 @@ package com.bb.bean.orderDetails;
 
 import java.sql.Date;
 
+import com.bb.bean.orders.OrdersDTO;
 import com.bb.bean.product.OptionsDTO;
 import com.bb.bean.product.ProductDTO;
 
@@ -18,6 +19,7 @@ public class OrderDetailsDTO {
 	private String shippingState;
 	private ProductDTO product;
 	private OptionsDTO option;
+	private OrdersDTO order;
 	
 	public long getDetailNum() {
 		return detailNum;
@@ -79,6 +81,11 @@ public class OrderDetailsDTO {
 	public void setOption(OptionsDTO option) {
 		this.option = option;
 	}
-	
+	public OrdersDTO getOrder() {
+		return order;
+	}
+	public void setOrder(OrdersDTO order) {
+		this.order = order;
+	}
 	
 }

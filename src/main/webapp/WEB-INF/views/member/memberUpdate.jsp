@@ -32,10 +32,8 @@
 					<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
 						class="ko">회원정보</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberOrder"><span
-						class="ko">주문내역</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberSubscrip"><span
-						class="ko">정기/간편주문</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberPoint"><span
+						class="ko">주문내역</span></a> |  <a
+						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberQna"><span
 						class="ko">문의</span></a>
@@ -136,7 +134,7 @@
 
 <br>
 			<div class="mypage-info">
-				※ 정기배송 주소는 <a href="${pageContext.request.contextPath}/member/memberSubscrip">마이페이지 &gt; 정기배송</a> 에서 수정하실 수
+				※ 배송 주소는 <a href="${pageContext.request.contextPath}/member/memberAddrUpdate">마이페이지 &gt; 배송지수정</a> 에서 수정하실 수
 				있습니다.
 			</div>
 <br>

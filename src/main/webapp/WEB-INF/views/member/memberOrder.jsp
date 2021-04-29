@@ -29,9 +29,7 @@
 					<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
 						class="ko">회원정보</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberOrder"><span
-						class="ko">주문내역</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberSubscrip"><span
-						class="ko">정기/간편주문</span></a> | <a
+						class="ko">주문내역</span></a> |  <a
 						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberQna"><span
@@ -65,14 +63,6 @@
 								<div class="title" style="width: 1170px; height: 359px;">
 											
 											<table class="table border border-0">
-	<%-- 								<colgroup>
-										<col style="width: 135px; height: 75px;">
-										<col style="width: auto;">
-										<col style="width: 61px;">
-										<col style="width: 111px;">
-										<col style="width: 111px;">
-										<col style="width: 111px;">
-									</colgroup> --%>
 									<thead>
 										<tr>
 											<th scope="col">주문일자<br>[주문번호]</th>

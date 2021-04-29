@@ -19,7 +19,6 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
-	
 	@GetMapping("memberOrderDetail")
 	public void memberOrderDetail() throws Exception {
 	}
@@ -32,9 +31,6 @@ public class MemberController {
 	public void memberPoint() throws Exception {
 	}
 
-	@GetMapping("memberSubscrip")
-	public void memberSubscrip() throws Exception {
-	}
 
 	@GetMapping("memberOrder")
 	public void memberOrder() throws Exception {
