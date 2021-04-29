@@ -2,6 +2,8 @@ package com.bb.bean.member;
 
 import java.sql.Date;
 
+import com.bb.bean.orders.OrdersDTO;
+
 public class MemberDTO {
 	
 	private String id;
@@ -16,8 +18,7 @@ public class MemberDTO {
 	private String addr;
 	private String addr2;
 	private char authority; // 1: 관리자, 2: 일반회원
-	
-	
+
 	public String getId() {
 		return id;
 	}
@@ -90,9 +91,6 @@ public class MemberDTO {
 	public void setAuthority(char authority) {
 		this.authority = authority;
 	}
-	
-	
-	
 	
 
 }

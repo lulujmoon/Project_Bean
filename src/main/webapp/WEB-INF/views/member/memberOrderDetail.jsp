@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<!-- </div> 1개 -->
-
+<br>
 
 		<div id="content" class="cafe-content">
 			<div id="write-order-info-wrapper" class="bb-form"
@@ -51,6 +51,8 @@
 					<ul id="mobileOrderList" class="my-subscribe"
 						style="border-top: 1px solid #ccc;"></ul>
 
+
+<br>
 					<div class="mypage-anotherorder">
 						<div class="mypage-anotherorder-subscription">
 
@@ -95,14 +97,14 @@
 									</c:forEach>
 								</div>
 							</div>
-
+<br>
 
 							<!-- 결제 정보 -->
 							<div class="orderArea">
 								<div class="title">
 									<h3>결제정보</h3>
 								</div>
-								<div class="ec-base-table">
+	<%-- 							<div class="ec-base-table">
 									<table class="table border border-0">
 
 										<c:forEach items="${list}" var="order">
@@ -131,7 +133,7 @@
 											</tbody>
 										</c:forEach>
 									</table>
-								</div>
+								</div> --%>
 								<div class="ec-base-table total">
 									<table class="table border border-0">
 										<colgroup>
@@ -160,7 +162,7 @@
 							</div>
 
 
-
+<br>
 
 							<!-- 주문 상품 정보 -->
 							<div class="orderArea">
@@ -215,7 +217,7 @@
 								</div>
 							</div>
 
-
+<br>
 
 
 
@@ -257,6 +259,7 @@
 										</tbody>
 										</c:forEach>
 									</table>
+									
 								</div>
 							</div>
 

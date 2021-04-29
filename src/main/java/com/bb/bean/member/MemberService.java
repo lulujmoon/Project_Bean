@@ -12,6 +12,7 @@ public class MemberService {
 	
 	@Autowired
 	private MemberDAO memberDAO;
+
 	
 	public MemberDTO nameCheck(MemberDTO memberDTO) throws Exception {
 		return memberDAO.nameCheck(memberDTO);
