@@ -29,9 +29,7 @@
 					<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
 						class="ko">회원정보</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberOrder"><span
-						class="ko">주문내역</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberSubscrip"><span
-						class="ko">정기/간편주문</span></a> | <a
+						class="ko">주문내역</span></a> |  <a
 						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberQna"><span

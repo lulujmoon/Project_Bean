@@ -32,7 +32,7 @@ public class MemberController {
 	public void memberPoint() throws Exception {
 	}
 
-	@GetMapping("memberSubscrip")
+	@GetMapping("memberAddrUpdate")
 	public void memberSubscrip() throws Exception {
 	}
 

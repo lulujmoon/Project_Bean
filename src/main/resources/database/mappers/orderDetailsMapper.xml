@@ -33,6 +33,7 @@
 		<result property="shippingState" column="shippingState"/>
 		<association property="product" javaType="ProductDTO" resultMap="productResult"/>
 		<association property="option" javaType="OptionsDTO" resultMap="optionResult"/>
+		<association property="order" javaType="OrdersDTO" resultMap="orderResult"></association>
 	</resultMap>
 	
 	<resultMap type="ProductDTO" id="productResult">

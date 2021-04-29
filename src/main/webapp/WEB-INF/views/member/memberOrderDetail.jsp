@@ -29,9 +29,7 @@
 					<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
 						class="ko">회원정보</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberOrder"><span
-						class="ko">주문내역</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberSubscrip"><span
-						class="ko">정기/간편주문</span></a> | <a
+						class="ko">주문내역</span></a> |  <a
 						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberQna"><span
@@ -65,7 +63,6 @@
 								<div class="ec-base-table">
 									<c:forEach items="${list}" var="order">
 										<table class="table border border-0">
-											<caption>주문정보</caption>
 											<colgroup>
 												<col style="width: 160px">
 												<col style="width: auto">
@@ -90,8 +87,7 @@
 													<td>${order.shippingState}<input type="image"
 														src="//img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_cancel.gif"
 														alt="주문취소" class="displaynone"> &nbsp;<span
-														class="displaynone"> <a href="#none"
-															onclick="window.open('/myshop/order/escrow.html?order_id=20210323-0008723', '', 'scrollbars=yes, resizeable=0, status=0, directories=0, toolbar=0'); return false;"></a></span>
+														class="displaynone"> <a href="#none"></a></span>
 													</td>
 												</tr>
 											</tbody>
@@ -108,7 +104,6 @@
 								</div>
 								<div class="ec-base-table">
 									<table class="table border border-0">
-										<caption>결제정보</caption>
 
 										<c:forEach items="${list}" var="order">
 											<tbody>
@@ -139,7 +134,6 @@
 								</div>
 								<div class="ec-base-table total">
 									<table class="table border border-0">
-										<caption>주문 상품 정보</caption>
 										<colgroup>
 											<col style="width: 160px">
 											<col style="width: auto">
@@ -177,25 +171,24 @@
 								<!-- 기본배송 -->
 								<div class="ec-base-table typeList">
 									<table class="table border border-0">
-										<caption>기본배송</caption>
 
 										<thead>
 											<tr>
 												<th scope="col">상품정보</th>
 												<th scope="col">수량</th>
 												<th scope="col">판매가</th>
-						
+												<th scope="col">배송구분</th>
 												<th scope="col">주문처리상태</th>
 												<th scope="col">취소/교환/반품</th>
 											</tr>
 										</thead>
-										<c:forEach items="${list}" var="order">
+										<c:forEach items="${list}" var="list">
 											<tfoot class="right">
 												<tr>
 													<td colspan="7"><span class="gLeft">[기본배송]</span>
-														상품구매금액 <strong> </strong><span class="displaynone">
+														상품구매금액 <strong> ${list.finalPrice} </strong><span class="displaynone">
 													</span> + 배송비 3,000 <span class="displaynone"> - 상품할인금액 0</span> =
-														합계 : <strong class="txtEm gIndent10"><span
+														합계 : ${list.finalPrice} <strong><span
 															class="txt18"> </span></strong> <span class="displaynone"></span>
 													</td>
 												</tr>
@@ -208,7 +201,7 @@
 											<tbody>
 												<tr>
 													<td scope="col"><a
-														href="${pageContext.request.contextPath}/product/productList/${order.product.productNum}">${order.product.name}
+														href="${pageContext.request.contextPath}/product/productList?productNum=${order.product.productNum}">${order.product.name}
 													</a></td>
 													<td scope="col">${order.quantity}</td>
 													<td scope="col">${order.finalPrice}</td>
@@ -233,13 +226,11 @@
 								</div>
 								<div class="ec-base-table">
 									<table class="table border border-0">
-										<caption>배송지정보</caption>
 										<colgroup>
 											<col style="width: 160px">
 											<col style="width: auto">
 										</colgroup>
 										<c:forEach items="${list}" var="list">
-										${list.quantity}
 										<tbody>
 											<tr class="displaynone">
 									
@@ -268,11 +259,6 @@
 									</table>
 								</div>
 							</div>
-
-
-
-
-
 
 
 
