@@ -331,10 +331,7 @@
 - 보존근거:통신비밀보호법-보존기간:3개월<br>
 다. 기타 회원님의 개별적인 동의가 있는 경우에는 개별 동의에 따른 기간까지 보관합니다.</p>
 
-								<p class="lead">
-									<a class="btn btn-primary btn" href="#" role="button">Learn
-										more</a>
-								</p>
+						
 							</div>
 						</div>
 
