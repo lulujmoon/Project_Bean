@@ -92,13 +92,19 @@ public class OrdersController {
 	}
 	
 	@PostMapping("orderCancel")
-	public void orderCancel(OrdersDTO ordersDTO) throws Exception {
+	public ModelAndView orderCancel(OrdersDTO ordersDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
 		ordersDTO = ordersService.getSelectByImpUid(ordersDTO);
 		String imp_uid = ordersDTO.getImpUid();
 		ordersService.getToken();
 		ordersService.cancelPaymentChecksumByImpUid(imp_uid);
 		ordersDTO.setPayState("주문취소");
 		ordersService.setPayStateUpdate(ordersDTO);
+		ordersService.setShippingStateCancelled(ordersDTO);
+		
+		mv.addObject("result", "주문이 취소되었습니다.");
+		mv.setViewName("common/ajaxResult");
+		return mv;
 	}
 	
 }

@@ -58,4 +58,7 @@
 		<result property="message" column="message"/>
 	</resultMap>
 
+	<update id="setShippingStateUpdate" parameterType="OrderDetailsDTO">
+		update orderDetails set shippingState=#{shippingState} where orderUid=#{orderUid}
+	</update>
 </mapper>

@@ -22,4 +22,8 @@ public class OrderDetailsDAO {
 		return sqlSession.selectList(NAMESPACE+"getListbyOrderUid", orderDetailsDTO);
 	}
 	
+	public int setShippingStateUpdate(OrderDetailsDTO orderDetailsDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"setShippingStateUpdate", orderDetailsDTO);
+	}
+	
 }

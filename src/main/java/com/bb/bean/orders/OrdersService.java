@@ -308,4 +308,11 @@ public class OrdersService {
 			e.printStackTrace();
 		}
 	}
+	
+	public void setShippingStateCancelled(OrdersDTO ordersDTO) throws Exception {
+		OrderDetailsDTO orderDetailsDTO = new OrderDetailsDTO();
+		orderDetailsDTO.setOrderUid(ordersDTO.getOrderUid());
+		orderDetailsDTO.setShippingState("주문취소");
+		orderDetailsDAO.setShippingStateUpdate(orderDetailsDTO);
+	}
 }

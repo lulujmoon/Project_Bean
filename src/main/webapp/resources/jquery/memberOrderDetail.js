@@ -14,10 +14,9 @@
 		let imp_uid = $(this).val();
 		$.post("../order/orderCancel", {
 			impUid:imp_uid
-		}, function(){
-			alert("주문이 취소되었습니다.");
+		}, function(result){
+			alert(result.trim());
 			location.reload();
 		})	
-	}
-	
+	}	
 })
