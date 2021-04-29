@@ -15,7 +15,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- Main css -->
-<link rel="stylesheet" href="./resources/css/style.css">
+<link rel="stylesheet" href="./resources/css/home.css">
 
 <!-- Join css 
 <link rel="stylesheet" href="./resources/css/join.css">
@@ -26,135 +26,138 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <title>Bean Brothers Coffee</title>
-
 </head>
 <body>
 	<!-- header 부분 -->
 	<c:import url="./template/header.jsp"></c:import>
 	<c:import url="./member/memberLogin.jsp"></c:import>
 	<c:import url="./member/memberJoin.jsp"></c:import>
+	
 
-	<div class="container">
-		<!-- Home Section -->
-		<section id="home">
-			<div class="container">
-				<div class="row">
+	<!-- Home -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" style="width: 100%;height: 700px !important;">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="./resources/images/1.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./resources/images/2.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./resources/images/3.jpg" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./resources/images/4.jpg" alt="Fourth slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./resources/images/5.jpg" alt="Fifth slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
-					<div class="col-md-12 col-sm-12">
-						<h2>어쩌구 저쩌구 큰 내용 :)</h2>
-						<hr>
+<section id="home">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12 col-sm-12">
+                    <h2>Bean Brothers Coffee</h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+<div class="col-md-12">
+	<h3>취향에 맞는 다양한 원두를 경험해보세요</h3>
+</div>
+          </div>
+     </div>
+</section>
+
+<!-- Portfolio Section -->
+
+<section id="portfolio">
+     <div class="container">
+          <div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="subtitle" style="text-align: right;">
+                        <h2> 5월의 커피 </h2>
+                        <hr>
+                        <normal>따뜻한 봄을 맞이하기 좋은 커피</normal> 
 					</div>
-				</div>
-			</div>
-		</section>
+               </div>
 
+               <div class="col-md-offset-1 col-md-7 col-sm-offset-1 col-sm-5">
+                    <a href="${pageContext.request.contextPath}/magazine/magazineList">
+                         <div class="portfolio-thumb">
+                              <img src="./resources/images/a하남.jpg" class="img-responsive" alt="Portfolio" style="width: 100%;">
+                                   <div class="portfolio-overlay">     
+                                        <div class="portfolio-item">
+                                             <h2> Magazine </h2>
+                                             <normal>새로운 소식</normal>
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
+               <div class="col-md-offset-1 col-md-7 col-sm-offset-1 col-sm-5">
+                    <a href="${pageContext.request.contextPath}/product/productList">
+                         <div class="portfolio-thumb">
+                              <img src="./resources/images/product_img.jpg" class="img-responsive" alt="Portfolio" style="width: 100%;">
+                                   <div class="portfolio-overlay">
+                                        <div class="portfolio-item">
+                                             <h2>Shop</h2>
+                                             <normal>원두 구매</normal>
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
 
-		<!-- Portfolio Section -->
-		<section id="portfolio">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img1.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Brand Identity</small>
-									</div>
-								</div>
-							</div>
-						</a>
+               <div class="col-md-4 col-sm-6">
+					<div class="subtitle">
+                        <h2> Shop </h2>
+                        <hr>
+                        <normal>나만을 위한 맞춤 원두</normal> 
 					</div>
+               </div>
 
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img2.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Web Development</small>
-									</div>
-								</div>
-							</div>
-						</a>
+               <div class="col-md-4 col-sm-6">
+					<div class="subtitle" style="text-align:right;">
+                        <h2> 매장 안내 </h2>
+                        <hr>
+                        <normal>원두를 직접 맛보고 구매하실 수 있습니다</normal> 
 					</div>
+               </div>
 
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img3.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Mobile App</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+               <div class="col-md-offset-1 col-md-7 col-sm-offset-1 col-sm-5">
+                    <a href="${pageContext.request.contextPath}/location/locationList">
+                         <div class="portfolio-thumb">
+                              <img src="./resources/images/b합정.jpg" class="img-responsive" alt="Portfolio" style="width: 100%;">
+                                   <div class="portfolio-overlay">                     
+                                        <div class="portfolio-item">
+                                             <h2>Location</h2>
+                                             <normal>찾아오시는 길</normal>   
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
 
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img4.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Logo Design</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
 
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img5.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Social marketing</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+               <div class="col-md-12 col-sm-12 text-center">
+                    <h3>커피에 대한 인식, 바리스타에 대한 인식을 바꿉니다.</h3>
+               </div>
 
-					<div class="col-md-4 col-sm-6">
-						<a href="single-project.html">
-							<div class="portfolio-thumb">
-								<img src="./resources/images/portfolio-img6.jpg"
-									class="img-responsive" alt="Portfolio">
-								<div class="portfolio-overlay">
-									<div class="portfolio-item">
-										<h3>Project Name</h3>
-										<small>Fyler Design</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+          </div>
+     </div>
+</section>
 
-					<div class="col-md-12 col-sm-12 text-center">
-						<h3>
-							hello, if you interest working together. just send message <a
-								href="#">contact page</a>
-						</h3>
-					</div>
-
-				</div>
-			</div>
-		</section>
-	</div>
 
 	<!-- footer 영역 -->
 	<c:import url="./template/footer.jsp"></c:import>
