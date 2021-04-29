@@ -2,6 +2,9 @@ package com.bb.bean.member;
 
 import java.sql.Date;
 
+import com.bb.bean.orderDetails.OrderDetailsDTO;
+import com.bb.bean.orders.OrdersDTO;
+
 public class MemberDTO {
 	
 	private String id;
@@ -16,6 +19,9 @@ public class MemberDTO {
 	private String addr;
 	private String addr2;
 	private char authority; // 1: 관리자, 2: 일반회원
+	
+	private OrdersDTO order;
+	private OrderDetailsDTO detail;
 
 	public String getId() {
 		return id;
@@ -89,6 +95,19 @@ public class MemberDTO {
 	public void setAuthority(char authority) {
 		this.authority = authority;
 	}
+	public OrdersDTO getOrder() {
+		return order;
+	}
+	public void setOrder(OrdersDTO order) {
+		this.order = order;
+	}
+	public OrderDetailsDTO getDetail() {
+		return detail;
+	}
+	public void setDetail(OrderDetailsDTO detail) {
+		this.detail = detail;
+	}
+	
 	
 
 }

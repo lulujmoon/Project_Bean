@@ -1,5 +1,6 @@
 package com.bb.bean.member;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,13 +13,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.bb.bean.orders.OrdersDTO;
+import com.bb.bean.orders.OrdersService;
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+
 @Controller
 @RequestMapping("/member/**")
 public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
-	
+
 	@GetMapping("memberOrderDetail")
 	public void memberOrderDetail() throws Exception {
 	}
@@ -33,7 +38,9 @@ public class MemberController {
 
 
 	@GetMapping("memberOrder")
-	public void memberOrder() throws Exception {
+	public void memberOrder(MemberDTO memberDTO, Model model) throws Exception {
+		List<MemberDTO> list = memberService.memberOrder(memberDTO);
+		model.addAttribute("list", list);
 	}
 
 

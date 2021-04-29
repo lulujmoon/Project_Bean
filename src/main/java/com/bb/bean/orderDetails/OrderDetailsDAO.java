@@ -22,8 +22,4 @@ public class OrderDetailsDAO {
 		return sqlSession.selectList(NAMESPACE+"getListbyOrderUid", orderDetailsDTO);
 	}
 	
-	public List<OrderDetailsDTO> getMemberAddr(OrderDetailsDTO orderDetailsDTO) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"getMemberAddr", orderDetailsDTO);
-	}
-	
 }

@@ -256,10 +256,11 @@
 										</tbody>
 									</table>
 									
+									<a href="${pageContext.request.contextPath}/member/memberAddrUpdate?orderUid=${list[0].orderUid}">배송지 변경</a>
 								</div>
 							</div>
 
-
+						
 
 
 						</div>

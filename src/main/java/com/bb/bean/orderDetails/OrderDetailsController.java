@@ -19,12 +19,4 @@ public class OrderDetailsController {
 		model.addAttribute("list", list);
 	}
 	
-	@GetMapping("/member/memberAddrUpdate")
-	public void getMemberAddr(OrderDetailsDTO orderDetailsDTO, Model model) throws Exception {
-		List<OrderDetailsDTO> list = orderDetailsService.getMemberAddr(orderDetailsDTO);
-		model.addAttribute("list", list);
-	}
-
-
-	
 }

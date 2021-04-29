@@ -28,7 +28,7 @@
 				<nav id="title-nav">
 					<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
 						class="ko">회원정보</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberOrder"><span
+						href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}"><span
 						class="ko">주문내역</span></a> |  <a
 						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
@@ -73,16 +73,16 @@
 											<th scope="col">취소/교환/반품</th>
 										</tr>
 									</thead>
-									<c:forEach items="${list}" var="order">
+									<c:forEach items="${list}" var="list">
 									<tbody>
 										<tr>
-											<td scope="col">${order.orderDate}<br>
-											[ ${order.orderUid} ]
+											<td scope="col">${list.order.orderDate}<br>
+											<a href="${pageContext.request.contextPath}/member/memberOrderDetail?orderUid=${list.order.orderUid}">[ ${list.order.orderUid} ]</a>
 											</td>
-											<td scope="col"><a href="${pageContext.request.contextPath}/product/productList/${order.product.productNum}">${order.product.name}</a></td>
-											<td scope="col">${order.quantity}</td>
-											<td scope="col">${order.finalPrice}</td>
-											<td scope="col">${order.shippingState}</td>
+											<td scope="col"><a href="${pageContext.request.contextPath}/product/productList/">${list.order.orderName} <br> ${list.detail.grind}</a></td>
+											<td scope="col">${list.detail.quantity}</td>
+											<td scope="col">${list.detail.finalPrice}</td>
+											<td scope="col">${list.detail.shippingState}</td>
 											<td scope="col"> </td>
 										</tr>
 									</tbody>

@@ -28,7 +28,7 @@
 				<nav id="title-nav">
 					<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
 						class="ko">회원정보</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberOrder"><span
+						href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}"><span
 						class="ko">주문내역</span></a> |  <a
 						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
@@ -53,48 +53,43 @@
 
 			<span style="display:none"><input type="text" name="id" value="${member.id}" id="id"></span>
 			
-			<c:forEach items="${list}" var="list"> ${list.quantity}</c:forEach>
+	
 			
 			
 				<div class="form-group">
 					<label for="buyerName">받는 분 성함</label> <input type="text" class="form-control"
-						id="buyerName" name="buyerName" value="${list.order.buyerName}">
+						id="buyerName" name="buyerName" value="${list.buyerName}">
 				</div>
 
 
 				<div class="form-group">
 					<label for="buyerTel">전화번호</label> <input type="text" class="form-control"
-						id="buyerTel" name="buyerTel" value="${list.order.buyerTel}">
+						id="buyerTel" name="buyerTel" value="${list.buyerTel}">
 				</div>
 				
 				
 				<div class="form-group">
 					<label for="buyerPostcode">우편번호</label> <input type="text" class="form-control"
-						id="buyerPostcode" name="buyerPostcode" value="${list.order.buyerPostcode}">
+						id="buyerPostcode" name="buyerPostcode" value="${list.buyerPostcode}">
 				</div>
 				
 				<input type="button" id="popup" class="btn btn-primary" value="찾기"><br>
 				
 				<div class="form-group">
 					<label for="buyerAddr">주소</label> <input type="text" class="form-control"
-						id="buyerAddr" name="buyerAddr" value="${list.order.buyerAddr}">
+						id="buyerAddr" name="buyerAddr" value="${list.buyerAddr}">
 				</div>
 				
 				
 				<div class="form-group">
 					<label for="buyerAddr2">상세주소</label> <input type="text" class="form-control"
-						id="buyerAddr2" name="buyerAddr2" value="${list.order.buyerAddr2}">
+						id="buyerAddr2" name="buyerAddr2" value="${list.buyerAddr2}">
 				</div>
 				
 				
 				<div class="form-group">
-			<label for="buyerName">배송 메세지</label><select name="message" id="msg-sel">
-				<option value="배송 전에 연락 주세요." class="msg-opt">배송 전에 연락 주세요.</option>
-				<option class="msg-opt">부재 시 경비실에 맡겨주세요.</option>
-				<option class="msg-opt">부재 시 문앞에 놔주세요.</option>
-				<option>직접 입력</option>
-			</select>
-			<input type="text" id="message"  value="${list.order.message}">
+					<label for="message">배송 메세지</label> <input type="text" class="form-control"
+						id="message" name="message" value="${list.message}">
 				</div>
 	
 

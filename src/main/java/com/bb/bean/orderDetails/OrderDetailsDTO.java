@@ -21,7 +21,7 @@ public class OrderDetailsDTO {
 	private ProductDTO product;
 	private OptionsDTO option;
 	private OrdersDTO order;
-	private MemberDTO member;
+
 	
 	public long getDetailNum() {
 		return detailNum;
@@ -89,11 +89,5 @@ public class OrderDetailsDTO {
 	public void setOrder(OrdersDTO order) {
 		this.order = order;
 	}
-	public MemberDTO getMember() {
-		return member;
-	}
-	public void setMember(MemberDTO member) {
-		this.member = member;
-	}
-	
+
 }
