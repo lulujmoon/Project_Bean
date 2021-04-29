@@ -29,9 +29,7 @@
 					<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
 						class="ko">회원정보</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberOrder"><span
-						class="ko">주문내역</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberSubscrip"><span
-						class="ko">정기/간편주문</span></a> | <a
+						class="ko">주문내역</span></a> |  <a
 						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
 						href="${pageContext.request.contextPath}/member/memberQna"><span
@@ -40,7 +38,7 @@
 			</div>
 		</div>
 		<!-- </div> 1개 -->
-
+<br>
 
 		<div id="content" class="cafe-content">
 			<div id="write-order-info-wrapper" class="bb-form"
@@ -53,6 +51,8 @@
 					<ul id="mobileOrderList" class="my-subscribe"
 						style="border-top: 1px solid #ccc;"></ul>
 
+
+<br>
 					<div class="mypage-anotherorder">
 						<div class="mypage-anotherorder-subscription">
 
@@ -65,7 +65,6 @@
 								<div class="ec-base-table">
 									<c:forEach items="${list}" var="order">
 										<table class="table border border-0">
-											<caption>주문정보</caption>
 											<colgroup>
 												<col style="width: 160px">
 												<col style="width: auto">
@@ -83,15 +82,14 @@
 												</tr>
 												<tr>
 													<th scope="row">주문자</th>
-													<td><span> </span></td>
+													<td><span>${member.name}</span></td>
 												</tr>
 												<tr>
 													<th scope="row">주문처리상태</th>
 													<td>${order.shippingState}<input type="image"
 														src="//img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_cancel.gif"
 														alt="주문취소" class="displaynone"> &nbsp;<span
-														class="displaynone"> <a href="#none"
-															onclick="window.open('/myshop/order/escrow.html?order_id=20210323-0008723', '', 'scrollbars=yes, resizeable=0, status=0, directories=0, toolbar=0'); return false;"></a></span>
+														class="displaynone"> <a href="#none"></a></span>
 													</td>
 												</tr>
 											</tbody>
@@ -99,124 +97,173 @@
 									</c:forEach>
 								</div>
 							</div>
-
+<br>
 
 							<!-- 결제 정보 -->
 							<div class="orderArea">
 								<div class="title">
 									<h3>결제정보</h3>
 								</div>
-								<div class="ec-base-table">
+	<%-- 							<div class="ec-base-table">
 									<table class="table border border-0">
-										<caption>결제정보</caption>
 
 										<c:forEach items="${list}" var="order">
-										<tbody>
-											<tr class="sum">
-												<th scope="row">총 주문금액</th>
-												<td>${order.finalPrice} 원
-</td>
-											</tr>
-										</tbody>
+											<tbody>
+												<tr class="sum">
+													<th scope="row">총 주문금액</th>
+													<td>${order.finalPrice}원</td>
+												</tr>
+											</tbody>
 										</c:forEach>
 										<c:forEach items="${list}" var="order">
-										<tbody class="displaynone">
-											<tr class="sum">
-												<th scope="row">총 할인금액</th>
-												<td><strong class="txt14">0</strong>원</td>
-											</tr>
+											<tbody class="displaynone">
+												<tr class="sum">
+													<th scope="row">총 할인금액</th>
+													<td><strong class="txt14">0</strong>원</td>
+												</tr>
 
-										</tbody>
+											</tbody>
 										</c:forEach>
 										<c:forEach items="${point}" var="point">
-										<tbody class="displaynone">
-											<tr class="displaynone">
-												<th scope="row">적립포인트</th>
-												<td>${point.savePoint}BP</td>
-											</tr>
-										</tbody>
+											<tbody class="displaynone">
+												<tr class="displaynone">
+													<th scope="row">적립포인트</th>
+													<td>${point.savePoint}BP</td>
+												</tr>
+											</tbody>
 										</c:forEach>
 									</table>
-								</div>
+								</div> --%>
 								<div class="ec-base-table total">
 									<table class="table border border-0">
-										<caption>결제정보</caption>
 										<colgroup>
 											<col style="width: 160px">
 											<col style="width: auto">
 										</colgroup>
 										<c:forEach items="${list}" var="order">
-										<tbody>
-											<tr class="sum">
-												<th scope="row">총 결제금액</th>
-												<td><span class="txtEm"> <strong>${order.finalPrice}</strong>원
-														<span class="displaynone"></span>
-												</span></td>
-											</tr>
-											<tr class="">
-												<th scope="row">결제수단</th>
-												<td><strong><span>신용카드</span></strong>
-													<p>
-														<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span> 
-													</p></td>
-											</tr>
-										</tbody>
-										</c:forEach>
-									</table>
-								</div>
-							</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-							<div
-								class="xans-element- xans-myshop xans-myshop-orderhistorylistitem ec-base-table typeList">
-
-								<div class="title" style="width: 1170px; height: 359px;">
-
-									<table class="table border border-0">
-										<thead>
-											<tr>
-												<th scope="col">주문일자<br>[주문번호]
-												</th>
-												<th scope="col">상품정보</th>
-												<th scope="col">수량</th>
-												<th scope="col">상품구매금액</th>
-												<th scope="col">주문처리상태</th>
-												<th scope="col">취소/교환/반품</th>
-											</tr>
-										</thead>
-										<c:forEach items="${list}" var="order">
 											<tbody>
-												<tr>
-													<td scope="col">${order.orderDate}<br> [
-														${order.orderUid} ]
-													</td>
-													<td scope="col"><a
-														href="${pageContext.request.contextPath}/product/productList/">${order.product.name}
-													</a></td>
-													<td scope="col">${order.quantity}</td>
-													<td scope="col">${order.finalPrice}</td>
-													<td scope="col">${order.shippingState}</td>
-													<td scope="col"></td>
+												<tr class="sum">
+													<th scope="row">총 결제금액</th>
+													<td><span class="txtEm"> <strong>${order.finalPrice}</strong>원
+															<span class="displaynone"></span>
+													</span></td>
+												</tr>
+												<tr class="">
+													<th scope="row">결제수단</th>
+													<td><strong><span>신용카드</span></strong>
+														<p>
+															<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span>
+														</p></td>
 												</tr>
 											</tbody>
 										</c:forEach>
 									</table>
 								</div>
-
 							</div>
+
+
+<br>
+
+							<!-- 주문 상품 정보 -->
+							<div class="orderArea">
+								<div class="title">
+									<h3>주문 상품 정보</h3>
+								</div>
+
+								<!-- 기본배송 -->
+								<div class="ec-base-table typeList">
+									<table class="table border border-0">
+
+										<thead>
+											<tr>
+												<th scope="col">상품정보</th>
+												<th scope="col">수량</th>
+												<th scope="col">판매가</th>
+												<th scope="col">배송구분</th>
+												<th scope="col">주문처리상태</th>
+												<th scope="col">취소/교환/반품</th>
+											</tr>
+										</thead>
+										<c:forEach items="${list}" var="list">
+											<tfoot class="right">
+												<tr>
+													<td colspan="7"><span class="gLeft">[기본배송]</span>
+														상품구매금액 <strong> ${list.finalPrice} </strong><span class="displaynone">
+													</span> + 배송비 3,000 <span class="displaynone"> - 상품할인금액 0</span> =
+														합계 : ${list.finalPrice} <strong><span
+															class="txt18"> </span></strong> <span class="displaynone"></span>
+													</td>
+												</tr>
+											</tfoot>
+										</c:forEach>
+
+
+										<c:forEach items="${list}" var="order">
+
+											<tbody>
+												<tr>
+													<td scope="col"><a
+														href="${pageContext.request.contextPath}/product/productList?productNum=${order.product.productNum}">${order.product.name}
+													</a></td>
+													<td scope="col">${order.quantity}</td>
+													<td scope="col">${order.finalPrice}</td>
+													<td scope="col">기본배송</td>
+													<td scope="col">${order.shippingState}</td>
+													<td scope="col">-</td>
+												</tr>
+											</tbody>
+										</c:forEach>
+									</table>
+								</div>
+							</div>
+
+<br>
+
+
+
+							<!-- 배송지정보 -->
+						<div class="orderArea">
+								<div class="title">
+									<h3>배송지정보</h3>
+								</div>
+								<div class="ec-base-table">
+									<table class="table border border-0">
+										<colgroup>
+											<col style="width: 160px">
+											<col style="width: auto">
+										</colgroup>
+										<c:forEach items="${list}" var="list">
+										<tbody>
+											<tr class="displaynone">
+									
+											<tr>
+												<th scope="row">받으시는분</th>
+												<td><span>${list.order.buyerName}</span></td>
+											</tr>
+											<tr class="">
+												<th scope="row">우편번호</th>
+												<td><span>${list.order.buyerPostcode}</span></td>
+											</tr>
+											<tr class="">
+												<th scope="row">주소</th>
+												<td><span>${list.order.buyerAddr} ${list.order.buyerAddr2}</span></td>
+											</tr>
+											<tr>
+												<th scope="row">휴대전화</th>
+												<td><span>${list.order.buyerTel}</span></td>
+											</tr>
+											<tr>
+												<th scope="row">배송메시지</th>
+												<td><span>${list.order.message}</span></td>
+											</tr>
+										</tbody>
+										</c:forEach>
+									</table>
+									
+								</div>
+							</div>
+
+
 
 
 						</div>
