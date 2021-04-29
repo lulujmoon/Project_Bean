@@ -59,6 +59,7 @@ public class OrdersController {
 			ordersService.setPayStateUpdate(ordersDTO);
 			result = "결제가 완료되었습니다.";
 			
+			ordersService.setImpUidUpdate(ordersDTO, imp_uid);
 			ordersService.setStockUpdate(ordersDTO);
 			ordersService.shiftCartList(ordersDTO);
 			

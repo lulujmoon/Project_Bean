@@ -16,6 +16,10 @@
 		select #{orderUid}||orders_seq.nextval from dual
 	</select>
 	
+	<select id="setImpUidUpdate" parameterType="OrdersDTO">
+		update orders set impUid=#{impUid} where orderUid=#{orderUid}
+	</select>
+	
 	<select id="getSelect" parameterType="OrdersDTO" resultType="OrdersDTO">
 		select * from orders where orderUid=#{orderUid}
 	</select>

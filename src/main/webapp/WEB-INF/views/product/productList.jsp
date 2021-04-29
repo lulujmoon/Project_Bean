@@ -33,7 +33,7 @@
 			<c:forEach items="${list}" var="product">
                <div class="col-md-4 col-sm-6" style="overflow:hidden">
                     <a href="./productSelect?productNum=${product.productNum}" data-toggle="modal" data-target="#select_${product.productNum}" data-whatever="${product.productNum}">
-                         <div class="portfolio-thumb" style="width:100%;height:80%;">
+                         <div class="portfolio-thumb" style="width:100%;height:90%;">
                               <img src="../resources/upload/product/${product.thumbnail.fileName}" class="img-responsive" alt="Portfolio" style="width:100%;height:100%">
                                    <div class="portfolio-overlay">
                                         <div class="portfolio-item">
@@ -182,7 +182,7 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 	  let inTxt = $(includes).text();
 	  let includesArr = inTxt.split('~');
 	  
-	  txt = "";
+	  inTxt = "";
 	  for(inc of includesArr){
 		  inTxt = inTxt + "<li>"+inc+"</li>";
 	  }
@@ -210,11 +210,11 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 	  
 	  <!-- 장바구니 추가 함수 -->
 	  function cartInsert(){
-		  let res = true;
+		  let res = false;
 		  let optionNum="";
 		  for(opt of $(modal).find(".optionNum")){
 			  if($(opt).prop("checked")){
-				 optionNum=$(opt).val(); 
+				  optionNum=$(opt).val(); 
 			  }
 		  }
 	  	  let grind = "";
@@ -233,12 +233,13 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 				  async: false,
 				  success: function(result){
 							if(result.trim()!=""){
-							alert(result.trim());
+								alert(result.trim());
+							}else{
+								res=true;								
 							}
 						},
 				  error: function(){
-					  alert("등록된 옵션이 없습니다. 고객센터에 문의해주세요.");
-					  res = false;
+					alert("등록된 옵션이 없습니다. 고객센터에 문의하세요.");
 				  }
 			  });			
 			
@@ -246,7 +247,7 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 	  }
 	  
 	  <!-- 버튼 설정 -->
-	  $(".cart-btn").click(function(){
+	  $(modal).find(".cart-btn").click(function(){
 		let res = cartInsert();
 		if(res){
 			$(".goCart-btn").slideDown(800);
@@ -254,7 +255,7 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 
 	  });
 	  
-	  $(".order-btn").click(function(){
+	  $(modal).find(".order-btn").click(function(){
 		  let res = cartInsert();
 		  if(res){
 			  setTimeout(function(){
@@ -263,14 +264,21 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 		  }
 	  });
 	  
-	  $(".goCart-btn").click(function(){
+	  $(modal).find(".goCart-btn").click(function(){
 		  location.href="../cart/cartList";
 	  });
 	  
-	  $(".toTop-btn").click(function(){
-			$(".modal").scrollTop(0);
+	  $(modal).find(".toTop-btn").click(function(){
+			$(modal).scrollTop(0);
 		  });
 	  <!-- -->
+	  
+
+});
+
+$('#select_${product.productNum}').on('hidden.bs.modal', function (e) {
+    $(this).find(".cart-btn").off();
+    $(this).find(".order-btn").off();
 });
 
 </c:forEach>

@@ -5,6 +5,7 @@ import java.sql.Date;
 public class OrdersDTO {
 	
 	private String orderUid;
+	private String impUid;
 	private String id;
 	private String orderName;
 	private Date orderDate;
@@ -23,6 +24,12 @@ public class OrdersDTO {
 	}
 	public void setOrderUid(String orderUid) {
 		this.orderUid = orderUid;
+	}
+	public String getImpUid() {
+		return impUid;
+	}
+	public void setImpUid(String impUid) {
+		this.impUid = impUid;
 	}
 	public String getId() {
 		return id;
