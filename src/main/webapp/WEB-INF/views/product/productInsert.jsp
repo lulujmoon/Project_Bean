@@ -11,14 +11,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:import url="../template/header.jsp"></c:import>
-
 <!-- 여ㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕ기ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣ -->
 <c:if test="${member.authority ne '1'.charAt(0)}">
 	<span id="noAccess">잘못된 접근</span>
 </c:if>
 <c:if test="${member.authority eq '1'.charAt(0)}">
 <!-- 여기까지 -->
+<c:import url="../template/header.jsp"></c:import>
+
 	<div class="container">
 		<h2>Product Insert Page</h2>
 
@@ -82,10 +82,10 @@
 		
 
 	</div>
+	<c:import url="../template/footer.jsp"></c:import>
 <!-- 영여ㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕ기ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣ -->
 </c:if>	
 <!-- 여기까지 -->
-	<c:import url="../template/footer.jsp"></c:import>
 	<!-- Script -->
 	<!-- 여ㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕ기ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣ -->
 	<script type="text/javascript">
