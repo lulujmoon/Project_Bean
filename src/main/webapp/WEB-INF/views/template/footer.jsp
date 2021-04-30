@@ -24,7 +24,13 @@
 
                <div class="col-md-5 col-sm-12">
 					<h4> 뉴스레터 받기 </h4>
-
+				<div>
+					<small> 이메일 주소 입력 </small>
+				</div>
+				<div>
+					<span> 약관 동의 </span>
+					<span><a href="${pageContext.request.contextPath}/newsletter/agreement.jsp"></a></spaN>
+				</div>
                </div>
 				
 			<!-- footer의 맨 밑 -->

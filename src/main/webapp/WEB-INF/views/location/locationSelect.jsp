@@ -13,6 +13,8 @@
 <body>
 <!-- header 부분 -->
 <c:import url="../template/header.jsp"></c:import>
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 
 <!-- Blog Section -->
 <<div class="container">

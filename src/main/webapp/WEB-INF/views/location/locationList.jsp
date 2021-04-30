@@ -28,6 +28,27 @@
 	</div>
 
 <section id="portfolio_list" style="margin-top: 30px;">
+		<div class="container">
+			<div class="row">
+				<c:forEach items="${list}" var="dto">
+					<div class="col-md-6">
+						<a href="./locationSelect?storeName=${dto.storeName}">
+							<div class="portfolio-thumb">
+								<img src="../resources/images/${dto.storeImg}" class="img-responsive" alt="Portfolio">
+								<div class="portfolio-overlay">
+									<div class="portfolio-item">
+										<h3>${dto.storeName}</h3>
+										<small>${dto.storeLoc}</small>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+</section>
+	<!-- <section id="portfolio_list" style="margin-top: 30px;">
      <div class="container">
           <div class="row">			
                <div class="col-md-6">
@@ -87,7 +108,7 @@
                </div>
 </div>
 
-</section>
+</section> -->
 
 <c:import url="../template/footer.jsp"></c:import>
 
