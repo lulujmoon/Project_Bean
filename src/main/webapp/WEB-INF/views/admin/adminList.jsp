@@ -30,14 +30,13 @@
 			</ul>
 			
 			<div>
+				<a href="../mail/mailList">mailList</a>
 	
 			</div>
 			
 			</div>
 
 		
-	
-			
 
 
 
