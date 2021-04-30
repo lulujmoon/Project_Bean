@@ -11,7 +11,10 @@
 <c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
-
+<c:if test="${empty member}">
+	<span id="noAccess">잘못된 접근</span>
+</c:if>
+<c:if test="${not empty member}">
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="wrapper container" style="display: block;">
@@ -256,7 +259,6 @@
 										</tbody>
 									</table>
 									
-									<a href="${pageContext.request.contextPath}/member/memberAddrUpdate?orderUid=${list[0].orderUid}">배송지 변경</a>
 								</div>
 							</div>
 
@@ -274,7 +276,13 @@
 
 
 	<c:import url="../template/footer.jsp"></c:import>
-
+</c:if>	
+	<script type="text/javascript">
+		if($("#noAccess").text()=="잘못된 접근"){
+			alert("잘못된 접근입니다.");
+			history.back();
+		}
+	</script>
 	<script type="text/javascript" src="../resources/jquery/memberOrderDetail.js"></script>
 </body>
 </html>

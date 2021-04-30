@@ -1,21 +1,25 @@
 @charset "UTF-8";
 
-#content-box{
-	width: 960px;
+.mainbox1 {
+	background-color: blue;
+	width: 1110px;
 	height: 151px;
 }
 
-#content {
+
+.info-box {
+	background-color: white;
 	width: 240px;
 	height: 66px;
+	float: left;
+	padding-top: 42px;
+	padding-bottom: 42px;
+	
 }
 
 
 
 
-
-
-/*
 #title {
     box-sizing: border-box;
     width: 100%;
@@ -51,4 +55,3 @@ div {
 
 }
 
-*/

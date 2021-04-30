@@ -12,6 +12,10 @@
 <c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
+<c:if test="${empty member}">
+	<span id="noAccess">잘못된 접근</span>
+</c:if>
+<c:if test="${not empty member}">
 
 	<c:import url="../template/header.jsp"></c:import>
 
@@ -108,6 +112,27 @@
 						value="${member.birthday}">
 				</div>
 			
+			<div class="form-group">
+					<label for="postcode">우편번호</label> <input type="text" class="form-control mb-2 mr-sm-2"
+						id="postcode" name="postcode" readonly="readonly" value="${member.postcode}">
+				</div>
+				
+				<input type="button" id="popup" class="btn btn-primary" value="찾기"><br>
+				
+				<div class="form-group">
+					<label for="addr">주소</label> <input type="text" class="form-control"
+						id="addr" name="addr" readonly="readonly" value="${member.addr}">
+				</div>
+				
+				
+				<div class="form-group">
+					<label for="adr2">상세주소</label> <input type="text" class="form-control"
+						id="addr2" name="addr2" value="${member.addr2}">
+				</div>
+			
+			
+			
+			
 			<br>
 				<div class="form-group">
 						<div id="comment">*비밀번호를 변경하고 싶으시다면 입력해주세요</div>
@@ -134,10 +159,12 @@
 			</div>
 
 <br>
+<!-- 
 			<div class="mypage-info">
 				※ 배송 주소는 <a href="${pageContext.request.contextPath}/member/memberAddrUpdate">마이페이지 &gt; 배송지수정</a> 에서 수정하실 수
 				있습니다.
 			</div>
+ -->
 <br>
 
 			
@@ -154,8 +181,14 @@
 
 
 <c:import url="../template/footer.jsp"></c:import>
-
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</c:if>	
+	<script type="text/javascript">
+		if($("#noAccess").text()=="잘못된 접근"){
+			alert("잘못된 접근입니다.");
+			history.back();
+		}
+	</script>
 <script type="text/javascript" src="../resources/jquery/memberUpdate.js"></script>
-
 </body>
 </html>

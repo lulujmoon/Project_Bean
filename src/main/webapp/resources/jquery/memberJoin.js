@@ -18,14 +18,13 @@ $("#join-nickname").blur(function(){
 		if(result=='0'){
 			let str = "이미 사용중입니다. 다른 닉네임을 입력해주세요.";
 			let c = "r1"
-		    $("#nickResult").html(str);
-		    $("#nickResult").attr("class", c);
+
 		} else {
 			str = "사용 가능한 닉네임입니다";
 			nickResult=true;
-		    $("#nickResult").html(str);
-		    $("#nickResult").attr("class", c);
 		}
+		    $("#nickResult").html(str);
+			$("#nickResult").attr("class", c);
 	})
 })
 
@@ -40,18 +39,15 @@ let regex=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.
 if(regex.test(email) === false) {  
 	let str = "잘못된 이메일 형식입니다.";
 	let c = "r1"
-    $("#idCheckResult").html(str);
-    $("#idCheckResult").attr("class", c);
 		
     return false;  
 } else {  
     str = "";
 	c = "r2";
-    $("#idCheckResult").html(str);
-	$("#idCheckResult").attr("class", c);
 	emailCheckResult = true;
 }  
-
+    $("#idCheckResult").html(str);
+	$("#idCheckResult").attr("class", c);
 });
 
 
@@ -93,9 +89,8 @@ $("#join-pw").blur(function(){
 		pwCheckResult= true;
 	}
 	
-	let pwResult = document.getElementById("pwResult");
-	pwResult.innerHTML=str;
-	pwResult.setAttribute("class", c);
+    $("#pwResult").html(str);
+	$("#pwResult").attr("class", c);
 });
 
 // pw equal
