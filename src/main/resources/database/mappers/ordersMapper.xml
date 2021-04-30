@@ -32,4 +32,8 @@
 		update orders set payState=#{payState} where orderUid=#{orderUid}
 	</update>
 	
+	<update id="setPaymentUpdate" parameterType="OrdersDTO">
+		update orders set payment=#{payment} where orderUid=#{orderUid}
+	</update>
+	
 </mapper>

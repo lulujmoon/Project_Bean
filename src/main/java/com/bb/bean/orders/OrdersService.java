@@ -50,44 +50,60 @@ public class OrdersService {
 	IamportClient client;
 
 	public String setInsert(OrdersDTO ordersDTO) throws Exception {
-		Calendar ca = Calendar.getInstance();
-		String format = "yyyyMMddHHmmss";
-		SimpleDateFormat sf = new SimpleDateFormat(format);
-		String orderUid = sf.format(ca.getTime());
-		orderUid = ordersDAO.getOrderUid(orderUid);
-		
-		String payState = "결제전";
-		
+		String result ="";
+		/* 결제 전 재고 확인 */
 		CartDTO cartDTO = new CartDTO();
 		cartDTO.setCartID(ordersDTO.getId());
-		
-		long totalPrice = cartDAO.getTotalPrice(cartDTO);
-		if(totalPrice<25000) {
-			totalPrice = totalPrice+3000;
-		}
-		
 		List<CartDTO> caList = cartDAO.getList(cartDTO);
-		long optionNum = caList.get(0).getOptionNum();
 		
-		OptionsDTO optionsDTO = new OptionsDTO();
-		optionsDTO.setOptionNum(optionNum);
-		optionsDTO = productDAO.getOptionSelect(optionsDTO);
-		ProductDTO productDTO = new ProductDTO();
-		productDTO.setProductNum(optionsDTO.getProductNum());
-		productDTO = productDAO.getSelect(productDTO);
-		String orderName = productDTO.getName();			
-		if(caList.size()>1) {
-			orderName = orderName+" 외 "+(caList.size()-1);
+		for(CartDTO ca:caList) {
+			OptionsDTO optionsDTO = new OptionsDTO();
+			optionsDTO.setOptionNum(ca.getOptionNum());
+			optionsDTO = productDAO.getOptionSelect(optionsDTO);
+			if(optionsDTO.getStock()==0) {
+				result = "품절된 상품이 있어 구매를 진행할 수 없습니다.";
+				break;
+			}
 		}
 		
-		ordersDTO.setOrderUid(orderUid);
-		ordersDTO.setPayState(payState);
-		ordersDTO.setAmount(totalPrice);
-		ordersDTO.setOrderName(orderName);		
-		
-		ordersDAO.setInsert(ordersDTO);
-		
-		return ordersDTO.getOrderUid()+"-"+ordersDTO.getOrderName();
+		if(result=="") {
+			Calendar ca = Calendar.getInstance();
+			String format = "yyyyMMddHHmmss";
+			SimpleDateFormat sf = new SimpleDateFormat(format);
+			String orderUid = sf.format(ca.getTime());
+			orderUid = ordersDAO.getOrderUid(orderUid);
+			
+			String payState = "결제전";
+			
+			/* 위의 cartDTO 사용 */
+			long totalPrice = cartDAO.getTotalPrice(cartDTO);
+			if(totalPrice<25000) {
+				totalPrice = totalPrice+3000;
+			}
+			
+			long optionNum = caList.get(0).getOptionNum();
+			
+			OptionsDTO optionsDTO = new OptionsDTO();
+			optionsDTO.setOptionNum(optionNum);
+			optionsDTO = productDAO.getOptionSelect(optionsDTO);
+			ProductDTO productDTO = new ProductDTO();
+			productDTO.setProductNum(optionsDTO.getProductNum());
+			productDTO = productDAO.getSelect(productDTO);
+			String orderName = productDTO.getName();			
+			if(caList.size()>1) {
+				orderName = orderName+" 외 "+(caList.size()-1);
+			}
+			
+			ordersDTO.setOrderUid(orderUid);
+			ordersDTO.setPayState(payState);
+			ordersDTO.setAmount(totalPrice);
+			ordersDTO.setOrderName(orderName);		
+			
+			ordersDAO.setInsert(ordersDTO);
+			result = ordersDTO.getOrderUid()+"-"+ordersDTO.getOrderName();	
+		}
+				
+		return result;
 	}
 
 	public MemberDTO setAddrUpdate(OrdersDTO ordersDTO, MemberDTO memberDTO) throws Exception {
@@ -189,6 +205,13 @@ public class OrdersService {
 		return pointDTO.getRestPoint();		
 	}
 	
+	/* 포인트로 전액 결제 시 payment 업데이트 */
+	public int setPayMethodUpdate(OrdersDTO ordersDTO) throws Exception {
+		return ordersDAO.setPayMethodUpdate(ordersDTO);
+	}
+	
+	
+	/* 아임포트 토큰 받기 */
 	public void getToken() {	
 		
 		try {

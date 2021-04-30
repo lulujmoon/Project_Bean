@@ -60,17 +60,18 @@
 					</c:forEach>
 				</select>
 			</span>
-			<div>
+			<div style="font-weight:bold;font-size:large;float:right">
 			상품가격 : ${item.finalPrice}				
 			</div>
 		</div>
 		</c:forEach>
 		
-		<div style="border:1px solid lightgrey;padding:15px;background-color:lightgrey;text-align: right;"> 
-			합계 : <span id="totalPrice">${totalPrice}</span> + 배송비 : <span class="shipping" id="shipping"></span> = <span id="finalPrice"></span> 
+		<div style="border:1px solid lightgrey;padding:15px;background-color:lightgrey;text-align: right"> 
+			합계 : <span id="totalPrice">${totalPrice}</span>원 + 배송비 : <span class="shipping" id="shipping"></span>원 = <span id="finalPrice"></span>원 
 		</div>
 		
-		<input type="button" class="btn btn-warning" value="결제하기" id="orderShow-btn">
+		<input type="button" class="btn btn-warning" value="결제하기" id="orderShow-btn" style="float:right;margin:20px 0">
+		<div style="clear:both"></div>
 	</div>
 	
 	

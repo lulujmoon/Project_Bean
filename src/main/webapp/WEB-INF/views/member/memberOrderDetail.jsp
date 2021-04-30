@@ -72,8 +72,7 @@
 											<tbody>
 												<tr>
 													<th scope="row">주문번호</th>
-													<td>${list[0].orderUid}<span></span>
-													</td>
+													<td id="orderUid">${list[0].orderUid}</td>
 												</tr>
 												<tr>
 													<th scope="row">주문일자</th>

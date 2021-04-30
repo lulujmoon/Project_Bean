@@ -1,19 +1,25 @@
 /**
  * 
  */
- 
+
+
 /* 결제 버튼 누르면 영역 보여주기 */
 $("#orderShow-btn").click(function(){
 	let id=$("#id").val();
-	/* 비회원이면 구매 불가 */
-	if(id==""){
-		//모달 띄우기
-		$("#login").modal();
+	/* 상품이 없으면 구매 불가 */
+	if($("#finalPrice").text()!=0){
+		/* 비회원이면 구매 불가 */
+		if(id==""){
+			//모달 띄우기
+			$("#login").modal();
+		}else{
+			$("#orderDiv").slideDown(800);		
+		}
+		
+		$("#amount").text($("#finalPrice").text());		
 	}else{
-		$("#orderDiv").slideDown(800);		
+		alert('구매할 상품이 없습니다.');
 	}
-	
-	$("#amount").text($("#finalPrice").text());
 	
 });
 
@@ -168,13 +174,18 @@ $("#order-btn").click(function(){
 		async: false,
 		success: function(result){
 			resultArr = result.trim().split('-');
-			merchant_uid = resultArr[0];
-			name = resultArr[1];
+			if(resultArr[1]!=null){
+				merchant_uid = resultArr[0];
+				name = resultArr[1];				
+			}else{
+				alert(resultArr[0].trim());
+				location.reload();
+			}
 		}
 	});
 	
 	
-	if(amount!=0){
+	if(amount!=0&&name!=null){
 		
 		var IMP = window.IMP;	
 		IMP.init('imp36227628');
@@ -230,6 +241,12 @@ $("#order-btn").click(function(){
 	   		}
 		});
 	}else{
-
+		$.post("../order/orderbyPoint", {
+			orderUid: merchant_uid,
+			usePoint: usePoint
+		}, function(result){
+			alert(result);
+			location.href="../";
+		})
 	}
 })

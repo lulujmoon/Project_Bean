@@ -16,9 +16,9 @@
 
 <!-- Portfolio Section -->
 <div class="container">
-<h2 style="margin:10px;text-align:center;font-family: 'Orelega One';" title="${productNum}" id="h2">Products</h2>
+<h2 style="margin:10px;text-align:center;" title="${productNum}" id="h2"><a href="./productList" style="color:black">Products</a></h2>
 
-	<div style="text-align: center;font-family: 'Orelega One';">
+	<div style="text-align: center">
 		<a href="./productList?category=coffee">Coffee</a> | 
 		<a href="./productList?category=brewingTool">Brewing Tool</a> | 
 		<a href="./productList?category=gift">Gift</a> | 

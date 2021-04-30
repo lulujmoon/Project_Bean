@@ -30,6 +30,7 @@ public class OrdersController {
 	@PostMapping("orderInsert")
 	public ModelAndView setInsert(OrdersDTO ordersDTO, boolean save_addr, HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
+		
 		String result = ordersService.setInsert(ordersDTO);
 		
 		if(save_addr) {
@@ -94,21 +95,52 @@ public class OrdersController {
 	@PostMapping("orderCancel")
 	public ModelAndView orderCancel(OrdersDTO ordersDTO, HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		ordersDTO = ordersService.getSelectByImpUid(ordersDTO);
-		String imp_uid = ordersDTO.getImpUid();
-		ordersService.getToken();
-		ordersService.cancelPaymentChecksumByImpUid(imp_uid);
-		ordersDTO.setPayState("주문취소");
+		if(ordersDTO.getImpUid()!="") {
+			ordersDTO = ordersService.getSelectByImpUid(ordersDTO);
+			String imp_uid = ordersDTO.getImpUid();
+			ordersService.getToken();
+			ordersService.cancelPaymentChecksumByImpUid(imp_uid);
+		}else {
+			ordersDTO = ordersService.getSelect(ordersDTO);
+		}
+			ordersDTO.setPayState("주문취소");
+			ordersService.setPayStateUpdate(ordersDTO);
+			ordersService.setShippingStateCancelled(ordersDTO);
+			
+			MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+			long restPoint = memberDTO.getPoint();
+			restPoint = ordersService.setPointRollBack(ordersDTO, restPoint);
+			memberDTO.setPoint(restPoint);
+			session.setAttribute("member", memberDTO);			
+		
+		mv.addObject("result", "주문이 취소되었습니다.");
+		mv.setViewName("common/ajaxResult");
+		return mv;
+	}
+	
+	@PostMapping("orderbyPoint")
+	public ModelAndView orderbyPoint(OrdersDTO ordersDTO, long usePoint, HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		ordersDTO = ordersService.getSelect(ordersDTO);
+		ordersDTO.setPayState("결제완료");
 		ordersService.setPayStateUpdate(ordersDTO);
-		ordersService.setShippingStateCancelled(ordersDTO);
+		String result = "결제가 완료되었습니다.";
+		
+		ordersService.setStockUpdate(ordersDTO);
+		ordersService.shiftCartList(ordersDTO);
+		
+		ordersDTO.setPayMethod("point");
+		ordersService.setPayMethodUpdate(ordersDTO);
 		
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
 		long restPoint = memberDTO.getPoint();
-		restPoint = ordersService.setPointRollBack(ordersDTO, restPoint);
+		restPoint = ordersService.setPointInsert(ordersDTO, usePoint, restPoint);
+		
 		memberDTO.setPoint(restPoint);
 		session.setAttribute("member", memberDTO);
 		
-		mv.addObject("result", "주문이 취소되었습니다.");
+		mv.addObject("result", result);
 		mv.setViewName("common/ajaxResult");
 		return mv;
 	}

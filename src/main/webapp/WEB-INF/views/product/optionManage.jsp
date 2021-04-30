@@ -17,7 +17,9 @@
 	
 	<!-- Options List -->
 	<input type="button" value="추가" id="add" class="btn btn-sm btn-secondary" style="float:right;margin-right:13px">
-	<p>최소 하나의 옵션이 필요합니다.</p>
+	<c:if test="${list.size()==0}">
+		<p style="color:red"> 옵션이 없습니다. 최소 하나의 옵션이 필요합니다.</p>
+	</c:if>	
 	<table class="table table-hover">
 		<thead>
 			<tr>

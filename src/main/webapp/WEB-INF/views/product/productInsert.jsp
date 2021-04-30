@@ -12,6 +12,13 @@
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
+
+<!-- 여ㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕ기ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣ -->
+<c:if test="${member.authority ne '1'.charAt(0)}">
+	<span id="noAccess">잘못된 접근</span>
+</c:if>
+<c:if test="${member.authority eq '1'.charAt(0)}">
+<!-- 여기까지 -->
 	<div class="container">
 		<h2>Product Insert Page</h2>
 
@@ -75,11 +82,20 @@
 		
 
 	</div>
-	
-
+<!-- 영여ㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕ기ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣ -->
+</c:if>	
+<!-- 여기까지 -->
 	<c:import url="../template/footer.jsp"></c:import>
 	<!-- Script -->
+	<!-- 여ㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕㅕ기ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣ -->
+	<script type="text/javascript">
+		if($("#noAccess").text()=="잘못된 접근"){
+			alert("잘못된 접근입니다.");
+			history.back();
+		}
+	</script>
+	<!-- 여기까지 -->
 	<script type="text/javascript" src="../resources/jquery/summernote.js"></script>
-
+	
 </body>
 </html>

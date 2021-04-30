@@ -102,5 +102,4 @@ $("#h").click(function(){
 	let productNum = $(this).attr("title");
 	location.href = "./productList?productNum="+productNum;
 
-	
 })
