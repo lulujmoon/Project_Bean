@@ -19,6 +19,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bb.bean.magazine.MagazineDTO;
+import com.bb.bean.magazine.MagazineService;
+
 
 
 @Controller
@@ -27,6 +30,8 @@ public class MailController {
 	
 	@Autowired
 	private MailService mailService;
+	@Autowired
+	private MagazineService magazineService;
 	
 	@GetMapping("mailList")
 	public ModelAndView getList()throws Exception{
@@ -79,11 +84,13 @@ public class MailController {
 	   message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
 	   // Subject
-	   
-	   message.setSubject("빈빈구독자");
+	   MagazineDTO magazineDTO = new MagazineDTO();
+	   magazineDTO.setNum(114);
+	   magazineDTO = magazineService.magazineSelect(magazineDTO);
+	   message.setSubject(magazineDTO.getTitle());
 	   
 	   // Text
-	   message.setText("안녕하세요");
+	   message.setContent(magazineDTO.getContents(),"text/html; charset=UTF-8");
 
 	   // send the message
 	   Transport.send(message);
