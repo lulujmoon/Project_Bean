@@ -95,4 +95,14 @@ $(".del").click(function(){
 	$.post("./optionDelete", {optionNum:opNum}, function(result){
 		location.reload();
 	})
+});
+
+/* 제목 누르면 모달 창으로 돌아가게? */
+$("#h").click(function(){
+	let productNum = $(this).attr("title");
+	location.href = "./productList";
+	$(document).ready(function(){
+		/* 컨트롤러에서 해볼까?? */	
+	});
+	
 })

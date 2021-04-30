@@ -25,6 +25,7 @@ public class ProductController {
 	@GetMapping("productList")
 	public void getList(ProductDTO productDTO, Model model) throws Exception {
 		List<ProductDTO> li = productService.getList(productDTO);
+		model.addAttribute("productNum", productDTO.getProductNum());
 		model.addAttribute("list", li);
 	}
 	

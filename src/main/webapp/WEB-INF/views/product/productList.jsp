@@ -16,7 +16,7 @@
 
 <!-- Portfolio Section -->
 <div class="container">
-<h2 style="margin:10px;text-align:center;font-family: 'Orelega One';">Products</h2>
+<h2 style="margin:10px;text-align:center;font-family: 'Orelega One';" title="${productNum}" id="h2">Products</h2>
 
 	<div style="text-align: center;font-family: 'Orelega One';">
 		<a href="./productList?category=coffee">Coffee</a> | 
@@ -282,6 +282,11 @@ $('#select_${product.productNum}').on('hidden.bs.modal', function (e) {
 });
 
 </c:forEach>
+
+let paraNum = $("#h2").attr("title");
+if(paraNum!=""){
+	$("#select_"+paraNum).modal('show');
+}
 </script>
 </body>
 </html>

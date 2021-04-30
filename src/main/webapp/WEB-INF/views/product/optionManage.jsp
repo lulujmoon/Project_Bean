@@ -13,7 +13,7 @@
 <c:import url="../template/header.jsp"></c:import>
 	<br>
 	<div class="container">
-	<h3 id="h" title="${product.productNum}" style="display:inline-block;">${product.name}</h3>
+	<h3 id="h" title="${product.productNum}" style="display:inline-block;cursor: pointer;">${product.name}</h3>
 	
 	<!-- Options List -->
 	<input type="button" value="추가" id="add" class="btn btn-sm btn-secondary" style="float:right;margin-right:13px">
