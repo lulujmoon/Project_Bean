@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<div align="left" style="color: rgb(136, 136, 136);">
+<div align="left" style="color: rgb(136, 136, 136);font-family: 'Noto Serif KR';">
 	<span style="font-size: 24px;">
 		<span style="font-weight: 700;">
 		[공지사항]&nbsp;
 		</span>
 	</span>
 </div>
-<div style="color: rgb(136, 136, 136);text-align: -webkit-center;">
+<div style="color: rgb(136, 136, 136);text-align: -webkit-center;font-family: 'Noto Serif KR';">
 	<div align="left" style="text-align: left;">
 		<span style="font-weight: 700; font-size: 14.6667px;">
 		배송 출고 마감 시간 및 원두 판매기한 변경 안내

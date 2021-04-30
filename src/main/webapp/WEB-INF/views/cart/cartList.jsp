@@ -6,6 +6,7 @@
 <head>
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
+<link rel="stylesheet" href="../resources/css/cartList.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -14,22 +15,25 @@
 <c:import url="../member/memberJoin.jsp"></c:import>
 	<div class="container">
 		
-		<input type="button" value="전체 삭제" id="delAll-btn" title="${member.id}" style="float:right">
 		<h1>Cart</h1>
 		
 		<span style="display:none" id="before">${before}</span>
 		<!-- 비었을 때 옵션 -->
 		<c:if test="${totalPrice==0}">
-		<div style="border:1px solid lightgrey;padding:20px;">
+		<div class="item-div" style="border-top:1px solid lightgrey">
 			장바구니가 비었습니다.
 		</div>
 		</c:if>
-
+		
+		<div class="item-div" style="border-top:1px solid lightgrey">
+			상품 (${list.size()})
+			<input type="button" value="전체 삭제" id="delAll-btn" class="btn btn-outline-secondary btn-sm" title="${member.id}" style="float:right">			
+		</div>
 		<c:forEach items="${list}" var="item">
-		<div title="${item.itemNum}" style="border:1px solid lightgrey;padding:20px;">
+		<div title="${item.itemNum}" class="item-div">
 			<div class="info">
 				${item.product.name} 
-				<input type="button" value="X" class="del-btn" title="${item.itemNum}" style="float:right">
+				<input type="button" value="X" class="btn btn-outline-secondary btn-sm del-btn" title="${item.itemNum}" style="float:right">
 				<br>
 				<c:if test="${item.option.type==null}">
 					${item.product.cartInfo}<br>
@@ -60,13 +64,13 @@
 					</c:forEach>
 				</select>
 			</span>
-			<div style="font-weight:bold;font-size:large;float:right">
-			상품가격 : ${item.finalPrice}				
+			<div class="finalPrice-div">
+			상품가격 : ${item.finalPrice}원		
 			</div>
 		</div>
 		</c:forEach>
 		
-		<div style="border:1px solid lightgrey;padding:15px;background-color:lightgrey;text-align: right"> 
+		<div class="prices"> 
 			합계 : <span id="totalPrice">${totalPrice}</span>원 + 배송비 : <span class="shipping" id="shipping"></span>원 = <span id="finalPrice"></span>원 
 		</div>
 		
@@ -75,43 +79,51 @@
 	</div>
 	
 	
-	
-	<div id="orderDiv" class="container" style="display:none">
-		
-		<form action="../order/orderInsert" method="post" id="frm">
-			<h3>배송정보</h3>
-			<input type="radio" id="load-addr" name="addr-btn"> 회원정보에서 불러오기
-			<input type="radio" id="new-addr" name="addr-btn"> 직접 입력 <br>		
-			<span style="display:none"><input type="text" name="id" value="${member.id}" id="id"></span>
-			받는 분 성함 <input type="text" name="buyerName" id="buyerName" required><br>
-			전화번호 <input type="text" name="buyerTel" id="buyerTel" required><br>
-			우편번호 <input type="text" name="buyerPostcode" id="postcode" readonly="readonly" required>
-			<input type="button" id="popup" value="찾기"><br>
-			주소 <input type="text" name="buyerAddr" id="addr" readonly="readonly" required><br>
-			상세주소 <input type="text" name="buyerAddr2" id="addr2" required><br>
-			<input type="checkbox" id="save-addr"> 회원정보에 저장 <br>
-			배송 메세지 
-			<select name="message" id="msg-sel">
-				<option value="배송 전에 연락 주세요." class="msg-opt">배송 전에 연락 주세요.</option>
-				<option class="msg-opt">부재 시 경비실에 맡겨주세요.</option>
-				<option class="msg-opt">부재 시 문앞에 놔주세요.</option>
-				<option>직접 입력</option>
-			</select>
-			<input type="text" id="message" style="display:none">
-		<h3>결제정보</h3>
-		<p>
-			상품합계 : ${totalPrice}<br>
-			배송비 : <span class="shipping"></span><br>
-			<span><input type="text" id="point-use"></span><input type="button" value="모두 사용" id="point-btn"><br>
-			<small>보유 포인트 : <span id="max-point">${member.point}</span></small><br>
-			결제금액 : <span id="amount"></span><br>
-			결제방식 : 
-			<select name="payMethod">
-				<option value="card">신용카드</option>
-			</select>
-		</p>
-		<input type="button" value="결제하기" id="order-btn">
-		</form>
+	<div class="container">
+		<div id="orderDiv" style="display:none">
+			
+			<form action="../order/orderInsert" method="post" id="frm">
+				<div class="chooseInfo">
+					<h3>배송정보</h3><br>
+					<input type="radio" id="load-addr" name="addr-btn"> <label for="load-addr"> 회원정보에서 불러오기 </label>&nbsp;&nbsp;
+					<input type="radio" id="new-addr" name="addr-btn"> <label for="new-addr"> 직접 입력 </label><br><br>	
+					배송 메세지 <br>
+					<select name="message" id="msg-sel" class="selectpicker">
+						<option value="">선택하세요.</option>
+						<option class="msg-opt">배송 전에 연락 주세요.</option>
+						<option class="msg-opt">부재 시 경비실에 맡겨주세요.</option>
+						<option class="msg-opt">부재 시 문앞에 놔주세요.</option>
+						<option>직접 입력</option>
+					</select>
+					<input type="text" id="message" style="display:none">			
+				</div>
+				<div class="shippingInfo">
+					<span style="display:none"><input type="text" name="id" value="${member.id}" id="id"> class="form-control form-control-sm"</span>
+					받는 분 성함 <input type="text" name="buyerName" id="buyerName" required class="form-control form-control-sm"><br>
+					전화번호 <input type="text" name="buyerTel" id="buyerTel" required class="form-control form-control-sm"><br>
+					우편번호 <div class="postcode"><input type="text" name="buyerPostcode" id="postcode" readonly="readonly" required class="form-control form-control-sm"></div>
+					<input type="button" id="popup" value="찾기" class="btn btn-outline-secondary btn-sm"><br><br>
+					주소 <input type="text" name="buyerAddr" id="addr" readonly="readonly" required class="form-control form-control-sm"><br>
+					상세주소 <input type="text" name="buyerAddr2" id="addr2" required class="form-control form-control-sm"><br>
+					<input type="checkbox" id="save-addr"> 회원정보에 저장 <br>
+				</div>
+				<div class="orderInfo">
+					<h3>결제정보</h3>
+					<p>
+						상품합계 : ${totalPrice}<br>
+						배송비 : <span class="shipping"></span><br>
+						<span><input type="text" id="point-use" class="form-control form-control-sm"></span><input type="button" value="모두 사용" id="point-btn" class="btn btn-outline-secondary btn-sm"><br>
+						<small>보유 포인트 : <span id="max-point">${member.point}</span></small><br>
+						결제금액 : <span id="amount"></span><br>
+						결제방식 : 
+						<select name="payMethod" class="selectpicker">
+							<option value="card">신용카드</option>
+						</select>
+					</p>
+					<div id="order-btn">결제하기</div>
+				</div>
+			</form>
+		</div>
 	</div>
 	
 	

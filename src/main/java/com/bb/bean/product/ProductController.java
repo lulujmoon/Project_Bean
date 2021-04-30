@@ -84,10 +84,15 @@ public class ProductController {
 	}
 	
 	
-	@GetMapping("productDelete")
-	public String setDelete(ProductDTO productDTO) throws Exception {
+	@PostMapping("productDelete")
+	public ModelAndView setDelete(ProductDTO productDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
 		productService.setDelete(productDTO);
-		return "redirect:./productList";
+		
+		mv.addObject("result", "삭제");
+		mv.setViewName("common/ajaxResult");
+		return mv;
 	}
 	
 	

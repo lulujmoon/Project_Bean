@@ -97,9 +97,18 @@ $(".del").click(function(){
 	})
 });
 
-/* 제목 누르면 모달 창으로 돌아가게? */
+/* 제목 누르면 모달 창으로 돌아가게 */
 $("#h").click(function(){
-	let productNum = $(this).attr("title");
-	location.href = "./productList?productNum="+productNum;
+	let conf;
+	if($("#warning").attr("title")=='0'){
+		conf = confirm("옵션을 등록하지 않으면 해당 상품을 구매할 수 없습니다. 옵션을 등록하지 않고 돌아가겠습니까?");
+		if(conf){
+			let productNum = $(this).attr("title");
+			location.href = "./productList?productNum="+productNum;
+		}
+	}else{
+		let productNum = $(this).attr("title");
+		location.href = "./productList?productNum="+productNum;		
+	}
 
 })

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<section class="item-section shop-default-info-wrapper" style="padding: 20px 30px; font-size: 13px; position: relative; border-top: 1px solid rgb(194, 194, 194); font-family: Apple SD Gothic Neo, 본고딕, Source Han Sans K, Noto Sans CJK KR, notokr, sans-serif;">
+<section class="item-section shop-default-info-wrapper" style="padding: 20px 30px; font-size: 13px; position: relative; border-top: 1px solid rgb(194, 194, 194);font-family: 'Noto Serif KR';">
 	<div class="row" style="margin-left: -4px; margin-right: -4px;">
 		<div class="col-sm-2 info-title" style="padding-left: 4px; padding-right: 4px; width: 138px; font-weight: 700; padding-bottom: 10px;">
 		배송 안내
@@ -23,7 +23,7 @@
 		</div>
 	</div>
 </section>
-<section class="item-section shop-default-info-wrapper" style="padding: 20px 30px; font-size: 13px; position: relative; border-top: 1px solid rgb(194, 194, 194); font-family: Apple SD Gothic Neo, 본고딕, Source Han Sans K, Noto Sans CJK KR, notokr, sans-serif;">
+<section class="item-section shop-default-info-wrapper" style="padding: 20px 30px; font-size: 13px; position: relative; border-top: 1px solid rgb(194, 194, 194);font-family: 'Noto Serif KR';">
 	<div class="row" style="margin-left: -4px; margin-right: -4px;">
 		<div class="col-sm-2 info-title" style="padding-left: 4px; padding-right: 4px; width: 138px; font-weight: 700; padding-bottom: 10px;">
 			교환/환불 안내

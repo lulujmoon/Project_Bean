@@ -13,7 +13,8 @@ $("#orderShow-btn").click(function(){
 			//모달 띄우기
 			$("#login").modal();
 		}else{
-			$("#orderDiv").slideDown(800);		
+			$("#orderShow-btn").attr("style", "display:none");
+			$("#orderDiv").slideDown(800);
 		}
 		
 		$("#amount").text($("#finalPrice").text());		

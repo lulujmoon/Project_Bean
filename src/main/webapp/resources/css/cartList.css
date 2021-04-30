@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+
+.prices{
+	 border:1px solid lightgrey;
+	 padding:15px;
+	 background-color:lightgrey;
+	 text-align: right
+}
+
+
+
+
+#orderDiv{
+	border: 1.5px solid lightgrey;
+	padding: 1%;
+	margin-bottom: 3%;
+	margin-top: 6%;
+}
+
+.chooseInfo{
+	width: 30%;
+	float:left;
+	margin: 2% 1%;
+}
+
+.shippingInfo{
+	width: 30%;
+	display: inline-block;
+	margin: 2% 1%;
+}
+
+.orderInfo{
+	width: 30%;
+	float:right;
+	margin: 2% 1%;
+}
+
+#popup{
+	float:right;
+}
+
+.postcode{
+	display: inline-block;
+	width: 83%;
+}
+
+#point-use{
+	display: inline-block;
+	width: 73%;
+}
+
+#point-btn{
+	float:right;
+}
+
+#order-btn{
+	background-color: #b2876f;
+	color: ivory;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+}
+
+
+.item-div{
+	border-bottom: 1px solid lightgrey;
+	border-left: 1px solid lightgrey;
+	border-right: 1px solid lightgrey;
+	padding:20px;
+	border-collapse: collapse;
+}
+
+.finalPrice-div{
+	font-weight:bold;
+	font-size:large;
+	float:right
+}

@@ -93,12 +93,12 @@
 			      								<td><input type="radio" class="optionNum" name="optionNum" value="${option.optionNum}" disabled="disabled"></td>	      				
 			      						</c:when>
 			      						<c:otherwise>
-							      				<td><input type="radio" class="optionNum" name="optionNum" value="${option.optionNum}"></td>
+							      				<td><input type="radio" class="optionNum" name="optionNum" id="optionNum_${option.optionNum}" value="${option.optionNum}"></td>
 			      						</c:otherwise>
 			      					</c:choose>
-							      				<td>${option.type}</td>
-								      			<td><del>₩${option.price}</del>&nbsp;&nbsp;₩${option.afterPrice}</td>
-								      			<td>${option.optionInfo}</td>
+							      				<td><label for="optionNum_${option.optionNum}">${option.type}</label></td>
+								      			<td><label for="optionNum_${option.optionNum}"><del>₩${option.price}</del>&nbsp;&nbsp;₩${option.afterPrice}</label></td>
+								      			<td><label for="optionNum_${option.optionNum}">${option.optionInfo}</label></td>
 							      			</tr>	
 
 			      			</c:forEach>
@@ -130,11 +130,13 @@
 			   			<div class="cart-btn">장바구니</div>
 			   			<div class="order-btn">바로결제</div>
 			   			<div class="goCart-btn">장바구니 보러가기</div>
-			   			<div style="display:inline-block;float:right">
-			   				<a href="./optionManage?productNum=${product.productNum}" class="btn btn-sm btn-success">옵션</a>
-		    				<a href="./productUpdate?productNum=${product.productNum}" class="btn btn-sm btn-success">수정</a>
-		    				<a href="./productDelete?productNum=${product.productNum}" class="btn btn-sm btn-success">삭제</a>
-		    			</div>
+			   			<c:if test="${member.authority eq '1'.charAt(0)}">
+				   			<div style="display:inline-block;float:right">
+				   				<a href="./optionManage?productNum=${product.productNum}" class="btn btn-sm btn-success">옵션</a>
+			    				<a href="./productUpdate?productNum=${product.productNum}" class="btn btn-sm btn-success">수정</a>
+			    				<input type="button" value="삭제" class="btn btn-sm btn-success proDel-btn">
+			    			</div>
+		    			</c:if>
 			   		</div>
 		   		</div>
 	   		</div>
@@ -184,7 +186,7 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 	  
 	  inTxt = "";
 	  for(inc of includesArr){
-		  inTxt = inTxt + "<li>"+inc+"</li>";
+		  inTxt = inTxt + "<li>- "+inc+"</li>";
 	  }
 	  $(includes).text("");
 	  $(".includesList").html(inTxt);
@@ -197,7 +199,7 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 	 
 	  deTxt = "";
 	  for(de of detailsArr){
-		  deTxt = deTxt+"<li>"+de+"</li>";
+		  deTxt = deTxt+"<li>- "+de+"</li>";
 	  }
 	  $(details).text("");
 	  $(".detailsList").html(deTxt);
@@ -271,8 +273,15 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 	  $(modal).find(".toTop-btn").click(function(){
 			$(modal).scrollTop(0);
 		  });
-	  <!-- -->
 	  
+	  <!-- 삭제 -->
+	  $(modal).find(".proDel-btn").click(function(){
+		  $.post("./productDelete", {
+			  productNum:"${product.productNum}"
+		  }, function(result){
+			  location.href="./productList";
+		  });
+	  })
 
 });
 

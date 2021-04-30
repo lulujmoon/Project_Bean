@@ -12,6 +12,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:if test="${member.authority ne '1'.charAt(0)}">
+	<span id="noAccess">잘못된 접근</span>
+</c:if>
+<c:if test="${member.authority eq '1'.charAt(0)}">
+
 <c:import url="../template/header.jsp"></c:import>
 	<div class="container">
 		<h2>Product Update Page</h2>
@@ -75,20 +80,27 @@
 		</form>
 	</div>
 	<c:import url="../template/footer.jsp"></c:import>
+</c:if>
 	
-	<!-- Script -->
-	<script type="text/javascript" src="../resources/jquery/summernote.js"></script>
-	<script type="text/javascript">
-		for(gr of $(".grinds")){
-			if($(gr).val()=='${product.grinds}'){
-				$(gr).prop("checked", true);
-			}
+<!-- Script -->
+<script type="text/javascript">
+	if($("#noAccess").text()=="잘못된 접근"){
+		alert("잘못된 접근입니다.");
+		history.back();
+	}
+</script>
+<script type="text/javascript" src="../resources/jquery/summernote.js"></script>
+<script type="text/javascript">
+	for(gr of $(".grinds")){
+		if($(gr).val()=='${product.grinds}'){
+			$(gr).prop("checked", true);
 		}
-		for(ct of $(".category")){
-			if($(ct).val()=='${product.category}'){
-				$(ct).prop("selected", true);
-			}
+	}
+	for(ct of $(".category")){
+		if($(ct).val()=='${product.category}'){
+			$(ct).prop("selected", true);
 		}
-	</script>
+	}
+</script>
 </body>
 </html>

@@ -10,6 +10,11 @@
 <c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
+<c:if test="${member.authority ne '1'.charAt(0)}">
+	<span id="noAccess">잘못된 접근</span>
+</c:if>
+<c:if test="${member.authority eq '1'.charAt(0)}">
+
 <c:import url="../template/header.jsp"></c:import>
 	<br>
 	<div class="container">
@@ -18,7 +23,7 @@
 	<!-- Options List -->
 	<input type="button" value="추가" id="add" class="btn btn-sm btn-secondary" style="float:right;margin-right:13px">
 	<c:if test="${list.size()==0}">
-		<p style="color:red"> 옵션이 없습니다. 최소 하나의 옵션이 필요합니다.</p>
+		<p style="color:red" id="warning" title="${list.size()}"> 옵션이 없습니다. 최소 하나의 옵션이 필요합니다.</p>
 	</c:if>	
 	<table class="table table-hover">
 		<thead>
@@ -90,6 +95,13 @@
 	</div>
 	
 	<c:import url="../template/footer.jsp"></c:import>
-	<script type="text/javascript" src="../resources/jquery/optionManage.js"></script>
+</c:if>
+<script type="text/javascript">
+	if($("#noAccess").text()=="잘못된 접근"){
+		alert("잘못된 접근입니다.");
+		history.back();
+	}
+</script>
+<script type="text/javascript" src="../resources/jquery/optionManage.js"></script>
 </body>
 </html>
