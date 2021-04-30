@@ -29,7 +29,7 @@
 			
 				<div class="col-md-6" id="imgList"><a href="#" data-toggle="modal" data-target="#myModal${dto.num}"><img
 					src="../resources/upload/magazineT/${dto.listImage.fileName}"
-					width="555" height="300"></a>
+					width="550" height="300"></a>
 					<div class="subText">
 					<p class="titleText">${dto.title}</p>
 					<p class="titleSub">${dto.subTitle}</p>
@@ -65,9 +65,9 @@
 							<!-- Modal footer -->
 							<div class="modal-footer">
 								<div class="col-md-12 text-center">
-								<c:if test="${member.id eq 'admin'}">
+								<%-- <c:if test="${member.id eq 'admin'}"> --%>
 								<a href="./magazineUpdate?num=${dto.num}"><button type="button" class="btn btn-danger">Update</button></a>
-								</c:if>
+							<%-- 	</c:if> --%>
 								<button type="button" class="btn btn-danger"
 									data-dismiss="modal">Close</button>
 									</div>
@@ -87,9 +87,9 @@
 
 
 		<div>
-		<c:if test="${member.id eq 'admin'}">
+		<%-- <c:if test="${member.id eq 'admin'}"> --%>
 			<a href="./magazineInsert"><button type="button" class="btn btn-success">Write</button></a>
-			</c:if>
+		<%-- 	</c:if> --%>
 		</div>
 
 	</div>

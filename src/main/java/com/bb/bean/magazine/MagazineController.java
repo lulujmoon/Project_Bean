@@ -26,9 +26,9 @@ public class MagazineController {
 	}
 	
 	@PostMapping("magazineUpdate")
-	public ModelAndView magazineUpdate(MagazineDTO magazineDTO)throws Exception{
+	public ModelAndView magazineUpdate(MagazineDTO magazineDTO, MultipartFile file)throws Exception{
 		ModelAndView mv = new ModelAndView(); 
-		int result =magazineService.magazineUpdate(magazineDTO);
+		int result =magazineService.magazineUpdate(magazineDTO,file);
 		System.out.println(result);
 		mv.setViewName("redirect:./magazineList");
 		return mv;
