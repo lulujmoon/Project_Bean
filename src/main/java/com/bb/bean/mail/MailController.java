@@ -54,7 +54,7 @@ public class MailController {
 		//smtp서버명
 	  String host     = "smtp.naver.com";
 	  final String user   = "test4913@naver.com";
-	  final String password  = "Wldbsrksk2@";
+	  final String password  = "Test4913";
 	  
 	  //받는사람메일주소
 
