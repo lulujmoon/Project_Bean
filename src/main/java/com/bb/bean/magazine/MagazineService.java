@@ -22,6 +22,10 @@ public class MagazineService {
 	@Autowired
 	private FileManager fileManager;
 	
+	public int magazineDelete(MagazineDTO magazineDTO)throws Exception{
+		return magazineDAO.magazineDelete(magazineDTO);
+	}
+	
 	public int magazineUpdate(MagazineDTO magazineDTO,MultipartFile file)throws Exception{
 		int result=0;
 		//새로운 이미지를 넣었다면 실행

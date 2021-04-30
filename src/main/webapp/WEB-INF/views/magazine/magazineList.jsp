@@ -68,6 +68,7 @@
 								<%-- <c:if test="${member.id eq 'admin'}"> --%>
 								<a href="./magazineUpdate?num=${dto.num}"><button type="button" class="btn btn-danger">Update</button></a>
 							<%-- 	</c:if> --%>
+							<a href="./magazineDelete?num=${dto.num}"><button type="button" class="btn btn-danger">Delete</button></a>
 								<button type="button" class="btn btn-danger"
 									data-dismiss="modal">Close</button>
 									</div>

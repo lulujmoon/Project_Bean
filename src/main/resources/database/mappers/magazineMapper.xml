@@ -6,6 +6,10 @@
     
 <mapper namespace ="com.bb.bean.magazine.MagazineDAO">
 
+<delete id="magazineDelete" parameterType="MagazineDTO">
+delete magazine where num=#{num}
+</delete>
+
 <insert id="magazineInsert" parameterType="MagazineDTO">
 insert into magazine(num,title,subtitle,contents)values(#{num},#{title},#{subTitle},#{contents})
 </insert>

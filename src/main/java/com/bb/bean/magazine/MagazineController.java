@@ -17,6 +17,13 @@ public class MagazineController {
 	@Autowired
 	private MagazineService magazineService;
 	
+	@GetMapping("magazineDelete")
+	public String magazineDelete(MagazineDTO magazineDTO)throws Exception{
+		int result = magazineService.magazineDelete(magazineDTO);
+		
+		return "redirect:./magazineList";
+	}
+	
 	@GetMapping("magazineUpdate")
 	public ModelAndView magazineUpdate(MagazineDTO magazineDTO, ModelAndView mv)throws Exception{
 		magazineDTO = magazineService.magazineSelect(magazineDTO);
