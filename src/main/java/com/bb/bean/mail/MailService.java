@@ -14,5 +14,9 @@ public class MailService {
 	public List<MailDTO> getList()throws Exception{
 		return mailDAO.getList();
 	}
+	
+	public int setInsert(MailDTO mailDTO)throws Exception{
+		return mailDAO.setInsert(mailDTO);
+	}
 
 }

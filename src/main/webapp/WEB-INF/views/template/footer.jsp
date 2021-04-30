@@ -24,7 +24,12 @@
 
                <div class="col-md-5 col-sm-12">
 					<h4> 뉴스레터 받기 </h4>
-
+					<form id="frm" action="${pageContext.request.contextPath}/mail/mailInsert" method="post">
+					<div id="mAddr">
+					<input type="text" id="mAddr" name="mAddr">
+					</div>
+					<input type="submit" id="submit" value="확인" class="submit">
+					</form>
                </div>
 				
 			<!-- footer의 맨 밑 -->

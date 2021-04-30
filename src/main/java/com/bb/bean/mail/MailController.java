@@ -1,5 +1,6 @@
 package com.bb.bean.mail;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 import java.util.Properties;
 
@@ -14,6 +15,7 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -35,6 +37,13 @@ public class MailController {
 		return mv;
 	}
 	
+	@PostMapping("mailInsert")
+	public String setInsert(MailDTO mailDTO)throws Exception{
+		mailService.setInsert(mailDTO);
+		
+		return "redirect:./mail/mailList";
+	}
+	
 	@GetMapping("sendMail")
 	public void sendMail(MailDTO mailDTO)throws Exception{
 	
@@ -44,15 +53,13 @@ public class MailController {
 		
 		//smtp서버명
 	  String host     = "smtp.naver.com";
-	  final String user   = "fly5148@naver.com";
+	  final String user   = "test4913@naver.com";
 	  final String password  = "Wldbsrksk2@";
 	  
 	  //받는사람메일주소
 
-	  
-	  String to  = 
-			  			ar.get(0).toString();
-
+	  for(int i=0; i<ar.size();i++) {
+		  String to = ar.get(i).getmAddr();
 	  
 	  // Get the session object
 	  Properties props = new Properties();
@@ -72,10 +79,10 @@ public class MailController {
 	   message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
 	   // Subject
-	   message.setSubject("석희야!@");
+	   message.setSubject("빈빈구독자");
 	   
 	   // Text
-	   message.setText("석희야 사랑해");
+	   message.setText("안녕하세요");
 
 	   // send the message
 	   Transport.send(message);
@@ -87,5 +94,5 @@ public class MailController {
 	  
 	 }
 	}
-
+}
 

@@ -17,4 +17,8 @@ public class MailDAO {
 		return sqlSession.selectList(NAMESPACE+"getList");
 	}
 	
+	public int setInsert(MailDTO mailDTO)throws Exception{
+		return sqlSession.insert(NAMESPACE+"setInsert",mailDTO);
+	}
+	
 }

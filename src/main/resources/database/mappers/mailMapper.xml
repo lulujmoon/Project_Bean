@@ -11,4 +11,8 @@
 <select id="getList" resultType="MailDTO">
 select * from mailAddr
 </select>
+
+<insert id="setInsert" parameterType="MailDTO">
+insert into mailAddr values(#{mAddr})
+</insert>
 </mapper>
