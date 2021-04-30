@@ -79,6 +79,7 @@ public class MailController {
 	   message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
 	   // Subject
+	   
 	   message.setSubject("빈빈구독자");
 	   
 	   // Text
