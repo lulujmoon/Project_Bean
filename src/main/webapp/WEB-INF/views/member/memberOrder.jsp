@@ -79,7 +79,7 @@
 											<td scope="col">${list.order.orderDate}<br>
 											<a href="${pageContext.request.contextPath}/member/memberOrderDetail?orderUid=${list.order.orderUid}">[ ${list.order.orderUid} ]</a>
 											</td>
-											<td scope="col"><a href="${pageContext.request.contextPath}/product/productList/">${list.order.orderName} <br> ${list.detail.grind}</a></td>
+											<td scope="col"><a href="${pageContext.request.contextPath}/product/productList?productNum=${list.product.productNum}">${list.order.orderName} <br> ${list.detail.grind}</a></td>
 											<td scope="col">${list.detail.quantity}</td>
 											<td scope="col">${list.detail.finalPrice}</td>
 											<td scope="col">${list.detail.shippingState}</td>
@@ -104,5 +104,6 @@
 
 
 	<c:import url="../template/footer.jsp"></c:import>
+
 </body>
 </html>

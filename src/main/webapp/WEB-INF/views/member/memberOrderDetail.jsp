@@ -11,6 +11,7 @@
 <c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
+
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="wrapper container" style="display: block;">
@@ -273,7 +274,7 @@
 
 
 	<c:import url="../template/footer.jsp"></c:import>
-	
+
 	<script type="text/javascript" src="../resources/jquery/memberOrderDetail.js"></script>
 </body>
 </html>

@@ -11,6 +11,7 @@
 <c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
+
 	<c:import url="../template/header.jsp"></c:import>
 	<c:import url="../member/memberLogin.jsp"></c:import>
 	<c:import url="../member/memberJoin.jsp"></c:import>
@@ -47,7 +48,22 @@
 
 
 
-
+				<ul id="mobileOrderList" class="my-subscribe"
+					style="border-top: 1px solid #ccc;"></ul>
+					
+				<div id="info" class="content-box">
+					<div style="float: left;" class="content">
+						<span><b>회원정보</b></span><br>
+						<a href="${pageContext.request.contextPath}/member/memberUpdate" class="mainpage-mobile-menu">수정하기 &gt;</a>
+						
+					</div>
+					<div>
+					</div>
+					<div>
+					</div>
+				</div>	
+				
+								
 
 		<div id="content" class="cafe-content">
 			<div class="bb-form mainpage-mobile" style="padding-bottom: 40px;">
@@ -75,6 +91,8 @@
 					<div class="mainpage-mobile-menu-right arrow"></div>
 				</a>
 			</div>
+			
+
 			
 			
 			<div class="bb-form mypage-mobile-wrapper mainpage-desktop"
@@ -179,15 +197,6 @@
 	</div>
 	
 	<div id="footer-area"></div>
-
-	<!-- #main -->
-
-
-
-
-
-
-
 
 
 	<c:import url="../template/footer.jsp"></c:import>

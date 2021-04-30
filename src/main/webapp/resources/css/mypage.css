@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+#content-box{
+	width: 960px;
+	height: 151px;
+}
+
+#content {
+	width: 240px;
+	height: 66px;
+}
+
+
+
+
+
+
+/*
 #title {
     box-sizing: border-box;
     width: 100%;
@@ -35,4 +51,4 @@ div {
 
 }
 
-
+*/

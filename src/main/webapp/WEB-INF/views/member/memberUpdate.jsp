@@ -12,6 +12,7 @@
 <c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
+
 	<c:import url="../template/header.jsp"></c:import>
 
 
@@ -153,6 +154,7 @@
 
 
 <c:import url="../template/footer.jsp"></c:import>
+
 <script type="text/javascript" src="../resources/jquery/memberUpdate.js"></script>
 
 </body>

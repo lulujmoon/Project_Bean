@@ -11,6 +11,7 @@
 <c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
+
 	<c:import url="../template/header.jsp"></c:import>
 	<div class="wrapper container" style="display: block;">
 		<div id="title">
@@ -103,6 +104,7 @@
 
 
 <c:import url="../template/footer.jsp"></c:import>
+
 
 </body>
 </html>
