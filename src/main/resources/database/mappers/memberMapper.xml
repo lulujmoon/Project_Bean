@@ -8,6 +8,7 @@
 
 <mapper namespace="com.bb.bean.member.MemberDAO">
 
+
 	<select id="memberOrder" parameterType="MemberDTO" resultMap="orderResult">
 		select M.*, O.*, OD.*, P.*
 		from member M left join Orders O

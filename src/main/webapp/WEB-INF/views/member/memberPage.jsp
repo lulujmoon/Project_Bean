@@ -49,23 +49,140 @@
 
 			<ul id="mobileOrderList" class="my-subscribe"
 				style="border-top: 1px solid #ccc;"></ul>
-			<div class="mainbox1">
+			<div class="float-frame">
 				<div id="info" class="info-box">
-					<div style="float: left;" class="info">
-						<span><b>회원정보</b></span><br> <a
-							href="${pageContext.request.contextPath}/member/memberUpdate"
+						<span><b style="font-size: 24px;">회원정보</b></span><br> 
+						<a href="${pageContext.request.contextPath}/member/memberUpdate"
 							class="mainpage-mobile-menu">수정하기 &gt;</a>
-
-						<div class="sub-item-option-label">기본정보</div>
-						<div class="sub-item-option-content">
+				</div>
+				<div class="info-box">
+						<div class="info-label">기본정보</div>
+						<div class="info-content">
 							${member.name} | ${member.nickname} <br> ${member.tel} <br>
 							${member.id}
 						</div>
-					</div>
 				</div>
+				<div class="info-box">
+					<div class="info-label">배송지 정보</div>
+					<div class="info-content">${member.addr}<br>${member.addr2}</div>
+				</div>
+					
+			</div>
+			
+			
+			
+			
+			<ul id="mobileOrderList" class="my-subscribe"
+				style="border-top: 1px solid #ccc;"></ul>
+			<div class="float-frame">
+				<div id="info" class="info-box">
+						<span><b style="font-size: 24px;">내 포인트</b></span><br> 
+						<a href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"
+							class="mainpage-mobile-menu">자세히 보기 &gt;</a>
+				</div>
+				<div class="info-box">
+						<div class="info-label">사용가능 포인트</div>
+						<div class="info-content">
+							<span class="mypage-point">${member.point}</span> BP
+						</div>
+				</div>
+				<div class="info-ul">
+					<ul class="info-label">
+						<li>결제금액의 30%가 적립됩니다.</li>
+						<li>온라인샵에서 현금처럼 사용 가능합니다.</li>
+						<li>할인코드와 동시 사용 가능합니다.</li>
+					</ul>
+				</div>
+					
+			</div>
+			
+			
+						
+			<ul id="mobileOrderList" class="my-subscribe"
+				style="border-top: 1px solid #ccc;"></ul>
+			<div class="float-frame">
+				<div id="info" class="info-box">
+						<span><b style="font-size: 24px;">최근 주문내역</b></span><br> 
+						<a href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}">자세히 보기 &gt;</a>
+				</div>
+				
+
+				<div class="info-box">
+						<div class="info-label">주문품목</div>
+						<div class="info-content">
+							<div class="sub-item-option-content">
+								${list[0].orders.orderName}
+                                <div class="info-label">${list[0].orders.orderDate} | ${list[0].orders.payState}</div>
+							</div>
+						</div>
+				</div>
+
+
+
+				<div class="info-box">
+					<div class="info-label">배송지 정보</div>
+					<div class="info-content">${member.addr}<br>${member.addr2}</div>
+				</div>
+					
+					
+					
+			</div>
+			
+			<!--		<td scope="col">${list.order.orderDate}<br>
+											<a href="${pageContext.request.contextPath}/member/memberOrderDetail?orderUid=${list.order.orderUid}">[ ${list.order.orderUid} ]</a>
+											</td>
+											<td scope="col"><a href="${pageContext.request.contextPath}/product/productList?productNum=${list.product.productNum}">${list.order.orderName} <br> ${list.detail.grind}</a></td>
+											<td scope="col">${list.detail.quantity}</td>
+											<td scope="col">${list.detail.finalPrice}</td>
+											<td scope="col">${list.detail.shippingState}</td> 
+			
+			<div class="sub-item mainpage-row">
+            <div class="sub-item-column-product">
+				<div class="mainpage-label">
+                    <span>최근 주문내역</span>
+                    <div class="mainpage-labellink">
+                        <a href="/account/order">자세히 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-item-column-infowrapper">
+                <div>
+                    <div class="sub-item-column-info">
+                        <div class="sub-item-option">
+							<div class="sub-item-option-label">
+								주문품목
+							</div>
+							<div class="sub-item-option-content">
+								빈브라더스 콜드브루 블랙수트 
+                                <div class="main>2021.05.01 | 결제완료</div>
+							</div>
+						</div>
+                    </div>
+                    <div class="sub-item-column-payinfo">
+                        <div class="sub-item-option">
+                            <div class="sub-item-option-label">
+								배송지 주소
+							</div>
+                            <div class="sub-item-option-content">
+                                강원 춘천시 후석로 325 (후평동, 춘천더샾아파트)<br>
+                                110동 1901호
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+        <!--  -->
+			
+		
+			
+			
+			
+			
 			</div>
 
-
+<!--  
 
 			<div id="content" class="cafe-content">
 				<div class="bb-form mainpage-mobile" style="padding-bottom: 40px;">
@@ -207,6 +324,8 @@
 				</div>
 			</div>
 		</div>
+		
+		-->
 
 		<div id="footer-area"></div>
 

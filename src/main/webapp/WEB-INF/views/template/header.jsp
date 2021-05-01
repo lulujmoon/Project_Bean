@@ -30,7 +30,7 @@
                       </c:if>
 
                       <c:if test="${not empty member}">
-                      <a  href="${pageContext.request.contextPath}/member/memberPage">
+                      <a  href="${pageContext.request.contextPath}/member/memberPage?id=${member.id}">
                       <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> MyPage </span>
                       </a>
                       <a  href="${pageContext.request.contextPath}/member/memberLogout">

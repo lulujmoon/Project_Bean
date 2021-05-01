@@ -65,7 +65,7 @@
 							<div
 								class="xans-element- xans-myshop xans-myshop-orderhistorylistitem ec-base-table typeList">
 
-								<div class="title" style="width: 1170px; height: 359px;">
+								<div class="title" style="width: 1110px; height: 359px;">
 											
 											<table class="table border border-0">
 									<thead>

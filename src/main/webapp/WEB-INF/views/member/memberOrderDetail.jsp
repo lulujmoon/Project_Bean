@@ -188,11 +188,11 @@
 										<c:forEach items="${list}" var="list">
 											<tfoot class="right">
 												<tr>
-													<td colspan="7"><span class="gLeft">[기본배송]</span>
-														상품구매금액 <strong> ${list.finalPrice} </strong><span class="displaynone">
+													<td colspan="7"><span style="float: left;">[기본배송]</span>
+													<div style="float: right;">상품구매금액 <strong> ${list.finalPrice} </strong><span class="displaynone">
 													</span> + 배송비 3,000 <span class="displaynone"> - 상품할인금액 0</span> =
-														합계 : ${list.finalPrice} <strong><span
-															class="txt18"> </span></strong> <span class="displaynone"></span>
+														합계 : ${list.finalPrice} <strong>
+														<span class="txt18"> </span></strong> <span class="displaynone"></span></div>
 													</td>
 												</tr>
 											</tfoot>

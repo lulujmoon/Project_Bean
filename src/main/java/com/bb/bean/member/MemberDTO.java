@@ -116,6 +116,5 @@ public class MemberDTO {
 		this.product = product;
 	}
 	
-	
 
 }
