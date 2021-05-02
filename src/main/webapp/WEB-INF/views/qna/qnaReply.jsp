@@ -25,7 +25,7 @@
   	
     <div class="form-group">
       <label for="writer">Writer:</label>
-      <input type="text" class="form-control" id="writer" name="writer">
+      <input type="text" class="form-control" id="writer" name="writer" value="${member.id}" readonly="readonly">
     </div>
     <!-- read only추가 밸류에 멤버.아이디 추가 -->
     
@@ -48,8 +48,7 @@
 				<option value="결제문의">결제문의<option>
 			</select>
 		</div>
-    
-    <input type="submit" id="btn" value="Write" class="btn btn-success">
+    <button type="submit" value="Write" class="underline-btn">Write</button>
   </form>
 </div>
 <br>

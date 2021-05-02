@@ -10,11 +10,17 @@
 <c:import url="../template/setting.jsp"></c:import>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+<link rel="stylesheet" href="../resources/css/magazineList.css">
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
 
 <div class="container">
+<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<h2>MAGAZINE</h2>
+				</div>
+				</div>
 <form id="frm" action="./magazineUpdate" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 			<input type="hidden" name="num" value="${dto.num}">
@@ -38,10 +44,12 @@
 					name="contents" value="${dto.contents}"></textarea>
 			</div>
 
-			<input type="submit" id="btn" value="Update" class="btn btn-success">
+		<button type="submit" value="Update" class="underline-btn">Update</button>
+
 		</form>
 
 </div>
+<br>
 
 <script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
 	<c:import url="../template/footer.jsp"></c:import>

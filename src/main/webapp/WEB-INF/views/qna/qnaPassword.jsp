@@ -23,7 +23,8 @@
 	<div id="password">
 	<input type="password" id="pw" name="pw">
 	</div>
-	<input type="submit" id="submit" value="확인" class="submit">
+	
+	<button type="submit" value="확인" id="submit" class="underline-hover-btn">확인</button>
 </form>
 </div>
 

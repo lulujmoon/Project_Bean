@@ -77,7 +77,8 @@
 	    </c:if>
 	    
 	  </div>
-	  
+	
+	<div class="searchform"> 
 	<div class="input-group mt-3 mb-3">
 	<form id="frm" action="./qnaList" class="form-inline">
 		<input type="hidden" name="curPage" value="1" id="curPage">
@@ -90,10 +91,11 @@
 	  </div>
 	  <input type="text" class="form-control" name="search" id="search" value="${pager.search}" placeholder="">
 	    <div class="input-group-append">
-	    <button class="btn btn-success" type="submit">Search</button>
+	    <button class="gradient-btn" type="submit">Search</button>
 	  </div>
 	 </form> 
 	</div> 
+	</div>
 	
 	<a class="underline-btn" href="./qnaInsert">Write</a>
 	</div>

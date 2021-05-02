@@ -44,11 +44,11 @@
 
 						<!-- Modal Button -->
 						<c:if test="${member.id eq 'admin'}">
-						<button type="button" class="btn btn-success" data-toggle="modal"
-							data-target="#myModal${dto.num}">수정</button>
+						<button type="button" class="underline-btn" data-toggle="modal"
+							data-target="#myModal${dto.num}">UPDATE</button>
 
 						<a href="./faqDelete?num=${dto.num}" id="del"
-							class="btn btn-success">삭제</a>
+							class="underline-btn">DELETE</a>
 						</c:if>
 						<!-- Modal -->
 						<div class="modal" id="myModal${dto.num}">
@@ -98,9 +98,9 @@
 
 										<!-- Modal footer -->
 										<div class="modal-footer">
-											<button type="button" class="btn btn-success" id="upd"
+											<button type="button" class="underline-btn" id="upd"
 												value="${dto.num}">Update</button>
-											<button type="button" class="btn btn-success"
+											<button type="button" class="underline-btn"
 												data-dismiss="modal">Close</button>
 										</div>
 
@@ -151,7 +151,7 @@
 				<input type="text" class="form-control" name="search" id="search"
 					value="${pager.search}" placeholder="">
 				<div class="input-group-append">
-					<button class="btn btn-success" type="submit">Search</button>
+					<button class="gradient-btn" type="submit">Search</button>
 				</div>
 			</form>
 		</div>
@@ -159,7 +159,7 @@
 
 
 		<c:if test="${member.id eq 'admin'}">
-		<button type="button" class="btn btn-success" data-toggle="modal"
+		<button type="button" class="underline-btn" data-toggle="modal"
 			data-target="#myModalW">Write</button>
 		</c:if>
 
@@ -199,8 +199,8 @@
 
 					<!-- Modal footer -->
 					<div class="modal-footer">
-						<button type="button" class="btn btn-success" id="wri">확인</button>
-						<button type="button" class="btn btn-success" data-dismiss="modal">닫기</button>
+						<button type="button" class="underline-btn" id="wri">WRITE</button>
+						<button type="button" class="underline-btn" data-dismiss="modal">CLOSE</button>
 					</div>
 
 				</div>
