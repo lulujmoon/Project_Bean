@@ -15,14 +15,15 @@
 <body>
 <c:import url="../template/header.jsp"></c:import>
 <div class="container">
-<li class="select">
-<a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a>
-<a href="${pageContext.request.contextPath}/faq/faqList">FaQ</a>
-</li>
+
 
 
 <h2>QnA</h2>
-<br>
+
+<div style="text-align: center; margin: 20px 0 20px 0;">
+		<a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a> | 
+		<a href="${pageContext.request.contextPath}/faq/faqList">FaQ</a> 
+	</div>
 <table class="table">
 		<thead class="thead-light">
 			<tr>

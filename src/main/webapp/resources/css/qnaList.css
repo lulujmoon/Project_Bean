@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+thead{
+	height:37px;
+	font-size: 13px;
+}
+
 .smallSize{
 	font-size: 13px;
 }
@@ -21,7 +26,7 @@
 }
 
 h2{
-
+	margin-top:15px;
 	text-align: center;
 }
 
@@ -32,13 +37,15 @@ h2{
 
 td{
 	text-align: center;
-	height:40px;
+	height:16px;
 	padding:10px;
+	font-size:14px;
 	margine:0auto;
 }
 
 th{
 	text-align: center;
+	padding: 8px;
 }
 
 #search{
