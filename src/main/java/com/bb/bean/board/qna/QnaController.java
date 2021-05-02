@@ -38,9 +38,11 @@ public class QnaController {
 	@PostMapping("qnaPassword") 
 	public ModelAndView setPassword(ModelAndView mv,BoardDTO boardDTO,long pw) throws Exception{
 		boardDTO = qnaService.getSelect(boardDTO);
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO=(MemberDTO)session.getAttribute("member");
 		long con= boardDTO.getCon();
 		System.out.println(con);
-		if(con==pw) {
+		if(con==pw|| memberDTO.getId().equals("admin")) {
 			mv.setViewName("redirect:./qnaSelect?num="+boardDTO.getNum());
 		}else {
 			mv.addObject("msg","비밀번호를 확인하세요");
