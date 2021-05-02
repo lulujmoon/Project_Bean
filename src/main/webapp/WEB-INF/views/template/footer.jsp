@@ -27,8 +27,8 @@
 					<form id="frm" action="${pageContext.request.contextPath}/mail/mailInsert" method="post">
 					<div id="mAddr">
 					<input type="text" id="mAddr" name="mAddr">
+					<button type="submit" value="submit" class="underline-btn" style="margin-top:0;">확인</button>
 					</div>
-					<input type="submit" id="submit" value="확인" class="submit">
 					</form>
                </div>
 				

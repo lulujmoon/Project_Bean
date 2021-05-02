@@ -44,7 +44,7 @@ public class MailController {
 	
 	@PostMapping("mailInsert")
 	public String setInsert(MailDTO mailDTO)throws Exception{
-		mailService.setInsert(mailDTO);
+		int result = mailService.setInsert(mailDTO);
 		
 		return "redirect:./mail/mailList";
 	}
