@@ -53,9 +53,7 @@
 			</select>
 		</div>
 			
-	
-
-			<input type="submit" id="btn" value="Write" class="btn btn-success">
+			<input type="submit" value="Write" class="underline-btn">
 		</form>
 </div>
 <br>
