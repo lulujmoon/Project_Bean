@@ -19,13 +19,15 @@
 
 <c:import url="../template/header.jsp"></c:import>
 	<div class="container">
-		<h2>Product Update Page</h2>
-
+		<br>
+		<h2>상품 수정</h2>
+		<br>		
 		<form action="./productUpdate" method="post" id="frm" enctype="multipart/form-data">
 			<input type="hidden" name="productNum" value="${product.productNum}">
 			<div class="form-group">
 				<label for="thumbnail">썸네일</label>
-				<input type="file" name="file">
+				<input type="file" name="file"> 
+				<br><span style="color:grey;font-size:14px;">썸네일 이미지를 업로드하지 않으면 기존 이미지를 그대로 사용합니다.</span>
 			</div>
 			<div class="form-group">
 				<label for="name">상품명</label>
@@ -50,7 +52,7 @@
 			</div>
 			<div class="form-group">
 				<label for="includes">구성품</label>
-				<input type="text" class="form-control myCheck" id="includes" name="includes" placeholder="~로 구분해주세요." value="${product.includes}">
+				<input type="text" class="form-control myCheck" id="includes" name="includes" placeholder="리스트를 ~로 구분해주세요." value="${product.includes}">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
@@ -60,7 +62,7 @@
  			</div>
  			<div class="form-group">
 				<label for="details">상세 정보</label>
-				<input type="text" class="form-control myCheck" id="details" name="details" placeholder="~로 구분해주세요." value="${product.details}">
+				<input type="text" class="form-control myCheck" id="details" name="details" placeholder="리스트를 ~로 구분해주세요." value="${product.details}">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
@@ -70,8 +72,8 @@
 			</div>
 			<div class="form-group">
 				<label for="grinds">분쇄도 옵션</label>
-					<input type="radio" name="grinds" value="O" class="grinds"> 네
-					<input type="radio" name="grinds" value="X" class="grinds"> 아니오		
+					<input type="radio" name="grinds" value="O" class="grinds" id="yes"> <label for="yes">네</label>
+					<input type="radio" name="grinds" value="X" class="grinds" id="no"> <label for="no">아니오</label>		
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>			
 			<br>

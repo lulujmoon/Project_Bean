@@ -20,8 +20,9 @@
 <c:import url="../template/header.jsp"></c:import>
 
 	<div class="container">
-		<h2>Product Insert Page</h2>
-
+		<br>
+		<h2>상품 입력</h2>
+		<br>
 		<form action="./productInsert" method="post" id="frm" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="thumbnail">썸네일</label>
@@ -51,7 +52,7 @@
 			</div>
 			<div class="form-group">
 				<label for="includes">구성품</label>
-				<input type="text" class="form-control myCheck" id="includes" name="includes" placeholder="~로 구분해주세요." required>
+				<input type="text" class="form-control myCheck" id="includes" name="includes" placeholder="리스트를 ~로 구분해주세요." required>
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
@@ -61,18 +62,18 @@
  			</div>
  			<div class="form-group">
 				<label for="details">상세 정보</label>
-				<input type="text" class="form-control myCheck" id="details" name="details" placeholder="~로 구분해주세요." required>
+				<input type="text" class="form-control myCheck" id="details" name="details" placeholder="리스트를 ~로 구분해주세요." required>
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
 				<label for="cartInfo">장바구니 요약</label>
-				<input type="text" class="form-control myCheck" id="cartInfo" name="cartInfo" required>
+				<input type="text" class="form-control myCheck" id="cartInfo" name="cartInfo" placeholder="장바구니에 노출되는 설명입니다." required>
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 				<div class="form-group">
 				<label for="grinds">분쇄도 옵션</label>
-				<input type="radio" name="grinds" value="O" required> 네
-				<input type="radio" name="grinds" value="X" required> 아니오
+				<input type="radio" name="grinds" value="O" required id="yes"> <label for="yes">네</label>
+				<input type="radio" name="grinds" value="X" required id="no"> <label for="no">아니오</label>
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<br>

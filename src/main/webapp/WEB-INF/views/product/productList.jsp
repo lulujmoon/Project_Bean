@@ -25,26 +25,46 @@
 		<a href="./productList?category=dripbag">Dripbag</a> | 
 		<a href="./productList?category=Coldbrew">Coldbrew</a>
 	</div>
-	<div class="container" style="text-align:right;"><a href="./productInsert" class="btn btn-sm btn-info">Add</a>
-</div>
+	<c:if test="${member.authority eq '1'.charAt(0)}">
+		<div class="container" style="text-align:right;"><a href="./productInsert" class="btn btn-sm btn-info">Add</a>
+		</div>
+	</c:if>
 <section id="portfolio">
      <div class="container">
           <div class="row">
 			<c:forEach items="${list}" var="product">
-               <div class="col-md-4 col-sm-6" style="overflow:hidden">
-                    <a href="./productSelect?productNum=${product.productNum}" data-toggle="modal" data-target="#select_${product.productNum}" data-whatever="${product.productNum}">
-                         <div class="portfolio-thumb" style="width:100%;height:90%;">
-                              <img src="../resources/upload/product/${product.thumbnail.fileName}" class="img-responsive" alt="Portfolio" style="width:100%;height:100%">
+				<c:if test="${member.authority!='1'.charAt(0)}">
+					<c:if test="${product.options.size()!=0}">
+	                	<div class="col-md-4 col-sm-6" style="overflow:hidden">
+	                    <a href="./productSelect?productNum=${product.productNum}" data-toggle="modal" data-target="#select_${product.productNum}" data-whatever="${product.productNum}">
+	                         <div class="portfolio-thumb" style="width:100%;height:90%;">
+	                              <img src="../resources/upload/product/${product.thumbnail.fileName}" class="img-responsive" alt="Portfolio" style="width:100%;height:100%">
                                    <div class="portfolio-overlay">
                                         <div class="portfolio-item">
                                              <h3>${product.name}</h3>
                                              <p style="color:#FBF8EF">${product.subtitle}</p>
                                         </div>
                                    </div>
+	                         </div>
+	                    </a>
+	              	 	</div>
+              	 	</c:if>
+				</c:if>
+				<c:if test="${member.authority=='1'.charAt(0)}">
+					<div class="col-md-4 col-sm-6" style="overflow:hidden">
+                    <a href="./productSelect?productNum=${product.productNum}" data-toggle="modal" data-target="#select_${product.productNum}" data-whatever="${product.productNum}">
+                         <div class="portfolio-thumb" style="width:100%;height:90%;">
+                              <img src="../resources/upload/product/${product.thumbnail.fileName}" class="img-responsive" alt="Portfolio" style="width:100%;height:100%">
+                              <div class="portfolio-overlay">
+                                   <div class="portfolio-item">
+                                        <h3>${product.name}</h3>
+                                        <p style="color:#FBF8EF">${product.subtitle}</p>
+                                   </div>
+                              </div>
                          </div>
                     </a>
-				
-               </div>
+              	 	</div>
+				</c:if>
 			</c:forEach>
                <div class="col-md-12 col-sm-12 text-center">
                     <h3>hello, if you interest working together. just send message <a href="#">contact page</a></h3>
@@ -71,6 +91,13 @@
 		      	<div class="preContentsHere">
 			      	<div>
 			      		<div class="titleAgainHere">${product.name}</div>
+			      		<c:if test="${member.authority eq '1'.charAt(0)}">
+				   			<div style="display:inline-block;float:right">
+				   				<a href="./optionManage?productNum=${product.productNum}" class="admin-btn">옵션</a>
+			    				<a href="./productUpdate?productNum=${product.productNum}" class="admin-btn">수정</a>
+			    				<span class="admin-btn proDel-btn">삭제</span>
+			    			</div>
+		    			</c:if>
 			      	</div>
 			      	<div class="subtitleHere">${product.subtitle}</div>
 			      	<div class="row">
@@ -83,7 +110,7 @@
 			      		<table class="optionTable">
 			      			<c:if test="${product.options.size()==0}">
 			      				<div style="color:red">
-			      					현재 상품에 등록된 옵션이 없습니다.<br>옵션이 없으면 구매를 진행할 수 없습니다. 옵션을 추가해주세요.
+			      					현재 상품에 등록된 옵션이 없습니다.<br>옵션이 없으면 상품이 고객에게 노출되지 않습니다. 옵션을 추가해주세요.
 			      				</div>
 			      			</c:if>
 			      			<c:forEach items="${product.options}" var="option">
@@ -130,13 +157,6 @@
 			   			<div class="cart-btn">장바구니</div>
 			   			<div class="order-btn">바로결제</div>
 			   			<div class="goCart-btn">장바구니 보러가기</div>
-			   			<c:if test="${member.authority eq '1'.charAt(0)}">
-				   			<div style="display:inline-block;float:right">
-				   				<a href="./optionManage?productNum=${product.productNum}" class="btn btn-sm btn-success">옵션</a>
-			    				<a href="./productUpdate?productNum=${product.productNum}" class="btn btn-sm btn-success">수정</a>
-			    				<input type="button" value="삭제" class="btn btn-sm btn-success proDel-btn">
-			    			</div>
-		    			</c:if>
 			   		</div>
 		   		</div>
 	   		</div>
@@ -241,7 +261,7 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 							}
 						},
 				  error: function(){
-					alert("등록된 옵션이 없습니다. 고객센터에 문의하세요.");
+					alert("등록된 옵션이 없습니다.");
 				  }
 			  });			
 			

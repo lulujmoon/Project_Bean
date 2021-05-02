@@ -74,21 +74,21 @@
 			합계 : <span id="totalPrice">${totalPrice}</span>원 + 배송비 : <span class="shipping" id="shipping"></span>원 = <span id="finalPrice"></span>원 
 		</div>
 		
-		<input type="button" class="btn btn-warning" value="결제하기" id="orderShow-btn" style="float:right;margin:20px 0">
+		<div id="orderShow-btn">결제하기</div>
 		<div style="clear:both"></div>
 	</div>
 	
-	
+	<!-- 결제창 -->
 	<div class="container">
 		<div id="orderDiv" style="display:none">
 			
 			<form action="../order/orderInsert" method="post" id="frm">
 				<div class="chooseInfo">
-					<h3>배송정보</h3><br>
+					<h3 class="infoTitle">배송정보</h3>
 					<input type="radio" id="load-addr" name="addr-btn"> <label for="load-addr"> 회원정보에서 불러오기 </label>&nbsp;&nbsp;
 					<input type="radio" id="new-addr" name="addr-btn"> <label for="new-addr"> 직접 입력 </label><br><br>	
 					배송 메세지 <br>
-					<select name="message" id="msg-sel" class="selectpicker">
+					<select name="message" id="msg-sel" class="selectpicker" data-width="90%">
 						<option value="">선택하세요.</option>
 						<option class="msg-opt">배송 전에 연락 주세요.</option>
 						<option class="msg-opt">부재 시 경비실에 맡겨주세요.</option>
@@ -105,21 +105,23 @@
 					<input type="button" id="popup" value="찾기" class="btn btn-outline-secondary btn-sm"><br><br>
 					주소 <input type="text" name="buyerAddr" id="addr" readonly="readonly" required class="form-control form-control-sm"><br>
 					상세주소 <input type="text" name="buyerAddr2" id="addr2" required class="form-control form-control-sm"><br>
-					<input type="checkbox" id="save-addr"> 회원정보에 저장 <br>
+					<input type="checkbox" id="save-addr"> <label for="save-addr">회원정보에 저장</label> <br>
 				</div>
 				<div class="orderInfo">
-					<h3>결제정보</h3>
-					<p>
-						상품합계 : ${totalPrice}<br>
-						배송비 : <span class="shipping"></span><br>
-						<span><input type="text" id="point-use" class="form-control form-control-sm"></span><input type="button" value="모두 사용" id="point-btn" class="btn btn-outline-secondary btn-sm"><br>
-						<small>보유 포인트 : <span id="max-point">${member.point}</span></small><br>
-						결제금액 : <span id="amount"></span><br>
-						결제방식 : 
-						<select name="payMethod" class="selectpicker">
+					<h3 class="infoTitle">결제정보</h3>
+					<div>
+						<span>상품합계</span><span class="calculates">${totalPrice}</span><br>
+						<span>배송비</span><span class="shipping calculates"></span><br>
+						<span>포인트&nbsp;&nbsp;<input type="text" id="point-use" class="form-control form-control-sm"></span><input type="button" value="모두 사용" id="point-btn" class="btn btn-outline-secondary btn-sm"><br>
+						<small style="float:right">보유 포인트 : <span id="max-point">${member.point}</span></small><br>
+						<div class="amounts">
+							<span>결제금액</span><span id="amount"></span><br>
+						</div>
+						결제방식&nbsp;&nbsp;
+						<select name="payMethod" class="selectpicker" style="float:right">
 							<option value="card">신용카드</option>
-						</select>
-					</p>
+						</select><br><br>
+					</div>
 					<div id="order-btn">결제하기</div>
 				</div>
 			</form>

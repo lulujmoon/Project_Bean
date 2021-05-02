@@ -101,7 +101,7 @@ $(".del").click(function(){
 $("#h").click(function(){
 	let conf;
 	if($("#warning").attr("title")=='0'){
-		conf = confirm("옵션을 등록하지 않으면 해당 상품을 구매할 수 없습니다. 옵션을 등록하지 않고 돌아가겠습니까?");
+		conf = confirm("옵션을 등록하지 않으면 해당 상품이 고객에게 노출되지 않습니다. 옵션을 등록하지 않고 돌아가겠습니까?");
 		if(conf){
 			let productNum = $(this).attr("title");
 			location.href = "./productList?productNum="+productNum;
