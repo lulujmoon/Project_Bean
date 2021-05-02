@@ -95,8 +95,7 @@
 	 </form> 
 	</div> 
 	
-	<a href="./qnaInsert"><button type="button" class="btn btn-success">Write</button></a>
-
+	<a class="underline-btn" href="./qnaInsert">Write</a>
 	</div>
 	<br>
 	
