@@ -50,7 +50,7 @@ public class MailController {
 	}
 	
 	@GetMapping("sendMail")
-	public void sendMail(MailDTO mailDTO)throws Exception{
+	public ModelAndView sendMail(MailDTO mailDTO, ModelAndView mv)throws Exception{
 	
 		List<MailDTO> ar = mailService.getList();
 		
@@ -85,7 +85,7 @@ public class MailController {
 
 	   // Subject
 	   MagazineDTO magazineDTO = new MagazineDTO();
-	   magazineDTO.setNum(114);
+	   magazineDTO.setNum(125);
 	   magazineDTO = magazineService.magazineSelect(magazineDTO);
 	   message.setSubject(magazineDTO.getTitle());
 	   
@@ -95,12 +95,23 @@ public class MailController {
 	   // send the message
 	   Transport.send(message);
 	   System.out.println("message sent successfully...");
+	   
+	
 
 	  } catch (MessagingException e) {
 	   e.printStackTrace();
 	  }
 	  
 	 }
+	  
+	  String msg="발송되었습니다";
+	  mv.addObject("path","./mailList");
+	  mv.addObject("msg",msg);
+	  mv.setViewName("common/commonResult");
+	  return mv;
 	}
+	
+	
+	
 }
 
