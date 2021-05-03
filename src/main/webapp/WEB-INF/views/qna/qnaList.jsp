@@ -17,18 +17,20 @@
 <c:import url="../member/memberLogin.jsp"></c:import>
 <c:import url="../member/memberJoin.jsp"></c:import>
 <div class="container">
-<li class="select">
-<a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a>
-<a href="${pageContext.request.contextPath}/faq/faqList">FaQ</a>
-</li>
+
 
 
 <h2>QnA</h2>
-<br>
+
+<div style="text-align: center; margin: 20px 0 20px 0;">
+		<a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a> | 
+		<a href="${pageContext.request.contextPath}/faq/faqList">FaQ</a> 
+	</div>
 <table class="table">
 		<thead class="thead-light">
 			<tr>
 				<th>NUM</th>
+				<th></th>
 				<th>TITLE</th>
 				<th>WRITER</th>
 				<th>DATE</th>
@@ -41,8 +43,10 @@
 		<c:forEach items="${list}" var="dto" >
 			<tr>
 				<td class="smallSize">${dto.num}</td>
+				<td class="smallSize"><img src="../resources/upload/qna/neo_lock.gif"></td>
 				
-				<td id="tdTitle"><a href="./qnaSelect?num=${dto.num}">
+				<td id="tdTitle">
+				<a href="./qnaPassword?num=${dto.num}">
 				<c:catch>
 				<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
 				</c:catch>
@@ -75,7 +79,8 @@
 	    </c:if>
 	    
 	  </div>
-	  
+	
+	<div class="searchform"> 
 	<div class="input-group mt-3 mb-3">
 	<form id="frm" action="./qnaList" class="form-inline">
 		<input type="hidden" name="curPage" value="1" id="curPage">
@@ -88,13 +93,13 @@
 	  </div>
 	  <input type="text" class="form-control" name="search" id="search" value="${pager.search}" placeholder="">
 	    <div class="input-group-append">
-	    <button class="btn btn-success" type="submit">Search</button>
+	    <button class="gradient-btn" type="submit">Search</button>
 	  </div>
 	 </form> 
 	</div> 
+	</div>
 	
-	<a href="./qnaInsert"><button type="button" class="btn btn-success">Write</button></a>
-
+	<a class="underline-btn" href="./qnaInsert">Write</a>
 	</div>
 	<br>
 	

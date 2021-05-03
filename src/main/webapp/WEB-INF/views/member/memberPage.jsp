@@ -71,7 +71,7 @@
 				<a href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}" class="mainpage-mobile-menu"> 내 포인트
 					<div class="mainpage-mobile-menu-right arrow"></div>
 				</a> 
-				<a href="${pageContext.request.contextPath}/member/memberQna" class="mainpage-mobile-menu"> 문의내역 조회
+				<a href="${pageContext.request.contextPath}/qna/memberQna" class="mainpage-mobile-menu"> 문의내역 조회
 					<div class="mainpage-mobile-menu-right arrow"></div>
 				</a>
 			</div>

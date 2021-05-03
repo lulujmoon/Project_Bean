@@ -1,38 +1,26 @@
 @charset "UTF-8";
 
-h2{
+.MailTitle{
+
+	width:100%;
 	text-align: center;
+	margin-top: 30px;
+	color: black;
 }
 
-.contents{
-	
-	height:350px;
-	
+.table{
+	margin-top:20px;
 }
 
-#short{
-	
-	width:200px;
-}
 
-#right{
-	text-align: right;
-	font-size: 12px;
-	color: gray;
-}
 
-.btn-success{
-	 background-color: white;
- 	 color: black;
- 	 border: 2px solid #e7e7e7;
-}
 
 .underline-hover-btn {
 display: inline-block;
 padding: 1em 0;
 border-radius: 0;
 color: #b2876f;
-margin-top: 0;
+margin-top: 2rem;
 font-weight: bold;
 font-size: 0.678rem;
 letter-spacing: 2px;
@@ -66,6 +54,7 @@ display: inline-block;
 padding: 1em 0;
 border-radius: 0;
 color: #b2876f;
+margin-top: 1.5rem;
 font-weight: bold;
 font-size: 0.8rem;
 letter-spacing: 2px;
