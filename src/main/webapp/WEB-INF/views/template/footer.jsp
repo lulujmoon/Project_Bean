@@ -26,8 +26,15 @@
 					<h4> 뉴스레터 받기 </h4>
 					<form id="frm" action="${pageContext.request.contextPath}/mail/mailInsert" method="post">
 					<div id="mAddr">
-					<input type="text" id="mAddr" name="mAddr">
-					<button type="submit" value="submit" class="underline-btn" style="margin-top:0;">확인</button>
+					<input type="text" id="mAddr" name="mAddr" placeholder="이메일형식으로 입력하세요">
+					<button type="submit" value="submit" class="underline-btn" id="check"
+			
+					style="margin-top:0; margin-left:5px; font-size:12px; background-color:transparent;
+					border: none;">확인</button>
+					<div>
+					<input type="checkbox" id="checkbox">
+					<h5 style="font-size: 12px;">이메일 수집동의</h5>
+					</div>
 					</div>
 					</form>
                </div>
@@ -49,4 +56,5 @@
                
           </div>
      </div>
+     <script type="text/javascript" src="../resources/js/emailCheck.js"></script>
 </footer>

@@ -43,10 +43,17 @@ public class MailController {
 	}
 	
 	@PostMapping("mailInsert")
-	public String setInsert(MailDTO mailDTO)throws Exception{
+	public ModelAndView setInsert(MailDTO mailDTO, ModelAndView mv)throws Exception{
 		int result = mailService.setInsert(mailDTO);
 		
-		return "redirect:./mail/mailList";
+		if(result==1) {
+			String msg="구독이 완료되었습니다";
+			mv.addObject("path","../");
+			mv.addObject("msg",msg);
+			mv.setViewName("common/commonResult");		
+		}
+		  return mv;
+
 	}
 	
 	@GetMapping("sendMail")
