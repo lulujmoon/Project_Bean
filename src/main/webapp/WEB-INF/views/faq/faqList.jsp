@@ -18,7 +18,7 @@
 		<h2>FaQ</h2>
 		<div style="text-align: center; margin: 20px 0 20px 0;">
 		<a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a> | 
-		<a href="${pageContext.request.contextPath}/faq/faqList">FaQ</a> 
+		<a href="${pageContext.request.contextPath}/faq/faqList">FaQq</a> 
 	</div>
 		
 		<ul class="nav nav-tabs">
