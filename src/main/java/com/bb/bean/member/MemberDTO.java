@@ -21,7 +21,7 @@ public class MemberDTO {
 	private String addr2;
 	private char authority; // 1: 관리자, 2: 일반회원
 	
-	private OrdersDTO order;
+	private OrdersDTO ordersDTO;
 	private OrderDetailsDTO detail;
 	private ProductDTO product;
 
@@ -97,11 +97,12 @@ public class MemberDTO {
 	public void setAuthority(char authority) {
 		this.authority = authority;
 	}
-	public OrdersDTO getOrder() {
-		return order;
+
+	public OrdersDTO getOrdersDTO() {
+		return ordersDTO;
 	}
-	public void setOrder(OrdersDTO order) {
-		this.order = order;
+	public void setOrdersDTO(OrdersDTO ordersDTO) {
+		this.ordersDTO = ordersDTO;
 	}
 	public OrderDetailsDTO getDetail() {
 		return detail;

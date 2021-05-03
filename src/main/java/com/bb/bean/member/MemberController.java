@@ -24,6 +24,9 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 
+	@Autowired
+	private OrdersService ordersService;
+	
 	@GetMapping("memberOrderDetail")
 	public void memberOrderDetail() throws Exception {
 	}
@@ -109,7 +112,9 @@ public class MemberController {
 	}
 
 	@RequestMapping("memberPage")
-	public void memberPage() throws Exception {;
+	public void memberPage(OrdersDTO ordersDTO, Model model) throws Exception {
+		ordersDTO = ordersService.getRecentOrder(ordersDTO);
+		model.addAttribute("order", ordersDTO);
 	}
 
 	@GetMapping("memberIdCheck")

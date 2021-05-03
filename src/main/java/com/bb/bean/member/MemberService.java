@@ -17,7 +17,7 @@ public class MemberService {
 	
 	@Autowired
 	private MemberDAO memberDAO;
-	
+
 	public List<MemberDTO> memberOrder(MemberDTO memberDTO) throws Exception{
 		return memberDAO.memberOrder(memberDTO);
 	}

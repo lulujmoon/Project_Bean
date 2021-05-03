@@ -50,6 +50,7 @@
 	<resultMap type="OrdersDTO" id="orderResult">
 		<id property="orderUid" column="orderUid"/>
 		<result property="impUid" column="impUid"/>
+		<result property="amount" column="amount"/>
 		<result property="buyerName" column="buyerName"/>
 		<result property="buyerTel" column="buyerTel"/>
 		<result property="buyerPostcode" column="buyerPostcode"/>

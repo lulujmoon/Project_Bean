@@ -12,6 +12,10 @@ public class OrdersDAO {
 	
 	private final String NAMESPACE = "com.bb.bean.orders.OrdersDAO.";
 	
+	public OrdersDTO getRecentOrder(OrdersDTO ordersDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getRecentOrder", ordersDTO);
+	}
+	
 	public int setInsert(OrdersDTO ordersDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"setInsert", ordersDTO);
 	}
