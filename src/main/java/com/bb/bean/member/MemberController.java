@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.bb.bean.orders.OrdersDTO;
 import com.bb.bean.orders.OrdersService;
@@ -200,4 +201,14 @@ public class MemberController {
 		return "redirect:../";
 	}
 
+	@GetMapping("memberList")
+	public ModelAndView memberList()throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<MemberDTO> ar = memberService.memberList();
+		mv.addObject("list", ar);
+		mv.setViewName("/member/memberList");
+		return mv;
+		
+		
+	}
 }

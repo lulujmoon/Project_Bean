@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+.memberlist{
+	float: left;
+	margin-top:100px;
+	font-color: black;
+}
+
+.memberlist a:hover {
+  color: #e1bbc8;
+}
+
+.admin{
+	margin-bottom: 100px;
+	margin-top: 100px;
+}
+
+a {
+    color: black;
+    padding: 8px;
+
+}
+
+.navbar-brand {
+	margin: 45px;
+}
+.navbar-default {
+    background: #94a5c4; /* #ffffff; */
+    padding: 2px 0;
+    border: none;
+    margin-top: 0;
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f8f8f8;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  box-shadow: 3px 2px 9px #f9f9f9;
+  margin: 0;
+}
+
+.sidenav a {
+  padding: 8px 13px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.sidenav a:hover {
+  color: #e1bbc8;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

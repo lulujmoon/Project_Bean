@@ -8,6 +8,9 @@
 
 <mapper namespace="com.bb.bean.member.MemberDAO">
 
+	<select id="memberList" resultType="MemberDTO">
+		select * from member order by id desc
+	</select>
 
 	<select id="memberOrder" parameterType="MemberDTO" resultMap="orderResult">
 		select M.*, O.*, OD.*, P.*

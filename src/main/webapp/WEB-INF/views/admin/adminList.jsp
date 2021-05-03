@@ -11,6 +11,7 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
+	
 	<section id="home">
 		<div class="container">
 			<div class="row">
@@ -22,7 +23,7 @@
 			<p>Menu:</p>
 			<ul class="nav nav-tabs nav-justified">
 				<li class="nav-item"><a class="nav-link active" href="#">메뉴</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">회원관리</a></li>
+				<li class="nav-item"><a class="nav-link" href="../member/memberList">회원관리</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">주문관리</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">재고관리</a></li>
 				<li class="nav-item"><a class="nav-link" href="../mail/mailList">구독관리</a>

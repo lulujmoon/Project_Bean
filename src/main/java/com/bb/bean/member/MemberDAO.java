@@ -67,6 +67,12 @@ public class MemberDAO {
 	public int setPointUpdate(MemberDTO memberDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"setPointUpdate", memberDTO);
 	}
+	
+	/* 멤버 리스트 */
+	public List<MemberDTO> memberList() throws Exception{
+		return sqlSession.selectList(NAMESPACE+"memberList");
+	}
+	
 }
 
 
