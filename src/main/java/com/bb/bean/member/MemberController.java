@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bb.bean.orders.OrdersDTO;
 import com.bb.bean.orders.OrdersService;
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 @Controller
 @RequestMapping("/member/**")
@@ -37,6 +36,13 @@ public class MemberController {
 
 	@GetMapping("memberPoint")
 	public void memberPoint() throws Exception {
+	}
+
+
+	@GetMapping("memberOrder")
+	public void memberOrder(MemberDTO memberDTO, Model model) throws Exception {
+		List<MemberDTO> list = memberService.memberOrder(memberDTO);
+		model.addAttribute("list", list);
 	}
 
 
