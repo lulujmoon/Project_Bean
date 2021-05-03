@@ -156,7 +156,7 @@
 															<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span>
 														</p></td>
 													</c:if>	
-													<c:if test="${list.order.payMethod != 'card'}">
+													<c:if test="${list.order.payMethod ne 'card'}">
 													<td><strong><span>포인트</span></strong>
 														<p>
 															<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span>
