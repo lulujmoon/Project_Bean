@@ -23,7 +23,7 @@
                </div>
 
                <div class="col-md-5 col-sm-12">
-					<h4> 뉴스레터 받기 </h4>
+					<h4 class="letter" style="color: #666; font-size: 12px; font-weight: normal; letter-spacing: 2px; margin:0px 0px 8px 0px; text-align: left;"> 뉴스레터 받기 </h4>
 					<form id="frm" action="${pageContext.request.contextPath}/mail/mailInsert" method="post">
 					<div id="mAddr">
 					<input type="email" id="mAddr" name="mAddr" placeholder="이메일형식으로 입력하세요" autofocus required>
@@ -34,7 +34,7 @@
 					border: none;">확인</button>
 					<div>
 					<input type="checkbox" id="checkbox">
-					<h5 style="font-size: 12px;">이메일 수집동의</h5>
+					<p class="approve" style="font-size: 12px;">이메일 수집동의</p>
 					</div>
 					</div>
 					</form>
