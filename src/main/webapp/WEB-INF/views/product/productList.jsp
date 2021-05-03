@@ -26,7 +26,7 @@
 		<a href="./productList?category=Coldbrew">Coldbrew</a>
 	</div>
 	<c:if test="${member.authority eq '1'.charAt(0)}">
-		<div class="container" style="text-align:right;"><a href="./productInsert" class="btn btn-sm btn-info">Add</a>
+		<div class="container" style="text-align:right;"><a href="./productInsert" class="admin-btn">Add</a>
 		</div>
 	</c:if>
 <section id="portfolio">
@@ -67,7 +67,7 @@
 				</c:if>
 			</c:forEach>
                <div class="col-md-12 col-sm-12 text-center">
-                    <h3>hello, if you interest working together. just send message <a href="#">contact page</a></h3>
+                    <h3>쓸 말이 없당</h3>
                </div>
 
           </div>
@@ -154,8 +154,8 @@
 						</select><br><br>
 					</div>
 			   		<div class="buttonsHere">
-			   			<div class="cart-btn">장바구니</div>
-			   			<div class="order-btn">바로결제</div>
+			   			<div class="cart-btn orders-btn">장바구니</div>
+			   			<div class="order-btn orders-btn">바로결제</div>
 			   			<div class="goCart-btn">장바구니 보러가기</div>
 			   		</div>
 		   		</div>
@@ -296,11 +296,14 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 	  
 	  <!-- 삭제 -->
 	  $(modal).find(".proDel-btn").click(function(){
-		  $.post("./productDelete", {
-			  productNum:"${product.productNum}"
-		  }, function(result){
-			  location.href="./productList";
-		  });
+		  let del = confirm("정말 삭제하시겠습니까?");
+		  if(del){
+			  $.post("./productDelete", {
+				  productNum:"${product.productNum}"
+			  }, function(result){
+				  location.href="./productList";
+			  });			  
+		  }
 	  })
 
 });
