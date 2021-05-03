@@ -13,10 +13,6 @@ public class MemberService {
 	
 	@Autowired
 	private MemberDAO memberDAO;
-
-	public List<MemberDTO> memberOrder(MemberDTO memberDTO) throws Exception{
-		return memberDAO.memberOrder(memberDTO);
-	}
 	
 	public MemberDTO nameCheck(MemberDTO memberDTO) throws Exception {
 		return memberDAO.nameCheck(memberDTO);

@@ -13,10 +13,6 @@ public class MemberDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "com.bb.bean.member.MemberDAO.";
-	
-	public List<MemberDTO> memberOrder(MemberDTO memberDTO) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"memberOrder", memberDTO);
-	}
 
 	public MemberDTO nameCheck(MemberDTO memberDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"nameCheck", memberDTO);

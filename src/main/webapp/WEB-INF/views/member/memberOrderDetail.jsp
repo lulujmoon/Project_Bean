@@ -278,8 +278,15 @@
 			</div>
 		</div>
 	</div>
-
-
+	
+	<!-- 테스트 영역 -->
+	<div class="container">
+		정가 : ${prices[0]}<br>
+		- 할인액 : ${prices[2]}<br>
+		= 할인가 : ${prices[1]}<br>
+		배송비 : ${prices[3]}<br>
+		사용포인트 : ${prices[4]}
+	</div>
 
 
 	<c:import url="../template/footer.jsp"></c:import>
