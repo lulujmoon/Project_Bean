@@ -35,6 +35,7 @@
 		<id property="detailNum" column="detailNum"/>
 		<result property="orderUid" column="orderUid"/>
 		<result property="orderDate" column="orderDate"/>
+		<result property="optionNum" column="optionNum"/>
 		<result property="quantity" column="quantity"/>
 		<result property="finalPrice" column="finalPrice"/>
 		<result property="grind" column="grind"/>

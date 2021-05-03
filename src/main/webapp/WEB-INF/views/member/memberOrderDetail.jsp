@@ -278,8 +278,11 @@
 			</div>
 		</div>
 	</div>
-
-
+	
+	<!-- 테스트 영역 -->
+	<div class="container">
+		
+	</div>
 
 
 	<c:import url="../template/footer.jsp"></c:import>

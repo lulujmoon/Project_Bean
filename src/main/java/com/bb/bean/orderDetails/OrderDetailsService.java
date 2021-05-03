@@ -5,13 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-<<<<<<< Updated upstream
-=======
 import com.bb.bean.orders.OrdersDTO;
 import com.bb.bean.product.OptionsDTO;
 import com.bb.bean.product.ProductDAO;
 
->>>>>>> Stashed changes
 @Service
 public class OrderDetailsService {
 
@@ -31,9 +28,6 @@ public class OrderDetailsService {
 	public List<OrderDetailsDTO> getListbyOrderUid(OrderDetailsDTO orderDetailsDTO) throws Exception {
 		return orderDetailsDAO.getListbyOrderUid(orderDetailsDTO);
 	}
-<<<<<<< Updated upstream
-
-=======
 	
 	public long [] calculatePrices(List<OrderDetailsDTO> odList) throws Exception {
 		//1. 정가 계산
@@ -66,5 +60,5 @@ public class OrderDetailsService {
 		
 		return prices;
 	}
->>>>>>> Stashed changes
+
 }
