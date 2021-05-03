@@ -66,11 +66,13 @@ public class OrderDetailsService {
 		
 		PointDTO pointDTO = new PointDTO();
 		OrdersDTO ordersDTO = new OrdersDTO();
-		ordersDTO.setOrderUid(odList.get(0).getOrderUid());
-		pointDTO = pointDAO.getSelectbyOrderUid(ordersDTO);
-		
-		if(pointDTO!=null) {
-			usePoint = pointDTO.getUsePoint();			
+		if(odList.size()!=0) {
+			ordersDTO.setOrderUid(odList.get(0).getOrderUid());
+			pointDTO = pointDAO.getSelectbyOrderUid(ordersDTO);
+			
+			if(pointDTO!=null) {
+				usePoint = pointDTO.getUsePoint();			
+			}			
 		}
 		//5. 최종 결제금액
 		long payPrices = originPrices+shipping-usePoint;

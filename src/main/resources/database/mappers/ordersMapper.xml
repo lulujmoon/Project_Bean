@@ -37,4 +37,7 @@
 		update orders set payMethod=#{payMethod} where orderUid=#{orderUid}
 	</update>
 	
+	<delete id="setDelete" parameterType="OrdersDTO">
+		delete orders where orderUid=#{orderUid}
+	</delete>
 </mapper>
