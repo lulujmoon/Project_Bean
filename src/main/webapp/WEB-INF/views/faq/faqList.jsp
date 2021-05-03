@@ -18,7 +18,7 @@
 		<h2>FaQ</h2>
 		<div style="text-align: center; margin: 20px 0 20px 0;">
 		<a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a> | 
-		<a href="${pageContext.request.contextPath}/faq/faqList">FaQq</a> 
+		<a href="${pageContext.request.contextPath}/faq/faqList">FaQ</a> 
 	</div>
 		
 		<ul class="nav nav-tabs">
@@ -36,7 +36,7 @@
 				<div class="card">
 					<div class="card-header">
 						<a class="collapsed card-link" data-toggle="collapse"
-							href="#col${dto.num}"> ${dto.title} </a>
+							href="#col${dto.num}"> Q. ${dto.title} </a>
 					</div>
 
 					<div id="col${dto.num}" class="collapse" data-parent="#accordion">
