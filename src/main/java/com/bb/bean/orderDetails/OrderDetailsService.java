@@ -21,6 +21,10 @@ public class OrderDetailsService {
 	@Autowired
 	private PointDAO pointDAO;
 	
+	public List<OrderDetailsDTO> getRecentOrder(OrdersDTO ordersDTO) throws Exception {
+		return orderDetailsDAO.getRecentOrder(ordersDTO);
+	}
+	
 	public int setInsert(OrderDetailsDTO orderDetailsDTO) throws Exception {
 		return orderDetailsDAO.setInsert(orderDetailsDTO);
 	}
@@ -68,8 +72,10 @@ public class OrderDetailsService {
 		if(pointDTO!=null) {
 			usePoint = pointDTO.getUsePoint();			
 		}
+		//5. 최종 결제금액
+		long payPrices = originPrices+shipping-usePoint;
 		
-		long [] prices = {originPrices, finalPrices, discounts, shipping, usePoint};
+		long [] prices = {originPrices, finalPrices, discounts, shipping, usePoint, payPrices};
 		
 		
 		return prices;

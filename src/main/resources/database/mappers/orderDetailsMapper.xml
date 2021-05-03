@@ -6,12 +6,22 @@
     
 <mapper namespace ="com.bb.bean.orderDetails.OrderDetailsDAO">
 
+
+	<select id="getRecentOrder" parameterType="OrdersDTO" resultMap="listResult">
+	  select O.*, OD.*
+        from orders O 
+        right join OrderDetails OD
+        on OD.orderUid = O.orderUid
+        where O.orderUid= (select max(orderUid) from orders where id=#{id})
+	</select>
+
 	<select id="getListbyId" parameterType="OrdersDTO" resultMap="listResult">
 		select O.*, OD.*
 		from Orders O
 		left join OrderDetails OD
 		on OD.orderUid = O.orderUid
 		where O.id=#{id}
+		order by O.orderUid desc
 	</select>
 
 	<insert id="setInsert" parameterType="OrderDetailsDTO">
@@ -60,6 +70,7 @@
 		<id property="orderUid" column="orderUid"/>
 		<result property="impUid" column="impUid"/>
 		<result property="id" column="id"/>
+		<result property="payState" column="payState"/>
 		<result property="orderDate" column="orderDate"/>
 		<result property="orderName" column="orderName"/>
 		<result property="payMethod" column="payMethod"/>

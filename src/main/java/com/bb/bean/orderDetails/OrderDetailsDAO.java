@@ -16,6 +16,10 @@ public class OrderDetailsDAO {
 	
 	private final String NAMESPACE = "com.bb.bean.orderDetails.OrderDetailsDAO.";
 	
+	public List<OrderDetailsDTO> getRecentOrder(OrdersDTO ordersDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getRecentOrder", ordersDTO);
+	}
+	
 	public int setInsert(OrderDetailsDTO orderDetailsDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"setInsert", orderDetailsDTO);
 	}

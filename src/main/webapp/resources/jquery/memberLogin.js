@@ -48,20 +48,6 @@ $("#pwL").blur(function(){
 //	console.log("pw : " + loginPw);
 });
 
-/*
-let loginPw = false;
-document.querySelector('#pwL').addEventListener('keyup', (e)=>{
-    if (e.keyCode === 13) {
-       	$.get("/bean/member/pwCheck?id="+$("#idL").val(), function(result){
-		result=result.trim();
-		if($("#pwL").val() == result) {
-			loginPw = true;
-		}
-	});
-  }  
-});
-*/
-
 
 //enter키 submit방지
 document.addEventListener('keydown', function(event) {

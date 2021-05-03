@@ -22,6 +22,8 @@ public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
+
+
 	
 	@GetMapping("memberOrderDetail")
 	public void memberOrderDetail() throws Exception {
@@ -33,13 +35,6 @@ public class MemberController {
 
 	@GetMapping("memberPoint")
 	public void memberPoint() throws Exception {
-	}
-
-
-	@GetMapping("memberOrder")
-	public void memberOrder(MemberDTO memberDTO, Model model) throws Exception {
-		List<MemberDTO> list = memberService.memberOrder(memberDTO);
-		model.addAttribute("list", list);
 	}
 
 
