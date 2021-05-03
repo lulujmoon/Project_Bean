@@ -157,8 +157,7 @@
           </div>
      </div>
 </section>
-
-
+     
 	<!-- footer 영역 -->
 	<c:import url="./template/footer.jsp"></c:import>
 
