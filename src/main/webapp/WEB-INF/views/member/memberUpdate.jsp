@@ -62,7 +62,7 @@
 
 			<form id="frm" action="./member/memberUpdate" method="post" onsubmit="return check();">
 				<div class="form-group">
-					<label for="id">이메일</label> <input type="text" class="form-control"
+					<label for="id">이메일</label> <input type="text" class="form-control form-control-sm"
 						id="id" name="id" readonly="readonly" value="${member.id}">
 
 				</div>

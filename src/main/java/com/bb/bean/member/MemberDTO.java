@@ -93,4 +93,5 @@ public class MemberDTO {
 	public void setAuthority(char authority) {
 		this.authority = authority;
 	}
+
 }

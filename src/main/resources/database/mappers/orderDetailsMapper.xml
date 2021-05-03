@@ -63,6 +63,7 @@
 		<result property="orderDate" column="orderDate"/>
 		<result property="orderName" column="orderName"/>
 		<result property="payMethod" column="payMethod"/>
+		<result property="amount" column="amount"/>
 		<result property="buyerName" column="buyerName"/>
 		<result property="buyerTel" column="buyerTel"/>
 		<result property="buyerPostcode" column="buyerPostcode"/>
