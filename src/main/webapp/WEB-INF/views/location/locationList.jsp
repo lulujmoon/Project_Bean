@@ -28,67 +28,26 @@
 	</div>
 
 <section id="portfolio_list" style="margin-top: 30px;">
-     <div class="container">
-          <div class="row">			
-               <div class="col-md-6">
-                    <a href="./locationSelect?storeName=빈브라더스 합정점">
-                         <div class="portfolio-thumb">
-                              <img src="../resources/images/합정.jpg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>합정점</h3>
-                                             <small>서울시 마포구 합정동</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-
-               <div class="col-md-6">
-                    <a href="./locationSelect?storeName=빈브라더스 하남">
-                         <div class="portfolio-thumb">
-                              <img src="../resources/images/하남.jpg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>하남점</h3>
-                                             <small>경기도 하남시 하남스타필드</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-
-               <div class="col-md-6">
-                    <a href="./locationSelect?storeName=빈브라더스 신도림">
-                         <div class="portfolio-thumb">
-                              <img src="../resources/images/신도림.jpg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>신도림점</h3>
-                                             <small>현대백화점 디큐브시티</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-
-               <div class="col-md-6">
-                    <a href="./locationSelect?storeName=빈브라더스 인천 가좌">
-                         <div class="portfolio-thumb">
-                              <img src="../resources/images/인천.jpg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>인천 가좌점</h3>
-                                             <small>인천 서구</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-</div>
-
+		<div class="container">
+			<div class="row">
+				<c:forEach items="${list}" var="dto">
+					<div class="col-md-6">
+						<a href="./locationSelect?storeName=${dto.storeName}">
+							<div class="portfolio-thumb">
+								<img src="../resources/images/${dto.storeImg}" class="img-responsive" alt="Portfolio">
+								<div class="portfolio-overlay">
+									<div class="portfolio-item">
+										<h3>${dto.storeName}</h3>
+										<small>${dto.storeLoc}</small>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
 </section>
-
 <c:import url="../template/footer.jsp"></c:import>
 
 </body>
