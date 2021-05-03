@@ -214,6 +214,10 @@ public class OrdersService {
 		return ordersDAO.setPayMethodUpdate(ordersDTO);
 	}
 	
+	/* 결제 취소 시 DB에서 삭제 */
+	public int setDelete(OrdersDTO ordersDTO) throws Exception {
+		return ordersDAO.setDelete(ordersDTO);
+	}
 	
 	/* 아임포트 토큰 받기 */
 	public void getToken() {	

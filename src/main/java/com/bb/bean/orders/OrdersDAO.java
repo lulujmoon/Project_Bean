@@ -43,4 +43,8 @@ public class OrdersDAO {
 	public int setPayMethodUpdate(OrdersDTO ordersDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"setPayMethodUpdate", ordersDTO);
 	}
+	
+	public int setDelete(OrdersDTO ordersDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setDelete", ordersDTO);
+	}
 }
