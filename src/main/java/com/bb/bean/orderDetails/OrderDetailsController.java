@@ -31,5 +31,9 @@ public class OrderDetailsController {
 
 	}
 	
-	
+	@GetMapping("/member/memberPage")
+	public void getRecentOrder(OrdersDTO ordersDTO, Model model) throws Exception {
+		List<OrderDetailsDTO> list = orderDetailsService.getRecentOrder(ordersDTO);
+		model.addAttribute("list", list);
+	}
 }

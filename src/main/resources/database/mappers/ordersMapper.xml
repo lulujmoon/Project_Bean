@@ -8,10 +8,6 @@
 
 <mapper namespace ="com.bb.bean.orders.OrdersDAO">
 
-	<select id="getRecentOrder" parameterType="OrdersDTO" resultType="OrdersDTO">
-		select * from orders where orderUid= (select max(orderUid) from orders where id=#{id})
-	</select>
-
 	<insert id="setInsert" parameterType="OrdersDTO">
 		insert into orders (orderUid, id, orderName, orderDate, amount, payState, payMethod, buyerName, buyerTel, buyerPostcode, buyerAddr, buyerAddr2, message)
 		values (#{orderUid}, #{id}, #{orderName}, sysdate, #{amount}, #{payState}, #{payMethod}, #{buyerName}, #{buyerTel}, #{buyerPostcode}, #{buyerAddr}, #{buyerAddr2}, #{message})

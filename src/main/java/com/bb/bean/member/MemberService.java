@@ -1,15 +1,9 @@
 package com.bb.bean.member;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.bb.bean.orders.OrdersDAO;
-import com.bb.bean.orders.OrdersDTO;
-
 
 
 @Service
