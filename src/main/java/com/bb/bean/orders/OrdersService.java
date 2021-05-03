@@ -346,7 +346,7 @@ public class OrdersService {
 	
 	/* 결제 취소 시 포인트 롤백 */
 	public long setPointRollBack(OrdersDTO ordersDTO, long restPoint) throws Exception {
-		List<PointDTO> poList = pointDAO.getListbyorderUid(ordersDTO);
+		List<PointDTO> poList = pointDAO.getListbyOrderUid(ordersDTO);
 		
 		for(PointDTO po:poList) {
 			/* 포인트 차감 취소 */

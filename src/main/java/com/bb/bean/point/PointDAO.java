@@ -24,7 +24,11 @@ public class PointDAO {
 		return sqlSession.insert(NAMESPACE+"setInsert", pointDTO);
 	}
 	
-	public List<PointDTO> getListbyorderUid(OrdersDTO ordersDTO) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"getListbyorderUid", ordersDTO);
+	public List<PointDTO> getListbyOrderUid(OrdersDTO ordersDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getListbyOrderUid", ordersDTO);
+	}
+	
+	public PointDTO getSelectbyOrderUid(OrdersDTO ordersDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getSelectbyOrderUid", ordersDTO);
 	}
 }
