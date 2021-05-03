@@ -21,11 +21,17 @@
 <form id="frm" action="./qnaInsert" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="writer">Writer:</label> <input type="text"
-					class="form-control myCheck" id="writer" name="writer">
+					class="form-control myCheck" id="writer" name="writer"
+					value="${member.id}" readonly="readonly">
 					<!--  writer의 value 값 -> 멤버에서 받은파라미터로 바꾸기
-					read only로 바꾸기 -->
-					
+					read only로 바꾸기 -->				
 			</div>
+			
+				<div class="form-group">
+				<label for="title">Pw:</label> <input type="text"
+					class="form-control myCheck" id="con" name="con">
+			</div>
+
 			<div class="form-group">
 				<label for="title">Title:</label> <input type="text"
 					class="form-control myCheck" id="title" name="title">
@@ -48,8 +54,8 @@
 		</div>
 			
 	
-
-			<input type="submit" id="btn" value="Write" class="btn btn-success">
+		<button type="submit" value="Write" class="underline-btn">Write</button>
+		
 		</form>
 </div>
 <br>

@@ -22,6 +22,11 @@ public class QnaDAO implements BoardDAO{
 	public List<BoardDTO> getList(Pager pager) throws Exception {
 		return sqlSession.selectList(NAMESPACE+"getList",pager);
 	}
+	
+	public List<BoardDTO> memberQna(BoardDTO boardDTO)throws Exception{
+		return sqlSession.selectList(NAMESPACE+"memberQna",boardDTO);
+	}
+	
 	@Override
 	public long getTotalCount(Pager pager) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"getTotalCount",pager);
@@ -61,6 +66,10 @@ public class QnaDAO implements BoardDAO{
 	
 	public int setStatusUpdate(QnaDTO qnaDTO) throws Exception{
 		return sqlSession.update(NAMESPACE+"setStatusUpdate",qnaDTO);
+	}
+	
+	public int setConUpdate(QnaDTO qnaDTO) throws Exception{
+		return sqlSession.update(NAMESPACE+"setConUpdate",qnaDTO);
 	}
 
 	public int setFileInsert(BoardFileDTO boardFileDTO)throws Exception{

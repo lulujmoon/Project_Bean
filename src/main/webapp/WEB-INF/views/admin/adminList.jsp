@@ -25,19 +25,14 @@
 				<li class="nav-item"><a class="nav-link" href="#">회원관리</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">주문관리</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">재고관리</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">매출관리</a>
+				<li class="nav-item"><a class="nav-link" href="../mail/mailList">구독관리</a>
 				</li>
 			</ul>
-			
-			<div>
-	
-			</div>
+
 			
 			</div>
 
 		
-	
-			
 
 
 
