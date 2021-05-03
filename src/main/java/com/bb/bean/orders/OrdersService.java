@@ -49,9 +49,6 @@ public class OrdersService {
 	
 	IamportClient client;
 	
-	public OrdersDTO getRecentOrder(OrdersDTO ordersDTO) throws Exception {
-		return ordersDAO.getRecentOrder(ordersDTO);
-	}
 
 	public String setInsert(OrdersDTO ordersDTO) throws Exception {
 		String result ="";

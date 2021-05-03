@@ -6,6 +6,7 @@
     
 <mapper namespace ="com.bb.bean.orderDetails.OrderDetailsDAO">
 
+
 	<insert id="setInsert" parameterType="OrderDetailsDTO">
 		insert into orderDetails (detailNum, orderUid, orderDate, optionNum, quantity, finalPrice, grind, shippingState)
 		values (orderDetails_seq.nextval, #{orderUid}, sysdate, #{optionNum}, #{quantity}, #{finalPrice}, #{grind,jdbcType=VARCHAR}, #{shippingState})
