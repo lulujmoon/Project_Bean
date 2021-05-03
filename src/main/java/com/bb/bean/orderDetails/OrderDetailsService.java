@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bb.bean.orders.OrdersDTO;
+import com.bb.bean.point.PointDAO;
+import com.bb.bean.point.PointDTO;
 import com.bb.bean.product.OptionsDTO;
 import com.bb.bean.product.ProductDAO;
 
@@ -16,6 +18,8 @@ public class OrderDetailsService {
 	private OrderDetailsDAO orderDetailsDAO;
 	@Autowired
 	private ProductDAO productDAO;
+	@Autowired
+	private PointDAO pointDAO;
 	
 	public int setInsert(OrderDetailsDTO orderDetailsDTO) throws Exception {
 		return orderDetailsDAO.setInsert(orderDetailsDTO);
@@ -54,9 +58,19 @@ public class OrderDetailsService {
 		}
 		
 		//4. 포인트 계산
-		long usePoint = (finalPrices+shipping)-odList.get(0).getOrder().getAmount();
+		long usePoint = 0;
+		
+		PointDTO pointDTO = new PointDTO();
+		OrdersDTO ordersDTO = new OrdersDTO();
+		ordersDTO.setOrderUid(odList.get(0).getOrderUid());
+		pointDTO = pointDAO.getSelectbyOrderUid(ordersDTO);
+		
+		if(pointDTO!=null) {
+			usePoint = pointDTO.getUsePoint();			
+		}
 		
 		long [] prices = {originPrices, finalPrices, discounts, shipping, usePoint};
+		
 		
 		return prices;
 	}

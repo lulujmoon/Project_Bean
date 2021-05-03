@@ -9,7 +9,7 @@
 <mapper namespace ="com.bb.bean.orders.OrdersDAO">
 
 	<select id="getRecentOrder" parameterType="OrdersDTO" resultType="OrdersDTO">
-		select max(orderUid) from orders where id=#{id}
+		select * from orders where orderUid= (select max(orderUid) from orders where id=#{id})
 	</select>
 
 	<insert id="setInsert" parameterType="OrdersDTO">
@@ -37,8 +37,8 @@
 		update orders set payState=#{payState} where orderUid=#{orderUid}
 	</update>
 	
-	<update id="setPaymentUpdate" parameterType="OrdersDTO">
-		update orders set payment=#{payment} where orderUid=#{orderUid}
+	<update id="setPayMethodUpdate" parameterType="OrdersDTO">
+		update orders set payMethod=#{payMethod} where orderUid=#{orderUid}
 	</update>
 	
 </mapper>
