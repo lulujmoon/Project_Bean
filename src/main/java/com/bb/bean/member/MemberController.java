@@ -109,7 +109,7 @@ public class MemberController {
 	}
 
 	@RequestMapping("memberPage")
-	public void memberPage() throws Exception {
+	public void memberPage() throws Exception {;
 	}
 
 	@GetMapping("memberIdCheck")

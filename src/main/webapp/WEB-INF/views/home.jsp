@@ -17,6 +17,7 @@
 <!-- Main css -->
 <link rel="stylesheet" href="./resources/css/home.css">
 
+<link rel="stylesheet" href="./resources/css/memberLogin.css">
 <!-- Join css 
 <link rel="stylesheet" href="./resources/css/join.css">
 -->
