@@ -47,7 +47,7 @@
                     </div>
                     
 					<div class="wrap">
-					<div class="wrap-in">
+					<div class="wrap-in" style="text-align: center;">
                     <form action="./findPw" method="post" onsubmit="return submitCheck();">
                          <div class="col-md-6 col-sm-6">
                               <input type="email" class="form-control" id="id" name="id" placeholder="Email" required>

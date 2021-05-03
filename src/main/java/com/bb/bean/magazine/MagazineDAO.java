@@ -15,10 +15,27 @@ public class MagazineDAO {
 	private SqlSession sqlSession;	
 	private final String NAMESPACE = "com.bb.bean.magazine.MagazineDAO.";
 	
+	public int magazineDelete(MagazineDTO magazineDTO)throws Exception{
+		return sqlSession.delete(NAMESPACE+"magazineDelete",magazineDTO);
+	}
+	
+	public int magazineUpdate(MagazineDTO magazineDTO)throws Exception{
+		int result= sqlSession.update(NAMESPACE+"magazineUpdate",magazineDTO);
+		System.out.println(result);	
+		String title = magazineDTO.getTitle();
+		String contents = magazineDTO.getContents();
+		String subtitle= magazineDTO.getSubTitle();
+		System.out.println(title);
+		System.out.println(contents);
+		System.out.println(subtitle);
+		
+		return result;
+	}
+	
 	public int magazineInsert(MagazineDTO magazineDTO)throws Exception{
 		return sqlSession.insert(NAMESPACE+"magazineInsert",magazineDTO);		
 	}
-
+	
 	public MagazineDTO magazineSelect(MagazineDTO magazineDTO)throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"magazineSelect",magazineDTO);
 	}

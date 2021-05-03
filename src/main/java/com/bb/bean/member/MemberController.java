@@ -37,13 +37,6 @@ public class MemberController {
 	}
 
 
-	@GetMapping("memberOrder")
-	public void memberOrder(MemberDTO memberDTO, Model model) throws Exception {
-		List<MemberDTO> list = memberService.memberOrder(memberDTO);
-		model.addAttribute("list", list);
-	}
-
-
 	@GetMapping("nameCheck")
 	public String nameCheck(MemberDTO memberDTO, Model model) throws Exception {
 		memberDTO = memberService.nameCheck(memberDTO);
@@ -109,7 +102,7 @@ public class MemberController {
 	}
 
 	@RequestMapping("memberPage")
-	public void memberPage() throws Exception {
+	public void memberPage() throws Exception {;
 	}
 
 	@GetMapping("memberIdCheck")

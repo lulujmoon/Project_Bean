@@ -17,6 +17,7 @@
 <!-- Main css -->
 <link rel="stylesheet" href="./resources/css/home.css">
 
+<link rel="stylesheet" href="./resources/css/memberLogin.css">
 <!-- Join css 
 <link rel="stylesheet" href="./resources/css/join.css">
 -->
@@ -157,8 +158,7 @@
           </div>
      </div>
 </section>
-
-
+     
 	<!-- footer 영역 -->
 	<c:import url="./template/footer.jsp"></c:import>
 

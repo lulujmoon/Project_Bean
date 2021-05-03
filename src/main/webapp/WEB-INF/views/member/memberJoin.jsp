@@ -24,13 +24,13 @@
 
 						<div class="form-group">
 							<label for="id">이메일</label> <input type="text"
-								class="form-control" id="join-id" name="id" placeholder="이메일"
+								class="form-control mail" id="join-id" name="id" placeholder="이메일"
 								required value="">
 							<div id="errorEmail" class="resultEmail resultCheck"></div>
 							<h6 id="idCheckResult"></h6>
+							<button type="button" class="btn btn-secondary" id="emailCheck">중복확인</button>
 							<!-- ID는 이메일형식 -->
-							<button type="button" class="btn btn-secondary" id="emailCheck">
-								중복확인</button>
+								
 						</div>
 
 						<div class="form-group">

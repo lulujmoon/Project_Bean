@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bb.bean.orders.OrdersDTO;
+
 @Repository
 public class OrderDetailsDAO {
 	
@@ -20,6 +22,10 @@ public class OrderDetailsDAO {
 	
 	public List<OrderDetailsDTO> getListbyOrderUid(OrderDetailsDTO orderDetailsDTO) throws Exception {
 		return sqlSession.selectList(NAMESPACE+"getListbyOrderUid", orderDetailsDTO);
+	}
+	
+	public List<OrderDetailsDTO> getListbyId(OrdersDTO ordersDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getListbyId", ordersDTO);
 	}
 	
 	public int setShippingStateUpdate(OrderDetailsDTO orderDetailsDTO) throws Exception {

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.bb.bean.orders.OrdersDTO;
+
 @Controller
 public class OrderDetailsController {
 
@@ -31,6 +33,13 @@ public class OrderDetailsController {
 		long [] prices = orderDetailsService.calculatePrices(list);
 		model.addAttribute("prices", prices);
 >>>>>>> Stashed changes
+	}
+	
+	@GetMapping("/member/memberOrder")
+	public void getListbyId(OrdersDTO ordersDTO, Model model) throws Exception {
+		List<OrderDetailsDTO> list = orderDetailsService.getListbyId(ordersDTO);
+		System.out.println(list.size());
+		model.addAttribute("list", list);
 	}
 	
 }
