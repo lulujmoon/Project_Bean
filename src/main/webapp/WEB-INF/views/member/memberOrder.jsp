@@ -11,6 +11,11 @@
 <c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
+<c:if test="${empty member}">
+	<span id="noAccess">잘못된 접근</span>
+</c:if>
+<c:if test="${not empty member}">
+
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="wrapper container" style="display: block;">
@@ -60,7 +65,7 @@
 							<div
 								class="xans-element- xans-myshop xans-myshop-orderhistorylistitem ec-base-table typeList">
 
-								<div class="title" style="width: 1170px; height: 359px;">
+								<div class="title" style="width: 1110px; height: 359px;">
 											
 											<table class="table border border-0">
 									<thead>
@@ -79,7 +84,7 @@
 											<td scope="col">${list.order.orderDate}<br>
 											<a href="${pageContext.request.contextPath}/member/memberOrderDetail?orderUid=${list.order.orderUid}">[ ${list.order.orderUid} ]</a>
 											</td>
-											<td scope="col"><a href="${pageContext.request.contextPath}/product/productList/">${list.order.orderName} <br> ${list.detail.grind}</a></td>
+											<td scope="col"><a href="${pageContext.request.contextPath}/product/productList?productNum=${list.product.productNum}">${list.order.orderName} <br> ${list.detail.grind}</a></td>
 											<td scope="col">${list.detail.quantity}</td>
 											<td scope="col">${list.detail.finalPrice}</td>
 											<td scope="col">${list.detail.shippingState}</td>
@@ -104,5 +109,13 @@
 
 
 	<c:import url="../template/footer.jsp"></c:import>
+
+</c:if>	
+	<script type="text/javascript">
+		if($("#noAccess").text()=="잘못된 접근"){
+			alert("잘못된 접근입니다.");
+			history.back();
+		}
+	</script>
 </body>
 </html>
