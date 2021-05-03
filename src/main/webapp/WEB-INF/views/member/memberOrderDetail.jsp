@@ -141,23 +141,23 @@
 											<col style="width: 160px">
 											<col style="width: auto">
 										</colgroup>
-										<c:forEach items="${list}" var="order">
+										<c:forEach items="${list}" var="list">
 											<tbody>
 												<tr class="sum">
 													<th scope="row">총 결제금액</th>
-													<td><span class="txtEm"> <strong>${order.finalPrice}</strong>원
+													<td><span class="txtEm"> <strong>${list.finalPrice}</strong>원
 															<span class="displaynone"></span>
 													</span></td>
 												</tr>
 												<tr class="">
 													<th scope="row">결제수단</th>
-													<c:if test="${order.payMethod eq 'card'}">
+													<c:if test="${list.order.payMethod eq 'card'}">
 													<td><strong><span>신용카드</span></strong>
 														<p>
 															<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span>
 														</p></td>
 													</c:if>	
-													<c:if test="${order.payMethod ne 'card'}">
+													<c:if test="${list.order.payMethod != 'card'}">
 													<td><strong><span>포인트</span></strong>
 														<p>
 															<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span>
