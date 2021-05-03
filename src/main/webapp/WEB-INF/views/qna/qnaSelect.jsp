@@ -58,7 +58,7 @@
 <c:if test="${dto.writer eq member.id||member.id eq 'admin'}">
 <a class="underline-btn" href="./qnaUpdate?num=${dto.num}">UPDATE</a>
 
-<a class="underline-btn" href="./qnaDelete?num=${dto.num}">DELETE</a>
+<a class="underline-btn" id="delete" href="./qnaDelete?num=${dto.num}" >DELETE</a>
 </c:if>
 
 <c:if test="${member.id eq 'admin'}">

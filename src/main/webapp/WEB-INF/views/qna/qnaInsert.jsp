@@ -54,7 +54,7 @@
 		</div>
 			
 	
-		<button type="submit" value="Write" class="underline-btn">Write</button>
+		<button type="submit" value="Write" class="underline-btn" id="btn">Write</button>
 		
 		</form>
 </div>

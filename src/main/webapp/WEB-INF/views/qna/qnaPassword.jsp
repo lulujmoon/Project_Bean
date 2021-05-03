@@ -31,5 +31,6 @@
 
 </div>
 	<c:import url="../template/footer.jsp"></c:import>		
+	<script type="text/javascript" src="../resources/jquery/qnaPassword.js"></script>
 </body>
 </html>

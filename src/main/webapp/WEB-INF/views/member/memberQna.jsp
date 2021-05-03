@@ -35,7 +35,7 @@
 						class="ko">주문내역</span></a> |  <a
 						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberQna"><span
+						href="${pageContext.request.contextPath}/qna/memberQna"><span
 						class="ko">문의</span></a>
 				</nav>
 			</div>
