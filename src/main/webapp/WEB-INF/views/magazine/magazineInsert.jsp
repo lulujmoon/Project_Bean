@@ -1,4 +1,4 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -10,19 +10,12 @@
 <c:import url="../template/setting.jsp"></c:import>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-<link rel="stylesheet" href="../resources/css/magazineList.css">
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 
 <div class="container">
-
-<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h2>MAGAZINE</h2>
-				</div>
-				</div>
-		<form id="frm" action="./magazineInsert" method="post" enctype="multipart/form-data">
+<form id="frm" action="./magazineInsert" method="post" enctype="multipart/form-data">
 			
 			<div class="form-group">
 				<label for="title">Title:</label> <input type="text"
@@ -43,12 +36,10 @@
 					name="contents"></textarea>
 			</div>
 
-			<button type="submit" value="Write" class="underline-btn">Write</button>
-
+			<input type="submit" id="btn" value="Write" class="btn btn-success">
 		</form>
 
 </div>
-<br>
 <script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
 	<c:import url="../template/footer.jsp"></c:import>
 </body>

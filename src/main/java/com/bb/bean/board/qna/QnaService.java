@@ -11,7 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.bb.bean.board.BoardDTO;
 import com.bb.bean.board.BoardFileDTO;
 import com.bb.bean.board.BoardService;
-import com.bb.bean.member.MemberDTO;
 import com.bb.bean.util.FileManager;
 import com.bb.bean.util.Pager;
 
@@ -33,15 +32,6 @@ public class QnaService implements BoardService {
 		pager.makeNum(totalCount);
 		
 		return qnaDAO.getList(pager);
-	}
-	
-	public List<BoardDTO> memberQna(BoardDTO boardDTO) throws Exception{	
-		MemberDTO memberDTO = new MemberDTO();
-		
-		memberDTO=(MemberDTO)session.getAttribute("member");
-		boardDTO.setWriter(memberDTO.getId());
-	
-		return qnaDAO.memberQna(boardDTO);
 	}
 
 	@Override
@@ -86,13 +76,11 @@ public class QnaService implements BoardService {
 		qnaDTO.setRef(parent.getRef());
 		qnaDTO.setStep(parent.getStep()+1);
 		qnaDTO.setDepth(parent.getDepth()+1);
-		qnaDTO.setStatus("답변완료");
-		qnaDTO.setCon(parent.getCon());
+		qnaDTO.setStatus("답변완료"); 
 	
 		int result = qnaDAO.setReplyUpdate(parent);
 		result = qnaDAO.setReply(qnaDTO);
 		result = qnaDAO.setStatusUpdate(qnaDTO);
-		result=qnaDAO.setConUpdate(qnaDTO);
 		
 		return result;
 	}

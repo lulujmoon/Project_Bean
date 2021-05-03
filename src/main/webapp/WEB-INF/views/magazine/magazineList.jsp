@@ -17,27 +17,16 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
 				<h2>MAGAZINE</h2>
-				<hr class="hrList">
+				<hr>
 				<h6>스토리</h6>
 			</div>
 		</div>
 
 		<div class="brick-section-container">
-		
-			<div class="row">
 			<c:forEach items="${list}" var="dto">
-			
-				<div class="col-md-6" id="imgList"><a href="#" data-toggle="modal" data-target="#myModal${dto.num}"><img
+				<a href="#" data-toggle="modal" data-target="#myModal${dto.num}"> <img
 					src="../resources/upload/magazineT/${dto.listImage.fileName}"
-					width="550" height="300"></a>
-					<div class="subText">
-					<p class="titleText">${dto.title}</p>
-					<p class="titleSub">${dto.subTitle}</p>
-					
-					</div>
-					
-					
-					</div>
+					width="500" height="300"></a>
 
 				<!-- The Modal -->
 				<div class="modal fade" id="myModal${dto.num}">
@@ -49,29 +38,16 @@
 								
 								<h5 class="col-md-12" id="modal-category">${dto.category}</h5>
 								<h5 class="col-md-12" id="modal-title">${dto.title}</h5>
-								<hr class="hrShort">
 								
 							</div>
 
 							<!-- Modal body -->
-							<div class="subTitle">${dto.subTitle}
-							
-							</div>
+							<div class="modal-body">${dto.contents}</div>
 
-							<div class="modal-body">
-							<hr>
-							${dto.contents}</div>
-							
 							<!-- Modal footer -->
 							<div class="modal-footer">
-								<div class="col-md-12 text-center">
-								<%-- <c:if test="${member.id eq 'admin'}"> --%>
-								<a href="./magazineUpdate?num=${dto.num}"><button type="button" class="underline-btn">Update</button></a>
-							<%-- 	</c:if> --%>
-							<a href="./magazineDelete?num=${dto.num}"><button type="button" class="underline-btn">Delete</button></a>
-								<button type="button" class="underline-btn"
+								<button type="button" class="btn btn-danger"
 									data-dismiss="modal">Close</button>
-									</div>
 							</div>
 
 						</div>
@@ -79,8 +55,35 @@
 				</div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			</c:forEach>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		</div>
 
@@ -88,13 +91,10 @@
 
 
 		<div>
-		<%-- <c:if test="${member.id eq 'admin'}"> --%>
-		<a class="underline-btn" href="./magazineInsert">Write</a>
-		<%-- 	</c:if> --%>
+			<a href="./magazineInsert">인서트</a>
 		</div>
 
 	</div>
-	<br>
 	<c:import url="../template/footer.jsp"></c:import>
 </body>
 </html>

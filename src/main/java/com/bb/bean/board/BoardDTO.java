@@ -9,14 +9,7 @@ public class BoardDTO {
 	private String contents;
 	private String category;
 	private String writer;
-	private long con;
 	
-	public long getCon() {
-		return con;
-	}
-	public void setCon(long con) {
-		this.con = con;
-	}
 	public String getWriter() {
 		return writer;
 	}

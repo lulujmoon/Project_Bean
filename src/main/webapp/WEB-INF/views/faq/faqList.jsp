@@ -14,18 +14,18 @@
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="container">
-
+		<li class="select"><a
+			href="${pageContext.request.contextPath}/qna/qnaList">QnA</a> <a
+			href="${pageContext.request.contextPath}/faq/faqList">FaQ</a>
+			</li>
 		<h2>FaQ</h2>
-		<div style="text-align: center; margin: 20px 0 20px 0;">
-		<a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a> | 
-		<a href="${pageContext.request.contextPath}/faq/faqList">FaQ</a> 
-	</div>
+		<br>
 		
 		<ul class="nav nav-tabs">
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=배송문의">배송문의</a></li>
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=교환/반품문의">교환/반품문의</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=상품문의">상품문의</a></li>
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=주문문의">주문문의</a></li>
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=기타문의">기타문의</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/faq/faqList?curPage=1&kind=Category&search=결제문의">결제문의</a></li>
 			
 
 			</ul>
@@ -40,15 +40,15 @@
 					</div>
 
 					<div id="col${dto.num}" class="collapse" data-parent="#accordion">
-						<div class="card-body" style="white-space:pre;">${dto.contents}</div>
+						<div class="card-body">${dto.contents}</div>
 
 						<!-- Modal Button -->
 						<c:if test="${member.id eq 'admin'}">
-						<button type="button" class="underline-btn" data-toggle="modal"
-							data-target="#myModal${dto.num}">UPDATE</button>
+						<button type="button" class="btn btn-success" data-toggle="modal"
+							data-target="#myModal${dto.num}">수정</button>
 
 						<a href="./faqDelete?num=${dto.num}" id="del"
-							class="underline-btn">DELETE</a>
+							class="btn btn-success">삭제</a>
 						</c:if>
 						<!-- Modal -->
 						<div class="modal" id="myModal${dto.num}">
@@ -65,7 +65,7 @@
 									<div class="modal-body">
 
 										<div class="form-group">
-											<label for="num" hidden>번호</label> <input
+											<label for="writer" hidden>번호</label> <input
 												class="form-control" id="num" name="num" value="${dto.num}"
 												readonly hidden>
 
@@ -74,22 +74,20 @@
 													id="writer" name="writer" value="${dto.writer}" readonly>
 											</div>
 											<div class="form-group">
-												<label for="title">제목</label> <input class="form-control"
+												<label for="writer">제목</label> <input class="form-control"
 													id="title" name="title" value="${dto.title}">
 											</div>
 											<div class="form-group">
-												<label for="contents">내용</label>
-												<textarea class="form-control" id="contents" cols="30" rows="5" 
-												>${dto.contents}</textarea>
-										
+												<label for="writer">내용</label> <input class="form-control"
+													id="contents" name="contents" value="${dto.contents}">
 											</div>
 											<div class="form-group">
 												<label for="category">category:</label> <select
 													name="category" id="category" value="${dto.category}">
 													<option value="배송문의">배송문의</option>
-													<option value="교환/반품문의">교환/반품문의</option>
+													<option value="상품문의">상품문의</option>
 													<option value="주문문의">주문문의</option>
-													<option value="기타문의">기타문의
+													<option value="결제문의">결제문의
 													<option>
 												</select>
 											</div>
@@ -98,9 +96,9 @@
 
 										<!-- Modal footer -->
 										<div class="modal-footer">
-											<button type="button" class="underline-btn" id="upd"
+											<button type="button" class="btn btn-success" id="upd"
 												value="${dto.num}">Update</button>
-											<button type="button" class="underline-btn"
+											<button type="button" class="btn btn-success"
 												data-dismiss="modal">Close</button>
 										</div>
 
@@ -151,7 +149,7 @@
 				<input type="text" class="form-control" name="search" id="search"
 					value="${pager.search}" placeholder="">
 				<div class="input-group-append">
-					<button class="gradient-btn" type="submit">Search</button>
+					<button class="btn btn-success" type="submit">Search</button>
 				</div>
 			</form>
 		</div>
@@ -159,7 +157,7 @@
 
 
 		<c:if test="${member.id eq 'admin'}">
-		<button type="button" class="underline-btn" data-toggle="modal"
+		<button type="button" class="btn btn-success" data-toggle="modal"
 			data-target="#myModalW">Write</button>
 		</c:if>
 
@@ -179,16 +177,16 @@
 								id="title" name="title">
 						</div>
 						<div class="form-group">
-							<label for="contents">내용</label>
-							<textarea class="form-control" id="contents" cols="30" rows="5"></textarea>
+							<label for="writer">내용</label> <input class="form-control"
+								id="contents" name="contents">
 						</div>
 						<div class="form-group">
 							<label for="category">category:</label> <select name="category"
 								id="category">
 								<option value="배송문의">배송문의</option>
-								<option value="교환/반품문의">교환/반품문의</option>
+								<option value="상품문의">상품문의</option>
 								<option value="주문문의">주문문의</option>
-								<option value="기타문의">기타문의
+								<option value="결제문의">결제문의
 								<option>
 							</select>
 						</div>
@@ -199,8 +197,8 @@
 
 					<!-- Modal footer -->
 					<div class="modal-footer">
-						<button type="button" class="underline-btn" id="wri">WRITE</button>
-						<button type="button" class="underline-btn" data-dismiss="modal">CLOSE</button>
+						<button type="button" class="btn btn-success" id="wri">확인</button>
+						<button type="button" class="btn btn-success" data-dismiss="modal">닫기</button>
 					</div>
 
 				</div>

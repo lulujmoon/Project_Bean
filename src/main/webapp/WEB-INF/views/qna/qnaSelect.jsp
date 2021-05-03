@@ -54,15 +54,17 @@
     </tbody>
   </table>
   
-<a class="underline-btn" href="./qnaList">LIST</a>
-<c:if test="${dto.writer eq member.id||member.id eq 'admin'}">
-<a class="underline-btn" href="./qnaUpdate?num=${dto.num}">UPDATE</a>
 
-<a class="underline-btn" href="./qnaDelete?num=${dto.num}">DELETE</a>
+
+
+<c:if test="${dto.writer eq member.id||member.id eq 'admin'}">
+<a href="./qnaUpdate?num=${dto.num}"><button type="button" class="btn btn-success">수정</button></a>
+
+<a href="./qnaDelete?num=${dto.num}" id="del" class="btn btn-success">삭제</a>
 </c:if>
 
 <c:if test="${member.id eq 'admin'}">
-<a class="underline-btn" href="./qnaReply?num=${dto.num}">REPLY</a>
+<a href="./qnaReply?num=${dto.num}" class="btn btn-success">답글</a>
 </c:if>
 
 </div>

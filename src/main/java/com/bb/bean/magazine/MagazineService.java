@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bb.bean.product.ProductDTO;
-import com.bb.bean.product.ProductFileDTO;
 import com.bb.bean.util.FileManager;
 
 @Service
@@ -22,60 +20,23 @@ public class MagazineService {
 	@Autowired
 	private FileManager fileManager;
 	
-	public int magazineDelete(MagazineDTO magazineDTO)throws Exception{
-		return magazineDAO.magazineDelete(magazineDTO);
-	}
-	
-	public int magazineUpdate(MagazineDTO magazineDTO,MultipartFile file)throws Exception{
-		int result=0;
-		//새로운 이미지를 넣었다면 실행
-		if(file.getOriginalFilename().length()!=0) {
-			//존재하는 이미지 삭제
-			MagazineDTO magazineDTO2 = magazineDAO.magazineSelect(magazineDTO);
-
-			if(magazineDTO2.getListImage()!=null) {
-				String delFileName = magazineDTO2.getListImage().getFileName();
-				boolean check = fileManager.delete("magazineT", delFileName, session);
-
-				MagazineFileDTO magazineFileDTO = new MagazineFileDTO();
-				magazineFileDTO.setFileName(magazineDTO2.getListImage().getFileName());
-				magazineDAO.setFileDelete(magazineFileDTO);
-				
-			}
-
-			//새로운 이미지 삽입
-			String fileName = fileManager.save("magazineT", file, session);
-
-			MagazineFileDTO magazineFileDTO = new MagazineFileDTO();
-			magazineFileDTO.setNum(magazineDTO.getNum());
-			magazineFileDTO.setFileName(fileName);
-			magazineFileDTO.setOrigineName(file.getOriginalFilename());
-			
-			result = magazineDAO.magazineUpdate(magazineDTO);
-			result = magazineDAO.setFileInsert(magazineFileDTO);
-			
-		}else {
-			result = magazineDAO.magazineUpdate(magazineDTO);
-		}
-		return result;
-	}
-	
 	public int magazineInsert(MagazineDTO magazineDTO,MultipartFile file)throws Exception{
 		
-		long num = magazineDAO.getNum();
 		String fileName = fileManager.save("magazineT", file, session);
+		long num = magazineDAO.getNum();
 		magazineDTO.setNum(num);
 		MagazineFileDTO magazineFileDTO = new MagazineFileDTO();
 		magazineFileDTO.setNum(num);
-		magazineFileDTO.setOrigineName(file.getOriginalFilename());
 		magazineFileDTO.setFileName(fileName);
+		magazineFileDTO.setOrigineName(file.getOriginalFilename());
 		
 		int result=magazineDAO.magazineInsert(magazineDTO);
 		result = magazineDAO.setFileInsert(magazineFileDTO);
-				
+		
+		
 		return result;
 	}
-	
+
 	public MagazineDTO magazineSelect(MagazineDTO magazineDTO)throws Exception{
 		return magazineDAO.magazineSelect(magazineDTO);
 	}
