@@ -111,8 +111,8 @@
 						<div class="info-label">주문품목</div>
 						<div class="info-content">
 							<div class="sub-item-option-content">
-								${list[0].orders.orderName}
-                                <div class="info-label">${list[0].orders.orderDate} | ${list[0].orders.payState}</div>
+								${order.orderName}
+                                <div class="info-label">${order.orderDate} | ${order.payState}</div>
 							</div>
 						</div>
 				</div>

@@ -48,6 +48,10 @@ public class OrdersService {
 	PointDAO pointDAO;
 	
 	IamportClient client;
+	
+	public OrdersDTO getRecentOrder(OrdersDTO ordersDTO) throws Exception {
+		return ordersDAO.getRecentOrder(ordersDTO);
+	}
 
 	public String setInsert(OrdersDTO ordersDTO) throws Exception {
 		String result ="";
