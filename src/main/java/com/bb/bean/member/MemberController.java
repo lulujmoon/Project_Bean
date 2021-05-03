@@ -37,13 +37,6 @@ public class MemberController {
 	}
 
 
-	@GetMapping("memberOrder")
-	public void memberOrder(MemberDTO memberDTO, Model model) throws Exception {
-		List<MemberDTO> list = memberService.memberOrder(memberDTO);
-		model.addAttribute("list", list);
-	}
-
-
 	@GetMapping("nameCheck")
 	public String nameCheck(MemberDTO memberDTO, Model model) throws Exception {
 		memberDTO = memberService.nameCheck(memberDTO);

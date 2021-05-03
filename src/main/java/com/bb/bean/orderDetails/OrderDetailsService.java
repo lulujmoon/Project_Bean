@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bb.bean.orders.OrdersDTO;
+
 @Service
 public class OrderDetailsService {
 
@@ -17,6 +19,10 @@ public class OrderDetailsService {
 	
 	public List<OrderDetailsDTO> getListbyOrderUid(OrderDetailsDTO orderDetailsDTO) throws Exception {
 		return orderDetailsDAO.getListbyOrderUid(orderDetailsDTO);
+	}
+	
+	public List<OrderDetailsDTO> getListbyId(OrdersDTO ordersDTO) throws Exception {
+		return orderDetailsDAO.getListbyId(ordersDTO);
 	}
 
 }
