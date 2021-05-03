@@ -6,7 +6,7 @@
  <div class="navbar-header navbar-default navbar-static-top" role="navigation">
    <div class="container" style="font-family: 'Orelega One';">
          <div class="row" style="height: 30px; float:top;">
-            <div class="col-lg-12" style="float:left;">
+            <div class="col-lg-12" style="float:left; padding-left:0;">
                <!-- 오른쪽 로그인, 회원가입-->
                 <div class="col-xs-3">
 
