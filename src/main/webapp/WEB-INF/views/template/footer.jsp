@@ -26,9 +26,10 @@
 					<h4> 뉴스레터 받기 </h4>
 					<form id="frm" action="${pageContext.request.contextPath}/mail/mailInsert" method="post">
 					<div id="mAddr">
-					<input type="text" id="mAddr" name="mAddr" placeholder="이메일형식으로 입력하세요">
-					<button type="submit" value="submit" class="underline-btn" id="check"
-			
+					<input type="email" id="mAddr" name="mAddr" placeholder="이메일형식으로 입력하세요" autofocus required>
+
+					<button type="submit" value="submit" class="underline-btn" id="check" onclick="checkform()"	
+		
 					style="margin-top:0; margin-left:5px; font-size:12px; background-color:transparent;
 					border: none;">확인</button>
 					<div>
@@ -56,5 +57,5 @@
                
           </div>
      </div>
-     <script type="text/javascript" src="../resources/js/emailCheck.js"></script>
+     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/emailCheck.js"></script>
 </footer>
