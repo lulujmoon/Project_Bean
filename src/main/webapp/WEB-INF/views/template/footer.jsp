@@ -26,15 +26,16 @@
 					<h4 class="letter" style="color: #666; font-size: 12px; font-weight: normal; letter-spacing: 2px; margin:0px 0px 8px 0px; text-align: left;"> 뉴스레터 받기 </h4>
 					<form id="frm" action="${pageContext.request.contextPath}/mail/mailInsert" method="post">
 					<div id="mAddr">
-					<input type="email" id="mAddr" name="mAddr" placeholder="이메일형식으로 입력하세요" autofocus required>
+					<input type="email" id="mAddr" name="mAddr" placeholder="이메일형식으로 입력하세요" autofocus required style="input:focus ;
+	 				outline:none;">
 
 					<button type="submit" value="submit" class="underline-btn" id="check" onclick="checkform()"	
 		
 					style="margin-top:0; margin-left:5px; font-size:12px; background-color:transparent;
 					border: none;">확인</button>
-					<div>
+					<div id="check" style="font-size: 12px; vertical-align:-3px;">
 					<input type="checkbox" id="checkbox">
-					<p class="approve" style="font-size: 12px;">이메일 수집동의</p>
+					이메일 수집동의
 					</div>
 					</div>
 					</form>
