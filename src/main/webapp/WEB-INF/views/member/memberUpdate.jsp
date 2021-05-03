@@ -159,12 +159,6 @@
 			</div>
 
 <br>
-<!-- 
-			<div class="mypage-info">
-				※ 배송 주소는 <a href="${pageContext.request.contextPath}/member/memberAddrUpdate">마이페이지 &gt; 배송지수정</a> 에서 수정하실 수
-				있습니다.
-			</div>
- -->
 <br>
 
 			
@@ -176,6 +170,200 @@
 		</div>
 		</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="write-order-info-wrapper" class="bb-form" style="padding-bottom: 40px;">
+	<div class="mypage-section-title">
+		회원정보
+	</div>
+	<div class="row">
+			<div class="col-md-4 col-padright-30px">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-disabled is-upgraded" data-upgraded=",MaterialTextfield">
+							<input class="mdl-textfield__input ko" type="text" id="userEmail" disabled="">
+							<label class="mdl-textfield__label join-label" for="userEmail">이메일 (수정불가)</label>                
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-upgraded" data-upgraded=",MaterialTextfield">
+							<input class="mdl-textfield__input ko" type="text" id="last-name">
+							<label class="mdl-textfield__label join-label" for="last-name">성</label>                
+						</div>
+					</div>
+					<div class="col-xs-8">
+						<div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-upgraded" data-upgraded=",MaterialTextfield">
+							<input class="mdl-textfield__input ko" type="text" id="first-name">
+							<label class="mdl-textfield__label join-label" for="first-name">이름</label>                
+						</div>
+					</div>
+				</div>
+				<div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-upgraded" data-upgraded=",MaterialTextfield">
+                	<input class="mdl-textfield__input ko" type="tel" id="cellphone">
+                    <label class="mdl-textfield__label join-label" for="cellphone">휴대폰번호</label>                
+                </div>
+				
+				<div class="row" style="display:none">
+					<div class="col-xs-8">
+						<div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-disabled is-upgraded" data-upgraded=",MaterialTextfield">
+							<input class="mdl-textfield__input ko" type="tel" id="zipcode" disabled="">
+							<label class="mdl-textfield__label join-label" for="zipcode">우편번호</label>                
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<button type="button" class="zipcode order-button small mdl-button mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+							찾기
+						<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+					</div>
+				</div>
+				<div style="display:none" class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-disabled is-upgraded" data-upgraded=",MaterialTextfield">
+                	<input class="mdl-textfield__input ko" type="text" id="address1" disabled="">
+                    <label class="mdl-textfield__label join-label" for="address1">주소</label>                
+                </div>
+				<div style="display:none" class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-upgraded" data-upgraded=",MaterialTextfield">
+                	<input class="mdl-textfield__input ko" type="text" id="address2">
+                    <label class="mdl-textfield__label join-label" for="address2">상세주소</label>                
+                </div>
+				
+			</div>
+			<div class="col-md-4 col-padright-30px">
+				<div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-upgraded" data-upgraded=",MaterialTextfield">
+                	<input class="mdl-textfield__input ko" type="text" id="username">
+                    <label class="mdl-textfield__label join-label" for="username">닉네임</label>                
+                </div>
+				<div class="row" style="text-align:center;padding:20px 0;">
+					<div class="col-xs-12 form-title">
+						<h4>성별</h4>
+					</div>
+					<div class="col-xs-6">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-checked is-upgraded" for="gender-female" data-upgraded=",MaterialRadio,MaterialRipple">
+                        <input type="radio" id="gender-female" class="mdl-radio__button" name="gender" value="F">
+                        <span class="mdl-radio__label">여자</span>
+                    <span class="mdl-radio__outer-circle"></span><span class="mdl-radio__inner-circle"></span><span class="mdl-radio__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></label>
+                    </div>
+                    <div class="col-xs-6">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded" for="gender-male" data-upgraded=",MaterialRadio,MaterialRipple">
+                        <input type="radio" id="gender-male" class="mdl-radio__button" name="gender" value="M">
+                        <span class="mdl-radio__label">남자</span>
+                    <span class="mdl-radio__outer-circle"></span><span class="mdl-radio__inner-circle"></span><span class="mdl-radio__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+                        <div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-upgraded" data-upgraded=",MaterialTextfield">
+                            <input class="mdl-textfield__input ko" type="tel" id="join-birth-year" pattern="-?[0-9]*(\.[0-9]+)?">
+                            <label class="mdl-textfield__label join-label" for="join-birth-year">생년 <span class="info">(ex 2013)</span></label>
+                            <br>
+                            <span class="mdl-textfield__error">숫자만 적어주세요</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-upgraded" data-upgraded=",MaterialTextfield">
+                            <input class="mdl-textfield__input ko" type="tel" id="join-birth-month" pattern="-?[0-9]*(\.[0-9]+)?">
+                            <label class="mdl-textfield__label join-label" for="join-birth-month">월 <span class="info">(ex 03)</span></label>
+                            <br>
+                            <span class="mdl-textfield__error">숫자만 적어주세요</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-upgraded" data-upgraded=",MaterialTextfield">
+                            <input class="mdl-textfield__input ko" type="tel" id="join-birth-day" pattern="-?[0-9]*(\.[0-9]+)?">
+                            <label class="mdl-textfield__label join-label" for="join-birth-day">일 <span class="info">(ex 21)</span></label>
+                            <br>
+                            <span class="mdl-textfield__error">숫자만 적어주세요</span>                
+                        </div>
+                    </div>
+				</div>
+				<div class="row" style="padding: 20px 0">
+					<div class="col-xs-12">
+                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-checked is-upgraded" for="userEmailAgree" data-upgraded=",MaterialCheckbox,MaterialRipple">
+                            <input type="checkbox" id="userEmailAgree" class="mdl-checkbox__input" value="on">
+                            <span class="mdl-checkbox__label">빈브라더스 이메일 수신동의</span>
+                        <span class="mdl-checkbox__focus-helper"></span><span class="mdl-checkbox__box-outline"><span class="mdl-checkbox__tick-outline"></span></span><span class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<butto id="editBtn" type="button" class="order-button mdl-button mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">저장하기<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></butto>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div id="password-edit-wrapper">
+					<div class="point-info-area" style="padding:5%;">
+						<div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+							<input class="mdl-textfield__input ko" type="password" id="password_current">
+							<label class="mdl-textfield__label join-label" for="password_current">현재 비밀번호</label>                
+						</div>
+						<div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+							<input class="mdl-textfield__input ko" type="password" id="password_new">
+							<label class="mdl-textfield__label join-label" for="password_new">새로운 비밀번호</label>                
+						</div>
+						<div class="join mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+							<input class="mdl-textfield__input ko" type="password" id="password_newconfirm">
+							<label class="mdl-textfield__label join-label" for="password_newconfirm">새로운 비밀번호 확인</label>                
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<butto id="editPasswordBtn" type="button" class="order-button mdl-button mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">비밀번호 변경하기<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></butto>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="mypage-info">		
+		※ 정기배송 주소는 <a href="/account/subscription">마이페이지 &gt; 정기배송</a> 에서 수정하실 수 있습니다.
+	</div>
+		<div class="row" style="padding:20px 0">
+			<div class="col-xs-4 col-xs-offset-8" style="text-align:right">
+				<div id="userRemoveStart" class="link-button" data-toggle="modal" data-target="#userRemove_modal" style="cursor:pointer">탈퇴하기</div>
+			</div>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

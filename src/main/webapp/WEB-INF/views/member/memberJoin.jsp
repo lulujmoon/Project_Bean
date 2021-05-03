@@ -24,7 +24,7 @@
 
 						<div class="form-group">
 							<label for="id">이메일</label> <input type="text"
-								class="form-control mail" id="join-id" name="id" placeholder="이메일"
+								class="form-control mail" id="join-id" name="id" size="7" placeholder="이메일"
 								required value="">
 							<div id="errorEmail" class="resultEmail resultCheck"></div>
 							<h6 id="idCheckResult"></h6>

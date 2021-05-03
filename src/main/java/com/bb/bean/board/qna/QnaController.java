@@ -62,14 +62,6 @@ public class QnaController {
 			return mv;
 		}
 
-		@GetMapping("memberQna")
-		public ModelAndView memberQna(BoardDTO boardDTO) throws Exception {
-			ModelAndView mv = new ModelAndView();
-			List<BoardDTO> ar = qnaService.memberQna(boardDTO);
-			mv.addObject("list", ar);
-			mv.setViewName("member/memberQna");
-			return mv;
-		}
 
 		@GetMapping("qnaSelect")
 		public ModelAndView getSelect(BoardDTO boardDTO) throws Exception {

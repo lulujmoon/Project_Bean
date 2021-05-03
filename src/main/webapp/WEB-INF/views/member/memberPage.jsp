@@ -83,7 +83,7 @@
 				<div class="info-box">
 						<div class="info-label">사용가능 포인트</div>
 						<div class="info-content">
-							<span class="mypage-point">${member.point}</span> BP
+							<a href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span class="mypage-point">${member.point}</span></a>&nbsp;BP
 						</div>
 				</div>
 				<div class="info-ul">

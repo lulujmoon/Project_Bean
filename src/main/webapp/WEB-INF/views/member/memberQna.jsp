@@ -74,7 +74,7 @@
 				<c:forEach items="${list}" var="dto" >		
 				<tr>
 					<td>${dto.num}</td>
-					<td>${dto.category}  ${dto.title}</td>
+					<td>[ ${dto.category} ] <a href="http://localhost/bean/qna/qnaSelect?num=${dto.num}">${dto.title}</a></td>
 					<td>${dto.writer}</td>
 					<td>${dto.regDate}</td>
 					<td>${dto.hit}</td>
