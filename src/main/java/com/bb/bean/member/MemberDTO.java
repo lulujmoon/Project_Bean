@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import com.bb.bean.orderDetails.OrderDetailsDTO;
 import com.bb.bean.orders.OrdersDTO;
+import com.bb.bean.product.ProductDTO;
 
 public class MemberDTO {
 	
@@ -22,6 +23,7 @@ public class MemberDTO {
 	
 	private OrdersDTO order;
 	private OrderDetailsDTO detail;
+	private ProductDTO product;
 
 	public String getId() {
 		return id;
@@ -107,7 +109,12 @@ public class MemberDTO {
 	public void setDetail(OrderDetailsDTO detail) {
 		this.detail = detail;
 	}
-	
+	public ProductDTO getProduct() {
+		return product;
+	}
+	public void setProduct(ProductDTO product) {
+		this.product = product;
+	}
 	
 
 }

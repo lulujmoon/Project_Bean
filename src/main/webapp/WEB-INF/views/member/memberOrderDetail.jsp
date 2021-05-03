@@ -11,6 +11,10 @@
 <c:import url="../template/setting.jsp"></c:import>
 </head>
 <body>
+<c:if test="${empty member}">
+	<span id="noAccess">잘못된 접근</span>
+</c:if>
+<c:if test="${not empty member}">
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="wrapper container" style="display: block;">
@@ -146,10 +150,18 @@
 												</tr>
 												<tr class="">
 													<th scope="row">결제수단</th>
+													<c:if test="${order.payMethod eq 'card'}">
 													<td><strong><span>신용카드</span></strong>
 														<p>
 															<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span>
 														</p></td>
+													</c:if>	
+													<c:if test="${order.payMethod ne 'card'}">
+													<td><strong><span>포인트</span></strong>
+														<p>
+															<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span>
+														</p></td>
+													</c:if>
 												</tr>
 											</tbody>
 										</c:forEach>
@@ -183,11 +195,11 @@
 										<c:forEach items="${list}" var="list">
 											<tfoot class="right">
 												<tr>
-													<td colspan="7"><span class="gLeft">[기본배송]</span>
-														상품구매금액 <strong> ${list.finalPrice} </strong><span class="displaynone">
+													<td colspan="7"><span style="float: left;">[기본배송]</span>
+													<div style="float: right;">상품구매금액 <strong> ${list.finalPrice} </strong><span class="displaynone">
 													</span> + 배송비 3,000 <span class="displaynone"> - 상품할인금액 0</span> =
-														합계 : ${list.finalPrice} <strong><span
-															class="txt18"> </span></strong> <span class="displaynone"></span>
+														합계 : ${list.finalPrice} <strong>
+														<span class="txt18"> </span></strong> <span class="displaynone"></span></div>
 													</td>
 												</tr>
 											</tfoot>
@@ -254,7 +266,6 @@
 										</tbody>
 									</table>
 									
-									<a href="${pageContext.request.contextPath}/member/memberAddrUpdate?orderUid=${list[0].orderUid}">배송지 변경</a>
 								</div>
 							</div>
 
@@ -272,7 +283,13 @@
 
 
 	<c:import url="../template/footer.jsp"></c:import>
-	
+</c:if>	
+	<script type="text/javascript">
+		if($("#noAccess").text()=="잘못된 접근"){
+			alert("잘못된 접근입니다.");
+			history.back();
+		}
+	</script>
 	<script type="text/javascript" src="../resources/jquery/memberOrderDetail.js"></script>
 </body>
 </html>
