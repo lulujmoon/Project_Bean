@@ -151,10 +151,18 @@
 												</tr>
 												<tr class="">
 													<th scope="row">결제수단</th>
+													<c:if test="${order.payMethod eq 'card'}">
 													<td><strong><span>신용카드</span></strong>
 														<p>
 															<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span>
 														</p></td>
+													</c:if>	
+													<c:if test="${order.payMethod ne 'card'}">
+													<td><strong><span>포인트</span></strong>
+														<p>
+															<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span>
+														</p></td>
+													</c:if>
 												</tr>
 											</tbody>
 										</c:forEach>

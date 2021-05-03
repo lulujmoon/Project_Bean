@@ -23,13 +23,17 @@ $("#join-nickname").blur(function(){
 		} else {
 			str = "사용 가능한 닉네임입니다";
 			nickResult=true;
-		}
+			}
 		    $("#nickResult").html(str);
 			$("#nickResult").attr("class", c);
 	})
 })
 
 
+$("#join-nickname").change(function(){
+	$("join-nickname").value("");
+	nickResult=false;
+})
 
 
 
