@@ -14,11 +14,13 @@
                      <span>Bean Bean</span>
                      </a>
                     <div class="col-xs-9" style="float:right; padding-right: 8px;">
+						
 
-            	      <a href="${pageContext.request.contextPath}/admin/adminList">
-                      <span class="glyphicon glyphicon-user" style="margin-right: 10px;"> Admin </span>
+					  
+            	      <a href="${pageContext.request.contextPath}/admin/adminmenu">
+                      <span class="glyphicon glyphicon-user" style="margin-right: 10px; cursor:pointer;"> Admin </span>
                       </a>
-
+                
 
                       <c:if test="${empty member}">
                       <a  data-toggle="modal" data-target="#login">

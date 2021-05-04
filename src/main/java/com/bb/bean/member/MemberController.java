@@ -12,8 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import com.bb.bean.board.BoardDTO;
 import com.bb.bean.board.qna.QnaService;
+import org.springframework.web.servlet.ModelAndView;
+import com.bb.bean.orders.OrdersDTO;
+import com.bb.bean.orders.OrdersService;
+
 
 @Controller
 @RequestMapping("/member/**")
@@ -41,7 +46,6 @@ public class MemberController {
 	@GetMapping("memberPoint")
 	public void memberPoint() throws Exception {
 	}
-
 
 	@GetMapping("nameCheck")
 	public String nameCheck(MemberDTO memberDTO, Model model) throws Exception {
@@ -207,4 +211,14 @@ public class MemberController {
 		return "redirect:../";
 	}
 
+	@GetMapping("memberList")
+	public ModelAndView memberList()throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<MemberDTO> ar = memberService.memberList();
+		mv.addObject("list", ar);
+		mv.setViewName("/member/memberList");
+		return mv;
+		
+		
+	}
 }
