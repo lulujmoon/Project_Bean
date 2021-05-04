@@ -16,7 +16,11 @@
 
 <!-- Portfolio Section -->
 <div class="container">
-<h2 style="margin:10px;text-align:center;" title="${productNum}" id="h2"><a href="./productList" style="color:black;font-size:2.7rem">Products</a></h2>
+	<div class="titleDiv">
+		<h2 title="${productNum}" id="h2"><a href="./productList" style="color: black;">Products</a></h2>
+		<h4>Your personal coffee guide</h4>
+		<hr>
+	</div>
 
 	<div style="text-align: center">
 		<a href="./productList?category=coffee">Coffee</a> | 
@@ -72,7 +76,7 @@
           </div>
      </div>
 </section>
-
+</div>
 <c:forEach items="${list}" var="product">
 <!-- Modal -->
 	<div class="modal fade productModal" id="select_${product.productNum}" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -186,7 +190,7 @@
 <c:import url="../template/footer.jsp"></c:import>
 
 <!-- 장바구니 모달 -->
-<div class="modal" tabindex="-1" role="dialog" id="goCart">
+<div class="modal fade" tabindex="-1" role="dialog" id="goCart">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">

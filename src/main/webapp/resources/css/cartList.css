@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+h1{
+	margin: 23px 0 4px 0;
+}
 
 .prices{
 	 border:1px solid lightgrey;

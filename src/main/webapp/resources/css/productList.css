@@ -1,8 +1,37 @@
 @charset "UTF-8";
 
+h2,h4 {
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 46px;
+}
+
+h4 {
+  color: #666;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+hr{
+	width: 82px;
+    margin-top: 32px;
+}
+
+.titleDiv{
+	text-align: center;
+	margin-top: 23px;
+}
 
 
 /* Modal */
+
+
 
 .productModal{
 	overflow:auto;
