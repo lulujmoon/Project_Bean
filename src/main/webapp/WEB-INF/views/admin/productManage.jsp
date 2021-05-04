@@ -13,33 +13,37 @@
 <body>
 <c:import url="../template/adminheader.jsp"></c:import>
 	<div class="container list col-md-8">
-	<h2>상품 관리</h2>
-	<hr>
-	<a href="${pageContext.request.contextPath}/product/productInsert" style="float:right">상품 추가</a>
-	<div class="xans-element- xans-myshop xans-myshop-orderhistorylistitem ec-base-table typeList">
-		<div class="title" style="width: 1110px; height: 359px;">
-			<table class="table border border-0">
-				<thead>
-					<tr>
-						<th scope="col">번호</th>
-						<th scope="col">상품명</th>		
-						<th scope="col">옵션 관리</th>
-						<th scope="col">수정</th>
-						<th scope="col">삭제</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${list}" var="product">
+		<h2>상품 관리</h2>
+		<hr>
+			<div class="col-md-1" style="float: right;margin-right: 120px;margin-bottom: 40px;">
+				<a href="${pageContext.request.contextPath}/product/productInsert" style="float:right">상품 추가</a>
+				<hr style="margin-top: 40px;width: 80px;">
+			</div>
+		<div class="xans-element- xans-myshop xans-myshop-orderhistorylistitem ec-base-table typeList">
+			<div class="title" style="width: 1110px; height: 359px;">
+				<table class="table border border-0">
+					<thead>
 						<tr>
-							<td>${product.productNum}</td>
-							<td><a href="${pageContext.request.contextPath}/product/productList?productNum=${product.productNum}">${product.name}</a></td>
-							<td><a href="${pageContext.request.contextPath}/product/optionManage?productNum=${product.productNum}">옵션 관리</a></td>
-							<td><a href="${pageContext.request.contextPath}/product/productUpdate?productNum=${product.productNum}">수정</a></td>
-							<td><span class="del-btn" title="${product.productNum}" style="cursor:pointer">삭제</span></td>
+							<th scope="col">번호</th>
+							<th scope="col">상품명</th>		
+							<th scope="col">옵션 관리</th>
+							<th scope="col">수정</th>
+							<th scope="col">삭제</th>
 						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						<c:forEach items="${list}" var="product">
+							<tr>
+								<td>${product.productNum}</td>
+								<td><a href="${pageContext.request.contextPath}/product/productList?productNum=${product.productNum}">${product.name}</a></td>
+								<td><a href="${pageContext.request.contextPath}/product/optionManage?productNum=${product.productNum}">옵션 관리</a></td>
+								<td><a href="${pageContext.request.contextPath}/product/productUpdate?productNum=${product.productNum}">수정</a></td>
+								<td><span class="del-btn" title="${product.productNum}" style="cursor:pointer">삭제</span></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 	
