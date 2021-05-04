@@ -20,19 +20,19 @@
 		<thead class="thead-dark">
 			<tr>
 				<th>ID</th>
-				<th>상세 정보</th>
+				<th>개인 정보</th>
 				<th>주문 내역</th>
 				<th>문의 내역</th>
 			</tr>
 		</thead>
 		<tbody>
-		<c:forEach items="${list}" var="dto">
+		<c:forEach items="${list}" var="member">
 		<!-- list에서 하나 꺼내서 dto에 담는 것을 반복한다. -->
 			<tr>
-				<td>${dto.id}</td>
-				<td><a href="../member/memberPage?=${dto.id}">상세 정보</a></td>
-				<td><a href="../member/memberOrder?id=${member.id}">주문 내역</a></td>
-				<td><a href="../member/memberQna">문의 내역</a></td>
+				<td>${member.id}</td>
+				<td><a href="../member/memberPage?id=${member.id}">수정</a></td>
+				<td><a href="../member/memberOrder?id=${member.id}">주문 내역 확인</a></td>
+				<td><a href="../member/memberQna">문의 내역 확인</a></td>
 			</tr>
 		</c:forEach>
 		</tbody>

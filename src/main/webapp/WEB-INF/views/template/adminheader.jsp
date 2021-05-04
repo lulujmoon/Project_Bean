@@ -34,10 +34,10 @@
 					<img id="coffee" src="${pageContext.request.contextPath}/resources/images/coffee.png" width="50" height="50">
 				</a>
 
-		<a href="../member/memberList">회원관리</a> 
-		<a href="#">주문관리</a> 
-		<a href="#">재고관리</a> 
-		<a href="#">구독관리</a>
+		<a href="../member/memberList">회원 관리</a> 
+		<a href="#">주문 관리</a> 
+		<a href="#">상품 관리</a> 
+		<a href="#">구독 관리</a>
 </div>
 </div>
 

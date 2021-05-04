@@ -35,7 +35,7 @@ $("#idL").blur(function(){
 //Password DB확인
 let loginPw = false;
 
-$("#pwL").blur(function(){
+$("#pwL").keyup(function(){
 	$.get("/bean/member/pwCheck?id="+$("#idL").val(), function(result){
 		result=result.trim();
 //		console.log(result);	
