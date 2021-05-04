@@ -32,11 +32,6 @@
 		select pw from member where id=#{id}
 	</select>
 
-	<select id="nickCheck" parameterType="MemberDTO"
-		resultType="MemberDTO">
-		select nickname from member where nickname=#{nickname}
-	</select>
-
 	<select id="memberIdCheck" parameterType="MemberDTO"
 		resultType="MemberDTO">
 		select id from member where id=#{id}
