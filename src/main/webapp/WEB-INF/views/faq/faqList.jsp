@@ -183,7 +183,7 @@
 							<textarea class="form-control" id="contents" cols="30" rows="5"></textarea>
 						</div>
 						<div class="form-group">
-							<label for="category">category:</label> <select name="category"
+							<label for="category">카테고리:</label> <select name="category"
 								id="category">
 								<option value="배송문의">배송문의</option>
 								<option value="교환/반품문의">교환/반품문의</option>

@@ -48,7 +48,7 @@
 				<option value="결제문의">결제문의<option>
 			</select>
 		</div>
-    <button type="submit" value="Write" class="underline-btn">Write</button>
+    <button type="submit" value="Write" class="underline-btn" id="btn">Write</button>
   </form>
 </div>
 <br>
