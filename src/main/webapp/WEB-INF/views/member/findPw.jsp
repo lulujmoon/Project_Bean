@@ -19,9 +19,9 @@
 <!-- Main css -->
 <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
 <link rel="stylesheet" href="../resources/css/style.css">
-<!-- findPw css 
+<!-- findPw css -->
 <link rel="stylesheet" href="../resources/css/findPw.css">
--->
+
 <title>비밀번호 분실</title>
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
 </head>
@@ -48,7 +48,8 @@
                     
 					<div class="wrap">
 					<div class="wrap-in" style="text-align: center;">
-                    <form action="./findPw" method="post" onsubmit="return submitCheck();">
+                    <form action="./findPw" method="post" onsubmit="return submitCheck();" style="width: 800px; margin: 0 auto; padding: 0 10px;">
+                         <div style="">
                          <div class="col-md-6 col-sm-6">
                               <input type="email" class="form-control" id="id" name="id" placeholder="Email" required>
                          </div>
@@ -58,6 +59,7 @@
    
                          <div class="col-md-3 col-sm-4">
                               <input type="submit" class="form-control" value="ISSUE PASSWORD">
+                         </div>
                          </div>
                     </form>
                     </div>

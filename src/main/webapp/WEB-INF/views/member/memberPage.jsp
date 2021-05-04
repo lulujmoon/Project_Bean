@@ -18,18 +18,18 @@
 
 		<c:import url="../template/header.jsp"></c:import>
 
-		<div class="wrapper container" style="display: block;">
-			<div id="title">
-				<div id="title-container">
-					<div class="text-title">
-						<a href="${pageContext.request.contextPath}/member/memberPage?id=${member.id}"><span
-							class="en">MY PAGE</span></a>
-					</div>
-					<br>
+<div class="wrapper container" style="display: block;">
+<section id="my-page">
+     <div class="container">
+          <div class="row">
 
-					<div class="text-line"></div>
-					<br>
-
+               <div class="col-md-12 col-sm-12">
+                    <h2><a href="${pageContext.request.contextPath}/member/memberPage?id=${member.id}"><span
+							class="en">MY PAGE</span></a></h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+					<div class="col-md-12">
 					<nav id="title-nav">
 						<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
 							class="ko">회원정보</span></a> | <a
@@ -40,10 +40,10 @@
 							href="${pageContext.request.contextPath}/member/memberQna?id=${member.id}"><span
 							class="ko">문의</span></a>
 					</nav>
-				</div>
-			</div>
-			<!-- </div> 하나 닫겨야함 -->
-
+</div>
+          </div>
+     </div>
+</section>
 
 
 
@@ -51,7 +51,7 @@
 				style="border-top: 1px solid #ccc;"></ul>
 			<div class="float-frame">
 				<div id="info" class="info-box">
-						<span><b style="font-size: 24px;">회원정보</b></span><br> 
+						<span><b style="font-size: 20px;">회원정보</b></span><br> 
 						<a href="${pageContext.request.contextPath}/member/memberUpdate"
 							class="mainpage-mobile-menu">수정하기 &gt;</a>
 				</div>
@@ -76,7 +76,7 @@
 				style="border-top: 1px solid #ccc;"></ul>
 			<div class="float-frame">
 				<div id="info" class="info-box">
-						<span><b style="font-size: 24px;">내 포인트</b></span><br> 
+						<span><b style="font-size: 20px;">내 포인트</b></span><br> 
 						<a href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"
 							class="mainpage-mobile-menu">자세히 보기 &gt;</a>
 				</div>
@@ -102,7 +102,7 @@
 				style="border-top: 1px solid #ccc;"></ul>
 			<div class="float-frame">
 				<div id="info" class="info-box">
-						<span><b style="font-size: 24px;">최근 주문내역</b></span><br> 
+						<span><b style="font-size: 20px;">최근 주문내역</b></span><br> 
 						<a href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}">자세히 보기 &gt;</a>
 				</div>
 				

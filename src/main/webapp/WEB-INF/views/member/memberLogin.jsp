@@ -37,7 +37,7 @@
 
 					<!-- <input type="hidden" name="next_url" id="uri" value="${RedirectURI.referer}"> -->	
 						
-						<button type="submit" id="loginResult" class="gradient-btn btn-block text-nowrap">로그인</button>
+						<button type="submit" id="loginResult" class="login-join-btn btn-block text-nowrap">LOGIN</button>
 						
 					</form>
 
@@ -46,8 +46,8 @@
 				<!-- Modal footer -->
 				<div class="modal-footer">
 
-				<a class="underline-btn" href="${pageContext.request.contextPath}/member/findPw">비밀번호 분실 &gt;</a>
-				<a class="underline-btn" data-toggle="modal" data-target="#join" style="cursor:pointer;">회원가입 &gt;</a>
+				<a class="btn underline-btn" href="${pageContext.request.contextPath}/member/findPw">비밀번호 분실 &gt;</a>
+				<a class="btn underline-btn" data-toggle="modal" data-target="#join" style="cursor:pointer;">회원가입 &gt;</a>
 					<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  -->
 				</div>
 

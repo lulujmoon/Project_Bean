@@ -22,29 +22,31 @@
 
 
 	<div class="wrapper container" style="display: block;">
-		<div id="title">
-			<div id="title-container">
-				<div class="text-title">
-					<a href="${pageContext.request.contextPath}/member/memberPage?id=${member.id}"><span
-						class="en">MY PAGE</span></a>
-				</div>
-				<br>
+<section id="my-page">
+     <div class="container">
+          <div class="row">
 
-				<div class="text-line"></div>
-				<br>
-
-				<nav id="title-nav">
-					<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
-						class="ko">회원정보</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}"><span
-						class="ko">주문내역</span></a> |  <a
-						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
-						class="ko">포인트</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberQna?id=${member.id}"><span
-						class="ko">문의</span></a>
-				</nav>
-			</div>
-		</div>
+               <div class="col-md-12 col-sm-12">
+                    <h2><a href="${pageContext.request.contextPath}/member/memberPage?id=${member.id}"><span
+							class="en">MY PAGE</span></a></h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+					<div class="col-md-12">
+					<nav id="title-nav">
+						<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
+							class="ko">회원정보</span></a> | <a
+							href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}"><span
+							class="ko">주문내역</span></a> | <a
+							href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
+							class="ko">포인트</span></a> | <a
+							href="${pageContext.request.contextPath}/member/memberQna?id=${member.id}"><span
+							class="ko">문의</span></a>
+					</nav>
+</div>
+          </div>
+     </div>
+</section>
 		<!-- </div> 1개 -->
 
 
@@ -111,7 +113,7 @@
 						id="postcode" name="postcode" readonly="readonly" value="${member.postcode}">
 				</div>
 				
-				<input type="button" id="popup" class="btn btn-primary" value="찾기"><br>
+				<input type="button" id="popup" class="btn-blue" value="찾기"><br>
 				
 				<div class="form-group">
 					<label for="addr">주소</label> <input type="text" class="form-control"
@@ -146,7 +148,7 @@
 						<h6 id="pw2Result"></h6>
 				</div>
 
-				<button type="submit" id="edit" class="btn btn-danger">저장하기</button>
+				<button type="submit" id="edit" class="btn-blue" >저장하기</button>
 				
 			<!-- <button type="button" class="btn btn-danger">비밀번호 변경하기</button>  -->	
 			</form>
