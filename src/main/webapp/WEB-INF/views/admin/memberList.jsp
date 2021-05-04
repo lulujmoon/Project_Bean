@@ -28,8 +28,9 @@
 						<th scope="col">주문 내역</th>
 						<th scope="col">문의 내역</th>
 					</tr>
+				</thead>
+				<tbody>
 					<c:forEach items="${list}" var="list">
-
 						<tr>
 							<td scope="col">${list.id}</td>
 							<td scope="col"><a href="../member/adminUpdate?id=${list.id}">수정</a></td>
@@ -37,7 +38,7 @@
 							<td scope="col"><a href="../member/memberQna">문의 내역 확인</a></td>
 						</tr>
 					</c:forEach>
-				</thead>
+				</tbody>
 			</table>
 		</div>
 	</div>

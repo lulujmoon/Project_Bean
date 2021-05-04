@@ -12,34 +12,37 @@
 </head>
 <body>
 <c:import url="../template/adminheader.jsp"></c:import>
-
-<div class="container" style="margin-top:100px">
+	<div class="container list col-md-8">
 	<h2>상품 관리</h2>
+	<hr>
 	
-	<table class="table">
-		<thead class="thead-dark" style="text-align: center">
-			<tr>
-				<th style="width:7%">번호</th>
-				<th style="width:70%">상품명</th>
-				<th style="width:11%">옵션 관리</th>
-				<th style="width:7%">수정</th>
-				<th style="width:7%">삭제</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${list}" var="product">
-				<tr>
-					<td style="text-align: center">${product.productNum}</td>
-					<td><a href="${pageContext.request.contextPath}/product/productList?productNum=${product.productNum}">${product.name}</a></td>
-					<td><a href="${pageContext.request.contextPath}/product/optionManage?productNum=${product.productNum}">옵션 관리</a></td>
-					<td><a href="${pageContext.request.contextPath}/product/productUpdate?productNum=${product.productNum}">수정</a></td>
-					<td><span class="del-btn" title="${product.productNum}" style="cursor:pointer">삭제</span></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-</div>
-
+	<div class="xans-element- xans-myshop xans-myshop-orderhistorylistitem ec-base-table typeList">
+		<div class="title" style="width: 1110px; height: 359px;">
+			<table class="table border border-0">
+				<thead>
+					<tr>
+						<th scope="col">번호</th>
+						<th scope="col">상품명</th>		
+						<th scope="col">옵션 관리</th>
+						<th scope="col">수정</th>
+						<th scope="col">삭제</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${list}" var="product">
+						<tr>
+							<td>${product.productNum}</td>
+							<td><a href="${pageContext.request.contextPath}/product/productList?productNum=${product.productNum}">${product.name}</a></td>
+							<td><a href="${pageContext.request.contextPath}/product/optionManage?productNum=${product.productNum}">옵션 관리</a></td>
+							<td><a href="${pageContext.request.contextPath}/product/productUpdate?productNum=${product.productNum}">수정</a></td>
+							<td><span class="del-btn" title="${product.productNum}" style="cursor:pointer">삭제</span></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
 <script type="text/javascript">
 	$(".del-btn").click(function(){
 		let con = confirm("정말 삭제하시겠습니까?");

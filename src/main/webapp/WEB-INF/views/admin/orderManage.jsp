@@ -30,21 +30,23 @@
 						<th scope="col">결제 상태</th>
 						<th scope="col">취소/교환/반품</th>
 					</tr>
-					<c:forEach items="${list}" var="list">
-						<tbody>
-							<tr>
-								<td scope="col">${list.orderDate}</td>
-								<td scope="col">
-								<a href="${pageContext.request.contextPath}/member/memberOrderDetail?id=${list.id}">
-								${list.orderUid}</a></td>
-								<td scope="col">${list.impUid}</td>
-								<td scope="col">${list.id}</td>
-								<td scope="col">${list.payState}</td>
-								<td scope="col"></td>
-							</tr>
-						</tbody>
-					</c:forEach>
-				</thead>
+					</thead>
+					<tbody>
+						<c:forEach items="${list}" var="list">
+							<tbody>
+								<tr>
+									<td scope="col">${list.orderDate}</td>
+									<td scope="col">
+									<a href="${pageContext.request.contextPath}/member/memberOrderDetail?id=${list.id}">
+									${list.orderUid}</a></td>
+									<td scope="col">${list.impUid}</td>
+									<td scope="col">${list.id}</td>
+									<td scope="col" style="text-align:center;">${list.payState}</td>
+									<td scope="col"></td>
+								</tr>
+							</tbody>
+						</c:forEach>
+					</tbody>
 			</table>
 		</div>
 	</div>

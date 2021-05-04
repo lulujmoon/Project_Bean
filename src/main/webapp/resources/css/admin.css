@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body{
+	background-color: #f4f6fa;
+	
+}
 
 .title{
 	margin-left: 60px;
@@ -43,8 +47,7 @@ a {
 	margin: 45px;
 }
 .navbar-default {
-    background: #4d638c; /* #ffffff; */
-    padding: 2px 0;
+    background: #6d89bd;
     border: none;
     margin-top: 0;
 }
