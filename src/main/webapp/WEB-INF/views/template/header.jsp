@@ -16,11 +16,6 @@
                     <div class="col-xs-9" style="float:right; padding-right: 8px;">
 						
 
-					  
-            	      <a href="${pageContext.request.contextPath}/admin/adminmenu">
-                      <span class="glyphicon glyphicon-user" style="margin-right: 10px; cursor:pointer;"> Admin </span>
-                      </a>
-                
 
                       <c:if test="${empty member}">
                       <a  data-toggle="modal" data-target="#login">
@@ -32,6 +27,11 @@
                       </c:if>
 
                       <c:if test="${not empty member}">
+						  <c:if test="${member.id eq 'admin'}">
+	            	      <a href="${pageContext.request.contextPath}/admin/adminmenu">
+	                      <span class="glyphicon glyphicon-user" style="margin-right: 10px; cursor:pointer;"> Admin </span>
+	                      </a>
+	                      </c:if>
                       <a  href="${pageContext.request.contextPath}/member/memberPage?id=${member.id}">
                       <span class="glyphicon glyphicon-user" href="#" style="margin-right: 10px;"> MyPage </span>
                       </a>
