@@ -8,7 +8,6 @@ public class MemberDTO {
 	private String pw;
 	private String name;
 	private Date birthday;
-	private String nickname;
 	private char gender;	// 1: 남, 2: 여
 	private long point;
 	private String tel;
@@ -40,12 +39,6 @@ public class MemberDTO {
 	}
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
-	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
 	}
 	public char getGender() {
 		return gender;

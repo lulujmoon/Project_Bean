@@ -24,7 +24,6 @@ public class MemberDAOTest extends SampleTest {
 		memberDTO.setId("id1");
 		memberDTO.setPw("id1");
 		memberDTO.setName("id1");
-		memberDTO.setNickname("id1");
 		memberDTO.setBirthday(d);
 		memberDTO.setGender('1');
 		memberDTO.setPoint(0);
@@ -54,7 +53,6 @@ public class MemberDAOTest extends SampleTest {
 		memberDTO.setPw("member01");
 		memberDTO.setTel("01045678912");
 		memberDTO.setName("member01");
-		memberDTO.setNickname("member01");
 		memberDTO.setBirthday(d);
 		//memberDTO.setGender('2');
 		

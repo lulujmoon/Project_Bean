@@ -99,18 +99,6 @@ public class MemberController {
 		return "common/ajaxResult";
 	}
 
-	@GetMapping("nickCheck")
-	public String nickCheck(MemberDTO memberDTO, Model model) throws Exception {
-		memberDTO = memberService.nickCheck(memberDTO);
-		String result = "0";
-		if (memberDTO == null) {
-			result = "1";
-		}
-		model.addAttribute("result", result);
-
-		return "common/ajaxResult";
-	}
-
 
 	@GetMapping("memberIdCheck")
 	public String memberIdCheck(MemberDTO memberDTO, Model model) throws Exception {
@@ -191,17 +179,20 @@ public class MemberController {
 		
 	
 	@GetMapping("adminUpdate")
-	public void adminUpdate(MemberDTO memberDTO) throws Exception {
+	public void adminUpdate(MemberDTO memberDTO,Model model) throws Exception {
+		memberDTO = memberService.getMember(memberDTO);
+		model.addAttribute("dto", memberDTO);
 		
 	}
 	
 	@PostMapping("adminUpdate")
-	public void adminUpdate(MemberDTO memberDTO, Model model) throws Exception {
+	public String adminUpdate(MemberDTO memberDTO, ModelAndView mv) throws Exception {
 		int result = memberService.memberUpdate(memberDTO);
 
 		if (result > 0) {
-			model.addAttribute("member", memberDTO);
+			System.out.println("수정완료");
 		}
+		return "redirect:../memberList";
 	}
 	
 

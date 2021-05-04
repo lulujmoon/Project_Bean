@@ -127,7 +127,6 @@
 
 				
 				<c:if test="${list[0].order.orderName ne null}">
-
 				<div class="info-box">
 					<div class="info-label">배송지 정보</div>
 					<div class="info-content">${member.addr}<br>${member.addr2}</div>

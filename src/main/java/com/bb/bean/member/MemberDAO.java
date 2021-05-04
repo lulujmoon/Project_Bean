@@ -13,6 +13,10 @@ public class MemberDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "com.bb.bean.member.MemberDAO.";
+	
+	public MemberDTO getMember(MemberDTO memberDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getMember", memberDTO);
+	}
 
 	public MemberDTO nameCheck(MemberDTO memberDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"nameCheck", memberDTO);
@@ -28,10 +32,6 @@ public class MemberDAO {
 	
 	public MemberDTO pwCheck(MemberDTO memberDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"pwCheck", memberDTO);
-	}
- 		
-	public MemberDTO nickCheck(MemberDTO memberDTO) throws Exception {
-		return sqlSession.selectOne(NAMESPACE+"nickCheck", memberDTO);
 	}
 	
 	public MemberDTO memberIdCheck(MemberDTO memberDTO)throws Exception{

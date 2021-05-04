@@ -52,7 +52,6 @@
 			<div id="write-order-info-wrapper" class="bb-form"
 				style="padding-bottom: 40px;">
 
-
 			<div class="mypage-section-title">회원정보</div>
 			
 							<div class="bb-form mypage-mobile-wrapper mainpage-desktop"
@@ -60,10 +59,10 @@
 					<ul id="mobileOrderList" class="my-subscribe"
 						style="border-top: 1px solid #ccc;"></ul>
 
-			<form id="frm" action="./member/memberUpdate" method="post" onsubmit="return check();">
+			<form id="frm" action="./member/adminUpdate" method="post" onsubmit="return check();">
 				<div class="form-group">
 					<label for="id">이메일</label> <input type="text" class="form-control form-control-sm"
-						id="id" name="id" readonly="readonly" value="${member.id}">
+						id="id" name="id" readonly="readonly" value="${dto.id}">
 
 				</div>
 
@@ -72,12 +71,12 @@
 				<div class="form-group">
 					<label for="name">이름</label> <input type="text"
 						class="form-control etc" id="name" name="name"
-						value="${member.name}">
+						value="${dto.name}">
 				</div>
 
 				<div class="form-group">
 					<label for="tel">휴대폰번호</label> <input type="text"
-						class="form-control etc" id="tel" name="tel" value="${member.tel}">
+						class="form-control etc" id="tel" name="tel" value="${dto.tel}">
 				</div>
 
 				<br>
@@ -96,32 +95,32 @@
 						class="form-check-label" for="inlineRadio2">남자</label>
 				</div>
 				
-				<input type="hidden" id="radioResult" value="${member.gender}"></input>
+				<input type="hidden" id="radioResult" value="${dto.gender}"></input>
 
 				<br> <br>
 
 				<div class="form-group">
 					<label for="birthday">생년월일</label> <input type="date"
 						class="form-control etc" id="birthday" name="birthday"
-						value="${member.birthday}">
+						value="${dto.birthday}">
 				</div>
 			
 			<div class="form-group">
 					<label for="postcode">우편번호</label> <input type="text" class="form-control mb-2 mr-sm-2"
-						id="postcode" name="postcode" readonly="readonly" value="${member.postcode}">
+						id="postcode" name="postcode" readonly="readonly" value="${dto.postcode}">
 				</div>
 				
 				<input type="button" id="popup" class="btn btn-primary" value="찾기"><br>
 				
 				<div class="form-group">
 					<label for="addr">주소</label> <input type="text" class="form-control"
-						id="addr" name="addr" readonly="readonly" value="${member.addr}">
+						id="addr" name="addr" readonly="readonly" value="${dto.addr}">
 				</div>
 				
 				
 				<div class="form-group">
 					<label for="adr2">상세주소</label> <input type="text" class="form-control"
-						id="addr2" name="addr2" value="${member.addr2}">
+						id="addr2" name="addr2" value="${dto.addr2}">
 				</div>
 			
 			
@@ -131,7 +130,7 @@
 				<div class="form-group">
 						<div id="comment">*비밀번호를 변경하고 싶으시다면 입력해주세요</div>
 					<label for="pw">현재 비밀번호</label> <input type="password"
-						class="form-control" id="pw" name="pw" title="${member.pw}">
+						class="form-control" id="pw" name="pw" title="${dto.pw}">
 					<h6 id="pwResult"></h6>
 					<!-- PW는 6글자 이상 -->
 				</div>
