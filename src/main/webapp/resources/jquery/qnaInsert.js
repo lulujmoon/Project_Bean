@@ -17,12 +17,11 @@ $("#btn").click(function(){
 		
 	}
 	
-		if(con==""){
-		alert("숫자6자리 비밀번호를 입력하세요");
-		con.focus();
-		check = false;
-	
-	}
+	if(isNaN(con)||con==""||con.length!=6){
+	alert("pw는 6자리 숫자로 입력하세요");
+	con.focus();
+	check= false;
+}
 	
 		if(contents==""){
 		alert("내용을 입력하세요");
