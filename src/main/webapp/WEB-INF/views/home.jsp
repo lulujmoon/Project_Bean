@@ -25,7 +25,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
 
-<title>Bean Brothers Coffee</title>
+<title>Bean Bean Coffee</title>
 </head>
 <body>
 	<!-- header 부분 -->
@@ -68,7 +68,7 @@
           <div class="row">
 
                <div class="col-md-12 col-sm-12">
-                    <h2>Bean Brothers Coffee</h2>
+                    <h2>Bean Bean Coffee</h2>
                     <h4>Your personal coffee guide</h4>
                     <hr>
                </div>

@@ -16,7 +16,11 @@
 
 <!-- Portfolio Section -->
 <div class="container">
-<h2 style="margin:10px;text-align:center;" title="${productNum}" id="h2"><a href="./productList" style="color:black">Products</a></h2>
+	<div class="titleDiv">
+		<h2 title="${productNum}" id="h2"><a href="./productList" style="color: black;">Products</a></h2>
+		<h4>Your personal coffee guide</h4>
+		<hr>
+	</div>
 
 	<div style="text-align: center">
 		<a href="./productList?category=coffee">Coffee</a> | 
@@ -26,8 +30,7 @@
 		<a href="./productList?category=Coldbrew">Coldbrew</a>
 	</div>
 	<c:if test="${member.authority eq '1'.charAt(0)}">
-		<div class="container" style="text-align:right;"><a href="./productInsert" class="admin-btn">Add</a>
-		</div>
+		<div style="text-align: center;margin-top:7px;color:grey">상품 추가는 admin 페이지의 상품 관리에서 가능합니다.</div>
 	</c:if>
 <section id="portfolio">
      <div class="container">
@@ -73,10 +76,10 @@
           </div>
      </div>
 </section>
-
+</div>
 <c:forEach items="${list}" var="product">
 <!-- Modal -->
-	<div class="modal fade" id="select_${product.productNum}" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal fade productModal" id="select_${product.productNum}" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-xl" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -156,7 +159,6 @@
 			   		<div class="buttonsHere">
 			   			<div class="cart-btn orders-btn">장바구니</div>
 			   			<div class="order-btn orders-btn">바로결제</div>
-			   			<div class="goCart-btn">장바구니 보러가기</div>
 			   		</div>
 		   		</div>
 	   		</div>
@@ -185,8 +187,23 @@
 	</div>
 
 </c:forEach>
+<c:import url="../template/footer.jsp"></c:import>
 
-
+<!-- 장바구니 모달 -->
+<div class="modal fade" tabindex="-1" role="dialog" id="goCart">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+ 		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p id="cartMessage">
+        	<br>장바구니에 상품이 담겼습니다.<br><br>
+	        <a class="cartModal-btn goCart-btn">장바구니로 가기</a><span style="color:#4d638c;font-weight:bold"> | </span>
+	        <a class="cartModal-btn" data-dismiss="modal">계속 쇼핑하기</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- <script type="text/javascript" src="../resources/jquery/productList.js"></script> -->
 <script type="text/javascript">
@@ -225,7 +242,6 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 	  $(".detailsList").html(deTxt);
 	 
 	  <!-- 초기 세팅 -->
-	  $(".goCart-btn").attr("style", "display:none");
 	  let optNums = $(modal).find(".optionNum");
 	  $(optNums[0]).prop("checked", true);
 	  
@@ -272,7 +288,7 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 	  $(modal).find(".cart-btn").click(function(){
 		let res = cartInsert();
 		if(res){
-			$(".goCart-btn").slideDown(800);
+			$("#goCart").modal();
 		}
 
 	  });
@@ -286,7 +302,7 @@ $('#select_${product.productNum}').on('show.bs.modal', function (event) {
 		  }
 	  });
 	  
-	  $(modal).find(".goCart-btn").click(function(){
+	  $(".goCart-btn").click(function(){
 		  location.href="../cart/cartList";
 	  });
 	  

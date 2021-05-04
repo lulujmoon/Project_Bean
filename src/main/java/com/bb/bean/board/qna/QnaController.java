@@ -41,13 +41,19 @@ public class QnaController {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO=(MemberDTO)session.getAttribute("member");
 		long con= boardDTO.getCon();
-		System.out.println(con);
+		if(memberDTO==null) {
+			mv.addObject("msg","로그인하세요");
+			mv.addObject("path","./qnaList");
+			mv.setViewName("common/commonResult");
+		}else {
+		
 		if(con==pw|| memberDTO.getId().equals("admin")) {
 			mv.setViewName("redirect:./qnaSelect?num="+boardDTO.getNum());
-		}else {
+		}else{
 			mv.addObject("msg","비밀번호를 확인하세요");
 			mv.addObject("path","./qnaPassword?num="+boardDTO.getNum());
 			mv.setViewName("common/commonResult");
+		}
 		}
 		return mv;
 	}

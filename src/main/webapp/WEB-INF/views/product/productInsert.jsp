@@ -76,8 +76,7 @@
 				<input type="radio" name="grinds" value="X" required id="no"> <label for="no">아니오</label>
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
-			<br>
-    		<button>Write</button>
+    		<button class="btn btn-outline-secondary">Write</button><br><br><br>
 
 		</form>
 		
