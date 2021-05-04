@@ -6,6 +6,25 @@
     
 <mapper namespace ="com.bb.bean.orderDetails.OrderDetailsDAO">
 
+
+	<select id="getRecentOrder" parameterType="OrdersDTO" resultMap="listResult">
+	  select O.*, OD.*
+        from orders O 
+        right join OrderDetails OD
+        on OD.orderUid = O.orderUid
+        where O.orderUid= (select max(orderUid) from orders where id=#{id})
+	</select>
+
+	<select id="getListbyId" parameterType="OrdersDTO" resultMap="listResult">
+		select O.orderUid, O.id, O.orderName, O.orderDate, O.amount, O.payState, OD.shippingState
+		from Orders O
+		right join OrderDetails OD
+		on OD.orderUid = O.orderUid
+		where O.id=#{id}
+        group by O.orderUid, O.id, O.orderName, O.orderDate, O.amount, O.payState, OD.shippingState
+		order by O.orderUid desc
+	</select>
+
 	<insert id="setInsert" parameterType="OrderDetailsDTO">
 		insert into orderDetails (detailNum, orderUid, orderDate, optionNum, quantity, finalPrice, grind, shippingState)
 		values (orderDetails_seq.nextval, #{orderUid}, sysdate, #{optionNum}, #{quantity}, #{finalPrice}, #{grind,jdbcType=VARCHAR}, #{shippingState})
@@ -27,6 +46,7 @@
 		<id property="detailNum" column="detailNum"/>
 		<result property="orderUid" column="orderUid"/>
 		<result property="orderDate" column="orderDate"/>
+		<result property="optionNum" column="optionNum"/>
 		<result property="quantity" column="quantity"/>
 		<result property="finalPrice" column="finalPrice"/>
 		<result property="grind" column="grind"/>
@@ -50,6 +70,12 @@
 	<resultMap type="OrdersDTO" id="orderResult">
 		<id property="orderUid" column="orderUid"/>
 		<result property="impUid" column="impUid"/>
+		<result property="id" column="id"/>
+		<result property="payState" column="payState"/>
+		<result property="orderDate" column="orderDate"/>
+		<result property="orderName" column="orderName"/>
+		<result property="payMethod" column="payMethod"/>
+		<result property="amount" column="amount"/>
 		<result property="buyerName" column="buyerName"/>
 		<result property="buyerTel" column="buyerTel"/>
 		<result property="buyerPostcode" column="buyerPostcode"/>

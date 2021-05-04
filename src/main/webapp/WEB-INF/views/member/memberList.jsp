@@ -26,12 +26,12 @@
 			</tr>
 		</thead>
 		<tbody>
-		<c:forEach items="${list}" var="dto">
+		<c:forEach items="${list}" var="list">
 		<!-- list에서 하나 꺼내서 dto에 담는 것을 반복한다. -->
 			<tr>
-				<td>${dto.id}</td>
-				<td><a href="../member/memberPage?id=${dto.id}">수정</a></td>
-				<td><a href="../member/memberOrder?id=${dto.id}">주문 내역 확인</a></td>
+				<td>${list.id}</td>
+				<td><a href="../member/adminUpdate?id=${list.id}">수정</a></td>
+				<td><a href="../member/memberOrder?id=${list.id}">주문 내역 확인</a></td>
 				<td><a href="../member/memberQna">문의 내역 확인</a></td>
 			</tr>
 		</c:forEach>

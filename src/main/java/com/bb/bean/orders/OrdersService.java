@@ -48,6 +48,7 @@ public class OrdersService {
 	PointDAO pointDAO;
 	
 	IamportClient client;
+	
 
 	public String setInsert(OrdersDTO ordersDTO) throws Exception {
 		String result ="";
@@ -210,6 +211,10 @@ public class OrdersService {
 		return ordersDAO.setPayMethodUpdate(ordersDTO);
 	}
 	
+	/* 결제 취소 시 DB에서 삭제 */
+	public int setDelete(OrdersDTO ordersDTO) throws Exception {
+		return ordersDAO.setDelete(ordersDTO);
+	}
 	
 	/* 아임포트 토큰 받기 */
 	public void getToken() {	
@@ -342,7 +347,7 @@ public class OrdersService {
 	
 	/* 결제 취소 시 포인트 롤백 */
 	public long setPointRollBack(OrdersDTO ordersDTO, long restPoint) throws Exception {
-		List<PointDTO> poList = pointDAO.getListbyorderUid(ordersDTO);
+		List<PointDTO> poList = pointDAO.getListbyOrderUid(ordersDTO);
 		
 		for(PointDTO po:poList) {
 			/* 포인트 차감 취소 */

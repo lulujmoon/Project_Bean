@@ -22,7 +22,7 @@
 			<div id="title">
 				<div id="title-container">
 					<div class="text-title">
-						<a href="${pageContext.request.contextPath}/member/memberPage"><span
+						<a href="${pageContext.request.contextPath}/member/memberPage?id=${member.id}"><span
 							class="en">MY PAGE</span></a>
 					</div>
 					<br>
@@ -37,7 +37,7 @@
 							class="ko">주문내역</span></a> | <a
 							href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 							class="ko">포인트</span></a> | <a
-							href="${pageContext.request.contextPath}/member/memberQna"><span
+							href="${pageContext.request.contextPath}/member/memberQna?id=${member.id}"><span
 							class="ko">문의</span></a>
 					</nav>
 				</div>
@@ -58,8 +58,8 @@
 				<div class="info-box">
 						<div class="info-label">기본정보</div>
 						<div class="info-content">
-							${member.name} | ${member.nickname} <br> ${member.tel} <br>
-							${member.id}
+							${member.name} | ${member.id} <br> ${member.tel} <br>
+							
 						</div>
 				</div>
 				<div class="info-box">
@@ -83,7 +83,7 @@
 				<div class="info-box">
 						<div class="info-label">사용가능 포인트</div>
 						<div class="info-content">
-							<span class="mypage-point">${member.point}</span> BP
+							<a href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span class="mypage-point">${member.point}</span></a>&nbsp;BP
 						</div>
 				</div>
 				<div class="info-ul">
@@ -110,20 +110,32 @@
 				<div class="info-box">
 						<div class="info-label">주문품목</div>
 						<div class="info-content">
+						<c:if test="${list[0].order.orderName ne null}">
 							<div class="sub-item-option-content">
-								${list[0].orders.orderName}
-                                <div class="info-label">${list[0].orders.orderDate} | ${list[0].orders.payState}</div>
+								${list[0].order.orderName}
+                                <div class="info-label">${list[0].order.orderDate} | ${list[0].order.payState}</div>
 							</div>
+						</c:if>
+						
+						<c:if test="${list[0].order.orderName eq null}">
+						주문내역이 없습니다<br>
+						<a href="${pageContext.request.contextPath}/product/productList">온라인샵 구경해보기 &gt;</a>
+						</c:if>
+						
 						</div>
 				</div>
 
-
+				
+				<c:if test="${list[0].order.orderName ne null}">
 
 				<div class="info-box">
 					<div class="info-label">배송지 정보</div>
 					<div class="info-content">${member.addr}<br>${member.addr2}</div>
 				</div>
-					
+				</c:if>
+				<c:if test="${list[0].order.orderName eq null}">
+				
+				</c:if>
 					
 					
 			</div>			

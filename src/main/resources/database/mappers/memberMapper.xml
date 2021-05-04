@@ -11,44 +11,6 @@
 	<select id="memberList" resultType="MemberDTO">
 		select * from member order by id desc
 	</select>
-
-	<select id="memberOrder" parameterType="MemberDTO" resultMap="orderResult">
-		select M.*, O.*, OD.*, P.*
-		from member M left join Orders O
-		on M.id = O.id
-		right join OrderDetails OD
-		on OD.orderUid = O.orderUid
-		left join product P
-		on P.name = O.orderName
-		where M.id=#{id}
-	</select>
-
-	<resultMap type="MemberDTO" id="orderResult">
-		<id property="id" column="id"/>
-		<association property="order" javaType="OrdersDTO" resultMap="ordersResult"/>
-		<association property="detail" javaType="OrderDetailsDTO" resultMap="detailResult"/>
-		<association property="product" javaType="ProductDTO" resultMap="productResult"></association>
-	</resultMap>
-	
-	<resultMap type="OrdersDTO" id="ordersResult">
-		<id property="orderUid" column="orderUid"/>
-		<result property="orderDate" column="orderDate"/>
-		<result property="orderName" column="orderName"/>
-	</resultMap>
-	
-	<resultMap type="OrderDetailsDTO" id="detailResult">
-		<id property="orderUid" column="orderUid"/>
-		<result property="quantity" column="quantity"/>
-		<result property="finalPrice" column="finalPrice"/>
-		<result property="grind" column="grind"/>
-		<result property="shippingState" column="shippingState"/>
-	</resultMap>
-	
-	<resultMap type="ProductDTO" id="productResult">
-		<id property="productNum" column="productNum"/>
-		<result property="name" column="name"/>
-	</resultMap>
-	
 	
 	<select id="nameCheck" parameterType="MemberDTO"
 		resultType="MemberDTO">
@@ -70,21 +32,16 @@
 		select pw from member where id=#{id}
 	</select>
 
-	<select id="nickCheck" parameterType="MemberDTO"
-		resultType="MemberDTO">
-		select nickname from member where nickname=#{nickname}
-	</select>
-
 	<select id="memberIdCheck" parameterType="MemberDTO"
 		resultType="MemberDTO">
 		select id from member where id=#{id}
 	</select>
 
 	<insert id="memberJoin" parameterType="MemberDTO">
-		insert into member (id, pw, name, birthday, nickname, gender, point, tel,
+		insert into member (id, pw, name, birthday, gender, point, tel,
 		postcode, addr, addr2, authority)
 		values
-		(#{id},#{pw},#{name},#{birthday},#{nickname},#{gender},0,null,0,null,null,0)
+		(#{id},#{pw},#{name},#{birthday},#{gender},0,null,0,null,null,0)
 	</insert>
 
 	<select id="memberLogin" parameterType="MemberDTO"
@@ -94,7 +51,7 @@
 
 	<update id="memberUpdate" parameterType="MemberDTO">
 		update member set
-		pw=#{pw}, name=#{name}, birthday=#{birthday}, nickname=#{nickname},
+		pw=#{pw}, name=#{name}, birthday=#{birthday},
 		gender=#{gender}, tel=#{tel}, postcode=#{postcode}, addr=#{addr}, addr2=#{addr2} where id=#{id}
 	</update> 
 

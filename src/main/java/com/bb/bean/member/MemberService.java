@@ -7,20 +7,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bb.bean.orders.OrdersDAO;
-import com.bb.bean.orders.OrdersDTO;
-
-
 
 @Service
 public class MemberService {
 	
 	@Autowired
 	private MemberDAO memberDAO;
-	
-	public List<MemberDTO> memberOrder(MemberDTO memberDTO) throws Exception{
-		return memberDAO.memberOrder(memberDTO);
-	}
 	
 	public MemberDTO nameCheck(MemberDTO memberDTO) throws Exception {
 		return memberDAO.nameCheck(memberDTO);

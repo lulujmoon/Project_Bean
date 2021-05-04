@@ -20,7 +20,7 @@
 		<div id="title">
 			<div id="title-container">
 				<div class="text-title">
-					<a href="${pageContext.request.contextPath}/member/memberPage"><span
+					<a href="${pageContext.request.contextPath}/member/memberPage?id=${member.id}"><span
 						class="en">MY PAGE</span></a>
 				</div>
 				<br>
@@ -35,7 +35,7 @@
 						class="ko">주문내역</span></a> |  <a
 						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberQna"><span
+						href="${pageContext.request.contextPath}/member/memberQna?id=${member.id}"><span
 						class="ko">문의</span></a>
 				</nav>
 			</div>
@@ -74,7 +74,7 @@
 				<c:forEach items="${list}" var="dto" >		
 				<tr>
 					<td>${dto.num}</td>
-					<td>${dto.category}  ${dto.title}</td>
+					<td>[ ${dto.category} ] <a href="http://localhost/bean/qna/qnaSelect?num=${dto.num}">${dto.title}</a></td>
 					<td>${dto.writer}</td>
 					<td>${dto.regDate}</td>
 					<td>${dto.hit}</td>

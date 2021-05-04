@@ -21,7 +21,7 @@
 		<div id="title">
 			<div id="title-container">
 				<div class="text-title">
-					<a href="${pageContext.request.contextPath}/member/memberPage"><span
+					<a href="${pageContext.request.contextPath}/member/memberPage?id=${member.id}"><span
 						class="en">MY PAGE</span></a>
 				</div>
 				<br>
@@ -36,7 +36,7 @@
 						class="ko">주문내역</span></a> |  <a
 						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
 						class="ko">포인트</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberQna"><span
+						href="${pageContext.request.contextPath}/member/memberQna?id=${member.id}"><span
 						class="ko">문의</span></a>
 				</nav>
 			</div>
@@ -140,23 +140,35 @@
 											<col style="width: 160px">
 											<col style="width: auto">
 										</colgroup>
-										<c:forEach items="${list}" var="list">
 											<tbody>
 												<tr class="sum">
 													<th scope="row">총 결제금액</th>
-													<td><span class="txtEm"> <strong>${list.finalPrice}</strong>원
+													<td><span class="txtEm"> <strong>${list[0].order.amount}</strong>원
+															<span class="displaynone"></span>
+													</span></td>
+												</tr>
+												<tr class="sum">
+													<th scope="row">사용포인트</th>
+													<td><span class="txtEm"> <strong>${prices[4]}</strong>원
+															<span class="displaynone"></span>
+													</span></td>
+												</tr>
+												<tr class="sum">
+													<th scope="row">최종 결제금액</th>
+													<td><span class="txtEm"> <strong>${prices[5]}</strong>원
 															<span class="displaynone"></span>
 													</span></td>
 												</tr>
 												<tr class="">
 													<th scope="row">결제수단</th>
-													<c:if test="${list.order.payMethod eq 'card'}">
+								
+													<c:if test="${list[0].order.payMethod eq 'card'}">
 													<td><strong><span>신용카드</span></strong>
 														<p>
 															<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span>
 														</p></td>
 													</c:if>	
-													<c:if test="${list.order.payMethod ne 'card'}">
+													<c:if test="${list[0].order.payMethod ne 'card'}">
 													<td><strong><span>포인트</span></strong>
 														<p>
 															<span>명세서에 (주)케이지이니시스(으)로 표기됩니다</span>
@@ -164,7 +176,7 @@
 													</c:if>
 												</tr>
 											</tbody>
-										</c:forEach>
+										
 									</table>
 								</div>
 							</div>
@@ -192,35 +204,39 @@
 												<th scope="col">취소/교환/반품</th>
 											</tr>
 										</thead>
+
+
 										<c:forEach items="${list}" var="list">
-											<tfoot class="right">
-												<tr>
-													<td colspan="7"><span style="float: left;">[기본배송]</span>
-													<div style="float: right;">상품구매금액 <strong> ${list.finalPrice} </strong><span class="displaynone">
-													</span> + 배송비 3,000 <span class="displaynone"> - 상품할인금액 0</span> =
-														합계 : ${list.finalPrice} <strong>
-														<span class="txt18"> </span></strong> <span class="displaynone"></span></div>
-													</td>
-												</tr>
-											</tfoot>
-										</c:forEach>
-
-
-										<c:forEach items="${list}" var="order">
 
 											<tbody>
 												<tr>
 													<td scope="col"><a
-														href="${pageContext.request.contextPath}/product/productList?productNum=${order.product.productNum}">${order.product.name}
+														href="${pageContext.request.contextPath}/product/productList?productNum=${list.product.productNum}">${list.product.name}
 													</a></td>
-													<td scope="col">${order.quantity}</td>
-													<td scope="col">${order.finalPrice}</td>
+													<td scope="col">${list.quantity}</td>
+													<td scope="col">${list.finalPrice}</td>
 													<td scope="col">기본배송</td>
-													<td scope="col">${order.shippingState}</td>
-													<td scope="col">-</td>
+													<td scope="col">${list.shippingState}</td>
+													<td scope="col">
+														<c:if test="${list.order.payState eq '주문취소'}">
+														${list.order.payState}
+														</c:if>
+													</td>
 												</tr>
 											</tbody>
 										</c:forEach>
+									
+											<tfoot class="right">
+												<tr>
+													<td colspan="7"><span style="float: left;">[기본배송]</span>
+													<div style="float: right;">상품구매금액 <strong> ${prices[0]} </strong><span class="displaynone">
+													</span> + 배송비 ${prices[3]}<span class="displaynone"> - 상품할인금액 ${prices[2]}</span> =
+														합계 : ${list[0].order.amount} <strong>
+														<span class="txt18"> </span></strong> <span class="displaynone"></span></div>
+													</td>
+												</tr>
+											</tfoot>
+							
 									</table>
 								</div>
 							</div>
@@ -278,8 +294,16 @@
 			</div>
 		</div>
 	</div>
-
-
+	
+	<!-- 테스트 영역
+	<div class="container">
+		정가 : ${prices[0]}<br>
+		- 할인액 : ${prices[2]}<br>
+		= 할인가 : ${prices[1]}<br>
+		배송비 : ${prices[3]}<br>
+		사용포인트 : ${prices[4]}
+	</div>
+	-->
 
 
 	<c:import url="../template/footer.jsp"></c:import>

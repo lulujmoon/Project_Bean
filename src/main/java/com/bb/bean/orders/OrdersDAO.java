@@ -11,7 +11,7 @@ public class OrdersDAO {
 	SqlSession sqlSession;
 	
 	private final String NAMESPACE = "com.bb.bean.orders.OrdersDAO.";
-	
+
 	public int setInsert(OrdersDTO ordersDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"setInsert", ordersDTO);
 	}
@@ -38,5 +38,9 @@ public class OrdersDAO {
 	
 	public int setPayMethodUpdate(OrdersDTO ordersDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"setPayMethodUpdate", ordersDTO);
+	}
+	
+	public int setDelete(OrdersDTO ordersDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setDelete", ordersDTO);
 	}
 }
