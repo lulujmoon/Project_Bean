@@ -65,9 +65,9 @@
 							<!-- Modal footer -->
 							<div class="modal-footer">
 								<div class="col-md-12 text-center">
-								<%-- <c:if test="${member.id eq 'admin'}"> --%>
+								<c:if test="${member.id eq 'admin'}">
 								<a href="./magazineUpdate?num=${dto.num}"><button type="button" class="underline-btn">Update</button></a>
-							<%-- 	</c:if> --%>
+							</c:if> 
 							<a href="./magazineDelete?num=${dto.num}"><button type="button" class="underline-btn">Delete</button></a>
 								<button type="button" class="underline-btn"
 									data-dismiss="modal">Close</button>
