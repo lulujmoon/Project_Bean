@@ -18,29 +18,31 @@
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="wrapper container" style="display: block;">
-		<div id="title">
-			<div id="title-container">
-				<div class="text-title">
-					<a href="${pageContext.request.contextPath}/member/memberPage?id=${member.id}"><span
-						class="en">MY PAGE</span></a>
-				</div>
-				<br>
+<section id="my-page">
+     <div class="container">
+          <div class="row">
 
-				<div class="text-line"></div>
-				<br>
-
-				<nav id="title-nav">
-					<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
-						class="ko">회원정보</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}"><span
-						class="ko">주문내역</span></a> |  <a
-						href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
-						class="ko">포인트</span></a> | <a
-						href="${pageContext.request.contextPath}/member/memberQna?id=${member.id}"><span
-						class="ko">문의</span></a>
-				</nav>
-			</div>
-		</div>
+               <div class="col-md-12 col-sm-12">
+                    <h2><a href="${pageContext.request.contextPath}/member/memberPage?id=${member.id}"><span
+							class="en">MY PAGE</span></a></h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+					<div class="col-md-12">
+					<nav id="title-nav">
+						<a href="${pageContext.request.contextPath}/member/memberUpdate"><span
+							class="ko">회원정보</span></a> | <a
+							href="${pageContext.request.contextPath}/member/memberOrder?id=${member.id}"><span
+							class="ko">주문내역</span></a> | <a
+							href="${pageContext.request.contextPath}/member/memberPoint?id=${member.id}"><span
+							class="ko">포인트</span></a> | <a
+							href="${pageContext.request.contextPath}/member/memberQna?id=${member.id}"><span
+							class="ko">문의</span></a>
+					</nav>
+</div>
+          </div>
+     </div>
+</section>
 		<!-- </div> 1개 -->
 <br>
 

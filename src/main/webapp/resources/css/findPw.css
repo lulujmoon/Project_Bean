@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/*
 .wrap-in {
 	position: absolute;
 	top: 50%;
@@ -20,4 +21,9 @@
     top:50%;
     margin-left:-150px;
     margin-top:-150px;
+}
+*/
+
+.form {
+	width: 600px;
 }
