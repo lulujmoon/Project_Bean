@@ -66,7 +66,7 @@
 		</div>
 			
 	
-		<button type="button" value="Write" class="underline-btn" id="btn">Write</button>
+		<button type="button" value="Write" class="btn underline-btn" id="btn">Write</button>
 		
 		</form>
 </div>

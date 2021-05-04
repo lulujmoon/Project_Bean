@@ -26,10 +26,10 @@
 					<h4 class="letter" style="color: #666; font-size: 12px; font-weight: normal; letter-spacing: 2px; margin:0px 0px 8px 0px; text-align: left;"> 뉴스레터 받기 </h4>
 					<form id="frm" action="${pageContext.request.contextPath}/mail/mailInsert" method="post">
 					<div id="mAddr">
-					<input type="email" id="mAddr" name="mAddr" placeholder="이메일을 입력하세요" autofocus required style="input:focus ;
+					<input type="email" id="mAddr" name="mAddr" placeholder="이메일을 입력하세요" required style="input:focus ;
 	 				outline:none; background-color:transparent; border:none; border-bottom: 1px solid">
 
-					<button type="submit" value="submit" class="underline-btn" id="check" onclick="checkform()"	
+					<button type="submit" value="submit" class="btn underline-btn" id="check" onclick="checkform()"	
 					style="margin-top:0px; margin-left:5px; font-size:12px; background-color:transparent;
 					border: none;">확인</button>
 					<div id="check" style="font-size: 12px; vertical-align:-3px; margin-top: 5px;">

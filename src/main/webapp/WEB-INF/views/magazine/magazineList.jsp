@@ -71,10 +71,10 @@
 							<div class="modal-footer">
 								<div class="col-md-12 text-center">
 								<c:if test="${member.id eq 'admin'}">
-								<a href="./magazineUpdate?num=${dto.num}"><button type="button" class="underline-btn">Update</button></a>
+								<a href="./magazineUpdate?num=${dto.num}"><button type="button" class="btn underline-btn">Update</button></a>
 							</c:if> 
-							<a href="./magazineDelete?num=${dto.num}"><button type="button" class="underline-btn">Delete</button></a>
-								<button type="button" class="underline-btn"
+							<a href="./magazineDelete?num=${dto.num}"><button type="button" class="btn underline-btn">Delete</button></a>
+								<button type="button" class="btn underline-btn"
 									data-dismiss="modal">Close</button>
 									</div>
 							</div>
@@ -95,7 +95,7 @@
 
 		<div>
 		<%-- <c:if test="${member.id eq 'admin'}"> --%>
-		<a class="underline-btn" href="./magazineInsert">Write</a>
+		<a class="btn underline-btn" href="./magazineInsert">Write</a>
 		<%-- 	</c:if> --%>
 		</div>
 

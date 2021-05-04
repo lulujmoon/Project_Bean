@@ -59,7 +59,7 @@
 			</select>
 		</div>
 			
-			    <button type="button" value="Update" class="underline-btn" id="btn">Update</button>
+			    <button type="button" value="Update" class="btn underline-btn" id="btn">Update</button>
 		</form>
 		</div>
 		<br>

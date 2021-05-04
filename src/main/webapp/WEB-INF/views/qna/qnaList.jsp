@@ -109,7 +109,7 @@
 	</div> 
 	</div>
 	
-	<a class="underline-btn" href="./qnaInsert">Write</a>
+	<a class="btn underline-btn" href="./qnaInsert">Write</a>
 	</div>
 
 	<br>

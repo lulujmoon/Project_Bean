@@ -54,11 +54,11 @@
 
 						<!-- Modal Button -->
 						<c:if test="${member.id eq 'admin'}">
-						<button type="button" class="underline-btn" data-toggle="modal"
+						<button type="button" class="btn underline-btn" data-toggle="modal"
 							data-target="#myModal${dto.num}">UPDATE</button>
 
 						<a href="./faqDelete?num=${dto.num}" id="del"
-							class="underline-btn">DELETE</a>
+							class="btn underline-btn">DELETE</a>
 						</c:if>
 						<!-- Modal -->
 						<div class="modal" id="myModal${dto.num}">
@@ -169,7 +169,7 @@
 
 
 		<c:if test="${member.id eq 'admin'}">
-		<button type="button" class="underline-btn" data-toggle="modal"
+		<button type="button" class="btn underline-btn" data-toggle="modal"
 			data-target="#myModalW">Write</button>
 		</c:if>
 
@@ -209,8 +209,8 @@
 
 					<!-- Modal footer -->
 					<div class="modal-footer">
-						<button type="button" class="underline-btn" id="wri">WRITE</button>
-						<button type="button" class="underline-btn" data-dismiss="modal">CLOSE</button>
+						<button type="button" class="btn underline-btn" id="wri">WRITE</button>
+						<button type="button" class="btn underline-btn" data-dismiss="modal">CLOSE</button>
 					</div>
 
 				</div>
