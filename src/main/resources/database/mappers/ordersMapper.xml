@@ -40,4 +40,9 @@
 	<delete id="setDelete" parameterType="OrdersDTO">
 		delete orders where orderUid=#{orderUid}
 	</delete>
+	
+	<!-- admin -->
+	<select id="getList" resultType="OrdersDTO">
+		select * from orders order by orderuid desc
+	</select>
 </mapper>

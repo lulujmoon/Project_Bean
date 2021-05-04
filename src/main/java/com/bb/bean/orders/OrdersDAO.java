@@ -1,5 +1,7 @@
 package com.bb.bean.orders;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -42,5 +44,10 @@ public class OrdersDAO {
 	
 	public int setDelete(OrdersDTO ordersDTO) throws Exception {
 		return sqlSession.delete(NAMESPACE+"setDelete", ordersDTO);
+	}
+	
+	//admin
+	public List<OrdersDTO> getList() throws Exception{
+		return sqlSession.selectList(NAMESPACE+"getList");
 	}
 }

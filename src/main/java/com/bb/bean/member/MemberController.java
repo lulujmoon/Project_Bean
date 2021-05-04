@@ -207,13 +207,4 @@ public class MemberController {
 		return "redirect:../";
 	}
 
-	@GetMapping("memberList")
-	public ModelAndView memberList()throws Exception{
-		ModelAndView mv = new ModelAndView();
-		List<MemberDTO> ar = memberService.memberList();
-		mv.addObject("list", ar);
-		mv.setViewName("/member/memberList");
-		return mv;
-			
-	}
 }
