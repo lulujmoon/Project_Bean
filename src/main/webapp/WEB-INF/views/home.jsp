@@ -18,13 +18,12 @@
 <link rel="stylesheet" href="./resources/css/home.css">
 
 <link rel="stylesheet" href="./resources/css/memberLogin.css">
-<!-- Join css 
-<link rel="stylesheet" href="./resources/css/join.css">
--->
+<!-- Join css -->
+<link rel="stylesheet" href="./resources/css/memberJoin.css">
+
 <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <title>Bean Brothers Coffee</title>
 </head>

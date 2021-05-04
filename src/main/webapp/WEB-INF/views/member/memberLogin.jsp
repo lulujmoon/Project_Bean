@@ -37,7 +37,7 @@
 
 					<!-- <input type="hidden" name="next_url" id="uri" value="${RedirectURI.referer}"> -->	
 						
-						<button type="submit" id="loginResult" class="gradient-btn text-nowrap">로그인</button>
+						<button type="submit" id="loginResult" class="gradient-btn btn-block text-nowrap">로그인</button>
 						
 					</form>
 
