@@ -198,7 +198,6 @@ public class MemberController {
 		mv.addObject("list", ar);
 		mv.setViewName("/member/memberList");
 		return mv;
-		
-		
+			
 	}
 }
