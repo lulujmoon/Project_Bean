@@ -103,6 +103,7 @@
 	float:right
 }
 
+
 #orderShow-btn {
 	 display: inline-block;
 	 float: right;
@@ -118,14 +119,17 @@
 	 margin: 15px auto;
 	 cursor: pointer;
 }
+
 #orderShow-btn {
 	 color: #4d638c;
 }
+
 #orderShow-btn:hover:before {
 	 transform: none;
 	 opacity: 1;
 	 transition-duration: 0.4s;
 }
+
 #orderShow-btn:before {
 	 content: "";
 	 position: absolute;
