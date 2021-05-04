@@ -2,6 +2,10 @@
 
   /*  LocationList  */          
 
+h2{
+	margin-top: 15px;
+	text-align: center;
+}
 body {
 		background: #ffffff;
 		font-family: 'Noto Serif KR';
@@ -11,13 +15,6 @@ body {
 
 }
 
-h4 {
-	text-align: center;
-	font-size: 2.7rem;
-	color: black;
-	margin-top: 23px;
-	margin-bottom: 20px;
-}
 
 .bar{
 	 background-color: #f2f2f2;

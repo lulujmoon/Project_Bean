@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Bean Bean Coffee</title>
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
 <link rel="stylesheet" href="../resources/css/qnaPassword.css">

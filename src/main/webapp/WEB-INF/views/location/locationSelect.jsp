@@ -7,10 +7,18 @@
 <head>
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
-<title>Bean Brothers Coffee</title>
+<title>Bean Bean Coffee</title>
 <link rel="stylesheet" href="./resources/css/memberLogin.css">
 <link rel="stylesheet" href="./resources/css/memberJoin.css">
 <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+<style type="text/css">
+
+h2{
+	margin-top: 15px;
+	text-align: center;
+}
+
+</style>
 </head>
 <body>
 <!-- header 부분 -->
@@ -18,18 +26,30 @@
 <c:import url="../member/memberLogin.jsp"></c:import>
 <c:import url="../member/memberJoin.jsp"></c:import>
 
-<!-- Blog Section -->
-<<div class="container">
-	<h4 style="color: black; font-familiy: 'Orelega One'; text-align:center; font-size: 2.7rem; font-color: black; margin-bottom: 20px; font-weight:650;"> Location </h4>
-<div style="background-color: #f2f2f2; width: 100px; height: 2px; margin: 0 auto;"></div>
-</div>
+<section id="home">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<h2>Location</h2>
+				<h4>Find your coffee with us</h4>
+				<hr>
+			</div>
+		</div>
+	</div>
+</section>
+<div style="text-align: center; margin: 20px 0 20px 0;">
+		<a href="./locationSelect?storeName=합정점">합정</a> | 
+		<a href="./locationSelect?storeName=하남">하남</a> | 
+		<a href="./locationSelect?storeName=신도림">신도림</a> | 
+		<a href="./locationSelect?storeName=인천 가좌">인천</a>
+	</div>
 
-<section id="blog">
+<section id="blog" style="padding-top:0;">
      <div class="container">
           <div class="row">
                <div class="col-md-12 col-md-10 col-sm-12">
                     <div class="section-title">
-                         <h2  style="font-size: 20px;">${dto.storeName}</h2>
+                         <h2  style="font-size: 20px; margin-top: ">${dto.storeName}</h2>
                     </div>
 
                          <div class="blog-post-image col-lg-10">                   
@@ -37,7 +57,7 @@
                          </div>
                          <div class="col-lg-10">
 	                         <div class="blog-post-title">
-	                              <h3>${dto.storeName}</h3>
+	                              <h3>Bean Bean Coffee <br> in ${dto.storeName}</h3>
 	                         </div>
 	                         <div class="blog-post-format">
 	                              <span><i class="fa fa-date"></i>${dto.storeLoc}</span>
@@ -95,7 +115,7 @@
 		// 마커에 클릭이벤트를 등록합니다
 		kakao.maps.event.addListener(marker, 'click', function() {
 			//클릭하면 해당 장소를 카카오맵으로 띄운다.
-			window.open('http://map.kakao.com/?q=${dto.storeName}');
+			window.open('http://map.kakao.com/?q=빈 브라더스 ${dto.storeName}');
 		});
 
 		// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
