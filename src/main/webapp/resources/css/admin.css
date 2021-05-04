@@ -1,9 +1,29 @@
 @charset "UTF-8";
 
-.memberlist{
-	float: left;
+
+.title{
+	margin-left: 60px;
+}
+
+
+hr{
+	width: 100px;
+	margin-bottom: 50px;
+}
+
+h2{
+	text-align: center;
+}
+
+th{
+	padding: 20px;
+	background-color: #6d89bd;
+}
+
+
+.list{
+	float: inherit;
 	margin-top:100px;
-	font-color: black;
 }
 
 .memberlist a:hover {
@@ -17,15 +37,13 @@
 
 a {
     color: black;
-    padding: 8px;
-
 }
 
 .navbar-brand {
 	margin: 45px;
 }
 .navbar-default {
-    background: #94a5c4; /* #ffffff; */
+    background: #4d638c; /* #ffffff; */
     padding: 2px 0;
     border: none;
     margin-top: 0;
@@ -35,11 +53,11 @@ a {
 .sidenav {
   height: 100%;
   width: 200px;
-  position: relative;
+  position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #f8f8f8;
+  background-color: #4d638c;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -48,12 +66,12 @@ a {
 }
 
 .sidenav a {
-  padding: 8px 13px;
-  text-decoration: none;
-  color: black;
-  display: block;
-  transition: 0.3s;
-  text-align: center;
+	color: white !important;
+	padding: 8px 13px;
+	text-decoration: none;
+	display: block;
+	transition: 0.3s;
+	text-align: center;
 }
 
 .sidenav a:hover {

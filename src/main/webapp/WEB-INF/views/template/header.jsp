@@ -11,7 +11,7 @@
                 <div class="col-xs-3">
 
                      <a href="${pageContext.request.contextPath}/">
-                     <span>Bean Bean</span>
+                     <span>Bean Bean Coffee</span>
                      </a>
                     <div class="col-xs-9" style="float:right; padding-right: 8px;">
 						
@@ -28,7 +28,7 @@
 
                       <c:if test="${not empty member}">
 						  <c:if test="${member.id eq 'admin'}">
-	            	      <a href="${pageContext.request.contextPath}/admin/adminmenu">
+	            	      <a href="${pageContext.request.contextPath}/admin/memberList">
 	                      <span class="glyphicon glyphicon-user" style="margin-right: 10px; cursor:pointer;"> Admin </span>
 	                      </a>
 	                      </c:if>

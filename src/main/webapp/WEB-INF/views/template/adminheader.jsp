@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<script src="../resources/js/admin.js"></script>
 <!-- Header -->
  <div class="navbar-header navbar-default navbar-static-top" role="navigation">
    <div class="container" style="font-family: 'Orelega One';">
@@ -11,34 +10,27 @@
                 <div class="col-xs-3">
 
                      <a href="${pageContext.request.contextPath}/">
-                     <span>Bean Bean</span>
+                     <span style="color: white;">Bean Bean Coffee</span>
                      </a>
                     <div class="col-xs-9" style="float:right; padding-right: 8px;">
-										  
-            	      <a href="${pageContext.request.contextPath}/admin/adminmenu">
-                      <span class="glyphicon glyphicon-user" style="margin-right: 10px; cursor:pointer;"> Admin </span>
-                      </a>
-                	
-                	  <small> 현재 ${member.id} 으로 로그인 중</small>
-               </div>
+                	  <small style="margin-right: 10px; color: white;"> 현재 ${member.id} 으로 로그인 중</small>
+               		</div>
                 </div>
             </div>
          </div>
       </div>
    </div>
 <div class="col-md-2" style="padding-left:0;float:left;">
-<div id="mySidenav" class="sidenav">
-		<button class="btn" data-toggle="collapse" data-target=".navbar-collapse">
-		</button>
-				<a href="${pageContext.request.contextPath}/" class="navbar-brand">
-					<img id="coffee" src="${pageContext.request.contextPath}/resources/images/coffee.png" width="50" height="50">
-				</a>
-
+	<div id="mySidenav" class="sidenav">
+		<a href="${pageContext.request.contextPath}/" class="navbar-brand">
+			<img id="coffee" src="${pageContext.request.contextPath}/resources/images/coffeelogo_white.png" width="90" height="90">
+		</a>
+	
 		<a href="${pageContext.request.contextPath}/admin/memberList">회원 관리</a> 
 		<a href="${pageContext.request.contextPath}/admin/orderManage">주문 관리</a> 
 		<a href="${pageContext.request.contextPath}/admin/productManage">상품 관리</a> 
 		<a href="#">구독 관리</a>
-</div>
+	</div>
 </div>
 
 
