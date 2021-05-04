@@ -35,7 +35,7 @@
 				</a>
 
 		<a href="../member/memberList">회원 관리</a> 
-		<a href="#">주문 관리</a> 
+		<a href="../admin/adminOrderList">주문 관리</a> 
 		<a href="#">상품 관리</a> 
 		<a href="#">구독 관리</a>
 </div>

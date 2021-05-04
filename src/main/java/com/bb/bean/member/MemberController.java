@@ -189,7 +189,7 @@ public class MemberController {
 
 		return "redirect:../../";
 	}
-
+	
 	@GetMapping("memberDelete")
 	public String memberDelete(HttpSession session) throws Exception {
 		MemberDTO memberDTO = (MemberDTO) session.getAttribute("member"); // object니까 형변환 필요
