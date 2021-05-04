@@ -15,7 +15,7 @@
 	<div class="container list col-md-8">
 	<h2>상품 관리</h2>
 	<hr>
-	
+	<a href="${pageContext.request.contextPath}/product/productInsert" style="float:right">상품 추가</a>
 	<div class="xans-element- xans-myshop xans-myshop-orderhistorylistitem ec-base-table typeList">
 		<div class="title" style="width: 1110px; height: 359px;">
 			<table class="table border border-0">
