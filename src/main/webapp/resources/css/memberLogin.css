@@ -1,5 +1,5 @@
 ﻿
- .gradient-btn {
+ .login-join-btn {
 	 display: inline-block;
 	 padding: 1em 2em;
 	 border-radius: 0;
@@ -16,10 +16,10 @@
 	 border: 1px solid  #4d638c ;
 	 transition: 700ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
- .gradient-btn:hover {
+ .login-join-btn:hover {
 	 transition: 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
- .gradient-btn:hover {
+ .login-join-btn:hover {
 	 color: white;
 	 color: #fff;
 	 background-position: 99% 50%;
