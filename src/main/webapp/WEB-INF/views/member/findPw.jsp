@@ -5,15 +5,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="author" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+ -->
 <title>Bean Brothers Coffee</title>
 
 <c:import url="../template/bootStrap.jsp"></c:import>
+<c:import url="../template/setting.jsp"></c:import>
 
 
 <!-- Main css -->
@@ -23,7 +24,7 @@
 <link rel="stylesheet" href="../resources/css/findPw.css">
 
 <title>비밀번호 분실</title>
-<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet"> -->
 </head>
 <body>
 <!-- header 부분 -->
@@ -41,9 +42,9 @@
 
                <div class="col-md-offset-1 col-md-10 col-sm-12">
                     <div class="section-title">
-                         <h2>PASSWORD RESET</h2>
-                         <h3>가입하신 이메일과 성함을 적어주시면 <br>
-                         	임시 비밀번호를 발급해드립니다.</h3>
+                         <h3>PASSWORD RESET</h3>
+                         <h4>가입하신 이메일과 성함을 적어주시면 <br>
+                         	임시 비밀번호를 발급해드립니다.</h4>
                     </div>
                     
 					<div class="wrap">
@@ -58,7 +59,7 @@
                          </div>
    
                          <div class="col-md-3 col-sm-4">
-                              <input type="submit" class="form-control" value="ISSUE PASSWORD">
+                              <input type="submit" class="pw-btn" value="ISSUE PASSWORD">
                          </div>
                          </div>
                     </form>

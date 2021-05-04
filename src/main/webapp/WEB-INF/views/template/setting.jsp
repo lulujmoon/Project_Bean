@@ -19,4 +19,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
 
+<!-- login css -->
+<link rel="stylesheet" href="./resources/css/memberLogin.css">
+<!-- Join css -->
+<link rel="stylesheet" href="./resources/css/memberJoin.css">
 

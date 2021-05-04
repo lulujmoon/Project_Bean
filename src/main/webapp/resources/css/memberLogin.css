@@ -4,7 +4,7 @@
 	 padding: 1em 2em;
 	 border-radius: 0;
 	 color: #4d638c;
-	 margin-top: 2rem;
+ 	 margin-top: 1rem; 
 	 font-weight: bold;
 	 font-size: 0.678rem;
 	 letter-spacing: 2px;
@@ -33,7 +33,7 @@
 	 padding: 1em 0;
 	 border-radius: 0;
 	 color: #4d638c;
-	 margin-top: 2rem;
+	 margin-top: 0.5rem;
 	 font-weight: bold;
 	 font-size: 0.678rem;
 	 letter-spacing: 2px;
@@ -67,7 +67,7 @@
 	 padding: 1em 0;
 	 border-radius: 0;
 	 color: #4d638c;
-	 margin-top: 2rem;
+/* 	 margin-top: 2rem; */
 	 font-weight: bold;
 	 font-size: 0.678rem;
 	 letter-spacing: 2px;
@@ -104,4 +104,8 @@
 	 background: 0 0;
 	 transition: all 0s ease;
 }
+
+
+
+
  

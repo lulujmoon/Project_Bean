@@ -7,3 +7,51 @@
 #comment {
 	color: red;
 }
+
+
+.infoUpdate{
+	width: 30%;
+	float:left;
+	margin: 2% 1%;
+}
+
+.addrUpdate{
+	width: 30%;
+	display: inline-block;
+	margin: 2% 3%;
+}
+
+.pwUpdate{
+	width: 30%;
+	float:right;
+	margin: 2% 1%;
+	
+}
+
+ .post-btn {
+	 display: inline-block;
+	 padding: 1em 2em;
+	 height: 38px;
+	 border-radius: .25rem;
+	 color: #4d638c;
+/* 	 margin-top: 2rem; */
+	 font-weight: bold;
+	 font-size: 0.678rem;
+	 letter-spacing: 2px;
+	 text-transform: uppercase;
+	 text-decoration: none;
+	 background: linear-gradient(to right, rgba(77, 99, 140, 0) 25%, rgba(77, 99, 140, .8) 75%);
+	 background-position: 1% 50%;
+	 background-size: 400% 300%;
+	 border: 1px solid  #4d638c ;
+	 transition: 700ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+ .post-btn:hover {
+	 transition: 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+ .post-btn:hover {
+	 color: white;
+	 color: #fff;
+	 background-position: 99% 50%;
+}
+ 

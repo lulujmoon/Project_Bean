@@ -40,7 +40,7 @@
 							href="${pageContext.request.contextPath}/member/memberQna?id=${member.id}"><span
 							class="ko">문의</span></a>
 					</nav>
-</div>
+				</div>
           </div>
      </div>
 </section>

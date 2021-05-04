@@ -12,7 +12,7 @@
 
 				<!-- Modal Header -->
 				<div class="modal-header">
-					<h4 class="modal-title">로그인</h4>
+					<h4 class="modal-title" style="font-size: 15px;">로그인</h4>
 					<button type="button" class="close" data-dismiss="modal">×</button>
 				</div>
 
@@ -46,8 +46,8 @@
 				<!-- Modal footer -->
 				<div class="modal-footer">
 
-				<a class="btn underline-btn" href="${pageContext.request.contextPath}/member/findPw">비밀번호 분실 &gt;</a>
-				<a class="btn underline-btn" data-toggle="modal" data-target="#join" style="cursor:pointer;">회원가입 &gt;</a>
+				<a class="btn underline-btn" style="font-size: 13px;" href="${pageContext.request.contextPath}/member/findPw">비밀번호 분실 &gt;</a>
+				<a class="btn underline-btn" style="font-size: 13px;" data-toggle="modal" data-target="#join" style="cursor:pointer;">회원가입 &gt;</a>
 					<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  -->
 				</div>
 

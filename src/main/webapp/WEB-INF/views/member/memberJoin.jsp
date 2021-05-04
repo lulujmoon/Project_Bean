@@ -11,7 +11,7 @@
 
 				<!--  Modal Header -->
 				<div class="modal-header">
-					<h3 class="modal-title">회원가입</h3>
+					<h4 class="modal-title" style="font-size: 15px;">회원가입</h4>
 					<button type="button" class="close" data-dismiss="modal">×</button>
 				</div>
 

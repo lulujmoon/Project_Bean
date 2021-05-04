@@ -86,7 +86,7 @@
 															href="${pageContext.request.contextPath}/member/memberOrderDetail?orderUid=${list.order.orderUid}">
 															[ ${list.order.orderUid} ]</a>
 														</td>
-														<td scope="col"><a href="#">${list.order.orderName}</a></td>
+														<td scope="col"><a href="${pageContext.request.contextPath}/member/memberOrderDetail?orderUid=${list.order.orderUid}">${list.order.orderName}</a></td>
 														<td scope="col">${list.finalPrice}</td>
 														<td scope="col">${list.shippingState}</td>
 														<td scope="col"><c:if
