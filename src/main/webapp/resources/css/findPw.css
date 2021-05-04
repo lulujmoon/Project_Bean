@@ -24,12 +24,53 @@
 }
 */
 
+
+.row {
+	width: 1140px;
+	height: 240px;
+}
+
+.wrap {
+	width: 960px;
+	height: 200px;
+}
+
+
+form {
+	width: 920px;
+	margin: 0 auto;
+	
+}
+
+
+.wrap-in {
+	width: 445px;
+	margin: 0 auto;
+}
+
+
+.section{
+	margin: 0 auto;
+}
+
+
+.section1 {
+	width: 445px;
+	text-align: center;
+}
+
+ 
+ .go-login {
+ 	width: 152px;
+ 	margin: 0 146.5px;
+ }
+
  .pw-btn {
 	 display: inline-block;
 	 padding: 1em 2em;
 	 border-radius: 0;
 	 color: #4d638c;
-	 margin-top: 2rem;
+	 margin-top: 1.3rem;  
 	 font-weight: bold;
 	 font-size: 0.678rem;
 	 letter-spacing: 2px;
@@ -48,6 +89,11 @@
 	 color: white;
 	 color: #fff;
 	 background-position: 99% 50%;
+}
+ 
+
+.col-md-6 input {
+	width: 460px;
 }
  
  
