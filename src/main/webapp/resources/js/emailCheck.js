@@ -7,5 +7,6 @@ if (!$("input:checked[id='checkbox']").is(":checked"))
 	return false;
 
 	}
+	
 
 });
