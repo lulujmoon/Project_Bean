@@ -48,7 +48,7 @@
 			</select>
 		</div>
 			
-			    <button type="submit" value="Update" class="underline-btn" id="btn">Update</button>
+			    <button type="button" value="Update" class="underline-btn" id="btn">Update</button>
 		</form>
 		</div>
 		<br>
