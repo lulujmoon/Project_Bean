@@ -188,16 +188,21 @@ public class MemberController {
 
 		return "redirect:../../";
 	}
+		
 	
-	@PostMapping("memberUpdate")
-	public void memberUpdate(MemberDTO memberDTO, Model model) throws Exception {
+	@GetMapping("adminUpdate")
+	public void adminUpdate(MemberDTO memberDTO) throws Exception {
+		
+	}
+	
+	@PostMapping("adminUpdate")
+	public void adminUpdate(MemberDTO memberDTO, Model model) throws Exception {
 		int result = memberService.memberUpdate(memberDTO);
 
 		if (result > 0) {
 			model.addAttribute("member", memberDTO);
 		}
 	}
-	
 	
 
 	@GetMapping("memberDelete")

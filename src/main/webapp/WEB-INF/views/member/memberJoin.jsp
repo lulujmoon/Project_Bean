@@ -11,7 +11,7 @@
 
 				<!--  Modal Header -->
 				<div class="modal-header">
-					<h4 class="modal-title">회원가입</h4>
+					<h2 class="modal-title">회원가입</h2>
 					<button type="button" class="close" data-dismiss="modal">×</button>
 				</div>
 
@@ -19,30 +19,31 @@
 				<div class="modal-body">
 
 
-					<h2>Member Join Page</h2>
+
 					<form id="frm" action="/bean/member/memberJoin" method="post" onsubmit="return submitCheck();">
 
 						<div class="form-group">
-							<label for="id">이메일</label> <input type="text"
+							<label for="id">이메일</label> <br>
+							<input type="text"
 								class="form-control mail" id="join-id" name="id" size="7" placeholder="이메일"
 								required value="">
+							<button type="button" class="email-btn gradient-btn1" id="emailCheck">중복확인</button>
 							<div id="errorEmail" class="resultEmail resultCheck"></div>
 							<h6 id="idCheckResult"></h6>
-							<button type="button" class="btn btn-secondary" id="emailCheck">중복확인</button>
 							<!-- ID는 이메일형식 -->
 								
 						</div>
 
 						<div class="form-group">
 							<label for="pw">비밀번호</label> <input type="password"
-								class="form-control" id="join-pw" required name="pw">
+								class="form-control" id="join-pw" placeholder="6자리 이상 비밀번호" required name="pw">
 							<h6 id="pwResult"></h6>
 							<!-- PW는 6글자 이상 -->
 						</div>
 
 						<div class="form-group">
 							<label for="pw">비밀번호 확인</label> <input type="password"
-								class="form-control" id="join-pw2" required name="pw2">
+								class="form-control" id="join-pw2" placeholder="" required name="pw2">
 							<h6 id="pw2Result"></h6>
 						</div>
 
@@ -51,12 +52,6 @@
 								class="form-control etc" id="join-name" required name="name">
 						</div>
 
-						<div class="form-group">
-							<label for="nickname">닉네임</label> <input type="text"
-								class="form-control etc" id="join-nickname" required
-								name="nickname">
-							<h6 id="nickResult"></h6>
-						</div>
 
 						<br>
 						<div class="form-check form-check-inline">
