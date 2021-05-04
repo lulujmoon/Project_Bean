@@ -7,7 +7,8 @@
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
 <title>Bean Brothers Coffee</title>
-
+<link rel="stylesheet" href="./resources/css/memberLogin.css">
+<link rel="stylesheet" href="./resources/css/memberJoin.css">
 <link rel="stylesheet" href="../resources/css/locationList.css">
 </head>
 <body>
@@ -17,12 +18,10 @@
 <c:import url="../member/memberJoin.jsp"></c:import>
 <!-- list -->
 <div class="container">
-		<div class="col-md-12 col-sm-12">
-			<h2>Location</h2>
-			<h4>Find your coffee with us</h4>
-			<hr>
-		</div>
-<div style="text-align: center; margin: 20px 0 20px 0;">
+	<h4>Location </h4>
+<div class="bar"></div>
+</div>
+	<div style="text-align: center; margin: 20px 0 20px 0;">
 		<a href="./locationSelect?storeName=빈브라더스 합정점">합정</a> | 
 		<a href="./locationSelect?storeName=빈브라더스 하남">하남</a> | 
 		<a href="./locationSelect?storeName=빈브라더스 신도림">신도림</a> | 
