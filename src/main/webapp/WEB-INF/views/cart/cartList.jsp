@@ -17,18 +17,18 @@
 		
 		<h1>Cart</h1>
 		
-		<span style="display:none" id="before">${before}</span>
-		<!-- 비었을 때 옵션 -->
-		<c:if test="${totalPrice==0}">
-		<div class="item-div" style="border-top:1px solid lightgrey">
-			장바구니가 비었습니다.
-		</div>
-		</c:if>
 		
 		<div class="item-div" style="border-top:1px solid lightgrey">
 			상품 (${list.size()})
 			<input type="button" value="전체 삭제" id="delAll-btn" class="btn btn-outline-secondary btn-sm" title="${member.id}" style="float:right">			
 		</div>
+		<span style="display:none" id="before">${before}</span>
+		<!-- 비었을 때 옵션 -->
+		<c:if test="${totalPrice==0}">
+		<div class="item-div">
+			장바구니가 비었습니다.
+		</div>
+		</c:if>
 		<c:forEach items="${list}" var="item">
 		<div title="${item.itemNum}" class="item-div">
 			<div class="info">

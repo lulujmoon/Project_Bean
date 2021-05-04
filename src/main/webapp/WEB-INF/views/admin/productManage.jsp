@@ -15,7 +15,7 @@
 
 <div class="container" style="margin-top:100px">
 	<h2>상품 관리</h2>
-	
+	<a href="${pageContext.request.contextPath}/product/productInsert" style="float:right">상품 추가</a>
 	<table class="table">
 		<thead class="thead-dark" style="text-align: center">
 			<tr>
