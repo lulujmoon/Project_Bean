@@ -52,7 +52,9 @@ public class MemberService {
 		return memberDAO.memberDelete(memberDTO);
 	}
 	
-	
+	public List<MemberDTO> memberList()throws Exception{
+		return memberDAO.memberList();
+	}
 	
 	
 	
