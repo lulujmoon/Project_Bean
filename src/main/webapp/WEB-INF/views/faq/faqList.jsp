@@ -13,10 +13,20 @@
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 
-	<div class="container">
+	<section id="home">
+     <div class="container">
+          <div class="row">
 
-		<h2>FaQ</h2>
-		<div style="text-align: center; margin: 20px 0 20px 0;">
+               <div class="col-md-12 col-sm-12">
+                    <h2>FaQ</h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+             </div>
+             </div>      
+        </section>
+          <div class="container">
+		<div style="text-align: center; margin: 0 0 20px 0;">
 		<a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a> | 
 		<a href="${pageContext.request.contextPath}/faq/faqList">FaQ</a> 
 	</div>

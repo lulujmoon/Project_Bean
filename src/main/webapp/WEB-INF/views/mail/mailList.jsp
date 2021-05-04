@@ -14,10 +14,20 @@
 	<c:import url="../template/header.jsp"></c:import>
 	
 	
-<div class="container">
+	<section id="home">
+     <div class="container">
+          <div class="row">
 
-<div class="contents">
- <h3 class="MailTitle">Email-List</h3>          
+               <div class="col-md-12 col-sm-12">
+                    <h2>Email-list</h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+             </div>
+             </div>      
+        </section>
+
+ <div class="container">     
   <table class="table table-hover">
     <thead>
       <tr>
@@ -35,10 +45,9 @@ ${dto.mAddr}
     </tbody>
   </table>
 
-<a class="underline-btn" href="./sendMail">SEND EMAIL</a>
+<a class="btn underline-btn" href="./sendMail">SEND EMAIL</a>
 </div>
 
-</div>
 
 	<c:import url="../template/footer.jsp"></c:import>
 </body>
