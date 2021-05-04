@@ -12,10 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
+import com.bb.bean.board.BoardDTO;
+import com.bb.bean.board.qna.QnaService;
+import org.springframework.web.servlet.ModelAndView;
 import com.bb.bean.orders.OrdersDTO;
 import com.bb.bean.orders.OrdersService;
+
 
 @Controller
 @RequestMapping("/member/**")
@@ -23,6 +26,9 @@ public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
+	
+	@Autowired
+	private QnaService qnaService;
 
 
 	
@@ -31,7 +37,10 @@ public class MemberController {
 	}
 
 	@GetMapping("memberQna")
-	public void memberQna() throws Exception {
+	public void memberQna(BoardDTO boardDTO, Model model) throws Exception {
+		List<BoardDTO> ar = qnaService.memberQna(boardDTO);
+		model.addAttribute("list", ar);
+
 	}
 
 	@GetMapping("memberPoint")
@@ -179,6 +188,22 @@ public class MemberController {
 
 		return "redirect:../../";
 	}
+		
+	
+	@GetMapping("adminUpdate")
+	public void adminUpdate(MemberDTO memberDTO) throws Exception {
+		
+	}
+	
+	@PostMapping("adminUpdate")
+	public void adminUpdate(MemberDTO memberDTO, Model model) throws Exception {
+		int result = memberService.memberUpdate(memberDTO);
+
+		if (result > 0) {
+			model.addAttribute("member", memberDTO);
+		}
+	}
+	
 
 	@GetMapping("memberDelete")
 	public String memberDelete(HttpSession session) throws Exception {
