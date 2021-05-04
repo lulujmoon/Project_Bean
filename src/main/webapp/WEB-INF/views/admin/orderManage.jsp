@@ -37,7 +37,7 @@
 								<tr>
 									<td scope="col">${list.orderDate}</td>
 									<td scope="col">
-									<a href="${pageContext.request.contextPath}/member/memberOrderDetail?id=${list.id}">
+									<a href="${pageContext.request.contextPath}/member/memberOrderDetail?orderUid=${list.orderUid}">
 									${list.orderUid}</a></td>
 									<td scope="col">${list.impUid}</td>
 									<td scope="col">${list.id}</td>
