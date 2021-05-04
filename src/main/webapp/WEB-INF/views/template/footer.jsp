@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Footer Section -->
 <footer>
-     <div class="container">
+     <div class="container navbar-fixed-bottom">
           <div class="row">
 			<!-- logo -->
                <div class="col-md-2 col-sm-3">
