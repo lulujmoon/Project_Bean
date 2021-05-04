@@ -14,10 +14,20 @@
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 	
-<div class="container">
+ <section id="home">
+     <div class="container">
+          <div class="row">
 
-<h2>QnA</h2>
-<br> 
+               <div class="col-md-12 col-sm-12">
+                    <h2>QnA</h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+             </div>
+             </div>      
+        </section>
+          <div class="container">
+
   <table class="table">
 
     <tbody>
@@ -58,7 +68,7 @@
 <c:if test="${dto.writer eq member.id||member.id eq 'admin'}">
 <a class="underline-btn" href="./qnaUpdate?num=${dto.num}">UPDATE</a>
 
-<a class="underline-btn" href="./qnaDelete?num=${dto.num}">DELETE</a>
+<a class="underline-btn" id="delete" href="./qnaDelete?num=${dto.num}" >DELETE</a>
 </c:if>
 
 <c:if test="${member.id eq 'admin'}">

@@ -4,32 +4,51 @@
 
 $("#btn").click(function(){
 	
-	var title = document.getElementById("title")
-	var contents = document.getElementById("contents")
-	var category = document.getElementById("category")
+	var title = $("#title").val();
+	var con = $("#con").val();
+	var contents = $("#contents").val();
+	var category = $("#category").val();
+	var check = true;
 	
-	if(title.value==""){
-		alert("제목을 입력하세요")
-		title.focus()
-		return false
+	if(title==""){
+		alert("제목을 입력하세요");
+		title.focus();
+		check = false;
+		
 	}
-		if(contents.value==""){
-		alert("내용을 입력하세요")
-		contents.focus()
-		return false
+	
+	if(isNaN(con)||con==""||con.length!=6){
+	alert("pw는 6자리 숫자로 입력하세요");
+	con.focus();
+	check= false;
+}
+	
+		if(contents==""){
+		alert("내용을 입력하세요");
+		contents.focus();
+		check = false;
+		
 	}
-		if(category.value==""){
-		alert("카테고리를 선택하세요")
-		category.focus()
-		return false
+		if(category==""){
+		alert("카테고리를 선택하세요");
+		category.focus();
+		check = false;
+	
 	}
+	
+	if(check){$("form:first").submit();}
 	
 });
 
-	$("#del").click(function(){
+
+
+
+	$("#delete").click(function(){
 		if(confirm("삭제하시겠습니까?")){
 		return true;
 		}else{
 		return false;
 		}
 	});
+	
+	

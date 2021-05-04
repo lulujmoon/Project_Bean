@@ -14,6 +14,36 @@ $("#upd").on("click",function(){
 	var contents=faq.find("#contents").val();
 	
 	var category=faq.find("#category").val();
+		if(title.value==""){
+		alert("제목을 입력하세요")
+		title.focus()
+		return false
+	}
+	
+		if(contents.value==""){
+		alert("내용을 입력하세요")
+		contents.focus()
+		return false
+	}
+		if(category.value==""){
+		alert("카테고리를 선택하세요")
+		category.focus()
+		return false
+	}
+	});
+
+$("#upd").on("click",function(){
+	
+	//선택자
+	var faq = $(this).parent().parent();
+	//번호
+	var num=faq.find("#num").val();
+	
+	var title=faq.find("#title").val();
+	
+	var contents=faq.find("#contents").val();
+	
+	var category=faq.find("#category").val();
 	
 	
 	$.ajax({
@@ -42,6 +72,9 @@ $("#upd").on("click",function(){
 		return false;
 		}
 	});
+	
+	
+	
 	
 	
 	

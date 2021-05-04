@@ -13,15 +13,20 @@
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h2>MAGAZINE</h2>
-				<hr class="hrList">
-				<h6>스토리</h6>
-			</div>
-		</div>
+	<section id="home">
+     <div class="container">
+          <div class="row">
 
+               <div class="col-md-12 col-sm-12">
+                    <h2>Magazine</h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+             </div>
+             </div>      
+        </section>
+
+ <div class="container">
 		<div class="brick-section-container">
 		
 			<div class="row">
@@ -65,9 +70,9 @@
 							<!-- Modal footer -->
 							<div class="modal-footer">
 								<div class="col-md-12 text-center">
-								<%-- <c:if test="${member.id eq 'admin'}"> --%>
+								<c:if test="${member.id eq 'admin'}">
 								<a href="./magazineUpdate?num=${dto.num}"><button type="button" class="underline-btn">Update</button></a>
-							<%-- 	</c:if> --%>
+							</c:if> 
 							<a href="./magazineDelete?num=${dto.num}"><button type="button" class="underline-btn">Delete</button></a>
 								<button type="button" class="underline-btn"
 									data-dismiss="modal">Close</button>
@@ -80,12 +85,13 @@
 
 
 			</c:forEach>
+			</div>
 </div>
 
 		</div>
 
 
-
+<div class="container">
 
 		<div>
 		<%-- <c:if test="${member.id eq 'admin'}"> --%>
@@ -93,7 +99,8 @@
 		<%-- 	</c:if> --%>
 		</div>
 
-	</div>
+	
+</div>
 	<br>
 	<c:import url="../template/footer.jsp"></c:import>
 </body>

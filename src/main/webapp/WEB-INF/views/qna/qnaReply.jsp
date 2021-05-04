@@ -17,8 +17,19 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <!-- ------------ -->
 
- <div class="container">
- <h2>QnA</h2>
+ <section id="home">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12 col-sm-12">
+                    <h2>QnA</h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+             </div>
+             </div>      
+        </section>
+     <div class="container">   
   <form id="frm" action="./qnaReply" method="post">
   
   	<input type="hidden" name="num" value="${param.num}">
@@ -48,7 +59,7 @@
 				<option value="결제문의">결제문의<option>
 			</select>
 		</div>
-    <button type="submit" value="Write" class="underline-btn">Write</button>
+    <button type="button" value="Write" class="underline-btn" id="btn">Write</button>
   </form>
 </div>
 <br>

@@ -13,6 +13,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,10 +44,26 @@ public class MailController {
 	}
 	
 	@PostMapping("mailInsert")
-	public String setInsert(MailDTO mailDTO)throws Exception{
-		int result = mailService.setInsert(mailDTO);
+	public ModelAndView setInsert(MailDTO mailDTO, ModelAndView mv,String mAddr)throws Exception{
 		
-		return "redirect:./mail/mailList";
+		try {
+		int result = mailService.setInsert(mailDTO);
+
+		if(result==1) {
+			String msg="구독이 완료되었습니다";
+			mv.addObject("path","../");
+			mv.addObject("msg",msg);
+			mv.setViewName("common/commonResult");		
+		}
+		}catch(DuplicateKeyException e) {
+			String msg="이미 구독중입니다";
+			mv.addObject("path","../");
+			mv.addObject("msg",msg);
+			mv.setViewName("common/commonResult");	
+		}
+		
+		  return mv;
+
 	}
 	
 	@GetMapping("sendMail")

@@ -16,13 +16,23 @@
 <c:import url="../template/header.jsp"></c:import>
 <c:import url="../member/memberLogin.jsp"></c:import>
 <c:import url="../member/memberJoin.jsp"></c:import>
-<div class="container">
 
 
+<section id="home">
+     <div class="container">
+          <div class="row">
 
-<h2>QnA</h2>
-
-<div style="text-align: center; margin: 20px 0 20px 0;">
+               <div class="col-md-12 col-sm-12">
+                    <h2>QnA</h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+             </div>
+             </div>      
+        </section>      
+              
+  <div class="container">
+<div style="text-align: center; margin: 0 0 20px 0;">
 		<a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a> | 
 		<a href="${pageContext.request.contextPath}/faq/faqList">FaQ</a> 
 	</div>
@@ -60,8 +70,8 @@
 		</tbody>
 	
 	</table>
-	</div>
 	
+	</div>
 	<div class="container">
 	  <div class="pagination">
 	  
@@ -101,8 +111,9 @@
 	
 	<a class="underline-btn" href="./qnaInsert">Write</a>
 	</div>
+
 	<br>
-	
+
 	<c:import url="../template/footer.jsp"></c:import>		
 </body>
 </html>

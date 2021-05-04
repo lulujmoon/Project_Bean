@@ -13,12 +13,22 @@
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 
-	<div class="container">
+	<section id="home">
+     <div class="container">
+          <div class="row">
 
-		<h2>FaQ</h2>
-		<div style="text-align: center; margin: 20px 0 20px 0;">
+               <div class="col-md-12 col-sm-12">
+                    <h2>FaQ</h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+             </div>
+             </div>      
+        </section>
+          <div class="container">
+		<div style="text-align: center; margin: 0 0 20px 0;">
 		<a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a> | 
-		<a href="${pageContext.request.contextPath}/faq/faqList">FaQq</a> 
+		<a href="${pageContext.request.contextPath}/faq/faqList">FaQ</a> 
 	</div>
 		
 		<ul class="nav nav-tabs">
@@ -36,7 +46,7 @@
 				<div class="card">
 					<div class="card-header">
 						<a class="collapsed card-link" data-toggle="collapse"
-							href="#col${dto.num}"> ${dto.title} </a>
+							href="#col${dto.num}"> Q. ${dto.title} </a>
 					</div>
 
 					<div id="col${dto.num}" class="collapse" data-parent="#accordion">
@@ -183,7 +193,7 @@
 							<textarea class="form-control" id="contents" cols="30" rows="5"></textarea>
 						</div>
 						<div class="form-group">
-							<label for="category">category:</label> <select name="category"
+							<label for="category">카테고리:</label> <select name="category"
 								id="category">
 								<option value="배송문의">배송문의</option>
 								<option value="교환/반품문의">교환/반품문의</option>

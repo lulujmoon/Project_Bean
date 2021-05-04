@@ -16,8 +16,20 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
-<div class="container">
-<h2>QnA</h2>
+<section id="home">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12 col-sm-12">
+                    <h2>QnA</h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+             </div>
+             </div>      
+        </section>
+        
+     <div class="container">
 <form id="frm" action="./qnaInsert" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="writer">Writer:</label> <input type="text"
@@ -54,10 +66,11 @@
 		</div>
 			
 	
-		<button type="submit" value="Write" class="underline-btn">Write</button>
+		<button type="button" value="Write" class="underline-btn" id="btn">Write</button>
 		
 		</form>
 </div>
+
 <br>
 
 <c:import url="../template/footer.jsp"></c:import>		

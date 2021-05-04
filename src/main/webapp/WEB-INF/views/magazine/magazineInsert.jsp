@@ -15,13 +15,20 @@
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 
-<div class="container">
+	<section id="home">
+     <div class="container">
+          <div class="row">
 
-<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h2>MAGAZINE</h2>
-				</div>
-				</div>
+               <div class="col-md-12 col-sm-12">
+                    <h2>Magazine</h2>
+                    <h4>Your personal coffee guide</h4>
+                    <hr>
+               </div>
+             </div>
+             </div>      
+        </section>
+
+ <div class="container">
 		<form id="frm" action="./magazineInsert" method="post" enctype="multipart/form-data">
 			
 			<div class="form-group">
