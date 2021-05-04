@@ -27,7 +27,7 @@
 		</thead>
 		<tbody>
 		<c:forEach items="${list}" var="list">
-		<!-- list에서 하나 꺼내서 dto에 담는 것을 반복한다. -->
+
 			<tr>
 				<td>${list.id}</td>
 				<td><a href="../member/adminUpdate?id=${list.id}">수정</a></td>

@@ -49,7 +49,13 @@ public class OrdersService {
 	
 	IamportClient client;
 	
-
+	//admin---------------------------------------------------
+	public List<OrdersDTO> getList() throws Exception{
+		return ordersDAO.getList();
+	}
+	
+	//-------------------------------------------------------
+	
 	public String setInsert(OrdersDTO ordersDTO) throws Exception {
 		String result ="";
 		/* 결제 전 재고 확인 */

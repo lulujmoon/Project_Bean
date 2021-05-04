@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bb.bean.member.MemberDTO;
 import com.bb.bean.member.MemberService;
+import com.bb.bean.orders.OrdersDTO;
+import com.bb.bean.orders.OrdersService;
 import com.bb.bean.product.ProductDTO;
 import com.bb.bean.product.ProductService;
 
@@ -23,6 +25,9 @@ public class AdminController {
 	
 	@Autowired
 	MemberService memberService;
+	
+	@Autowired
+	OrdersService ordersService;
 	
 	@GetMapping("adminmenu")
 	public void adminList()throws Exception {
@@ -41,6 +46,13 @@ public class AdminController {
 		mv.addObject("list", ar);
 		return mv;
 			
+	}
+	@GetMapping("orderManage")
+	public ModelAndView orderManage(OrdersDTO ordersDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<OrdersDTO> list = ordersService.getList();
+		mv.addObject("list", list);
+		return mv;
 	}
 
 }
