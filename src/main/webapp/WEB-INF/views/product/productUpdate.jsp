@@ -52,7 +52,7 @@
 			</div>
 			<div class="form-group">
 				<label for="includes">구성품</label>
-				<input type="text" class="form-control myCheck" id="includes" name="includes" placeholder="리스트를 ~로 구분해주세요." value="${product.includes}">
+				<input type="text" class="form-control myCheck" id="includes" name="includes" placeholder="리스트를 ~로 구분해주세요. 예) 클레버 드리퍼~칼리타 필터 100매" value="${product.includes}">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
@@ -62,7 +62,7 @@
  			</div>
  			<div class="form-group">
 				<label for="details">상세 정보</label>
-				<input type="text" class="form-control myCheck" id="details" name="details" placeholder="리스트를 ~로 구분해주세요." value="${product.details}">
+				<input type="text" class="form-control myCheck" id="details" name="details" placeholder="리스트를 ~로 구분해주세요. 예) 제조사 : E.K. International Co.~원산지 : 대만" value="${product.details}">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">

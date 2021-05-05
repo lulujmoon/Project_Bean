@@ -15,6 +15,14 @@ $("#add").click(function(){
 	$("#sample").attr("style", "display:block");
 	$("#tit").text("옵션 추가");
 });
+
+/* 숫자만 입력하게 */
+function onlyNum(){
+	if(event.keyCode<48||event.keyCode>57){
+		event.returnValue = false;
+	}
+}
+
 /* 할인가 계산 적용 */
 $("#opt4, #opt5").change(function(){
 	let price = parseInt($("#opt4").val());
@@ -40,9 +48,11 @@ $(".edit").click(function(){
 			let index = 'opt'+count; 
 			let name = $("#"+index).attr("name");
 			if(count==6){
-				$(opt).html('<input type="text" id="'+name+'" name="'+name+'" value="'+value+'" style="width:80%" readonly="readonly">') ;			
-			}else{
+				$(opt).html('<input type="text" id="'+name+''+'" name="'+name+'" value="'+value+'" style="width:80%" readonly="readonly">') ;			
+			}else if(count<3){
 				$(opt).html('<input type="text" id="'+name+'" name="'+name+'" value="'+value+'" style="width:80%">');
+			}else{
+				$(opt).html('<input type="text" id="'+name+'" name="'+name+'" value="'+value+'" style="width:80%" onkeypress="onlyNum()">');
 			}		
 			count++;
 		}
@@ -98,7 +108,7 @@ $(".del").click(function(){
 });
 
 /* 제목 누르면 모달 창으로 돌아가게 */
-$("#h").click(function(){
+$("#back").click(function(){
 	let conf;
 	if($("#warning").attr("title")=='0'){
 		conf = confirm("옵션을 등록하지 않으면 해당 상품이 고객에게 노출되지 않습니다. 옵션을 등록하지 않고 돌아가겠습니까?");
