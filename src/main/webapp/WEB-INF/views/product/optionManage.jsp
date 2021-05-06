@@ -18,10 +18,11 @@
 <c:import url="../template/header.jsp"></c:import>
 	<br>
 	<div class="container">
-	<h3 id="h" title="${product.productNum}" style="display:inline-block;cursor: pointer;">${product.name}</h3>
+	<h3 id="h" style="display:inline-block;">${product.name}</h3>
 	
 	<!-- Options List -->
-	<input type="button" value="추가" id="add" class="btn btn-sm btn-secondary" style="float:right;margin-right:13px">
+	<input type="button" value="추가" id="add" class="btn btn-outline-secondary btn-sm" style="float:right;margin-right:5px">
+	<input type="button" value="상품 페이지로 돌아가기" id="back" title="${product.productNum}" class="btn btn-outline-secondary btn-sm" style="float:right;margin-right:13px">
 	<c:if test="${list.size()==0}">
 		<p style="color:red" id="warning" title="${list.size()}"> 옵션이 없습니다. 최소 하나의 옵션이 필요합니다.</p>
 	</c:if>	
@@ -47,8 +48,8 @@
 					<td>${option.price}</td>
 					<td>${option.discountRate}</td>
 					<td>${option.afterPrice}</td>
-					<td style="width:5%" class="edit" title="${option.optionNum}"><input type="button" value="수정" class="btn btn-sm btn-secondary"></td>
-					<td style="width:5%"><input type="button" value="삭제" class="del btn btn-sm btn-danger" title="${option.optionNum}"></td>
+					<td style="width:5%" class="edit" title="${option.optionNum}"><input type="button" value="수정" class="btn btn-outline-secondary btn-sm"></td>
+					<td style="width:5%"><input type="button" value="삭제" class="del btn btn-sm btn-outline-danger" title="${option.optionNum}"></td>
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -71,25 +72,25 @@
 			</div>	
 			<div class="form-group">
 				<label for="stock">재고</label>
-				<input type="text" class="form-control myCheck" id="opt3" name="stock">
+				<input type="text" class="form-control myCheck" id="opt3" name="stock" onkeypress="onlyNum()">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group">
 				<label for="price">정가</label>
-				<input type="text" class="form-control myCheck" id="opt4" name="price">
+				<input type="text" class="form-control myCheck" id="opt4" name="price" onkeypress="onlyNum()">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>					
 			<div class="form-group">
 				<label for="discountRate">할인율</label>
-				<input type="text" class="form-control myCheck" id="opt5" name="discountRate" placeholder="소수점으로 적어주세요. 예) 10% 할인: 0.1">
+				<input type="text" class="form-control myCheck" id="opt5" name="discountRate" placeholder="소수점으로 적어주세요. 할인하지 않으면 0을 적어주세요. 예) 10% 할인: 0.1" onkeypress="onlyNum()">
 				<small id="subResult" class="form-text text-muted"></small>
-			</div>	
+			</div>
 			<div class="form-group">
 				<label for="afterPrice">할인가</label>
 				<input type="text" class="form-control myCheck" id="opt6" name="afterPrice" readonly="readonly">
 				<small id="subResult" class="form-text text-muted"></small>
 			</div>	
-			<button class="btn btn-sm btn-secondary">추가</button>				
+			<button class="btn btn-outline-secondary btn-sm">추가</button>				
 		</form>
 		</div>
 	</div>

@@ -60,4 +60,8 @@ public class CartDAO {
 	public int setFinalPriceUpdate(CartDTO cartDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"setFinalPriceUpdate", cartDTO);
 	}
+	
+	public int setCheckedDelete(List<Long> list) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setCheckedDelete", list);
+	}
 }

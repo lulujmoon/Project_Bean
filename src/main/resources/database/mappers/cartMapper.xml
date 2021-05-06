@@ -76,4 +76,10 @@
 		update cart set finalPrice=#{finalPrice} where itemNum=#{itemNum}
 	</update>
 	
+	<delete id="setCheckedDelete">
+		delete cart where itemNum in 
+			<foreach collection="list" item="num" open="(" close=")" separator=", ">
+				#{num}
+			</foreach>
+	</delete>
 </mapper>

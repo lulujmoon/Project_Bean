@@ -21,6 +21,7 @@
 		<div class="item-div" style="border-top:1px solid lightgrey">
 			상품 (${list.size()})
 			<input type="button" value="전체 삭제" id="delAll-btn" class="btn btn-outline-secondary btn-sm" title="${member.id}" style="float:right">			
+			<input type="button" value="선택 삭제" id="delChecked-btn" class="btn btn-outline-secondary btn-sm" style="float:right;margin-right:7px">			
 		</div>
 		<span style="display:none" id="before">${before}</span>
 		<!-- 비었을 때 옵션 -->
@@ -31,17 +32,22 @@
 		</c:if>
 		<c:forEach items="${list}" var="item">
 		<div title="${item.itemNum}" class="item-div">
-			<div class="info">
-				${item.product.name} 
-				<input type="button" value="X" class="btn btn-outline-secondary btn-sm del-btn" title="${item.itemNum}" style="float:right">
-				<br>
-				<c:if test="${item.option.type==null}">
-					${item.product.cartInfo}<br>
-				</c:if>
-				<c:if test="${item.option.type!=null}">
-					${item.product.cartInfo}+${item.option.type}<br>
-				</c:if>
-			</div>
+				<div class="info">
+					<input type="checkbox" name="checkedItem" value="${item.itemNum}" id="checkedItem_${item.itemNum}" class="checkedItems">&nbsp;
+					<label for="checkedItem_${item.itemNum}">
+						${item.product.name} 
+					</label>
+					<input type="button" value="X" class="btn btn-outline-secondary btn-sm del-btn" title="${item.itemNum}" style="float:right">
+					<br>
+					<label for="checkedItem_${item.itemNum}">
+						<c:if test="${item.option.type==null}">
+							${item.product.cartInfo}<br>
+						</c:if>
+						<c:if test="${item.option.type!=null}">
+							${item.product.cartInfo}+${item.option.type}<br>
+						</c:if>
+					</label>
+				</div>
 			<c:if test="${item.grind!=null}">
 				<span class="grinds">
 					분쇄도 : 
