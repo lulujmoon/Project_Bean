@@ -29,7 +29,7 @@
 		<a href="${pageContext.request.contextPath}/admin/memberList">회원 관리</a> 
 		<a href="${pageContext.request.contextPath}/admin/orderManage">주문 관리</a> 
 		<a href="${pageContext.request.contextPath}/admin/productManage">상품 관리</a> 
-		<a href="#">구독 관리</a>
+		<a href="${pageContext.request.contextPath}/admin/mailList">구독 관리</a>
 	</div>
 </div>
 
