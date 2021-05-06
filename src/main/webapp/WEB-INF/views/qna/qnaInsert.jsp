@@ -15,6 +15,8 @@
 <!-- ------------ -->
 </head>
 <body>
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 	<c:import url="../template/header.jsp"></c:import>
 <section id="home">
      <div class="container">

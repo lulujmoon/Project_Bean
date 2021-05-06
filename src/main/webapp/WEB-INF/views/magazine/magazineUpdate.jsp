@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="../resources/css/magazineList.css">
 </head>
 <body>
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 <c:import url="../template/header.jsp"></c:import>
 <c:if test="${member.authority ne '1'.charAt(0)}">
 	<span id="noAccess">잘못된 접근</span>

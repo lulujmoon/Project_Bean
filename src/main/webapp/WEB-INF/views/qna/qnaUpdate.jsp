@@ -20,6 +20,8 @@
 	<span id="noAccess">잘못된 접근</span>
 </c:if>
 	<c:import url="../template/header.jsp"></c:import>
+	<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
  <section id="home">
      <div class="container">
           <div class="row">

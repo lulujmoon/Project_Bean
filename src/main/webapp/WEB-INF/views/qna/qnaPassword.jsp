@@ -13,6 +13,8 @@
 
 <body>
 <c:import url="../template/header.jsp"></c:import>
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 <div class="container">
 <div class="textP">
 <h>비밀번호</h>
