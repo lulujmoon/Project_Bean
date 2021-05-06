@@ -6,6 +6,8 @@
 <head>
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
+<link rel="stylesheet" href="../resources/css/memberLogin.css">
+<link rel="stylesheet" href="../resources/css/memberJoin.css">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <title>Bean Bean Coffee</title>
@@ -18,6 +20,8 @@
 <c:if test="${member.authority eq '1'.charAt(0)}">
 
 <c:import url="../template/header.jsp"></c:import>
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 
 	<div class="container">
 		<br>
