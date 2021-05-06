@@ -35,6 +35,7 @@
 		<c:forEach items="${list}" var="item">
 		<div title="${item.itemNum}" class="item-div">
 				<div class="info">
+					<input type="button" class="del-btn btn-sm btn-outline-secondary btn" title="${item.itemNum}" value="x" style="float:right">
 					<input type="checkbox" name="checkedItem" value="${item.itemNum}" id="checkedItem_${item.itemNum}" class="checkedItems">&nbsp;
 					<label for="checkedItem_${item.itemNum}">
 						${item.product.name} 
