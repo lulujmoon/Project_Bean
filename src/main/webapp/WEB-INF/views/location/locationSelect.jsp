@@ -76,6 +76,7 @@ h2{
 	
 	<div class="container">
 	<h5>CAFE LOCATION</h5>
+	<h4>핀을 누르면 지도로 이동합니다.</h4>
 	</div>
 	<!-- 지도 key : 29d592b09c4a7ae1856b2630da60b871&libraries=services -->
 	<div id="map"
