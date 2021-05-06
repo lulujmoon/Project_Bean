@@ -42,7 +42,7 @@
 					<c:if test="${product.options.size()!=0}">
 	                	<div class="col-md-4 col-sm-6" style="overflow:hidden">
 	                    <a href="./productSelect?productNum=${product.productNum}" data-toggle="modal" data-target="#select_${product.productNum}" data-whatever="${product.productNum}">
-	                         <div class="portfolio-thumb" style="width:100%;height:90%;">
+	                         <div class="portfolio-thumb" style="width:100%;height:80%;">
 	                              <img src="../resources/upload/product/${product.thumbnail.fileName}" class="img-responsive" alt="Portfolio" style="width:100%;height:100%">
                                    <div class="portfolio-overlay">
                                         <div class="portfolio-item">
@@ -58,7 +58,7 @@
 				<c:if test="${member.authority=='1'.charAt(0)}">
 					<div class="col-md-4 col-sm-6" style="overflow:hidden">
                     <a href="./productSelect?productNum=${product.productNum}" data-toggle="modal" data-target="#select_${product.productNum}" data-whatever="${product.productNum}">
-                         <div class="portfolio-thumb" style="width:100%;height:90%;">
+                         <div class="portfolio-thumb" style="width:100%;height:80%;">
                               <img src="../resources/upload/product/${product.thumbnail.fileName}" class="img-responsive" alt="Portfolio" style="width:100%;height:100%">
                               <div class="portfolio-overlay">
                                    <div class="portfolio-item">
@@ -72,7 +72,7 @@
 				</c:if>
 			</c:forEach>
                <div class="col-md-12 col-sm-12 text-center">
-                    <h3>쓸 말이 없당</h3>
+                    Bean Bean, Your personal coffee guide
                </div>
 
           </div>
@@ -92,7 +92,7 @@
 	      </div>
 	      <div class="modal-body">
 	      	<div>
-		      	<div class="thumbnailHere"><img src="../resources/upload/product/${product.thumbnail.fileName}" style="width:100%;height:100%"></div>
+		      	<div class="thumbnailHere"><img src="../resources/upload/product/${product.thumbnail.fileName}" style="width:400px;height:300px"></div>
 		      	<div class="preContentsHere">
 			      	<div>
 			      		<div class="titleAgainHere">${product.name}</div>
@@ -129,7 +129,12 @@
 			      						</c:otherwise>
 			      					</c:choose>
 							      				<td><label for="optionNum_${option.optionNum}">${option.type}</label></td>
-								      			<td><label for="optionNum_${option.optionNum}"><del>₩${option.price}</del>&nbsp;&nbsp;₩${option.afterPrice}</label></td>
+							      				<c:if test="${option.price == option.afterPrice}">
+							      					<td><label for="optionNum_${option.optionNum}">₩${option.price}</label></td>
+							      				</c:if>
+							      				<c:if test="${option.price ne option.afterPrice}">
+								      				<td><label for="optionNum_${option.optionNum}"><del>₩${option.price}</del>&nbsp;&nbsp;₩${option.afterPrice}</label></td>
+								      			</c:if>
 								      			<td><label for="optionNum_${option.optionNum}">${option.optionInfo}</label></td>
 							      			</tr>	
 
