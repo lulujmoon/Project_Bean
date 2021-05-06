@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bb.bean.mail.MailDTO;
+import com.bb.bean.mail.MailService;
 import com.bb.bean.member.MemberDTO;
 import com.bb.bean.member.MemberService;
 import com.bb.bean.orders.OrdersDTO;
@@ -28,6 +30,9 @@ public class AdminController {
 	
 	@Autowired
 	OrdersService ordersService;
+	
+	@Autowired
+	MailService mailService;
 	
 	@GetMapping("adminmenu")
 	public void adminList()throws Exception {
@@ -52,6 +57,15 @@ public class AdminController {
 		ModelAndView mv = new ModelAndView();
 		List<OrdersDTO> list = ordersService.getList();
 		mv.addObject("list", list);
+		return mv;
+	}
+	
+	@GetMapping("mailList")
+	public ModelAndView getList()throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<MailDTO> ar = mailService.getList();
+		mv.addObject("list",ar);
+		mv.setViewName("admin/mailList");
 		return mv;
 	}
 
