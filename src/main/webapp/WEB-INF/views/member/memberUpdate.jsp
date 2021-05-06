@@ -147,6 +147,7 @@
 							<div class="pwUpdate">
 								<div class="form-group">
 									<div id="comment">*비밀번호를 변경하고 싶으시다면 입력해주세요</div>
+									<br>
 									<label for="pw">현재 비밀번호</label> <input type="password"
 										class="form-control" id="pw" name="pw" title="${member.pw}">
 									<h6 id="pwResult"></h6>
@@ -164,6 +165,7 @@
 								</div>
 
 								<button type="submit" id="edit" class="btn-blue btn-block">저장하기</button>
+						
 							</div>
 							<!-- <button type="button" class="btn btn-danger">비밀번호 변경하기</button>  -->
 						</form>

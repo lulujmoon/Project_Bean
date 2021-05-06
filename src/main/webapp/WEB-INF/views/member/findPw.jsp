@@ -40,8 +40,8 @@
      <div class="container">
           <div class="row">
 
-               <div class="col-md-offset-1 col-md-10 col-sm-12">
-                    <div class="section-title">
+               <div class="section">
+                    <div class="section-title" style="margin-bottom: -25px;">
                          <h3>PASSWORD RESET</h3>
                          <h4>가입하신 이메일과 성함을 적어주시면 <br>
                          	임시 비밀번호를 발급해드립니다.</h4>
@@ -49,8 +49,8 @@
                     
 					<div class="wrap">
 					<div class="wrap-in" style="text-align: center;">
-                    <form action="./findPw" method="post" onsubmit="return submitCheck();" style="width: 800px; margin: 0 auto; padding: 0 10px;">
-                         <div style="">
+                    <form action="./findPw" method="post" onsubmit="return submitCheck();" >
+                   
                          <div class="col-md-6 col-sm-6">
                               <input type="email" class="form-control" id="id" name="id" placeholder="Email" required>
                          </div>
@@ -58,17 +58,16 @@
                               <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
                          </div>
    
-                         <div class="col-md-3 col-sm-4">
-                              <input type="submit" class="pw-btn" value="ISSUE PASSWORD">
-                         </div>
+                         <div class="section1">
+                              <button type="submit" class="pw-btn">ISSUE PASSWORD</button>
                          </div>
                     </form>
+                         </div>
                     </div>
                     </div>
                </div>
 
           </div>
-     </div>
 </section>
 
 <!-- footer 영역 -->

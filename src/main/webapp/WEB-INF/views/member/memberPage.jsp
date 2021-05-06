@@ -112,7 +112,7 @@
 						<div class="info-content">
 						<c:if test="${list[0].order.orderName ne null}">
 							<div class="sub-item-option-content">
-								${list[0].order.orderName}
+								<a style="color:black;" href="${pageContext.request.contextPath}/member/memberOrderDetail?orderUid=${list[0].order.orderUid}">${list[0].order.orderName}</a>
                                 <div class="info-label">${list[0].order.orderDate} | ${list[0].order.payState}</div>
 							</div>
 						</c:if>

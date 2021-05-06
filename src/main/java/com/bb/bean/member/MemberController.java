@@ -19,19 +19,16 @@ import org.springframework.web.servlet.ModelAndView;
 import com.bb.bean.orders.OrdersDTO;
 import com.bb.bean.orders.OrdersService;
 
-
 @Controller
 @RequestMapping("/member/**")
 public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
-	
+
 	@Autowired
 	private QnaService qnaService;
 
-
-	
 	@GetMapping("memberOrderDetail")
 	public void memberOrderDetail() throws Exception {
 	}
@@ -99,7 +96,6 @@ public class MemberController {
 		return "common/ajaxResult";
 	}
 
-
 	@GetMapping("memberIdCheck")
 	public String memberIdCheck(MemberDTO memberDTO, Model model) throws Exception {
 		memberDTO = memberService.memberIdCheck(memberDTO);
@@ -137,24 +133,25 @@ public class MemberController {
 
 	@GetMapping("memberLogin")
 	public void memberLogin() throws Exception {
-
 	}
 
 	@PostMapping("memberLogin")
 	public String memberLogin(MemberDTO memberDTO, HttpSession session, HttpServletRequest request) throws Exception {
-
+				
 		memberDTO = memberService.memberLogin(memberDTO);
 		session.setAttribute("member", memberDTO);
 
 		String referer = request.getHeader("Referer");
-		System.out.println(referer);
 		int idx = referer.indexOf("/", 16);
 		referer = referer.substring(idx);
-		System.out.println(referer);
 		request.getSession().setAttribute("redirectURI", referer);
+		
+		
 
 		return "common/pathResult";
 	}
+
+
 
 	@GetMapping("memberLogout")
 	public String memberLogout(HttpSession session) throws Exception {
@@ -176,15 +173,14 @@ public class MemberController {
 
 		return "redirect:../../";
 	}
-		
-	
+
 	@GetMapping("adminUpdate")
-	public void adminUpdate(MemberDTO memberDTO,Model model) throws Exception {
+	public void adminUpdate(MemberDTO memberDTO, Model model) throws Exception {
 		memberDTO = memberService.getMember(memberDTO);
 		model.addAttribute("dto", memberDTO);
-		
+
 	}
-	
+
 	@PostMapping("adminUpdate")
 	public String adminUpdate(MemberDTO memberDTO, ModelAndView mv) throws Exception {
 		int result = memberService.memberUpdate(memberDTO);
@@ -194,7 +190,6 @@ public class MemberController {
 		}
 		return "redirect:../memberList";
 	}
-	
 
 	@GetMapping("memberDelete")
 	public String memberDelete(HttpSession session) throws Exception {

@@ -28,14 +28,14 @@
 							<label for="pw">패스워드</label> <input type="password"
 								class="form-control" id="pwL" name="pw" required >
 						</div>
-						
+					
+					<!--  
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input"
 								id="exampleCheck1"> <label class="form-check-label"
 								for="exampleCheck1">Check me out</label>
 						</div>
-
-					<!-- <input type="hidden" name="next_url" id="uri" value="${RedirectURI.referer}"> -->	
+					-->
 						
 						<button type="submit" id="loginResult" class="login-join-btn btn-block text-nowrap">LOGIN</button>
 						
@@ -43,12 +43,12 @@
 
 				</div>
 
+
 				<!-- Modal footer -->
 				<div class="modal-footer">
 
 				<a class="btn underline-btn" style="font-size: 13px;" href="${pageContext.request.contextPath}/member/findPw">비밀번호 분실 &gt;</a>
 				<a class="btn underline-btn" style="font-size: 13px;" data-toggle="modal" data-target="#join" style="cursor:pointer;">회원가입 &gt;</a>
-					<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  -->
 				</div>
 
 			</div>
