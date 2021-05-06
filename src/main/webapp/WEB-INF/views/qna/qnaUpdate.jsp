@@ -9,6 +9,8 @@
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
 <link rel="stylesheet" href="../resources/css/qnaInsert.css">
+<link rel="stylesheet" href="./resources/css/memberLogin.css">
+<link rel="stylesheet" href="./resources/css/memberJoin.css">
 <!-- summernote  -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
