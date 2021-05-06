@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="../resources/css/qnaInsert.css">
 </head>
 <body>
+<c:if test="${member.authority ne '1'.charAt(0)}">
+	<span id="noAccess">잘못된 접근</span>
+</c:if>
 <c:import url="../template/header.jsp"></c:import>
 <!-- summernote  -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">

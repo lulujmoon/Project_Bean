@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="../resources/css/faqList.css">
 </head>
 <body>
+
 	<c:import url="../template/header.jsp"></c:import>
 
 	<section id="home">
@@ -55,7 +56,7 @@
 						<div class="card-body" style="white-space:pre;">${dto.contents}</div>
 
 						<!-- Modal Button -->
-						<c:if test="${member.id eq 'admin'}">
+						<c:if test="${member.authority eq '1'.charAt(0)}">
 						<button type="button" class="btn underline-btn" data-toggle="modal"
 							data-target="#myModal${dto.num}">UPDATE</button>
 
@@ -170,7 +171,7 @@
 
 
 
-		<c:if test="${member.id eq 'admin'}">
+		<c:if test="${member.authority eq '1'.charAt(0)}">
 		<button type="button" class="btn underline-btn" data-toggle="modal"
 			data-target="#myModalW">Write</button>
 		</c:if>

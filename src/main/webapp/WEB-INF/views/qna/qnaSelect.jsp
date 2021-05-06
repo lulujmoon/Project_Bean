@@ -63,15 +63,15 @@
       
     </tbody>
   </table>
-  
+
 <a class="underline-btn" href="./qnaList">LIST</a>
-<c:if test="${dto.writer eq member.id||member.id eq 'admin'}">
+<c:if test="${dto.writer eq member.id||member.authority eq '1'.charAt(0)}">
 <a class="btn underline-btn" href="./qnaUpdate?num=${dto.num}">UPDATE</a>
 
 <a class="btn underline-btn" id="delete" href="./qnaDelete?num=${dto.num}" >DELETE</a>
 </c:if>
 
-<c:if test="${member.id eq 'admin'}">
+<c:if test="${member.authority eq '1'.charAt(0)}">
 <a class="btn underline-btn" href="./qnaReply?num=${dto.num}">REPLY</a>
 </c:if>
 

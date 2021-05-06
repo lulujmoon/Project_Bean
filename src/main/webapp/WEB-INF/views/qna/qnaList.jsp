@@ -108,8 +108,9 @@
 	 </form> 
 	</div> 
 	</div>
-	
+	<c:if test="${not empty member}">
 	<a class="btn underline-btn" href="./qnaInsert">Write</a>
+	</c:if>
 	</div>
 
 	<br>
