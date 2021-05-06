@@ -136,56 +136,22 @@ public class MemberController {
 	}
 
 	@PostMapping("memberLogin")
-	public ModelAndView memberLogin(MemberDTO memberDTO, HttpSession session, HttpServletRequest request)
-			throws Exception {
-		ModelAndView mv = new ModelAndView();
+	public String memberLogin(MemberDTO memberDTO, HttpSession session, HttpServletRequest request) throws Exception {
+				
+		memberDTO = memberService.memberLogin(memberDTO);
+		session.setAttribute("member", memberDTO);
 
-		int result = 0;
-
-		MemberDTO userIdCheck = memberService.memberLogin(memberDTO);
-
-		if (userIdCheck == null) {
-			userIdCheck = new MemberDTO();
-			
-			  userIdCheck.setId("error"); 
-			  userIdCheck.setPw("error");
-		}
+		String referer = request.getHeader("Referer");
+		int idx = referer.indexOf("/", 16);
+		referer = referer.substring(idx);
+		request.getSession().setAttribute("redirectURI", referer);
 		
-		String id = userIdCheck.getId();
-		String pw = userIdCheck.getPw();
-
-		System.out.println(userIdCheck);
-		System.out.println(userIdCheck.getId());
 		
-		if (memberDTO.getId().equals(id)) {
-			// ID OK
-			if (memberDTO.getPw().equals(pw)) {
-				// PW OK
-				session.setAttribute("member", userIdCheck);
-				result = 3;
 
-				// 로그인 전 화면으로 돌아가기
-				String referer = request.getHeader("Referer");
-				int idx = referer.indexOf("/", 16);
-				referer = referer.substring(idx);
-				request.getSession().setAttribute("redirectURI", referer);
-
-			} else if (id == null) {
-				result = 2;
-			}
-
-		} else {
-			// ID X
-			result = 2;
-		}
-
-		System.out.println(result);
-
-		mv.addObject("result", result);
-		mv.setViewName("common/pathResult");
-
-		return mv;
+		return "common/pathResult";
 	}
+
+
 
 	@GetMapping("memberLogout")
 	public String memberLogout(HttpSession session) throws Exception {

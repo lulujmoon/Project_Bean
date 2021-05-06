@@ -18,7 +18,7 @@
 
 				<!-- Modal body -->
 				<div class="modal-body">
-					<form name="f1">
+					<form action="/bean/member/memberLogin" method="post" onsubmit="return loginCheck();">
 						<div class="form-group">
 							<label for="id">이메일</label> <input type="text"
 								class="form-control" id="idL" name="id" aria-describedby="idHelp" required>
@@ -28,19 +28,21 @@
 							<label for="pw">패스워드</label> <input type="password"
 								class="form-control" id="pwL" name="pw" required >
 						</div>
-						
+					
+					<!--  
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input"
-								id="idSaveCheck"> <label class="form-check-label"
-								for="idSaveCheck">Check me out</label>
+								id="exampleCheck1"> <label class="form-check-label"
+								for="exampleCheck1">Check me out</label>
 						</div>
-
+					-->
 						
-						<button type="submit" id="loginResult" class="login-join-btn btn-block text-nowrap" onclick="loginValidation()">LOGIN</button>
+						<button type="submit" id="loginResult" class="login-join-btn btn-block text-nowrap">LOGIN</button>
 						
 					</form>
 
 				</div>
+
 
 				<!-- Modal footer -->
 				<div class="modal-footer">

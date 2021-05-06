@@ -283,7 +283,7 @@
 											</tr>
 										</tbody>
 									</table>
-									
+										<div>&nbsp;&nbsp;※ 배송지 변경을 원하시면 1:1 문의에 남겨주세요.</div>
 								</div>
 							</div>
 
