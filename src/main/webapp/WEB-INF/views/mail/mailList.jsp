@@ -9,13 +9,16 @@
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
 <link rel="stylesheet" href="../resources/css/mailList.css">
+<link rel="stylesheet" href="./resources/css/memberLogin.css">
+<link rel="stylesheet" href="./resources/css/memberJoin.css">
 </head>
 <body>
 <c:if test="${member.authority ne '1'.charAt(0)}">
 	<span id="noAccess">잘못된 접근</span>
 </c:if>
 	<c:import url="../template/header.jsp"></c:import>
-	
+	<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 	
 	<section id="home">
      <div class="container">

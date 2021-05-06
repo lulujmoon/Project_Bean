@@ -11,9 +11,12 @@
 <link rel="stylesheet" href="./resources/css/memberLogin.css">
 <link rel="stylesheet" href="./resources/css/memberJoin.css">
 <link rel="stylesheet" href="../resources/css/faqList.css">
+<link rel="stylesheet" href="./resources/css/memberLogin.css">
+<link rel="stylesheet" href="./resources/css/memberJoin.css">
 </head>
 <body>
-
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 	<c:import url="../template/header.jsp"></c:import>
 
 	<section id="home">

@@ -9,10 +9,14 @@
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
 <link rel="stylesheet" href="../resources/css/qnaPassword.css">
+<link rel="stylesheet" href="./resources/css/memberLogin.css">
+<link rel="stylesheet" href="./resources/css/memberJoin.css">
 </head>
 
 <body>
 <c:import url="../template/header.jsp"></c:import>
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 <div class="container">
 <div class="textP">
 <h>비밀번호</h>

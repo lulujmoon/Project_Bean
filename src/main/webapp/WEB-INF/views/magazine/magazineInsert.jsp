@@ -11,8 +11,12 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <link rel="stylesheet" href="../resources/css/magazineList.css">
+<link rel="stylesheet" href="./resources/css/memberLogin.css">
+<link rel="stylesheet" href="./resources/css/memberJoin.css">
 </head>
 <body>
+<c:import url="../member/memberLogin.jsp"></c:import>
+<c:import url="../member/memberJoin.jsp"></c:import>
 	<c:import url="../template/header.jsp"></c:import>
 
 	<section id="home">
