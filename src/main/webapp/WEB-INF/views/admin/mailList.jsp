@@ -11,12 +11,11 @@
 <link rel="stylesheet" href="../resources/css/mailList.css">
 <link rel="stylesheet" href="./resources/css/memberLogin.css">
 <link rel="stylesheet" href="./resources/css/memberJoin.css">
+<link rel="stylesheet" href="../resources/css/admin.css">
 </head>
 <body>
-<c:if test="${member.authority ne '1'.charAt(0)}">
-	<span id="noAccess">잘못된 접근</span>
-</c:if>
-	<c:import url="../template/header.jsp"></c:import>
+<c:import url="../template/adminheader.jsp"></c:import>
+
 	<c:import url="../member/memberLogin.jsp"></c:import>
 <c:import url="../member/memberJoin.jsp"></c:import>
 	
