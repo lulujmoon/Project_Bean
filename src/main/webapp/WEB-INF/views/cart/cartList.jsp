@@ -7,6 +7,8 @@
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
 <link rel="stylesheet" href="../resources/css/cartList.css">
+<link rel="stylesheet" href="../resources/css/memberLogin.css">
+<link rel="stylesheet" href="../resources/css/memberJoin.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -20,8 +22,8 @@
 		
 		<div class="item-div" style="border-top:1px solid lightgrey">
 			상품 (${list.size()})
-			<input type="button" value="전체 삭제" id="delAll-btn" class="btn btn-outline-secondary btn-sm" title="${member.id}" style="float:right">			
-			<input type="button" value="선택 삭제" id="delChecked-btn" class="btn btn-outline-secondary btn-sm" style="float:right;margin-right:7px">			
+			<input type="button" value="선택 삭제" id="delChecked-btn" class="btn btn-outline-secondary btn-sm" style="float:right">			
+			<input type="button" value="전체 선택" id="checkAll-btn" class="btn btn-outline-secondary btn-sm" title="${member.id}" style="float:right;margin-right:7px">			
 		</div>
 		<span style="display:none" id="before">${before}</span>
 		<!-- 비었을 때 옵션 -->
@@ -37,7 +39,6 @@
 					<label for="checkedItem_${item.itemNum}">
 						${item.product.name} 
 					</label>
-					<input type="button" value="X" class="btn btn-outline-secondary btn-sm del-btn" title="${item.itemNum}" style="float:right">
 					<br>
 					<label for="checkedItem_${item.itemNum}">
 						<c:if test="${item.option.type==null}">

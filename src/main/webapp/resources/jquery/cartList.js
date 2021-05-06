@@ -107,7 +107,7 @@ $(".update").change(function(){
 
 
 
-/* X 버튼을 누르면 장바구니에서 삭제한다 */
+/* X 버튼을 누르면 장바구니에서 삭제*/
 
 $(".del-btn").click(function(){
 	let itemNum = $(this).attr("title");
@@ -123,8 +123,8 @@ $(".del-btn").click(function(){
 });
 
 
-/* 전체삭제 버튼 */
-$("#delAll-btn").click(function(){
+/* 전체삭제 버튼 - 사용X*/
+/*$("#delAll-btn").click(function(){
 	let cartID = $(this).attr("title");
 	$.post("./cartDeleteAll", {
 		cartID:cartID
@@ -133,8 +133,26 @@ $("#delAll-btn").click(function(){
 		load();
 		calculate();
 	})
-});
+});*/
 
+
+/* 전체선택 */
+let count = 0;
+$("#checkAll-btn").click(function(){
+	if(count==0){
+		for(ch of $(".checkedItems")){
+			$(ch).prop("checked", true);
+		}
+		$(this).val("선택 해제");
+		count = 1;
+	}else if(count==1){
+		for(ch of $(".checkedItems")){
+			$(ch).prop("checked", false);
+		}
+		$(this).val("전체 선택");
+		count = 0;
+	}
+});
 
 /* 체크박스 삭제 */
 $("#delChecked-btn").click(function(){

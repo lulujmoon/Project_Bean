@@ -202,7 +202,7 @@ public class OrdersService {
 		pointDTO.setId(ordersDTO.getId());
 		pointDTO.setSort("구매 적립");
 		pointDTO.setDetail("["+ordersDTO.getOrderUid()+"] 구매로 적립");
-		pointDTO.setSavePoint((long)(ordersDTO.getAmount()*0.3));
+		pointDTO.setSavePoint((long)(ordersDTO.getAmount()));
 		pointDTO.setRestPoint(memberDTO.getPoint()+pointDTO.getSavePoint());
 		pointDAO.setInsert(pointDTO);
 		
