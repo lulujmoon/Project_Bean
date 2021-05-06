@@ -6,8 +6,9 @@
 <head>
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
-<title>Bean Brothers Coffee</title>
-
+<title>Bean Bean Coffee</title>
+<link rel="stylesheet" href="./resources/css/memberLogin.css">
+<link rel="stylesheet" href="./resources/css/memberJoin.css">
 <link rel="stylesheet" href="../resources/css/locationList.css">
 </head>
 <body>
@@ -16,17 +17,23 @@
 <c:import url="../member/memberLogin.jsp"></c:import>
 <c:import url="../member/memberJoin.jsp"></c:import>
 <!-- list -->
-<div class="container">
-		<div class="col-md-12 col-sm-12">
-			<h2>Location</h2>
-			<h4>Find your coffee with us</h4>
-			<hr>
+	<section id="home">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-12 col-sm-12">
+					<h2>Location</h2>
+					<h4>Find your coffee with us</h4>
+					<hr>
+				</div>
+			</div>
 		</div>
-<div style="text-align: center; margin: 20px 0 20px 0;">
-		<a href="./locationSelect?storeName=빈브라더스 합정점">합정</a> | 
-		<a href="./locationSelect?storeName=빈브라더스 하남">하남</a> | 
-		<a href="./locationSelect?storeName=빈브라더스 신도림">신도림</a> | 
-		<a href="./locationSelect?storeName=빈브라더스 인천 가좌">인천</a>
+	</section>
+	<div style="text-align: center; margin: 20px 0 20px 0;">
+		<a href="./locationSelect?storeName=합정점">합정</a> | 
+		<a href="./locationSelect?storeName=하남">하남</a> | 
+		<a href="./locationSelect?storeName=신도림">신도림</a> | 
+		<a href="./locationSelect?storeName=인천 가좌">인천</a>
 	</div>
 
 <section id="portfolio_list" style="margin-top: 30px;">

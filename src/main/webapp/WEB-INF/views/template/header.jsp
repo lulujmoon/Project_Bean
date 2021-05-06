@@ -27,7 +27,7 @@
                       </c:if>
 
                       <c:if test="${not empty member}">
-						  <c:if test="${member.id eq 'admin'}">
+						  <c:if test="${member.authority eq '1'.charAt(0)}">
 	            	      <a href="${pageContext.request.contextPath}/admin/memberList">
 	                      <span class="glyphicon glyphicon-user" style="margin-right: 10px; cursor:pointer;"> Admin </span>
 	                      </a>

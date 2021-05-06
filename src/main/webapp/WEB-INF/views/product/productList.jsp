@@ -7,7 +7,7 @@
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
 <link rel="stylesheet" href="../resources/css/productList.css">
-<title>Insert title here</title>
+<title>Bean Bean Coffee</title>
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
