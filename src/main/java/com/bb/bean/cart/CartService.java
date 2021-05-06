@@ -1,5 +1,6 @@
 package com.bb.bean.cart;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -152,6 +153,15 @@ public class CartService {
 		}
 		
 		return result;
+	}
+	
+	public int setCheckedDelete(long [] checkedItems) throws Exception {
+		ArrayList<Long> list = new ArrayList<Long>();
+		for(long c:checkedItems) {
+			list.add(c);
+		}
+		
+		return cartDAO.setCheckedDelete(list);
 	}
 	
 }
