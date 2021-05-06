@@ -69,7 +69,7 @@
 </div>
 <br>
 <c:import url="../template/footer.jsp"></c:import>	
-<script type="text/javascript" src="../resources/jquery/qnaInsert.js"></script>
+<script type="text/javascript" src="../resources/jquery/qnaReply.js"></script>
 <script type="text/javascript" src="../resources/jquery/summerFile.js"></script>
 </body>
 </html>

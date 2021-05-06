@@ -7,7 +7,10 @@ let emailCheckResult = false;  //id 중복확인 결과
 let pwCheckResult = false; 	   // pw check 결과
 let pwEqualResult = false; 	   // pw equal 결과
 let radioResult=false; 		   // 성별
+
+/*
 let nickResult=false; 		   // 닉네임 중복확인
+
 
 // ******* nickname 중복 ********
 $("#join-nickname").blur(function(){
@@ -34,7 +37,7 @@ $("#join-nickname").change(function(){
 	$("join-nickname").value("");
 	nickResult=false;
 })
-
+*/
 
 
 // ******** ID (email) ********

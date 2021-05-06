@@ -10,8 +10,8 @@
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/setting.jsp"></c:import>
 <link rel="stylesheet" href="../resources/css/qnaList.css">
-<link rel="stylesheet" href="./resources/css/memberLogin.css">
-<link rel="stylesheet" href="./resources/css/memberJoin.css">
+<link rel="stylesheet" href="../resources/css/memberLogin.css">
+<link rel="stylesheet" href="../resources/css/memberJoin.css">
 </head>
 
 <body>

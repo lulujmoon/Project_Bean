@@ -50,7 +50,7 @@ ${dto.mAddr}
     </tbody>
   </table>
 
-<a class="btn underline-btn" href="./sendMail">SEND EMAIL</a>
+<a class="btn underline-btn" href="../mail/sendMail">SEND EMAIL</a>
 </div>
 
 
