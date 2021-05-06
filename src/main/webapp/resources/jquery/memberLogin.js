@@ -36,7 +36,7 @@ function login(id,pw){
 				alert("아이디 혹은 비밀번호가 맞지 않습니다.");
 				return false;
 			}else if(data == 3){
-				console.log(id+"님 환영합니다")
+				console.log(id+"님 환영합니다");
 			}
 		},
 		error: alert("에러")

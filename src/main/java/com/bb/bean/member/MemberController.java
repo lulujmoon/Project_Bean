@@ -19,17 +19,16 @@ import org.springframework.web.servlet.ModelAndView;
 import com.bb.bean.orders.OrdersDTO;
 import com.bb.bean.orders.OrdersService;
 
-
 @Controller
 @RequestMapping("/member/**")
 public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
-	
+
 	@Autowired
 	private QnaService qnaService;
-	
+
 	@GetMapping("memberOrderDetail")
 	public void memberOrderDetail() throws Exception {
 	}
@@ -97,7 +96,6 @@ public class MemberController {
 		return "common/ajaxResult";
 	}
 
-
 	@GetMapping("memberIdCheck")
 	public String memberIdCheck(MemberDTO memberDTO, Model model) throws Exception {
 		memberDTO = memberService.memberIdCheck(memberDTO);
@@ -139,50 +137,55 @@ public class MemberController {
 	}
 
 	@PostMapping("memberLogin")
-	public ModelAndView memberLogin(MemberDTO memberDTO, HttpSession session, HttpServletRequest request) throws Exception {
+	public ModelAndView memberLogin(MemberDTO memberDTO, HttpSession session, HttpServletRequest request)
+			throws Exception {
 		ModelAndView mv = new ModelAndView();
-		
+
 		int result = 0;
-		
+
 		MemberDTO userIdCheck = memberService.memberLogin(memberDTO);
-		
-		if(userIdCheck == null) {
-			userIdCheck.setId("error");
-			userIdCheck.setPw("error");
+
+		if (userIdCheck == null) {
+			userIdCheck = new MemberDTO();
+			
+			  userIdCheck.setId("error"); 
+			  userIdCheck.setPw("error");
+			 
 		}
 		
+		String id = userIdCheck.getId();
+		String pw = userIdCheck.getPw();
+
+		System.out.println(userIdCheck);
 		System.out.println(userIdCheck.getId());
-//		String id = userIdCheck.getId();
-//		String pw = userIdCheck.getPw();
 		
-		if(memberDTO.getId().equals(userIdCheck.getId())) {
-			//ID OK
-			if(memberDTO.getPw().equals(userIdCheck.getPw())) {
-				//PW OK
-				session.setAttribute("member", userIdCheck);		
+		if (memberDTO.getId().equals(id)) {
+			// ID OK
+			if (memberDTO.getPw().equals(pw)) {
+				// PW OK
+				session.setAttribute("member", userIdCheck);
 				result = 3;
-				
+
 				// 로그인 전 화면으로 돌아가기
 				String referer = request.getHeader("Referer");
 				int idx = referer.indexOf("/", 16);
 				referer = referer.substring(idx);
 				request.getSession().setAttribute("redirectURI", referer);
-				
-			} else if(userIdCheck.getId() == null){
+
+			} else if (id == null) {
 				result = 2;
 			}
-			
-		}else {
-			//ID X
+
+		} else {
+			// ID X
 			result = 2;
 		}
-	
+
 		System.out.println(result);
-		
-		
+
 		mv.addObject("result", result);
 		mv.setViewName("common/pathResult");
-		
+
 		return mv;
 	}
 
@@ -206,15 +209,14 @@ public class MemberController {
 
 		return "redirect:../../";
 	}
-		
-	
+
 	@GetMapping("adminUpdate")
-	public void adminUpdate(MemberDTO memberDTO,Model model) throws Exception {
+	public void adminUpdate(MemberDTO memberDTO, Model model) throws Exception {
 		memberDTO = memberService.getMember(memberDTO);
 		model.addAttribute("dto", memberDTO);
-		
+
 	}
-	
+
 	@PostMapping("adminUpdate")
 	public String adminUpdate(MemberDTO memberDTO, ModelAndView mv) throws Exception {
 		int result = memberService.memberUpdate(memberDTO);
@@ -224,7 +226,6 @@ public class MemberController {
 		}
 		return "redirect:../memberList";
 	}
-	
 
 	@GetMapping("memberDelete")
 	public String memberDelete(HttpSession session) throws Exception {
