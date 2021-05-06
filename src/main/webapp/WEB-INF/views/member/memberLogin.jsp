@@ -18,7 +18,7 @@
 
 				<!-- Modal body -->
 				<div class="modal-body">
-					<form action="/bean/member/memberLogin" method="post" onsubmit="return loginCheck();">
+					<form action="/bean/member/memberLogin" method="post" name="f1" onsubmit="return loginCheck();">
 						<div class="form-group">
 							<label for="id">이메일</label> <input type="text"
 								class="form-control" id="idL" name="id" aria-describedby="idHelp" required>
@@ -31,13 +31,12 @@
 						
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input"
-								id="exampleCheck1"> <label class="form-check-label"
-								for="exampleCheck1">Check me out</label>
+								id="idSaveCheck"> <label class="form-check-label"
+								for="idSaveCheck">Check me out</label>
 						</div>
 
-					<!-- <input type="hidden" name="next_url" id="uri" value="${RedirectURI.referer}"> -->	
 						
-						<button type="submit" id="loginResult" class="login-join-btn btn-block text-nowrap">LOGIN</button>
+						<button type="submit" id="loginResult" class="login-join-btn btn-block text-nowrap" onclick="loginValidation()">LOGIN</button>
 						
 					</form>
 

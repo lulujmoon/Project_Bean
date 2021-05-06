@@ -29,8 +29,6 @@ public class MemberController {
 	
 	@Autowired
 	private QnaService qnaService;
-
-
 	
 	@GetMapping("memberOrderDetail")
 	public void memberOrderDetail() throws Exception {
@@ -141,19 +139,51 @@ public class MemberController {
 	}
 
 	@PostMapping("memberLogin")
-	public String memberLogin(MemberDTO memberDTO, HttpSession session, HttpServletRequest request) throws Exception {
-
-		memberDTO = memberService.memberLogin(memberDTO);
-		session.setAttribute("member", memberDTO);
-
-		String referer = request.getHeader("Referer");
-		System.out.println(referer);
-		int idx = referer.indexOf("/", 16);
-		referer = referer.substring(idx);
-		System.out.println(referer);
-		request.getSession().setAttribute("redirectURI", referer);
-
-		return "common/pathResult";
+	public ModelAndView memberLogin(MemberDTO memberDTO, HttpSession session, HttpServletRequest request) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		int result = 0;
+		
+		MemberDTO userIdCheck = memberService.memberLogin(memberDTO);
+		
+		if(userIdCheck == null) {
+			userIdCheck.setId("error");
+			userIdCheck.setPw("error");
+		}
+		
+		System.out.println(userIdCheck.getId());
+//		String id = userIdCheck.getId();
+//		String pw = userIdCheck.getPw();
+		
+		if(memberDTO.getId().equals(userIdCheck.getId())) {
+			//ID OK
+			if(memberDTO.getPw().equals(userIdCheck.getPw())) {
+				//PW OK
+				session.setAttribute("member", userIdCheck);		
+				result = 3;
+				
+				// 로그인 전 화면으로 돌아가기
+				String referer = request.getHeader("Referer");
+				int idx = referer.indexOf("/", 16);
+				referer = referer.substring(idx);
+				request.getSession().setAttribute("redirectURI", referer);
+				
+			} else if(userIdCheck.getId() == null){
+				result = 2;
+			}
+			
+		}else {
+			//ID X
+			result = 2;
+		}
+	
+		System.out.println(result);
+		
+		
+		mv.addObject("result", result);
+		mv.setViewName("common/pathResult");
+		
+		return mv;
 	}
 
 	@GetMapping("memberLogout")
