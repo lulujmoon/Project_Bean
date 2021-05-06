@@ -44,7 +44,7 @@
 					name="contents" value="${dto.contents}"></textarea>
 			</div>
 
-		<button type="submit" value="Update" class="underline-btn">Update</button>
+		<button type="submit" value="Update" class="btn underline-btn">Update</button>
 
 		</form>
 

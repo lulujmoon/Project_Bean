@@ -66,13 +66,13 @@
   
 <a class="underline-btn" href="./qnaList">LIST</a>
 <c:if test="${dto.writer eq member.id||member.id eq 'admin'}">
-<a class="underline-btn" href="./qnaUpdate?num=${dto.num}">UPDATE</a>
+<a class="btn underline-btn" href="./qnaUpdate?num=${dto.num}">UPDATE</a>
 
-<a class="underline-btn" id="delete" href="./qnaDelete?num=${dto.num}" >DELETE</a>
+<a class="btn underline-btn" id="delete" href="./qnaDelete?num=${dto.num}" >DELETE</a>
 </c:if>
 
 <c:if test="${member.id eq 'admin'}">
-<a class="underline-btn" href="./qnaReply?num=${dto.num}">REPLY</a>
+<a class="btn underline-btn" href="./qnaReply?num=${dto.num}">REPLY</a>
 </c:if>
 
 </div>

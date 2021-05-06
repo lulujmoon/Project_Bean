@@ -50,7 +50,7 @@
 					name="contents"></textarea>
 			</div>
 
-			<button type="submit" value="Write" class="underline-btn">Write</button>
+			<button type="submit" value="Write" class="btn underline-btn">Write</button>
 
 		</form>
 
