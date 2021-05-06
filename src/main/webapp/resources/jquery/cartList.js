@@ -130,7 +130,25 @@ $("#delAll-btn").click(function(){
 		cartID:cartID
 	}, function(result){
 		location.reload();
-		$("#totalPrice").text(result);
+		load();
+		calculate();
+	})
+});
+
+
+/* 체크박스 삭제 */
+$("#delChecked-btn").click(function(){
+	let checkedItems = [];
+	for(ch of $(".checkedItems")){
+		if($(ch).prop("checked")){
+			checkedItems.push($(ch).val());
+		}
+	}
+	
+	$.post("./cartCheckedDelete", {
+		checkedItems: checkedItems
+	}, function(result){
+		location.reload();
 		load();
 		calculate();
 	})
