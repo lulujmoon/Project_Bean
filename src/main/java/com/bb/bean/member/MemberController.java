@@ -149,7 +149,6 @@ public class MemberController {
 			
 			  userIdCheck.setId("error"); 
 			  userIdCheck.setPw("error");
-			 
 		}
 		
 		String id = userIdCheck.getId();

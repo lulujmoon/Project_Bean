@@ -4,10 +4,9 @@
 
 
 
-function loginValidation(){
-	
-	var id = $("#idL").val();
-	var pw = $("#pwL").val();
+function loginValidation(){	
+	let id = $("#idL").val();
+	let pw = $("#pwL").val();
 	
 	if(!id){
 		alert("아이디를 입력하세요.");
