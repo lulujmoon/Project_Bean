@@ -43,7 +43,7 @@
 			
 				<div class="form-group">
 				<label for="title">Pw:</label> <input type="text"
-					class="form-control myCheck" id="con" name="con">
+					class="form-control myCheck" id="con" placeholder="6글자 이상 입력해주세요" name="con">
 			</div>
 
 			<div class="form-group">

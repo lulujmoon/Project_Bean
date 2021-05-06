@@ -29,7 +29,7 @@
 								required value="">
 							<button type="button" style="display: inline;" class="email-btn gradient-btn1" id="emailCheck">중복확인</button>
 							<div id="errorEmail" class="resultEmail resultCheck"></div>
-							<h6 id="idCheckResult"></h6>
+							<small id="idCheckResult"></small>
 							<!-- ID는 이메일형식 -->
 								
 						</div>
@@ -37,14 +37,14 @@
 						<div class="form-group">
 							<label for="pw">비밀번호</label> <input type="password"
 								class="form-control" id="join-pw" placeholder="6자리 이상 비밀번호" required name="pw">
-							<h6 id="pwResult"></h6>
+							<small id="pwResult"></small>
 							<!-- PW는 6글자 이상 -->
 						</div>
 
 						<div class="form-group">
 							<label for="pw">비밀번호 확인</label> <input type="password"
 								class="form-control" id="join-pw2" placeholder="" required name="pw2">
-							<h6 id="pw2Result"></h6>
+							<small id="pw2Result"></small>
 						</div>
 
 						<div class="form-group">

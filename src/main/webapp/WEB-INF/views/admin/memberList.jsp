@@ -35,7 +35,7 @@
 							<td scope="col">${list.id}</td>
 							<td scope="col"><a href="../member/adminUpdate?id=${list.id}">수정</a></td>
 							<td scope="col"><a href="../member/memberOrder?id=${list.id}">주문 내역 확인</a></td>
-							<td scope="col"><a href="../member/memberQna">문의 내역 확인</a></td>
+							<td scope="col"><a href="../qna/qnaList">문의 내역 확인</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
