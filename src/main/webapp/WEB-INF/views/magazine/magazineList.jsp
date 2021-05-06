@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../resources/css/magazineList.css">
 </head>
 <body>
+
 	<c:import url="../template/header.jsp"></c:import>
 
 	<section id="home">
@@ -70,7 +71,7 @@
 							<!-- Modal footer -->
 							<div class="modal-footer">
 								<div class="col-md-12 text-center">
-								<c:if test="${member.id eq 'admin'}">
+								<c:if test="${member.authority eq '1'.charAt(0)}">
 								<a href="./magazineUpdate?num=${dto.num}"><button type="button" class="btn underline-btn">Update</button></a>
 							</c:if> 
 							<a href="./magazineDelete?num=${dto.num}"><button type="button" class="btn underline-btn">Delete</button></a>
@@ -94,9 +95,9 @@
 <div class="container">
 
 		<div>
-		<%-- <c:if test="${member.id eq 'admin'}"> --%>
+		<c:if test="${member.authority eq '1'.charAt(0)}">
 		<a class="btn underline-btn" href="./magazineInsert">Write</a>
-		<%-- 	</c:if> --%>
+		</c:if>
 		</div>
 
 	

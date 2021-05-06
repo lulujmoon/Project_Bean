@@ -14,7 +14,9 @@
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
-
+<c:if test="${member.authority ne '1'.charAt(0)}">
+	<span id="noAccess">잘못된 접근</span>
+</c:if>
 <div class="container">
 <div class="row">
 			<div class="col-md-12 col-sm-12">
