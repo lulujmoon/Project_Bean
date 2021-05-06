@@ -102,6 +102,7 @@ public class MailController {
 
 	   // Subject
 	   MagazineDTO magazineDTO = new MagazineDTO();
+
 	   magazineDTO.setNum(3);
 	   magazineDTO = magazineService.magazineSelect(magazineDTO);
 	   message.setSubject(magazineDTO.getTitle());
