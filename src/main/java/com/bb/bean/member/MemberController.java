@@ -133,7 +133,6 @@ public class MemberController {
 
 	@GetMapping("memberLogin")
 	public void memberLogin() throws Exception {
-
 	}
 
 	@PostMapping("memberLogin")

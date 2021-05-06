@@ -18,7 +18,7 @@
 
 				<!-- Modal body -->
 				<div class="modal-body">
-					<form action="/bean/member/memberLogin" method="post" name="f1" onsubmit="return loginCheck();">
+					<form name="f1">
 						<div class="form-group">
 							<label for="id">이메일</label> <input type="text"
 								class="form-control" id="idL" name="id" aria-describedby="idHelp" required>
@@ -47,7 +47,6 @@
 
 				<a class="btn underline-btn" style="font-size: 13px;" href="${pageContext.request.contextPath}/member/findPw">비밀번호 분실 &gt;</a>
 				<a class="btn underline-btn" style="font-size: 13px;" data-toggle="modal" data-target="#join" style="cursor:pointer;">회원가입 &gt;</a>
-					<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  -->
 				</div>
 
 			</div>
