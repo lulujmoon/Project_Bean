@@ -24,8 +24,8 @@
           <div class="row">
 
                <div class="col-md-12 col-sm-12">
-                    <h2>Email-list</h2>
-                    <h4>Your personal coffee guide</h4>
+                    <h2>구독관리</h2>
+                    
                     <hr>
                </div>
              </div>
@@ -54,6 +54,5 @@ ${dto.mAddr}
 </div>
 
 
-	<c:import url="../template/footer.jsp"></c:import>
 </body>
 </html>
