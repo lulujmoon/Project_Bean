@@ -102,7 +102,8 @@ public class MailController {
 
 	   // Subject
 	   MagazineDTO magazineDTO = new MagazineDTO();
-	   magazineDTO.setNum(125);
+
+	   magazineDTO.setNum(3);
 	   magazineDTO = magazineService.magazineSelect(magazineDTO);
 	   message.setSubject(magazineDTO.getTitle());
 	   
@@ -122,7 +123,7 @@ public class MailController {
 	 }
 	  
 	  String msg="발송되었습니다";
-	  mv.addObject("path","./mailList");
+	  mv.addObject("path","../admin/mailList");
 	  mv.addObject("msg",msg);
 	  mv.setViewName("common/commonResult");
 	  return mv;
