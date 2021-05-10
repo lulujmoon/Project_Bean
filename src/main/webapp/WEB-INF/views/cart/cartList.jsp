@@ -35,6 +35,7 @@
 		<c:forEach items="${list}" var="item">
 		<div title="${item.itemNum}" class="item-div">
 				<div class="info">
+					<input type="button" class="del-btn btn-sm btn-outline-secondary btn" title="${item.itemNum}" value="x" style="float:right">
 					<input type="checkbox" name="checkedItem" value="${item.itemNum}" id="checkedItem_${item.itemNum}" class="checkedItems">&nbsp;
 					<label for="checkedItem_${item.itemNum}">
 						${item.product.name} 
@@ -102,7 +103,7 @@
 						<option class="msg-opt">부재 시 문앞에 놔주세요.</option>
 						<option>직접 입력</option>
 					</select>
-					<input type="text" id="message" style="display:none">			
+					<br><br><input type="text" id="message" style="display:none" class="form-control form-control-sm">			
 				</div>
 				<div class="shippingInfo">
 					<span style="display:none"><input type="text" name="id" value="${member.id}" id="id"> class="form-control form-control-sm"</span>
