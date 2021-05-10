@@ -55,7 +55,7 @@ document.addEventListener('keydown', function(event) {
   };
 }, true);
 
-http://localhost/bean/member/memberPage?id=admin
+
 
 //submit 조건 확인
 function loginCheck() {

@@ -61,7 +61,7 @@
 			</div>
 			<div class="form-group">
    				 <label for="contents">상품 정보</label>
-  				 <textarea class="form-control myCheck" id="contents" name="contents">${product.contents}</textarea>
+  				 <textarea class="form-control myCheck" id="contents" name="contents" value="${product.contents}"></textarea>
  				<small id="conResult" class="form-text text-muted"></small>
  			</div>
  			<div class="form-group">

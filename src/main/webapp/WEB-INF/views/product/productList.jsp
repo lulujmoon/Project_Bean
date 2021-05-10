@@ -29,7 +29,7 @@
 		<a href="./productList?category=brewingTool">Brewing Tool</a> | 
 		<a href="./productList?category=gift">Gift</a> | 
 		<a href="./productList?category=dripbag">Dripbag</a> | 
-		<a href="./productList?category=coldbrew">Coldbrew</a>
+		<a href="./productList?category=Coldbrew">Coldbrew</a>
 	</div>
 	<c:if test="${member.authority eq '1'.charAt(0)}">
 		<div style="text-align: center;margin-top:7px;color:grey">상품 추가는 admin 페이지의 상품 관리에서 가능합니다.</div>
