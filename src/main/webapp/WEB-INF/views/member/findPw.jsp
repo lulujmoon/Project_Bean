@@ -22,6 +22,8 @@
 <link rel="stylesheet" href="../resources/css/style.css">
 <!-- findPw css -->
 <link rel="stylesheet" href="../resources/css/findPw.css">
+<link rel="stylesheet" href="../resources/css/memberLogin.css">
+<link rel="stylesheet" href="../resources/css/memberJoin.css">
 
 <title>비밀번호 분실</title>
 <!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet"> -->

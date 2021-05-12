@@ -15,11 +15,9 @@ $("#idL").blur(function(){
 		console.log(result);
 		console.log(id);
 		
-		if($("#idL").val() == result){
-		//	$("#idLResult").html("");				
+		if($("#idL").val() == result){				
 			loginId = true;
 		}
-		
 		console.log("id : " + loginId);
 		
 		});

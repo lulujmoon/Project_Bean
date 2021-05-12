@@ -16,12 +16,12 @@
 	</select>
 
 	<select id="getListbyId" parameterType="OrdersDTO" resultMap="listResult">
-		select O.orderUid, O.id, O.orderName, O.orderDate, O.amount, O.payState, OD.shippingState
+		select O.orderUid, O.id, O.orderName, O.orderDate, O.amount, O.payState, OD.shippingState, OD.finalPrice
 		from Orders O
 		right join OrderDetails OD
 		on OD.orderUid = O.orderUid
 		where O.id=#{id}
-        group by O.orderUid, O.id, O.orderName, O.orderDate, O.amount, O.payState, OD.shippingState
+        group by O.orderUid, O.id, O.orderName, O.orderDate, O.amount, O.payState, OD.shippingState, OD.finalPrice
 		order by O.orderUid desc
 	</select>
 
